@@ -1,0 +1,67 @@
+%% XwkOnt Core Glossary Dependency Graph
+%% Mermaid source file (.mmd) kept alongside core-ontology.mmd for repository-first review.
+%% Node identifiers are Mermaid-safe; bracket labels preserve glossary term spelling.
+flowchart TD
+    Entity["Entity"] --> Concept["concept"]
+    Entity --> SourceOntology["source ontology"]
+    Continuant["Continuant"] --> Entity
+    Occurrent["Occurrent"] --> Entity
+    Object["Object"] --> Continuant
+    Quality["Quality"] --> Continuant
+    Quality --> Bearer["bearer"]
+    Role["Role"] --> Continuant
+    Role --> Context["context"]
+    Process["Process"] --> Occurrent
+    Event["Event"] --> Occurrent
+    Relation["Relation"] --> Entity
+    Relation --> Relationship["relationship"]
+    InformationArtifact["Information Artifact"] --> Entity
+    InformationArtifact --> Artifact["artifact"]
+
+    HasPart["has part"] --> Entity
+    HasPart --> Whole["whole"]
+    HasPart --> Part["part"]
+    PartOf["part of"] --> Entity
+    PartOf --> Whole
+    PartOf --> Part
+    ParticipatesIn["participates in"] --> Continuant
+    ParticipatesIn --> Occurrent
+    HasParticipant["has participant"] --> Occurrent
+    HasParticipant --> Continuant
+    HasQuality["has quality"] --> Entity
+    HasQuality --> Quality
+    QualityOf["quality of"] --> Quality
+    QualityOf --> Entity
+    QualityOf --> Bearer
+    BearsRole["bears role"] --> Entity
+    BearsRole --> Role
+    BearsRole --> Context
+    RoleOf["role of"] --> Role
+    RoleOf --> Entity
+    RoleOf --> Bearer
+    DependsOn["depends on"] --> Entity
+    DependsOn --> Dependence["dependence"]
+    MapsTo["maps to"] --> Mapping["mapping"]
+    MapsTo --> Concept
+    MapsTo --> Relationship
+    DocumentedBy["documented by"] --> Entity
+    DocumentedBy --> InformationArtifact
+    DocumentedBy --> Provenance["provenance"]
+
+    Class["class"] --> Category["category"]
+    Property["property"] --> Relationship
+    Subclass["subclass"] --> Class
+    Subclass --> InheritanceRelationship["inheritance relationship"]
+    Domain["domain"] --> Relationship
+    Domain --> Category
+    Range["range"] --> Relationship
+    Range --> Category
+    Candidate["candidate"] --> Uncertainty["uncertainty"]
+    Crosswalk["crosswalk"] --> Mapping
+    Crosswalk --> SourceOntology
+    GlossaryClosure["glossary closure"] --> ClosedDefinition["closed definition"]
+    LogicalAxiom["logical axiom"] --> Formalization["formalization"]
+    StructuralConsistency["structural consistency"] --> Validation["validation"]
+    StructuralConsistency --> Declared["declared"]
+    Provenance --> Evidence["evidence"]
+    Formalization --> Representation["representation"]

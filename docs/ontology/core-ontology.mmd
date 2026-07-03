@@ -1,0 +1,20 @@
+classDiagram
+    Entity <|-- Continuant
+    Entity <|-- Occurrent
+    Entity <|-- Relation
+    Entity <|-- InformationArtifact
+    Continuant <|-- Object
+    Continuant <|-- Quality
+    Continuant <|-- Role
+    Occurrent <|-- Process
+    Occurrent <|-- Event
+
+    Entity --> Entity : hasPart / partOf
+    Continuant --> Occurrent : participatesIn
+    Occurrent --> Continuant : hasParticipant
+    Entity --> Quality : hasQuality
+    Quality --> Entity : qualityOf
+    Entity --> Role : bearsRole
+    Role --> Entity : roleOf
+    Entity --> Entity : dependsOn
+    Entity --> InformationArtifact : documentedBy

@@ -1,0 +1,80 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install RDFLib
+        run: pip install rdflib
+
+      - name: Parse Turtle artifacts
+        run: |
+          python - <<'PY'
+          from rdflib import Graph
+          for path in [
+              'data/ontology/core.ttl',
+              'data/ontology/examples/core-validation-example.ttl',
+          ]:
+              graph = Graph()
+              graph.parse(path, format='turtle')
+              print(f'{path}: {len(graph)} triples')
+          PY
+
+      - name: Structural checks (mapsTo constraint, required terms, namespace tokens)
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          core = Path('data/ontology/core.ttl').read_text()
+          example = Path('data/ontology/examples/core-validation-example.ttl').read_text()
+          required_terms = [
+              'xwkont-core:Entity', 'xwkont-core:Continuant', 'xwkont-core:Occurrent',
+              'xwkont-core:Object', 'xwkont-core:Quality', 'xwkont-core:Role',
+              'xwkont-core:Process', 'xwkont-core:Event', 'xwkont-core:Relation',
+              'xwkont-core:InformationArtifact', 'xwkont-core:hasPart',
+              'xwkont-core:partOf', 'xwkont-core:participatesIn',
+              'xwkont-core:hasParticipant', 'xwkont-core:hasQuality',
+              'xwkont-core:qualityOf', 'xwkont-core:bearsRole',
+              'xwkont-core:roleOf', 'xwkont-core:dependsOn',
+              'xwkont-core:mapsTo', 'xwkont-core:documentedBy',
+          ]
+          missing = [term for term in required_terms if term not in core]
+          if missing:
+              raise SystemExit(f'Missing required core terms: {missing}')
+          if 'xwkont-core:mapsTo a rdf:Property ;\n    rdfs:domain' in core or 'xwkont-core:mapsTo a rdf:Property ;\n    rdfs:range' in core:
+              raise SystemExit('mapsTo must not reintroduce formal RDFS domain or range commitments')
+          for token in ['https://w3id.org/xwkont/core#', 'https://w3id.org/xwkont/examples/core-validation#']:
+              if token not in core + example:
+                  raise SystemExit(f'Missing publication namespace token: {token}')
+          print('Structural validation passed')
+          PY
+
+      - name: Check publication navigation artifacts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          required_paths = [
+              'docs/publication/core-publication-guide.md',
+              'docs/publication/uri-iri-policy.md',
+              'docs/publication/validation-commands.md',
+              'docs/publication/publication-operations.md',
+              'docs/publication/redirects-content-negotiation.md',
+              'docs/publication/release-tagging-checklist.md',
+              'docs/publication/w3id-redirect-request.md',
+              'docs/releases/core-ontology-release-notes.md',
+          ]
+          missing = [path for path in required_paths if not Path(path).exists()]
+          if missing:
+              raise SystemExit(f'Missing publication artifacts: {missing}')
+          print('Publication navigation artifacts present')
+          PY

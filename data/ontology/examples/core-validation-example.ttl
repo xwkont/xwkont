@@ -1,0 +1,40 @@
+@prefix xwkont-core: <https://w3id.org/xwkont/core#> .
+@prefix xwkont-example: <https://w3id.org/xwkont/examples/core-validation#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+xwkont-example: a skos:ConceptScheme ;
+    dcterms:title "XwkOnt Core Validation Examples"@en ;
+    dcterms:created "2026-07-01" ;
+    skos:scopeNote "Illustrative, non-authoritative validation data. These examples do not assert source-ontology commitments or final publication IRIs."@en .
+
+xwkont-example:sampleObject a xwkont-core:Object ;
+    xwkont-core:hasPart xwkont-example:samplePart ;
+    xwkont-core:hasQuality xwkont-example:sampleQuality ;
+    xwkont-core:bearsRole xwkont-example:sampleRole ;
+    xwkont-core:participatesIn xwkont-example:sampleProcess ;
+    xwkont-core:dependsOn xwkont-example:sampleDocumentation ;
+    xwkont-core:documentedBy xwkont-example:sampleDocumentation .
+
+xwkont-example:samplePart a xwkont-core:Object ;
+    xwkont-core:partOf xwkont-example:sampleObject .
+
+xwkont-example:sampleQuality a xwkont-core:Quality ;
+    xwkont-core:qualityOf xwkont-example:sampleObject .
+
+xwkont-example:sampleRole a xwkont-core:Role ;
+    xwkont-core:roleOf xwkont-example:sampleObject .
+
+xwkont-example:sampleProcess a xwkont-core:Process ;
+    xwkont-core:hasParticipant xwkont-example:sampleObject .
+
+xwkont-example:sampleEvent a xwkont-core:Event ;
+    skos:note "Illustrative event-like occurrent kept separate from the sample process; no equivalence, disjointness, or ordering claim is asserted."@en .
+
+xwkont-example:sampleDocumentation a xwkont-core:InformationArtifact ;
+    dcterms:title "Illustrative validation note"@en .
+
+xwkont-example:sampleMappingConcept a skos:Concept ;
+    skos:prefLabel "Illustrative mapping target"@en ;
+    skos:scopeNote "Used only to show that SKOS concepts can participate in future mapping examples without using xwkont-core:mapsTo as an authoritative mapping model."@en .

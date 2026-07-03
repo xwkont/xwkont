@@ -1,0 +1,177 @@
+@prefix xwkont-core: <https://w3id.org/xwkont/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+xwkont-core: a skos:ConceptScheme ;
+    dcterms:title "XwkOnt Core Ontology"@en ;
+    dcterms:created "2026-07-01" ;
+    dcterms:source "Core Ontology"@en ;
+    dcterms:relation "docs/ontology/core-glossary.md"@en ;
+    dcterms:relation "docs/ontology/core-axioms.md"@en ;
+    skos:scopeNote "Initial draft vocabulary for organizing top-level foundational-ontology comparison; not a replacement foundational ontology."@en .
+
+xwkont-core:Entity a rdfs:Class, skos:Concept ;
+    rdfs:label "Entity"@en ;
+    skos:prefLabel "Entity"@en ;
+    skos:definition "The broad comparison root for something that exists, is treated as existing, or is modeled as a subject of description by XwkOnt or a source ontology."@en ;
+    skos:editorialNote "Candidate comparison root; not a final claim that all source ontologies use the same top category."@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Continuant a rdfs:Class, skos:Concept ;
+    rdfs:label "Continuant"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Continuant"@en ;
+    skos:definition "An entity considered for comparison as persisting, enduring, or being present through time, such as an object, quality, or role."@en ;
+    skos:editorialNote "Candidate concept; source ontologies differ on this label and boundary."@en ;
+    dcterms:relation "docs/crosswalks/concepts/continuant-occurrent.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Occurrent a rdfs:Class, skos:Concept ;
+    rdfs:label "Occurrent"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Occurrent"@en ;
+    skos:definition "An entity considered for comparison as unfolding, occurring, happening, or extending through time, such as a process or event."@en ;
+    skos:editorialNote "Candidate concept; source ontologies differ on this label and boundary."@en ;
+    dcterms:relation "docs/crosswalks/concepts/continuant-occurrent.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Object a rdfs:Class, skos:Concept ;
+    rdfs:label "Object"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Object"@en ;
+    skos:definition "A continuant considered for comparison as an individual thing, body, system, or object-like entity."@en ;
+    skos:editorialNote "Candidate concept; exact source-specific boundaries are deferred to concept crosswalk work."@en ;
+    dcterms:relation "docs/crosswalks/concepts/object.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Quality a rdfs:Class, skos:Concept ;
+    rdfs:label "Quality"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Quality"@en ;
+    skos:definition "A continuant considered for comparison as a characteristic, feature, or way an entity is, usually understood as requiring a bearer."@en ;
+    skos:editorialNote "Candidate concept; dependence semantics are deferred."@en ;
+    dcterms:relation "docs/crosswalks/concepts/quality.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Role a rdfs:Class, skos:Concept ;
+    rdfs:label "Role"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Role"@en ;
+    skos:definition "A continuant considered for comparison as something an entity has because of context, use, participation, or social or organizational arrangement."@en ;
+    skos:editorialNote "Candidate concept; role, function, disposition, and relator boundaries are deferred."@en ;
+    dcterms:relation "docs/crosswalks/concepts/role.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Process a rdfs:Class, skos:Concept ;
+    rdfs:label "Process"@en ;
+    rdfs:subClassOf xwkont-core:Occurrent ;
+    skos:prefLabel "Process"@en ;
+    skos:definition "An occurrent considered for comparison as temporally extended activity, happening, or change."@en ;
+    skos:editorialNote "Candidate concept; XwkOnt does not assume that Process and Event are equivalent."@en ;
+    dcterms:relation "docs/crosswalks/concepts/process.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Event a rdfs:Class, skos:Concept ;
+    rdfs:label "Event"@en ;
+    rdfs:subClassOf xwkont-core:Occurrent ;
+    skos:prefLabel "Event"@en ;
+    skos:definition "An occurrent considered for comparison as a happening, occurrence, or temporally located unit."@en ;
+    skos:editorialNote "Candidate concept; the distinction between Event and Process remains unsettled across source ontologies."@en ;
+    dcterms:relation "docs/crosswalks/concepts/event.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Relation a rdfs:Class, skos:Concept ;
+    rdfs:label "Relation"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Relation"@en ;
+    skos:definition "An entity considered for comparison as a connection, association, or relationship type among entities."@en ;
+    skos:editorialNote "Candidate concept; whether relations should be first-class entities is source-dependent and remains uncertain."@en ;
+    dcterms:relation "docs/crosswalks/concepts/relation.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:InformationArtifact a rdfs:Class, skos:Concept ;
+    rdfs:label "Information Artifact"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Information Artifact"@en ;
+    skos:altLabel "information artifact"@en ;
+    skos:definition "An entity that records or carries information for XwkOnt use, such as a specification, reference, mapping, diagram source, or validation note."@en ;
+    skos:editorialNote "Candidate support concept; may later move to metadata or provenance infrastructure."@en ;
+    dcterms:relation "docs/crosswalks/concepts/information-artifact.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:hasPart a rdf:Property ;
+    rdfs:label "has part"@en ;
+    rdfs:domain xwkont-core:Entity ;
+    rdfs:range xwkont-core:Entity ;
+    skos:definition "Relates a whole entity to another entity included as its part."@en ;
+    skos:editorialNote "Structural only; mereological axioms are deferred."@en .
+
+xwkont-core:partOf a rdf:Property ;
+    rdfs:label "part of"@en ;
+    rdfs:domain xwkont-core:Entity ;
+    rdfs:range xwkont-core:Entity ;
+    skos:definition "Relates an entity to a larger entity that includes it as a part."@en ;
+    skos:editorialNote "Inverse formalization with has part is deferred."@en .
+
+xwkont-core:participatesIn a rdf:Property ;
+    rdfs:label "participates in"@en ;
+    rdfs:domain xwkont-core:Continuant ;
+    rdfs:range xwkont-core:Occurrent ;
+    skos:definition "Relates a continuant to an occurrent in which the continuant is involved."@en ;
+    skos:editorialNote "Participation conditions are deferred."@en .
+
+xwkont-core:hasParticipant a rdf:Property ;
+    rdfs:label "has participant"@en ;
+    rdfs:domain xwkont-core:Occurrent ;
+    rdfs:range xwkont-core:Continuant ;
+    skos:definition "Relates an occurrent to a continuant involved in it."@en ;
+    skos:editorialNote "Inverse formalization with participates in is deferred."@en .
+
+xwkont-core:hasQuality a rdf:Property ;
+    rdfs:label "has quality"@en ;
+    rdfs:domain xwkont-core:Entity ;
+    rdfs:range xwkont-core:Quality ;
+    skos:definition "Relates an entity to a quality that characterizes it."@en ;
+    skos:editorialNote "Whether all entities can have qualities is deferred."@en .
+
+xwkont-core:qualityOf a rdf:Property ;
+    rdfs:label "quality of"@en ;
+    rdfs:domain xwkont-core:Quality ;
+    rdfs:range xwkont-core:Entity ;
+    skos:definition "Relates a quality to the entity it characterizes or requires as bearer."@en ;
+    skos:editorialNote "Dependence formalization is deferred."@en .
+
+xwkont-core:bearsRole a rdf:Property ;
+    rdfs:label "bears role"@en ;
+    rdfs:domain xwkont-core:Entity ;
+    rdfs:range xwkont-core:Role ;
+    skos:definition "Relates an entity to a role that the entity has in a context."@en ;
+    skos:editorialNote "Context and dependence conditions are not yet formalized."@en .
+
+xwkont-core:roleOf a rdf:Property ;
+    rdfs:label "role of"@en ;
+    rdfs:domain xwkont-core:Role ;
+    rdfs:range xwkont-core:Entity ;
+    skos:definition "Relates a role to the entity that bears it."@en ;
+    skos:editorialNote "Context and dependence axioms are deferred."@en .
+
+xwkont-core:dependsOn a rdf:Property ;
+    rdfs:label "depends on"@en ;
+    rdfs:domain xwkont-core:Entity ;
+    rdfs:range xwkont-core:Entity ;
+    skos:definition "Relates one entity to another entity that it requires in some sense."@en ;
+    skos:editorialNote "Existential, generic, specific, historical, and contextual dependence are not yet separated."@en .
+
+xwkont-core:mapsTo a rdf:Property ;
+    rdfs:label "maps to"@en ;
+    skos:definition "Relates an XwkOnt concept or relationship to another concept or relationship as a candidate mapping."@en ;
+    skos:editorialNote "Transitional documentation property retained for early traceability; no RDFS domain or range is asserted, and detailed mappings should prefer SKOS mapping properties or explicit crosswalk mapping records."@en .
+
+xwkont-core:documentedBy a rdf:Property ;
+    rdfs:label "documented by"@en ;
+    rdfs:domain xwkont-core:Entity ;
+    rdfs:range xwkont-core:InformationArtifact ;
+    skos:definition "Relates a concept, relationship, or claim to an information artifact that documents it."@en ;
+    skos:editorialNote "Exact provenance model is deferred to publication or governance work."@en .

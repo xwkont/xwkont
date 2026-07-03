@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contribution Workflow
+    url: https://github.com/xwkont/xwkont/blob/main/docs/governance/contributing.md
+    about: Read the full contribution workflow and review checklist before opening an issue or pull request.
