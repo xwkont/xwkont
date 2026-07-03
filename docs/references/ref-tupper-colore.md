@@ -4,7 +4,7 @@
 > **Slug:** `tupper-colore`
 > **Editorial status:** `candidate`
 > **Created:** `2026-07-02`
-> **Modified:** `2026-07-02`
+> **Modified:** `2026-07-03`
 
 ## Descriptive Metadata
 
@@ -20,6 +20,7 @@
 | Access date | 2026-07-02 | |
 | Snapshot / Stable identifier | `https://github.com/gruninger/colore/blob/master/ontologies/tupper/owl/tupper.all.owl` → <http://web.archive.org/web/20221024070550/https://github.com/gruninger/colore/blob/master/ontologies/tupper/owl/tupper.all.owl> (2022-10-24), verified retrievable via the Internet Archive Wayback Machine at time of writing, per `ADR-0012`. | |
 | Rights/license | CC-BY-SA-4.0 | Per `tupper.clif`'s own header comment ("licensed under the Creative Commons Attribution-ShareAlike 4.0 Unported license"). |
+| Archive mirror status | eligible — license permits redistribution, not yet mirrored | Per `ADR-0016`. CC-BY-SA-4.0 is verified from `tupper.clif`'s own header comment (see Rights/license), which is sufficient to make this record eligible; actual mirroring (hosting location, fetch, publish) is separate future work not yet started. |
 
 ## Source Relation Notes
 

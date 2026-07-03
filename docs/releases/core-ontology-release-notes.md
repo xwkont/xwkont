@@ -1,8 +1,8 @@
 # XwkOnt Core Ontology Release Notes
 
-> **Milestone:** First core ontology publication package  
-> **Date:** 2026-07-01  
-> **Status:** Publication-ready repository milestone; publication operations specified; immutable external versioning deferred
+> **Milestone:** First core ontology publication package — `ontology-core-v0.1.0`  
+> **Date:** 2026-07-01 (package assembled); 2026-07-03 (tagged)  
+> **Status:** Tagged and live; immutable versioned ontology document IRIs remain deferred
 
 ## Summary
 
@@ -41,7 +41,7 @@ Illustrative examples use:
 https://w3id.org/xwkont/examples/core-validation#
 ```
 
-Immutable versioned ontology document IRIs remain deferred until release-tag, artifact, redirect, content-negotiation, release-note, and validation prerequisites are complete. `docs/publication/w3id-redirect-request.md` documents the external w3id implementation request for current namespace redirect and content-negotiation behavior, but deployed behavior still needs verification before dereferenceability is advertised.
+`ontology-core-v0.1.0` satisfies most of the immutable-versioned-IRI prerequisites in `docs/governance/release-versioning-policy.md` (release tag, matching artifact bundle, current-namespace redirect and content-negotiation, validation results). It does not yet satisfy the prerequisite that a `w3id.org` redirect exist for the versioned document path itself: `https://w3id.org/xwkont/ontology/core/0.1.0` currently returns `404` (checked 2026-07-03), since only the current-namespace redirects (`perma-id/w3id.org#6277`, `#6292`) have been submitted so far. Activating immutable versioned IRIs therefore remains deferred — filing and waiting on a third w3id PR is explicitly not planned for this session, immediately after `#6292` merged.
 
 
 ## External w3id Submission Status
@@ -83,7 +83,7 @@ No OWL reasoner is required for this milestone.
 - Dependency subtypes remain unresolved.
 - Inverse-property, disjointness, cardinality, transitivity, and other property-characteristic axioms remain deferred.
 - Versioned release distribution files are not created as part of this milestone.
-- The first external ontology milestone tag `ontology-core-v0.1.0` is expected but not yet created.
+- Immutable versioned ontology document IRIs (`https://w3id.org/xwkont/ontology/core/0.1.0`) are not yet active — no w3id redirect exists for that path.
 
 ## Compatibility Notes
 
@@ -91,9 +91,8 @@ The Turtle namespace changed from the earlier placeholder `https://example.org/x
 
 ## Follow-Up
 
-Remaining before `ontology-core-v0.1.0` is tagged:
+`ontology-core-v0.1.0` is tagged and pushed to both the private and public repositories. All release-tagging-checklist items are complete — see `docs/publication/release-tagging-checklist.md`.
 
-1. Run final publication validation from a clean working tree per `docs/publication/validation-commands.md`.
-2. Create the first external ontology milestone tag `ontology-core-v0.1.0` per `docs/publication/release-tagging-checklist.md`.
+Remaining, deferred (not scheduled for this session):
 
-All earlier follow-up items (w3id submission and merge, content-negotiation verification) are complete — see External w3id Submission Status and Content-Negotiation Verification above.
+1. Decide whether to submit a third w3id PR adding a redirect for the versioned document path (`https://w3id.org/xwkont/ontology/core/0.1.0`) — the last unmet prerequisite for activating immutable versioned ontology document IRIs per `docs/governance/release-versioning-policy.md`.

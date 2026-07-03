@@ -4,7 +4,7 @@
 > **Slug:** `gfo`
 > **Editorial status:** `candidate`
 > **Created:** `2026-07-02`
-> **Modified:** `2026-07-02`
+> **Modified:** `2026-07-03`
 
 ## Descriptive Metadata
 
@@ -20,6 +20,7 @@
 | Access date | 2026-07-02 | |
 | Snapshot / Stable identifier | `https://github.com/Onto-Med/GFO` → <http://web.archive.org/web/20250902115637/https://github.com/Onto-Med/GFO> (2025-09-02), verified retrievable via the Internet Archive Wayback Machine at time of writing, per `ADR-0012`. No snapshot found for the raw `modules/gfo-base.owl` file specifically (`wayback/available` returned no result for that exact URL) — the repository-level snapshot is the fallback, consistent with `xwkont:ref:bfo-2020`'s precedent for GitHub-hosted OWL sources. | |
 | Rights/license | CC-BY-4.0 | Per the ontology's own `terms:license` annotation (`http://creativecommons.org/licenses/by/4.0/`), not independently checked against a separate repository LICENSE file. |
+| Archive mirror status | eligible — license permits redistribution, not yet mirrored | Per `ADR-0016`. CC-BY-4.0 is verified from the ontology's own metadata (see Rights/license), which is sufficient to make this record eligible; actual mirroring (hosting location, fetch, publish) is separate future work not yet started. |
 
 ## Source Relation Notes
 

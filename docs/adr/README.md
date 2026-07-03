@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-<!-- updated at: 2026-07-03 13:05 Z   (2026-07-03 09:05 EDT) -->
+<!-- updated at: 2026-07-03 13:50 Z   (2026-07-03 09:50 EDT) -->
 
 Standards adoption/adaptation/introduction decisions, in the precedence order described in [docs/PROJECT_LIFECYCLE.md](../PROJECT_LIFECYCLE.md). Newer ADRs may extend or supersede earlier ones; read sequentially for the project's decision history, or jump to a specific one by topic below.
 
@@ -19,3 +19,4 @@ Standards adoption/adaptation/introduction decisions, in the precedence order de
 - [ADR-0013](ADR-0013-extend-confidence-vocabulary-with-intermediate-values.md) — Extend Confidence Vocabulary with Intermediate Values
 - [ADR-0014](ADR-0014-fixed-numeric-projection-for-confidence-export.md) — Fixed Numeric Projection for Confidence Export
 - [ADR-0015](ADR-0015-expand-source-ontology-scope-to-eight.md) — Expand Source-Ontology Scope to Eight
+- [ADR-0016](ADR-0016-license-gated-reference-archive-pointer-registry.md) — License-Gated Reference Archive as a Pointer Registry

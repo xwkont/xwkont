@@ -1,6 +1,6 @@
 # XwkOnt
 
-<!-- updated at: 2026-07-03 12:57 Z   (2026-07-03 08:57 EDT) -->
+<!-- updated at: 2026-07-03 13:56 Z   (2026-07-03 09:56 EDT) -->
 
 > **The Crosswalk of Foundational Ontologies**
 
@@ -33,6 +33,10 @@ XwkOnt does **not**:
 - Replace existing ontologies.
 - Reconcile philosophical disagreements.
 - Introduce new domain concepts.
+
+## Related Prior Art
+
+XwkOnt is not the first attempt at comparing foundational ontologies side by side. The closest historical predecessors are the **WonderWeb Foundational Ontologies Library (WFOL)** (DOLCE, OCHRE, BFO; produced under a fixed-term EU research grant, 2002–2004) and **ROMULUS** (BFO, DOLCE, GFO; a repository with comparison, alignment, and merging tooling, dormant since around 2014). Both are inactive; neither states an explicit license for its ontology files. See [docs/evaluations/comparable-projects-survey.md](docs/evaluations/comparable-projects-survey.md) for the full verification and comparison against XwkOnt's scope and non-goals.
 
 ## Guiding Principle
 

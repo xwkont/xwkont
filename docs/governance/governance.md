@@ -98,17 +98,31 @@ Accepted repository artifacts precede external publication. External websites, r
 
 ## Continuity and Sustainability
 
-**Status:** Open question, not resolved.
+**Status:** Resolved (2026-07-03) — lightweight mechanism adopted; heavier mechanisms explicitly declined for now.
 
 `docs/evaluations/comparable-projects-survey.md` found that XwkOnt's two closest identified prior-art predecessors — the WonderWeb Foundational Ontologies Library and ROMULUS — both went dormant for the same underlying, structural reason: research/grant funding pays for *producing* results (papers, initial releases), not for indefinite *maintenance* of the resulting infrastructure. WonderWeb ended because its EU grant had a fixed term (2002-2004) with no continuation mechanism. ROMULUS appears to have gone dormant after its originating PhD research concluded, with no institutional mandate to keep it running afterward.
 
 XwkOnt currently has no institutional backing, grant funding, or organizational mandate either. It is maintained on a repository-first, incremental basis with no defined mechanism for continuity if attention or maintainer availability lapses. This is an acknowledged structural risk, not a hypothetical one — it is the exact failure mode that ended both of the closest comparable projects.
 
-This governance document does not resolve the question of how XwkOnt avoids the same fate. It records the question so it isn't silently repeated:
+### Decision
 
-- What happens to XwkOnt if the current maintainer's attention lapses for an extended period?
-- Does the planned XwkOnt-owned reference archive (`TODO.md`, "Future Infrastructure") mitigate the dependency risk on *external* services, without addressing the dependency risk on the *project's own* continuity?
-- Is there a lighter-weight continuity mechanism (e.g., a clear "if abandoned, do X" note; a designated point of contact; a license and repository structure that makes a fork/revival straightforward) worth adopting now, while the project is small, rather than after it has gone quiet?
+XwkOnt already has the two structural pieces that make fork/revival straightforward without any new action, and this governance document now says so explicitly rather than leaving it implicit:
+
+1. **The dual CC-BY-4.0/MIT license (`ADR-0008`)** is itself a continuity mechanism — both licenses explicitly permit copying, modification, and redistribution. Unlike WFOL and ROMULUS, whose license status is unstated even after direct verification (`docs/evaluations/comparable-projects-survey.md`), anyone finding XwkOnt dormant has an unambiguous, already-granted right to fork and continue it. No successor needs to track down a maintainer for permission first.
+2. **Repository-first governance (`docs/PROJECT_LIFECYCLE.md`, this document's own Governance Posture)** already means the Git repository — not any person, chat log, or external service — is the single source of truth for project state. A fork loses nothing by not having access to the current maintainer; everything needed to continue the project (ADRs, TODO.md, session journal, methodology docs) is already in the repository by construction.
+
+What XwkOnt explicitly does **not** adopt, as disproportionate to current project size and maturity (Governance Posture principle 5):
+
+- A designated backup maintainer, succession plan, or organizational mandate. XwkOnt remains single-maintainer; this is an accepted risk, not a hidden one.
+- A formal "if abandoned, do X" procedural note beyond what the license and repository-first posture already establish — the license itself already says what a successor is permitted to do; a procedural checklist on top of that would be process disproportionate to a documentation project with no active users depending on uptime.
+
+This decision does not eliminate the structural risk WFOL and ROMULUS demonstrate — a maintainer's attention lapsing remains possible for XwkOnt exactly as it was for both predecessors. It closes the open question by choosing which mitigations are worth adopting now (license clarity, repository-first practice — both already in place) versus which are not (formal succession planning) at this project's current scale, rather than leaving the question unaddressed.
+
+The originally listed open questions are answered as follows:
+
+- *What happens to XwkOnt if the current maintainer's attention lapses for an extended period?* — Nothing automatic; no successor is pre-designated. But per the Decision above, anything the project needs to continue (permission via license, project state via the repository) is already available to any interested party, unlike either predecessor.
+- *Does the planned XwkOnt-owned reference archive mitigate this?* — No, and it was never meant to. `ADR-0016` itself narrowed that item to a license-gated pointer registry, not a general archive; it addresses citation permanence against *external* link rot, not the project's own continuity risk. These are separate problems with separate mitigations.
+- *Is a lighter-weight continuity mechanism worth adopting now?* — Yes, and it already exists: the permissive dual license plus repository-first governance. No additional mechanism (designated contact, formal succession note) is adopted at this time.
 
 ## Relationship to Other Governance Policies
 

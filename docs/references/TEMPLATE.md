@@ -20,6 +20,7 @@
 | Access date | `YYYY-MM-DD/not applicable/unknown` | Required for web resources when known. |
 | Snapshot / Stable identifier | `<archival snapshot URL/DOI (if already given above)/unknown — not yet archived>` | Per `ADR-0012`. Required for web content without a DOI (project websites, code repositories, technical reports). Never fabricate a snapshot URL — record `unknown — not yet archived` if one has not been independently verified as retrievable. |
 | Rights/license | `<SPDX expression/unknown/custom/mixed>` | SPDX when known. |
+| Archive mirror status | `not applicable — license unknown or unverified` | Per `ADR-0016`. Only `eligible — license permits redistribution, not yet mirrored` or `mirrored — <path or URL>` when Rights/license above is a verified, explicit redistribution-permitting license (e.g. CC-BY, CC-BY-SA). Use `not applicable — license does not permit redistribution` when a restrictive license is confirmed. Never mirror content on this basis alone — mirroring is separate follow-up work gated by this field. |
 
 ## Source Relation Notes
 

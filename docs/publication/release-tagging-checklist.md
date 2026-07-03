@@ -1,18 +1,18 @@
 # First Ontology Milestone Tagging Checklist
 
-> **Status:** Pre-tag checklist  
-> **Date:** 2026-07-01  
+> **Status:** Complete — tag created  
+> **Date:** 2026-07-01 (checklist opened); 2026-07-03 (tag created)  
 > **Scope:** Pre-tag checklist for the first externally tagged XwkOnt core ontology milestone
 
 ## Decision
 
-The first external ontology milestone tag is expected to be:
+The first external ontology milestone tag was created 2026-07-03:
 
 ```text
 ontology-core-v0.1.0
 ```
 
-This checklist does not create the tag itself because public redirect and content-negotiation behavior is not yet fully deployed and verified.
+Public redirect and content-negotiation behavior were fully deployed and verified before the tag was created.
 
 ## Pre-Tag Checklist
 
@@ -47,7 +47,7 @@ Complete all items before creating `ontology-core-v0.1.0`.
 - [x] `docs/publication/uri-iri-policy.md` is included.
 - [x] `docs/publication/redirects-content-negotiation.md` is included.
 - [x] `docs/publication/validation-commands.md` is included.
-- [x] `docs/releases/core-ontology-release-notes.md` identifies the tag, artifacts, validation results, and known limitations. Content-negotiation verification results recorded 2026-07-03; tag itself pending maintainer decision to execute the Tag Command below.
+- [x] `docs/releases/core-ontology-release-notes.md` identifies the tag, artifacts, validation results, and known limitations. Content-negotiation verification results and the created tag are both recorded 2026-07-03.
 
 ### Validation
 
@@ -59,15 +59,15 @@ Complete all items before creating `ontology-core-v0.1.0`.
 
 ## Tag Command
 
-After all checklist items are complete and the release state is accepted, maintainers may create the tag with:
+The tag was created and pushed to both the private and public repositories 2026-07-03:
 
 ```bash
 git tag ontology-core-v0.1.0
 git push origin ontology-core-v0.1.0
 ```
 
-Use an annotated tag if project maintainers decide release notes should be embedded directly in the tag object.
+A lightweight tag was used (no annotated release notes embedded in the tag object).
 
 ## Current Blockers
 
-None. `perma-id/w3id.org#6292` merged 2026-07-03T12:24:50Z; both Turtle and HTML retrieval for `https://w3id.org/xwkont/core` are verified live, and results are recorded in `docs/releases/core-ontology-release-notes.md`. Every pre-tag checklist item is now checked. The tag itself has not been created — that requires an explicit maintainer decision to execute the Tag Command above, not an automated action.
+None remaining for this checklist — it is complete. `perma-id/w3id.org#6292` merged 2026-07-03T12:24:50Z; both Turtle and HTML retrieval for `https://w3id.org/xwkont/core` are verified live, and `ontology-core-v0.1.0` is tagged and pushed. Immutable versioned ontology document IRIs (`https://w3id.org/xwkont/ontology/core/0.1.0`) remain a separate, still-deferred decision — see `docs/governance/release-versioning-policy.md` and `TODO.md`; that path currently returns `404` and has no w3id redirect configured.
