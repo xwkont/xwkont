@@ -1,6 +1,6 @@
 # References
 
-<!-- updated at: 2026-07-03 13:05 Z   (2026-07-03 09:05 EDT) -->
+<!-- updated at: 2026-07-04 21:10 Z   (2026-07-04 17:10 EDT) -->
 
 Repository-local reference records, one per cited external source, per [docs/INFORMATION_ARCHITECTURE.md](../INFORMATION_ARCHITECTURE.md)'s required-fields and identifier conventions (`xwkont:ref:*`). New reference records follow [TEMPLATE.md](TEMPLATE.md).
 
@@ -15,6 +15,7 @@ Repository-local reference records, one per cited external source, per [docs/INF
 - [ref-yamato-mizoguchi-2010.md](ref-yamato-mizoguchi-2010.md) — YAMATO: Yet Another More Advanced Top-level Ontology (Mizoguchi, 2010 technical report)
 - [ref-tupper-colore.md](ref-tupper-colore.md) — TUpper (COLORE CLIF/OWL formalization)
 - [ref-gum-owl.md](ref-gum-owl.md) — GUM: The Generalized Upper Model (OWL, GUM-3.1)
+- [ref-ontouml-vocabulary.md](ref-ontouml-vocabulary.md) — OntoUML Vocabulary (OWL/Turtle)
 - [ref-iao-owl.md](ref-iao-owl.md) — Information Artifact Ontology (IAO) OWL Ontology
 - [ref-ceusters-smith-2015.md](ref-ceusters-smith-2015.md) — Aboutness: Towards Foundations for the Information Artifact Ontology (2015)
 - [ref-masolo-vieu-2004.md](ref-masolo-vieu-2004.md) — Social Roles and their Descriptions (2004)

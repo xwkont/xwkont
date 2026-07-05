@@ -1,0 +1,807 @@
+local_identifier: xwkont:concept:quality
+slug: quality
+title: Quality
+editorial_status: reviewed
+created: "2026-07-01"
+modified: "2026-07-02"
+scope_note: 'This crosswalk compares BFO''s `Quality` (a `Specifically Dependent Continuant`),
+  DOLCE''s `Quality`/`Quale` pair, UFO''s `Moment`/`Quality`, and SUMO''s `Attribute`, as
+  Object''s sibling under Continuant in `data/ontology/core.ttl`.
+
+
+
+  **This crosswalk surfaces the sharpest metaphysical divergence found across all crosswalks
+  so far, not just a labeling difference.** BFO, DOLCE, and UFO all treat a quality as a **particular**
+  (a "trope" in the philosophical-literature sense) that existentially depends on a specific
+  bearer — the redness of *this* apple is its own particular entity, distinct from the redness
+  of any other apple, even though both are the same type of quality. **SUMO breaks with this
+  entirely**: its analog, `Attribute`, is classified as an **abstract entity**, not a particular
+  dependent on a bearer. This is a genuine fork between trope-theoretic and abstracta-based
+  treatments of properties, not merely a different word for the same thing. SUMO also does
+  not use the word "Quality" at all for this category — its term is `Attribute`.
+
+
+
+  DOLCE and UFO additionally share a further layer BFO doesn''t appear to formalize the same
+  way: both distinguish the particular quality/moment itself from its **value or position
+  within a conceptual space** (DOLCE: `quale`; UFO: measurement via a "value space" for the
+  subtype of Moment it calls `Quality`). This parallel is noted but not confirmed as a shared
+  theoretical source (e.g., Gärdenfors'' conceptual spaces) — see Uncertainty.
+
+
+
+  Exclusions: this crosswalk does not address Role (Object''s other sibling under Continuant,
+  planned next) and does not attempt UFO''s full Moment typology (intrinsic vs. relational,
+  further subtypes) beyond what''s needed to place Quality within it.
+
+
+
+  **Update (2026-07-01), following direct primary-source verification of DOLCE''s D18 report
+  and UFO''s 2021 paper, fully resolving `uncertainty-002`:** both were fetched and read directly
+  (reusing extractions already performed for other crosswalks). Findings:
+
+
+
+  - **DOLCE''s own primary text (not just the 2022 restatement) confirms the Quality/Quale
+  definitions closely**: "qualities are particulars, properties are universals. Qualities
+  inhere to entities... each quality is specifically constantly dependent on the entity it
+  inheres in." Qualia are "the position of an individual quality within a certain conceptual
+  space (called here quality space)."
+
+  - **The Gärdenfors/Goodman citation is now confirmed at the exact sentence level, not just
+  via a bibliography key search.** D18''s own text cites its sources inline: the quality-space
+  notion is footnoted directly to Gärdenfors (2000), *Conceptual Spaces: the Geometry of Thought*
+  (reference [39]), and "this distinction between qualities and qualia" is footnoted to Goodman
+  (1951), *The Structure of Appearance* (reference [40]), alongside "the so-called trope theory,"
+  citing Campbell (1990), *Abstract Particulars* (reference [9]).
+
+  - **UFO independently cites Gärdenfors too**, resolving the previously-unconfirmed UFO side
+  of `uncertainty-002`: "quality structures... can be either one-dimensional, in which case
+  they are termed quality dimensions, or composed of multiple co-dependent dimensions (see
+  also integral dimensions, Gärdenfors, 2004)." This is a different Gärdenfors publication
+  year (2004, not DOLCE''s 2000 citation) but the same conceptual-spaces theory — both sources
+  independently ground their value-space/quality-space apparatus in Gärdenfors'' work, not
+  just structurally resembling each other by coincidence.
+
+
+
+  **Epistemic note:** BFO, DOLCE, UFO, and SUMO content is all now verified directly against
+  primary sources (`bfo-core.ttl`, WonderWeb D18, the 2021 Applied Ontology paper, and `Merge.kif`,
+  respectively).
+
+
+
+  **Update (2026-07-02), ADR-0015 buildout:** extended to GFO, YAMATO, TUpper, and GUM. The
+  trope-vs-abstracta fork found between BFO/DOLCE/UFO and SUMO gains two more data points
+  on the trope side and a genuinely new third modeling style: **GFO''s `Property` (a `Concrete`,
+  `Dependent` individual) and YAMATO''s `Quality` (a "property associated with an individual
+  entity," part of a four-tier Generic-quality-type/Quality-role-type/Quality/Quality-instance
+  apparatus) both join the trope-theoretic camp with BFO/DOLCE/UFO, not SUMO''s abstracta
+  camp.** More strikingly, GFO''s own `Value_space` class independently cites *both* Gärdenfors
+  (2000) *and* DOLCE by name ("Masolo, 2003") for the same value-space/quality-space parallel
+  this crosswalk''s `note-002` already documents between DOLCE and UFO — a third source citing
+  Gärdenfors, and the first source in this crosswalk to cite another already-covered source
+  by name. YAMATO''s own text similarly engages DOLCE''s quality-space concept directly, calling
+  it "one of the most sophisticated property ontologies" but arguing it doesn''t cover all
+  quality-description patterns it identifies (`<E,A>`, `<E,A,V>`, `<E,P,V>`). TUpper introduces
+  a genuinely different, third modeling style: it does not reify qualities as dependent-particular
+  entities at all — no `Quality`/`Attribute`/`Property` class exists in its fetched files.
+  Instead, physical measurements (`mass`, `volume`, `physical_length`, `physical_area`, `physical_density`)
+  are direct OWL object properties relating an object straight to a value, with no intervening
+  trope or abstracta layer. GUM''s `SimpleQuality` ("properties of SimpleThings and Processes...
+  anything that can be expressed as an English adjective") is a genuine entity-level class,
+  terminologically the closest match of the four new sources ("Quality" itself), but grounded
+  in linguistic realization rather than metaphysical inherence — the same terminological-match-without-matching-criterion
+  pattern already found for GUM''s Process in `process.md`.'
+labels:
+- role: XwkOnt working label
+  label: Quality
+  label_source: XwkOnt
+  language: en
+  entry_notes: Matches `xwkont-core:Quality` (`rdfs:subClassOf xwkont-core:Continuant`) in
+    `data/ontology/core.ttl`.
+- role: Source term
+  label: Quality (a Specifically Dependent Continuant)
+  label_source: BFO
+  language: en
+- role: Source term
+  label: Quality (contrasted with its Quale)
+  label_source: DOLCE
+  language: en
+- role: Source term
+  label: Quality (a subtype of Moment)
+  label_source: UFO
+  language: en
+  entry_notes: '"Moment" is UFO''s general term for dependent particulars; "Quality" is the
+    subtype measurable via a value space.'
+- role: Alternate label
+  label: Attribute
+  label_source: SUMO
+  language: en
+  entry_notes: SUMO does not use "Quality"; its analog is an abstract entity, not a particular
+    — see Scope Note.
+- role: Source term
+  label: Property (+ Property value, Value space)
+  label_source: GFO
+  language: en
+  entry_notes: 'Trope-theoretic: `Property` is a `Concrete`, `Dependent` individual.'
+- role: Source term
+  label: Quality (+ Generic quality type, Quality role type, Quality instance)
+  label_source: YAMATO
+  language: en
+  entry_notes: A four-tier apparatus; "Quality" is the class term for a property tied to an
+    individual entity.
+- role: Source term
+  label: '*(none found — direct measurement properties only)*'
+  label_source: TUpper
+  language: en
+  entry_notes: No reified Quality/Attribute/Property class; measurements (`mass`, `volume`,
+    `length`, etc.) are direct OWL object properties from object to value.
+- role: Source term
+  label: SimpleQuality
+  label_source: GUM
+  language: en
+  entry_notes: '"Anything that can be expressed as an English adjective"; a genuine entity
+    class, the closest terminological match of the four new sources.'
+source_definitions:
+- source: BFO
+  term_or_identifier: Quality (BFO_0000019)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) A quality is a specifically dependent continuant that, in contrast
+    to roles and dispositions, does not require any further process in order to be realized."
+    Examples: "The colour of a tomato; the ambient temperature of this portion of air; the
+    length of the circumference of your waist; the shape of your nose; the shape of your nostril;
+    the mass of this piece of gold."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000019, fetched and read directly 2026-07-01'
+  entry_notes: Corrects the earlier paraphrase's framing ("fully manifested whenever they
+    exist") to the primary text's actual contrast criterion ("does not require any further
+    process in order to be realized," vs. roles/dispositions).
+- source: DOLCE
+  term_or_identifier: Quality
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Qualities are particulars, properties are universals. Qualities inhere to entities:
+    every entity (including qualities themselves) comes with certain qualities, which exist
+    as long as the entity exists... each quality is specifically constantly dependent on the
+    entity it inheres in."'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified**: WonderWeb D18 PDF, manually extracted 2026-07-01'
+  entry_notes: Confirms the earlier paraphrase closely, now with the primary source's own
+    exact wording.
+- source: DOLCE
+  term_or_identifier: Quale
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"To compare qualities of the same kind, e.g., the color of a rose and the color of
+    a book cover, the category of quale is introduced. A quale is the position occupied by
+    an individual quality within a quality space. ... if the rose and the book cover exhibit
+    the same shade of red, their individual colors occupy the same position (quale) in the
+    color space. Hence, the two qualities are distinct but they have the same quale (within
+    the same color space)."'
+  reference:
+  - xwkont:ref:dolce-borgo-2022
+  - xwkont:ref:dolce-wonderweb-d18
+  reference_note: '`xwkont:ref:dolce-borgo-2022`, confirmed against `xwkont:ref:dolce-wonderweb-d18`
+    directly'
+  locator: '**verified**: both the 2022 arXiv preprint and, as of 2026-07-01, D18 itself (manually
+    extracted); D18''s own wording is near-identical, describing quale as "the position of
+    an individual quality within a certain conceptual space (called here quality space)"'
+  entry_notes: Confirms and sharpens the earlier paraphrase with the exact rose/book-cover
+    example, now traced to both the current restatement and the 2003 original.
+- source: UFO
+  term_or_identifier: Moment
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"[P]articularized properties, i.e., existentially dependent entities [or] moments,
+    these last ones termed aspects, abstract particulars, or variable tropes (Moltmann, 2020).
+    Moments are parasitic entities and can only exist by inhering in other entities. Intrinsic
+    moments are existentially dependent on a single individual."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: Confirms the earlier paraphrase closely; the "Husserl's Momente" etymology
+    was not re-found verbatim in this pass but is not contradicted.
+- source: UFO
+  term_or_identifier: Quality (subtype of intrinsic Moment)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"These include qualities, i.e., reifications of categorical properties such as color,
+    height, weight, electrical charge. Qualities are entities that can be directly projected
+    into certain value spaces. The latter, termed quality structures, are abstract entities
+    delimiting the space of possible values (qualia, singular quale) for qualities of a given
+    quality type."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: Parallels DOLCE's Quality/Quale pair closely enough that UFO uses the identical
+    term "quale" for the value; see Uncertainty — the shared-theory question is now resolved
+    (both sources cite Gärdenfors independently).
+- source: SUMO
+  term_or_identifier: Attribute
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(subclass Attribute Abstract)... (partition Attribute InternalAttribute RelationalAttribute)...
+    Qualities which we cannot or choose not to reify into subclasses of."'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: `Merge.kif`, `documentation Attribute EnglishLanguage`, fetched
+    and read directly 2026-07-01'
+  entry_notes: Confirms the abstract-entity classification directly (`subclass Attribute Abstract`)
+    rather than from an inferred secondary summary. This is the sharpest divergence found
+    in any crosswalk so far — see Scope Note.
+- source: BFO/DOLCE/UFO
+  term_or_identifier: trope-theoretic convergence
+  dimension: philosophical
+  source_claim_type: editorial observation
+  text: 'BFO, DOLCE, and UFO all treat qualities/moments as particulars dependent on a specific
+    bearer (tropes in the philosophical-literature sense), a shared metaphysical commitment
+    despite differing formal apparatus (BFO: inherence; DOLCE: quale/region, citing Goodman
+    1951 and Campbell 1990 by name; UFO: variable tropes, citing Moltmann 2020). SUMO does
+    not share this commitment, per its own Attribute definition.'
+  reference:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: inference across four sources' own stated definitions, not a single cited passage
+    making the comparison explicitly
+- source: GFO
+  term_or_identifier: Property
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Property` is `rdfs:subClassOf` `Concrete` and `Dependent` (no separate `skos:definition`
+    on `Property` itself; inherited from its declared superclasses — `Concrete`: "have a relation
+    to time or space"; `Dependent`, per its `owl:equivalentClass` restriction, existentially
+    depends on a bearer). `owl:disjointWith` `Relator`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Property`, fetched and read directly
+    2026-07-02'
+  entry_notes: A trope-theoretic, dependent-particular treatment, joining BFO/DOLCE/UFO's
+    camp rather than SUMO's abstract-entity camp.
+- source: GFO
+  term_or_identifier: Property value / Value space
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Property_value`: "The concept of a property value reflects a relationship between
+    the property of x and the same property as exhibited by another entity y" (`owl:equivalentClass`
+    a restriction on `value_of` some `Property`). `Value_space`: "Property values usually
+    appear in groups which are called value structures, value spaces or measurement systems...
+    The notion of a value structure of a property is similar to a quality dimension in (Gardenfors,
+    2000). Further, value structures are related to quality spaces in DOLCE (Masolo, 2003).
+    A quality space consists of all ''quales'' (our property values) of some ''quality'' (our
+    property)."'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, classes `Property_value`, `Value_space`,
+    fetched and read directly 2026-07-02'
+  entry_notes: GFO's own text independently cites both Gärdenfors (2000) *and* DOLCE (Masolo,
+    2003) by name — a third source grounding its value-space apparatus in Gärdenfors' conceptual-spaces
+    theory (per `note-002`), and the first source in this crosswalk to explicitly cite another
+    already-covered source.
+- source: YAMATO
+  term_or_identifier: Quality apparatus (Generic quality type / Quality role type / Quality
+    / Quality instance)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A quality must be a certain dependent property possessed by an entity and keeps
+    its identity while its value changes." "Quality: It is a property associated with an individual
+    entity and is a generic name to denote each instance of quality role type: e.g., Johns
+    height, Toms weight... Quality instance: A realization of quality: e.g., Johns height
+    of 160cm long."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: `YAMATO101216.pdf`, "Quality and quantity" section, extracted 2026-07-02'
+  entry_notes: A four-tier apparatus distinguishing the generic property type, the context-associated
+    role type, the individual entity-tied quality, and its value-bearing realization — more
+    elaborated than BFO's single Quality class, structurally comparable to DOLCE/UFO's Quality/Quale
+    split but organized differently (role-theoretic rather than positional-in-a-space).
+- source: YAMATO
+  term_or_identifier: Critique of DOLCE's quality-space coverage
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"One of the most sophisticated property ontologies is found in DOLCE. It specifies
+    value space for each quality type under the name of Quality space(region)... However,
+    there are other ways of quality description such as `<patient_1, diarrhea>`, `<cupper,
+    conductive>`, and `<rose_1, redness, faint>` which seem not to be covered by DOLCEs quality
+    ontology."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: `YAMATO101216.pdf`, same section, extracted 2026-07-02'
+  entry_notes: YAMATO's own text explicitly engages DOLCE's quality-space concept by name
+    and critiques its coverage — a direct, source-authored comparison to a source already
+    cited in this crosswalk, similar in kind to `information-artifact.md`'s YAMATO-critiques-BFO
+    finding.
+- source: TUpper
+  term_or_identifier: '*(no reified Quality class — direct measurement properties)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '`tupper.all.owl` defines `mass`, `volume`, `physical_length`, `physical_area`, `physical_density`
+    etc. as `FunctionalObjectProperty` relations directly from an object (or activity occurrence)
+    to a value, with no class representing the quality/property itself as an individual.'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified absence** (of a reified class): `tupper.all.owl`, searched directly,
+    2026-07-02'
+  entry_notes: 'A third modeling style, distinct from both BFO/DOLCE/UFO/GFO/YAMATO''s trope-theoretic
+    reification and SUMO''s abstract-entity reification: TUpper reifies neither a particular
+    quality nor an abstract attribute, only a direct relation to a value.'
+- source: GUM
+  term_or_identifier: SimpleQuality
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Qualities are properties of SimpleThings and Processes. They participate in property
+    ascription relations. Roughly speaking, qualities include anything that can be expressed
+    as an English adjective." `rdfs:subClassOf` `Element`; `owl:disjointWith` `SimpleThing`.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `SimpleQuality`, fetched and read directly 2026-07-02'
+  entry_notes: The only one of the four new sources with a class literally named "Quality"
+    (via its subclass naming, e.g. `MaterialWorldQuality`, `ModalQuality`, `LogicalQuality`)
+    — the strongest terminological match, though grounded in adjectival/linguistic realization
+    rather than metaphysical inherence.
+correspondences:
+- correspondence_id: xwkont:correspondence:quality:001
+  source_ontology: BFO
+  source_term: Quality
+  source_identifier_or_iri: BFO_0000019
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Direct terminological match to XwkOnt's `xwkont-core:Quality`.
+- correspondence_id: xwkont:correspondence:quality:002
+  source_ontology: DOLCE
+  source_term: Quality (+ Quale)
+  source_identifier_or_iri: '`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#quality`, `#quale`
+    (confirmed directly, 2026-07-01)'
+  source_version: WonderWeb D18, 2003 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Direct terminological match; Quale included as an inseparable companion
+    notion.
+- correspondence_id: xwkont:correspondence:quality:003
+  source_ontology: UFO
+  source_term: Quality (subtype of Moment)
+  source_identifier_or_iri: not applicable — UFO's 2021 paper has no IRI scheme of its own;
+    see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat
+  source_version: Applied Ontology, 2021 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: Direct terminological match, though nested under the broader Moment
+    category.
+- correspondence_id: xwkont:correspondence:quality:004
+  source_ontology: SUMO
+  source_term: Attribute
+  source_identifier_or_iri: '`Attribute` (SUMO/SUO-KIF has no separate opaque identifier scheme
+    — the term name itself is the identifier)'
+  source_version: 2001 (Niles & Pease) plus current SUMO source (not independently confirmed)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Included as the structural analog despite the sharp metaphysical divergence
+    (abstract entity, not a particular) and the absence of "Quality" as SUMO's own term.
+- correspondence_id: xwkont:correspondence:quality:005
+  source_ontology: GFO
+  source_term: Property (+ Property value, Value space)
+  source_identifier_or_iri: '`https://w3id.org/gfo/base/Property`, `Property_value`, `Value_space`'
+  source_version: GFO 2024-11-18 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Trope-theoretic dependent particular, joining BFO/DOLCE/UFO's camp;
+    `Value_space` independently cites Gärdenfors and DOLCE by name.
+- correspondence_id: xwkont:correspondence:quality:006
+  source_ontology: YAMATO
+  source_term: Quality (+ Generic quality type, Quality role type, Quality instance)
+  source_identifier_or_iri: not applicable — registration-gated OWL/Hozo download not fetched;
+    cited by quotation from the 2010 technical report, not by IRI
+  source_version: 2010 technical report (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: A four-tier dependent-particular apparatus, the most elaborated Quality
+    treatment of any source in this crosswalk; explicitly engages DOLCE's quality-space concept
+    by name.
+- correspondence_id: xwkont:correspondence:quality:007
+  source_ontology: GUM
+  source_term: SimpleQuality
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleQuality
+  source_version: GUM 3.1 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Only new source with a class literally named "Quality" (via subclasses);
+    grounded in adjectival/linguistic realization rather than metaphysical inherence.
+correspondences_note: No TUpper correspondence is recorded (`ADR-0015` buildout, 2026-07-02)
+  — see Source Definitions and Uncertainty; TUpper reifies no Quality/Attribute/Property class
+  at all, only direct measurement relations.
+comparison_notes:
+- note_id: note-001
+  dimension: philosophical
+  claim_type: editorial observation
+  note: BFO, DOLCE, and UFO converge on treating qualities as particulars (tropes) existentially
+    dependent on a bearer — a genuine shared metaphysical commitment, not just similar labels.
+    SUMO's `Attribute` is classified as an abstract entity instead, a real fork between trope-theoretic
+    and abstracta-based treatments of properties. This is the sharpest divergence identified
+    across all crosswalks completed so far (compare `object.md`'s and `event.md`'s labeling
+    mismatches, which were about category boundaries, not this deep a metaphysical split).
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: 'DOLCE''s Quality/Quale pair and UFO''s Quality-as-measurable-Moment both separate
+    a particular property instance from its value/position in a conceptual space, and now
+    confirmed to share a theoretical origin: DOLCE''s D18 cites Gärdenfors (2000), *Conceptual
+    Spaces: the Geometry of Thought*, by name for the quality-space notion, and UFO''s 2021
+    paper independently cites "Gärdenfors, 2004" for "integral dimensions" in its quality-structure
+    apparatus. Different publication years from the same author/theory, cited independently
+    by each source rather than one copying the other.'
+  supporting_references:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  confidence: high
+  claim_type_annotation: confirmed 2026-07-01
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: SUMO does not use the word "Quality" for this category at all — its term is `Attribute`.
+    This is a labeling difference layered on top of the deeper metaphysical divergence in
+    `note-001`, similar in kind (though not in magnitude) to `object.md`'s UFO/Substantial-Kind
+    and `event.md`'s BFO-SUMO/Event mismatches.
+  supporting_references:
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-004
+  dimension: philosophical
+  claim_type: editorial observation
+  note: The trope-vs-abstracta fork (`note-001`) gains a third data point on the trope side
+    (GFO's `Property`, YAMATO's `Quality`, both `Concrete`/entity-dependent, particular-denoting)
+    and a genuinely new third modeling style from TUpper, which reifies neither a particular
+    quality nor an abstract attribute — it attaches values to objects via direct OWL properties
+    (`mass`, `length`, etc.) with no intervening entity class at all. GUM's `SimpleQuality`
+    is entity-like (joining the reified camp structurally) but its criterion is linguistic
+    (adjectival realizability), not metaphysical, so it does not cleanly join either the trope
+    or abstracta side on the same grounds as the others.
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:tupper-colore
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-005
+  dimension: technical
+  claim_type: editorial observation
+  note: GFO's `Value_space` class independently cites both Gärdenfors (2000) and DOLCE (Masolo,
+    2003) by name in its own definition text, extending `note-002`'s finding to a third independent
+    citation of Gärdenfors' conceptual-spaces theory and adding a rare case of one source
+    ontology's own primary text explicitly citing another source already covered in this crosswalk.
+    YAMATO similarly engages DOLCE's quality-space concept directly (by name, though not citing
+    Gärdenfors), calling it "one of the most sophisticated property ontologies" while arguing
+    its coverage is incomplete.
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:dolce-wonderweb-d18
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:quality:001
+  subject: BFO:Quality
+  relation_category: close-match
+  object: DOLCE:Quality
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Both are dependent particulars (tropes) inhering in/dependent on a bearer, fully
+    manifested whenever they exist. Not `exact-equivalence-candidate` because DOLCE additionally
+    formalizes the Quale layer, which BFO's definition (as found in this pass) does not mirror
+    explicitly.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quality:002
+  subject: BFO:Quality
+  relation_category: close-match
+  object: UFO:Quality
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Same trope-theoretic convergence as mapping-001; UFO's Quality additionally nests
+    under the broader Moment category and the value-space criterion.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quality:003
+  subject: DOLCE:Quality
+  relation_category: exact-equivalence-candidate
+  object: UFO:Quality
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: '**Raised 2026-07-01** from medium: both pair a particular property instance
+    with a value/space notion (Quale / value space, UFO even using the identical term "quale")
+    — the closest structural match found in this crosswalk, and now confirmed to share a theoretical
+    origin (`note-002`): both sources independently cite Gärdenfors'' conceptual-spaces theory.'
+  provenance:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:exactMatch
+- mapping_id: xwkont:mapping:quality:004
+  subject: BFO:Quality
+  relation_category: explicit-non-equivalence
+  object: SUMO:Attribute
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Explicitly not equivalent: BFO''s Quality is a particular dependent on a bearer;
+    SUMO''s Attribute is an abstract entity. This is a confirmed metaphysical divergence,
+    not an unresolved uncertainty — high confidence in the *non*-equivalence itself.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:quality:005
+  subject: DOLCE:Quality
+  relation_category: explicit-non-equivalence
+  object: SUMO:Attribute
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Same rationale as mapping-004.
+  provenance:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:quality:006
+  subject: BFO:Quality
+  relation_category: close-match
+  object: GFO:Property
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Same trope-theoretic convergence as `mapping-001`/`mapping-002`: both are dependent
+    particulars inhering in/dependent on a bearer, joining the same camp as BFO/DOLCE/UFO
+    rather than SUMO''s abstracta.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quality:007
+  subject: DOLCE:Quality
+  relation_category: close-match
+  object: GFO:Property
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Same trope-theoretic convergence; additionally, GFO's own `Value_space` explicitly
+    cites DOLCE (Masolo, 2003) by name for the value-space/quality-space parallel (`note-005`),
+    strengthening this beyond an editorial observation alone.
+  provenance:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quality:008
+  subject: GFO:Property
+  relation_category: explicit-non-equivalence
+  object: SUMO:Attribute
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Same rationale as `mapping-004`/`mapping-005`: GFO''s `Property` is a `Concrete`,
+    `Dependent` individual (a particular), while SUMO''s `Attribute` is an abstract entity
+    — the same confirmed metaphysical divergence extended to a fourth source.'
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:quality:009
+  subject: BFO:Quality
+  relation_category: close-match
+  object: YAMATO:Quality
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Both are dependent particulars tied to an individual entity ("a certain dependent
+    property possessed by an entity"). Not `high` because YAMATO's four-tier apparatus (generic
+    type/role type/quality/instance) is considerably more elaborated than BFO's single Quality
+    class, and YAMATO's own OWL is not fetched (quotation-only citation).
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quality:010
+  subject: DOLCE:Quality
+  relation_category: close-match
+  object: YAMATO:Quality
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: 'Structurally the closest pairing among the new sources: both split a particular
+    quality from its value/realization (DOLCE: Quality/Quale; YAMATO: Quality/Quality instance),
+    and YAMATO''s own text explicitly engages DOLCE''s quality-space concept by name (`note-005`)
+    rather than this crosswalk drawing the comparison unassisted. Not `high` because YAMATO
+    explicitly argues DOLCE''s coverage is incomplete — a disclosed point of disagreement,
+    not a clean equivalence.'
+  provenance:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quality:011
+  subject: xwkont-core:Quality
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No TUpper correspondence identified; TUpper reifies no Quality/Attribute/Property
+    class, only direct measurement relations (`mass`, `length`, etc.) from object to value
+    — a third modeling style, neither trope nor abstracta (`note-004`). Recorded explicitly
+    rather than silently omitted, per this crosswalk's established practice for negative findings.
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:quality:012
+  subject: BFO:Quality
+  relation_category: close-match
+  object: GUM:SimpleQuality
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: The only new source with a class literally named "Quality" (via subclass naming),
+    but GUM's criterion is linguistic (adjectival realizability) rather than metaphysical
+    inherence — a terminological match without a matching definitional criterion, the same
+    pattern already found for GUM's Process in `process.md`.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gum-owl
+  predicate_id: skos:closeMatch
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: non-equivalence
+  resolved: true
+  description: SUMO's `Attribute` is classified as an abstract entity (`subclass Attribute
+    Abstract`), confirmed directly against `Merge.kif` — not merely inferred from a secondary
+    summary. Recorded as `explicit-non-equivalence` in `mapping-004`/`mapping-005`.
+  impact: High confidence in the non-equivalence, now on a verified rather than inferred basis.
+  follow_up: Resolved — no further action needed.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-002
+  uncertainty_type: uncertainty
+  resolved: true
+  description: 'Confirmed directly on both sides: DOLCE''s D18 cites Gärdenfors (2000), *Conceptual
+    Spaces: the Geometry of Thought*, by name at the exact sentence introducing quality space
+    ("[39]"), plus Goodman (1951) and Campbell (1990) for the quality/quale trope-theoretic
+    distinction. UFO''s 2021 paper independently cites "Gärdenfors, 2004" for "integral dimensions"
+    in its own quality-structure apparatus. Both sources ground their value-space/quality-space
+    mechanism in Gärdenfors'' conceptual-spaces theory, cited independently rather than one
+    copying the other.'
+  impact: Confidence on `mapping-003` raised from medium to high; `note-002` raised from medium
+    to high.
+  follow_up: Resolved — no further action needed.
+  resolved_date: "2026-07-01"
+  resolution_note: fully resolved 2026-07-01
+- item_id: uncertainty-003
+  uncertainty_type: open-question
+  resolved: false
+  description: This crosswalk does not address Role, Object's other sibling under Continuant.
+  impact: Scopes this crosswalk to Quality only.
+  follow_up: Create the Role concept crosswalk next, per `TODO.md`.
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: YAMATO's own OWL/Hozo files were not fetched in this pass (registration-gated
+    download; see `xwkont:ref:yamato-mizoguchi-2010`), so `correspondence-006`/`mapping-009`/`mapping-010`
+    are cited by quotation from the 2010 technical report, not by class IRI.
+  impact: Confidence on `mapping-009`/`mapping-010` (capped at medium-high) could rise if
+    the OWL is fetched and formal classes matching the Generic-quality-type/Quality-role-type/Quality/Quality-instance
+    apparatus are confirmed.
+  follow_up: Fetch YAMATO's OWL/Hozo files if the registration gate is completed later.
+- item_id: uncertainty-005
+  uncertainty_type: open-question
+  resolved: false
+  description: TUpper's fetched files were checked for a reified Quality/Attribute/Property
+    class and none was found, but the search covered `tupper.all.owl`'s object-property declarations,
+    not an exhaustive read of every PSL module TUpper imports (`disc_state`, `psl_actocc`,
+    `occupy_root`, `fount`) individually.
+  impact: The "no reified Quality class" finding rests on the combined `tupper.all.owl` file,
+    which should already aggregate the imported modules, but this has not been independently
+    spot-checked module-by-module.
+  follow_up: Spot-check the individual PSL modules directly if a future pass wants to rule
+    this out more conclusively.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified** directly against `bfo-core.ttl`, 2026-07-01'
+- reference_id: xwkont:ref:dolce-wonderweb-d18
+  short_label: 'WonderWeb Deliverable D18: Ontology Library (Masolo et al., 2003)'
+  verification_note: '**verified** directly (manual PDF extraction, including the exact Gärdenfors/Goodman/Campbell
+    citation sentences), 2026-07-01'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly (fetched as plain-text RDF/XML), 2026-07-01; supplies
+    the exact `quality`/`quale` class IRIs'
+- reference_id: xwkont:ref:dolce-borgo-2022
+  short_label: 'DOLCE: A Descriptive Ontology for Linguistic and Cognitive Engineering (Borgo
+    et al., 2022)'
+  verification_note: '**verified** directly (manual PDF extraction), 2026-07-01; used for
+    the Quale definition, now cross-confirmed against D18 itself'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified** directly (manual PDF extraction, including its independent
+    Gärdenfors 2004 citation), 2026-07-01'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-01'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl` (`Property`, `Property_value`,
+    `Value_space`), 2026-07-02'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified** directly (PDF extraction, "Quality and quantity" section),
+    2026-07-02'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified absence** (of a reified Quality class) directly against `tupper.all.owl`,
+    2026-07-02'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified** directly against `GUM-31.owl` (`SimpleQuality`), 2026-07-02'
+review_history:
+- review_date: "2026-07-01"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:quality:2026-07-01:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; BFO/DOLCE/UFO/SUMO content all verified directly, including the sharpest metaphysical
+    divergence found across all crosswalks (SUMO''s `Attribute` as abstract entity vs. BFO/DOLCE/UFO''s
+    trope-theoretic treatment) and a fully resolved shared-theory question (both DOLCE and
+    UFO independently cite Gärdenfors); mapping categories/confidence valid (`mapping-003`''s
+    `high` confidence now fully earned, not just raised speculatively). No undisclosed gaps
+    found. Self-review, not independent third-party review.'
+- review_date: "2026-07-02"
+  outcome: Not yet reviewed — status reverted `reviewed` → `candidate`
+  review_notes: ADR-0015 buildout added GFO/YAMATO/GUM correspondences (005-007), seven new
+    mappings (006-012, including a third independent Gärdenfors-citing source and a fourth
+    trope-vs-abstracta non-equivalence), two new notes (004-005), and two new uncertainty
+    items (004-005). TUpper confirmed to reify no Quality/Attribute/Property class at all
+    — a third modeling style, distinct from both the trope and abstracta camps. GFO's `Value_space`
+    independently cites both Gärdenfors and DOLCE by name, the first case in this crosswalk
+    of one source's primary text citing another already-covered source. All findings directly
+    verified against already-fetched primary artifacts; no re-fetching needed. Pending maintainer
+    review before advancing back to `reviewed`.
+- review_date: "2026-07-02"
+  outcome: Passed — advanced `candidate` → `reviewed`
+  review_id: xwkont:review:quality:2026-07-02:02
+  review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
+    Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks. Checked:
+    scope preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential with no gaps or duplicates; relation-category and confidence values
+    compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013` (both `medium-high`
+    mappings here state a sourcing-driven reason); independently re-verified GFO''s `Value_space`
+    definition text against `modules/gfo-base.owl` and confirmed the Gärdenfors (2000)/DOLCE
+    (Masolo, 2003) citation is exact, not paraphrased or overstated. Self-review performed
+    at the maintainer''s explicit request, not independent third-party review.'
+future_work:
+- ~~Read SUMO's current source files directly to confirm Attribute's Physical/Abstract classification~~
+  — **done 2026-07-01**, `uncertainty-001` resolved.
+- '~~Read DOLCE''s primary papers directly to check the Gärdenfors connection~~ — **done 2026-07-01**,
+  `uncertainty-002` fully resolved: D18 itself cites Gärdenfors (2000)/Goodman (1951)/Campbell
+  (1990) by name, and UFO''s 2021 paper independently cites Gärdenfors (2004).'
+- ~~Extend GFO/YAMATO/TUpper/GUM correspondences to this crosswalk~~ — **done 2026-07-02**
+  (ADR-0015 buildout, 6 of 8 crosswalks). Pending maintainer review (`uncertainty-004`/`uncertainty-005`
+  remain open).
+- Fetch YAMATO's OWL/Hozo files if the registration gate is completed (`uncertainty-004`);
+  spot-check TUpper's individual PSL modules if a future pass wants to more conclusively rule
+  out a reified Quality class (`uncertainty-005`).
+- '**Update (2026-07-01):** `docs/crosswalks/concepts/role.md`''s `note-001` confirms `note-001`
+  above is not an isolated case — SUMO''s `SocialRole` is also a subclass of `Attribute`,
+  the same abstract-entity treatment found here for Quality. `docs/crosswalks/concepts/relation.md`''s
+  `note-001` confirms it a third time — SUMO''s `Relation` is also a top-level Abstract Entity.
+  This is now a three-concept pattern across SUMO''s entire dependent/relational-particular
+  family, not a one-off. **Written up as a standalone cross-cutting observation** at `docs/methodology/sumo-modeling-patterns.md`,
+  which also documents where the pattern does *not* hold (`information-artifact.md`''s `ContentBearingPhysical`
+  goes the opposite direction).'

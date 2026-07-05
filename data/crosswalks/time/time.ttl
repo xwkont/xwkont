@@ -1,0 +1,100 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:time:001> a sssom:Mapping ;
+    rdfs:comment "Same subject matter (temporal extent) but a genuine top-level classification divergence: BFO subsumes it under Occurrent; DOLCE files it as an abstract quality-space region, neither endurant nor perdurant. Not `close-match` because the classification difference is structural, not incidental."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Temporal_region ;
+    sssom:subject_id xwkont-source-term:BFO-Temporal_region .
+
+<https://w3id.org/xwkont/id#mapping:time:002> a sssom:Mapping ;
+    rdfs:comment "Same divergence pattern as `mapping-001`: BFO=occurrent, SUMO=abstract quantity, disjoint from SUMO's own occurrent-like `Physical`/`Process` side."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-TimeMeasure ;
+    sssom:subject_id xwkont-source-term:BFO-Temporal_region .
+
+<https://w3id.org/xwkont/id#mapping:time:003> a sssom:Mapping ;
+    rdfs:comment "Same divergence pattern: BFO=occurrent; GFO explicitly declares its Time branch sui generis and disjoint from both Presential and Occurrent."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Space_time ;
+    sssom:subject_id xwkont-source-term:BFO-Temporal_region .
+
+<https://w3id.org/xwkont/id#mapping:time:004> a sssom:Mapping ;
+    rdfs:comment "Both denote an instant-like, extensionless point in a linear temporal order. Not `high` because TUpper's `timepoint` is its only temporal class (no interval/duration counterpart), a narrower overall scope than BFO's full temporal-region hierarchy — a sourcing/scope-driven gap, not a substantive disagreement about what an instant is."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:TUpper-Timepoint ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Temporal_instant .
+
+<https://w3id.org/xwkont/id#mapping:time:005> a sssom:Mapping ;
+    rdfs:comment "Same classification-divergence pattern as `mapping-001`–`003`, compounded by GUM's linguistic (not metaphysical) grounding criterion — the weakest structural alignment of the Occurrent-vs-independent-category comparisons, hence `medium` not `high`."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Time ;
+    sssom:subject_id xwkont-source-term:BFO-Temporal_region .
+
+<https://w3id.org/xwkont/id#mapping:time:006> a sssom:Mapping ;
+    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass)** — both classify Time as independent of their occurrent-equivalent category (DOLCE: region; SUMO: abstract quantity), closer to each other than either is to BFO's occurrent classification, but \"region\" and \"abstract quantity\" are different formal kinds, not merely differing scope/axioms within the same kind (contrast `mapping-007`, where both sides are region-denoting categories). `close-match` per `docs/methodology/crosswalk-methodology.md` is for concepts \"similar enough to align for many purposes but differ in scope, axioms, usage, or context\" — a difference in formal kind is a stronger divergence than that, so `overlap` (\"partially intersect but neither subsumes the other\") is the better fit."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-TimeMeasure ;
+    sssom:subject_id xwkont-source-term:DOLCE-Temporal_region .
+
+<https://w3id.org/xwkont/id#mapping:time:007> a sssom:Mapping ;
+    rdfs:comment "Both are non-occurrent, region-denoting categories with near-identical naming (`temporal-region`/`Temporal_region`) and near-identical gloss (region/mereological-sum-of-time framing). The closest structural pairing found in this crosswalk."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Temporal_region ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Temporal_region .
+
+<https://w3id.org/xwkont/id#mapping:time:008> a sssom:Mapping ;
+    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass)** — both are independent, sui-generis-flavored top-level categories not subsumed under either occurrent-like or continuant-like classes, but GFO's grounding is metaphysical (Brentano/Allen & Hayes) while GUM's is linguistic (Halliday & Matthiessen) — a difference in the *kind* of independence claimed, not just scope or axioms within a shared formal kind. `overlap` (\"partially intersect but neither subsumes the other,\" per `docs/methodology/crosswalk-methodology.md`) better reflects that than `close-match`."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-TemporalObject ;
+    sssom:subject_id xwkont-source-term:GFO-Temporal_region .
+
+<https://w3id.org/xwkont/id#mapping:time:009> a sssom:Mapping ;
+    rdfs:comment "Both treat time as a measured/graded quantity-like thing rather than an occurrent, but SUMO's framing is a universal-timeline quantity while GUM's is a clause-level aspectual category — related in spirit, not close enough in formal apparatus for `close-match`."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Time ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:SUMO-TimeMeasure .
+
+xwkont-source-term:BFO-Temporal_instant rdfs:label "Temporal instant"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:GFO-Space_time rdfs:label "Space_time"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GUM-TemporalObject rdfs:label "TemporalObject"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:TUpper-Timepoint rdfs:label "Timepoint"@en ;
+    dcterms:source "TUpper" .
+
+xwkont-source-term:GFO-Temporal_region rdfs:label "Temporal_region"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GUM-Time rdfs:label "Time"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:DOLCE-Temporal_region rdfs:label "Temporal-region"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:SUMO-TimeMeasure rdfs:label "TimeMeasure"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:BFO-Temporal_region rdfs:label "Temporal region"@en ;
+    dcterms:source "BFO" .
+

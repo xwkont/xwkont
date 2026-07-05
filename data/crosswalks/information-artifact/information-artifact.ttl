@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:information-artifact:001> a sssom:Mapping ;
+    rdfs:comment "**Raised 2026-07-01** from medium: both terms are now directly verified against their own primary sources (`xwkont:ref:ceusters-smith-2015`, `xwkont:ref:gangemi-dul`), both use generic-dependence/non-physical treatment for informational content independent of a specific carrier. Not raised to high because the two apparatus still differ in detail (IAO's single `Information Content Entity` vs. DUL's `InformationObject`/`InformationEntity`/`InformationRealization` three-way split)."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE\(DUL\)-Information_Object ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO\(IAO\)-Information_Content_Entity .
+
+<https://w3id.org/xwkont/id#mapping:information-artifact:002> a sssom:Mapping ;
+    rdfs:comment "Structural mismatch: BFO(IAO) separates content from carrier via generic dependence; SUMO ties content directly to a physical carrier. Whether they denote overlapping extension despite the different modeling choice is unresolved."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-ContentBearingPhysical ;
+    sssom:subject_id xwkont-source-term:BFO\(IAO\)-Information_Content_Entity .
+
+<https://w3id.org/xwkont/id#mapping:information-artifact:004> a sssom:Mapping ;
+    rdfs:comment "Both treat informational content as generically dependent on, but distinct from, a physical carrier (YAMATO: \"not concrete yet as it is... becomes a physical individual only when it becomes a representing thing\"; BFO(IAO): \"generically dependent on some material entity\"). YAMATO's own text explicitly names BFO's treatment as a point of comparison, strengthening this beyond an editorial observation alone. Not `high` because YAMATO's own OWL is not fetched (quotation-only citation) and the two apparatuses differ in elaboration (YAMATO's form/content split vs. IAO's single-class aboutness relation)."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Representation ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO\(IAO\)-Information_Content_Entity .
+
+<https://w3id.org/xwkont/id#mapping:information-artifact:005> a sssom:Mapping ;
+    rdfs:comment "Structurally the closest pairing found in this crosswalk: both sources independently split an abstract content-bearing class from its concrete realization (DUL: `InformationObject`/`InformationRealization`; YAMATO: `Representation`/`Representing thing`), per `note-004`. Not `high` because this is this crosswalk's own observed convergence, not a comparison either source's authors draw themselves (contrast `mapping-004`, where YAMATO explicitly cites BFO)."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Representation ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE\(DUL\)-Information_Object .
+
+xwkont-source-term:SUMO-ContentBearingPhysical rdfs:label "ContentBearingPhysical"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:DOLCE\(DUL\)-Information_Object rdfs:label "Information Object"@en ;
+    dcterms:source "DOLCE(DUL)" .
+
+xwkont-source-term:YAMATO-Representation rdfs:label "Representation"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:BFO\(IAO\)-Information_Content_Entity rdfs:label "Information Content Entity"@en ;
+    dcterms:source "BFO(IAO)" .
+

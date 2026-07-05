@@ -1,0 +1,596 @@
+local_identifier: xwkont:concept:boundary-site
+slug: boundary-site
+title: Boundary / Site
+editorial_status: reviewed
+created: "2026-07-04"
+modified: "2026-07-05"
+scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Boundary / Site is
+  the eighth concept drafted from the `0.2.0` batch. Direct primary-source verification this
+  session found a nameable category in **4 of 8 sources** (BFO `continuant fiat boundary`/`site`/`process
+  boundary`, GFO `Material_boundary`, TUpper `edge`/`ridge`/`border`/`outer`, and DOLCE `feature`
+  — this last one not in `TODO.md`''s original seed, a genuine addition). SUMO, UFO, YAMATO,
+  and GUM were confirmed to have no reified boundary/site category. TUpper''s claimed terms
+  exist as real IRIs but, like `space.md`''s `MaterialObject`/`ShapedObject` finding, are
+  entirely undocumented — zero `rdfs:comment` or prose gloss anywhere in the fetched OWL artifact.
+
+
+
+  This crosswalk compares each source ontology''s own treatment of dependent, boundary-like,
+  or fiat-demarcated entities — mereotopological boundaries (edges, surfaces, points) and
+  dependent places/regions (holes, sites) that exist only in virtue of a host entity, as distinct
+  from Mereology/Parthood/Aggregate (already drafted, `mereology-parthood-aggregate.md`, which
+  flagged BFO''s `fiat object part` as directly relevant background for this crosswalk) and
+  from Spatial Region/Space (already drafted, `space.md`, which covers extended regions rather
+  than lower-dimensional dependent boundaries). Sources compared: BFO, DOLCE, SUMO, UFO, GFO,
+  YAMATO, TUpper, GUM (per `ADR-0015`''s 8-source scope).
+
+
+
+  **Cross-cutting finding, established this session:** BFO and DOLCE converge closely, despite
+  using entirely different vocabulary, on a two-way split between *part-of-host* boundaries
+  (BFO''s `fiat point`/`line`/`surface`, demarcating a whole without being separately-existing
+  material; DOLCE''s `relevant-part`, "like a bump or an edge") and *not-part-of-host* dependent
+  places (BFO''s `site`, whose "boundaries... have locations determined in relation to some
+  material entity"; DOLCE''s `dependent-place`, "like a hole in a piece of cheese... or the
+  shadow of a tree"). GFO''s `Material_boundary` and BFO''s `process boundary` each occupy
+  a narrower, more specific niche (a boundary dependent on one specific material object; the
+  durationless final/initial temporal part of a process, respectively) with no exact counterpart
+  elsewhere. TUpper''s `edge`/`ridge`/`border`/`outer` occupy a related mereotopological role
+  (connected via `in`/`part` object properties to `poly`/`point`/`surface`/`box`) but cannot
+  be compared in *content* to the other sources'' definitions, since no prose gloss for any
+  of them exists in either fetched TUpper artifact. See `note-001`, `note-002`.
+
+
+
+  Exclusions: this crosswalk does not address Mereology/Parthood/Aggregate (already drafted;
+  BFO''s `fiat object part` — a *whole-dividing* category distinct from this crosswalk''s
+  *boundary-demarcating* one — was flagged there as directly relevant background and is cross-referenced
+  here, not re-litigated) or Spatial Region/Space (already drafted; BFO''s own `spatial region`
+  dimensional apparatus is the un-fiat-demarcated counterpart to this crosswalk''s fiat boundaries).
+
+
+
+  **Core.ttl placement is deliberately left open at this `draft` stage** — see Uncertainty.'
+labels:
+- role: XwkOnt working label
+  label: Boundary / Site
+  label_source: XwkOnt
+  language: en
+  entry_notes: Not yet in `data/ontology/core.ttl` — see Scope Note.
+- role: Source term
+  label: Continuant fiat boundary (+ fiat point, fiat line, fiat surface, site, process boundary)
+  label_source: BFO
+  language: en
+  entry_notes: 'Two structurally distinct families: continuant-side fiat boundaries (dimensional,
+    part-of-host) and site (an immaterial entity, not a temporal part); `process boundary`
+    is occurrent-side, structurally unrelated to the other two.'
+- role: Source term
+  label: Feature (+ relevant-part, dependent-place)
+  label_source: DOLCE
+  language: en
+  entry_notes: Not in `TODO.md`'s original seed. A `physical-endurant` subtype, disjoint from
+    `amount-of-matter`; near-exact structural match to BFO's part-of-host/not-part-of-host
+    split.
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: SUMO
+  language: en
+  entry_notes: Zero occurrences of "Boundary," "Edge," or "Surface" as defined SUMO classes.
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: UFO
+  language: en
+  entry_notes: Zero occurrences of "boundary," "edge," or "surface" anywhere in the 2021 paper's
+    full extracted text.
+- role: Source term
+  label: Material_boundary
+  label_source: GFO
+  language: en
+  entry_notes: A `Presential`, `Dependent` on some `Material_object`; unglossed (structural
+    axioms only, no prose definition) — the same undocumented-class pattern already found
+    for GFO's `Amount_of_substrate` in `quantity-amount-of-matter.md`.
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: YAMATO
+  language: en
+  entry_notes: Zero occurrences of "boundary," "edge," "surface," or "site" in the extracted
+    2010 technical report.
+- role: Source term
+  label: Edge (+ ridge, border, outer)
+  label_source: TUpper
+  language: en
+  entry_notes: Real IRIs in `owl/tupper.all.owl`, connected to `poly`/`point`/`surface`/`box`
+    via `in`/`part` object properties — but entirely undocumented; zero `rdfs:comment`/prose
+    anywhere in the fetched artifact. Confirms `TODO.md`'s seed naming exactly, with this
+    important documentation caveat added.
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: GUM
+  language: en
+  entry_notes: Zero occurrences of "Boundary," "Edge," "Surface," or "Site" as defined GUM
+    classes.
+source_definitions:
+- source: BFO
+  term_or_identifier: Continuant fiat boundary (BFO_0000140)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) A continuant fiat boundary b is an immaterial entity that is of zero,
+    one or two dimensions & such that there is no time t when b has a spatial region as continuant
+    part & whose location is determined in relation to some material entity." `dc11:identifier
+    "029-BFO"`. `rdfs:subClassOf` immaterial entity (BFO_0000141).'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000140, fetched and read directly 2026-07-04'
+  entry_notes: 'The parent class for `fiat point`/`fiat line`/`fiat surface` below; example
+    list in the same block: "As for fiat point, fiat line, fiat surface."'
+- source: BFO
+  term_or_identifier: Fiat point / fiat line / fiat surface (BFO_0000147 / BFO_0000142 / BFO_0000146)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Fiat point: "a zero-dimensional continuant fiat boundary that consists of a single
+    point" — e.g. "the geographic North Pole." Fiat line: "a one-dimensional continuant fiat
+    boundary that is continuous" — e.g. "the Equator; all geopolitical boundaries." Fiat surface:
+    "a two-dimensional continuant fiat boundary that is self-connected" — e.g. "the surface
+    of the Earth." All three `rdfs:subClassOf` continuant fiat boundary (BFO_0000140).'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, fetched and read directly 2026-07-04'
+  entry_notes: The direct structural analog to DOLCE's `relevant-part` ("a bump or an edge")
+    — both denote a lower-dimensional entity that is a genuine (if non-natural, fiat-demarcated)
+    part of its host, not a separately-existing dependent place.
+- source: BFO
+  term_or_identifier: Site (BFO_0000029)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) A site is a three-dimensional immaterial entity whose boundaries either
+    (partially or wholly) coincide with the boundaries of one or more material entities or
+    have locations determined in relation to some material entity." `dc11:identifier "034-BFO"`.
+    `rdfs:subClassOf` immaterial entity (BFO_0000141).'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000029, fetched and read directly 2026-07-04
+    (already noted in `space.md`''s BFO row as a related-but-distinct category, cross-referenced
+    here as this crosswalk''s primary subject)'
+  entry_notes: The direct structural analog to DOLCE's `dependent-place` ("a hole in a piece
+    of cheese... the shadow of a tree") — both denote a three-dimensional (or otherwise extended)
+    dependent region that is *not* a part of its host, only located relative to it.
+- source: BFO
+  term_or_identifier: Process boundary (BFO_0000035)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"p is a process boundary =Def p is a temporal part of a process & p has no proper
+    temporal parts." Example: "The boundary between the 2nd and 3rd year of your life." `dc11:identifier
+    "084-BFO"`. `rdfs:subClassOf` occurrent (BFO_0000003).'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000035, fetched and read directly 2026-07-04'
+  entry_notes: 'Occurrent-side, not continuant-side — structurally unrelated to `continuant
+    fiat boundary`/`site` despite the shared English word "boundary." A citation-precision
+    trap worth flagging explicitly: BFO uses "boundary" for two entirely different top-level
+    categories (a durationless temporal part of a process, vs. a dimensionally-reduced dependent
+    continuant), not one concept split two ways.'
+- source: DOLCE
+  term_or_identifier: Feature (+ relevant-part, dependent-place)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Features are ''parasitic entities'', that exist insofar their host exists. Typical
+    examples of features are holes, bumps, boundaries, or spots of color. Features may be
+    relevant parts of their host, like a bump or an edge, or dependent regions like a hole
+    in a piece of cheese, the underneath of a table, the front of a house, or the shadow of
+    a tree, which are not parts of their host. All features are essential wholes, but no common
+    unity criterion may exist for all of them." `rdfs:subClassOf physical-endurant`; `owl:disjointWith
+    amount-of-matter`; requires a `host` that is `someValuesFrom physical-endurant`. `relevant-part`:
+    "Features that are relevant parts of their host, like a bump or an edge." `dependent-place`:
+    "A feature that is not part of its host, like a hole in a piece of cheese, the underneath
+    of a table, the front of a house, or the shadow of a tree."'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified**: `DOLCE-Lite.owl`, classes `#feature`/`#relevant-part`/`#dependent-place`,
+    fetched and read directly 2026-07-04'
+  entry_notes: 'Not part of `TODO.md`''s original seed — a genuine addition, and the closest
+    structural match to BFO''s own boundary/site split found anywhere in this crosswalk: DOLCE''s
+    own worked example for `relevant-part` ("a bump or an edge") uses the identical English
+    word BFO''s `fiat surface`/`fiat line` examples evoke, and `dependent-place`''s examples
+    (hole, shadow) match BFO''s `site` almost example-for-example. See `note-001`.'
+- source: SUMO
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text grep of `Merge.kif` for `(subclass Boundary ...)`, `(subclass Edge ...)`,
+    and `(subclass Surface ...)` returned zero matches; the only "surface" hit is an unrelated
+    class, `SurfaceChange` (`(subclass SurfaceChange InternalChange)`, a kind of process,
+    not a boundary entity).
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified absence**: current `Merge.kif`, fetched and read directly 2026-07-04'
+  entry_notes: Consistent with SUMO's general lack of BFO-style fiat-boundary/dependent-region
+    machinery observed across this batch — SUMO's `Region` (`space.md`) already covers extended
+    spatial regions but has no lower-dimensional/dependent-boundary counterpart.
+- source: UFO
+  term_or_identifier: '*(no class or property found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text search of the already-extracted 2021 Applied Ontology paper (9,048 lines)
+    for "boundary," "edge," and "surface" (case-insensitive, word-boundary matched) returned
+    zero matches for all three terms.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified absence**: 2021 Applied Ontology paper, already-extracted text re-searched
+    directly 2026-07-04'
+  entry_notes: The fourth `0.2.0`-batch concept (after Situation, and partially Universal/Type's
+    non-sortal categories) where UFO's 2021 comprehensive paper is silent on a category several
+    other sources treat as foundational.
+- source: GFO
+  term_or_identifier: Material_boundary
+  dimension: technical
+  source_claim_type: direct quotation
+  text: No `rdfs:comment`/`skos:definition` prose exists for this class in the fetched module
+    — only structural axioms. `rdfs:subClassOf` both `Dependent` and `Presential`; requires
+    `depends_on` some `Material_object`; `owl:disjointWith Configuration`, `owl:disjointWith
+    Material_object`.
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Material_boundary`, fetched and read
+    directly 2026-07-04'
+  entry_notes: The second GFO class in this `0.2.0` batch left without prose definition (after
+    `Amount_of_substrate` in `quantity-amount-of-matter.md`) — GFO's own practice of relying
+    entirely on structural position (superclasses, `disjointWith`, `depends_on` restrictions)
+    rather than natural-language glosses for some classes is now a confirmed pattern across
+    two concepts, not a one-off. Narrower in scope than BFO's `continuant fiat boundary` —
+    dependent specifically on a `Material_object`, with no dimensional (point/line/surface)
+    subdivision the way BFO has.
+- source: YAMATO
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text search of the extracted YAMATO 2010 technical report for "boundary," "edge,"
+    "surface," and "site" (case-insensitive) returned zero matches for all four terms.
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified absence**: 2010 technical report, full extracted text re-searched directly
+    2026-07-04'
+  entry_notes: Not part of `TODO.md`'s original seed for this concept; checked directly for
+    completeness.
+- source: TUpper
+  term_or_identifier: Edge (+ ridge, border, outer)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: No `rdfs:comment` or prose gloss exists for `edge`, `ridge`, `border`, or `outer`
+    anywhere in either fetched TUpper artifact (`TUpper-Terms.html` has zero occurrences of
+    any of these four terms; `owl/tupper.all.owl` declares all four as bare `Class` IRIs with
+    only structural `SubClassOf`/`ObjectSomeValuesFrom` axioms connecting them to `poly`,
+    `point`, `surface`, and `box` via the `in`/`part` object properties — e.g. `edge` `SubClassOf`
+    `ObjectSomeValuesFrom(part, owl:Thing)`).
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified, undocumented**: `owl/tupper.all.owl`, fetched and read directly 2026-07-04;
+    confirmed absent from `TUpper-Terms.html`''s prose'
+  entry_notes: 'Confirms `TODO.md`''s seed naming exactly (`edge`, `ridge`, `border`, `outer`),
+    but with an important correction: none of the four have any documented meaning in either
+    fetched artifact — the same "real IRI, zero prose" pattern already found for TUpper''s
+    `MaterialObject`/`ShapedObject` in `space.md`. Their content *cannot* be compared to BFO''s/DOLCE''s/GFO''s
+    definitions, only their structural role (connected to `poly`/`point`/`surface`/`box` via
+    `in`/`part`) can be noted.'
+- source: GUM
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text grep of `GUM-31.owl` for `#Boundary`, `#Edge`, `#Surface`, and `#Site` (GUM's
+    own PascalCase convention) returned zero matches.
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified absence**: `GUM-31.owl`, fetched and read directly 2026-07-04'
+  entry_notes: The fourth `0.2.0`-batch concept (after Situation, Universal/Type, and Mereology/Parthood/Aggregate)
+    where GUM contributes nothing previously uncredited — GUM has now contributed new content
+    in exactly half (4 of 8) of the `0.2.0`-batch concepts drafted so far.
+correspondences:
+- correspondence_id: xwkont:correspondence:boundary-site:001
+  source_ontology: BFO
+  source_term: Continuant fiat boundary (+ fiat point, fiat line, fiat surface)
+  source_identifier_or_iri: '`BFO_0000140`, `BFO_0000147`, `BFO_0000142`, `BFO_0000146`'
+  source_version: BFO 2020 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Direct terminological match; the part-of-host half of BFO's own boundary/site
+    split.
+- correspondence_id: xwkont:correspondence:boundary-site:002
+  source_ontology: BFO
+  source_term: Site
+  source_identifier_or_iri: BFO_0000029
+  source_version: BFO 2020 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Direct terminological match; the not-part-of-host half of BFO's own
+    split.
+- correspondence_id: xwkont:correspondence:boundary-site:003
+  source_ontology: DOLCE
+  source_term: Feature (+ relevant-part, dependent-place)
+  source_identifier_or_iri: '`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#feature`, `#relevant-part`,
+    `#dependent-place`'
+  source_version: DOLCE-Lite v397 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Direct terminological and structural match; the closest cross-source
+    pairing found in this crosswalk, per `note-001`.
+- correspondence_id: xwkont:correspondence:boundary-site:004
+  source_ontology: GFO
+  source_term: Material_boundary
+  source_identifier_or_iri: https://w3id.org/gfo/base/Material_boundary
+  source_version: GFO 2024-11-18 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Included despite lacking a prose definition; a narrower, single-material-object-dependent
+    category.
+- correspondence_id: xwkont:correspondence:boundary-site:005
+  source_ontology: TUpper
+  source_term: Edge (+ ridge, border, outer)
+  source_identifier_or_iri: not applicable — TUpper/PSL term names are their own identifiers
+  source_version: COLORE formalization, undated (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: Included with an explicit documentation caveat — real IRIs, zero prose
+    gloss in either fetched artifact.
+correspondences_note: No SUMO, UFO, YAMATO, or GUM correspondence is recorded — see Source
+  Definitions and Uncertainty.
+comparison_notes:
+- note_id: note-001
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'BFO and DOLCE independently converge on the same two-way split despite entirely different
+    vocabulary: a *part-of-host* boundary (BFO''s dimensional `fiat point`/`line`/`surface`;
+    DOLCE''s `relevant-part`, worked example "a bump or an edge" — the identical word BFO''s
+    own fiat-surface/line examples evoke) versus a *not-part-of-host* dependent region (BFO''s
+    `site`; DOLCE''s `dependent-place`, worked examples "a hole in a piece of cheese... the
+    shadow of a tree," closely paralleling BFO''s own `site` framing of a boundary "determined
+    in relation to" a material entity without being part of it). This is the closest cross-source
+    structural and even lexical convergence found in this crosswalk — stronger than the equivalent
+    convergence found for Mereology/Parthood/Aggregate''s two unity-strictness sub-patterns
+    (`mereology-parthood-aggregate.md`''s `note-001`).'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: 'BFO uses the English word "boundary" for two structurally unrelated categories: `continuant
+    fiat boundary` (a dimensionally-reduced, fiat-demarcated *continuant*, this crosswalk''s
+    main subject) and `process boundary` (a durationless temporal part of a process, an *occurrent*).
+    These share no formal relationship in `bfo-core.ttl` beyond the word itself — a citation-precision
+    trap of the same kind already found for YAMATO''s "quantity" (`quantity-amount-of-matter.md`''s
+    `note-002`) and UFO''s/GFO''s "category" (`universal-type.md`''s `note-002`), here occurring
+    *within* a single source rather than across two.'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: GFO's `Material_boundary` and TUpper's `edge`/`ridge`/`border`/`outer` are the second
+    and third instances in this `0.2.0` batch of a source contributing a real, structurally-positioned
+    class or IRI with zero natural-language definition anywhere in the fetched primary artifact
+    (after GFO's own `Amount_of_substrate` in `quantity-amount-of-matter.md`, and TUpper's
+    own `MaterialObject`/`ShapedObject` in `space.md`). This is now a confirmed recurring
+    pattern for both sources specifically, not a one-off gap — worth treating as an expected,
+    not exceptional, finding in any future crosswalk that reaches GFO's or TUpper's less-central
+    classes.
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:tupper-colore
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:boundary-site:001
+  subject: BFO:Fiat surface (+ fiat line)
+  relation_category: close-match
+  object: DOLCE:Relevant-part
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Both denote a lower-dimensional, non-natural-boundary part of a host that remains
+    genuinely part of that host — DOLCE's own worked example ("a bump or an edge") uses the
+    same vocabulary BFO's fiat-surface/line examples evoke. The closest lexical and structural
+    pairing in this crosswalk.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:boundary-site:002
+  subject: BFO:Site
+  relation_category: close-match
+  object: DOLCE:Dependent-place
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Both denote a dependent region whose location is fixed relative to a material/physical
+    entity without being a part of it — BFO's "boundaries... have locations determined in
+    relation to some material entity" and DOLCE's "a hole in a piece of cheese... the shadow
+    of a tree" describe the same not-part-of-host dependent-region pattern.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:boundary-site:003
+  subject: BFO:Continuant fiat boundary
+  relation_category: overlap
+  object: GFO:Material_boundary
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: Both denote a boundary dependent on a material entity, but GFO's has no dimensional
+    (point/line/surface) subdivision the way BFO's does, and lacks a prose definition to compare
+    in detail — `overlap`, not `close-match`, reflects this asymmetric level of documentation.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:boundary-site:004
+  subject: BFO:Fiat point/line/surface
+  relation_category: unknown
+  object: TUpper:edge/ridge/border/outer
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Recorded explicitly as an unresolved comparison, not a correspondence — TUpper's
+    terms have no prose definition anywhere fetched, so whether they denote the same part-of-host
+    boundary concept as BFO's dimensional fiat classes cannot currently be verified beyond
+    their shared structural role (connection to `poly`/`point`/`surface` via `in`/`part`).
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:boundary-site:005
+  subject: xwkont-core:Boundary (candidate)
+  relation_category: unknown
+  object: SUMO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No SUMO correspondence identified; zero occurrences of "Boundary"/"Edge"/"Surface"
+    as defined SUMO classes.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:boundary-site:006
+  subject: xwkont-core:Boundary (candidate)
+  relation_category: unknown
+  object: UFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No UFO correspondence identified; zero occurrences of "boundary"/"edge"/"surface"
+    in the 2021 paper's full extracted text.
+  provenance:
+  - xwkont:ref:ufo-2021
+- mapping_id: xwkont:mapping:boundary-site:007
+  subject: xwkont-core:Boundary (candidate)
+  relation_category: unknown
+  object: YAMATO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No YAMATO correspondence identified; zero occurrences of "boundary"/"edge"/"surface"/"site"
+    in the extracted technical report.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+- mapping_id: xwkont:mapping:boundary-site:008
+  subject: xwkont-core:Boundary (candidate)
+  relation_category: unknown
+  object: GUM
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No GUM correspondence identified; zero occurrences of "Boundary"/"Edge"/"Surface"/"Site"
+    as defined GUM classes.
+  provenance:
+  - xwkont:ref:gum-owl
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: Where should `xwkont-core:Boundary`/`Site` subclass from once added to `data/ontology/core.ttl`?
+    BFO's and DOLCE's converging two-way split (part-of-host boundary vs. not-part-of-host
+    dependent place, `note-001`) is the strongest evidence in this crosswalk, but GFO's and
+    TUpper's contributions are narrower/less-documented and don't clearly map onto either
+    half of that split without further sourcing. **Recommendation recorded 2026-07-04, in
+    response to external review:** model both halves explicitly as two sibling sub-concepts
+    — a part-of-host `Boundary` (BFO `fiat point`/`line`/`surface`, DOLCE `relevant-part`)
+    and a not-part-of-host dependent `Site`/`Place` (BFO `site`, DOLCE `dependent-place`)
+    — rather than one undifferentiated class, since `note-001` is this crosswalk's strongest
+    and most convergent finding and a single class would lose that distinction. GFO's `Material_boundary`
+    and TUpper's undocumented `edge`/`ridge`/`border`/`outer` don't clearly map onto either
+    half yet (`uncertainty-003`) and shouldn't block adopting the two-sub-concept structure
+    for the BFO/DOLCE core. This mirrors the same two-sub-concept resolution recorded for
+    `mereology-parthood-aggregate.md`'s own `uncertainty-002` (strict `Aggregate` vs. permissive
+    `Sum`) — both are cases in this batch where the strongest evidence is a real two-way split,
+    not a single converging class.
+  impact: Blocks final core.ttl placement; does not block continuing this crosswalk's research/review.
+    Recorded recommendation resolves the "decide two-subconcept model" item flagged by the
+    2026-07-04 external review.
+  follow_up: Confirm or override this recommendation at review time, jointly with `mereology-parthood-aggregate.md`'s
+    own two-sub-concept recommendation.
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: BFO's `process boundary` (occurrent-side) and `continuant fiat boundary` (continuant-side)
+    share only the English word "boundary," not any formal relationship — see `note-002`.
+    This crosswalk's own correspondences (`correspondence-001`/`002`) are built entirely on
+    the continuant-side family; `process boundary` is recorded here only as a citation-precision
+    flag, not as part of this concept's own cross-source comparison.
+  impact: Prevents a future reader from conflating BFO's two "boundary"-named categories when
+    consulting this crosswalk.
+  follow_up: None outstanding; recorded here and in `note-002` for traceability.
+- item_id: uncertainty-003
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: TUpper's `edge`/`ridge`/`border`/`outer` have no prose definition anywhere
+    in either fetched artifact (`TUpper-Terms.html` or `owl/tupper.all.owl`) — their comparison
+    to BFO's/DOLCE's definitions (`mapping-004`) rests only on structural role (connection
+    to `poly`/`point`/`surface`/`box` via `in`/`part`), not on any confirmed shared meaning.
+  impact: This crosswalk's TUpper correspondence (`correspondence-005`) is the least well-evidenced
+    of the four recorded.
+  follow_up: Re-check if TUpper's `tupper.clif` file (not yet fetched in this pass, per `space.md`'s
+    own equivalent follow-up for `MaterialObject`/`ShapedObject`) contains axioms or comments
+    clarifying these four terms' intended meaning.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified** directly against `bfo-core.ttl`, 2026-07-04'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly against `DOLCE-Lite.owl`, 2026-07-04'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified absence** directly against current SUMO `Merge.kif`, 2026-07-04'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified absence** directly (full-text re-search), 2026-07-04'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified, unglossed** directly against `modules/gfo-base.owl`, 2026-07-04'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified absence** directly against the extracted PDF, 2026-07-04'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified, undocumented** directly against `owl/tupper.all.owl` and
+    `TUpper-Terms.html`, 2026-07-04'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified absence** directly against `GUM-31.owl`, 2026-07-04'
+review_history:
+- review_date: "2026-07-04"
+  outcome: Not yet reviewed — `draft`
+  review_notes: Eighth concept of the `0.2.0` batch (`ADR-0018`), following `time.md` through
+    `mereology-parthood-aggregate.md`. All 8 sources checked directly against primary artifacts
+    already cached from prior crosswalks' research. Found the strongest cross-source structural
+    convergence of any `0.2.0`-batch concept so far (BFO/DOLCE's matching part-of-host/not-part-of-host
+    split, `note-001`) alongside a genuine within-source citation trap (BFO's two unrelated
+    "boundary" categories, `note-002`) and a confirmed recurring documentation gap for GFO
+    and TUpper (`note-003`, now observed across two concepts each). DOLCE's `feature` apparatus,
+    not in the original seed, turned out to be this crosswalk's strongest correspondence.
+    SUMO, UFO, YAMATO, and GUM confirmed to have no reified boundary/site category. Pending
+    maintainer review before advancing to `reviewed`; core.ttl placement (`uncertainty-001`)
+    is an open question to resolve at that review.
+- review_date: "2026-07-05"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:boundary-site:2026-07-05:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential (correspondences 001-005, mappings 001-008, notes 001-003, uncertainty
+    001-003); all confidence values within the `ADR-0013` vocabulary, and the `low-medium`
+    mapping states its sourcing rationale (GFO''s missing dimensional subdivision/prose);
+    the TUpper weak-evidence caveat confirmed kept honest throughout (no confidence inflation).
+    **Confirmed the `uncertainty-001` two-sub-concept recommendation**: part-of-host `Boundary`
+    (BFO fiat point/line/surface; DOLCE relevant-part) and not-part-of-host `Site`/`Place`
+    (BFO site; DOLCE dependent-place) will be modeled as sibling sub-concepts — the strongest
+    structural convergence found in the batch (BFO/DOLCE independently agreeing via different
+    vocabulary) makes this the clearest of this batch''s two two-sub-concept calls, alongside
+    `mereology-parthood-aggregate.md`''s analogous split. This confirmation is a recorded
+    modeling decision, not a `core.ttl` edit; that Turtle-change work remains separately tracked.
+    Self-review, not independent third-party review.'
+future_work:
+- '~~Confirm or override the `uncertainty-001` two-sub-concept recommendation~~ — **done 2026-07-05**:
+  confirmed (`xwkont:review:boundary-site:2026-07-05:01`); advanced `draft` → `reviewed`.
+  The `core.ttl` addition of both sibling classes remains separately-tracked Turtle-change
+  work.'
+- Re-check TUpper's `tupper.clif` file for clarifying axioms on `edge`/`ridge`/`border`/`outer`
+  (`uncertainty-003`).
+- Create the Proposition/Content crosswalk next (per `TODO.md`'s `0.2.0` batch) — the ninth
+  and final concept of this batch.

@@ -1,7 +1,7 @@
 # Primary-Source Verification: Recurring Patterns
 
 > **Status:** Editorial/operational note, distilled from the 2026-07-01 verification pass across all 8 concept crosswalks
-> **Date:** 2026-07-01
+> **Date:** 2026-07-01 (§1 corrected 2026-07-05)
 > **Related specification:** `docs/methodology/crosswalk-methodology.md`, `ADR-0012`
 
 ## Purpose
@@ -10,7 +10,9 @@ A single verification pass moved every concept crosswalk from partially secondar
 
 ## 1. The PDF-extraction technique
 
-**Problem:** this environment has no `pdftotext`, `pdfplumber`, or similar, and WebFetch cannot parse compressed PDF content streams directly — it reports failure. But WebFetch **does** save the raw PDF bytes locally even when it can't parse them (look for `[Binary content (application/pdf, ...) also saved to ...]` in its output).
+**Correction (2026-07-05): check for `pdftotext` first.** This note originally claimed "this environment has no `pdftotext`" — that was true when written (2026-07-01) but is no longer reliable; `pdftotext` was found available and used successfully in a later session (fetching ISO/IEC 21838-1:2021's preview PDF for `ADR-0022`). **Always try `pdftotext <file> -` via Bash before falling back to the manual technique below** — it's far faster and doesn't need the zlib/`TJ`-array workaround at all. Only fall back to the manual method if `pdftotext` is genuinely unavailable in the current environment (check with `which pdftotext` first) or fails on a specific malformed PDF.
+
+**Problem (if `pdftotext` is unavailable):** WebFetch cannot parse compressed PDF content streams directly — it reports failure. But WebFetch **does** save the raw PDF bytes locally even when it can't parse them (look for `[Binary content (application/pdf, ...) also saved to ...]` in its output).
 
 **Solution:** run a small Python script against the saved PDF:
 

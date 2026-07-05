@@ -1,0 +1,109 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:process:001> a sssom:Mapping ;
+    rdfs:comment "Both are genuine top-level formal siblings in their respective hierarchies, both denoting physical activity/happening. Not `exact-equivalence-candidate` because their defining criteria differ (BFO: temporal-parts-and-participant-based; SUMO: physicality-partition-based, per `continuant-occurrent.md`)."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:002> a sssom:Mapping ;
+    rdfs:comment "DOLCE's Process is the closest analog but sits one level down in DOLCE's hierarchy (under Stative), unlike BFO's direct top-level placement."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:003> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-001/002 combined."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:004> a sssom:Mapping ;
+    rdfs:comment "UFO has no distinct Process class (confirmed 2026-07-01 by direct primary-source reading); the informal \"life of an endurant\" notion is a different kind of thing (a sum of manifestation events tied to a specific endurant) than BFO's general Process category. Confidence raised from low to low-medium because the non-equivalence itself is now directly confirmed rather than inferred from secondary sources — the mapping remains `unknown`/non-equivalent either way."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-life_of_an_endurant ;
+    sssom:subject_id xwkont-source-term:BFO-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:005> a sssom:Mapping ;
+    rdfs:comment "Both are genuine, positively-defined top-level-ish formal categories under their respective occurrent branches, both explicitly grounded in temporal extension rather than exclusion or cumulativity. Not `exact-equivalence-candidate` because BFO's criterion (temporal-proper-part-and-participant) and GFO's (not reducible to a collection of time-boundaries) are formally different tests."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:006> a sssom:Mapping ;
+    rdfs:comment "Same rationale pattern as `mapping-001`/`mapping-003` (BFO/SUMO, DOLCE/SUMO): both top-level-ish formal Process categories, different defining criteria (GFO: positive/temporal; SUMO: exclusion-from-Object)."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:GFO-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:007> a sssom:Mapping ;
+    rdfs:comment "Same rationale pattern as `mapping-002`: DOLCE's Process sits one level down under `Stative`, GFO's sits directly under `Occurrent`, but both use the same term for the same conceptual territory."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:GFO-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:008> a sssom:Mapping ;
+    rdfs:comment "Restates `continuant-occurrent.md`'s mapping-011 at this crosswalk's finer grain: YAMATO's report does not distinguish a Process-specific class from its top-level Occurrent(Process) label, so this mapping is the same underlying correspondence, not new evidence at a finer level of detail."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Occurrent_Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:009> a sssom:Mapping ;
+    rdfs:comment "Structural analog only: `activity` is a repeatable type, while BFO's Process denotes particulars — a type/token mismatch, not a category-definition mismatch (contrast `mapping-005`/`006`/`007`, which compare like-for-like particular-denoting categories). Consistent with TUpper's `unknown`/low precedent throughout this buildout."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:TUpper-activity ;
+    sssom:subject_id xwkont-source-term:BFO-Process .
+
+<https://w3id.org/xwkont/id#mapping:process:010> a sssom:Mapping ;
+    rdfs:comment "The only new source with an identically-named class (\"Process\"), but GUM's criterion is linguistic (verb-realizability in systemic-functional grammar) rather than temporal/metaphysical — a terminological match without a matching definitional criterion, so capped at medium despite the label match."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Process .
+
+xwkont-source-term:GUM-Process rdfs:label "Process"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:TUpper-activity rdfs:label "activity"@en ;
+    dcterms:source "TUpper" .
+
+xwkont-source-term:UFO-life_of_an_endurant rdfs:label "\"life of an endurant\""@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:YAMATO-Occurrent_Process rdfs:label "Occurrent(Process)"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:DOLCE-Process rdfs:label "Process"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:GFO-Process rdfs:label "Process"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:SUMO-Process rdfs:label "Process"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:BFO-Process rdfs:label "Process"@en ;
+    dcterms:source "BFO" .
+

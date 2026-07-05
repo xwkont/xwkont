@@ -1,0 +1,40 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:proposition-content:001> a sssom:Mapping ;
+    rdfs:comment "Both are direct Abstract subtypes denoting representation-independent content, with near-identical framing (DOLCE: \"purely combinatorial\"; SUMO: \"an abstraction that may have multiple representations\"). The closest structural pairing in this crosswalk."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Proposition ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Proposition .
+
+<https://w3id.org/xwkont/id#mapping:proposition-content:002> a sssom:Mapping ;
+    rdfs:comment "Both explicitly name and contrast the bearer/content distinction with near-identical worked examples (SUMO: \"strings, sounds, icons\"; YAMATO: \"many ways to code the same content into different forms\") — the strongest cross-source lexical and conceptual match of the three."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Proposition ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:SUMO-Proposition .
+
+<https://w3id.org/xwkont/id#mapping:proposition-content:003> a sssom:Mapping ;
+    rdfs:comment "Same core distinction, but YAMATO's own further subdivision (representation-primary/-secondary, designed/product proposition) has no counterpart in DOLCE's single undifferentiated `proposition` class — not `high` for that reason."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Proposition ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Proposition .
+
+xwkont-source-term:DOLCE-Proposition rdfs:label "Proposition"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:SUMO-Proposition rdfs:label "Proposition"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:YAMATO-Proposition rdfs:label "Proposition"@en ;
+    dcterms:source "YAMATO" .
+

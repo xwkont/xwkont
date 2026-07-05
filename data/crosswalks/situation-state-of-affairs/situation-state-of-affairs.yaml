@@ -1,0 +1,769 @@
+local_identifier: xwkont:concept:situation-state-of-affairs
+slug: situation-state-of-affairs
+title: Situation / State of Affairs
+editorial_status: reviewed
+created: "2026-07-04"
+modified: "2026-07-05"
+scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Situation / State
+  of Affairs is the fifth concept drafted from the `0.2.0` batch. `TODO.md`''s own seed flagged
+  this candidate as "weaker/more UFO-centric than [Space, Abstract, Quantity]; good test of
+  whether it generalizes or stays source-specific." An initial direct-verification pass (2026-07-04)
+  found only **1 of 8 sources (GFO)** with an unambiguous formal class, and an independent
+  external review reached the same HOLD conclusion,
+  recommending DOLCE''s DnS module and GFO''s `Configuroid` be fetched before deciding this
+  crosswalk''s fate.
+
+
+
+  **Follow-up primary-source pass (2026-07-05)** fetched both: DOLCE''s separate `ExtendedDnS.owl`
+  module (`xwkont:ref:dolce-extendeddns-owl`) and the remainder of `modules/gfo-base.owl`
+  plus GFO''s dedicated `modules/situation/gfo-situation.ttl` module. Both resolved in favor
+  of a materially stronger cross-source pattern than the initial pass found:
+
+
+
+  - **DOLCE** — contrary to the initial pass''s "DOLCE has no formal situation class" finding
+  (which only checked core `DOLCE-Lite.owl`), DOLCE''s separate DnS module *does* formally
+  define `#situation`, equivalent to `non-agentive-social-object ⊓ setting-for(some particular)
+  ⊓ satisfies(some description)`. This is DOLCE''s real treatment of the concept — core `DOLCE-Lite.owl`''s
+  own commentary had said as much, but this pass is the first to independently fetch and verify
+  it.
+
+  - **GFO** — the initial pass stopped at the parent class `Configuration` and missed a class
+  literally named `Situation` (`rdfs:subClassOf Configuration`) in the same `gfo-base.owl`
+  file, plus an entire dedicated `situation` module (`gfo-situation.ttl`) with its own `:Situation`
+  class built on a different superclass lineage (`gfo-core:TimeExtendedIndividual`). GFO treats
+  this concept seriously enough to warrant a whole extension module, not just a passing base-ontology
+  class.
+
+  - **UFO** — unchanged from the initial pass: `ontouml:situation` is a genuine, well-documented
+  OntoUML-vocabulary construct, though still not reified in the 2021 comprehensive paper''s
+  own prose.
+
+
+
+  Net effect: **3 of 8 sources (GFO, DOLCE, UFO)** now have an unambiguous formally-defined
+  class matching this concept''s core sense — DOLCE moves from "no correspondence, `state`
+  is a different sense" to a genuine second solid correspondence. This is still short of `ADR-0018`''s
+  original ≥3-source seed count in the strict sense of "named in the seed," but is now comparable
+  in strength (not just source-count) to the batch''s other concepts. See Uncertainty for
+  the updated maintainer decision.
+
+
+
+  This crosswalk compares each source ontology''s own treatment of a "situation"/"state of
+  affairs"-like category — a configuration or circumstance comprehended as a whole, typically
+  description- or context-dependent — distinct from Event/Process (already `reviewed`) and
+  from Quality/Quantity''s own notion of a value "holding" at a time. Sources compared: BFO,
+  DOLCE, SUMO, UFO, GFO, YAMATO, TUpper, GUM (per `ADR-0015`''s 8-source scope).
+
+
+
+  **Cross-cutting finding, established this session:** the word "situation" is used informally,
+  as a world- or time-index, in several sources'' own prose (DOLCE''s `state`/`process`/`stative`
+  comments; UFO''s 2021 paper) without ever being reified as a class there — this is a citation-precision
+  trap distinct from, but related to, the ones found in `time.md`/`quantity-amount-of-matter.md`:
+  informal usage of a term is not the same as that term being a defined category in the source,
+  even when the source''s own commentary explicitly gestures at the concept (DOLCE''s comments
+  describe what a "situation" would be — a description-dependent unifying criterion for a
+  perdurant — while explicitly declining to formalize it in the fetched module; that formalization
+  lives in DOLCE''s separate DnS (Descriptions and Situations) extension, not core DOLCE-Lite).
+  See `note-001`, `note-002`.
+
+
+
+  Exclusions: this crosswalk does not address Universal/Type (a separate `0.2.0`-batch candidate;
+  UFO''s OntoUML stereotype vocabulary — already the primary source for this crosswalk''s
+  UFO row — also defines `type`/`kind`/`phase` stereotypes relevant there) or Event/Process
+  (already `reviewed`; DOLCE''s `stative`/`state`/`process` branch is directly relevant background,
+  already covered by `process.md` and `event.md` for the occurrent side of this comparison).
+
+
+
+  **Core.ttl placement is deliberately left open at this `draft` stage**, and is a live question
+  of *whether* to place this concept at all, not just where — see Uncertainty.'
+labels:
+- role: XwkOnt working label
+  label: Situation / State of Affairs
+  label_source: XwkOnt
+  language: en
+  entry_notes: Not yet in `data/ontology/core.ttl` — see Scope Note.
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: BFO
+  language: en
+  entry_notes: Zero occurrences of "situation" in `bfo-core.ttl`.
+- role: Source term
+  label: State
+  label_source: DOLCE
+  language: en
+  entry_notes: A formally defined class, but denotes a stative *occurrent* (perdurant subtype),
+    not a configuration-of-entities category — see `note-001`.
+- role: Alternate label
+  label: '*(only as an axiom-variable name — see Uncertainty)*'
+  label_source: SUMO
+  language: en
+  entry_notes: '`?SITUATION` is conventional variable naming for a `?FORMULA`-typed argument
+    to `holdsDuring`, not a defined class.'
+- role: Alternate label
+  label: Situation
+  label_source: UFO
+  language: en
+  entry_notes: Used informally (world-index) throughout the 2021 paper's prose, never reified
+    there; `ontouml:situation`/`ontouml:situationNature` are real, formally documented OntoUML
+    vocabulary terms — see `note-002`.
+- role: Source term
+  label: Configuration / Situation
+  label_source: GFO
+  language: en
+  entry_notes: '`Configuration` is the base class; `Situation` (`rdfs:subClassOf Configuration`,
+    in the same `gfo-base.owl` file) is the most-specific match, plus a dedicated `situation`
+    extension module with its own `:Situation` class — see below.'
+- role: Source term
+  label: situation (DnS module)
+  label_source: DOLCE
+  language: en
+  entry_notes: Formally defined in DOLCE's separate `ExtendedDnS.owl` module (not core `DOLCE-Lite.owl`)
+    — see below.
+- role: Alternate label
+  label: '*(no defined class — see Uncertainty)*'
+  label_source: YAMATO
+  language: en
+  entry_notes: Not checked in `TODO.md`'s seed; confirmed no defined class in the fetchable
+    document (see Source Definitions).
+- role: Alternate label
+  label: State (informal, fluent-like)
+  label_source: TUpper
+  language: en
+  entry_notes: Used only inside `holds`/`prior`'s own informal-semantics glosses ("the state
+    f"), never separately defined.
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: GUM
+  language: en
+  entry_notes: Zero occurrences of "Situation"/"StateOfAffairs" in `GUM-31.owl`.
+source_definitions:
+- source: BFO
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text grep of `bfo-core.ttl` for "situation" (case-insensitive) returned zero
+    matches.
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified absence**: `bfo-core.ttl`, fetched and read directly 2026-07-04'
+  entry_notes: Consistent with BFO's general austerity about description-dependent/context-dependent
+    categories, already observed for Quantity in `quantity-amount-of-matter.md`.
+- source: DOLCE
+  term_or_identifier: State (+ stative)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Within stative occurrences, we distinguish between states and processes according
+    to homeomericity: sitting is classified as a state but running is classified as a process,
+    since there are (very short) temporal parts of a running that are not themselves runnings."
+    `rdfs:subClassOf stative`; `stative` itself `rdfs:subClassOf perdurant`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified**: `DOLCE-Lite.owl`, class `#state`, fetched and read directly 2026-07-04'
+  entry_notes: A real, formally defined class — but an occurrent (stative perdurant) category
+    distinguished from `process` by homeomericity, not a "configuration of entities"/situation-like
+    category. See `note-001` for the separate sense of "situation" DOLCE's own comments discuss
+    but do not formalize here.
+- source: DOLCE
+  term_or_identifier: '*(situation — discussed in commentary, not reified in this module)*'
+  dimension: philosophical
+  source_claim_type: paraphrase
+  text: 'The same class''s own comment continues: "states differ from situations because they
+    are not assumed to have a description from which they depend... at any time, one can conceive
+    a description that asserts the constraints by which a state of a certain type is such,
+    and in this case, it becomes a situation... If we want to consider all the aspects of
+    a process together, we need to postulate a unifying descriptive set of criteria (i.e.
+    a ''description''), according to which that process is circumstantiated in a ''situation''."
+    No class named `#situation` exists anywhere in the fetched `DOLCE-Lite.owl`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified absence in this module**: `DOLCE-Lite.owl`, full-text grep for `#situation`
+    returned zero matches, fetched and read directly 2026-07-04'
+  entry_notes: DOLCE's own prose explicitly attributes formal treatment of "situation" and
+    "description" to a separate module (the well-known DnS — Descriptions and Situations —
+    extension), not to core DOLCE-Lite. This crosswalk records the absence in the fetched
+    artifact rather than assuming DnS content without fetching it separately — resolved below
+    (`xwkont:ref:dolce-extendeddns-owl`).
+- source: DOLCE
+  term_or_identifier: situation
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A situation is a social object that appears in the domain of an ontology only because
+    there is a description whose components can ''carve up'' a view (setting) on that domain.
+    A situation has to satisfy a description..., and it has to be setting for at least one
+    entity. In other words, it is the ontological counterpart... of settings (situations from
+    SC, contexts, episodes, states of affairs, structures, configurations, cases, etc.). A
+    perdurant is usually the only mandatory constituent of a setting." `owl:equivalentClass`
+    of `non-agentive-social-object ⊓ setting-for(some particular) ⊓ satisfies(some description)`;
+    `owl:disjointWith` `collection`, `concept`, `information-object`, `figure`, `description`.'
+  reference:
+  - xwkont:ref:dolce-extendeddns-owl
+  locator: '**verified**: `ExtendedDnS.owl`, class `#situation`, fetched and read directly
+    2026-07-05'
+  entry_notes: 'Resolves `uncertainty-002`: DOLCE''s DnS module — not core `DOLCE-Lite.owl`
+    — does formally define a `situation` class matching this concept''s core sense, and its
+    own comment explicitly glosses it as the ontological counterpart of "states of affairs...
+    configurations... cases." This is DOLCE''s real, previously-unfetched contribution to
+    this concept — see `note-004`.'
+- source: SUMO
+  term_or_identifier: '*(no class — `?SITUATION` is a conventional variable name only)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '`(holdsDuring ?TIME ?SITUATION1) ... (entails ?SITUATION1 ?SITUATION2)` — `?SITUATION`
+    here is a variable of the same type as `holdsDuring`''s own documented second argument,
+    `?FORMULA`: "(holdsDuring ?TIME ?FORMULA) means that the proposition denoted by ?FORMULA
+    is true in the time frame ?TIME." One further prose occurrence: "permit assessment of
+    the probability of an event or situation" (informal, inside a different term''s documentation).'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified absence**: current `Merge.kif`, full-text grep for "situation" (case-insensitive)
+    returned 12 hits, all either the `?SITUATION` variable-naming convention or incidental
+    prose, fetched and read directly 2026-07-04'
+  entry_notes: No `(subclass Situation ...)` or `(instance Situation ...)` assertion exists
+    anywhere — `?SITUATION` is informal variable-naming sugar for a `Formula`/`Proposition`-typed
+    argument, not a distinct SUMO class.
+- source: UFO
+  term_or_identifier: '*(no reified class in the 2021 paper; informal world-index usage only)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: All 21 occurrences of "situation" in the paper's full extracted text are informal,
+    world-indexing usage — e.g. "the value of a given FlowerColor can change from situation
+    to situation," "in a counterfactual situation," "in world w1... in that situation" — never
+    `(instance x Situation)`-style reification or a defined `Situation` class/stereotype in
+    the paper's own axioms.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified absence in the paper itself**: 2021 Applied Ontology paper, full-text
+    re-searched directly 2026-07-04 (21 occurrences individually inspected)'
+  entry_notes: This is a genuine gap between the 2021 comprehensive paper (silent on a formal
+    Situation class) and the wider UFO/OntoUML literature (which does formalize it) — see
+    the next row and `note-002`.
+- source: UFO
+  term_or_identifier: situation (stereotype) / situationNature
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`ontouml:situation`: "Can be used to represent certain configurations of entities
+    that can be comprehended as a whole." `ontouml:situationNature`: "Indicates that the restricted
+    type includes situation individuals among its instances."'
+  reference:
+  - xwkont:ref:ontouml-vocabulary
+  locator: '**verified**: `ontouml.ttl`, fetched and read directly 2026-07-04'
+  entry_notes: Confirms `TODO.md`'s seed naming exactly. Notably, this definition ("configurations
+    of entities... comprehended as a whole") is close in spirit to GFO's `Configuration` definition
+    below — the two sources' formal treatments (OntoUML's stereotype vocabulary; GFO's base
+    ontology class) converge more closely with each other than either does with DOLCE's occurrent-side
+    `state`.
+- source: GFO
+  term_or_identifier: Configuration
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"We consider a collection of presential facts which exist at the same time-boundary.
+    Such collections may be considered themselves as presentials, and we call them configurations.
+    It is further required that configurations contain at least one material object." `rdfs:subClassOf
+    Presential`; `owl:disjointWith Material_boundary`, `owl:disjointWith Material_object`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Configuration`, fetched and read
+    directly 2026-07-04'
+  entry_notes: The base-ontology class; see the more specific `Situation` subclass below,
+    which is the closer match to this concept's core sense.
+- source: GFO
+  term_or_identifier: Situation
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A situation is a special configuration which can be comprehended as a whole and
+    satisfies certain conditions of unity, which are imposed by relations and categories associated
+    with the situation. Herein, we consider situations to be the most complex kind of presentials."
+    `rdfs:subClassOf Configuration`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Situation`, fetched and read directly
+    2026-07-05'
+  entry_notes: Resolves `uncertainty-003`. Missed by the 2026-07-04 pass, which stopped at
+    the parent `Configuration` class — GFO independently names its most-specific configuration-of-entities
+    class `Situation`, the exact term this crosswalk targets. Sibling classes `Configuroid`
+    (`rdfs:subClassOf Process` — the occurrent-side counterpart to `Configuration`) and `Situoid`
+    (`rdfs:subClassOf Configuroid`; "processes whose boundaries are situations... the most
+    complex integrated wholes of the world") were also found and glossed.
+- source: GFO
+  term_or_identifier: Situation (dedicated module)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`skos:definition`: "Situations as complex entities that are comprehended as wholes."
+    `rdfs:subClassOf gfo-core:TimeExtendedIndividual`, plus restrictions requiring `hasParticipant
+    some Object` and `hasSituationPart some Attributive`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/situation/gfo-situation.ttl`, class `:Situation`, fetched
+    and read directly 2026-07-05'
+  entry_notes: A second, independently-maintained GFO module (versioned separately, `https://w3id.org/gfo/situation`)
+    dedicated entirely to situation theory — distinct superclass lineage (`TimeExtendedIndividual`,
+    not `Presential`/`Configuration`) from the base-module `Situation` class above. Flagged
+    as an internal GFO cross-module naming/lineage inconsistency, not resolved further in
+    this pass — see `note-005`. Confirms GFO treats this concept as substantial enough to
+    warrant a dedicated extension, strengthening rather than weakening GFO's correspondence.
+- source: YAMATO
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text search of the extracted YAMATO 2010 technical report for "situation" and
+    "configuration" (case-insensitive) found no defined class or criterial distinction matching
+    this concept — the document's own top-level distinctions (Substrate/entity, Continuant/Occurrent,
+    Physical/abstract, already documented in `time.md`/`space.md`/`abstract-concrete.md`)
+    do not include one.
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified absence**: 2010 technical report, full extracted text re-searched directly
+    2026-07-04'
+  entry_notes: Not part of `TODO.md`'s original seed for this concept; checked directly for
+    completeness, consistent with this crosswalk's practice (and the other four `0.2.0`-batch
+    crosswalks') of checking all 8 sources regardless of the seed's own coverage.
+- source: TUpper
+  term_or_identifier: '*(informal fluent-like usage only, no defined predicate)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '`holds`: "(holds f occ) is TRUE in an interpretation of TUpper if and only if the
+    state f is true after the activity occurrence occ." `prior`: "...the state f is true prior
+    to the activity occurrence occ." No `state` or `fluent` predicate/class is separately
+    declared or defined anywhere in `TUpper-Terms.html`.'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified absence, informal only**: `TUpper-Terms.html`, full-text grep for "state"/"fluent"/"situation"/"configuration"
+    returned only these two informal-gloss occurrences, fetched and read directly 2026-07-04'
+  entry_notes: Corrects `TODO.md`'s seed, which listed TUpper's contribution as simply "`state`"
+    without noting it is unreified — `f` here plays the role of a situation-calculus fluent
+    (a proposition that can hold or not at a point), consistent with TUpper's PSL/situation-calculus
+    lineage, but no `state` class or predicate is itself defined.
+- source: GUM
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text grep of `GUM-31.owl` for "Situation" and "StateOfAffairs" (case-sensitive,
+    matching GUM's own PascalCase convention) returned zero matches.
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified absence**: `GUM-31.owl`, fetched and read directly 2026-07-04'
+  entry_notes: Not part of `TODO.md`'s original seed; checked directly for completeness. Unlike
+    Time, Space, Abstract, and Quantity — where GUM contributed previously-uncredited content
+    in each of the prior four `0.2.0`-batch crosswalks — this is the first concept in the
+    batch where GUM has confirmed nothing to add.
+correspondences:
+- correspondence_id: xwkont:correspondence:situation-state-of-affairs:001
+  source_ontology: GFO
+  source_term: Situation
+  source_identifier_or_iri: https://w3id.org/gfo/base/Situation
+  source_version: GFO 2024-11-18 (directly verified 2026-07-05)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: The most-specific formally defined base-ontology class directly matching
+    this concept's core sense (supersedes the parent `Configuration` class as the primary
+    GFO correspondence).
+- correspondence_id: xwkont:correspondence:situation-state-of-affairs:002
+  source_ontology: UFO
+  source_term: situation (stereotype)
+  source_identifier_or_iri: https://w3id.org/ontouml#situation
+  source_version: OntoUML vocabulary, undated (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:ontouml-vocabulary
+  inclusion_rationale: Included as UFO's own (OntoUML-vocabulary-level) formal treatment,
+    despite the 2021 comprehensive paper itself never reifying a `Situation` class — see Source
+    Definitions and `note-002` for this gap.
+- correspondence_id: xwkont:correspondence:situation-state-of-affairs:003
+  source_ontology: DOLCE
+  source_term: State
+  source_identifier_or_iri: http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#state
+  source_version: DOLCE-Lite v397 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Included with an explicit sense-mismatch caveat — DOLCE's `state` is
+    an occurrent (stative perdurant), not a configuration-of-entities category; recorded because
+    `TODO.md`'s seed named it, not because it is judged equivalent to GFO's/UFO's sense. See
+    `note-001`.
+- correspondence_id: xwkont:correspondence:situation-state-of-affairs:004
+  source_ontology: DOLCE
+  source_term: situation
+  source_identifier_or_iri: http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#situation
+  source_version: ExtendedDnS v397 (directly verified 2026-07-05)
+  reference:
+  - xwkont:ref:dolce-extendeddns-owl
+  inclusion_rationale: DOLCE's real formal treatment of this concept, found in its separate
+    DnS module — resolves `uncertainty-002`; this is the correspondence-002-level sense match,
+    not `correspondence:003`'s `state`.
+- correspondence_id: xwkont:correspondence:situation-state-of-affairs:005
+  source_ontology: GFO
+  source_term: Situation (dedicated module)
+  source_identifier_or_iri: https://w3id.org/gfo/situation/Situation
+  source_version: GFO-situation, release 2024-12-07 (directly verified 2026-07-05)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: A second, independently-versioned GFO module dedicated to situation
+    theory; recorded alongside `correspondence:001` to note the cross-module naming/lineage
+    difference — see `note-005`.
+correspondences_note: No BFO, SUMO, YAMATO, TUpper, or GUM correspondence is recorded — see
+  Source Definitions and Uncertainty.
+comparison_notes:
+- note_id: note-001
+  dimension: philosophical
+  claim_type: editorial observation
+  note: DOLCE's `state` (core `DOLCE-Lite.owl`) and DOLCE's `situation` (the separate DnS
+    module, `xwkont:ref:dolce-extendeddns-owl`) are **not the same thing**, despite DOLCE's
+    own core-module commentary discussing both in the same passage. `state` is a stative *perdurant*
+    (an occurrent, distinguished from `process` by homeomericity — "sitting" vs. "running").
+    DnS's `situation` is a formally defined *social object*, `equivalentClass` of `non-agentive-social-object
+    ⊓ setting-for(some particular) ⊓ satisfies(some description)` — structurally much closer
+    to GFO's `Configuration`/`Situation` or UFO's OntoUML `situation` stereotype than to DOLCE's
+    own `state` class. As of the 2026-07-05 pass, DOLCE's DnS-module `situation` is now this
+    crosswalk's DOLCE-side primary correspondence (`correspondence:004`); `state` (`correspondence:003`)
+    remains recorded only because `TODO.md`'s original seed named it, with the same sense-mismatch
+    caveat as before.
+  supporting_references:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:dolce-extendeddns-owl
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: UFO's own comprehensive 2021 paper — the primary source for all of this repository's
+    other UFO correspondences — never reifies a `Situation` class in its own axioms, despite
+    using the word 21 times as an informal world-index. The formal treatment (`ontouml:situation`/`ontouml:situationNature`)
+    lives only in the separate OntoUML vocabulary artifact, which per `docs/methodology/primary-source-verification.md`'s
+    established practice is treated as a derived modeling-notation artifact, not identical
+    to UFO's own theoretical claims. This is a stronger version of the `xwkont:ref:ufo-2021`/`ontouml-vocabulary`
+    distinction already noted for other UFO-related crosswalk work — here, the *only* UFO-side
+    evidence for this concept comes from the OntoUML side, with zero support from the paper
+    itself.
+  supporting_references:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:ontouml-vocabulary
+  confidence: high
+- note_id: note-003
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'Where a formal definition exists (GFO''s `Situation`; DOLCE DnS''s `situation`; UFO''s
+    OntoUML `situation`), all three converge closely in substance — each describes a collection/configuration
+    of entities comprehended or existing together as a whole, neither reducible to a single
+    entity nor itself an occurrent. As of the 2026-07-05 pass this is now a genuine **3-source**
+    point of convergence (previously recorded as thin, 2-source), materially strengthening
+    this crosswalk''s cross-source pattern relative to the batch''s other four concepts, though
+    the underlying artifacts still differ in kind (GFO: base-ontology class; DOLCE: DnS-extension
+    class; UFO: OntoUML-vocabulary stereotype, not the 2021 paper itself).'
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:dolce-extendeddns-owl
+  - xwkont:ref:ontouml-vocabulary
+  confidence: medium
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: Resolves `uncertainty-002`. DOLCE's DnS module (`ExtendedDnS.owl`, "OWL engineering
+    by Aldo Gangemi") formally defines `situation`, `description`, `concept`, `figure`, and
+    related social-reification vocabulary that core `DOLCE-Lite.owl` explicitly declines to
+    formalize (per `note-001`'s quoted commentary). This is DOLCE's real, intended treatment
+    of the concept this crosswalk targets — the initial 2026-07-04 pass's "no DOLCE correspondence
+    beyond a different-sense `state`" finding is superseded, not merely supplemented.
+  supporting_references:
+  - xwkont:ref:dolce-extendeddns-owl
+  confidence: high
+- note_id: note-005
+  dimension: technical
+  claim_type: editorial observation
+  note: 'Resolves `uncertainty-003`, and surfaces a new, smaller open question. GFO defines
+    `Situation` in *two* separately-versioned places: (1) `modules/gfo-base.owl`''s `Situation`,
+    `rdfs:subClassOf Configuration` (itself `rdfs:subClassOf Presential`); and (2) a dedicated
+    `modules/situation/gfo-situation.ttl` module''s own `:Situation` class, `rdfs:subClassOf
+    gfo-core:TimeExtendedIndividual` — a different superclass lineage, with additional restrictions
+    (`hasParticipant some Object`, `hasSituationPart some Attributive`). Both were directly
+    verified 2026-07-05. This crosswalk records both (`correspondence:001` and `correspondence:005`)
+    without attempting to reconcile the two lineages — that reconciliation is GFO''s own internal
+    modeling question, not one this crosswalk needs to resolve to record GFO''s contribution.
+    Confirms GFO invests substantially in this concept (base class plus a whole dedicated
+    extension module), the strongest single-source evidence found for this concept across
+    all 8 sources.'
+  supporting_references:
+  - xwkont:ref:gfo
+  confidence: medium
+mapping_assertions:
+- mapping_id: xwkont:mapping:situation-state-of-affairs:001
+  subject: GFO:Situation
+  relation_category: close-match
+  object: UFO:situation (OntoUML stereotype)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Both denote a collection/configuration of entities comprehended as a whole,
+    existing together (GFO: "the most complex kind of presentials," subject to "conditions
+    of unity"; UFO: no explicit temporal qualifier but the same whole-comprehension criterion).
+    Not `high` because GFO''s is a base-ontology class, while UFO''s is a modeling-notation
+    stereotype from a different kind of artifact (OntoUML vocabulary, not the 2021 paper)
+    — a cross-artifact-type comparison, not a like-for-like one.'
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:ontouml-vocabulary
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:situation-state-of-affairs:002
+  subject: DOLCE:State
+  relation_category: unknown
+  object: GFO:Situation
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Recorded explicitly as a non-equivalence, not a correspondence — DOLCE's `state`
+    is an occurrent (stative perdurant), while GFO's `Situation` is a `Presential` (continuant-like
+    collection). Despite both appearing under `TODO.md`'s original seed language, they answer
+    different questions.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:situation-state-of-affairs:008
+  subject: DOLCE:situation (DnS)
+  relation_category: close-match
+  object: GFO:Situation
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Both denote a social/comprehended-whole configuration of entities satisfying
+    conditions of unity (DOLCE: "comprehended as a whole," dependent on a `description`; GFO:
+    "comprehended as a whole," "conditions of unity... imposed by relations and categories").
+    Not `high` because DOLCE''s is explicitly description-dependent (a `non-agentive-social-object`)
+    while GFO''s `Situation` carries no explicit description-dependency requirement in its
+    own definition text.'
+  provenance:
+  - xwkont:ref:dolce-extendeddns-owl
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:situation-state-of-affairs:009
+  subject: DOLCE:situation (DnS)
+  relation_category: close-match
+  object: UFO:situation (OntoUML stereotype)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: DOLCE's DnS `situation` is itself historically and terminologically the closer
+    ancestor of UFO/OntoUML's own situation-semantics tradition (both trace to description-and-situation-style
+    modeling) — recorded as `close-match` on the same substantive grounds as `mapping:001`/`mapping:008`,
+    not independently re-derived.
+  provenance:
+  - xwkont:ref:dolce-extendeddns-owl
+  - xwkont:ref:ontouml-vocabulary
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:situation-state-of-affairs:003
+  subject: xwkont-core:Situation (candidate)
+  relation_category: unknown
+  object: BFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No BFO correspondence identified; zero occurrences of "situation" anywhere in
+    `bfo-core.ttl`.
+  provenance:
+  - xwkont:ref:bfo-2020
+- mapping_id: xwkont:mapping:situation-state-of-affairs:004
+  subject: xwkont-core:Situation (candidate)
+  relation_category: unknown
+  object: SUMO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No SUMO correspondence identified; `?SITUATION` is a conventional variable name
+    for a `Formula`-typed `holdsDuring` argument, not a distinct class.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:situation-state-of-affairs:005
+  subject: xwkont-core:Situation (candidate)
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No reified TUpper correspondence identified; "state" appears only inside `holds`/`prior`'s
+    own informal-semantics glosses as a fluent-like value, not as a defined predicate or class.
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:situation-state-of-affairs:006
+  subject: xwkont-core:Situation (candidate)
+  relation_category: unknown
+  object: YAMATO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No YAMATO correspondence identified; no defined class or criterial distinction
+    found in the fetchable technical report.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+- mapping_id: xwkont:mapping:situation-state-of-affairs:007
+  subject: xwkont-core:Situation (candidate)
+  relation_category: unknown
+  object: GUM
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No GUM correspondence identified; zero occurrences of "Situation"/"StateOfAffairs"
+    in `GUM-31.owl`. The first `0.2.0`-batch concept where GUM contributes nothing previously
+    uncredited.
+  provenance:
+  - xwkont:ref:gum-owl
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: '**Updated 2026-07-05 — evidence base materially strengthened, decision still
+    open.** The 2026-07-04 pass found only 1 of 8 sources (GFO) with an unambiguous formal
+    class, and an independent external review
+    reached the same HOLD conclusion, recommending DOLCE''s DnS module and GFO''s `Configuroid`
+    be fetched first. This 2026-07-05 pass fetched both, plus GFO''s dedicated `situation`
+    module, and found: DOLCE''s DnS module *does* formally define `situation` (resolves `uncertainty-002`);
+    GFO independently names its most-specific configuration class `Situation` and maintains
+    a whole dedicated extension module for situation theory (resolves `uncertainty-003`).
+    The cross-source pattern is now **3 of 8 sources (GFO, DOLCE, UFO)** with unambiguous
+    formal classes, up from 1. **Should this concept now proceed toward `reviewed` status,
+    or does the batch still hold it for other reasons (e.g., internal concept-scope instability
+    flagged by the external review''s second comment — DOLCE''s `state`/DnS''s `situation`/TUpper''s
+    `state` still represent three different senses that should not be collapsed)?** This is
+    now a stronger evidentiary case than before, but the review''s separate "concept scope
+    is unstable" comment (three different senses) was not itself resolved by this pass and
+    remains a live concern independent of source-count.'
+  impact: No longer blocks on missing primary-source data (both flagged fetches are done);
+    the remaining blocker is a maintainer judgment call on scope stability and whether 3-source
+    (with DOLCE's DnS-derived, not core-module, evidence) meets `reviewed` standards comparable
+    to the batch's other concepts.
+  follow_up: 'Raise at the next maintainer review, now with materially stronger evidence in
+    hand: advance as `reviewed` (does the DnS-sourced DOLCE correspondence count as "core
+    DOLCE" for citation-precision purposes established elsewhere in this repo?), or still
+    re-scope/defer on concept-scope-stability grounds independent of source count.'
+- item_id: uncertainty-002
+  uncertainty_type: uncertainty
+  resolved: true
+  description: ~~DOLCE's own formal treatment of "situation"... was not fetched.~~ **Resolved
+    2026-07-05:** DOLCE's separate `ExtendedDnS.owl` module was fetched and read directly;
+    it formally defines `#situation` — see Source Definitions, `correspondence:004`, and `note-004`.
+  impact: Directly strengthens `uncertainty-001`'s evidence base — DOLCE moves from a sense-mismatched
+    correspondence (`state`) to a second solid one (`situation`).
+  follow_up: None outstanding; resolved.
+- item_id: uncertainty-003
+  uncertainty_type: uncertainty
+  resolved: true
+  description: ~~GFO's `Configuration` has a sibling class `Configuroid`... not independently
+    fetched or glossed.~~ **Resolved 2026-07-05:** `Configuroid` (`rdfs:subClassOf Process`)
+    and its subclass `Situoid` were fetched and glossed — see the GFO row in Source Definitions
+    and `note-005`. Additionally, a class literally named `Situation` (`rdfs:subClassOf Configuration`)
+    was found in the same module, plus an entire dedicated `situation` extension module with
+    its own `:Situation` class.
+  impact: Strengthens GFO's correspondence from the parent `Configuration` class to the more
+    specific, exactly-named `Situation` class; surfaces a new (lower-stakes) open point about
+    two different GFO `Situation` lineages — see `note-005`.
+  follow_up: None outstanding beyond `note-005`'s observation, which does not require further
+    action to record GFO's contribution.
+- item_id: uncertainty-004
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: UFO's own 2021 comprehensive paper — this repository's primary UFO reference
+    for every other crosswalk — contains zero reified `Situation` class despite 21 informal
+    usages; the only formal evidence is the derived OntoUML vocabulary artifact. This is a
+    stronger version of the general UFO/OntoUML/gUFO non-identity already documented in `docs/methodology/primary-source-verification.md`.
+  impact: Affects how `correspondence-002`/`mapping-001` should be read — this is the first
+    `0.2.0`-batch concept where a UFO correspondence rests entirely on the OntoUML fallback
+    rather than the paper itself.
+  follow_up: None outstanding beyond what's recorded; flagged here and in `note-002` for traceability
+    and to inform the `uncertainty-001` review decision.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified absence** directly against `bfo-core.ttl`, 2026-07-04'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** (state) / **verified absence in this module** (situation)
+    directly against `DOLCE-Lite.owl`, 2026-07-04'
+- reference_id: xwkont:ref:dolce-extendeddns-owl
+  short_label: DOLCE ExtendedDnS OWL module
+  verification_note: '**verified** directly against `ExtendedDnS.owl`, class `#situation`,
+    2026-07-05'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified absence** directly against current SUMO `Merge.kif`, 2026-07-04'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified absence** directly (full-text re-search, 21 occurrences individually
+    inspected), 2026-07-04'
+- reference_id: xwkont:ref:ontouml-vocabulary
+  short_label: OntoUML Vocabulary (OWL/Turtle)
+  verification_note: '**verified** directly, 2026-07-04'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl` (`Configuration`,
+    `Situation`, `Configuroid`, `Situoid`) and `modules/situation/gfo-situation.ttl` (`:Situation`),
+    2026-07-04/2026-07-05'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified absence** directly against the extracted PDF, 2026-07-04'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified absence, informal only** directly against `TUpper-Terms.html`,
+    2026-07-04'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified absence** directly against `GUM-31.owl`, 2026-07-04'
+review_history:
+- review_date: "2026-07-04"
+  outcome: Not yet reviewed — `draft`
+  review_notes: Fifth concept of the `0.2.0` batch (`ADR-0018`), following `time.md`, `space.md`,
+    `abstract-concrete.md`, and `quantity-amount-of-matter.md`. All 8 sources checked directly
+    against primary artifacts already cached from prior crosswalks' research. Confirms `TODO.md`'s
+    own prior caution that this candidate is "weaker/more UFO-centric" than the batch's other
+    early entries — only GFO's `Configuration` is an unambiguous, directly comparable formal
+    correspondence; UFO's evidence comes from the OntoUML vocabulary fallback rather than
+    its own 2021 paper; DOLCE's `state` is a different-sense class; TUpper's `state` is unreified;
+    BFO, SUMO, YAMATO, and GUM confirmed to have nothing at all. Pending maintainer review,
+    with an explicit open question (`uncertainty-001`) about whether this crosswalk should
+    advance toward `reviewed`, be re-scoped after fetching DOLCE's DnS module, or be deferred
+    to a later batch.
+- review_date: "2026-07-05"
+  outcome: Not yet reviewed — `draft`
+  review_notes: 'Follow-up primary-source pass responding directly to the external
+    review''s recommended next step: fetched DOLCE''s `ExtendedDnS.owl` module and GFO''s `modules/situation/gfo-situation.ttl`
+    module (plus the remainder of `modules/gfo-base.owl`). Found DOLCE''s DnS module formally
+    defines `situation` (resolves `uncertainty-002`) and GFO independently names its most-specific
+    configuration class `Situation` plus maintains a dedicated situation-theory extension
+    module (resolves `uncertainty-003`). Cross-source evidence moves from 1-of-8 to 3-of-8
+    sources with unambiguous formal classes (GFO, DOLCE, UFO). `uncertainty-001`''s advance/re-scope/defer
+    decision remains open for maintainer review, now against a materially stronger evidentiary
+    record — see updated Scope Note and `uncertainty-001`.'
+- review_date: "2026-07-05"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:situation-state-of-affairs:2026-07-05:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved (still comparing existing 8 sources per `ADR-0015`, no new domain concepts introduced);
+    every `xwkont:ref:*` citation resolves to a real reference record, including the newly-added
+    `xwkont:ref:dolce-extendeddns-owl`; correspondence/mapping/note/uncertainty ID numbering
+    sequential with no gaps or duplicates (verified: correspondences 001-005, mappings 001-009,
+    notes 001-005, uncertainty 001-004); all confidence values are within the `ADR-0013`-approved
+    vocabulary (3 `high`, 5 `medium`, 6 `low` — no `medium-high`/`low-medium` used, so no
+    sourcing-rationale requirement triggered); mapping categories (`close-match`, `unknown`)
+    match their stated justifications. Resolves `uncertainty-001`: the original HOLD rested
+    on a thin 1-of-8 source count *and* a conflated-senses concern (DOLCE''s occurrent `state`
+    being read as this concept''s "situation" sense) — the 2026-07-05 primary-source pass
+    resolved both by finding a genuine 3-source (GFO, DOLCE via DnS, UFO via OntoUML) convergence
+    on the *same* sense (a comprehended-as-a-whole configuration/social object), with the
+    DOLCE correspondence now correctly sourced to DnS''s `situation` rather than the different-sense
+    `state` class. Explicit editorial note for future readers: unlike this repository''s other
+    DOLCE correspondences, this concept''s DOLCE evidence comes from the separate DnS extension
+    module (`xwkont:ref:dolce-extendeddns-owl`), not core `DOLCE-Lite.owl` (`xwkont:ref:dolce-lite-owl`)
+    — do not assume DOLCE''s core module covers this concept. Self-review, not independent
+    third-party review.'
+future_work:
+- '~~Resolve `uncertainty-001` (whether to advance, re-scope, or defer this crosswalk)~~ —
+  **done 2026-07-05**: advanced `draft` → `reviewed` (`xwkont:review:situation-state-of-affairs:2026-07-05:01`),
+  on the strength of the 3-of-8-source convergence found in the same pass.'
+- Core.ttl placement remains an open question (per the Scope Note) — this crosswalk being
+  `reviewed` does not itself resolve whether/where `Situation` is placed in `data/ontology/core.ttl`;
+  that is separate future work, consistent with `proposition-content.md`'s precedent of advancing
+  to `reviewed` with placement still deferred.
+- Consider whether GFO's two `Situation` lineages (`note-005`) warrant a follow-up question
+  to GFO's own maintainers or documentation, separate from this crosswalk's own scope.
+- Create the Universal/Type crosswalk next (per `TODO.md`'s `0.2.0` batch) — UFO's OntoUML
+  vocabulary (already this crosswalk's primary UFO source) is directly relevant there too
+  (`type`/`kind`/`phase` stereotypes).

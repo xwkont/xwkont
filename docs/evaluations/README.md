@@ -1,6 +1,6 @@
 # Evaluations
 
-<!-- updated at: 2026-07-03 13:05 Z   (2026-07-03 09:05 EDT) -->
+<!-- updated at: 2026-07-04 16:00 Z   (2026-07-04 12:00 EDT) -->
 
 Research and discovery findings that informed governance and standards decisions (see [docs/adr/](../adr/) for the decisions themselves). Not all findings here are independently verified — check each file's own status line.
 
@@ -11,3 +11,4 @@ Research and discovery findings that informed governance and standards decisions
 - [meta-ontology-standards-evaluation.md](meta-ontology-standards-evaluation.md) — Meta-Ontology and Mapping Standards Evaluation
 - [repository-pattern-evaluation.md](repository-pattern-evaluation.md) — Repository Pattern Evaluation
 - [documentation-pattern-evaluation.md](documentation-pattern-evaluation.md) — Documentation Pattern Evaluation
+- [foundational-ontology-concept-terms-matrix.md](foundational-ontology-concept-terms-matrix.md) — Foundational Ontology Concept-Term Matrix (verified directly against each source's own primary artifact)

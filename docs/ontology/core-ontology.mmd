@@ -3,11 +3,22 @@ classDiagram
     Entity <|-- Occurrent
     Entity <|-- Relation
     Entity <|-- InformationArtifact
+    Entity <|-- Abstract
+    Entity <|-- Concrete
+    Entity <|-- Universal
+    Entity <|-- Time
+    Entity <|-- Space
     Continuant <|-- Object
     Continuant <|-- Quality
     Continuant <|-- Role
+    Continuant <|-- Aggregate
+    Continuant <|-- Sum
+    Continuant <|-- Boundary
+    Continuant <|-- Site
     Occurrent <|-- Process
     Occurrent <|-- Event
+    Concrete <|-- Quantity
+    Abstract <|-- Proposition
 
     Entity --> Entity : hasPart / partOf
     Continuant --> Occurrent : participatesIn

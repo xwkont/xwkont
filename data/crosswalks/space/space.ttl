@@ -1,0 +1,93 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:space:001> a sssom:Mapping ;
+    rdfs:comment "Same subject matter (spatial extent) but a genuine top-level classification divergence: BFO subsumes it under Continuant (immaterial entity); DOLCE files it as an abstract quality-space region, neither endurant nor perdurant. Not `close-match` because the classification difference is structural."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Space_region ;
+    sssom:subject_id xwkont-source-term:BFO-Spatial_region .
+
+<https://w3id.org/xwkont/id#mapping:space:002> a sssom:Mapping ;
+    rdfs:comment "Both are continuant/physical-side categories (BFO: continuant; SUMO: Physical/Object), closer to each other than either is to their own source's Time-side category — but \"immaterial entity\" and \"topographic location under Object\" are still distinct formal framings."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Region ;
+    sssom:subject_id xwkont-source-term:BFO-Spatial_region .
+
+<https://w3id.org/xwkont/id#mapping:space:003> a sssom:Mapping ;
+    rdfs:comment "BFO=continuant; GFO explicitly declares Space sui generis and disjoint from both Presential and Occurrent (i.e., neither continuant- nor occurrent-equivalent) — a similar non-occurrent classification but via a different top-level architecture."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Space ;
+    sssom:subject_id xwkont-source-term:BFO-Spatial_region .
+
+<https://w3id.org/xwkont/id#mapping:space:004> a sssom:Mapping ;
+    rdfs:comment "Both are independent, non-occurrent, region-denoting categories with near-identical naming and near-identical mereological-sum framing (\"regions... mereological sums\" in GFO; region-of-a-metrics framing in DOLCE) — the closest structural pairing found in this crosswalk, mirroring `time.md`'s equivalent DOLCE/GFO Time pairing."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Spatial_region ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Space_region .
+
+<https://w3id.org/xwkont/id#mapping:space:005> a sssom:Mapping ;
+    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass)** — both denote an ordinary spatial/geographic extent, but DOLCE's is an abstract quality-space region while SUMO's is a physical `Object` subtype — an abstract-vs-physical divergence, a stronger disagreement than differing scope/axioms within a shared formal kind (contrast `mapping-004`, where both sides are region-denoting categories on the same side of that divide). `close-match` per `docs/methodology/crosswalk-methodology.md` is reserved for concepts that align for many purposes despite differing scope/axioms/usage; an abstract/physical split is closer to `overlap` (\"partially intersect but neither subsumes the other\")."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Region ;
+    sssom:subject_id xwkont-source-term:DOLCE-Space_region .
+
+<https://w3id.org/xwkont/id#mapping:space:006> a sssom:Mapping ;
+    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass, for consistency with `time.md`'s equivalent GFO/GUM downgrade)** — both are decomposable, non-atomic spatial-region categories under a broader Space branch, with a parallel atomic counterpart (`Topoid`/`SpacePoint`), but GFO's grounding is metaphysical (Brentano) while GUM's is linguistic (Halliday & Matthiessen) — a difference in the *kind* of independence claimed, not just scope or axioms within a shared formal kind."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-SpaceInterval ;
+    sssom:subject_id xwkont-source-term:GFO-Spatial_region .
+
+<https://w3id.org/xwkont/id#mapping:space:007> a sssom:Mapping ;
+    rdfs:comment "TUpper's `spatial_region` is a single undifferentiated mereotopology predicate, not dimensionally subdivided the way BFO's four classes are — a rough correspondence only for the point/zero-dimensional case, not the dimensional apparatus as a whole."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:TUpper-spatial_region_point_case ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Zero_dimensional_spatial_region .
+
+<https://w3id.org/xwkont/id#mapping:space:008> a sssom:Mapping ;
+    rdfs:comment "Both function as the general spatial-extent/location node in their respective sources, but SUMO's is a topographic-location Object subtype while GUM's is a clause-level directional-relation range class grounded in systemic-functional linguistics — related in function, not close enough in formal apparatus for `close-match`."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-GeneralizedLocation ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:SUMO-Region .
+
+xwkont-source-term:BFO-Zero_dimensional_spatial_region rdfs:label "Zero-dimensional spatial region"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:GFO-Space rdfs:label "Space"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GUM-GeneralizedLocation rdfs:label "GeneralizedLocation"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-SpaceInterval rdfs:label "SpaceInterval"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:TUpper-spatial_region_point_case rdfs:label "spatial_region (point case)"@en ;
+    dcterms:source "TUpper" .
+
+xwkont-source-term:GFO-Spatial_region rdfs:label "Spatial_region"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:BFO-Spatial_region rdfs:label "Spatial region"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:DOLCE-Space_region rdfs:label "Space-region"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:SUMO-Region rdfs:label "Region"@en ;
+    dcterms:source "SUMO" .
+

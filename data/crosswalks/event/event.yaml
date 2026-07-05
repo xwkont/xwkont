@@ -1,0 +1,788 @@
+local_identifier: xwkont:concept:event
+slug: event
+title: Event
+editorial_status: reviewed
+created: "2026-07-01"
+modified: "2026-07-02"
+scope_note: 'This crosswalk compares how BFO, DOLCE, UFO, and SUMO treat "Event" on the occurrent/perdurant
+  side of each source ontology''s top-level split, building directly on `docs/crosswalks/concepts/continuant-occurrent.md`.
+  It also directly addresses that crosswalk''s `uncertainty-003` (the unresolved Process/Event
+  boundary).
+
+
+
+  **Update (2026-07-02), ADR-0015 buildout:** extended to GFO, YAMATO, TUpper, and GUM, per
+  `ADR-0015`''s source-ontology scope expansion. GFO has no class literally named "Event"
+  but its `Change` class explicitly glosses "instantaneous event" as one of two technical
+  senses of change — the closest formal analog to BFO''s Process Boundary / DOLCE''s Achievement.
+  YAMATO is the most explicit of the four new sources: it names "processes and events" as
+  distinct categories directly, and states a positive criterion for the difference ("events
+  are made of processes and while processes can change, events cannot"). TUpper''s `activity_occurrence`
+  is a token/particular occurrence of an `activity` (type), which is a different type/token
+  distinction than continuant-occurrent, not a category split parallel to Process/Event —
+  treated as a structural analog only, consistent with `object.md`''s TUpper precedent. GUM''s
+  `Process` class is explicitly glossed as "the linguistic construal of ''goings-on'' or events,"
+  making it, unusually, the one new source whose own definition text uses the word "events"
+  directly (alongside BFO''s altLabel usage) despite not naming a separate Event class.
+
+
+
+  **Correction (2026-07-01), following direct primary-source verification:** this crosswalk
+  originally claimed BFO''s core vocabulary has no class or label named "Event" at all. That
+  claim was **too strong** and has been corrected after fetching BFO-2020''s actual primary
+  OWL/TTL source (`bfo-core.ttl`) directly. BFO_0000015 ("process") explicitly carries `skos:altLabel
+  "event"@en` — meaning BFO''s own core release *does* register "event" as an alternate label
+  for `Process`, not a term absent from BFO entirely. The corrected finding: **BFO treats
+  "event" as a synonym for Process, not as a separate category** — which is still a real difference
+  from DOLCE and UFO (where Event is a distinct category, not a synonym for Process/Perdurant-as-a-whole),
+  but it is a different and more precise claim than "BFO doesn''t use the word." SUMO''s side
+  of the asymmetry (event-like notions nested under `Process` via `IntentionalProcess`) was
+  independently confirmed against SUMO''s actual `Merge.kif` source and holds as originally
+  stated — see Source Definitions.
+
+
+
+  Exclusions: this crosswalk does not resolve Process on its own terms (see `docs/crosswalks/concepts/process.md`)
+  and does not attempt a full account of DOLCE''s Achievement/Accomplishment mereology or
+  UFO''s event-causation theory.
+
+
+
+  **Update (2026-07-01), following direct primary-source verification of DOLCE and UFO:**
+  the WonderWeb D18 report and UFO 2021 paper (already fetched and extracted for other crosswalks)
+  were reused to verify this crosswalk''s DOLCE and UFO Event content directly. Findings:
+
+
+
+  - **DOLCE''s Achievement/Accomplishment definitions are confirmed almost verbatim**: "eventive
+  occurrences (events) are called achievements if they are atomic, otherwise they are accomplishments,"
+  with the stative/eventive split itself defined by cumulativity ("according to whether it
+  holds of the mereological sum of two of its instances, i.e. if it is cumulative or not").
+
+  - **UFO''s Event content is confirmed** as originally paraphrased, now a direct quotation
+  drawing on the paper''s own list of theoretical contributions and its treatment of events
+  as manifestations of endurant dispositions.
+
+  - **`note-003`''s Vendler (1957) connection for DOLCE is resolved as a confirmed negative
+  finding, not left open.** D18''s own bibliography (90 numbered references, checked directly)
+  contains **no citation to Vendler at all**. The Event/Stative-Achievement/Accomplishment
+  parallel to Vendler''s (1957) four-way Aktionsart classification remains a plausible external
+  observation, but it is not something Masolo et al. (2003) draw themselves — this crosswalk
+  should stop describing it as merely "not yet confirmed" and instead record it as checked-and-absent.
+  The same applies to `process.md`''s parallel `uncertainty-002`.
+
+
+
+  **Epistemic note:** BFO and SUMO content is verified directly against primary sources (`bfo-core.ttl`,
+  `Merge.kif`, fetched and grepped 2026-07-01). DOLCE and UFO content is now also directly
+  verified (2026-07-01), reusing extractions performed for other crosswalks in this repository.'
+labels:
+- role: XwkOnt working label
+  label: Event
+  label_source: XwkOnt
+  language: en
+  entry_notes: Matches `xwkont-core:Event` (`rdfs:subClassOf xwkont-core:Occurrent`) in `data/ontology/core.ttl`.
+- role: Source term
+  label: event (`skos:altLabel` on `Process`, BFO_0000015)
+  label_source: BFO
+  language: en
+  entry_notes: Not a separate class — a registered synonym for Process itself. Verified directly
+    against `bfo-core.ttl`.
+- role: Source term
+  label: Event (Achievement / Accomplishment)
+  label_source: DOLCE
+  language: en
+- role: Source term
+  label: Event
+  label_source: UFO
+  language: en
+- role: Alternate label
+  label: '*(none — see Process, IntentionalProcess, LifeEvent)*'
+  label_source: SUMO
+  language: en
+  entry_notes: No top-level SUMO class is named "Event"; see Scope Note.
+- role: Source term
+  label: Change (glosses "instantaneous event")
+  label_source: GFO
+  language: en
+  entry_notes: Not a class named "Event" — GFO's `Change` class's own definition text names
+    "instantaneous event" as one of two technical senses of change. Verified directly against
+    `modules/gfo-base.owl`.
+- role: Source term
+  label: processes and events (distinct terms, both named directly)
+  label_source: YAMATO
+  language: en
+  entry_notes: The only one of the four new sources to use "event" as a first-class term of
+    art alongside "process," with an explicit criterion distinguishing them.
+- role: Source term
+  label: activity_occurrence
+  label_source: TUpper
+  language: en
+  entry_notes: No term literally glossed "event"; `activity_occurrence` is the closest structural
+    analog (a token occurrence of an `activity` type).
+- role: Source term
+  label: Process (glossed "goings-on or events")
+  label_source: GUM
+  language: en
+  entry_notes: Not a class named "Event" — GUM's own `Process` class definition uses the word
+    "events" directly, alongside "goings-on."
+source_definitions:
+- source: BFO
+  term_or_identifier: Process (BFO_0000015)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) p is a process means p is an occurrent that has some temporal proper
+    part and for some time t, p has some material entity as participant." Examples given:
+    "An act of selling; the life of an organism; a process of sleeping; a process of cell-division;
+    a beating of the heart; a process of meiosis; the taxiing of an aircraft; the programming
+    of a computer."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000015, fetched and read directly 2026-07-01'
+- source: BFO
+  term_or_identifier: Process Boundary (BFO_0000035)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"p is a process boundary =Def p is a temporal part of a process & p has no proper
+    temporal parts." Example: "The boundary between the 2nd and 3rd year of your life."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000035, fetched and read directly 2026-07-01'
+- source: BFO
+  term_or_identifier: '"event" as altLabel on Process'
+  dimension: technical
+  source_claim_type: direct quotation
+  text: BFO_0000015 ("process") carries `skos:altLabel "event"@en` directly in the primary
+    OWL/TTL source — "event" is a registered synonym for Process, not a separate BFO class.
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000015, fetched and read directly 2026-07-01'
+  entry_notes: This corrects the crosswalk's original claim that BFO has no "Event" term at
+    all — see Scope Note correction.
+- source: DOLCE
+  term_or_identifier: Event (Eventive)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An occurrence-type is stative [or] eventive according to whether it holds of the
+    mereological sum of two of its instances, i.e. if it is cumulative or not." Stative types
+    further split into states and processes by homeomericity; "eventive occurrences (events)..."
+    are the non-cumulative branch.'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified**: WonderWeb D18 PDF, manually extracted 2026-07-01'
+  entry_notes: Confirms the earlier paraphrase closely, now with the primary source's exact
+    cumulativity criterion.
+- source: DOLCE
+  term_or_identifier: Achievement
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Eventive occurrences (events) are called achievements if they are atomic, otherwise
+    they are accomplishments."'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified**: WonderWeb D18 PDF, manually extracted 2026-07-01'
+- source: DOLCE
+  term_or_identifier: Accomplishment
+  dimension: technical
+  source_claim_type: direct quotation
+  text: Same source sentence as Achievement above — accomplishment is defined simply as the
+    non-atomic case ("otherwise they are accomplishments"), not given a separate positive
+    definition in this passage.
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified**: WonderWeb D18 PDF, manually extracted 2026-07-01'
+- source: DOLCE
+  term_or_identifier: Stative/Event split, linguistic origin
+  dimension: philosophical
+  source_claim_type: non-equivalence
+  text: '**Checked and confirmed absent (2026-07-01)**: D18''s own bibliography (90 numbered
+    references) was read directly and contains no citation to Vendler (1957). The Event/Stative
+    and Achievement/Accomplishment split closely parallels Vendler''s four-way Aktionsart
+    classification, but this is an external observation this crosswalk is making, not a connection
+    Masolo et al. (2003) draw themselves.'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified absence**: D18''s reference list checked directly, 2026-07-01'
+  entry_notes: Resolves `uncertainty-003`/`note-003` as a confirmed negative finding rather
+    than an open question.
+- source: UFO
+  term_or_identifier: Event
+  dimension: technical
+  source_claim_type: direct quotation
+  text: UFO's theory of events covers "event mereology, temporal ordering of events, object
+    participation in events, causation, change, and the connection between events and endurants
+    via dispositions." Events are manifestations of the dispositions inhering in endurants,
+    and are treated as "modally fragile entities" that "cannot genuinely change... while maintaining
+    their numerical identity."
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: Confirms the earlier paraphrase closely; now a direct quotation with UFO's
+    own list of theoretical scope and its modal-fragility characterization (also used in `process.md`).
+- source: SUMO
+  term_or_identifier: Process as umbrella (no separate Event)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(subclass Process Physical)... The class of things that happen and have temporal
+    parts or stages. Examples include extended events like a football match or a race, actions
+    like Pursuing and Reading, and biological processes. The formal definition is: anything
+    that occurs in time but is not an Object."'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: `Merge.kif`, `documentation Process EnglishLanguage`, fetched and
+    read directly 2026-07-01'
+  entry_notes: SUMO's own documentation uses the word "events" as informal examples of Process,
+    but does not define a separate `Event` class — confirms the original finding with a precise
+    formal definition ("anything that occurs in time but is not an Object"), which was previously
+    unconfirmed. `IntentionalProcess`/`LifeEvent` nesting (from the earlier draft) not re-verified
+    in this pass but not contradicted.
+- source: GFO
+  term_or_identifier: Change
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A change in the technical sense refers to a pair of process boundaries. Either at
+    coinciding boundaries (then it comes close to notions like ``punctual'''' or ``instantaneous
+    event'''' as well as ``moment'''' -- in a temporal reading), or at boundaries at the opposite
+    ends of a process of arbitrary extension."'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Change`, fetched and read directly
+    2026-07-02'
+  entry_notes: GFO's own text explicitly names "instantaneous event" as a gloss on one technical
+    sense of `Change` — the strongest direct terminological hook to "event" found in GFO's
+    base module, though `Change` itself is not restricted to the instantaneous case (an extended-process
+    reading is also given).
+- source: GFO
+  term_or_identifier: Instantaneous change
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Instantaneous changes are represented by change(e1,e2, u1, u2, u), where e1 and
+    e2 are a pair of coincident process boundaries... Instantaneous changes are therefore
+    changes of properties on two coinciding time boundaries." Subclass of `Change`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Instantaneous_change`, fetched and
+    read directly 2026-07-02'
+  entry_notes: The specific atomic/punctual subtype of `Change` — closest single-class analog
+    to DOLCE's Achievement or BFO's Process Boundary.
+- source: YAMATO
+  term_or_identifier: Continuant(Object) vs. Occurrent(Process), Events
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"YAMATO is based on a solid theory of objects, processes and events, and it deals
+    with them of equal importance (Galton 2009). Furthermore, it clearly identifies events
+    are made of processes and while processes can change, events cannot. We do not use the
+    term perdurant for explaining processes because it blocks to talk about the difference
+    between processes and events."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: `YAMATO101216.pdf`, Section 2.1, extracted 2026-07-02'
+  entry_notes: 'The most explicit "process vs. event" criterion of any of the four new sources:
+    events are composed of processes, and events (unlike processes) cannot themselves change.
+    No OWL class IRI available (registration-gated download; see `xwkont:ref:yamato-mizoguchi-2010`).'
+- source: TUpper
+  term_or_identifier: activity_occurrence
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(activity_occurrence occ) is TRUE in an interpretation of TUpper if and only if
+    occ is a member of the class of activity occurrences in the universe of discourse of the
+    interpretation. An activity occurrence is associated with a unique activity and begins
+    and ends at specific points in time. NOTE An activity occurrence is not an instance of
+    an activity."'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified**: `TUpper-Terms.html`, term `activity_occurrence`, fetched and read
+    directly 2026-07-02'
+  entry_notes: Explicitly not an instance-of relation to `activity` (a type/token distinction,
+    per the source's own NOTE) — a different axis from Process/Event, so treated as a structural
+    analog only, consistent with `object.md`'s TUpper precedent (`unknown` confidence).
+- source: GUM
+  term_or_identifier: Process (glossed "goings-on or events")
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A Process is the linguistic construal of ''goings-on'' or events. Processes are
+    similar to Configurations, but factor out Participants, Circumstances, and other elements.
+    As such, entities classified under Process can be expressed as verbs and are frequently
+    the main verb in a clause."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `Process`, fetched and read directly 2026-07-02'
+  entry_notes: GUM's own definition text is the only one of the four new sources to use the
+    literal word "events" in a class definition — but, like BFO, it treats "event" as informally
+    synonymous with its general occurrent-side class rather than naming a separate category.
+correspondences:
+- correspondence_id: xwkont:correspondence:event:001
+  source_ontology: BFO
+  source_term: Process
+  source_identifier_or_iri: BFO_0000015
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Closest formal analog to Event on the temporally-extended side; included
+    despite the labeling mismatch.
+- correspondence_id: xwkont:correspondence:event:002
+  source_ontology: BFO
+  source_term: Process Boundary
+  source_identifier_or_iri: BFO_0000035
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Closest formal analog to an atomic/instantaneous Event (cf. DOLCE's
+    Achievement).
+- correspondence_id: xwkont:correspondence:event:003
+  source_ontology: DOLCE
+  source_term: Event (Achievement/Accomplishment)
+  source_identifier_or_iri: '`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#event`, `#achievement`,
+    `#accomplishment` (confirmed directly, 2026-07-01)'
+  source_version: WonderWeb D18, 2003 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: DOLCE's most direct, explicitly named Event category.
+- correspondence_id: xwkont:correspondence:event:004
+  source_ontology: UFO
+  source_term: Event
+  source_identifier_or_iri: not applicable — UFO's 2021 paper has no IRI scheme of its own;
+    see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat
+  source_version: Applied Ontology, 2021 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: UFO's most direct, explicitly named Event category; continues DOLCE's
+    lineage per `continuant-occurrent.md` mapping-004.
+- correspondence_id: xwkont:correspondence:event:005
+  source_ontology: SUMO
+  source_term: IntentionalProcess / LifeEvent
+  source_identifier_or_iri: '`IntentionalProcess` / `LifeEvent` (SUMO/SUO-KIF has no separate
+    opaque identifier scheme; not independently confirmed against `Merge.kif` in this pass
+    — see Uncertainty)'
+  source_version: 2001 (Niles & Pease) plus current SUMO source (not independently confirmed)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Included as an exploratory analog despite the structural mismatch (subclass
+    of Process, not a parallel category).
+- correspondence_id: xwkont:correspondence:event:006
+  source_ontology: GFO
+  source_term: Change
+  source_identifier_or_iri: https://w3id.org/gfo/base/Change
+  source_version: GFO 2024-11-18 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: GFO's own definition text explicitly glosses one technical sense of
+    `Change` as "instantaneous event," the strongest direct terminological hook found in GFO's
+    base module.
+- correspondence_id: xwkont:correspondence:event:007
+  source_ontology: GFO
+  source_term: Instantaneous change
+  source_identifier_or_iri: https://w3id.org/gfo/base/Instantaneous_change
+  source_version: GFO 2024-11-18 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: The atomic/punctual subtype of `Change`; closest single-class analog
+    to DOLCE's Achievement and BFO's Process Boundary.
+- correspondence_id: xwkont:correspondence:event:008
+  source_ontology: YAMATO
+  source_term: Event (as distinguished from Process)
+  source_identifier_or_iri: not applicable — registration-gated OWL/Hozo download not fetched;
+    cited by quotation from the 2010 technical report, not by IRI
+  source_version: 2010 technical report (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: YAMATO's own text names "processes and events" as distinct and gives
+    a positive criterion (events are made of processes; events, unlike processes, cannot change)
+    — the most explicit process/event distinction found among the four new sources.
+- correspondence_id: xwkont:correspondence:event:009
+  source_ontology: TUpper
+  source_term: activity_occurrence
+  source_identifier_or_iri: not applicable — PSL/COLORE CLIF has no opaque identifier scheme;
+    term name is the identifier
+  source_version: COLORE formalization (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: Included as an exploratory structural analog despite the type/token
+    mismatch (an `activity_occurrence` is explicitly not an instance-of relation to `activity`,
+    per the source's own NOTE).
+- correspondence_id: xwkont:correspondence:event:010
+  source_ontology: GUM
+  source_term: Process
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process
+  source_version: GUM 3.1 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: GUM's own definition text uses the literal word "events" (alongside
+    "goings-on"), the only new source besides BFO's altLabel usage to do so directly — but
+    names no separate Event class.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: 'BFO and SUMO both lack a top-level "Event" *category* distinct from Process — BFO
+    registers "event" only as an alt-label synonym for `Process` itself (verified directly,
+    BFO_0000015), while SUMO nests event-like notions *inside* Process (verified directly:
+    "anything that occurs in time but is not an Object," with "events" used only as informal
+    examples). DOLCE and UFO both have "Event" as an explicit, separate top category, now
+    also verified directly. This is a genuine four-way split in how the same conceptual territory
+    is carved up, not just a labeling difference.'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  confidence: high
+  supporting_references_note: '`xwkont:ref:bfo-2020`, `xwkont:ref:sumo-niles-pease-2001`,
+    `xwkont:ref:dolce-wonderweb-d18`, `xwkont:ref:ufo-2021` (all verified)'
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: 'BFO''s `Process Boundary` (instantaneous, zero-dimensional) and DOLCE''s `Achievement`
+    (atomic event, confirmed directly: "achievements... if they are atomic") both isolate
+    a "point-like" occurrent as distinct from an extended one, despite sitting in structurally
+    different hierarchies (BFO: sibling of Process under Occurrent; DOLCE: subtype of Event
+    under Perdurant). This is a plausible conceptual convergence, not confirmed by a source
+    explicitly drawing this comparison — that remains this crosswalk''s own editorial observation,
+    now resting on verified primary-source definitions rather than secondary paraphrase.'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  confidence: medium
+- note_id: note-003
+  dimension: philosophical
+  claim_type: inference
+  note: DOLCE's Event/Stative split resembles Vendler's (1957) linguistic aspect classification
+    (state, activity, accomplishment, achievement), consistent with DOLCE's documented cognitive/linguistic
+    orientation (`continuant-occurrent.md` `note-002`). Direct reading of D18's own 90-item
+    bibliography confirms **no citation to Vendler exists in the primary source** — this remains
+    this crosswalk's own external observation, not something DOLCE's authors themselves draw.
+  supporting_references:
+  - xwkont:ref:dolce-wonderweb-d18
+  confidence: low
+  claim_type_annotation: checked and unconfirmed, 2026-07-01
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: Of the four ADR-0015 sources, only YAMATO gives a positive, named process/event distinction
+    with an explicit criterion (events are made of processes; events cannot themselves change)
+    — closer in spirit to DOLCE/UFO's named-category approach than to BFO/SUMO's synonym/umbrella
+    approach. GFO and GUM both use the literal word "event(s)" only inside another class's
+    definition text (`Change`'s gloss; `Process`'s gloss, respectively), echoing BFO's altLabel
+    pattern rather than introducing a separate category. TUpper names no "event" term at all
+    — its closest structural analog, `activity_occurrence`, is a type/token distinction (occurrence-of-an-activity),
+    not a process/event category split, and its own documentation explicitly denies the instance-of
+    reading a reader might assume.
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:tupper-colore
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-005
+  dimension: technical
+  claim_type: editorial observation
+  note: 'GFO''s `Instantaneous_change` and BFO''s `Process Boundary`/DOLCE''s `Achievement`
+    (per `note-002`) form a three-way convergence on isolating an atomic/punctual occurrent,
+    despite three structurally different hierarchies (GFO: subtype of `Change`, itself a distinct
+    branch from `Occurrent`''s `Process`/`Action` subtypes; BFO: sibling of `Process` under
+    `Occurrent`; DOLCE: subtype of `Event` under `Perdurant`). This extends `note-002`''s
+    observation rather than replacing it — still an editorial observation, not a comparison
+    any source draws itself.'
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  confidence: medium
+mapping_assertions:
+- mapping_id: xwkont:mapping:event:001
+  subject: DOLCE:Event
+  relation_category: close-match
+  object: UFO:Event
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Both are explicit, named top-level Event categories, both now directly verified;
+    UFO continues DOLCE's lineage (per `continuant-occurrent.md` mapping-004). Not `exact-equivalence-candidate`
+    because UFO's event theory (mereology, causation, modal fragility) is more elaborated
+    than DOLCE's Achievement/Accomplishment split.
+  provenance:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:event:002
+  subject: BFO:Process
+  relation_category: unknown
+  object: DOLCE:Event
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: 'Structural mismatch: BFO''s Process is temporally extended and sits opposite
+    Process Boundary, not opposite a Stative/Event split. Whether BFO:Process better corresponds
+    to DOLCE:Stative or DOLCE:Event (or neither cleanly) is unresolved.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+- mapping_id: xwkont:mapping:event:003
+  subject: BFO:Process Boundary
+  relation_category: close-match
+  object: DOLCE:Achievement
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: Both isolate an atomic/instantaneous occurrent, per `note-002`, now on verified
+    primary-source definitions for both sides — but from structurally different hierarchies
+    and not confirmed by a source making this comparison explicitly, so confidence is not
+    raised past medium.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:event:004
+  subject: UFO:Event
+  relation_category: unknown
+  object: SUMO:IntentionalProcess/LifeEvent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: SUMO nests this inside Process rather than treating it as a parallel category;
+    correspondence is exploratory only.
+  provenance:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:event:005
+  subject: GFO:Instantaneous_change
+  relation_category: close-match
+  object: DOLCE:Achievement
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Both isolate an atomic/instantaneous occurrent (per `note-005`, extending `note-002`)
+    — GFO''s own text glosses this technical sense as "instantaneous event." Structurally
+    different hierarchies (GFO: subtype of `Change`; DOLCE: subtype of `Event`), and no source
+    draws this comparison itself, so capped at medium like `event-003`.'
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:dolce-wonderweb-d18
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:event:006
+  subject: GFO:Instantaneous_change
+  relation_category: close-match
+  object: BFO:Process Boundary
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: Same atomic/instantaneous convergence as `event-005`, now against BFO's own Process
+    Boundary sibling class — a three-way convergence per `note-005`.
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:bfo-2020
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:event:007
+  subject: YAMATO:Event
+  relation_category: close-match
+  object: DOLCE:Event
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Both give a positive, named process/event distinction rather than treating "event"
+    as a synonym or umbrella term — YAMATO's "events are made of processes... processes can
+    change, events cannot" parallels DOLCE's cumulative/non-cumulative criterion in spirit,
+    though the two criteria are not formally identical and YAMATO's own OWL is not fetched
+    (quotation-only citation). Not `high` because the underlying formalizations were not directly
+    compared class-for-class.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:dolce-wonderweb-d18
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:event:008
+  subject: YAMATO:Event
+  relation_category: close-match
+  object: UFO:Event
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: YAMATO's "events... cannot change" criterion echoes UFO's characterization of
+    events as "modally fragile entities" that "cannot genuinely change... while maintaining
+    their numerical identity" — a substantive terminological and conceptual convergence between
+    two independently-authored sources, not just a shared label.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:event:009
+  subject: TUpper:activity_occurrence
+  relation_category: unknown
+  object: Event (general)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: 'Structural analog only: `activity_occurrence` is a token/particular occurrence
+    of an `activity` type (explicitly not an instance-of relation, per the source''s own NOTE),
+    a different axis than the Process/Event category split found in DOLCE/UFO/YAMATO. Consistent
+    with `object.md`''s TUpper precedent of `unknown`/low confidence.'
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:event:010
+  subject: GUM:Process
+  relation_category: unknown
+  object: Event (general)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: GUM's own definition text uses the word "events," but only as an informal gloss
+    on its general `Process` class (which also covers non-event "goings-on" more broadly)
+    — an umbrella pattern like BFO/SUMO's rather than a named Event category, per `note-004`.
+  provenance:
+  - xwkont:ref:gum-owl
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: non-equivalence
+  resolved: true
+  description: '~~BFO has no core class named "Event"~~ — corrected: BFO''s `bfo-core.ttl`
+    registers "event" as an `skos:altLabel` on `Process` (BFO_0000015), confirmed by direct
+    primary-source read. BFO''s Occurrent split remains Process (extended) vs. Process Boundary
+    (instantaneous) as a distinct axis from DOLCE/UFO''s Event-as-a-named-category, but the
+    original "no Event term at all" claim was too strong and has been corrected throughout
+    this document.'
+  impact: Confidence on BFO-involving mappings (`event-002`, `event-003`) can be reassessed
+    now that the underlying claim is verified rather than inferred from absence.
+  follow_up: Resolved — no further action needed on this specific item.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: true
+  description: 'SUMO has no top-level "Event" sibling to Process; confirmed directly against
+    `Merge.kif`: Process''s formal definition is "anything that occurs in time but is not
+    an Object," with "events" (e.g., a football match) used only as informal examples, not
+    a separate class.'
+  impact: '`event-004`''s low confidence was based on an unverified secondary claim; the underlying
+    structural finding is now confirmed, though the specific `IntentionalProcess`/`LifeEvent`
+    subclass chain from the original draft was not re-verified in this pass.'
+  follow_up: Resolved for the core finding. Re-verify `IntentionalProcess`/`LifeEvent` specifically
+    if that detail is relied upon elsewhere.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-003
+  uncertainty_type: uncertainty
+  resolved: true
+  description: '`note-003`''s Vendler (1957) connection for DOLCE''s Event/Stative split is
+    plausible and well-documented in general aspectual-linguistics literature, but D18''s
+    own 90-item bibliography, read directly, contains **no citation to Vendler**. This is
+    not Masolo et al.''s own connection to draw — only this crosswalk''s external observation.'
+  impact: Confidence on `note-003` remains capped at low, now for a confirmed reason (checked
+    absence) rather than an unchecked one; no mapping assertion relies on it.
+  follow_up: Resolved — no further action needed. A Vendler (1957) reference record is not
+    warranted unless a future pass needs to cite Vendler's own paper directly for the aspectual-linguistics
+    parallel itself (independent of any DOLCE citation).
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01, as a confirmed negative finding
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: This crosswalk does not resolve Process on its own terms — it treats BFO:Process
+    and SUMO's Process-as-umbrella only in relation to Event.
+  impact: Process needs its own crosswalk (already tracked in `TODO.md`) to be treated fairly
+    as a concept in its own right, not just as Event's foil.
+  follow_up: Create the Process concept crosswalk next.
+- item_id: uncertainty-005
+  uncertainty_type: open-question
+  resolved: false
+  description: YAMATO's own OWL/Hozo files were not fetched in this pass (registration-gated
+    download; see `xwkont:ref:yamato-mizoguchi-2010`), so `event-007`/`event-008`'s YAMATO
+    side is cited by quotation from the 2010 technical report, not by class IRI, and YAMATO's
+    more detailed event-mereology treatment (if any) referenced only briefly in Section 5
+    of the report has not been checked.
+  impact: Confidence on `event-007`/`event-008` (capped at medium-high) could rise if the
+    OWL is fetched and a formal `Event` class definition is found matching the report's prose
+    criterion.
+  follow_up: Fetch YAMATO's OWL/Hozo files if the registration gate is completed later (e.g.,
+    by the maintainer).
+- item_id: uncertainty-006
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: GFO's `Change` class spans both the instantaneous case ("instantaneous event")
+    and the extended case ("a process of arbitrary extension") — it is not a clean Event-only
+    class the way DOLCE's `Achievement`/`Accomplishment` pair is. Only the `Instantaneous_change`
+    subtype was judged a close match to atomic Event-analogs (`event-005`/`event-006`); the
+    broader `Change` class itself was not mapped.
+  impact: None of this crosswalk's mapping assertions rely on the broader `Change` class directly
+    — only its `Instantaneous_change` subtype.
+  follow_up: No further action needed unless a future pass wants to map GFO:Change's extended-case
+    reading against DOLCE:Accomplishment specifically.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified** directly against `bfo-core.ttl`, 2026-07-01'
+- reference_id: xwkont:ref:dolce-wonderweb-d18
+  short_label: 'WonderWeb Deliverable D18: Ontology Library (Masolo et al., 2003)'
+  verification_note: '**verified** directly (manual PDF extraction, including a direct check
+    of the bibliography for a Vendler 1957 citation), 2026-07-01'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly (fetched as plain-text RDF/XML), 2026-07-01; supplies
+    exact class IRIs for `event`/`achievement`/`accomplishment`'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified** directly (manual PDF extraction), 2026-07-01'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-01'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl` (`Change`, `Instantaneous_change`),
+    2026-07-02'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified** directly (PDF extraction, Section 2.1), 2026-07-02'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified** directly against `TUpper-Terms.html` (`activity_occurrence`),
+    2026-07-02'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified** directly against `GUM-31.owl` (`Process`), 2026-07-02'
+review_history:
+- review_date: "2026-07-01"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:event:2026-07-01:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; BFO/DOLCE/UFO/SUMO content all verified directly, including the original BFO
+    "no Event term" over-correction (BFO does register `event` as an `skos:altLabel` on `Process`)
+    and a confirmed-absent Vendler (1957) citation check; mapping categories/confidence valid;
+    every `xwkont:ref:*` citation resolves. One disclosed gap: SUMO''s `IntentionalProcess`/`LifeEvent`
+    subclass detail (`xwkont:correspondence:event:005`) was not independently re-confirmed
+    against `Merge.kif` in this pass — recorded explicitly in that row''s identifier note
+    rather than silently assumed. Self-review, not independent third-party review.'
+- review_date: "2026-07-02"
+  outcome: Not yet reviewed — status reverted `reviewed` → `candidate`
+  review_notes: ADR-0015 buildout added GFO/YAMATO/TUpper/GUM correspondences (006-010), mappings
+    (005-010), notes (004-005), and uncertainty items (005-006). All four sources' content
+    directly verified against already-fetched primary artifacts (`modules/gfo-base.owl`, `YAMATO101216.pdf`,
+    `TUpper-Terms.html`, `GUM-31.owl`); no re-fetching needed. Pending maintainer review before
+    advancing back to `reviewed`.
+- review_date: "2026-07-02"
+  outcome: Passed — advanced `candidate` → `reviewed`
+  review_id: xwkont:review:event:2026-07-02:02
+  review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
+    Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks. Checked:
+    scope preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential with no gaps or duplicates; relation-category and confidence values
+    compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013` (both `medium-high`
+    mappings here state a sourcing-driven reason); spot-checked YAMATO''s "events... cannot
+    change" and GFO''s `Change`/`Instantaneous_change` quotations against the fetched artifacts
+    and found no transcription errors. Self-review performed at the maintainer''s explicit
+    request, not independent third-party review.'
+future_work:
+- ~~Read `xwkont:ref:bfo-2020` directly~~ — **done 2026-07-01**; found the crosswalk's original
+  claim was too strong and corrected it (`uncertainty-001`).
+- ~~Read SUMO's current `Merge.kif` directly~~ — **done 2026-07-01**; confirmed the core finding
+  with an exact formal definition (`uncertainty-002`). The specific `IntentionalProcess`/`LifeEvent`
+  subclass detail was not re-verified.
+- '~~Verify the Vendler (1957) connection against DOLCE''s own citations~~ — **done 2026-07-01**,
+  `uncertainty-003` resolved: no Vendler citation exists in D18''s bibliography; a reference
+  record was not created since the connection is not DOLCE''s own.'
+- ~~Read DOLCE's WonderWeb D18 and UFO's 2021 paper directly~~ — **done 2026-07-01**, reusing
+  extractions from `object.md`/`role.md`/`process.md`/`relation.md`/`continuant-occurrent.md`.
+- ~~Extend GFO/YAMATO/TUpper/GUM correspondences to this crosswalk~~ — **done 2026-07-02**
+  (ADR-0015 buildout, 3 of 8 crosswalks). Pending maintainer review (`uncertainty-005`/`uncertainty-006`
+  remain open).
+- Process concept crosswalk exists at `docs/crosswalks/concepts/process.md`.
+- Fetch YAMATO's OWL/Hozo files if the registration gate is completed, to move `event-007`/`event-008`
+  off quotation-only citation (`uncertainty-005`).

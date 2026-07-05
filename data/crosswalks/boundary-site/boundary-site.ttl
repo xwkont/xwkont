@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:boundary-site:001> a sssom:Mapping ;
+    rdfs:comment "Both denote a lower-dimensional, non-natural-boundary part of a host that remains genuinely part of that host — DOLCE's own worked example (\"a bump or an edge\") uses the same vocabulary BFO's fiat-surface/line examples evoke. The closest lexical and structural pairing in this crosswalk."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Relevant_part ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Fiat_surface_fiat_line .
+
+<https://w3id.org/xwkont/id#mapping:boundary-site:002> a sssom:Mapping ;
+    rdfs:comment "Both denote a dependent region whose location is fixed relative to a material/physical entity without being a part of it — BFO's \"boundaries... have locations determined in relation to some material entity\" and DOLCE's \"a hole in a piece of cheese... the shadow of a tree\" describe the same not-part-of-host dependent-region pattern."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Dependent_place ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Site .
+
+<https://w3id.org/xwkont/id#mapping:boundary-site:003> a sssom:Mapping ;
+    rdfs:comment "Both denote a boundary dependent on a material entity, but GFO's has no dimensional (point/line/surface) subdivision the way BFO's does, and lacks a prose definition to compare in detail — `overlap`, not `close-match`, reflects this asymmetric level of documentation."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Material_boundary ;
+    sssom:subject_id xwkont-source-term:BFO-Continuant_fiat_boundary .
+
+<https://w3id.org/xwkont/id#mapping:boundary-site:004> a sssom:Mapping ;
+    rdfs:comment "Recorded explicitly as an unresolved comparison, not a correspondence — TUpper's terms have no prose definition anywhere fetched, so whether they denote the same part-of-host boundary concept as BFO's dimensional fiat classes cannot currently be verified beyond their shared structural role (connection to `poly`/`point`/`surface` via `in`/`part`)."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:TUpper-edge_ridge_border_outer ;
+    sssom:subject_id xwkont-source-term:BFO-Fiat_point_line_surface .
+
+xwkont-source-term:BFO-Continuant_fiat_boundary rdfs:label "Continuant fiat boundary"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:BFO-Fiat_point_line_surface rdfs:label "Fiat point/line/surface"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:BFO-Fiat_surface_fiat_line rdfs:label "Fiat surface (+ fiat line)"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:BFO-Site rdfs:label "Site"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:DOLCE-Dependent_place rdfs:label "Dependent-place"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:DOLCE-Relevant_part rdfs:label "Relevant-part"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:GFO-Material_boundary rdfs:label "Material_boundary"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:TUpper-edge_ridge_border_outer rdfs:label "edge/ridge/border/outer"@en ;
+    dcterms:source "TUpper" .
+

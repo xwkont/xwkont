@@ -57,6 +57,12 @@ Until a `1.0.0` ontology milestone is accepted, version numbers are pre-1.0 proj
 | MINOR | New terms, mapping structures, publication capabilities, or reviewed crosswalk scope. | Backward-compatible additions or substantial non-breaking expansions. |
 | PATCH | Corrections, clarifications, validation fixes, or non-semantic updates. | Backward-compatible fixes and clarifications. |
 
+## Source Ontology Version Re-check Cadence
+
+XwkOnt's own release versioning (above) is independent of each source ontology's (BFO, DOLCE, SUMO, UFO, GFO, YAMATO, TUpper, GUM) release cadence. XwkOnt does not track source ontologies' own version history and does not commit to updating a crosswalk every time a cited source ontology publishes a new release.
+
+Once a year, the cited version of each of the eight source ontologies (as recorded in each crosswalk's Source Ontology Correspondence table and the corresponding `docs/references/ref-*.md` record) should be checked against that ontology's current published version. The outcome — no change, or a newer version now exists — should be recorded in a session journal entry; a version mismatch found this way is a trigger to evaluate whether the affected crosswalk needs re-verification, not an automatic obligation to re-verify immediately.
+
 ## Immutable Versioned Ontology Document IRI Decision
 
 This policy defers minting immutable versioned ontology document IRIs.

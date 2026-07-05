@@ -1,0 +1,807 @@
+local_identifier: xwkont:concept:role
+slug: role
+title: Role
+editorial_status: reviewed
+created: "2026-07-01"
+modified: "2026-07-02"
+scope_note: 'This crosswalk compares BFO''s `Role` (a `Realizable Entity`, the other branch
+  of `Specifically Dependent Continuant` alongside Quality), DOLCE''s Role treatment (formalized
+  via OntoClean meta-properties: anti-rigid, founded/dependent — **but see correction below:
+  this is not part of core DOLCE**), UFO''s `Role` (anti-rigid and relationally dependent,
+  paired with `Relator`), and SUMO''s `SocialRole` (a subclass of `Attribute`), completing
+  Object''s sibling pair under Continuant alongside `docs/crosswalks/concepts/quality.md`.
+
+
+
+  **Correction (2026-07-01), following direct primary-source verification:** this crosswalk
+  originally cited DOLCE''s Role treatment to `xwkont:ref:dolce-wonderweb-d18` with an acknowledged
+  locator uncertainty. That uncertainty is now resolved, and the resolution is more significant
+  than "which paper" — it''s a scope correction. The 2022 comprehensive DOLCE paper (Borgo
+  et al., `xwkont:ref:dolce-borgo-2022`, fetched and read directly) states explicitly: **"DOLCE
+  does not formalize functions and roles."** What this crosswalk calls "DOLCE''s Role" is
+  actually from separate **DOLCE-driven** literature (Borgo et al., 2010; Masolo et al., 2004)
+  — extension work built on DOLCE, not core DOLCE theory itself. This is the same kind of
+  finding as `information-artifact.md`''s IAO/DOLCE-Lite-Plus situation: a real, citable analog
+  exists, but it lives in extension literature, not the core specification.
+
+
+
+  **Update (2026-07-01), following direct primary-source verification of Masolo et al. (2004)
+  itself:** this crosswalk''s `uncertainty-003` (whether DOLCE-driven Role literature has
+  a term equivalent to UFO''s `Relator`) is now resolved. The 2004 paper''s own apparatus
+  — `Description`, `Concept`, `Role`, and the `classification` relation `CF(x, y, t)` — has
+  no reified entity that mediates or acts as truthmaker for a relationship between specific
+  bearers the way UFO''s `Relator` does. Its closest construct, `Description`, instead defines
+  a `Concept`/`Role` *in general* (a "context" or "social convention"), not a particular relationship
+  instance; roles here are unary predicates that classify entities (`CF`), not binary relational
+  particulars. See Source Definitions and Uncertainty for the verified picture. Separately,
+  this pass also noticed a citation-precision issue: the "Borgo et al., 2010" citation used
+  alongside Masolo et al. (2004) for DOLCE-driven Role literature (in both this crosswalk
+  and `xwkont:ref:dolce-borgo-2022`''s own text) resolves to Borgo, Carrara, Garbacz & Vermaas
+  (2010), "Formalizations of functions within the DOLCE ontology" — a paper about *functions*,
+  not roles specifically. Role content should be attributed to Masolo et al. (2004) alone;
+  the "Borgo et al., 2010" pairing appears to be the 2022 paper''s own imprecision, not a
+  distinct roles source this crosswalk failed to check.
+
+
+
+  **This crosswalk confirms, rather than introduces, `quality.md`''s central finding.** SUMO''s
+  `SocialRole` is a subclass of `RelationalAttribute`, itself a partition of `Attribute` —
+  the same abstract-entity category `quality.md` found for SUMO''s `Quality` analog, confirmed
+  directly against SUMO''s primary `Merge.kif` source (2026-07-01). This is not a coincidence
+  limited to Quality: it''s a systematic pattern across SUMO''s whole dependent-particular
+  family. Where BFO/DOLCE/UFO treat both Quality and Role as particulars dependent on or connected
+  to a concrete bearer (via inherence, OntoClean meta-properties, or relational dependence),
+  SUMO classifies both under the same abstract `Attribute` branch — SUMO''s own documentation
+  defines `SocialRole` as "the Class of all Attributes that specify the position or status
+  of a CognitiveAgent within an Organization or other Group."
+
+
+
+  Exclusions: this crosswalk does not fully formalize OntoClean''s meta-property apparatus
+  (rigidity, identity, unity, dependence) or UFO''s Relator theory beyond what''s needed to
+  place Role within them.
+
+
+
+  **Update (2026-07-02), ADR-0015 buildout:** extended to GFO, YAMATO, TUpper, and GUM — the
+  eighth and last of the 8 existing concept crosswalks to receive the buildout. GFO has the
+  richest Role taxonomy of any source examined in this repository: `Role` (a `Concrete` individual)
+  subdivides into `Processual_role` (a dependent process, "roles with a process as context"),
+  `Relational_role` (`Dependent`, `role_of` some `Relator` — directly paralleling UFO''s own
+  Role/Relator pairing found in `relation.md`), and, most strikingly, **`Social_role`, which
+  GFO explicitly classifies as `Independent`** — `owl:disjointWith` `Dependent`. This directly
+  contradicts the shared foundational assumption BFO, DOLCE-driven literature, and UFO all
+  make: that a role is, by its nature, a dependent particular requiring a context or bearer.
+  GFO''s own Social_role says otherwise for at least that one role subtype. YAMATO''s own
+  text places role squarely in the dependent-particular camp instead: "The notion of quality
+  role satisfies context-dependence which is one of the most important properties of roles.
+  In the case of teacher role, a school is its context in which teacher role is defined" —
+  an example directly comparable to BFO''s "student role... university." YAMATO''s text further
+  states "roles are used in defining all the types in YAMATO," a more foundational role for
+  the Role concept than any other source examined in this repository, though the paper itself
+  defers full elaboration to a separate publication (Mizoguchi 2007, not independently fetched)
+  and its Hozo implementation tool. TUpper again reifies nothing — "role" appears only informally
+  inside `participates_in`''s prose gloss ("x plays some role that is not pre-specified"),
+  never as a class. GUM''s `RolePlaying` continues the same pattern already found for its
+  Information-Artifact and Relation analogs (`information-artifact.md`, `relation.md`): it
+  is a relation type (`rdfs:subClassOf` `Symbolization`), not an object/entity type — GUM
+  consistently reifies this whole family of content as participant-relations rather than dependent
+  entities.
+
+
+
+  **Epistemic note:** BFO, DOLCE, UFO, and SUMO content is now all verified directly against
+  primary sources. BFO and SUMO: `bfo-core.ttl`, `Merge.kif` (fetched and read 2026-07-01).
+  DOLCE: `xwkont:ref:dolce-borgo-2022` (arXiv preprint) and `xwkont:ref:masolo-vieu-2004`
+  itself (AAAI-hosted PDF), both extracted via manual PDF-stream decompression since no PDF-text-extraction
+  tool is otherwise available in this environment. UFO: the 2021 Applied Ontology paper''s
+  own Role and Relator passages, extracted with the same technique (reusing the extraction
+  already performed for `object.md`/`process.md`).'
+labels:
+- role: XwkOnt working label
+  label: Role
+  label_source: XwkOnt
+  language: en
+  entry_notes: Matches `xwkont-core:Role` (`rdfs:subClassOf xwkont-core:Continuant`) in `data/ontology/core.ttl`.
+- role: Source term
+  label: Role (a Realizable Entity)
+  label_source: BFO
+  language: en
+- role: Source term
+  label: '*(none in core DOLCE — see DOLCE-driven approaches, Borgo et al. 2010 / Masolo et
+    al. 2004)*'
+  label_source: DOLCE
+  language: en
+  entry_notes: '"DOLCE does not formalize functions and roles" — direct quotation, `xwkont:ref:dolce-borgo-2022`.
+    See Scope Note correction.'
+- role: Source term
+  label: Role (anti-rigid, relationally dependent); Relator
+  label_source: UFO
+  language: en
+  entry_notes: Relator is a closely related but distinct companion notion.
+- role: Alternate label
+  label: SocialRole (subclass of Attribute)
+  label_source: SUMO
+  language: en
+  entry_notes: Same abstract-entity treatment found for Quality — see Scope Note.
+- role: Source term
+  label: Role (+ Processual role, Social role, Relational role)
+  label_source: GFO
+  language: en
+  entry_notes: A three-way taxonomy; `Social_role` is classified `Independent`, contradicting
+    the dependent-particular assumption every other source shares.
+- role: Source term
+  label: Role (context-dependent)
+  label_source: YAMATO
+  language: en
+  entry_notes: Positively discussed via example ("teacher role... school"); full theory deferred
+    to Mizoguchi (2007) and the Hozo implementation tool.
+- role: Source term
+  label: '*(none — informal mention only)*'
+  label_source: TUpper
+  language: en
+  entry_notes: '"Role" appears only inside `participates_in`''s prose gloss, never as a reified
+    class.'
+- role: Source term
+  label: RolePlaying
+  label_source: GUM
+  language: en
+  entry_notes: A relation type (subclass of `Symbolization`), not an object/entity type —
+    same pattern as GUM's Information-Artifact and Relation analogs.
+source_definitions:
+- source: BFO
+  term_or_identifier: Role (BFO_0000023)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) A role b is a realizable entity such that b exists because there is
+    some single bearer that is in some special physical, social, or institutional set of circumstances
+    in which this bearer does not have to be & b is not such that, if it ceases to exist,
+    then the physical make-up of the bearer is thereby changed." `skos:altLabel`: "externally-grounded
+    realizable entity." Examples: "The priest role; the student role; the role of subject
+    in a clinical trial; the role of a stone in marking a property boundary."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000023, fetched and read directly 2026-07-01'
+  entry_notes: Confirms the earlier paraphrase closely; "Mary bears a student role at a university"
+    is this crosswalk's own illustrative gloss on BFO's "student role" example, not a direct
+    quotation.
+- source: DOLCE core
+  term_or_identifier: '"DOLCE does not formalize functions and roles"'
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"DOLCE does not formalize functions and roles, although these have been widely investigated
+    and represented in DOLCE-driven approaches (Borgo et al., 2010; Masolo et al., 2004)."'
+  reference:
+  - xwkont:ref:dolce-borgo-2022
+  locator: '**verified**: arXiv preprint 2308.01597, manually extracted 2026-07-01'
+  entry_notes: 'This is the key correction: Role is not part of core DOLCE theory at all.'
+- source: DOLCE-driven approaches (not core DOLCE)
+  term_or_identifier: Role
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"Roles are represented as (social) concepts, which are connected to other entities
+    (like endurants, perdurants, and abstracts) by the relation of classification. In particular,
+    roles are concepts that are anti-rigid and founded, meaning that (i) they have dynamic
+    properties and (ii) they have a relational nature, i.e. they depend on other roles and
+    on contexts."'
+  reference:
+  - xwkont:ref:dolce-borgo-2022
+  - xwkont:ref:masolo-vieu-2004
+  reference_note: '`xwkont:ref:dolce-borgo-2022`, confirmed against `xwkont:ref:masolo-vieu-2004`
+    directly'
+  locator: '**verified**: both `xwkont:ref:dolce-borgo-2022` (arXiv preprint) and, as of 2026-07-01,
+    `xwkont:ref:masolo-vieu-2004` itself (AAAI-hosted PDF, manually extracted)'
+  entry_notes: Classified `philosophical` because OntoClean's meta-properties (rigidity, dependence)
+    are themselves a specific philosophical framework, not just a structural definition.
+- source: DOLCE-driven approaches (not core DOLCE)
+  term_or_identifier: Description (and the absence of a Relator-equivalent)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Masolo et al. (2004)''s own apparatus: `Concept`, `Description`, and `Role` are introduced
+    as reified "non-agentive social objects," linked by `defined-by` (DF) and `used-by` (US)
+    relations; entities are connected to concepts by the `classification` relation `CF(x,
+    y, t)`. A concept is a `Role` iff it is anti-rigid (D1) and founded (D2): "A concept x
+    is founded if its definition involves (at least) another concept y (definitional dependence)
+    such that for each entity classified by x, there is an entity classified by y which is
+    external to it." No entity in this apparatus mediates or is a truthmaker for a relationship
+    between two specific bearers the way a UFO `Relator` does — `Description` defines a `Concept`/`Role`
+    in general, not a particular relationship instance.'
+  reference:
+  - xwkont:ref:masolo-vieu-2004
+  locator: '**verified**: AAAI-hosted PDF (KR2004), manually extracted 2026-07-01, checked
+    directly (not just via `xwkont:ref:dolce-borgo-2022`''s report)'
+  entry_notes: 'Resolves `uncertainty-003`: confirms, from the primary source itself, that
+    DOLCE-driven Role literature has no Relator-equivalent term.'
+- source: UFO
+  term_or_identifier: Role
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"In UFO, roles are anti-rigid types whose instantiation occur in virtue of relational
+    conditions. Roles that can be instantiated by individuals of a single kind[] are simply
+    termed roles, while those that can be instantiated by individuals of different kinds...
+    are termed roleMixins." Examples: "employee as a role of a person in the scope of an employment
+    relator, and husband as a role of a person in the scope of a marriage relator."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: 'Corrects the earlier paraphrase''s framing slightly: UFO''s Role is specifically
+    an anti-rigid *sortal* (a specialization of a Kind) with *relational* contingent conditions,
+    not just "a type that is anti-rigid and relationally dependent" in the abstract — it sits
+    within UFO''s broader sortal/non-sortal type taxonomy (Kind, Subkind, Phase, Role, Category,
+    Phase Mixin, Role Mixin, Mixin).'
+- source: UFO
+  term_or_identifier: Relator
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"[A] relator is a moment (i.e., an existentially dependent entity) that is an aggregation
+    of qua individuals... For instance, John and Mary''s Marriage is composed of John-qua-husband-of-Mary
+    and Mary-qua-wife-of-John. A relator is, hence, existentially dependent on multiple individuals,
+    namely, the bearers of its constituting qua individuals. Examples of relators include
+    marriages, enrollments, employments, contracts, and presidential mandates. Externally
+    dependent modes as well as relators serve as truthmakers of material relations."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: Distinct from Role itself, but closely paired with it in UFO's theory — the
+    relational dependency a Role requires is often grounded in a Relator (e.g., "husband"
+    is a role held in the scope of a "marriage" relator). Confirms the earlier paraphrase
+    closely; now a direct quotation with the primary source's own worked example.
+- source: SUMO
+  term_or_identifier: SocialRole
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(subclass SocialRole RelationalAttribute)... The Class of all Attributes that specify
+    the position or status of a CognitiveAgent within an Organization or other Group."'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: `Merge.kif`, `documentation SocialRole EnglishLanguage`, fetched
+    and read directly 2026-07-01'
+  entry_notes: 'Corrects the earlier draft''s claimed hierarchy: SocialRole is a subclass
+    of `RelationalAttribute` specifically (itself a partition of `Attribute`), not directly
+    of `Attribute`. The earlier "Plumber is a subclass of SocialRole" example was not found
+    in SUMO''s core `Merge.kif` in this pass — it may exist in a domain-extension `.kif` file
+    not checked, or may have been an illustrative gloss in the secondary source rather than
+    an actual SUMO class; not asserted as verified.'
+- source: GFO
+  term_or_identifier: Role (+ Processual role, Social role, Relational role)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Role`: `rdfs:subClassOf` `Concrete` (no further `skos:definition`). `Processual_role`:
+    "Processual roles are dependent processes. They are roles with a process as context."
+    `rdfs:subClassOf` `Process`, `Role`. `Social_role`: `rdfs:subClassOf` `Independent`, `Role`;
+    `owl:disjointWith` `Processual_role`, `Relational_role`. `Relational_role`: `rdfs:subClassOf`
+    `Dependent`, `Role`; defined via a restriction on `role_of` some `Relator`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, classes `Role`, `Processual_role`, `Social_role`,
+    `Relational_role`, fetched and read directly 2026-07-02'
+  entry_notes: '`Social_role`''s classification under `Independent` (disjoint from `Dependent`)
+    directly contradicts BFO/DOLCE-driven/UFO''s shared assumption that a role is a dependent
+    particular — a genuine metaphysical divergence, not just a labeling difference. `Relational_role`,
+    by contrast, is `Dependent` and `role_of` a `Relator`, directly paralleling UFO''s own
+    Role/Relator pairing (see `relation.md`).'
+- source: YAMATO
+  term_or_identifier: Role (context-dependent, foundational to all types)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"The notion of quality role satisfies context-dependence which is one of the most
+    important properties of roles. In the case of teacher role, a school is its context in
+    which teacher role is defined." Separately: "roles are defined within a context which
+    they necessarily depends on in our role theory (Mizoguchi 2007)... In fact, roles are
+    used in defining all the types in YAMATO."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: `YAMATO101216.pdf`, "Quality and quantity" and "Roles, functions
+    and relations" sections, extracted 2026-07-02'
+  entry_notes: The "teacher role... school" example directly parallels BFO's own "student
+    role... university" example — a context-dependent, non-abstract treatment, placing YAMATO
+    in the same camp as BFO/DOLCE-driven/UFO rather than GFO's `Social_role`-as-Independent
+    exception or SUMO's abstracta. YAMATO's own text discloses the full role theory is not
+    incorporated into this paper — it defers to Mizoguchi (2007), not independently fetched,
+    and its Hozo implementation tool.
+- source: TUpper
+  term_or_identifier: '*(no reified Role class — informal mention only)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '"(participates_in x a t) is TRUE in an interpretation of TUpper if and only if x
+    plays some role that is not pre-specified in an occurrence of the activity a at the timepoint
+    t."'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified absence** (of a reified class): `TUpper-Terms.html`, `participates_in`
+    entry, fetched and read directly 2026-07-02'
+  entry_notes: The word "role" appears only inside `participates_in`'s informal prose gloss
+    — TUpper reifies no Role entity, consistent with `quality.md`'s and `relation.md`'s TUpper
+    findings across this entire dependent-particular family.
+- source: GUM
+  term_or_identifier: RolePlaying
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A circumstantial relationship that expresses a restriction in which a facet of one
+    of the participants in a process is relevant for the actualization of the process... It
+    is frequently realized in English by a prepositional phrase with the preposition ''as'';
+    For example: ''As a president, he was terrible, although as a golfer he was not too bad.''"
+    `rdfs:subClassOf` `Symbolization`; `owl:disjointWith` `Signification`.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `RolePlaying`, fetched and read directly 2026-07-02'
+  entry_notes: 'A relation type (participant-role relation), not an object/entity type — the
+    same structural pattern already found for GUM''s Information-Artifact analog (`Signification`/`Symbolization`,
+    `information-artifact.md`) and Relation analog (`Relating`, `relation.md`): GUM consistently
+    reifies this whole family as relations, not entities.'
+correspondences:
+- correspondence_id: xwkont:correspondence:role:001
+  source_ontology: BFO
+  source_term: Role
+  source_identifier_or_iri: BFO_0000023
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Direct terminological match to XwkOnt's `xwkont-core:Role`.
+- correspondence_id: xwkont:correspondence:role:002
+  source_ontology: DOLCE-driven (not core DOLCE)
+  source_term: Role
+  source_identifier_or_iri: '`http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role`
+    (DUL''s OWL-native rendering of Masolo et al. 2004''s `RL` predicate; core DOLCE''s D18/DOLCE-Lite
+    itself has no Role term at all, confirmed directly, 2026-07-01)'
+  source_version: Masolo et al. 2004, KR2004 (independently fetched and verified 2026-07-01;
+    "Borgo et al., 2010" is a citation-precision issue — see Scope Note)
+  reference:
+  - xwkont:ref:masolo-vieu-2004
+  - xwkont:ref:dolce-borgo-2022
+  - xwkont:ref:gangemi-dul
+  inclusion_rationale: Confirmed extension-literature analog; core DOLCE explicitly does not
+    formalize Role.
+- correspondence_id: xwkont:correspondence:role:003
+  source_ontology: UFO
+  source_term: Role (+ Relator)
+  source_identifier_or_iri: not applicable — UFO's 2021 paper has no IRI scheme of its own;
+    see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat
+  source_version: Applied Ontology, 2021
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: Direct terminological match; Relator included as an inseparable companion
+    notion. Both directly verified 2026-07-01.
+- correspondence_id: xwkont:correspondence:role:004
+  source_ontology: SUMO
+  source_term: SocialRole
+  source_identifier_or_iri: '`SocialRole` (SUMO/SUO-KIF has no separate opaque identifier
+    scheme — the term name itself is the identifier)'
+  source_version: 2001 (Niles & Pease) plus current SUMO source (not independently confirmed)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Included as the structural analog despite the same abstract-entity
+    divergence found for Quality.
+- correspondence_id: xwkont:correspondence:role:005
+  source_ontology: GFO
+  source_term: Role (+ Processual role, Social role, Relational role)
+  source_identifier_or_iri: '`https://w3id.org/gfo/base/Role`, `Processual_role`, `Social_role`,
+    `Relational_role`'
+  source_version: GFO 2024-11-18 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: The richest Role taxonomy of any source in this crosswalk; `Social_role`'s
+    `Independent` classification is a genuine metaphysical divergence from every other source's
+    dependent-particular treatment.
+- correspondence_id: xwkont:correspondence:role:006
+  source_ontology: YAMATO
+  source_term: Role (context-dependent)
+  source_identifier_or_iri: not applicable — registration-gated OWL/Hozo download not fetched;
+    cited by quotation from the 2010 technical report, not by IRI
+  source_version: 2010 technical report (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Context-dependence explicitly stated via a directly BFO-comparable
+    example ("teacher role... school"); full theory deferred to Mizoguchi (2007), not independently
+    fetched.
+- correspondence_id: xwkont:correspondence:role:007
+  source_ontology: GUM
+  source_term: RolePlaying
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#RolePlaying
+  source_version: GUM 3.1 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: A relation type, not an object/entity type — consistent with GUM's
+    Information-Artifact and Relation analogs elsewhere in this repository.
+correspondences_note: No TUpper correspondence is recorded (`ADR-0015` buildout, 2026-07-02)
+  — see Source Definitions; "role" appears only informally inside `participates_in`'s prose
+  gloss, never reified as a class, consistent with `quality.md`'s and `relation.md`'s TUpper
+  findings.
+comparison_notes:
+- note_id: note-001
+  dimension: philosophical
+  claim_type: editorial observation
+  note: SUMO's `SocialRole` (subclass of `RelationalAttribute`, itself a partition of `Attribute`)
+    confirms `quality.md`'s finding that SUMO systematically classifies dependent-particular-type
+    concepts as abstract entities, not as BFO/DOLCE-driven/UFO's trope-like/relationally-dependent
+    particulars. This is now a two-concept pattern (Quality and Role), not an isolated case.
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-borgo-2022
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-002
+  dimension: philosophical
+  claim_type: editorial observation
+  note: DOLCE-driven extension literature and UFO both ground Role in an anti-rigidity/foundation
+    meta-property apparatus in the OntoClean lineage (Guarino & Welty, 2002; Masolo et al.,
+    2004's own D1/D2 anti-rigidity/foundation definitions trace to the same Husserl-derived
+    foundation notion); UFO explicitly states it incorporates "the Ontology of Universals
+    underlying OntoClean." BFO's Role, by contrast, is defined structurally (extrinsic/externally-grounded
+    realizable entity, not ceasing to change the bearer's physical make-up) without invoking
+    this meta-property framework. Confirmed directly that DOLCE *core* has no Role treatment
+    at all to compare against — only its extension literature does, now independently verified
+    against Masolo et al. (2004) itself.
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-borgo-2022
+  - xwkont:ref:masolo-vieu-2004
+  - xwkont:ref:ufo-2021
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: 'UFO''s `Relator` has no clearly identified counterpart in BFO''s or SUMO''s definitions
+    found in this pass. DOLCE-driven extension literature (Masolo et al., 2004, confirmed
+    by direct reading) has a related reification apparatus for social roles (`Concept`, `Description`,
+    `Role`, the `classification` relation `CF`), but no term equivalent to Relator specifically:
+    its `Description` construct defines a `Concept`/`Role` in general rather than mediating
+    a specific relationship instance between particular bearers the way a `Relator` does.
+    This is now a confirmed negative finding, not an open question.'
+  supporting_references:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:masolo-vieu-2004
+  confidence: high
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: This crosswalk's central DOLCE finding — "DOLCE does not formalize functions and roles"
+    — parallels `information-artifact.md`'s finding that BFO's information-artifact analog
+    (IAO) and DOLCE's (DOLCE Lite Plus/DUL) both live in extension literature rather than
+    core specifications. Across this project's crosswalks, "core DOLCE explicitly declines
+    to formalize X" is now a repeated, citable pattern for at least two concepts (Role, Information
+    Object), not a one-off gap in either case.
+  supporting_references:
+  - xwkont:ref:dolce-borgo-2022
+  confidence: high
+- note_id: note-005
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'GFO''s own Role taxonomy splits on exactly the dependent/independent axis this crosswalk''s
+    other sources agree on: `Relational_role` (`Dependent`, `role_of` some `Relator`) fits
+    BFO/DOLCE-driven/UFO''s shared assumption and directly parallels UFO''s own Role/Relator
+    pairing (per `relation.md`''s `note-005`, on the Relator side specifically); but `Social_role`
+    is explicitly classified `Independent` (`owl:disjointWith` `Dependent`) — a genuine metaphysical
+    divergence within GFO''s own apparatus, not just a labeling difference from the other
+    sources. GFO is the only source in this crosswalk to treat any role subtype as independent
+    of a bearer.'
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:masolo-vieu-2004
+  - xwkont:ref:ufo-2021
+  confidence: high
+- note_id: note-006
+  dimension: technical
+  claim_type: editorial observation
+  note: YAMATO's "teacher role... school" example is directly comparable in form to BFO's
+    own "student role... university" example — both context-dependent, non-abstract Role treatments.
+    YAMATO goes further than any other source in this crosswalk by claiming roles are foundational
+    to its entire type system ("roles are used in defining all the types in YAMATO"), though
+    this claim is not itself elaborated in the paper — it defers to a separate publication
+    (Mizoguchi 2007, not independently fetched) and the Hozo implementation tool, the same
+    deferral pattern already found for YAMATO's Relation content in `relation.md`.
+  supporting_references:
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:bfo-2020
+  confidence: medium-high
+- note_id: note-007
+  dimension: technical
+  claim_type: editorial observation
+  note: 'GUM''s `RolePlaying` continues a pattern now confirmed across three separate concepts
+    in this repository (Information Artifact, Relation, and now Role): GUM consistently reifies
+    this whole family of content — content that BFO/DOLCE/UFO treat as dependent entities
+    — as relation types (subclasses of `Symbolization`/`Intensive`) instead. This is not concept-specific;
+    it is a structural feature of how GUM''s linguistically-motivated ontology is organized.'
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:role:001
+  subject: DOLCE-driven:Role (Masolo et al. 2004, not core DOLCE)
+  relation_category: exact-equivalence-candidate
+  object: UFO:Role
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: 'Both are anti-rigid, foundation/dependence-grounded, relationally-conditioned
+    types; UFO explicitly continues this OntoClean-adjacent lineage. Confidence raised from
+    medium: Masolo et al. (2004) and the UFO 2021 paper are now both independently fetched
+    and directly verified (2026-07-01), not just reported via `xwkont:ref:dolce-borgo-2022`.
+    Not raised to high because the two frameworks still differ in formal apparatus (DOLCE-driven:
+    `CF`-classification of a `Concept`; UFO: anti-rigid sortal specializing a Kind) even though
+    the informal characterization matches closely.'
+  provenance:
+  - xwkont:ref:masolo-vieu-2004
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:exactMatch
+- mapping_id: xwkont:mapping:role:002
+  subject: BFO:Role
+  relation_category: close-match
+  object: DOLCE-driven:Role
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: Both are dependent, context-grounded, non-defining characterizations of a bearer.
+    Not `exact-equivalence-candidate` because BFO's structural definition and the anti-rigidity/foundation
+    meta-property definition are formally different apparatus (`note-002`), and the object
+    here is extension literature, not core DOLCE (now independently verified against `xwkont:ref:masolo-vieu-2004`,
+    though this does not change the formal-apparatus divergence).
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:masolo-vieu-2004
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:role:003
+  subject: BFO:Role
+  relation_category: close-match
+  object: UFO:Role
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: Same rationale as mapping-002.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:role:004
+  subject: BFO:Role
+  relation_category: explicit-non-equivalence
+  object: SUMO:SocialRole
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Same confirmed metaphysical divergence as `quality.md` mapping-004: BFO''s Role
+    is a realizable entity dependent on a bearer; SUMO''s SocialRole is an abstract entity.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:role:005
+  subject: DOLCE-driven:Role
+  relation_category: explicit-non-equivalence
+  object: SUMO:SocialRole
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Same rationale as mapping-004.
+  provenance:
+  - xwkont:ref:masolo-vieu-2004
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:role:006
+  subject: UFO:Role (+ Relator)
+  relation_category: close-match
+  object: GFO:Relational_role
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Both are `Dependent` roles specifically grounded in a Relator/relator-like mediator
+    (`role_of` some `Relator` in GFO; UFO's Role held "in the scope of" a Relator), directly
+    paralleling `relation.md`'s GFO/UFO Relator convergence at the Role-specific level (`note-005`).
+    Not `high` because GFO's `Relational_role` carries only structural axioms, no prose theory
+    to compare against UFO's elaborated account.
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:role:007
+  subject: BFO:Role
+  relation_category: explicit-non-equivalence
+  object: GFO:Social_role
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'A confirmed metaphysical divergence within the trope/dependent-particular camp
+    itself, not just against SUMO: BFO''s Role is a dependent Realizable Entity, while GFO''s
+    `Social_role` is explicitly `Independent` (`owl:disjointWith` `Dependent`) — the only
+    source in this crosswalk to treat any role subtype as independent of a bearer (`note-005`).'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:role:008
+  subject: BFO:Role
+  relation_category: close-match
+  object: YAMATO:Role
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: 'Both are context-dependent, non-abstract role treatments illustrated with directly
+    comparable examples (BFO: "student role... university"; YAMATO: "teacher role... school")
+    (`note-006`). Not `high` because YAMATO''s own text discloses its role theory is not fully
+    elaborated in this paper — deferred to Mizoguchi (2007), not independently fetched.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:role:009
+  subject: xwkont-core:Role
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No TUpper correspondence identified; "role" appears only informally inside `participates_in`'s
+    prose gloss, never reified as a class — consistent with `quality.md`'s and `relation.md`'s
+    TUpper findings across this entire dependent-particular family.
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:role:010
+  subject: xwkont-core:Role
+  relation_category: unknown
+  object: GUM:RolePlaying
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: GUM's `RolePlaying` is a relation type (subclass of `Symbolization`), not an
+    object/entity type — the same pattern already found for GUM's Information-Artifact and
+    Relation analogs (`note-007`). Not confidently placed in any existing category.
+  provenance:
+  - xwkont:ref:gum-owl
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: uncertainty
+  resolved: true
+  description: 'Confirmed directly (`xwkont:ref:dolce-borgo-2022`): "DOLCE does not formalize
+    functions and roles." The Role/OntoClean content in this crosswalk comes from DOLCE-driven
+    extension literature (Masolo et al., 2004 — the "Borgo et al., 2010" pairing is a citation-precision
+    issue, see Scope Note), not core DOLCE. Masolo et al. (2004) was independently fetched
+    and directly verified 2026-07-01 (`xwkont:ref:masolo-vieu-2004`), superseding the earlier
+    secondhand-only report via the 2022 paper.'
+  impact: Confidence on `mapping-001` raised to medium-high; `mapping-002` remains medium
+    (formal-apparatus divergence from BFO, not a sourcing gap).
+  follow_up: Resolved for both the scope question and the independent-fetch follow-up.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01, as a scope correction
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: true
+  description: SUMO's `SocialRole` is a subclass of `RelationalAttribute` (a partition of
+    `Attribute`), confirmed directly against `Merge.kif` — diverging from BFO/DOLCE/UFO's
+    dependent-particular treatment, same pattern as `quality.md`. The earlier "Plumber" example
+    was not found in `Merge.kif` and is not asserted as verified.
+  impact: High confidence in the non-equivalence, now on a verified rather than inferred basis
+    (`mapping-004`/`mapping-005`).
+  follow_up: Resolved for the core finding. If the "Plumber" example is needed elsewhere,
+    check SUMO's domain-extension `.kif` files specifically.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-003
+  uncertainty_type: open-question
+  resolved: true
+  description: 'UFO''s `Relator` has no clearly identified counterpart in BFO or SUMO. Confirmed
+    directly against Masolo et al. (2004) itself: DOLCE-driven Role literature''s apparatus
+    (`Concept`, `Description`, `Role`, `classification`) has no Relator-equivalent term —
+    `Description` defines concepts/roles in general, not a specific relationship instance
+    between particular bearers.'
+  impact: '`note-003` confidence raised from low to high; `mapping-001`/`mapping-002` confidence
+    raised (medium to medium-high / medium).'
+  follow_up: Resolved — no further action needed.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: GFO's `Role`, `Processual_role`, and `Relational_role` carry no `skos:definition`
+    beyond the one quoted for `Processual_role` and the structural axioms for the others —
+    GFO's `situation` module (not fetched in this pass, per `information-artifact.md`'s `uncertainty-004`
+    and `relation.md`'s `uncertainty-004`) might contain more elaborated Role content, including
+    a fuller account of why `Social_role` specifically is `Independent`.
+  impact: '`mapping-006`/`mapping-007`''s confidence and the `Social_role`-as-Independent
+    finding rest on structural axioms alone, not a prose rationale from GFO''s own text.'
+  follow_up: Check GFO's `situation` module for more elaborated Role content if a future pass
+    wants to understand the rationale behind `Social_role`'s `Independent` classification.
+- item_id: uncertainty-005
+  uncertainty_type: open-question
+  resolved: false
+  description: YAMATO's own OWL/Hozo files were not fetched in this pass (registration-gated
+    download; see `xwkont:ref:yamato-mizoguchi-2010`), so `correspondence-006`/`mapping-008`
+    are cited by quotation, not by class IRI. YAMATO's own text explicitly defers its full
+    role theory to Mizoguchi (2007), a separate publication not independently fetched in this
+    pass.
+  impact: Confidence on `mapping-008` (capped at medium-high) could rise if Mizoguchi (2007)
+    is fetched and read directly.
+  follow_up: Fetch Mizoguchi (2007) or YAMATO's OWL/Hozo files if either becomes accessible
+    later.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified** directly against `bfo-core.ttl`, 2026-07-01'
+- reference_id: xwkont:ref:dolce-borgo-2022
+  short_label: 'DOLCE: A Descriptive Ontology for Linguistic and Cognitive Engineering (Borgo
+    et al., 2022)'
+  verification_note: '**verified** directly (manual PDF extraction from arXiv preprint), 2026-07-01'
+- reference_id: xwkont:ref:masolo-vieu-2004
+  short_label: Social Roles and their Descriptions (Masolo et al., 2004)
+  verification_note: '**verified** directly (manual PDF extraction from AAAI-hosted PDF),
+    2026-07-01'
+- reference_id: xwkont:ref:gangemi-dul
+  short_label: DOLCE+DnS Ultralite (DUL) OWL ontology (Gangemi)
+  verification_note: '**verified** directly (fetched as plain-text RDF/Turtle), 2026-07-01;
+    supplies the exact `Role` class IRI (DUL''s rendering of Masolo et al. 2004''s `RL` predicate)'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified** directly (manual PDF extraction), 2026-07-01'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-01'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl` (`Role`, `Processual_role`,
+    `Social_role`, `Relational_role`), 2026-07-02'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified** directly (PDF extraction, "Quality and quantity" / "Roles,
+    functions and relations" sections), 2026-07-02'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified absence** (of a reified Role class) directly against `TUpper-Terms.html`,
+    2026-07-02'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified** directly against `GUM-31.owl` (`RolePlaying`), 2026-07-02'
+review_history:
+- review_date: "2026-07-01"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:role:2026-07-01:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; BFO/DOLCE/UFO/SUMO content all verified directly, including a significant scope
+    correction (core DOLCE does not formalize Role at all — the content traces to DOLCE-driven
+    extension literature) and a resolved open question (no Relator-equivalent term in that
+    literature); mapping categories/confidence valid (`mapping-001`''s `medium-high` value
+    now compliant with `ADR-0013`). No undisclosed gaps found. Self-review, not independent
+    third-party review.'
+- review_date: "2026-07-02"
+  outcome: Not yet reviewed — status reverted `reviewed` → `candidate`
+  review_notes: 'ADR-0015 buildout added GFO/YAMATO/GUM correspondences (005-007), five new
+    mappings (006-010), three new notes (005-007), and two new uncertainty items (004-005).
+    Standout finding: GFO''s own Role taxonomy splits on the dependent/independent axis internally
+    — `Relational_role` fits the shared dependent-particular assumption (and parallels UFO''s
+    Role/Relator pairing per `relation.md`), but `Social_role` is explicitly `Independent`,
+    the only source in this crosswalk to treat any role subtype as bearer-independent. YAMATO''s
+    "teacher role... school" example directly parallels BFO''s own example. GUM''s `RolePlaying`
+    continues its now three-concept pattern (Information Artifact, Relation, Role) of reifying
+    this content as a relation type rather than an entity type. TUpper again reifies nothing.
+    This completes the `ADR-0015` buildout across all 8 concept crosswalks. All findings directly
+    verified against already-fetched primary artifacts; no re-fetching needed beyond a fresh
+    YAMATO PDF section. Pending maintainer review before advancing back to `reviewed`.'
+- review_date: "2026-07-02"
+  outcome: Passed — advanced `candidate` → `reviewed`
+  review_id: xwkont:review:role:2026-07-02:02
+  review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
+    Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks — the final
+    crosswalk in that pass. Checked: scope preserved; every `xwkont:ref:*` citation resolves;
+    correspondence/mapping/note/uncertainty ID numbering sequential with no gaps or duplicates;
+    relation-category and confidence values compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013`
+    (all three `medium-high` mappings here state a sourcing-driven reason); independently
+    re-verified GFO''s `Social_role`/`Independent` classification and YAMATO''s "teacher role...
+    school" quotation against the fetched artifacts and found no transcription errors. With
+    this crosswalk advanced, all 8 concept crosswalks are now `reviewed` again. Self-review
+    performed at the maintainer''s explicit request, not independent third-party review.'
+future_work:
+- ~~Confirm whether DOLCE's Role/OntoClean content traces to core DOLCE~~ — **done 2026-07-01**;
+  resolved as a scope correction, not just a citation fix (`uncertainty-001`).
+- ~~Read SUMO's current source files directly~~ — **done 2026-07-01**, `uncertainty-002` resolved.
+- '~~Read DOLCE''s social-role literature directly (Masolo et al. 2004) for a Relator-equivalent
+  term~~ — **done 2026-07-01**, `uncertainty-003` resolved: no Relator-equivalent term found
+  in the primary source itself.'
+- ~~Read UFO's 2021 paper directly~~ — **done 2026-07-01**, reusing the extraction performed
+  for `object.md`/`process.md`; Role and Relator content verified.
+- ~~With Continuant/Occurrent, Object, Event, Process, Quality, and Role now covered, and
+  all four sources directly verified for this concept, the confirmed SUMO-abstracta pattern
+  (`note-001`, cross-referenced from `quality.md`) is tracked as a to-do standalone write-up~~
+  — **done 2026-07-01** at `docs/methodology/sumo-modeling-patterns.md`.
+- ~~Extend GFO/YAMATO/TUpper/GUM correspondences to this crosswalk~~ — **done 2026-07-02**
+  (ADR-0015 buildout, 8 of 8 crosswalks — buildout now complete across all concept crosswalks).
+  Pending maintainer review (`uncertainty-004`/`uncertainty-005` remain open).
+- Check GFO's `situation` module for more elaborated Role content (`uncertainty-004`); fetch
+  Mizoguchi (2007) or YAMATO's OWL/Hozo files if either becomes accessible (`uncertainty-005`).

@@ -1,6 +1,6 @@
 # XwkOnt
 
-<!-- updated at: 2026-07-03 13:56 Z   (2026-07-03 09:56 EDT) -->
+<!-- updated at: 2026-07-05 16:55 Z   (2026-07-05 12:55 EDT) -->
 
 > **The Crosswalk of Foundational Ontologies**
 
@@ -15,6 +15,10 @@ XwkOnt is an open reference project whose sole purpose is to build a concept-cen
 Create a crosswalk that helps people understand how the same concept is represented across multiple foundational ontologies.
 
 Users begin with a concept (for example, **Object**, **Event**, **Role**, **Process**, or **Quality**) and discover how each ontology defines, classifies, and relates that concept.
+
+## Why "Concept"?
+
+XwkOnt organizes its crosswalk around **Concepts** — neutral, cross-source comparison points (in the sense of ISO 1087 and SKOS: a unit of thought, not itself a real, instantiated class) — even though most of the 8 source ontologies use some form of "category" for their own top-level notion (DOLCE, SUMO, GFO, YAMATO, and GUM self-describe it directly; BFO and TUpper inherit "Category" from their governing standard, ISO/IEC 21838-1 §3.19; only UFO has no traceable term). That word names what a given source ontology calls *its own* general, domain-neutral class — BFO's `role`, DOLCE's `physical-object` — not XwkOnt's cross-source pivot. Reusing it for XwkOnt's own pivot would risk suggesting XwkOnt asserts its own top-level category system, which is exactly what it does not do (see above). "Concept," because no source ontology uses it for itself, signals the opposite: a neutral reference sitting alongside the 8 sources, not a 9th competitor among them — the same role `skos:Concept` already plays in library/information-science cross-referencing practice (e.g. Getty AAT, LCSH). See [ADR-0011](docs/adr/ADR-0011-adapt-iso-1087-concept-as-organizing-unit.md) and [ADR-0019](docs/adr/ADR-0019-reinforce-concept-against-practitioner-usage.md) for the full investigation, including the ontology-alignment and meta-ontology literature this was checked against.
 
 ## Scope
 
@@ -53,9 +57,13 @@ Decision order:
 
 ## Project Status
 
-The project has completed its first **core ontology publication package**, a public-IRI redirect implementation posture, and its first full round of **concept crosswalk content**.
+The project has completed its first **core ontology publication package**, a public-IRI redirect implementation posture, and two full rounds of **concept crosswalk content**.
 
-All 8 planned concept crosswalks (Continuant/Occurrent, Object, Event, Process, Quality, Role, Relation, Information Artifact) are complete and `reviewed`, each comparing all 8 source ontologies now in scope — BFO, DOLCE, SUMO, UFO, GFO, YAMATO, TUpper, and GUM (see [ADR-0015](docs/adr/ADR-0015-expand-source-ontology-scope-to-eight.md)) — against directly-verified primary sources, not secondary summaries. See [docs/crosswalks/concepts/](docs/crosswalks/concepts/) for the crosswalks themselves and [CHANGELOG.md](CHANGELOG.md) for release-level history.
+**All 17 planned concept crosswalks** — the original 8 (Continuant/Occurrent, Object, Event, Process, Quality, Role, Relation, Information Artifact) plus the `0.2.0` batch of 9 (Time, Spatial Region/Space, Abstract/Concrete, Quantity/Amount of Matter, Situation/State of Affairs, Universal/Type, Mereology/Parthood/Aggregate, Boundary/Site, Proposition/Content) — are complete and `reviewed`, each comparing all 8 source ontologies now in scope — BFO, DOLCE, SUMO, UFO, GFO, YAMATO, TUpper, and GUM (see [ADR-0015](docs/adr/ADR-0015-expand-source-ontology-scope-to-eight.md)) — against directly-verified primary sources, not secondary summaries. Each of these 8 also classifies itself as a foundational/upper/top-level ontology — terms `ISO/IEC 21838-1:2021` §3.20 confirms are synonyms, not competing categories — either by third-party standardization (BFO, DOLCE, and TUpper are published as consecutive parts 2, 3, and 4 of the ISO/IEC 21838 "Top-Level Ontologies" family) or by their own chosen name (SUMO's "Upper," UFO's "Foundational," GFO's "Formal," YAMATO's "Top-level," GUM's "Upper"); see [ADR-0022](docs/adr/ADR-0022-reinforce-eight-source-scope-against-self-classification.md) for the full check. See [docs/crosswalks/concepts/](docs/crosswalks/concepts/) for the crosswalks themselves and [CHANGELOG.md](CHANGELOG.md) for release-level history. `core.ttl` placement (per [ADR-0021](docs/adr/ADR-0021-source-classified-core-placement-criterion.md)) is now done for 8 of the 9 newer concepts (Abstract/Concrete, Universal/Type, Time, Space, Mereology/Parthood/Aggregate, Boundary/Site, Quantity/Amount of Matter, Proposition/Content — 11 new classes, `core.ttl` now has 21); Situation/State of Affairs remains deliberately unplaced pending an unresolved sense-split concern (see `docs/ontology/core-ontology.md`'s Unresolved Modeling Questions).
+
+Each `reviewed` crosswalk's Mapping Assertions are now also machine-readable: [`data/crosswalks/`](data/crosswalks/) holds an SSSOM-conformant TSV per concept, plus a generated RDF/Turtle mapping graph, both derived from the Markdown source (see [ADR-0023](docs/adr/ADR-0023-machine-readable-crosswalk-export-sssom-tsv-generated-ttl.md)). Looking ahead to a much larger candidate set (540 raw source-ontology classes triaged in [`docs/crosswalks/candidate-concepts.md`](docs/crosswalks/candidate-concepts.md)) and delegated, AI-agent-assisted authorship, [ADR-0024](docs/adr/ADR-0024-linkml-structured-source-of-truth-for-crosswalk-concepts.md) decided a further shift: a LinkML-schema-validated structured record becomes the source of truth for a crosswalk concept, with Markdown, TSV, and Turtle all generated from it. The schema ([`data/crosswalks/schema/crosswalk-concept.yaml`](data/crosswalks/schema/crosswalk-concept.yaml)) is now built and all 17 `reviewed` concepts have a validated YAML record (one per concept, under `data/crosswalks/<slug>/`, alongside its generated `.tsv`/`.ttl`). YAML is now the actual generation source: `docs/crosswalks/concepts/*.md` is a generated artifact (rendered from YAML, verified byte-for-byte against the prior hand-maintained Markdown), and the SSSOM/TSV and RDF/Turtle exports are generated directly from YAML rather than from Markdown (see [`docs/methodology/crosswalk-concept-linkml-schema.md`](docs/methodology/crosswalk-concept-linkml-schema.md)).
+
+**Want to contribute a crosswalk?** [`docs/crosswalks/candidate-concepts.md`](docs/crosswalks/candidate-concepts.md) is the public backlog — pick a candidate and follow the process in [`docs/governance/contributing.md`](docs/governance/contributing.md).
 
 Current infrastructure work provides a conservative RDF/RDFS/SKOS-compatible core ontology scaffold, publication guidance, URI/IRI policy, redirect/content-negotiation expectations, an external w3id implementation request, validation commands, release notes, and first milestone tagging checklist. XwkOnt remains a crosswalk project, not a new foundational ontology.
 

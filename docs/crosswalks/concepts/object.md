@@ -117,7 +117,7 @@ Exclusions: this crosswalk does not cover Quality, Role, or Relation (separate c
 
 ## Review History
 
-| Review Event | Date | Participant(s) | Outcome | Notes |
+| Review ID | Date | Reviewer | Outcome | Notes |
 |---|---|---|---|---|
 | `xwkont:review:object:2026-07-01:01` | 2026-07-01 |  | Passed — advanced `draft` → `reviewed` | Checked against `docs/governance/contributing.md`'s Review Checklist: scope preserved; all four source-ontology claims verified directly, including the significant UFO `Object` correction (originally claimed absent, confirmed present as a formal `Substantial` leaf category); mapping categories/confidence valid; every `xwkont:ref:*` citation resolves. One disclosed gap: `xwkont:ref:borgo-galton-kutz-2022` remains unverified (a single philosophical-framing citation, not a core definitional claim) — recorded in Provenance/Future Work, not glossed over. Self-review, not independent third-party review; noted here rather than implied otherwise. |
 | — | 2026-07-02 |  | Editorial status reverted `reviewed` → `candidate` | The `ADR-0015` buildout (GFO/YAMATO/TUpper/GUM correspondences 006-010, mappings 006-009, four reference-record cross-citations) added new, not-yet-reviewed content, following the same precedent `continuant-occurrent.md` set. Awaiting a maintainer review pass before advancing back to `reviewed`. |

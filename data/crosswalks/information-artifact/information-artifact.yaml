@@ -1,0 +1,717 @@
+local_identifier: xwkont:concept:information-artifact
+slug: information-artifact
+title: Information Artifact
+editorial_status: reviewed
+created: "2026-07-01"
+modified: "2026-07-02"
+scope_note: 'This crosswalk asks the question `TODO.md` posed directly: does `xwkont-core:InformationArtifact`
+  (a direct child of `Entity`, described in `data/ontology/core.ttl` as XwkOnt''s own "candidate
+  support concept") correspond to anything in BFO, DOLCE, UFO, or SUMO, or is it purely XwkOnt-introduced
+  and out of crosswalk scope?
+
+
+
+  **Finding: not purely XwkOnt-introduced.** Real analogs exist for three of four sources
+  — but two of those three are sourced through *extension or later literature*, not the same
+  core specification documents already cited elsewhere in this repository:
+
+
+
+  - **BFO**: no information-artifact class exists in BFO''s own core release. The analog,
+  `Information Content Entity` (ICE), comes from the **Information Artifact Ontology (IAO)**
+  — a separate, actively maintained OBO Foundry ontology *built on* BFO (Ceusters & Smith),
+  not part of BFO-2020 itself.
+
+  - **DOLCE**: the 2003 WonderWeb D18 deliverable (`xwkont:ref:dolce-wonderweb-d18`, cited
+  throughout this repository''s other crosswalks) does not appear to be the primary source
+  for DOLCE''s `Information Object`. That term is documented in **DOLCE+DnS Ultralite (DUL)**,
+  the actively-maintained OWL successor to the original DOLCE Lite Plus (DLP) module bundle,
+  built by the same DOLCE lineage (Aldo Gangemi).
+
+  - **SUMO**: has a genuine core-specification analog: `ContentBearingPhysical` (a direct
+  subclass of `Physical`, covering both Objects and Processes that express content) and its
+  further subclass `ContentBearingObject` (specifically for Object-like content bearers) —
+  confirmed directly against SUMO''s primary `Merge.kif` source, 2026-07-01.
+
+  - **UFO**: no distinct "Information Object" formal category was found with confidence in
+  this pass — UFO-A treats "document" only as an example of an `Endurant`, without further
+  formal specification found. This is recorded as a research gap, not a confirmed absence.
+
+
+
+  **Update (2026-07-01), following direct primary-source verification of BFO(IAO) and DOLCE(DUL),
+  resolving `uncertainty-001`:** both `xwkont:ref:ceusters-smith-2015` (the IAO foundational
+  paper) and `xwkont:ref:gangemi-dul` (the DUL OWL ontology, directly fetchable as plain-text
+  RDF — no PDF-extraction workaround needed) were fetched and read directly.
+
+
+
+  - **BFO(IAO)''s formal ICE definition is confirmed verbatim**: "INFORMATION CONTENT ENTITY
+  =def. an ENTITY which is (1) GENERICALLY DEPENDENT on (2) some MATERIAL ENTITY and which
+  (3) stands in a relation of ABOUTNESS to some ENTITY." The paper also clarifies "ICEs themselves
+  are not material entities" (only dependent on one), confirming the earlier paraphrase closely.
+
+  - **DOLCE''s `InformationObject` is confirmed, with a corrected class hierarchy.** The earlier
+  draft claimed "Information Object and Description are both subsumed by Social Object, itself
+  a subclass of Non-Physical Object" — DUL''s actual OWL source shows a different chain: `InformationObject
+  rdfs:subClassOf InformationEntity, SocialObject` (not through any class literally named
+  "Non-Physical Object"), where `InformationEntity` is DOLCE''s abstract catchall ("a piece
+  of information, be it concretely realized or not") and its sibling `InformationRealization`
+  (subclass of the union of `Event`/`PhysicalObject`/`Quality`) is the concrete-realization
+  counterpart, connected via a `realizes` relation. The underlying substance of the earlier
+  claim (generic dependence, social/non-physical classification, independent of physical carrier)
+  holds; the specific class-name chain has been corrected.
+
+  - **DUL is confirmed to be DOLCE Lite Plus''s direct successor, not an unrelated artifact**
+  — DUL''s own header states: "The DOLCE+DnS Ultralite ontology... is a simplification of
+  some parts of the DOLCE Lite-Plus library," authored by Aldo Gangemi (also a co-author of
+  `xwkont:ref:dolce-borgo-2022`).
+
+  - **UFO re-checked (2026-07-01) against the already-extracted 2021 paper''s full text**:
+  zero occurrences of "document" or "information object" anywhere in the comprehensive paper.
+  This strengthens, but does not fully resolve, `uncertainty-002` — the 2021 paper is UFO''s
+  general/comprehensive account, not the UFO-A/UFO-C papers specifically, so a genuine absence
+  in this one paper is suggestive rather than conclusive.
+
+
+
+  **A structurally interesting parallel to XwkOnt''s own posture**: `data/ontology/core.ttl`
+  already calls `InformationArtifact` a "candidate support concept" that "may later move to
+  metadata or provenance infrastructure" — i.e., XwkOnt itself treats this concept as peripheral
+  to its core scaffold. BFO does the same thing architecturally: it relegates information-artifact
+  content to a separate extension ontology (IAO) rather than its own core. That''s a genuine
+  structural echo, not just a coincidence of wording.
+
+
+
+  **Also worth noting: this is a different kind of divergence than Quality/Role/Relation''s
+  SUMO-abstracta pattern, not a repeat of it.** There, SUMO consistently chose the *abstract*
+  branch. Here, SUMO''s `ContentBearingPhysical` sits under the *Physical* branch (tying informational
+  content directly to a physical carrier), while BFO''s IAO and DOLCE''s Information Object
+  both use *generic dependence*/non-physical classification (content that can be "copied"
+  across multiple physical carriers, independent of any one of them). So SUMO''s distinctive
+  move isn''t "always abstract" — it''s concept-specific, and here it goes the opposite direction
+  from Quality/Role/Relation. This finding, and the pattern it complicates, is now written
+  up together at `docs/methodology/sumo-modeling-patterns.md`.
+
+
+
+  **Epistemic note:** SUMO content is verified directly against its primary `Merge.kif` source.
+  BFO(IAO) and DOLCE(DUL) content is now also directly verified (2026-07-01) against their
+  own primary sources — `xwkont:ref:ceusters-smith-2015` (manually extracted PDF) and `xwkont:ref:gangemi-dul`
+  (directly fetchable OWL/Turtle). UFO content remains a research gap rather than a confirmed
+  absence, now somewhat strengthened by a full-text check of the 2021 paper — see Uncertainty
+  and Future Work.
+
+
+
+  **Update (2026-07-02), ADR-0015 buildout:** extended to GFO, YAMATO, TUpper, and GUM. The
+  pattern found among the original four sources — real analogs exist, but only via extension/later
+  literature, and one source (UFO) has none with confidence — turns out to recur even more
+  starkly among the new sources: **three of the four (GFO, TUpper, GUM) have no confident
+  Information-Object-equivalent entity class, and one (YAMATO) has the single most developed
+  treatment of any source examined in this crosswalk, original four included.** YAMATO''s
+  2010 technical report devotes an entire dedicated subsection ("Ontology of informational
+  objects") to exactly this question, works through multiple examples (a novel, a piece of
+  music, a procedure), positively defines a `Representation`/`Representing thing` split (abstract
+  form-and-content pair vs. its concrete physical realization — directly paralleling DOLCE(DUL)''s
+  `InformationObject`/`InformationRealization` split), and explicitly critiques BFO''s own
+  treatment as too coarse: "BFO deals with representation (informational object) only at the
+  highest level. It is called generically-dependent entity and it is not further elaborated
+  what they are." GFO''s `Symbol`/`Symbol_structure` classes were considered and rejected
+  as a correspondence — they sit on GFO''s `Category` (universal/type) side of its Category/Individual
+  split, a formal-language-symbol concept (closer to a predicate or sign-type in logic) rather
+  than a content-bearing individual artifact with aboutness, a different concept from BFO(IAO)/DOLCE(DUL)''s
+  target. TUpper''s fetched files (`tupper.all.owl`, `TUpper-Terms.html`) contain zero occurrences
+  of "information," "content," or "represent" — confirming its already-established minimal
+  PSL vocabulary (`object`/`activity`/`timepoint`) has no information-artifact hook at all.
+  GUM''s OWL file has no dedicated Information-Object-equivalent entity class either; its
+  only relevant hooks, `Signification` and `Symbolization`, are *relation* types (subclasses
+  of `Intensive`, GUM''s participant-relation category), not object/entity types — a categorically
+  different kind of thing than BFO(IAO)/DOLCE(DUL)/SUMO/YAMATO''s class-level analogs.'
+labels:
+- role: XwkOnt working label
+  label: Information Artifact
+  label_source: XwkOnt
+  language: en
+  entry_notes: Matches `xwkont-core:InformationArtifact` (`rdfs:subClassOf xwkont-core:Entity`)
+    in `data/ontology/core.ttl`.
+- role: Source term
+  label: Information Content Entity (ICE)
+  label_source: BFO (via IAO extension, not core BFO)
+  language: en
+  entry_notes: Confirmed 2026-07-01 by direct primary-source reading of `xwkont:ref:ceusters-smith-2015`.
+- role: Source term
+  label: Information Object
+  label_source: DOLCE (via DUL, successor to DOLCE Lite Plus; not the 2003 D18)
+  language: en
+  entry_notes: Confirmed 2026-07-01 by direct primary-source reading of `xwkont:ref:gangemi-dul`;
+    class-hierarchy claim corrected — see Scope Note.
+- role: Source term
+  label: '*(none found with confidence)*'
+  label_source: UFO
+  language: en
+  entry_notes: '"Document" appears only as an example of Endurant in UFO-A; see Scope Note.'
+- role: Alternate label
+  label: ContentBearingObject / ContentBearingPhysical
+  label_source: SUMO
+  language: en
+- role: Source term
+  label: '*(none found with confidence)*'
+  label_source: GFO
+  language: en
+  entry_notes: '`Symbol`/`Symbol_structure` considered and rejected — a formal-language/type-side
+    concept, not a content-bearing individual artifact; see Scope Note.'
+- role: Source term
+  label: Representation (Representing thing)
+  label_source: YAMATO
+  language: en
+  entry_notes: The most developed Information-Object-equivalent treatment found in this crosswalk,
+    original four sources included.
+- role: Source term
+  label: '*(none found)*'
+  label_source: TUpper
+  language: en
+  entry_notes: Zero occurrences of "information," "content," or "represent" in the fetched
+    files.
+- role: Source term
+  label: '*(none found with confidence)*'
+  label_source: GUM
+  language: en
+  entry_notes: '`Signification`/`Symbolization` are relation types, not an entity/object-level
+    analog.'
+source_definitions:
+- source: BFO (IAO extension)
+  term_or_identifier: Information Content Entity
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"INFORMATION CONTENT ENTITY =def. an ENTITY which is (1) GENERICALLY DEPENDENT on
+    (2) some MATERIAL ENTITY and which (3) stands in a relation of ABOUTNESS to some ENTITY."
+    "While every ICE is dependent upon some material entity that is its bearer, ICEs themselves
+    are not material entities." The ontology''s own class definition (`IAO_0000030`) states
+    it more tersely: "A generically dependent continuant that is about some thing," `rdfs:subClassOf`
+    BFO''s `Generically Dependent Continuant` (BFO_0000031).'
+  reference:
+  - xwkont:ref:ceusters-smith-2015
+  - xwkont:ref:iao-owl
+  locator: '**verified**: CEUR-WS PDF and `iao.owl`, manually extracted / fetched directly
+    2026-07-01'
+  entry_notes: Confirms the earlier paraphrase closely, now with both IAO's theoretical paper
+    and the ontology's own formal class definition rather than a secondary summary.
+- source: BFO (IAO extension)
+  term_or_identifier: aboutness relation
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: 'Aboutness is grounded in cognitive acts: "acts of thinking, speaking, hearing, writing
+    and reading... through which ICEs are created, understood, and communicated." The paper
+    also proposes (not yet implemented in IAO itself) broadening aboutness''s target from
+    "entity" to "portion of reality," to admit universals, relations, other ICEs, and configurations
+    as things an ICE can be about.'
+  reference:
+  - xwkont:ref:ceusters-smith-2015
+  locator: '**verified**: CEUR-WS PDF, manually extracted 2026-07-01'
+  entry_notes: Classified `philosophical` because grounding informational content in mental
+    acts is itself a substantive theoretical commitment.
+- source: DOLCE (DUL, successor to Lite Plus)
+  term_or_identifier: Information Object
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`InformationObject rdfs:subClassOf InformationEntity, SocialObject`, `owl:disjointWith
+    SocialAgent`. Comment: "A piece of information, such as a musical composition, a text,
+    a word, a picture, independently from how it is concretely realized." `InformationEntity`
+    (its superclass, shared with `InformationRealization`) is DOLCE''s "catchall class...
+    a piece of information, be it concretely realized or not."'
+  reference:
+  - xwkont:ref:gangemi-dul
+  locator: '**verified**: DUL.owl fetched directly as plain-text RDF/Turtle, 2026-07-01 (no
+    PDF-extraction workaround needed)'
+  entry_notes: '**Corrects** the earlier draft''s claimed hierarchy ("Information Object...
+    subclass of Social Object, itself a subclass of Non-Physical Object"): the actual chain
+    is `InformationObject` → `InformationEntity` (and separately `SocialObject`), not through
+    a class literally named "Non-Physical Object." The underlying substance (generic dependence,
+    non-physical/social classification) still holds.'
+- source: UFO
+  term_or_identifier: '"document" as an Endurant example only'
+  dimension: technical
+  source_claim_type: editorial observation
+  text: 'UFO-A discusses endurants (entities not dependent on time for identification) using
+    "a document" as an example, alongside "a person." No distinct formal Information Object/Content
+    category was found with confidence in this pass. Re-checked 2026-07-01 against the full
+    text of the already-extracted 2021 Applied Ontology paper: zero occurrences of "document"
+    or "information object" anywhere in it.'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**partially verified**: full-text search of the manually-extracted 2021 paper
+    confirms no mention, but UFO-A/UFO-C themselves were not independently fetched'
+  entry_notes: Strengthens, but does not fully resolve, the research-gap finding — see Uncertainty.
+- source: SUMO
+  term_or_identifier: ContentBearingPhysical / ContentBearingObject
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(subclass ContentBearingPhysical Physical)... Any Object or Process that expresses
+    content. This covers Objects that contain a Proposition, such as a book, as well as ManualSignLanguage,
+    which may similarly contain a Proposition." And: "(subclass ContentBearingObject ContentBearingPhysical)...
+    Any SelfConnectedObject that expresses content. This content may be a Proposition, e.g.
+    when the ContentBearingObject is a Sentence or Text, or it may be a representation of
+    an abstract or physical object, as with an Icon, a Word or a Phrase."'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: `Merge.kif`, `documentation ContentBearingPhysical/ContentBearingObject
+    EnglishLanguage`, fetched and read directly 2026-07-01'
+  entry_notes: '**Corrects the earlier draft''s hierarchy claim**: `ContentBearingPhysical`
+    is a direct subclass of `Physical` (covering both Objects and Processes that express content),
+    not nested specifically under `Object` as originally stated. `ContentBearingObject` is
+    a further subclass of `ContentBearingPhysical`, specifically for the Object-like (not
+    Process-like) content bearers. Still ties content directly to a physical carrier, unlike
+    BFO(IAO)/DOLCE''s generic-dependence treatment.'
+- source: GFO
+  term_or_identifier: Symbol / Symbol structure (considered, rejected)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Symbol_structure`: "Categories satisfy the following conditions: (1) Categories
+    can be instantiated; (2) Categories can be predicated of other entities. Categories are
+    defined intensional-with-an-s. They are, therefore, closely related to language." (inherited
+    from `Category`, its declared superclass, since `Symbol_structure` itself carries no `skos:definition`).
+    `owl:disjointWith` `Concept` and `Universal`; `Category` is `owl:disjointWith` `Individual`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, classes `Symbol`, `Symbol_sequence`, `Symbol_structure`,
+    `Category`, fetched and read directly 2026-07-02'
+  entry_notes: Sits on GFO's universal/type side (`Category`, disjoint from `Individual`)
+    — a formal-language-symbol concept, not a content-bearing individual artifact with aboutness.
+    A genuinely different concept from BFO(IAO)'s ICE or DOLCE(DUL)'s InformationObject, both
+    of which are (or depend on) individuals. No correspondence recorded, following the same
+    standard already set for UFO in this crosswalk (a considered candidate is not automatically
+    a correspondence).
+- source: YAMATO
+  term_or_identifier: Representation (Representing thing)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"By representation, we here mean content-bearing thing. That is, anything which has
+    content as its essentials rather than itself which is playing the role of carrier/bearer
+    of the content... there exist quite a few representations in the real world: novel, poem,
+    painting, music, procedure, symbol, etc." And: "A representation is composed of two parts,
+    form and content... A representation is not concrete yet as it is. It becomes a physical
+    individual only when it becomes a representing thing... Content is the hidden part of
+    representation and it is a proposition which the author of the representation would like
+    to convey through the representation."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: `YAMATO101216.pdf`, Section "Ontology of informational objects"
+    / "A conceptual model of representation," extracted 2026-07-02'
+  entry_notes: The most developed Information-Object treatment of any source in this crosswalk
+    — an entire dedicated subsection, with worked examples (novel, music, procedure) and a
+    positive `Representation`/`Representing thing` (abstract form-and-content vs. concrete
+    realization) split that directly parallels DOLCE(DUL)'s `InformationObject`/`InformationRealization`
+    pair.
+- source: YAMATO
+  term_or_identifier: Critique of BFO's coarse treatment
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"As usual, BFO deals with representation (informational object) only at the highest
+    level. It is called generically-dependent entity and it is not further elaborated what
+    they are."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: `YAMATO101216.pdf`, same section, extracted 2026-07-02'
+  entry_notes: YAMATO's own text explicitly names BFO's generically-dependent-entity treatment
+    (i.e., IAO's ICE, per this crosswalk's BFO row) as the point of comparison and criticizes
+    it as under-elaborated — a rare case of a source ontology's own literature directly engaging
+    with another source already cited in this crosswalk, rather than this crosswalk drawing
+    the comparison itself.
+- source: TUpper
+  term_or_identifier: '*(no information/content/representation term found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '`tupper.all.owl` and `TUpper-Terms.html`, searched directly, contain zero occurrences
+    of "information," "content," or "represent."'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified absence**: both fetched files searched directly, 2026-07-02'
+  entry_notes: Consistent with TUpper's already-established minimal PSL-derived vocabulary
+    (`object`/`activity`/`activity_occurrence`/`timepoint`) — there is no fourth term in this
+    area to be found.
+- source: GUM
+  term_or_identifier: Signification / Symbolization (relation types, considered, rejected)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Symbolization`: no `rdfs:comment` on the class itself; subclass of `Intensive` (GUM''s
+    Ascription/Identity-adjacent relation category). `Signification` (a `Symbolization` subclass):
+    "Relations concerned with Signification are linguistically realized by verbs like ''represent'',
+    ''mean'', ''express'', e.g., ''green means go''."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, classes `Symbolization`, `Signification`, fetched
+    and read directly 2026-07-02'
+  entry_notes: Both are relation types (participant-role/configuration classes), not object/entity
+    types — a categorically different kind of thing than BFO(IAO)'s ICE, DOLCE(DUL)'s InformationObject,
+    SUMO's ContentBearingObject, or YAMATO's Representation, all of which are entity classes.
+    No correspondence recorded, same standard as GFO above.
+correspondences:
+- correspondence_id: xwkont:correspondence:information-artifact:001
+  source_ontology: BFO (IAO extension)
+  source_term: Information Content Entity
+  source_identifier_or_iri: '`IAO_0000030` (confirmed directly against `iao.owl`, 2026-07-01)'
+  source_version: IAO, per `xwkont:ref:ceusters-smith-2015` (ICBO 2015) and `xwkont:ref:iao-owl`
+  reference:
+  - xwkont:ref:ceusters-smith-2015
+  - xwkont:ref:iao-owl
+  inclusion_rationale: Closest analog despite not being part of BFO's own core release.
+- correspondence_id: xwkont:correspondence:information-artifact:002
+  source_ontology: DOLCE (DUL)
+  source_term: Information Object
+  source_identifier_or_iri: '`http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject`
+    (confirmed directly, 2026-07-01)'
+  source_version: DUL v4.2, per `xwkont:ref:gangemi-dul`, directly verified 2026-07-01
+  reference:
+  - xwkont:ref:gangemi-dul
+  inclusion_rationale: Closest analog despite not being part of the 2003 D18 deliverable already
+    cited elsewhere; DUL is DLP's actively-maintained successor.
+- correspondence_id: xwkont:correspondence:information-artifact:003
+  source_ontology: SUMO
+  source_term: ContentBearingObject / ContentBearingPhysical
+  source_identifier_or_iri: '`ContentBearingPhysical` / `ContentBearingObject` (SUMO/SUO-KIF
+    has no separate opaque identifier scheme — the term name itself is the identifier)'
+  source_version: current SUMO source (not the 2001 paper alone)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Direct core-specification analog.
+- correspondence_id: xwkont:correspondence:information-artifact:004
+  source_ontology: YAMATO
+  source_term: Representation (Representing thing)
+  source_identifier_or_iri: not applicable — registration-gated OWL/Hozo download not fetched;
+    cited by quotation from the 2010 technical report, not by IRI
+  source_version: 2010 technical report (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: The most developed Information-Object treatment of any source in this
+    crosswalk; a positively-defined `Representation`/`Representing thing` (abstract/concrete)
+    split, with its own text explicitly engaging BFO's ICE as a point of comparison.
+correspondences_note: No UFO correspondence is recorded — see Uncertainty. No GFO, TUpper,
+  or GUM correspondence is recorded either (`ADR-0015` buildout, 2026-07-02) — see Source
+  Definitions above and Uncertainty for the considered-and-rejected candidates in each case.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: 'BFO''s IAO and DOLCE''s Information Object both use generic dependence / non-physical
+    classification, treating informational content as independent of any single physical carrier
+    (copyable, multiply-realizable) — now confirmed directly: IAO''s ICE is "generically dependent
+    on some material entity," and DUL''s `InformationObject` is "independently from how it
+    is concretely realized," paired with a separate `InformationRealization` class for the
+    concrete side. SUMO''s ContentBearingPhysical instead ties content directly to a physical
+    carrier. This is a different divergence than Quality/Role/Relation''s SUMO-abstracta pattern
+    — here SUMO goes *physical*, not abstract, showing that pattern is concept-specific rather
+    than a blanket rule.'
+  supporting_references:
+  - xwkont:ref:ceusters-smith-2015
+  - xwkont:ref:gangemi-dul
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: Both XwkOnt's own core.ttl (calling InformationArtifact a "candidate support concept"
+    that "may later move to metadata or provenance infrastructure") and BFO (relegating this
+    content to the separate IAO extension ontology rather than its own core) treat information-artifact
+    content as architecturally peripheral to the main foundational scaffold. This is a structural
+    echo worth noting, not a claim that XwkOnt was modeled on BFO's choice here.
+  supporting_references:
+  - xwkont:ref:ceusters-smith-2015
+  confidence: medium
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: 'Among the four `ADR-0015` sources, coverage of Information Artifact is the most polarized
+    of any concept crosswalked in this repository: YAMATO has the single most developed treatment
+    found anywhere in this crosswalk (original four sources included) — a dedicated subsection,
+    multiple worked examples, and a positive form/content vs. concrete-realization split —
+    while GFO, TUpper, and GUM all lack a confident entity-level analog. This mirrors, and
+    sharpens, the original four-source finding (BFO/DOLCE/SUMO have real analogs, UFO does
+    not): here it''s 1-of-4 with a genuine class-level analog rather than 3-of-4.'
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:tupper-colore
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-004
+  dimension: philosophical
+  claim_type: editorial observation
+  note: YAMATO's `Representation` (abstract, form-and-content) vs. `Representing thing` (concrete
+    realization) split is structurally the same move as DOLCE(DUL)'s `InformationObject`/`InformationRealization`
+    pair — both separate the informational content from any one physical carrier while still
+    connecting the two via a realization-style relation. This is an independent convergence
+    between two source ontologies' own theoretical apparatus, not something either source's
+    authors cite the other for.
+  supporting_references:
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:gangemi-dul
+  confidence: medium
+mapping_assertions:
+- mapping_id: xwkont:mapping:information-artifact:001
+  subject: BFO(IAO):Information Content Entity
+  relation_category: close-match
+  object: DOLCE(DUL):Information Object
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: '**Raised 2026-07-01** from medium: both terms are now directly verified against
+    their own primary sources (`xwkont:ref:ceusters-smith-2015`, `xwkont:ref:gangemi-dul`),
+    both use generic-dependence/non-physical treatment for informational content independent
+    of a specific carrier. Not raised to high because the two apparatus still differ in detail
+    (IAO''s single `Information Content Entity` vs. DUL''s `InformationObject`/`InformationEntity`/`InformationRealization`
+    three-way split).'
+  provenance:
+  - xwkont:ref:ceusters-smith-2015
+  - xwkont:ref:gangemi-dul
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:information-artifact:002
+  subject: BFO(IAO):Information Content Entity
+  relation_category: unknown
+  object: SUMO:ContentBearingPhysical
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: 'Structural mismatch: BFO(IAO) separates content from carrier via generic dependence;
+    SUMO ties content directly to a physical carrier. Whether they denote overlapping extension
+    despite the different modeling choice is unresolved.'
+  provenance:
+  - xwkont:ref:ceusters-smith-2015
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:information-artifact:003
+  subject: xwkont-core:InformationArtifact
+  relation_category: unknown
+  object: UFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No UFO correspondence identified with confidence; a full-text check of the extracted
+    2021 paper (2026-07-01) found zero mentions of "document" or "information object," strengthening
+    but not confirming the absence. Recorded to make the gap explicit rather than silently
+    omitted.
+  provenance:
+  - xwkont:ref:ufo-2021
+- mapping_id: xwkont:mapping:information-artifact:004
+  subject: BFO(IAO):Information Content Entity
+  relation_category: close-match
+  object: YAMATO:Representation
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: 'Both treat informational content as generically dependent on, but distinct from,
+    a physical carrier (YAMATO: "not concrete yet as it is... becomes a physical individual
+    only when it becomes a representing thing"; BFO(IAO): "generically dependent on some material
+    entity"). YAMATO''s own text explicitly names BFO''s treatment as a point of comparison,
+    strengthening this beyond an editorial observation alone. Not `high` because YAMATO''s
+    own OWL is not fetched (quotation-only citation) and the two apparatuses differ in elaboration
+    (YAMATO''s form/content split vs. IAO''s single-class aboutness relation).'
+  provenance:
+  - xwkont:ref:ceusters-smith-2015
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:information-artifact:005
+  subject: DOLCE(DUL):Information Object
+  relation_category: close-match
+  object: YAMATO:Representation
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: 'Structurally the closest pairing found in this crosswalk: both sources independently
+    split an abstract content-bearing class from its concrete realization (DUL: `InformationObject`/`InformationRealization`;
+    YAMATO: `Representation`/`Representing thing`), per `note-004`. Not `high` because this
+    is this crosswalk''s own observed convergence, not a comparison either source''s authors
+    draw themselves (contrast `mapping-004`, where YAMATO explicitly cites BFO).'
+  provenance:
+  - xwkont:ref:gangemi-dul
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:information-artifact:006
+  subject: xwkont-core:InformationArtifact
+  relation_category: unknown
+  object: GFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No GFO correspondence identified with confidence; `Symbol`/`Symbol_structure`
+    were considered and rejected — they sit on GFO's universal/type side (`Category`), not
+    the individual/content-bearing side BFO(IAO)/DOLCE(DUL)/YAMATO's analogs occupy. Recorded
+    explicitly rather than silently omitted, per this crosswalk's established practice for
+    UFO.
+  provenance:
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:information-artifact:007
+  subject: xwkont-core:InformationArtifact
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No TUpper correspondence identified; `tupper.all.owl` and `TUpper-Terms.html`,
+    searched directly, contain zero occurrences of "information," "content," or "represent."
+    The most clear-cut absence of any source in this crosswalk.
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:information-artifact:008
+  subject: xwkont-core:InformationArtifact
+  relation_category: unknown
+  object: GUM
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No GUM correspondence identified with confidence; `Signification`/`Symbolization`
+    were considered and rejected — both are relation types (subclasses of `Intensive`), not
+    object/entity types, a categorically different kind of thing than an Information-Object-equivalent
+    class.
+  provenance:
+  - xwkont:ref:gum-owl
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: uncertainty
+  resolved: true
+  description: 'Neither BFO''s IAO content nor DOLCE''s Information Object content previously
+    traced to any reference record in this repository. Both now do: `xwkont:ref:ceusters-smith-2015`
+    (IAO''s foundational paper, fetched and manually extracted) and `xwkont:ref:gangemi-dul`
+    (the DUL OWL ontology, fetched directly as plain-text RDF). DOLCE''s exact class hierarchy
+    was also corrected in the process (`InformationObject` → `InformationEntity`/`SocialObject`,
+    not through "Non-Physical Object").'
+  impact: '`mapping-001` raised from medium to medium-high.'
+  follow_up: Resolved — no further action needed.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-002
+  uncertainty_type: open-question
+  resolved: false
+  description: 'No distinct UFO "Information Object" formal category was found with confidence
+    — this is recorded as a research gap, not a confirmed absence. **Partially strengthened
+    2026-07-01**: a full-text check of the already-extracted 2021 Applied Ontology paper found
+    zero occurrences of "document" or "information object" anywhere in it.'
+  impact: '`mapping-003` reflects this as `unknown` rather than `explicit-non-equivalence`.'
+  follow_up: Read UFO-A/UFO-C literature directly (UFO-C covers social entities, where an
+    information-object analog might plausibly live) before concluding UFO genuinely lacks
+    this category — the 2021 paper alone is suggestive, not conclusive, since it is UFO's
+    general/comprehensive account rather than UFO-A/UFO-C specifically.
+- item_id: uncertainty-003
+  uncertainty_type: open-question
+  resolved: false
+  description: This is the last planned concept crosswalk in the current inventory (`TODO.md`).
+    `xwkont-core:Entity` itself remains explicitly out of scope (decided separately).
+  impact: Completes the 8-concept inventory (7 crosswalked, 1 decided against).
+  follow_up: 'Decide next priorities: primary-source verification debt (accumulated across
+    all 7 crosswalks) vs. new scope (e.g., a 9th concept, or extending to GFO/YAMATO/TUpper/GUM
+    per `continuant-occurrent.md` `uncertainty-004`).'
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: GFO's `Symbol`/`Symbol_structure` were only checked in the base module (`modules/gfo-base.owl`);
+    GFO's separate `situation` module (not fetched in this pass) was not checked for a content-bearing/informational-object
+    concept that might live there instead of in the base module.
+  impact: The "no confident GFO analog" finding is not a confirmed absence across all of GFO,
+    only across the base module already fetched for this repository's other crosswalks.
+  follow_up: Check GFO's `situation` module (`modules/situation/gfo-situation*.ttl`, listed
+    in the repository but not yet fetched) if a future pass wants to rule this out more conclusively.
+- item_id: uncertainty-005
+  uncertainty_type: open-question
+  resolved: false
+  description: YAMATO's own OWL/Hozo files were not fetched in this pass (registration-gated
+    download; see `xwkont:ref:yamato-mizoguchi-2010`), so `correspondence-004`/`mapping-004`/`mapping-005`
+    are cited by quotation from the 2010 technical report, not by class IRI. YAMATO's report
+    also references an earlier, less-disseminated 2004 paper on representation ("the author
+    has once proposed the ontology of representation (Mizoguchi 2004)") that was not fetched.
+  impact: Confidence on `mapping-004`/`mapping-005` (capped at medium-high) could rise if
+    the OWL is fetched and a formal class matching the `Representation`/`Representing thing`
+    split is confirmed.
+  follow_up: Fetch YAMATO's OWL/Hozo files, and consider the Mizoguchi (2004) representation
+    paper, if the registration gate is completed later.
+references:
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-01'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified** directly (full-text checked for "document"/"information
+    object," neither found); no confident UFO analog identified regardless — see `uncertainty-002`'
+- reference_id: xwkont:ref:ceusters-smith-2015
+  short_label: 'Aboutness: Towards Foundations for the Information Artifact Ontology (Smith
+    & Ceusters, 2015)'
+  verification_note: '**verified** directly (manual PDF extraction), 2026-07-01'
+- reference_id: xwkont:ref:iao-owl
+  short_label: Information Artifact Ontology (IAO) OWL ontology
+  verification_note: '**verified** directly (fetched as plain-text RDF/XML), 2026-07-01; supplies
+    the exact `IAO_0000030` class IRI'
+- reference_id: xwkont:ref:gangemi-dul
+  short_label: DOLCE+DnS Ultralite (DUL) OWL ontology (Gangemi)
+  verification_note: '**verified** directly (fetched as plain-text RDF/Turtle), 2026-07-01'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl` (`Symbol`, `Symbol_structure`,
+    `Category`), 2026-07-02'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified** directly (PDF extraction, "Ontology of informational objects"
+    section), 2026-07-02'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified absence** directly against `tupper.all.owl`/`TUpper-Terms.html`,
+    2026-07-02'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified** directly against `GUM-31.owl` (`Signification`, `Symbolization`),
+    2026-07-02'
+review_history:
+- review_date: "2026-07-01"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:information-artifact:2026-07-01:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; BFO(IAO)/DOLCE(DUL)/SUMO all verified directly, including a class-hierarchy
+    correction for DOLCE and a hierarchy correction for SUMO (`ContentBearingPhysical` sits
+    directly under `Physical`, not `Object`); mapping categories/confidence valid (`mapping-001`''s
+    `medium-high` now compliant with `ADR-0013`); every `xwkont:ref:*` citation resolves.
+    **Distinct from the other 7 crosswalks'' disclosed gaps**: this one has a genuinely open
+    research question, not just an unverified secondary citation — `mapping-003` (UFO correspondence)
+    remains `unknown`/low confidence because UFO-A/UFO-C themselves were never fetched (only
+    the general 2021 paper, which shows no analog but isn''t the authoritative narrower source).
+    This is judged to still satisfy "passed review for its stated scope" because the gap is
+    honestly and prominently disclosed (uncertainty is first-class content, not a defect,
+    per `docs/INFORMATION_ARCHITECTURE.md` §7) rather than because the scope is fully resolved
+    — a future reader should not read `reviewed` here as "UFO question closed." Self-review,
+    not independent third-party review.'
+- review_date: "2026-07-02"
+  outcome: Not yet reviewed — status reverted `reviewed` → `candidate`
+  review_notes: ADR-0015 buildout added a YAMATO correspondence (004), five new mappings (004-008,
+    including two `close-match` YAMATO pairings and three `unknown` GFO/TUpper/GUM non-matches),
+    two new notes (003-004), and two new uncertainty items (004-005). YAMATO turned out to
+    have the single most developed Information-Object treatment of any source in this crosswalk;
+    GFO, TUpper, and GUM were all confirmed to lack a confident entity-level analog, each
+    with a considered-and-rejected candidate documented rather than silently omitted. All
+    findings directly verified against already-fetched primary artifacts; no re-fetching needed.
+    Pending maintainer review before advancing back to `reviewed`.
+- review_date: "2026-07-02"
+  outcome: Passed — advanced `candidate` → `reviewed`
+  review_id: xwkont:review:information-artifact:2026-07-02:02
+  review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
+    Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks. Checked:
+    scope preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential with no gaps or duplicates; relation-category and confidence values
+    compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013` (both `medium-high`
+    mappings here state a sourcing-driven reason); spot-checked YAMATO''s "content-bearing
+    thing"/"representing thing" quotations against the fetched artifact and found no transcription
+    errors. This crosswalk''s pre-existing genuinely open research question (`uncertainty-002`,
+    UFO-A/UFO-C not fetched) remains unresolved and is not affected by this review pass. Self-review
+    performed at the maintainer''s explicit request, not independent third-party review.'
+future_work:
+- '~~Create proper reference records for IAO (Ceusters & Smith, "Aboutness: Towards Foundations
+  for the Information Artifact Ontology") and DOLCE Lite Plus~~ — **done 2026-07-01**, `uncertainty-001`
+  resolved. `xwkont:ref:ceusters-smith-2015` and `xwkont:ref:gangemi-dul` created (DUL rather
+  than the original DLP397.owl file, which returned a wiki page when fetched directly — DUL
+  is DLP''s actively-maintained successor by the same author).'
+- Read UFO-A/UFO-C literature directly to confirm whether UFO genuinely lacks a distinct Information
+  Object category, or whether one exists that this pass's searches simply didn't surface (`uncertainty-002`)
+  — the 2021 comprehensive paper's full text has now been checked and contains no such term,
+  but UFO-A/UFO-C themselves remain unfetched.
+- ~~Extend GFO/YAMATO/TUpper/GUM correspondences to this crosswalk~~ — **done 2026-07-02**
+  (ADR-0015 buildout, 5 of 8 crosswalks). Pending maintainer review (`uncertainty-004`/`uncertainty-005`
+  remain open).
+- Check GFO's `situation` module for a content-bearing/informational-object concept not present
+  in the base module (`uncertainty-004`); fetch YAMATO's OWL/Hozo files if the registration
+  gate is completed (`uncertainty-005`).

@@ -1,0 +1,113 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:quality:001> a sssom:Mapping ;
+    rdfs:comment "Both are dependent particulars (tropes) inhering in/dependent on a bearer, fully manifested whenever they exist. Not `exact-equivalence-candidate` because DOLCE additionally formalizes the Quale layer, which BFO's definition (as found in this pass) does not mirror explicitly."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Quality ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:002> a sssom:Mapping ;
+    rdfs:comment "Same trope-theoretic convergence as mapping-001; UFO's Quality additionally nests under the broader Moment category and the value-space criterion."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Quality ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:003> a sssom:Mapping ;
+    rdfs:comment "**Raised 2026-07-01** from medium: both pair a particular property instance with a value/space notion (Quale / value space, UFO even using the identical term \"quale\") — the closest structural match found in this crosswalk, and now confirmed to share a theoretical origin (`note-002`): both sources independently cite Gärdenfors' conceptual-spaces theory."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Quality ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:004> a sssom:Mapping ;
+    rdfs:comment "Explicitly not equivalent: BFO's Quality is a particular dependent on a bearer; SUMO's Attribute is an abstract entity. This is a confirmed metaphysical divergence, not an unresolved uncertainty — high confidence in the *non*-equivalence itself."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Attribute ;
+    sssom:subject_id xwkont-source-term:BFO-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:005> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-004."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Attribute ;
+    sssom:subject_id xwkont-source-term:DOLCE-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:006> a sssom:Mapping ;
+    rdfs:comment "Same trope-theoretic convergence as `mapping-001`/`mapping-002`: both are dependent particulars inhering in/dependent on a bearer, joining the same camp as BFO/DOLCE/UFO rather than SUMO's abstracta."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Property ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:007> a sssom:Mapping ;
+    rdfs:comment "Same trope-theoretic convergence; additionally, GFO's own `Value_space` explicitly cites DOLCE (Masolo, 2003) by name for the value-space/quality-space parallel (`note-005`), strengthening this beyond an editorial observation alone."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Property ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:008> a sssom:Mapping ;
+    rdfs:comment "Same rationale as `mapping-004`/`mapping-005`: GFO's `Property` is a `Concrete`, `Dependent` individual (a particular), while SUMO's `Attribute` is an abstract entity — the same confirmed metaphysical divergence extended to a fourth source."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Attribute ;
+    sssom:subject_id xwkont-source-term:GFO-Property .
+
+<https://w3id.org/xwkont/id#mapping:quality:009> a sssom:Mapping ;
+    rdfs:comment "Both are dependent particulars tied to an individual entity (\"a certain dependent property possessed by an entity\"). Not `high` because YAMATO's four-tier apparatus (generic type/role type/quality/instance) is considerably more elaborated than BFO's single Quality class, and YAMATO's own OWL is not fetched (quotation-only citation)."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Quality ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:010> a sssom:Mapping ;
+    rdfs:comment "Structurally the closest pairing among the new sources: both split a particular quality from its value/realization (DOLCE: Quality/Quale; YAMATO: Quality/Quality instance), and YAMATO's own text explicitly engages DOLCE's quality-space concept by name (`note-005`) rather than this crosswalk drawing the comparison unassisted. Not `high` because YAMATO explicitly argues DOLCE's coverage is incomplete — a disclosed point of disagreement, not a clean equivalence."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Quality ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Quality .
+
+<https://w3id.org/xwkont/id#mapping:quality:012> a sssom:Mapping ;
+    rdfs:comment "The only new source with a class literally named \"Quality\" (via subclass naming), but GUM's criterion is linguistic (adjectival realizability) rather than metaphysical inherence — a terminological match without a matching definitional criterion, the same pattern already found for GUM's Process in `process.md`."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-SimpleQuality ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Quality .
+
+xwkont-source-term:GUM-SimpleQuality rdfs:label "SimpleQuality"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:UFO-Quality rdfs:label "Quality"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:YAMATO-Quality rdfs:label "Quality"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:GFO-Property rdfs:label "Property"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:SUMO-Attribute rdfs:label "Attribute"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:DOLCE-Quality rdfs:label "Quality"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:BFO-Quality rdfs:label "Quality"@en ;
+    dcterms:source "BFO" .
+

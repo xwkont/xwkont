@@ -1,0 +1,44 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:universal-type:001> a sssom:Mapping ;
+    rdfs:comment "Both denote a rigid classifier providing an identity/individuation principle to its instances (GFO: \"immanent universals... exist in re\"; UFO: \"uniform principles of individuation, identity, and persistence\"). Not `high` because GFO's `Universal` is not itself internally subdivided by rigidity/sortality the way UFO's `Kind` is positioned within a much larger typology — a difference in surrounding theoretical apparatus, not core definition."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Kind ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:GFO-Universal .
+
+<https://w3id.org/xwkont/id#mapping:universal-type:002> a sssom:Mapping ;
+    rdfs:comment "Both denote a classifier that determines instance membership via some condition (SUMO: \"an associated 'condition' that determines the instances\"; GFO: \"can be predicated of other entities\"), but SUMO's `Class` is explicitly non-extensional and set-theoretically motivated, while GFO's `Universal` is explicitly a realist, immanent-in-particulars commitment — different enough in philosophical grounding that `overlap`, not `close-match`, is the more honest category."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Universal ;
+    sssom:subject_id xwkont-source-term:SUMO-Class .
+
+<https://w3id.org/xwkont/id#mapping:universal-type:004> a sssom:Mapping ;
+    rdfs:comment "Recorded explicitly as a non-equivalence, not a correspondence, despite the identical English label — see `note-002`. Naive name-matching would incorrectly treat UFO's narrow rigid-non-sortal-type category as the same thing as GFO's maximally broad universal/individual split half."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Category_Item_half ;
+    sssom:subject_id xwkont-source-term:UFO-Category_non_sortal .
+
+xwkont-source-term:GFO-Category_Item_half rdfs:label "Category (Item-half)"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:SUMO-Class rdfs:label "Class"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:UFO-Category_non_sortal rdfs:label "Category (non-sortal)"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:UFO-Kind rdfs:label "Kind"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:GFO-Universal rdfs:label "Universal"@en ;
+    dcterms:source "GFO" .
+

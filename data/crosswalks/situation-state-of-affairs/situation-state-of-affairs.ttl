@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:situation-state-of-affairs:001> a sssom:Mapping ;
+    rdfs:comment "Both denote a collection/configuration of entities comprehended as a whole, existing together (GFO: \"the most complex kind of presentials,\" subject to \"conditions of unity\"; UFO: no explicit temporal qualifier but the same whole-comprehension criterion). Not `high` because GFO's is a base-ontology class, while UFO's is a modeling-notation stereotype from a different kind of artifact (OntoUML vocabulary, not the 2021 paper) — a cross-artifact-type comparison, not a like-for-like one."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-situation_OntoUML_stereotype ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:GFO-Situation .
+
+<https://w3id.org/xwkont/id#mapping:situation-state-of-affairs:002> a sssom:Mapping ;
+    rdfs:comment "Recorded explicitly as a non-equivalence, not a correspondence — DOLCE's `state` is an occurrent (stative perdurant), while GFO's `Situation` is a `Presential` (continuant-like collection). Despite both appearing under `TODO.md`'s original seed language, they answer different questions."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Situation ;
+    sssom:subject_id xwkont-source-term:DOLCE-State .
+
+<https://w3id.org/xwkont/id#mapping:situation-state-of-affairs:008> a sssom:Mapping ;
+    rdfs:comment "Both denote a social/comprehended-whole configuration of entities satisfying conditions of unity (DOLCE: \"comprehended as a whole,\" dependent on a `description`; GFO: \"comprehended as a whole,\" \"conditions of unity... imposed by relations and categories\"). Not `high` because DOLCE's is explicitly description-dependent (a `non-agentive-social-object`) while GFO's `Situation` carries no explicit description-dependency requirement in its own definition text."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Situation ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-situation_DnS .
+
+<https://w3id.org/xwkont/id#mapping:situation-state-of-affairs:009> a sssom:Mapping ;
+    rdfs:comment "DOLCE's DnS `situation` is itself historically and terminologically the closer ancestor of UFO/OntoUML's own situation-semantics tradition (both trace to description-and-situation-style modeling) — recorded as `close-match` on the same substantive grounds as `mapping:001`/`mapping:008`, not independently re-derived."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-situation_OntoUML_stereotype ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-situation_DnS .
+
+xwkont-source-term:DOLCE-State rdfs:label "State"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:DOLCE-situation_DnS rdfs:label "situation (DnS)"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:UFO-situation_OntoUML_stereotype rdfs:label "situation (OntoUML stereotype)"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:GFO-Situation rdfs:label "Situation"@en ;
+    dcterms:source "GFO" .
+

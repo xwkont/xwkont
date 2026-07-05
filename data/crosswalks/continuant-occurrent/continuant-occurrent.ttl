@@ -1,0 +1,169 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:001> a sssom:Mapping ;
+    rdfs:comment "Both defined by the same temporal-persistence criterion (wholly present at each time of existence). Not `exact-equivalence-candidate` because the two sources' philosophical framing differs (realist vs. cognitive/linguistic per `note-002`), so full interchangeability across every context is not asserted."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-endurant ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-continuant .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:002> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-001, inverse pairing."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-perdurant ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-occurrent .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:003> a sssom:Mapping ;
+    rdfs:comment "UFO continues DOLCE's endurant/perdurant lineage using the same temporal-persistence criterion."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-endurant ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-continuant .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:004> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-003, inverse pairing."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-perdurant_event ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-occurrent .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:005> a sssom:Mapping ;
+    rdfs:comment "**Raised 2026-07-01** from medium: both primary sources are now directly verified and their endurant definitions are near-verbatim (\"wholly present... at any time they are present\" vs. \"individuals that exist in time with all their parts\") — UFO's endurant/perdurant split directly continues DOLCE's, confirmed rather than merely asserted."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-endurant ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-endurant .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:006> a sssom:Mapping ;
+    rdfs:comment "Structural analog only: SUMO's Object sits under a physicality partition, not a temporal-persistence one. Whether SUMO:Object behaves like a continuant/endurant in practice is not confirmed by Niles & Pease (2001) alone."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Object ;
+    sssom:subject_id xwkont-source-term:BFO-continuant .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:007> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-006."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Process ;
+    sssom:subject_id xwkont-source-term:BFO-occurrent .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:008> a sssom:Mapping ;
+    rdfs:comment "Both defined by a temporal-presence criterion (BFO: wholly present at each time it exists; GFO: \"exists wholly at exactly one time boundary\"), but GFO's Presential is defined over discrete time-boundaries specifically, a narrower formal commitment than BFO's continuant. Medium rather than high pending a closer read of GFO's time-boundary/chronoid theory."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Presential ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-continuant .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:009> a sssom:Mapping ;
+    rdfs:comment "Both sources use the identical term \"occurrent\" with matching temporal-extension criteria (BFO: \"unfolds itself in time\"; GFO: \"have temporal parts... happen in time\"). Highest-confidence mapping among the four new sources' correspondences, on par with the BFO/DOLCE/UFO occurrent mappings."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Occurrent ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-occurrent .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:010> a sssom:Mapping ;
+    rdfs:comment "YAMATO uses \"Continuant\" as its own top-level label with an explicitly stated 3D/persistence orientation, the closest terminological and conceptual match to BFO of any `ADR-0015` source. Not `exact-equivalence-candidate` because YAMATO explicitly treats continuant and occurrent as mutually dependent rather than either being ontologically prior — a stated philosophical difference from BFO's framing."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Continuant_Object ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-continuant .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:011> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-010, inverse pairing. YAMATO additionally distinguishes process (can change) from event (cannot) within occurrent, a finer-grained split than BFO makes explicitly at this level — noted, not resolved, per `uncertainty-003`."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Occurrent_Process ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-occurrent .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:012> a sssom:Mapping ;
+    rdfs:comment "Structural analog only, same rationale as SUMO's Object mapping (mapping-006): TUpper's `object` is defined negatively (by exclusion of timepoint/activity/activity-occurrence) rather than by a positive temporal-persistence criterion, so equivalence to BFO's continuant is not established by the definition text alone."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:TUpper-object ;
+    sssom:subject_id xwkont-source-term:BFO-continuant .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:013> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-012. `activity_occurrence` is tied to a specific `activity` via `occurrence_of`, a PSL-derived structure not obviously equivalent to BFO's broader occurrent (which also covers temporal/spatiotemporal regions)."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:TUpper-activity_occurrence ;
+    sssom:subject_id xwkont-source-term:BFO-occurrent .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:014> a sssom:Mapping ;
+    rdfs:comment "Structural analog only, same rationale as SUMO's Object mapping (mapping-006): GUM's SimpleThing/Process split is linguistically motivated (participant vs. verb-realized \"goings-on\"), not a temporal-persistence criterion."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-SimpleThing ;
+    sssom:subject_id xwkont-source-term:BFO-continuant .
+
+<https://w3id.org/xwkont/id#mapping:continuant-occurrent:015> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-014."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Process ;
+    sssom:subject_id xwkont-source-term:BFO-occurrent .
+
+xwkont-source-term:DOLCE-perdurant rdfs:label "perdurant"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:GFO-Occurrent rdfs:label "Occurrent"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GFO-Presential rdfs:label "Presential"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GUM-Process rdfs:label "Process"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-SimpleThing rdfs:label "SimpleThing"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:SUMO-Object rdfs:label "Object"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:SUMO-Process rdfs:label "Process"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:TUpper-activity_occurrence rdfs:label "activity_occurrence"@en ;
+    dcterms:source "TUpper" .
+
+xwkont-source-term:TUpper-object rdfs:label "object"@en ;
+    dcterms:source "TUpper" .
+
+xwkont-source-term:UFO-perdurant_event rdfs:label "perdurant/event"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:YAMATO-Continuant_Object rdfs:label "Continuant(Object)"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:YAMATO-Occurrent_Process rdfs:label "Occurrent(Process)"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:DOLCE-endurant rdfs:label "endurant"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:UFO-endurant rdfs:label "endurant"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:BFO-continuant rdfs:label "continuant"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:BFO-occurrent rdfs:label "occurrent"@en ;
+    dcterms:source "BFO" .
+

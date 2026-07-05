@@ -4,13 +4,13 @@
 > **Slug:** `dolce-borgo-2022`
 > **Editorial status:** `candidate`
 > **Created:** `2026-07-01`
-> **Modified:** `2026-07-01`
+> **Modified:** `2026-07-05`
 
 ## Descriptive Metadata
 
 | Field | Value | Notes |
 |---|---|---|
-| Title | DOLCE: A Descriptive Ontology for Linguistic and Cognitive Engineering | Comprehensive modern restatement of DOLCE theory, "mainly based on the work of Masolo et al. (2003)" per the paper's own text, plus later refinements (roles, DOLCE-CORE). |
+| Title | DOLCE: A Descriptive Ontology for Linguistic and Cognitive Engineering | Comprehensive modern restatement of DOLCE theory, "mainly based on the work of Masolo et al. (2003)" per the paper's own text, plus later refinements (roles, DOLCE-CORE). Also standardized as ISO/IEC 21838-3:2023, "Information technology — Top-level ontologies (TLO) — Part 3: Descriptive ontology for linguistic and cognitive engineering (DOLCE)" — same TLO standard family as BFO (Part 2) and TUpper (Part 4). Confirmed via multiple independent standards-body catalog listings (ISO, IEC, VDE, NEN, BSI, AFNOR) 2026-07-05; the standard's own full text was not fetched (paywalled, consistent with `xwkont:ref:bfo-2020`'s ISO/IEC 21838-2 precedent). |
 | Creator | Stefano Borgo, Roberta Ferrario, Aldo Gangemi, Nicola Guarino, Claudio Masolo, Daniele Porello, Emilio M. Sanfilippo, Laure Vieu | Confirmed via direct primary-source read (arXiv preprint), 2026-07-01. |
 | Contributor | unknown | |
 | Publisher | Applied Ontology, IOS Press | |
@@ -41,3 +41,5 @@ Key findings used across crosswalks:
 - DOLCE-CORE (2009, Borgo & Masolo) relabeled `endurant`/`perdurant` to `object`/`event`, distinguished by whether they have space or time as their main dimension — relevant context for `continuant-occurrent.md`.
 - `Quale` confirmed: "the position occupied by an individual quality within a quality space" (e.g., two qualities of the same color shade occupy the same position/quale within the color space, while remaining numerically distinct qualities) — confirms `quality.md`'s Quale definition closely.
 - `InformationObject` appears as part of DUL (DOLCE Ultra Lite), an OWL-oriented extension pattern — not confirmed as the same thing as "DOLCE Lite Plus" cited in `docs/crosswalks/concepts/information-artifact.md`; the exact relationship between DUL and DOLCE Lite Plus was not confirmed in this pass and needs further checking.
+
+**Reused for `docs/adr/ADR-0022-reinforce-eight-source-scope-against-self-classification.md` (2026-07-05):** DOLCE's ISO/IEC 21838-3:2023 standardization (added to this record's Title field above) is direct evidence of self/field-classification as a "top-level ontology" per ISO/IEC 21838-1:2021 §3.20's own definition — confirming `ADR-0015`'s inclusion of DOLCE on the same grounds already used for BFO and TUpper's ISO standing.

@@ -1,0 +1,102 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:relation:001> a sssom:Mapping ;
+    rdfs:comment "**Downgraded 2026-07-01** from `close-match`/medium after direct primary-source reading: DOLCE's `mediated-relation` is a pure logical-composition device requiring no reified mediating particular, while UFO's material relation specifically requires a `Relator`/`Mode` truthmaker (`note-002`). Both informally involve \"a mediator,\" but the underlying apparatus differs, so `close-match` overstated the similarity — kept as `related` (non-hierarchical semantic association) because the two do occupy the same rough conceptual territory (relations needing something beyond the bare relata)."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-material_external_relation ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-mediated_relation .
+
+<https://w3id.org/xwkont/id#mapping:relation:002> a sssom:Mapping ;
+    rdfs:comment "**Raised 2026-07-01** from medium: DOLCE's own D18 text explicitly equates `immediate-relation` with \"internal relation,\" directly confirming (not just structurally suggesting) the pairing with UFO's formal/internal relation terminology (`note-002`). Not raised further because that exact UFO term was not found in `xwkont:ref:ufo-2021` itself (see Scope Note)."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-formal_internal_relation ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-immediate_relation .
+
+<https://w3id.org/xwkont/id#mapping:relation:003> a sssom:Mapping ;
+    rdfs:comment "Recorded to make the placement mismatch explicit (`note-003`) rather than silently mapping BFO's subtype-of-Quality analog onto XwkOnt's Entity-level category as if they were structurally equivalent."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-Relation_structural_placement ;
+    sssom:subject_id xwkont-source-term:BFO-Relational_Quality .
+
+<https://w3id.org/xwkont/id#mapping:relation:004> a sssom:Mapping ;
+    rdfs:comment "Confirmed metaphysical divergence, same pattern as `quality.md` mapping-004 and `role.md` mapping-004: UFO's relation theory is trope/mediated-particular-based; SUMO's Relation is an abstract entity."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Relation ;
+    sssom:subject_id xwkont-source-term:UFO-material_external_relation_Relator .
+
+<https://w3id.org/xwkont/id#mapping:relation:005> a sssom:Mapping ;
+    rdfs:comment "The exact same term, independently used for a dependent individual mediating a relationship between other entities (`note-005`). Not `high` because GFO's own text supplies no prose definition to compare against UFO's elaborated truthmaker theory — the convergence is terminological/structural, not confirmed at the level of theoretical detail."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-material_external_relation_Relator ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:GFO-Relator .
+
+<https://w3id.org/xwkont/id#mapping:relation:006> a sssom:Mapping ;
+    rdfs:comment "Same pattern as `mapping-004`: GFO's `Relator` is a dependent `Individual` (a particular), while SUMO's `Relation` is an abstract entity — the confirmed metaphysical divergence extended to a further source."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Relation ;
+    sssom:subject_id xwkont-source-term:GFO-Relator .
+
+<https://w3id.org/xwkont/id#mapping:relation:007> a sssom:Mapping ;
+    rdfs:comment "A direct, quotable non-equivalence: YAMATO's own text explicitly denies relations are abstract (\"it is time-dependent and hence cannot be abstract\"), the clearest single rejection of SUMO's abstracta-treatment found in this crosswalk (`note-004`). High confidence in the non-equivalence itself, independent of YAMATO's disclosed lack of a fully elaborated relation theory."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-relation_not_abstract ;
+    sssom:subject_id xwkont-source-term:SUMO-Relation .
+
+<https://w3id.org/xwkont/id#mapping:relation:009> a sssom:Mapping ;
+    rdfs:comment "GUM's `Relating` is genuinely reified, unlike TUpper, but as a clause-level `Configuration` (situation/state-of-affairs, containing its own `Process`) — a fourth modeling style distinct from the trope, abstracta, and bare-predicate camps already found (`note-004`). Not confidently placed in any existing category, so left `unknown` rather than forced into a `close-match`."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Relating ;
+    sssom:subject_id xwkont-source-term:xwkont-core-Relation .
+
+xwkont-source-term:BFO-Relational_Quality rdfs:label "Relational Quality"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:DOLCE-immediate_relation rdfs:label "immediate-relation"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:DOLCE-mediated_relation rdfs:label "mediated-relation"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:GUM-Relating rdfs:label "Relating"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:UFO-formal_internal_relation rdfs:label "formal (internal) relation"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:UFO-material_external_relation rdfs:label "material (external) relation"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:YAMATO-relation_not_abstract rdfs:label "relation (not abstract)"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:xwkont-core-Relation rdfs:label "Relation"@en ;
+    dcterms:source "xwkont-core" .
+
+xwkont-source-term:xwkont-core-Relation_structural_placement rdfs:label "Relation (structural placement)"@en ;
+    dcterms:source "xwkont-core" .
+
+xwkont-source-term:GFO-Relator rdfs:label "Relator"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:UFO-material_external_relation_Relator rdfs:label "material (external) relation + Relator"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:SUMO-Relation rdfs:label "Relation"@en ;
+    dcterms:source "SUMO" .
+

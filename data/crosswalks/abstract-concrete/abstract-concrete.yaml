@@ -1,0 +1,622 @@
+local_identifier: xwkont:concept:abstract-concrete
+slug: abstract-concrete
+title: Abstract vs. Concrete
+editorial_status: reviewed
+created: "2026-07-04"
+modified: "2026-07-05"
+scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Abstract vs. Concrete
+  is the third concept drafted from the `0.2.0` batch. Direct primary-source verification
+  this session found an explicit, nameable Abstract (and, in some sources, Concrete) category
+  in **5 of the 8 source ontologies** (DOLCE `abstract`, SUMO `Abstract`, GFO `Abstract`/`Concrete`,
+  YAMATO `abstract`/`semi-abstract`, GUM `Abstraction`) — one more source than `TODO.md`''s
+  seed claimed (the seed listed DOLCE, SUMO, GFO, YAMATO; this session''s pass additionally
+  found GUM''s `Abstraction` class, previously uncredited). BFO and TUpper were confirmed
+  to have no reified class of this kind; UFO was confirmed to have none at all (zero occurrences
+  of "abstract" in the paper''s full extracted text). See Source Definitions and Uncertainty.
+
+
+
+  This crosswalk compares each source ontology''s own treatment of the abstract/concrete distinction
+  as a *top-level classificatory split* — a class or disjoint-pair that sorts entities by
+  whether they have a spatial/temporal location or physical embodiment — not any single source''s
+  full philosophy of abstracta (e.g., mathematical Platonism, nominalism about universals,
+  or SUMO''s own separate `SetOrClass` theory are each larger literatures than what is scoped
+  here). Sources compared: BFO, DOLCE, SUMO, UFO, GFO, YAMATO, TUpper, GUM (per `ADR-0015`''s
+  8-source scope).
+
+
+
+  **Cross-cutting finding, established this session:** this is a higher-level split than any
+  of the 8 original crosswalks or `time.md`/`space.md` — it is not itself a concept-in-the-BFO/DOLCE
+  sense of a single class so much as a top-level *disjunction* that several sources make explicit
+  and one (BFO) conspicuously does not. Four of the five sources with an Abstract category
+  (DOLCE, SUMO, GFO, GUM) define it structurally the same way: the complement of having a
+  spatial/temporal location or embodiment (DOLCE: "do not have spatial nor temporal qualities";
+  SUMO: "cannot exist at a particular place and time without some physical encoding or embodiment";
+  GFO: "independent from time and space"; GUM: "exists in metaphorical or qualitative space
+  rather than in physical space"). YAMATO alone further subdivides the space: a `semi-abstract`
+  category (needs only time, not space) sits between `physical` and fully `abstract`, a three-way
+  split none of the other sources make explicitly. BFO''s absence of any literal "Abstract"
+  class is a real, load-bearing omission, not an oversight — BFO instead handles much of the
+  same ground through `generically dependent continuant` (patterns/content that can have multiple
+  concrete copies, e.g. a PDF file''s content), which is still a Continuant with the capacity
+  for concrete realization, not a category defined by the *absence* of spatiotemporal location
+  the way the other five sources define Abstract. See `note-001`.
+
+
+
+  Exclusions: this crosswalk does not address Information Artifact (already `reviewed`; BFO''s
+  `generically dependent continuant` and DOLCE''s `non-physical-endurant`/information-object
+  branch are directly relevant background already covered there) or Proposition/Content (a
+  separate `0.2.0`-batch candidate; several sources file `Proposition` as a subtype of their
+  own Abstract category — noted below but not crosswalked here).
+
+
+
+  **Core.ttl placement is deliberately left open at this `draft` stage**, for the same reasons
+  as `time.md`/`space.md`. No `xwkont-core:Abstract`/`xwkont-core:Concrete` split exists yet
+  in `data/ontology/core.ttl`.
+
+
+
+  **Modeling-shape decision (recorded 2026-07-04, in response to external review):** this
+  crosswalk records a recommendation — not a core.ttl edit, which still waits for `reviewed`
+  status per this repository''s governance model — that Abstract/Concrete be modeled as a
+  **class pair**, a sibling-level split under `xwkont-core:Entity` alongside Continuant/Occurrent,
+  not as a property or an editorial-only distinction. Rationale: (1) 5 of 8 sources (DOLCE,
+  SUMO, GFO, YAMATO, GUM) define Abstract as a genuine formal class, not a property annotation,
+  using the same criterion (absence of spatiotemporal location/embodiment); (2) `quantity-amount-of-matter.md`
+  and `proposition-content.md` are now both drafted (this session), and both record SUMO/GFO
+  subtypes of `Abstract` (`Quantity`, `Proposition`) as their own primary correspondences
+  — a property-only or editorial-only treatment would leave those crosswalks'' eventual core.ttl
+  placements without a superclass to subclass from, whereas a class pair does not; (3) GFO''s
+  and SUMO''s own formally exhaustive partitions (`owl:unionOf`/`disjointDecomposition`, `note-004`)
+  are evidence this split functions the same way in source ontologies that Continuant/Occurrent
+  already functions in XwkOnt''s own core. This recommendation is not a settled fact about
+  the source ontologies (unlike the crosswalk''s other findings) — it is an XwkOnt-side modeling
+  call, offered for maintainer confirmation at review time, per `uncertainty-001`.'
+labels:
+- role: XwkOnt working label
+  label: Abstract vs. Concrete
+  label_source: XwkOnt
+  language: en
+  entry_notes: Not yet in `data/ontology/core.ttl` — see Scope Note.
+- role: Alternate label
+  label: '*(no class literally named "Abstract" — see Uncertainty)*'
+  label_source: BFO
+  language: en
+  entry_notes: Ground partially covered by `generically dependent continuant` (BFO_0000031),
+    a Continuant subtype, not a spatiotemporal-location-defined split.
+- role: Source term
+  label: Abstract
+  label_source: DOLCE
+  language: en
+  entry_notes: One of the four partition members of `particular`, alongside `endurant`, `perdurant`,
+    `quality`.
+- role: Source term
+  label: Abstract (+ Quantity, Attribute, Relation, Proposition, List)
+  label_source: SUMO
+  language: en
+  entry_notes: Direct subclass of `Entity`; `disjointDecomposition` into 5 named subclasses.
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: UFO
+  language: en
+  entry_notes: Zero occurrences of "abstract" in the 2021 paper's full extracted text.
+- role: Source term
+  label: Abstract (+ Concrete)
+  label_source: GFO
+  language: en
+  entry_notes: Both direct subclasses of `Individual`, mutually disjoint, both disjoint from
+    the third branch `Space_time`.
+- role: Source term
+  label: Abstract (+ semi-abstract, physical)
+  label_source: YAMATO
+  language: en
+  entry_notes: A three-way split (physical/semi-abstract/abstract), the only source to interpose
+    an intermediate category.
+- role: Alternate label
+  label: '*(informal only — see Uncertainty)*'
+  label_source: TUpper
+  language: en
+  entry_notes: '"Concrete or abstract" occurs only in `object`''s own informal-semantics gloss,
+    not as a defined predicate/class.'
+- role: Source term
+  label: Abstraction
+  label_source: GUM
+  language: en
+  entry_notes: Not credited in `TODO.md`'s seed. Subclass of `NonConsciousThing`; disjoint
+    from both `SpatialTemporal` (the shared Time/Space parent, per `space.md`) and `Substance`.
+source_definitions:
+- source: BFO
+  term_or_identifier: '*(no class — ground partially covered by generically dependent continuant,
+    BFO_0000031)*'
+  dimension: philosophical
+  source_claim_type: non-equivalence
+  text: '"(Elucidation) A generically dependent continuant is an entity that exists in virtue
+    of the fact that there is at least one of what may be multiple copies which is the content
+    or the pattern that multiple copies would share." Examples: "The pdf file on your laptop;
+    the pdf file that is a copy thereof on my laptop... the content of a sentence; an engineering
+    blueprint." `rdfs:subClassOf` continuant (BFO_0000002).'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified absence**: `bfo-core.ttl`, full-text grep for "abstract" (case-insensitive)
+    returned zero class labels or definitions, fetched and read directly 2026-07-04'
+  entry_notes: BFO's generically dependent continuant is defined by *multiple-copy sharing*,
+    not by absence of spatiotemporal location — a PDF file's content is generically dependent
+    but each concrete copy still has a spatial location. This is a structurally different
+    criterion from the other five sources' Abstract categories, not a synonym for them.
+- source: DOLCE
+  term_or_identifier: Abstract
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"The main characteristic of abstract entities is that they do not have spatial nor
+    temporal qualities, and they are not qualities themselves. The only class of abstract
+    entities we consider in the present version of the upper ontology is that of quality regions
+    (or simply regions)... The other examples of abstract entities (sets and facts) are only
+    indicative." `rdfs:subClassOf particular`; `owl:disjointWith quality`, `owl:disjointWith
+    perdurant`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified**: `DOLCE-Lite.owl`, class `#abstract`, fetched and read directly 2026-07-04'
+  entry_notes: One of the four partition members of `particular` (alongside `endurant`, `perdurant`,
+    `quality`) — `region`/`temporal-region`/`space-region` (already documented in `time.md`/`space.md`)
+    are `abstract`'s only populated subtypes in this module; DOLCE's own comment flags sets/facts
+    as "only indicative," i.e. not formally modeled here.
+- source: SUMO
+  term_or_identifier: Abstract (+ Quantity, Attribute, Relation, Proposition, List)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Properties or qualities as distinguished from any particular embodiment of the properties/qualities
+    in a physical medium. Instances of Abstract can be said to exist in the same sense as
+    mathematical objects such as sets and relations, but they cannot exist at a particular
+    place and time without some physical encoding or embodiment." `(subclass Abstract Entity)`;
+    `(disjointDecomposition Abstract Quantity Attribute Relation Proposition List)` — an exhaustive,
+    mutually disjoint 5-way partition.'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: current `Merge.kif`, fetched and read directly 2026-07-04'
+  entry_notes: Direct sibling of `Physical` ("An entity that has a location in space-time,"
+    `Merge.kif` documentation) under `Entity` — the two are SUMO's own top-level split, already
+    found in `time.md` (Time is Abstract-side) and `space.md` (Region is Physical-side) to
+    place those two concepts on opposite sides of exactly this split.
+- source: UFO
+  term_or_identifier: '*(no class or property found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text search of the already-extracted 2021 Applied Ontology paper (9,048 lines)
+    for "abstract" (case-insensitive) returned zero matches.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified absence**: 2021 Applied Ontology paper, already-extracted text re-searched
+    directly 2026-07-04'
+  entry_notes: Consistent with `time.md`'s and `space.md`'s findings that UFO's 2021 comprehensive
+    paper is silent on several categories the other 7 sources treat as top-level — a recurring
+    pattern for this source across all three `0.2.0`-batch concepts drafted so far.
+- source: GFO
+  term_or_identifier: Abstract (+ Concrete)
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: 'Abstract: "Abstract individuals are independent from time and space (they are not
+    in time and space). Examples: the number ''2'' or pi." Concrete: "Concrete individuals
+    have a relation to time or space (they are in time and space)." Both `rdfs:subClassOf
+    Individual`; `owl:disjointWith` each other; both also `owl:disjointWith Space_time`. An
+    explicit `owl:unionOf (Abstract Concrete Space_time)` axiom asserts these three exhaust
+    `Individual`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, classes `Abstract`/`Concrete`, fetched and
+    read directly 2026-07-04'
+  entry_notes: 'The cleanest, most explicit three-way exhaustive top-level partition of any
+    source: every GFO `Individual` is Abstract, Concrete, or Space_time (itself already documented
+    in `time.md`/`space.md` as Time''s and Space''s shared parent) — a directly quoted structural
+    fact, not an inference.'
+- source: YAMATO
+  term_or_identifier: Abstract (+ semi-abstract, physical)
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"We define a physical thing as something which needs time and space to exist, and
+    introduce semi-abstract which needs only time to exist. Needless to say, there is nothing
+    which requires only space to exist. Abstract things are defined as things that need neither
+    time nor [space]."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: 2010 technical report, full extracted text re-searched directly
+    2026-07-04'
+  entry_notes: The only source among all 8 to interpose an intermediate `semi-abstract` category
+    (needs time but not space) between fully physical and fully abstract — YAMATO's own text
+    explicitly rules out the fourth logical combination ("nothing... requires only space to
+    exist"), a genuine asymmetry between time-dependence and space-dependence worth preserving.
+- source: TUpper
+  term_or_identifier: '*(informal only, no defined predicate)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '`object`''s own informal-semantics gloss: "an object is a concrete or abstract thing
+    that can participate in an activity." No `concrete`/`abstract` predicate or class is separately
+    declared or defined anywhere in `TUpper-Terms.html`.'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified absence**: `TUpper-Terms.html`, full-text grep for "abstract" returned
+    exactly one hit (this sentence), fetched and read directly 2026-07-04'
+  entry_notes: Unlike Time's `timepoint` or Space's `spatial_region`/`VoluminalRegion`, Abstract/Concrete
+    gets no reified treatment at all in TUpper — mentioned only in passing inside a different
+    class's definition.
+- source: GUM
+  term_or_identifier: Abstraction
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Something which exists in metaphorical or qualitative space rather than in physical
+    space, e.g., truth." `rdfs:subClassOf NonConsciousThing`; `owl:disjointWith SpatialTemporal`,
+    `owl:disjointWith Substance`.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `#Abstraction`, fetched and read directly 2026-07-04'
+  entry_notes: Not credited in `TODO.md`'s seed — a genuine addition, mirroring the pattern
+    already found for SUMO's/GUM's Time content in `time.md`. `Abstraction` is an explicit
+    sibling of `SpatialTemporal` (the shared parent of GUM's `Space`/`Time`, per `space.md`'s
+    `note-002`) under `NonConsciousThing` — the same three-way structural shape as GFO's `Abstract`/`Concrete`/`Space_time`
+    partition, though GUM's is not asserted as formally exhaustive the way GFO's `owl:unionOf`
+    is.
+correspondences:
+- correspondence_id: xwkont:correspondence:abstract-concrete:001
+  source_ontology: DOLCE
+  source_term: Abstract
+  source_identifier_or_iri: http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#abstract
+  source_version: DOLCE-Lite v397 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Direct terminological match; one of DOLCE's four root partition members.
+- correspondence_id: xwkont:correspondence:abstract-concrete:002
+  source_ontology: SUMO
+  source_term: Abstract
+  source_identifier_or_iri: '`Abstract` (SUMO term names are their own identifiers)'
+  source_version: Current `Merge.kif` (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Direct terminological match; SUMO's own top-level sibling of `Physical`.
+- correspondence_id: xwkont:correspondence:abstract-concrete:003
+  source_ontology: GFO
+  source_term: Abstract (+ Concrete)
+  source_identifier_or_iri: '`https://w3id.org/gfo/base/Abstract`, `/Concrete`'
+  source_version: GFO 2024-11-18 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Direct terminological match; the only source with both an Abstract
+    and a named Concrete counterpart, formally exhaustive together with `Space_time`.
+- correspondence_id: xwkont:correspondence:abstract-concrete:004
+  source_ontology: YAMATO
+  source_term: Abstract (+ semi-abstract)
+  source_identifier_or_iri: not applicable — informal prose category, no IRI scheme found
+    for YAMATO's own vocabulary
+  source_version: 2010 technical report (directly re-verified 2026-07-04)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Direct terminological match; the only source with an intermediate `semi-abstract`
+    category.
+- correspondence_id: xwkont:correspondence:abstract-concrete:005
+  source_ontology: GUM
+  source_term: Abstraction
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Abstraction
+  source_version: GUM 3.1 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Corrects `TODO.md`'s seed, which omitted GUM; structurally close to
+    GFO's three-way partition.
+- correspondence_id: xwkont:correspondence:abstract-concrete:006
+  source_ontology: BFO
+  source_term: '*(none — generically dependent continuant noted as related, not equivalent)*'
+  source_identifier_or_iri: '`BFO_0000031` (noted for contrast only, not recorded as a correspondence)'
+  source_version: BFO 2020 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: No correspondence recorded; BFO's nearest concept is defined by a different
+    criterion (multiple-copy sharing, not absence of spatiotemporal location) — see Source
+    Definitions and `note-001`.
+correspondences_note: No UFO or TUpper correspondence is recorded — see Source Definitions
+  and Uncertainty.
+comparison_notes:
+- note_id: note-001
+  dimension: philosophical
+  claim_type: editorial observation
+  note: BFO's absence of a literal "Abstract" class is a substantive, not merely terminological,
+    difference. The other five sources with an Abstract-like category (DOLCE, SUMO, GFO, YAMATO,
+    GUM) all define it by the *same* criterion — absence of spatial/temporal location or physical
+    embodiment. BFO's closest analog, `generically dependent continuant`, is defined by an
+    entirely different criterion (capacity for multiple concrete copies to share the same
+    content/pattern) and remains a Continuant throughout — it does not exclude spatiotemporal
+    location the way the other five sources' Abstract categories do; a PDF file's *content*
+    is generically dependent, but every copy of that content is still concretely located.
+    This is the sharpest structural divergence in this crosswalk, directly comparable in kind
+    (though not in shape) to the BFO-vs-rest divergence `time.md`'s `note-001` found for Time.
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-002
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'Three sources (GFO, GUM, and — via `time.md`/`space.md`''s prior findings — implicitly
+    SUMO through its own disjoint `Physical`/`Abstract` split) treat Abstract/Concrete as
+    one half of an exhaustive top-level partition alongside their Time/Space-bearing branch:
+    GFO''s `owl:unionOf (Abstract Concrete Space_time)` is explicit and formal; GUM''s `Abstraction`
+    is `owl:disjointWith SpatialTemporal` (the shared Time/Space parent documented in `space.md`)
+    though not asserted as jointly exhaustive with it the way GFO''s union is. This directly
+    resolves part of `space.md`''s own forward-looking question about how Space/Time''s classification
+    interacts with the Abstract/Concrete split — GFO and GUM both make Time/Space and Abstract
+    explicit structural siblings, not overlapping or nested categories.'
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-003
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'YAMATO''s three-way physical/semi-abstract/abstract split is asymmetric by the source''s
+    own explicit statement: time-dependence-without-space-dependence (`semi-abstract`) is
+    a real, populated category, but space-dependence-without-time-dependence is explicitly
+    ruled out ("there is nothing which requires only space to exist"). This is a genuine philosophical
+    claim about the relative priority of time over space for existence, not an oversight or
+    missing case — worth flagging since it bears on the Time/Space parity question `space.md`''s
+    `note-003` already raised for this same source (YAMATO gives Space a more load-bearing
+    structural role than Time in some respects, yet here treats Time as the more fundamental
+    existence-condition).'
+  supporting_references:
+  - xwkont:ref:yamato-mizoguchi-2010
+  confidence: medium-high
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: SUMO's `Abstract` is defined via an exhaustive `disjointDecomposition` into five named
+    subclasses (`Quantity`, `Attribute`, `Relation`, `Proposition`, `List`) — a formally stronger
+    and more explicit partition than any other source provides for its own Abstract-equivalent
+    category's internal structure. `Quantity`, `Attribute`, and `Relation` are already crosswalked
+    (`quality.md` for Attribute; `relation.md` for Relation); `Proposition` is a separate
+    `0.2.0`-batch candidate; `List` has no XwkOnt crosswalk counterpart yet.
+  supporting_references:
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:abstract-concrete:001
+  subject: DOLCE:Abstract
+  relation_category: close-match
+  object: SUMO:Abstract
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Both are defined by the identical criterion (absence of spatial/temporal location
+    or physical embodiment) and both are direct top-level siblings of their source's own physical/perdurant-bearing
+    category. The closest structural pairing in this crosswalk.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:abstract-concrete:002
+  subject: DOLCE:Abstract
+  relation_category: close-match
+  object: GFO:Abstract
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Same absence-of-spatiotemporal-location criterion; GFO's explicit worked examples
+    (the number "2", pi) are consistent with, though more mathematically specific than, DOLCE's
+    own "sets and facts... only indicative" framing.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:abstract-concrete:003
+  subject: SUMO:Abstract
+  relation_category: close-match
+  object: GFO:Abstract
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Both formally exhaustive top-level partitions built on the same criterion; SUMO's
+    is a 5-way `disjointDecomposition`, GFO's a 3-way `owl:unionOf` — different internal granularity,
+    same outer criterion.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:abstract-concrete:004
+  subject: GFO:Abstract
+  relation_category: close-match
+  object: GUM:Abstraction
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: '**Retained as `close-match` after explicit re-justification (2026-07-04 review
+    pass)** — unlike the region/quantity or metaphysical/linguistic-grounding pairs downgraded
+    elsewhere in this batch (`time.md` `mapping-006`/`mapping-008`, `space.md` `mapping-005`/`mapping-006`),
+    both sides here are the *same formal kind*: a reified top-level class, sibling to the
+    source''s Time/Space branch, defined by the identical criterion (absence of physical spatiotemporal
+    location). GUM''s "metaphorical or qualitative space" phrasing is a framing gloss on the
+    same criterion, not a different criterion the way DOLCE''s "region" vs. SUMO''s "physical
+    Object" was — hence `close-match`, not `overlap`, with `medium-high` (not `high`) confidence
+    to flag that residual framing difference.'
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:gum-owl
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:abstract-concrete:005
+  subject: YAMATO:Abstract
+  relation_category: close-match
+  object: DOLCE:Abstract
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Same absence-of-time-and-space criterion; not `high` because YAMATO's own three-way
+    split (with `semi-abstract` as an explicit intermediate) has no counterpart category in
+    DOLCE's binary abstract/non-abstract framing.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:dolce-lite-owl
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:abstract-concrete:006
+  subject: YAMATO:semi-abstract
+  relation_category: unknown
+  object: '*(no counterpart in any other of the 8 sources)*'
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Recorded explicitly as a genuine YAMATO-only category, not silently dropped —
+    no other source interposes a needs-time-not-space intermediate category between physical
+    and abstract.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+- mapping_id: xwkont:mapping:abstract-concrete:007
+  subject: xwkont-core:Abstract (candidate)
+  relation_category: unknown
+  object: BFO:Generically dependent continuant
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: Related in subject matter (both concern content/pattern-like entities) but not
+    a correspondence for the crosswalk's own Abstract/Concrete split, since BFO's category
+    is defined by a different criterion (multiple-copy sharing, not absence of spatiotemporal
+    location) and remains a Continuant. Recorded to make the non-equivalence explicit rather
+    than silently omitting BFO.
+  provenance:
+  - xwkont:ref:bfo-2020
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:abstract-concrete:008
+  subject: xwkont-core:Abstract (candidate)
+  relation_category: unknown
+  object: UFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No UFO correspondence identified; zero occurrences of "abstract" in the paper's
+    full extracted text.
+  provenance:
+  - xwkont:ref:ufo-2021
+- mapping_id: xwkont:mapping:abstract-concrete:009
+  subject: xwkont-core:Abstract (candidate)
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No reified TUpper correspondence identified; "concrete or abstract" appears only
+    inside `object`'s own informal gloss, not as a separately defined predicate.
+  provenance:
+  - xwkont:ref:tupper-colore
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: 'Should `xwkont-core:Abstract`/`Concrete` be modeled as a class pair in `data/ontology/core.ttl`,
+    or as a property/editorial distinction? **Recommendation recorded 2026-07-04** (see Scope
+    Note''s "Modeling-shape decision"): a class pair, sibling-level to Continuant/Occurrent
+    under `Entity` — now that `quantity-amount-of-matter.md` and `proposition-content.md`
+    are both drafted and both need an `Abstract` superclass for their own SUMO/GFO subtype
+    correspondences, a property/editorial-only treatment would leave that dependency unresolved.
+    This is a recommendation, not a final core.ttl edit — the actual class addition still
+    waits for `reviewed` status.'
+  impact: Blocks final core.ttl placement; does not block continuing this crosswalk's research/review.
+    Recorded recommendation resolves the "unresolved modeling question" flagged by the 2026-07-04
+    external review.
+  follow_up: Confirm or override this recommendation at review time, jointly with `quantity-amount-of-matter.md`'s
+    and `proposition-content.md`'s own core.ttl placement decisions.
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: BFO has no class literally called "Abstract," confirmed by a full-text grep
+    of `bfo-core.ttl` for "abstract" (case-insensitive), returning zero label or definition
+    hits. `generically dependent continuant` is the nearest related category but is not treated
+    as a correspondence — see `note-001` and `mapping-007`.
+  impact: No BFO correspondence recorded (`correspondence-006`).
+  follow_up: None outstanding; this is treated as a confirmed, structural absence, not a gap
+    needing further fetching.
+- item_id: uncertainty-003
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: UFO has no reified Abstract/Concrete category — confirmed by direct full-text
+    search of the already-extracted 2021 paper, consistent with the same source's confirmed
+    absence of both Time and Space content in `time.md`/`space.md`.
+  impact: No UFO correspondence recorded (`mapping-008`).
+  follow_up: Re-check if UFO-A/UFO-C literature (already flagged as unfetched for `time.md`/`space.md`/`information-artifact.md`)
+    becomes accessible.
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: GUM's `Abstraction` class was not in `TODO.md`'s original seed for this concept
+    — this session's direct verification found it. This is the third `0.2.0`-batch concept
+    in a row (after Time and Space) where GUM content was undercredited in the seed/matrix-derived
+    candidate list, suggesting GUM's OWL file may be systematically under-surveyed relative
+    to the other 7 sources.
+  impact: Does not affect this crosswalk's own GUM correspondence, but flags a possible pattern
+    worth a dedicated check.
+  follow_up: Consider a dedicated pass re-checking `docs/evaluations/foundational-ontology-concept-terms-matrix.md`'s
+    GUM tree against the full `GUM-31.owl` class list, once the `0.2.0` batch is further along
+    — this is the third such gap found (after the two `time.md`/`space.md` GUM corrections).
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified absence** directly against `bfo-core.ttl`, 2026-07-04'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly against `DOLCE-Lite.owl`, 2026-07-04'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-04'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified absence** directly (full-text re-search), 2026-07-04'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl`, 2026-07-04'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified** directly against the extracted PDF, 2026-07-04'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified absence** directly against `TUpper-Terms.html`, 2026-07-04'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified** directly against `GUM-31.owl`, 2026-07-04, correcting `TODO.md`''s
+    prior omission'
+review_history:
+- review_date: "2026-07-04"
+  outcome: Not yet reviewed — `draft`
+  review_notes: Third concept of the `0.2.0` batch (`ADR-0018`), following `time.md` and `space.md`.
+    All 8 sources checked directly against primary artifacts already cached from the prior
+    two crosswalks' research (no new fetches needed beyond re-grepping existing local copies).
+    Corrected `TODO.md`'s seed by finding GUM's previously-uncredited `Abstraction` class
+    — the third consecutive `0.2.0`-batch concept where GUM content was undercredited (see
+    `uncertainty-004`). Pending maintainer review before advancing to `reviewed`; core.ttl
+    placement (`uncertainty-001`) is an open question to resolve at that review, likely alongside
+    later `0.2.0`-batch concepts that subtype Abstract in their own source ontologies.
+- review_date: "2026-07-05"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:abstract-concrete:2026-07-05:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential (correspondences 001-006, mappings 001-009, notes 001-004, uncertainty
+    001-004); all confidence values within the `ADR-0013` vocabulary, and the `medium-high`
+    mappings/note each state a sourcing rationale; `mapping-004`''s re-justified `close-match`
+    retention (rather than downgrade) confirmed sound — genuinely different formal-kind mismatch
+    pattern than the pairs downgraded in `time.md`/`space.md`. **Confirmed the `uncertainty-001`
+    modeling-shape recommendation**: `xwkont-core:Abstract`/`Concrete` will be modeled as
+    a class pair, sibling-level to Continuant/Occurrent under `Entity`, per the Scope Note''s
+    rationale (5-of-8-source class-not-property pattern; `quantity-amount-of-matter.md`/`proposition-content.md`
+    both need an Abstract superclass to subclass from). This confirmation is a recorded modeling
+    decision, not a `core.ttl` edit — that Turtle-change work remains separately tracked,
+    per `docs/INFORMATION_ARCHITECTURE.md`''s scope-based definition of `reviewed`. Self-review,
+    not independent third-party review.'
+future_work:
+- '~~Confirm or override the `uncertainty-001` modeling-shape recommendation~~ — **done 2026-07-05**:
+  confirmed as a class pair, sibling to Continuant/Occurrent (`xwkont:review:abstract-concrete:2026-07-05:01`);
+  advanced `draft` → `reviewed`. The actual `core.ttl` addition remains separately-tracked
+  Turtle-change work, jointly with `quantity-amount-of-matter.md`''s and `proposition-content.md`''s
+  own placement decisions.'
+- Consider a dedicated pass re-checking the matrix's GUM tree for further undercredited classes
+  (`uncertainty-004`).
+- ~~Create the Quantity/Amount of Matter crosswalk next~~ Done — `quantity-amount-of-matter.md`
+  and the rest of the `0.2.0` batch are now drafted.
+- '`mapping-004` (GFO/GUM) re-justified and retained as `close-match` in a 2026-07-04 external
+  review pass; see updated rationale.'

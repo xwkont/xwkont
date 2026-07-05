@@ -54,6 +54,10 @@ required_terms = [
     'xwkont-core:qualityOf', 'xwkont-core:bearsRole',
     'xwkont-core:roleOf', 'xwkont-core:dependsOn',
     'xwkont-core:mapsTo', 'xwkont-core:documentedBy',
+    'xwkont-core:Abstract', 'xwkont-core:Concrete', 'xwkont-core:Universal',
+    'xwkont-core:Time', 'xwkont-core:Space', 'xwkont-core:Aggregate',
+    'xwkont-core:Sum', 'xwkont-core:Boundary', 'xwkont-core:Site',
+    'xwkont-core:Quantity', 'xwkont-core:Proposition',
 ]
 missing = [term for term in required_terms if term not in core]
 if missing:

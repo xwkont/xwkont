@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:mereology-parthood-aggregate:001> a sssom:Mapping ;
+    rdfs:comment "Both require member parts to play a uniform role with respect to the whole (BFO: \"form a unit\"; UFO: \"play the same role with respect to the whole\"), and both give near-identical worked examples (BFO: \"aggregate of the musicians in a symphony orchestra\"; UFO: \"Black Forest as a collective of trees\"). The closest structural pairing in this crosswalk."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Collective ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Object_aggregate .
+
+<https://w3id.org/xwkont/id#mapping:mereology-parthood-aggregate:002> a sssom:Mapping ;
+    rdfs:comment "Both permit a criterion-free, membership-changeable sum — DOLCE's \"no unity criterion... extensional\" and SUMO's \"members can be added and subtracted without thereby changing the identity\" describe the same permissive pattern. Not `high` because DOLCE's own framing (mereological sum, \"extensional\") and SUMO's (spacetime-located, Class-contrasted) emphasize different aspects of the same underlying idea."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Collection ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Arbitrary_sum .
+
+<https://w3id.org/xwkont/id#mapping:mereology-parthood-aggregate:003> a sssom:Mapping ;
+    rdfs:comment "Both are pluralities of endurant/material-entity-side parts, but BFO's requires member-role uniformity (\"form a unit\") while DOLCE's explicitly does not (\"no unity criterion\") — a genuine strictness divergence per `note-001`, hence `overlap` rather than `close-match`."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Arbitrary_sum ;
+    sssom:subject_id xwkont-source-term:BFO-Object_aggregate .
+
+<https://w3id.org/xwkont/id#mapping:mereology-parthood-aggregate:004> a sssom:Mapping ;
+    rdfs:comment "Same strictness divergence as `mapping-003` — UFO requires uniform member roles; SUMO explicitly allows membership change without identity change, a looser criterion."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Collection ;
+    sssom:subject_id xwkont-source-term:UFO-Collective .
+
+xwkont-source-term:BFO-Object_aggregate rdfs:label "Object aggregate"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:DOLCE-Arbitrary_sum rdfs:label "Arbitrary-sum"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:SUMO-Collection rdfs:label "Collection"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:UFO-Collective rdfs:label "Collective"@en ;
+    dcterms:source "UFO" .
+

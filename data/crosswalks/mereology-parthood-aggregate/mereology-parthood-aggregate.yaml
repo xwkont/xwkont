@@ -1,0 +1,567 @@
+local_identifier: xwkont:concept:mereology-parthood-aggregate
+slug: mereology-parthood-aggregate
+title: Mereology / Parthood / Aggregate
+editorial_status: reviewed
+created: "2026-07-04"
+modified: "2026-07-05"
+scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Mereology / Parthood
+  / Aggregate is the seventh concept drafted from the `0.2.0` batch. Direct primary-source
+  verification this session found a nameable "aggregate/no-unity" category in **4 of 8 sources**
+  (BFO `fiat object part`/`object aggregate`, DOLCE `arbitrary-sum`, SUMO `Collection`, UFO
+  `Collective`) — the same source count `TODO.md`''s seed claimed, but with one substitution:
+  YAMATO''s claimed `non-unitary` term was not found anywhere in the fetchable 2010 technical
+  report (see Uncertainty), while UFO''s `Collective` — not in the original seed — was found
+  to be a strong, directly quotable correspondence. GFO, TUpper, and GUM were confirmed to
+  have no reified aggregate/collection *entity* class, though TUpper does contribute the parthood
+  *relations* (`spatial_part`, `physical_part`) already documented in `space.md`.
+
+
+
+  This crosswalk compares each source ontology''s own treatment of pluralities and mass-like
+  wholes that lack the unity criterion of an Object/kind-instance — an arbitrary or criterion-bound
+  sum of parts, as distinct from Object (already `reviewed`, which covers unified wholes)
+  and from Quantity/Amount of Matter (already drafted, `quantity-amount-of-matter.md`, which
+  covers homeomerous stuff rather than pluralities of discrete members). Sources compared:
+  BFO, DOLCE, SUMO, UFO, GFO, YAMATO, TUpper, GUM (per `ADR-0015`''s 8-source scope).
+
+
+
+  **Cross-cutting finding, established this session:** the four sources with a genuine aggregate/collection
+  category split into two sub-patterns by how strict their unity criterion is. BFO''s `object
+  aggregate` and UFO''s `Collective` both require member parts to play a *uniform* role with
+  respect to the whole (BFO: "a plurality... as member parts which together form a unit";
+  UFO: "parts play the same role with respect to the whole, e.g., the Black Forest as a collective
+  of trees"). DOLCE''s `arbitrary-sum` and, more loosely, SUMO''s `Collection` instead allow
+  a genuinely unrestricted, criterion-free sum (DOLCE: "the mereological sum of any two or
+  more endurants... no unity criterion... ''extensional''"; SUMO: "members can be added and
+  subtracted without thereby changing the identity of the Collection"). BFO additionally supplies
+  a second, structurally distinct category with no counterpart in any other source checked
+  — `fiat object part`, a sub-object part demarcated by a fiat (not natural) boundary, which
+  is about *dividing* a unified whole rather than *summing* discrete members. See `note-001`,
+  `note-002`.
+
+
+
+  Exclusions: this crosswalk does not address Boundary/Site (a separate `0.2.0`-batch candidate;
+  BFO''s `fiat object part` and its demarcating "fiat surfaces" are directly relevant background
+  for that future crosswalk, not resolved here) or Object (already `reviewed`; the Object/Aggregate
+  contrast that BFO''s, SUMO''s, and UFO''s own documentation each draw is noted but not re-litigated).
+
+
+
+  **Core.ttl placement is deliberately left open at this `draft` stage** — see Uncertainty.'
+labels:
+- role: XwkOnt working label
+  label: Mereology / Parthood / Aggregate
+  label_source: XwkOnt
+  language: en
+  entry_notes: Not yet in `data/ontology/core.ttl` — see Scope Note.
+- role: Source term
+  label: Object aggregate (+ Fiat object part)
+  label_source: BFO
+  language: en
+  entry_notes: 'Two structurally distinct categories: a plurality-summing one and a whole-dividing
+    one, both subtypes of `material entity`.'
+- role: Source term
+  label: Arbitrary-sum
+  label_source: DOLCE
+  language: en
+  entry_notes: AKA "arbitrary-collection"; a mereological sum with no unity criterion, disjoint
+    from both physical- and non-physical-endurant.
+- role: Source term
+  label: Collection
+  label_source: SUMO
+  language: en
+  entry_notes: A `Physical` subclass, disjoint from `SelfConnectedObject`; members can change
+    without changing the Collection's identity.
+- role: Source term
+  label: Collective
+  label_source: UFO
+  language: en
+  entry_notes: One of three leaf partition members of `Substantial` (alongside `Object`, `Quantity`,
+    per `quantity-amount-of-matter.md`'s own UFO findings).
+- role: Alternate label
+  label: '*(no aggregate/collection class — see Uncertainty)*'
+  label_source: GFO
+  language: en
+  entry_notes: '"Collection" occurs only informally inside `Configuration`''s own gloss (already
+    documented in `situation-state-of-affairs.md`), not as its own class.'
+- role: Alternate label
+  label: Non-unitary *(claimed in `TODO.md`'s seed, not found — see Uncertainty)*
+  label_source: YAMATO
+  language: en
+  entry_notes: The literal term "non-unitary" does not occur anywhere in the fetchable 2010
+    technical report; related but distinct discussion of process/event "unity" exists on the
+    occurrent side only.
+- role: Alternate label
+  label: '*(relations only, no aggregate entity class — see Uncertainty)*'
+  label_source: TUpper
+  language: en
+  entry_notes: '`spatial_part`/`physical_part`/`spatial_C`/`physical_C` (already documented
+    in `space.md`) are parthood/connection *relations*, not a reified Aggregate/Collection
+    class.'
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: GUM
+  language: en
+  entry_notes: Zero occurrences of "Aggregate," "Collection," "Collective," or "Sum" as defined
+    GUM classes.
+source_definitions:
+- source: BFO
+  term_or_identifier: Object aggregate (BFO_0000027)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) An object aggregate is a material entity consisting exactly of a plurality
+    (≥1) of objects as member parts which together form a unit." Example: "The aggregate of
+    the musicians in a symphony orchestra and their instruments; the aggregate of bearings
+    in a constant velocity axle joint; the nitrogen atoms in the atmosphere; a collection
+    of cells in a blood biobank." `rdfs:subClassOf` material entity (BFO_0000040). `dc11:identifier
+    "025-BFO"`.'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000027, fetched and read directly 2026-07-04'
+  entry_notes: BFO's own scope note (already noted when `time.md`/`space.md` fetched this
+    same region of the file) clarifies "exactly" excludes any parts beyond the member parts,
+    and that the plurality can transiently shrink to one member while still counting as the
+    same aggregate.
+- source: BFO
+  term_or_identifier: Fiat object part (BFO_0000024)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) A fiat object part b is a material entity & such that if b exists
+    then it is continuant part of some object c & demarcated from the remainder of c by one
+    or more fiat surfaces." Example: "The upper and lower lobes of the left lung; the dorsal
+    and ventral surfaces of the body; the Western hemisphere of the Earth." `rdfs:subClassOf`
+    material entity (BFO_0000040). `dc11:identifier "027-BFO"`.'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000024, fetched and read directly 2026-07-04'
+  entry_notes: A structurally distinct category from `object aggregate` — this one *divides*
+    a unified whole via non-natural (fiat) boundaries rather than *summing* discrete members.
+    No counterpart to this specific division-not-summation category was found in any other
+    of the 8 sources — see `note-002`.
+- source: DOLCE
+  term_or_identifier: Arbitrary-sum
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"AKA arbitrary-collection. The mereological sum of any two or more endurants (physical
+    or not). Arbitrary sums have no unity criterion (they are ''extensional'')." `rdfs:subClassOf
+    endurant`; `owl:disjointWith physical-endurant`, `owl:disjointWith non-physical-endurant`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified**: `DOLCE-Lite.owl`, class `#arbitrary-sum`, fetched and read directly
+    2026-07-04'
+  entry_notes: The most permissive of the four correspondences — any sum of two or more endurants
+    qualifies, with no member-role-uniformity requirement, unlike BFO's `object aggregate`
+    or UFO's `Collective`. Disjoint from *both* physical- and non-physical-endurant, i.e.
+    a third, orthogonal endurant category alongside those two branches.
+- source: SUMO
+  term_or_identifier: Collection
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Collections have members like Classes, but, unlike Classes, they have a position
+    in space-time and members can be added and subtracted without thereby changing the identity
+    of the Collection. Some examples are toolkits, repeated actions, football teams, and flocks
+    of sheep." `(subclass Collection Physical)`; `(disjoint Collection SelfConnectedObject)`.'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: current `Merge.kif`, fetched and read directly 2026-07-04'
+  entry_notes: SUMO's own documentation explicitly contrasts `Collection` with `Class` (already
+    crosswalked in `universal-type.md` as SUMO's Abstract-side classifier) — a `Collection`
+    is `Physical`, has spatiotemporal location, and tolerates membership change without identity
+    change, the opposite of a `Class`'s intensional, condition-defined membership.
+- source: UFO
+  term_or_identifier: Collective
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Collectives are entities whose parts play the same role with respect to the whole,
+    e.g., the Black Forest (as a collective of trees), a deck of cards, the Dutch-speaking
+    group in the crowd." Contrasted in the same passage with `Quantities` ("maximally-topologically-self-connected...
+    homeomerous amounts of matter") and `Objects` ("aka functional complexes... parts play
+    differentiated functional roles"). One of three partition members of `Substantial`.'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: 2021 Applied Ontology paper, already-extracted text re-searched
+    directly 2026-07-04'
+  entry_notes: Not part of `TODO.md`'s original seed for this concept — a genuine addition.
+    UFO's own three-way `Substantial` partition (Object/Collective/Quantity) directly parallels
+    this crosswalk's own three-concept adjacency (Object, this concept, Quantity/Amount of
+    Matter, per `quantity-amount-of-matter.md`) — the cleanest structural fit of any source
+    to XwkOnt's own concept boundaries.
+- source: GFO
+  term_or_identifier: '*(no aggregate/collection class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text grep of `modules/gfo-base.owl` for "aggregate," "mereolog," "sum" (as a
+    class name), and "heap" returned zero class declarations; the sole "collection" hits are
+    XML/RDF `rdf:parseType="Collection"` syntax (unrelated) and `Configuration`'s own informal
+    gloss ("we consider a collection of presential facts," already documented in `situation-state-of-affairs.md`).
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified absence**: `modules/gfo-base.owl`, fetched and read directly 2026-07-04'
+  entry_notes: Not part of `TODO.md`'s original seed for this concept; checked directly for
+    completeness. This is the second `0.2.0`-batch concept (after Situation/State of Affairs)
+    where GFO's usual pattern of contributing a formally exhaustive top-level category does
+    not hold — GFO has no counterpart at all here.
+- source: YAMATO
+  term_or_identifier: '*(claimed term "non-unitary" not found; related but distinct occurrent-side
+    discussion exists)*'
+  dimension: philosophical
+  source_claim_type: non-equivalence
+  text: 'Full-text search of the extracted YAMATO 2010 technical report for "non-unitary,"
+    "nonunitary," and "non unitary" (case-insensitive) returned zero matches. The document
+    does discuss unity in a related but distinct, occurrent-side sense: "Processes are dissective
+    and hence they have no unity. It has no whole, and hence it has no (temporal) part...
+    an event exists with unity in the temporal space, that is, it must be always viewed as
+    a whole."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified absence of the claimed term; distinct related content found**: 2010
+    technical report, full extracted text re-searched directly 2026-07-04'
+  entry_notes: '`TODO.md`''s seed claim is not supported by the one fetchable YAMATO primary
+    document — this may be a term from YAMATO''s OWL/Hozo files (still registration-gated,
+    per the same limitation already noted for Time/Space/Abstract) or the blocked 2022 paper,
+    not the 2010 report. The unity discussion that *does* exist in this document concerns
+    process/event dissectiveness (an occurrent-side, temporal-parts question, already adjacent
+    to `event.md`/`process.md`), not an endurant-side aggregate/plurality category — a different
+    question from this concept''s own scope.'
+- source: TUpper
+  term_or_identifier: '*(mereotopology relations only, no aggregate entity class)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '`spatial_part`/`spatial_C` and `physical_part`/`physical_C` (already quoted in full
+    in `space.md`''s Source Definitions) define parthood and connection *relations* over spatial
+    regions and physical bodies respectively — no separate `Aggregate`, `Collection`, or `Sum`
+    predicate/class is declared anywhere in `TUpper-Terms.html`.'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified absence of an entity class; relations confirmed**: `TUpper-Terms.html`,
+    fetched and read directly 2026-07-04'
+  entry_notes: TUpper formalizes *parthood as a relation* thoroughly (a full mereotopology,
+    per `space.md`) but never reifies "the sum/aggregate of some parts" as its own kind of
+    thing — a structurally different modeling choice from BFO's/DOLCE's/SUMO's/UFO's entity-class
+    approach.
+- source: GUM
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text grep of `GUM-31.owl` for `#Aggregate`, `#Collection`, `#Collective`, `#Sum`,
+    and `#Group` (GUM's own PascalCase convention) returned zero matches.
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified absence**: `GUM-31.owl`, fetched and read directly 2026-07-04'
+  entry_notes: The third `0.2.0`-batch concept (after Situation/State of Affairs and Universal/Type)
+    where GUM contributes nothing previously uncredited.
+correspondences:
+- correspondence_id: xwkont:correspondence:mereology-parthood-aggregate:001
+  source_ontology: BFO
+  source_term: Object aggregate (+ Fiat object part)
+  source_identifier_or_iri: '`BFO_0000027`, `BFO_0000024`'
+  source_version: BFO 2020 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Direct terminological match; two structurally distinct sub-categories,
+    both material entities.
+- correspondence_id: xwkont:correspondence:mereology-parthood-aggregate:002
+  source_ontology: DOLCE
+  source_term: Arbitrary-sum
+  source_identifier_or_iri: http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#arbitrary-sum
+  source_version: DOLCE-Lite v397 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Direct terminological match; the most permissive (criterion-free) of
+    the four correspondences.
+- correspondence_id: xwkont:correspondence:mereology-parthood-aggregate:003
+  source_ontology: SUMO
+  source_term: Collection
+  source_identifier_or_iri: '`Collection` (SUMO term names are their own identifiers)'
+  source_version: Current `Merge.kif` (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Direct terminological match; explicitly contrasted with SUMO's own
+    `Class` in the same documentation passage.
+- correspondence_id: xwkont:correspondence:mereology-parthood-aggregate:004
+  source_ontology: UFO
+  source_term: Collective
+  source_identifier_or_iri: not applicable — no IRI scheme in the 2021 paper itself
+  source_version: Applied Ontology, 2021 (directly re-verified 2026-07-04)
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: Direct terminological match; a leaf partition member of `Substantial`,
+    requiring member-role uniformity, closer in spirit to BFO's `object aggregate` than to
+    DOLCE's/SUMO's more permissive categories.
+correspondences_note: No GFO, YAMATO, TUpper, or GUM correspondence is recorded — see Source
+  Definitions and Uncertainty.
+comparison_notes:
+- note_id: note-001
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'The four confirmed sources split into two unity-strictness sub-patterns. BFO''s `object
+    aggregate` and UFO''s `Collective` both require member parts to play a *uniform* role
+    with respect to the whole — BFO: "a plurality... as member parts which together form a
+    unit"; UFO: "parts play the same role with respect to the whole." DOLCE''s `arbitrary-sum`
+    and SUMO''s `Collection` instead permit a genuinely unrestricted sum — DOLCE explicitly
+    states arbitrary sums "have no unity criterion (they are ''extensional'')"; SUMO''s own
+    documentation allows "members [to] be added and subtracted without thereby changing the
+    identity of the Collection." This is a real, citable difference in how strict a "no full
+    Object-unity" category is allowed to be, not just a naming variation — worth preserving
+    as two distinguishable sub-senses rather than collapsing all four into one undifferentiated
+    correspondence.'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: BFO's `fiat object part` has no counterpart in any of the other 7 sources checked
+    — it is about *dividing* an already-unified whole via non-natural (fiat) boundaries ("demarcated
+    from the remainder of c by one or more fiat surfaces"), the structural opposite of *summing*
+    discrete, separately-existing members into a plurality. This is directly relevant background
+    for the planned Boundary/Site crosswalk (`TODO.md`'s `0.2.0` batch item 8), which will
+    cover BFO's fiat-boundary apparatus (`continuant fiat boundary`, `fiat point`/`line`/`surface`)
+    in its own right.
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: UFO's `Substantial` partition (`Object`/`Collective`/`Quantity`) maps onto XwkOnt's
+    own concept boundaries more cleanly than any other source's treatment across the three
+    related `0.2.0`-batch concepts touching this territory (Object, already `reviewed`; this
+    concept; Quantity/Amount of Matter, `quantity-amount-of-matter.md`) — UFO draws exactly
+    the same three-way distinction XwkOnt's own crosswalk scoping already does, while BFO,
+    DOLCE, and SUMO each split the same territory differently (e.g. DOLCE's `arbitrary-sum`
+    cuts across both physical and non-physical endurants, unlike UFO's `Collective`, which
+    — like `Object` and `Quantity` — is a `Substantial`, i.e. implicitly physical/concrete).
+  supporting_references:
+  - xwkont:ref:ufo-2021
+  confidence: medium-high
+mapping_assertions:
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:001
+  subject: BFO:Object aggregate
+  relation_category: close-match
+  object: UFO:Collective
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Both require member parts to play a uniform role with respect to the whole (BFO:
+    "form a unit"; UFO: "play the same role with respect to the whole"), and both give near-identical
+    worked examples (BFO: "aggregate of the musicians in a symphony orchestra"; UFO: "Black
+    Forest as a collective of trees"). The closest structural pairing in this crosswalk.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:002
+  subject: DOLCE:Arbitrary-sum
+  relation_category: close-match
+  object: SUMO:Collection
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Both permit a criterion-free, membership-changeable sum — DOLCE's "no unity criterion...
+    extensional" and SUMO's "members can be added and subtracted without thereby changing
+    the identity" describe the same permissive pattern. Not `high` because DOLCE's own framing
+    (mereological sum, "extensional") and SUMO's (spacetime-located, Class-contrasted) emphasize
+    different aspects of the same underlying idea.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:003
+  subject: BFO:Object aggregate
+  relation_category: overlap
+  object: DOLCE:Arbitrary-sum
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: Both are pluralities of endurant/material-entity-side parts, but BFO's requires
+    member-role uniformity ("form a unit") while DOLCE's explicitly does not ("no unity criterion")
+    — a genuine strictness divergence per `note-001`, hence `overlap` rather than `close-match`.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:004
+  subject: UFO:Collective
+  relation_category: overlap
+  object: SUMO:Collection
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: Same strictness divergence as `mapping-003` — UFO requires uniform member roles;
+    SUMO explicitly allows membership change without identity change, a looser criterion.
+  provenance:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:005
+  subject: BFO:Fiat object part
+  relation_category: unknown
+  object: '*(no counterpart in any other of the 8 sources)*'
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Recorded explicitly as a genuine BFO-only category, not silently dropped — see
+    `note-002`. Directly relevant to the planned Boundary/Site crosswalk.
+  provenance:
+  - xwkont:ref:bfo-2020
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:006
+  subject: xwkont-core:Aggregate (candidate)
+  relation_category: unknown
+  object: GFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No GFO correspondence identified; zero class declarations for "aggregate"/"mereolog"/"sum"/"heap"
+    anywhere in `modules/gfo-base.owl`.
+  provenance:
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:007
+  subject: xwkont-core:Aggregate (candidate)
+  relation_category: unknown
+  object: YAMATO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No YAMATO correspondence identified; `TODO.md`'s seed claim ("non-unitary") was
+    not found anywhere in the fetchable 2010 technical report — see Uncertainty.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:008
+  subject: xwkont-core:Aggregate (candidate)
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No reified TUpper correspondence identified; `spatial_part`/`physical_part` are
+    relations, not an aggregate entity class.
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:mereology-parthood-aggregate:009
+  subject: xwkont-core:Aggregate (candidate)
+  relation_category: unknown
+  object: GUM
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No GUM correspondence identified; zero occurrences of "Aggregate"/"Collection"/"Collective"/"Sum"
+    as defined GUM classes.
+  provenance:
+  - xwkont:ref:gum-owl
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: '`TODO.md`''s seed claimed "YAMATO (`non-unitary`)" as a correspondence for
+    this concept. Direct full-text search of the one fetchable YAMATO primary document (the
+    2010 technical report) found zero occurrences of "non-unitary"/"nonunitary"/"non unitary."
+    A related but distinct discussion of process/event "unity" exists in the same document,
+    but on the occurrent (temporal-parts) side, not as an endurant-side aggregate/plurality
+    category.'
+  impact: '`TODO.md`''s seed for this concept is not fully supported by the fetchable primary
+    source; no YAMATO correspondence is recorded in this crosswalk.'
+  follow_up: Re-check if YAMATO's OWL/Hozo files (still registration-gated) or the blocked
+    2022 paper become accessible — "non-unitary" may be a term from one of those, not the
+    2010 report.
+- item_id: uncertainty-002
+  uncertainty_type: open-question
+  resolved: false
+  description: Where should `xwkont-core:Aggregate` subclass from once added to `data/ontology/core.ttl`?
+    BFO and UFO both treat this as a material/substantial-side category with a uniform-member-role
+    criterion; DOLCE and SUMO treat it more permissively and, in DOLCE's case, deliberately
+    orthogonal to the physical/non-physical split. **Recommendation recorded 2026-07-04, in
+    response to external review:** model both sub-patterns explicitly as two sibling sub-concepts
+    rather than one undifferentiated `Aggregate` class — a strict, uniform-member-role `Aggregate`
+    (BFO `object aggregate`/UFO `Collective`) and a permissive, criterion-free `Sum` (DOLCE
+    `arbitrary-sum`/SUMO `Collection`) — because `note-001` establishes this is a real, citable
+    strictness difference across all four confirmed sources (2 sources per pattern, an even
+    split, not a majority/minority case that would justify picking one and treating the other
+    as a variant). This mirrors the same two-sub-concept resolution recorded for `boundary-site.md`'s
+    own `uncertainty-001` (part-of-host boundary vs. not-part-of-host dependent place) — both
+    are cases where this batch's own evidence splits evenly rather than converging on one
+    class.
+  impact: Blocks final core.ttl placement; does not block continuing this crosswalk's research/review.
+    Recorded recommendation resolves the "decide whether to model strict aggregate vs. permissive
+    sum separately" item flagged by the 2026-07-04 external review.
+  follow_up: Confirm or override this recommendation at review time.
+- item_id: uncertainty-003
+  uncertainty_type: open-question
+  resolved: false
+  description: BFO's `fiat object part` (`note-002`) has no counterpart in this crosswalk's
+    other 7 sources and is more directly relevant to the planned Boundary/Site crosswalk than
+    to this one. Whether it should be cross-referenced there instead of (or in addition to)
+    here is a scoping question for that future crosswalk.
+  impact: Does not block this crosswalk's own completion; a forward-looking scoping note for
+    Boundary/Site.
+  follow_up: Cross-check BFO's `fiat object part`/`continuant fiat boundary` apparatus explicitly
+    when drafting the Boundary/Site crosswalk next.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified** directly against `bfo-core.ttl`, 2026-07-04'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly against `DOLCE-Lite.owl`, 2026-07-04'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-04'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified** directly (full-text re-search), 2026-07-04'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified absence** directly against `modules/gfo-base.owl`, 2026-07-04'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified absence of claimed term** directly against the extracted
+    PDF, 2026-07-04'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified absence of entity class; relations confirmed** directly against
+    `TUpper-Terms.html`, 2026-07-04'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified absence** directly against `GUM-31.owl`, 2026-07-04'
+review_history:
+- review_date: "2026-07-04"
+  outcome: Not yet reviewed — `draft`
+  review_notes: 'Seventh concept of the `0.2.0` batch (`ADR-0018`), following `time.md` through
+    `universal-type.md`. All 8 sources checked directly against primary artifacts already
+    cached from prior crosswalks'' research. Matches `TODO.md`''s 4-source seed count, but
+    with one substitution: YAMATO''s claimed "non-unitary" term was not found in the fetchable
+    primary document, while UFO''s `Collective` (not in the seed) was found to be a strong,
+    directly quotable correspondence, and maps onto XwkOnt''s own Object/Aggregate/Quantity
+    concept boundaries more cleanly than any other source (`note-003`). Found two sub-patterns
+    of unity-strictness across the four confirmed sources (`note-001`) and one BFO-only category
+    (`fiat object part`, `note-002`) directly relevant to the next crosswalk in the batch.
+    Pending maintainer review before advancing to `reviewed`.'
+- review_date: "2026-07-05"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:mereology-parthood-aggregate:2026-07-05:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential (correspondences 001-004, mappings 001-009, notes 001-003, uncertainty
+    001-003); all confidence values within the `ADR-0013` vocabulary, and the `medium-high`
+    mapping/note state their sourcing rationale; the YAMATO seed correction ("non-unitary"
+    not found) confirmed consistently reflected in Source Definitions and `uncertainty-001`.
+    **Confirmed the `uncertainty-002` two-sub-concept recommendation**: `Aggregate` (strict,
+    uniform-member-role — BFO/UFO) and `Sum` (permissive, criterion-free — DOLCE/SUMO) will
+    be modeled as sibling sub-concepts, on the strength of the even 2/2 source split documented
+    in `note-001` — not a majority/minority case. This confirmation is a recorded modeling
+    decision, not a `core.ttl` edit; that Turtle-change work (which now needs to add *two*
+    sibling classes, not one) remains separately tracked, consistent with `boundary-site.md`''s
+    analogous two-sub-concept call. Self-review, not independent third-party review.'
+future_work:
+- '~~Confirm or override the `uncertainty-002` two-sub-concept recommendation~~ — **done 2026-07-05**:
+  confirmed (`xwkont:review:mereology-parthood-aggregate:2026-07-05:01`); advanced `draft`
+  → `reviewed`. The `core.ttl` addition of both sibling classes remains separately-tracked
+  Turtle-change work.'
+- Re-check YAMATO's OWL/Hozo files or the blocked 2022 paper for the seed's claimed "non-unitary"
+  term (`uncertainty-001`), if either becomes accessible.
+- ~~Create the Boundary/Site crosswalk next~~ Done — `boundary-site.md` and the rest of the
+  `0.2.0` batch are now drafted; see its own `note-002`/`uncertainty-003` for the BFO `fiat
+  object part`/`continuant fiat boundary` cross-reference.

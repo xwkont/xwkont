@@ -1,0 +1,76 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:abstract-concrete:001> a sssom:Mapping ;
+    rdfs:comment "Both are defined by the identical criterion (absence of spatial/temporal location or physical embodiment) and both are direct top-level siblings of their source's own physical/perdurant-bearing category. The closest structural pairing in this crosswalk."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Abstract ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Abstract .
+
+<https://w3id.org/xwkont/id#mapping:abstract-concrete:002> a sssom:Mapping ;
+    rdfs:comment "Same absence-of-spatiotemporal-location criterion; GFO's explicit worked examples (the number \"2\", pi) are consistent with, though more mathematically specific than, DOLCE's own \"sets and facts... only indicative\" framing."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Abstract ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Abstract .
+
+<https://w3id.org/xwkont/id#mapping:abstract-concrete:003> a sssom:Mapping ;
+    rdfs:comment "Both formally exhaustive top-level partitions built on the same criterion; SUMO's is a 5-way `disjointDecomposition`, GFO's a 3-way `owl:unionOf` — different internal granularity, same outer criterion."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Abstract ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:SUMO-Abstract .
+
+<https://w3id.org/xwkont/id#mapping:abstract-concrete:004> a sssom:Mapping ;
+    rdfs:comment "**Retained as `close-match` after explicit re-justification (2026-07-04 review pass)** — unlike the region/quantity or metaphysical/linguistic-grounding pairs downgraded elsewhere in this batch (`time.md` `mapping-006`/`mapping-008`, `space.md` `mapping-005`/`mapping-006`), both sides here are the *same formal kind*: a reified top-level class, sibling to the source's Time/Space branch, defined by the identical criterion (absence of physical spatiotemporal location). GUM's \"metaphorical or qualitative space\" phrasing is a framing gloss on the same criterion, not a different criterion the way DOLCE's \"region\" vs. SUMO's \"physical Object\" was — hence `close-match`, not `overlap`, with `medium-high` (not `high`) confidence to flag that residual framing difference."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Abstraction ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:GFO-Abstract .
+
+<https://w3id.org/xwkont/id#mapping:abstract-concrete:005> a sssom:Mapping ;
+    rdfs:comment "Same absence-of-time-and-space criterion; not `high` because YAMATO's own three-way split (with `semi-abstract` as an explicit intermediate) has no counterpart category in DOLCE's binary abstract/non-abstract framing."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Abstract ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:YAMATO-Abstract .
+
+<https://w3id.org/xwkont/id#mapping:abstract-concrete:007> a sssom:Mapping ;
+    rdfs:comment "Related in subject matter (both concern content/pattern-like entities) but not a correspondence for the crosswalk's own Abstract/Concrete split, since BFO's category is defined by a different criterion (multiple-copy sharing, not absence of spatiotemporal location) and remains a Continuant. Recorded to make the non-equivalence explicit rather than silently omitting BFO."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:BFO-Generically_dependent_continuant ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:xwkont-core-Abstract_candidate .
+
+xwkont-source-term:BFO-Generically_dependent_continuant rdfs:label "Generically dependent continuant"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:GUM-Abstraction rdfs:label "Abstraction"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:YAMATO-Abstract rdfs:label "Abstract"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:xwkont-core-Abstract_candidate rdfs:label "Abstract (candidate)"@en ;
+    dcterms:source "xwkont-core" .
+
+xwkont-source-term:SUMO-Abstract rdfs:label "Abstract"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:DOLCE-Abstract rdfs:label "Abstract"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:GFO-Abstract rdfs:label "Abstract"@en ;
+    dcterms:source "GFO" .
+

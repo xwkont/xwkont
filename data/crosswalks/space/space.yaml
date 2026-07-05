@@ -1,0 +1,814 @@
+local_identifier: xwkont:concept:space
+slug: space
+title: Spatial Region / Space
+editorial_status: reviewed
+created: "2026-07-04"
+modified: "2026-07-05"
+scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Spatial Region/Space
+  is the second concept drafted from the `0.2.0` batch, following `time.md`. It clears `ADR-0018`''s
+  ≥3-source threshold: direct primary-source verification this session found a nameable spatial-region
+  category in **6 of the 8 source ontologies** (BFO, DOLCE, SUMO, GFO, TUpper, GUM — the same
+  six that have a Time category, minus UFO and YAMATO, which this session confirmed lack both).
+  `TODO.md`''s seed description ("BFO `spatial region` + 4 dimensional subtypes, DOLCE `physical-region`/`space-region`,
+  GFO `Space`, TUpper `MaterialObject`/`ShapedObject`/`VoluminalRegion`/`ArealRegion`/`Curve`,
+  SUMO `Region` filed under `Object`") is confirmed in its structural core but corrected on
+  two points of detail — see Source Definitions and `uncertainty-002`.
+
+
+
+  This crosswalk compares each source ontology''s own treatment of space-as-a-category — the
+  region, extent, or class denoting spatial extension, location, or dimensionality — not any
+  single source''s full philosophy of space (e.g., BFO''s four-dimensionalist spacetime framework
+  or GFO''s Brentano-based space model are larger literatures than what is scoped here). Sources
+  compared: BFO, DOLCE, SUMO, UFO, GFO, YAMATO, TUpper, GUM (per `ADR-0015`''s 8-source scope).
+
+
+
+  **Cross-cutting finding, established this session:** unlike Time — where 5 of 6 sources
+  with a Time category converged on classifying it as independent of the occurrent/continuant
+  split, with BFO the lone holdout (`time.md`''s `note-001`) — Space shows **no comparable
+  majority pattern**. BFO classifies its `spatial region` as a **Continuant** (specifically
+  `immaterial entity` → `independent continuant` → `continuant`), the structural mirror-opposite
+  of BFO''s own `temporal region` (Occurrent). DOLCE files `space-region` as an independent
+  abstract region, a sibling of `temporal-region` under the same `region`/`abstract` branch
+  — matching Time''s classification pattern exactly. SUMO files `Region` under `Object` →
+  `Physical`, the opposite side of its `Physical`/`Abstract` split from `TimeMeasure` (Abstract)
+  — mirroring BFO''s opposition, but via a different top-level distinction. GFO makes `Space`
+  an explicit sibling of `Time` under the shared `Space_time` branch — the same pattern GFO
+  showed for Time. TUpper''s spatial predicates are not promoted to top-level flat-class status
+  the way `timepoint` is — a structural asymmetry Time did not have. GUM gives `Space` the
+  same dual-parented, `SpatialTemporal`-descended structure as `Time` — see `note-001` and
+  `uncertainty-001` for a correction this session found to `time.md`''s own prior GUM finding.
+  See `note-002`.
+
+
+
+  Exclusions: this crosswalk does not address the Abstract-vs-Concrete split (a separate `0.2.0`-batch
+  candidate, though SUMO''s and GFO''s placement of Space on the concrete/physical side is
+  directly relevant background) or Boundary/Site (also a separate `0.2.0` candidate; BFO''s
+  `site` and GFO''s `Spatial_boundary`/`Surface` are closely related but distinct categories,
+  noted below but not crosswalked here).
+
+
+
+  **Core.ttl placement is deliberately left open at this `draft` stage**, for the same reasons
+  as `time.md` (`uncertainty-001` there) — no `xwkont-core:Space` class exists yet in `data/ontology/core.ttl`.
+  The classification divergence documented above (BFO: continuant; DOLCE/GFO/GUM: independent/sibling
+  category; SUMO: physical/concrete) is a live open question for that eventual placement,
+  made harder by the fact that Time and Space themselves don''t even converge on the *same*
+  divergence pattern — see Uncertainty.'
+labels:
+- role: XwkOnt working label
+  label: Spatial Region / Space
+  label_source: XwkOnt
+  language: en
+  entry_notes: Not yet in `data/ontology/core.ttl` — see Scope Note.
+- role: Source term
+  label: Spatial region (+ zero-/one-/two-/three-dimensional spatial region)
+  label_source: BFO
+  language: en
+  entry_notes: Subclass of immaterial entity → independent continuant → continuant.
+- role: Source term
+  label: Space-region (+ physical-region, spatio-temporal-region)
+  label_source: DOLCE
+  language: en
+  entry_notes: Subtype of `physical-region` → `region` → `abstract`, a quality-space notion.
+- role: Source term
+  label: Region (+ GeographicArea, HoleRegion, Transitway)
+  label_source: SUMO
+  language: en
+  entry_notes: Subclass of `Object` → `Physical` → `Entity`.
+- role: Alternate label
+  label: '*(none found — see Uncertainty)*'
+  label_source: UFO
+  language: en
+  entry_notes: Zero occurrences of "spatial"/"region"/"location"/"place"/"topology" in the
+    2021 paper's full extracted text, and zero in the OntoUML vocabulary TTL.
+- role: Source term
+  label: Space (+ Spatial_region, Spatial_boundary, Topoid, Surface)
+  label_source: GFO
+  language: en
+  entry_notes: Sibling of Time under the sui generis `Space_time` top-level branch.
+- role: Alternate label
+  label: '*(not found as a defined class — see Uncertainty)*'
+  label_source: YAMATO
+  language: en
+  entry_notes: '"Space"/"spatial" occur only as ordinary vocabulary in the one fetchable YAMATO
+    document, though given a more load-bearing informal role than Time (see `note-003`).'
+- role: Source term
+  label: spatial_region (+ Curve, ArealRegion, VoluminalRegion)
+  label_source: TUpper
+  language: en
+  entry_notes: Informal-semantics predicates in TUpper's own "Spatial Modules"/"FOUnt Modules"
+    sections; not promoted to flat top-level class status the way `timepoint` is.
+- role: Source term
+  label: Space (+ SpaceInterval, SpacePoint, SpatialObject, and the separate `GUM-3-space.owl`
+    directional/topological module)
+  label_source: GUM
+  language: en
+  entry_notes: Core `Space` apparatus in `GUM-3.owl` parallels `Time`'s structure closely;
+    a large separate spatial-relations module (`GeneralizedLocation`, directional projections)
+    has no Time-side counterpart.
+source_definitions:
+- source: BFO
+  term_or_identifier: Spatial region (BFO_0000006)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) A spatial region is a continuant entity that is a continuant part
+    of the spatial projection of a portion of spacetime at a given time." `dc11:identifier
+    "035-BFO"`. `rdfs:subClassOf` immaterial entity (BFO_0000141) → independent continuant
+    (BFO_0000004) → continuant (BFO_0000002).'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000006, fetched and read directly 2026-07-04'
+  entry_notes: The formal axioms place spatial region squarely as a Continuant — the direct
+    structural opposite of BFO's own `temporal region` (Occurrent, per `time.md`). `independent
+    continuant`'s own elucidation lists "a spatial region" as a worked example, reinforcing
+    this.
+- source: BFO
+  term_or_identifier: Zero-/one-/two-/three-dimensional spatial region (BFO_0000018 / BFO_0000026
+    / BFO_0000009 / BFO_0000028)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Zero-dim: "one or a collection of more than one spatially disjoint points in space"
+    (id `037-BFO`). One-dim: "a whole consisting of a line together with zero or more lines
+    which may have points as parts" (id `038-BFO`). Two-dim: "a spatial region that is a whole
+    consisting of a surface together with zero or more surfaces which may have spatial regions
+    of lower dimension as parts" (id `039-BFO`). Three-dim: "a whole consisting of a spatial
+    volume together with zero or more spatial volumes which may have spatial regions of lower
+    dimension as parts" (id `040-BFO`). All four `rdfs:subClassOf` BFO_0000006.'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, fetched and read directly 2026-07-04; each class''s
+    `dc11:identifier` and label individually confirmed against the surrounding `###` block
+    header'
+  entry_notes: Mirrors `time.md`'s BFO row structure exactly (four dimensional subtypes each),
+    the same shape found for Time.
+- source: BFO
+  term_or_identifier: Site (BFO_0000029) / spatiotemporal region (BFO_0000011)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Site: "a three-dimensional immaterial entity whose boundaries either (partially or
+    wholly) coincide with the boundaries of one or more material entities or have locations
+    determined in relation to some material entity" (id `034-BFO`), `rdfs:subClassOf` immaterial
+    entity — a related but distinct three-dimensional category from `spatial region` (out
+    of scope here, see Boundary/Site exclusion). Spatiotemporal region: "an occurrent that
+    is an occurrent part of spacetime" (id `095-BFO`), `rdfs:subClassOf` occurrent. A `spatially
+    projects onto` relation connects a spatiotemporal region to a spatial region: "spatially
+    projects onto is a relation between some spatiotemporal region b and spatial region c
+    such that at some time t, c is the spatial extent of b at t."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, fetched and read directly 2026-07-04'
+  entry_notes: Confirms BFO keeps Space (continuant) and spatiotemporal/Time (occurrent) on
+    opposite sides of its top split, connected only via a defined cross-branch relation, not
+    a shared ancestor — the opposite pattern from GFO's shared `Space_time` branch.
+- source: DOLCE
+  term_or_identifier: Space-region
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An ordinary space: geographical, cosmological, anatomical, topographic, etc." `rdfs:subClassOf
+    physical-region`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified**: `DOLCE-Lite.owl`, fetched and read directly 2026-07-04'
+  entry_notes: Corrects an implicit slash-notation reading of the TODO.md seed ("`physical-region`/`space-region`")
+    — these are not two independent alternatives but parent (`physical-region`) and child
+    (`space-region`).
+- source: DOLCE
+  term_or_identifier: Physical-region (+ region, abstract-region)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Physical-region: "A region at which only physical qualities can be directly located.
+    It assumes some metrics for physical properties." `rdfs:subClassOf region`; `owl:disjointWith
+    temporal-region`, `owl:disjointWith abstract-region`. `region` itself is one of the four
+    partition members of DOLCE''s root `particular` category, alongside `endurant`, `perdurant`,
+    and `quality`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified**: `DOLCE-Lite.owl`, fetched and read directly 2026-07-04'
+  entry_notes: Same `region`/`abstract` branch already documented for `time.md`'s `temporal-region`
+    — Space and Time are explicit siblings here, `owl:disjointWith` each other but structurally
+    identical in kind (both abstract quality-space regions).
+- source: DOLCE
+  term_or_identifier: Spatio-temporal-region
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Any region resulting from the composition of a space region with a temporal region,
+    i.e. being present in region r at time t." `rdfs:subClassOf space-region` — filed under
+    the spatial side, not as an equal-parentage sibling of both.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified**: `DOLCE-Lite.owl`, fetched and read directly 2026-07-04'
+  entry_notes: An asymmetric combination class (space-region's child, not a neutral joint
+    child of both), unlike BFO's `spatiotemporal region` which sits entirely on the occurrent
+    side.
+- source: SUMO
+  term_or_identifier: Region (+ GeographicArea, HoleRegion, Transitway)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A topographic location. Regions encompass surfaces of Objects, imaginary places,
+    and GeographicAreas. Note that a Region is the only kind of Object which can be located
+    at itself. Note too that Region is not a subclass of SelfConnectedObject, because some
+    Regions, e.g. archipelagos, have parts which are not connected with one another." `(subclass
+    Region Object)` — a literal, direct assertion. Subclass chain: `Entity → Physical → Object
+    → Region`.'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: current `Merge.kif`, fetched and read directly 2026-07-04'
+  entry_notes: Confirms the TODO.md seed's flagged divergence exactly. `Region` sits alongside
+    `SelfConnectedObject` as an `Object` subtype (the documentation explicitly disclaims Region
+    being a subtype of SelfConnectedObject) — Region and Time's `TimeMeasure` are on opposite
+    sides of SUMO's `Physical`/`Abstract` split, mirroring (via a different distinction) BFO's
+    continuant/occurrent opposition.
+- source: UFO
+  term_or_identifier: '*(no class — zero occurrences of spatial vocabulary)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text search of the already-extracted 2021 Applied Ontology paper text (9,048
+    lines) for "spatial," "region," "location," "place," "topology," and "space" (word-boundary
+    match) returned **zero matches for all six terms**.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified absence**: 2021 Applied Ontology paper, already-extracted text re-searched
+    directly 2026-07-04'
+  entry_notes: 'The OntoUML vocabulary TTL (`xwkont:ref:ontouml-vocabulary`) was also checked
+    as a fallback by the research pass: zero occurrences of "space"/"spatial"/"region" there
+    either. Both UFO''s Time and Space content are confirmed fully absent from the reified
+    class structure — a stronger, cleaner absence finding than Time''s (which had at least
+    a "unfold in time" property reference).'
+- source: GFO
+  term_or_identifier: Space (+ Space_time)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"GFO uses Brentano space." `rdfs:subClassOf Space_time`; `owl:disjointWith Time`.
+    `Space_time` (`rdfs:subClassOf Individual`, `owl:disjointWith Abstract`, `owl:disjointWith
+    Concrete`) is the same sui generis third top-level branch already documented in `time.md`
+    for GFO''s `Time`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, fetched and read directly 2026-07-04'
+  entry_notes: The cleanest, most literal Space/Time sibling-pairing found among all 8 sources
+    — both are direct children of the same named parent class, mutually disjoint, neither
+    reducible to the other.
+- source: GFO
+  term_or_identifier: Spatial_region / Spatial_boundary / Topoid / Surface
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Spatial_region (source''s own `rdfs:label` reads "Spacial region" — sic, a typo in
+    the primary file itself, not a transcription error introduced here): "Space regions are
+    mereological sums of topoids." `rdfs:subClassOf Space`; `owl:disjointWith Spatial_boundary`.
+    Spatial_boundary: "Boundaries of regions are surfaces, boundaries of surfaces are lines,
+    and boundaries of lines are points. As in the case of time-boundaries, spatial boundaries
+    have no independent existence, i.e. they depend on the spatial entity of which they are
+    boundaries." Topoid: "Topoids are connected compact regions of space. They have spatial
+    boundaries." `rdfs:subClassOf Spatial_region`. Surface: `rdfs:subClassOf Spatial_boundary`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, fetched and read directly 2026-07-04'
+  entry_notes: Near-exact structural mirror of GFO's already-documented Time apparatus (`Temporal_region`/`Time_boundary`/`Chronoid`)
+    — `Topoid` is GFO's spatial analog of `Chronoid`.
+- source: YAMATO
+  term_or_identifier: '*(none found in the fetchable document, but a load-bearing informal
+    role)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '"Space and time are indispensable for things to exist in the world, while these two
+    can exist independently of entities" (heading: "Substrate and entity" — one of YAMATO''s
+    named basic distinctions). "We define a physical thing as something which needs time and
+    space to exist, and introduce semi-abstract which needs only time to exist. Needless to
+    say, there is nothing which requires only space to exist." (Physical/semi-abstract/abstract
+    split.) No defined `Space`/`SpatialRegion` class anywhere in the extracted text; the one
+    hit for "region" is YAMATO''s own description of DOLCE''s "Quality space(region)," not
+    a YAMATO class.'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified absence, scoped**: 2010 technical report, full-text re-searched 2026-07-04'
+  entry_notes: Same scoped-absence pattern as Time, but Space is given a materially richer
+    informal role — it is one criterial term in two of YAMATO's own named top-level distinctions,
+    where Time appears only as incidental usage. See `note-003`.
+- source: TUpper
+  term_or_identifier: Spatial_region (+ spatial_part, spatial_C, occupies)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(spatial_region r) is TRUE in an interpretation of TUpper if and only if r is a
+    member of the class of spatial regions in the universe of discourse of the interpretation.
+    The set of spatial regions forms a mereotopology." `occupies`: "the physical body x is
+    located in the spatial region r. The mereotopology of physical bodies is preserved by
+    this relation."'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified**: `TUpper-Terms.html`, "Spatial Modules" section, fetched and read
+    directly 2026-07-04'
+  entry_notes: Expressed as CLiF unary/binary predicates with informal-semantics glosses,
+    not `rdfs:subClassOf` axioms — no explicit subclass link to TUpper's four flat top-level
+    classes (`object`/`activity`/`activity_occurrence`/`timepoint`) exists in this document,
+    unlike `timepoint`'s own explicit top-level-union membership documented in `time.md`.
+- source: TUpper
+  term_or_identifier: Curve / ArealRegion / VoluminalRegion
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Curve: "x is a member of the class of one-dimensional spatial entities in the universe
+    of discourse of the interpretation." ArealRegion: "...two-dimensional spatial entities..."
+    VoluminalRegion: "...three-dimensional spatial entities...".'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified**: `TUpper-Terms.html`, "FOUnt Modules" section, fetched and read directly
+    2026-07-04'
+  entry_notes: Confirms 3 of the 5 class names in TODO.md's seed exactly.
+- source: TUpper
+  term_or_identifier: MaterialObject / ShapedObject
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Neither term has any prose gloss in `TUpper-Terms.html` — both are absent from that
+    document entirely. Both exist only as bare, undocumented `Declaration`s in the separate
+    OWL rendering `owl/tupper.all.owl`: `<Declaration><Class IRI="MaterialObject"/></Declaration>`
+    (with a `SubClassOf` restriction on the inverse of `constitutes`), and `<Declaration><Class
+    IRI="ShapedObject"/></Declaration>` (with a `SubClassOf` restriction via `bounds`/`ShapeFeature`).'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified, corrected**: `owl/tupper.all.owl`, fetched and read directly 2026-07-04
+    (path now live, correcting `ref-tupper-colore.md`''s prior 404 note)'
+  entry_notes: Corrects TODO.md's seed, which listed these alongside `VoluminalRegion`/`ArealRegion`/`Curve`
+    as though equally documented — they are real IRIs but carry no primary-source prose definition
+    anywhere fetched, unlike the other three. Record as existing-but-undefined, not on equal
+    footing.
+- source: GUM
+  term_or_identifier: Space (+ SpaceInterval, SpacePoint)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'Space: "Space as an undecomposable mass." `rdfs:subClassOf` both `SpatialObject`
+    and `Substance` (dual parentage, exactly mirroring `Time`''s dual parentage under `Substance`/`TemporalObject`);
+    `owl:disjointWith SpaceInterval`, `SpacePoint`, `Time`. SpaceInterval: "Space as a decomposible
+    set of points, intervals, or volumes." `rdfs:subClassOf OrderedObject`, `SpatialObject`;
+    `owl:disjointWith SpacePoint`, `TimeInterval`. SpacePoint: "Space as a point." `rdfs:subClassOf
+    NonDecomposableObject`, `SpatialObject`; `owl:disjointWith Substance`, `TimePoint`.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, fetched and read directly 2026-07-04 (Wayback snapshot
+    re-fetched and re-confirmed directly this session after an initial contradictory research-pass
+    report; resolved in this crosswalk''s favor by direct re-inspection)'
+  entry_notes: Each Space class is explicitly `owl:disjointWith` its Time counterpart (`Space`/`Time`,
+    `SpaceInterval`/`TimeInterval`, `SpacePoint`/`TimePoint`) — a systematic, class-by-class
+    disjointness pairing not found in any other source.
+- source: GUM
+  term_or_identifier: SpatialObject / SpatialTemporal
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'SpatialObject: "The general concept of spatial objects, including all points, paths,
+    volumes, undivided wholes, etc." `rdfs:subClassOf SpatialTemporal`; `owl:disjointWith
+    TemporalObject`. SpatialTemporal: "The generalized timespace object, under which all time
+    and space objects lie." `rdfs:subClassOf NonConsciousThing`. `TemporalObject` (Time''s
+    own parent, per `time.md`) is confirmed `rdfs:subClassOf SpatialTemporal` also — i.e.
+    `SpatialObject` and `TemporalObject` are siblings under the shared `SpatialTemporal` parent.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, fetched and read directly 2026-07-04'
+  entry_notes: '`SpatialTemporal` functions as GUM''s own explicit Space/Time common-parent
+    category, directly analogous to GFO''s `Space_time` — see `note-002`. This also surfaces
+    a correction to `time.md` — see `uncertainty-001`.'
+- source: GUM
+  term_or_identifier: GeneralizedLocation (+ the separate `GUM-3-space.owl` module)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`GUM-3-space.owl`''s own header: "This is the spatial module of GUM 3.0 which extends
+    ''GUM-3.owl'' with spatial notions." Defines 60+ classes, almost entirely directional/topological
+    relation types (`DirectionalRelation`, `Containment`, `Connection`, named projections
+    such as `AboveProjection`/`FrontProjection`, cardinal directions, etc.), not a dimensionality
+    typology. `GeneralizedLocation` functions as the general spatial-extent node (`rdfs:range`
+    of properties like `destination`, `direction`), the closest functional analog to a generic
+    "spatial region," though never named `Space`/`SpatialRegion` itself.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-3-space.owl` (Wayback snapshot, a separate module from core
+    `GUM-3.owl`), fetched and read directly 2026-07-04'
+  entry_notes: No parallel to Time's small `OneOrTwoDTime`/`ThreeDTime` dimensional typology
+    exists on the Space side — GUM's spatial elaboration is oriented around directional/deictic
+    relations (grounded, like its Time apparatus, in Halliday & Matthiessen's systemic-functional-linguistics
+    clause theory) rather than region dimensionality. A genuine structural asymmetry between
+    GUM's Time and Space modules, worth preserving rather than glossing over.
+correspondences:
+- correspondence_id: xwkont:correspondence:space:001
+  source_ontology: BFO
+  source_term: Spatial region (+ zero-/one-/two-/three-dimensional)
+  source_identifier_or_iri: '`BFO_0000006`, `BFO_0000018`, `BFO_0000026`, `BFO_0000009`, `BFO_0000028`'
+  source_version: BFO 2020 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Direct terminological and structural match; the only source formally
+    classifying Space as a Continuant.
+- correspondence_id: xwkont:correspondence:space:002
+  source_ontology: DOLCE
+  source_term: Space-region (+ physical-region)
+  source_identifier_or_iri: '`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#space-region`,
+    `#physical-region`'
+  source_version: DOLCE-Lite v397 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Direct terminological match; classifies Space as an independent abstract
+    region, a sibling of Time under the same branch.
+- correspondence_id: xwkont:correspondence:space:003
+  source_ontology: SUMO
+  source_term: Region
+  source_identifier_or_iri: '`Region` (SUMO/SUO-KIF term names are their own identifiers)'
+  source_version: Current `Merge.kif` (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Confirms the seed's flagged divergence exactly — `Region` is a direct
+    subclass of `Object`, the physical/concrete side, opposite `TimeMeasure`'s abstract side.
+- correspondence_id: xwkont:correspondence:space:004
+  source_ontology: UFO
+  source_term: '*(none)*'
+  source_identifier_or_iri: not applicable — no class exists
+  source_version: Applied Ontology, 2021 (directly re-searched 2026-07-04)
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: No correspondence recorded; zero occurrences of any spatial vocabulary
+    in the paper's full extracted text, and zero in the OntoUML vocabulary fallback.
+- correspondence_id: xwkont:correspondence:space:005
+  source_ontology: GFO
+  source_term: Space (+ Spatial_region, Spatial_boundary, Topoid, Surface)
+  source_identifier_or_iri: '`https://w3id.org/gfo/base/Space`, `/Spatial_region`, `/Spatial_boundary`,
+    `/Topoid`, `/Surface`'
+  source_version: GFO 2024-11-18 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Direct terminological match; the cleanest literal Space/Time sibling-pairing
+    of any source, mirroring GFO's already-documented Time apparatus almost term-for-term.
+- correspondence_id: xwkont:correspondence:space:006
+  source_ontology: TUpper
+  source_term: spatial_region (+ Curve, ArealRegion, VoluminalRegion)
+  source_identifier_or_iri: not applicable — TUpper/PSL predicate names are their own identifiers
+  source_version: COLORE formalization, undated (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: Included despite not being promoted to TUpper's four flat top-level
+    classes the way `timepoint` is — a structural asymmetry with Time.
+- correspondence_id: xwkont:correspondence:space:007
+  source_ontology: GUM
+  source_term: Space (+ SpaceInterval, SpacePoint, SpatialObject)
+  source_identifier_or_iri: '`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Space`
+    (+ sibling IRIs in the same namespace)'
+  source_version: GUM 3.1 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Near-exact structural parallel to GUM's Time apparatus, including systematic
+    class-by-class disjointness pairing with Time's counterparts.
+correspondences_note: No UFO correspondence is recorded — see Source Definitions and Uncertainty.
+  No YAMATO correspondence is recorded either — no Space-related class was found in the one
+  fetchable YAMATO document, though Space plays a more load-bearing informal role there than
+  Time does (see `note-003`).
+comparison_notes:
+- note_id: note-001
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'Unlike Time (where 5 of 6 sources with a Time category converged on treating it as
+    independent of the occurrent/continuant split, per `time.md`''s `note-001`), Space shows
+    no comparable majority: BFO classifies `spatial region` as a **Continuant**; DOLCE files
+    `space-region` as an independent abstract region (same pattern as its own Time treatment);
+    SUMO files `Region` under `Object`/`Physical`, opposite `TimeMeasure`''s `Abstract` side;
+    GFO makes `Space` an explicit sibling of `Time` under `Space_time` (same pattern as its
+    own Time treatment); GUM gives `Space` the same dual-parented, `SpatialTemporal`-descended
+    structure as `Time` (same pattern). Only BFO and SUMO treat Space and Time as occupying
+    genuinely opposed top-level branches; DOLCE, GFO, and GUM instead treat them as siblings
+    of the same kind. This is a different, more fragmented divergence pattern than Time''s
+    own central finding, not a simple restatement of it.'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:gfo
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-002
+  dimension: philosophical
+  claim_type: editorial observation
+  note: Three sources (DOLCE, GFO, GUM) give Space and Time an explicit shared parent category
+    (`region`/`abstract`, `Space_time`, `SpatialTemporal` respectively) — resolving `time.md`'s
+    `uncertainty-004` affirmatively for exactly these three sources. BFO and SUMO instead
+    place Space and Time on opposite, non-sibling branches (Continuant/Occurrent; Physical/Abstract
+    respectively), connected in BFO's case only via a defined cross-branch relation (`spatially
+    projects onto`), not a shared ancestor.
+  supporting_references:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:gfo
+  - xwkont:ref:gum-owl
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-003
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'YAMATO''s informal treatment of Space is more load-bearing than its treatment of
+    Time: Space is a named criterial term in two of YAMATO''s own top-level distinctions ("Substrate
+    and entity" — space and time are jointly indispensable and entity-independent; the Physical/semi-abstract/abstract
+    split, where "nothing... requires only space to exist" is itself a defining disjunction),
+    whereas Time''s mentions in the same document (per the existing `time.md`/`ref-yamato-mizoguchi-2010.md`
+    record) were purely incidental usage ("an action exists in an open interval..."). Neither
+    is a reified class, but Space''s absence is a materially different kind of absence — informally
+    load-bearing vs. informally incidental.'
+  supporting_references:
+  - xwkont:ref:yamato-mizoguchi-2010
+  confidence: medium
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: 'GUM''s Space apparatus is split across two artifacts: the small, Time-parallel core
+    (`Space`/`SpaceInterval`/`SpacePoint`/`SpatialObject` in `GUM-3.owl`) and a much larger
+    separate module (`GUM-3-space.owl`, 60+ classes) elaborating directional, topological,
+    and deictic relations (`GeneralizedLocation`, named projections, cardinal directions)
+    with no Time-side counterpart at all. This is a genuine structural asymmetry between GUM''s
+    Time and Space treatment, not merely a difference in verbosity — Time has no analogous
+    second module.'
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-005
+  dimension: technical
+  claim_type: editorial observation
+  note: TUpper's spatial predicates (`spatial_region`, `Curve`, `ArealRegion`, `VoluminalRegion`)
+    are documented with informal-semantics prose but are not shown, in either the HTML terms
+    document or the OWL rendering, as formal subclasses of TUpper's four flat top-level classes
+    — unlike `timepoint`, which `time.md` found explicitly named inside the top-level `owl:Thing`
+    union axiom. Space did not receive the same top-level promotion Time did in this source.
+  supporting_references:
+  - xwkont:ref:tupper-colore
+  confidence: medium-high
+mapping_assertions:
+- mapping_id: xwkont:mapping:space:001
+  subject: BFO:Spatial region
+  relation_category: overlap
+  object: DOLCE:Space-region
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Same subject matter (spatial extent) but a genuine top-level classification
+    divergence: BFO subsumes it under Continuant (immaterial entity); DOLCE files it as an
+    abstract quality-space region, neither endurant nor perdurant. Not `close-match` because
+    the classification difference is structural.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+- mapping_id: xwkont:mapping:space:002
+  subject: BFO:Spatial region
+  relation_category: overlap
+  object: SUMO:Region
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: 'Both are continuant/physical-side categories (BFO: continuant; SUMO: Physical/Object),
+    closer to each other than either is to their own source''s Time-side category — but "immaterial
+    entity" and "topographic location under Object" are still distinct formal framings.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:space:003
+  subject: BFO:Spatial region
+  relation_category: overlap
+  object: GFO:Space
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: BFO=continuant; GFO explicitly declares Space sui generis and disjoint from both
+    Presential and Occurrent (i.e., neither continuant- nor occurrent-equivalent) — a similar
+    non-occurrent classification but via a different top-level architecture.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:space:004
+  subject: DOLCE:Space-region
+  relation_category: close-match
+  object: GFO:Spatial_region
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Both are independent, non-occurrent, region-denoting categories with near-identical
+    naming and near-identical mereological-sum framing ("regions... mereological sums" in
+    GFO; region-of-a-metrics framing in DOLCE) — the closest structural pairing found in this
+    crosswalk, mirroring `time.md`'s equivalent DOLCE/GFO Time pairing.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:space:005
+  subject: DOLCE:Space-region
+  relation_category: overlap
+  object: SUMO:Region
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: '**Downgraded from `close-match` (2026-07-04 review pass)** — both denote an
+    ordinary spatial/geographic extent, but DOLCE''s is an abstract quality-space region while
+    SUMO''s is a physical `Object` subtype — an abstract-vs-physical divergence, a stronger
+    disagreement than differing scope/axioms within a shared formal kind (contrast `mapping-004`,
+    where both sides are region-denoting categories on the same side of that divide). `close-match`
+    per `docs/methodology/crosswalk-methodology.md` is reserved for concepts that align for
+    many purposes despite differing scope/axioms/usage; an abstract/physical split is closer
+    to `overlap` ("partially intersect but neither subsumes the other").'
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:space:006
+  subject: GFO:Spatial_region
+  relation_category: overlap
+  object: GUM:SpaceInterval
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: '**Downgraded from `close-match` (2026-07-04 review pass, for consistency with
+    `time.md`''s equivalent GFO/GUM downgrade)** — both are decomposable, non-atomic spatial-region
+    categories under a broader Space branch, with a parallel atomic counterpart (`Topoid`/`SpacePoint`),
+    but GFO''s grounding is metaphysical (Brentano) while GUM''s is linguistic (Halliday &
+    Matthiessen) — a difference in the *kind* of independence claimed, not just scope or axioms
+    within a shared formal kind.'
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:space:007
+  subject: BFO:Zero-dimensional spatial region
+  relation_category: close-match
+  object: TUpper:spatial_region (point case)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: TUpper's `spatial_region` is a single undifferentiated mereotopology predicate,
+    not dimensionally subdivided the way BFO's four classes are — a rough correspondence only
+    for the point/zero-dimensional case, not the dimensional apparatus as a whole.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:tupper-colore
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:space:008
+  subject: SUMO:Region
+  relation_category: related
+  object: GUM:GeneralizedLocation
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: Both function as the general spatial-extent/location node in their respective
+    sources, but SUMO's is a topographic-location Object subtype while GUM's is a clause-level
+    directional-relation range class grounded in systemic-functional linguistics — related
+    in function, not close enough in formal apparatus for `close-match`.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:gum-owl
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:space:009
+  subject: xwkont-core:Space (candidate)
+  relation_category: unknown
+  object: UFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No UFO correspondence identified; zero occurrences of any spatial vocabulary
+    in the paper's full extracted text or the OntoUML vocabulary fallback. Recorded explicitly
+    per this repository's established practice for negative findings.
+  provenance:
+  - xwkont:ref:ufo-2021
+- mapping_id: xwkont:mapping:space:010
+  subject: xwkont-core:Space (candidate)
+  relation_category: unknown
+  object: YAMATO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No reified YAMATO correspondence identified in the one fetchable YAMATO document;
+    scoped absence, not a settled claim — see `note-003` for the more load-bearing informal
+    role Space plays there relative to Time.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: This crosswalk's own research found that GUM's `NonConsciousThing` (an ancestor
+    of `SpatialTemporal`, hence of both `SpatialObject`/`Space` and `TemporalObject`/`Time`)
+    is itself `rdfs:subClassOf SimpleThing`. This **corrects `time.md`'s existing claim**
+    ("Neither `Process` ... nor `SimpleThing`/`DecomposableObject` ... is an ancestor of any
+    GUM temporal class") — `SimpleThing` *is* an ancestor of GUM's `Time`, several levels
+    up via `TemporalObject → SpatialTemporal → NonConsciousThing → SimpleThing`, confirmed
+    by direct inspection of `GUM-31.owl`'s `NonConsciousThing` block this session. By the
+    same chain, GUM's `Space` also descends from `SimpleThing`.
+  impact: '`time.md`''s Source Definitions row and `note-003` (GUM) state the ancestor claim
+    incorrectly; does not affect this crosswalk''s own GUM correspondence, which cites the
+    correct chain.'
+  follow_up: Correct `time.md`'s GUM row and its `note-003` at that document's next revision,
+    referencing this crosswalk's directly-verified ancestor chain.
+- item_id: uncertainty-002
+  uncertainty_type: open-question
+  resolved: false
+  description: 'Where should `xwkont-core:Space` subclass from once added to `data/ontology/core.ttl`?
+    Unlike Time (where `uncertainty-001` there posed one open question against one dominant
+    non-BFO pattern), Space''s classification evidence is three-way split (BFO: continuant;
+    DOLCE/GFO/GUM: independent sibling-of-Time category; SUMO: physical/concrete) with no
+    clear majority to lean on. Whatever placement is chosen should be made jointly with (or
+    at least cross-checked against) `time.md`''s own eventual placement, given how many sources
+    treat Space and Time as siblings.'
+  impact: Blocks final core.ttl placement; does not block continuing this crosswalk's research/review.
+  follow_up: Decide at review time, jointly with `time.md`'s own still-open `uncertainty-001`.
+- item_id: uncertainty-003
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: UFO has no reified Space/SpatialRegion/Location class — confirmed this session
+    by direct full-text search of the already-extracted 2021 paper (zero occurrences of six
+    candidate terms) and the OntoUML vocabulary TTL fallback (also zero). A prior research
+    pass on this same concept, run in parallel, reported being unable to access the paper
+    at all and left UFO's status formally unresolved — that report is superseded by this session's
+    own direct, successful full-text search of the cached extraction already on file for `xwkont:ref:ufo-2021`.
+  impact: No UFO correspondence recorded (`correspondence-004`, `mapping-009`).
+  follow_up: Re-check if UFO-A/UFO-C literature (already flagged as unfetched for `information-artifact.md`
+    and `time.md`) becomes accessible.
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: This crosswalk does not address Boundary/Site (a separate `0.2.0`-batch candidate),
+    though BFO's `site` (an immaterial entity closely related to but distinct from `spatial
+    region`) and GFO's `Spatial_boundary`/`Surface` are directly relevant background for that
+    future crosswalk.
+  impact: Scopes this crosswalk to Space only, consistent with `ADR-0018`'s one-concept-per-pass
+    process.
+  follow_up: Create the Boundary/Site concept crosswalk later in the `0.2.0` batch (per `TODO.md`),
+    and cross-check BFO's `site`/GFO's `Spatial_boundary` against this crosswalk's `spatial
+    region`/`Space` findings.
+- item_id: uncertainty-005
+  uncertainty_type: open-question
+  resolved: false
+  description: TUpper's `MaterialObject`/`ShapedObject` classes exist as bare OWL declarations
+    in `owl/tupper.all.owl` with no prose gloss in either the OWL file's comments or `TUpper-Terms.html`.
+    Their exact relationship to `spatial_region`/`physical_body` is not stated anywhere fetched.
+  impact: Does not affect this crosswalk's own TUpper correspondence (`spatial_region`/`Curve`/`ArealRegion`/`VoluminalRegion`,
+    all of which do have prose definitions), but flags an incompleteness in TUpper's own public
+    documentation.
+  follow_up: Re-check if TUpper gains fuller documentation, or if the CLIF file (`tupper.clif`)
+    contains axioms connecting these classes that the OWL rendering omits.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified** directly against `bfo-core.ttl`, 2026-07-04'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly against `DOLCE-Lite.owl`, 2026-07-04'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-04'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified absence** directly (full-text re-search for six spatial terms),
+    2026-07-04'
+- reference_id: xwkont:ref:ontouml-vocabulary
+  short_label: OntoUML Vocabulary (OWL/Turtle)
+  verification_note: '**verified absence** directly (fallback check), 2026-07-04'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl`, 2026-07-04'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified absence, scoped** directly against the extracted PDF, 2026-07-04'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified** directly against `TUpper-Terms.html` and `owl/tupper.all.owl`,
+    2026-07-04'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified** directly against `GUM-31.owl` and the separate `GUM-3-space.owl`
+    module, 2026-07-04'
+review_history:
+- review_date: "2026-07-04"
+  outcome: Not yet reviewed — `draft`
+  review_notes: Second concept of the `0.2.0` batch (`ADR-0018`), following `time.md`. Two
+    independent research passes were run in parallel for cross-verification; where they disagreed
+    (GUM's core `Space` class, and UFO's fetchability), the disagreement was resolved by a
+    third, direct re-fetch and re-inspection of the primary artifact rather than by picking
+    one report over the other — see `uncertainty-001` and `uncertainty-003` for the resulting
+    corrections. Pending maintainer review before advancing to `reviewed`; core.ttl placement
+    (`uncertainty-002`) is an open question to resolve at that review, jointly with `time.md`'s
+    own open placement question.
+- review_date: "2026-07-05"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:space:2026-07-05:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential (correspondences 001-007, mappings 001-010, notes 001-005, uncertainty
+    001-005); all confidence values within the `ADR-0013` vocabulary, and the `medium-high`
+    mapping/note each state a sourcing rationale; the 2026-07-04 external review''s downgrade
+    of `mapping-005`/`mapping-006` from `close-match` to `overlap` confirmed correctly applied;
+    the `time.md` GUM ancestor-chain correction (`uncertainty-001`) confirmed present in both
+    files. `uncertainty-002` (core.ttl placement — Space''s three-way-split classification
+    evidence) is **not** resolved by this review and remains deferred jointly with `time.md`''s
+    `uncertainty-001`, as separate `data/ontology/core.ttl` (Turtle-change) work — same precedent
+    as `time.md`. Self-review, not independent third-party review.'
+future_work:
+- '~~Resolve `uncertainty-002`~~ — **done 2026-07-05**: advanced `draft` → `reviewed` (`xwkont:review:space:2026-07-05:01`);
+  core.ttl placement remains a separately-tracked open question, jointly with `time.md`''s
+  `uncertainty-001`.'
+- ~~Correct `time.md`'s GUM ancestor-chain claim per `uncertainty-001`.~~ Done — applied in
+  the same commit that drafted this file (`b0f55ea`); `time.md`'s Source Definitions row and
+  `uncertainty-006` both carry the correction.
+- Create the Boundary/Site crosswalk next (per `TODO.md`'s `0.2.0` batch), cross-checking
+  against `uncertainty-004`.
+- Re-check TUpper's `tupper.clif` file for axioms connecting `MaterialObject`/`ShapedObject`
+  to the spatial-region apparatus (`uncertainty-005`).
+- '`mapping-005` and `mapping-006` downgraded from `close-match` to `overlap` in a 2026-07-04
+  external review pass — both paired categories
+  of different formal kind (abstract/physical; metaphysical/linguistic grounding), consistent
+  with the same downgrade applied to `time.md`''s `mapping-006`/`mapping-008`.'

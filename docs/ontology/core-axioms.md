@@ -47,6 +47,17 @@ Every candidate inheritance relationship from the core ontology was reviewed. Al
 | Event | Occurrent | Formalized | Keep `rdfs:subClassOf`. | Needed to compare event-like categories; not asserted disjoint from or equivalent to Process. |
 | Relation | Entity | Formalized, provisional | Keep `rdfs:subClassOf`; mark uncertainty. | Supports comparison of relationship concepts, but first-class relation status is source-dependent. |
 | Information Artifact | Entity | Formalized, provisional | Keep `rdfs:subClassOf`; mark possible future refactor. | Supports repository provenance artifacts; metadata-layer migration remains open. |
+| Abstract | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Class-pair sibling of Continuant/Occurrent per maintainer-confirmed recommendation; boundary with Concrete deferred. |
+| Concrete | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Class-pair sibling of Continuant/Occurrent per the same recommendation; boundary with Abstract deferred. |
+| Universal | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Parallels GFO's top-level Category/Individual split; SUMO's narrower Abstract-subtype framing not formalized. |
+| Time | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Most sources treat Time as independent of Continuant/Occurrent; BFO alone classifies it as occurrent. |
+| Space | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Consistent with Time's placement; source classification diverges more (three-way split). |
+| Aggregate | Continuant | Formalized, provisional | Keep `rdfs:subClassOf`. | Sibling of Object; one of two sibling sub-concepts with Sum, reflecting an even source split on unity-criterion strictness. |
+| Sum | Continuant | Formalized, provisional | Keep `rdfs:subClassOf`. | Aggregate's sibling sub-concept. |
+| Boundary | Continuant | Formalized, provisional | Keep `rdfs:subClassOf`. | One of two sibling sub-concepts with Site, reflecting BFO/DOLCE's independently-converging split. |
+| Site | Continuant | Formalized, provisional | Keep `rdfs:subClassOf`. | Boundary's sibling sub-concept. |
+| Quantity | Concrete | Formalized, provisional | Keep `rdfs:subClassOf`. | Modeled under Concrete per the DOLCE/UFO/GFO majority; covers multiple related but distinct source senses. |
+| Proposition | Abstract | Formalized, provisional | Keep `rdfs:subClassOf`. | Follows DOLCE/SUMO/YAMATO's own treatment of Proposition/Content as an Abstract subtype. |
 
 ## Core Relationship Classification
 
@@ -66,7 +77,7 @@ Every candidate inheritance relationship from the core ontology was reviewed. Al
 
 ## Accepted Axioms
 
-The accepted axioms for this review are the RDFS class, property, subclass, domain, and range statements now present in `data/ontology/core.ttl`, except that `mapsTo` deliberately has no accepted domain or range axiom.
+The accepted axioms for this review are the RDFS class, property, subclass, domain, and range statements now present in `data/ontology/core.ttl`, except that `mapsTo` deliberately has no accepted domain or range axiom. This includes the eleven classes added for the `0.2.0` batch (Abstract, Concrete, Universal, Time, Space, Aggregate, Sum, Boundary, Site, Quantity, Proposition) — see `docs/ontology/core-ontology.md`'s Top-Level Concepts table for their per-class rationale and each concept's own crosswalk (linked via `dcterms:relation`) for the underlying source-ontology evidence.
 
 These axioms are accepted as lightweight vocabulary semantics only. They should be interpreted under RDF/RDFS open-world assumptions and should not be read as OWL definitions or source-ontology commitments.
 

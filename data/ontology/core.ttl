@@ -37,6 +37,52 @@ xwkont-core:Occurrent a rdfs:Class, skos:Concept ;
     dcterms:relation "docs/crosswalks/concepts/continuant-occurrent.md"@en ;
     skos:inScheme xwkont-core: .
 
+xwkont-core:Abstract a rdfs:Class, skos:Concept ;
+    rdfs:label "Abstract"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Abstract"@en ;
+    skos:definition "An entity considered for comparison as lacking spatiotemporal location or embodiment, such as a number, proposition, or universal, contrasted with Concrete."@en ;
+    skos:editorialNote "Candidate concept, modeled as a class pair sibling to Continuant/Occurrent per maintainer-confirmed modeling recommendation; the boundary with Concrete is source-dependent."@en ;
+    dcterms:relation "docs/crosswalks/concepts/abstract-concrete.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Concrete a rdfs:Class, skos:Concept ;
+    rdfs:label "Concrete"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Concrete"@en ;
+    skos:definition "An entity considered for comparison as having spatiotemporal location or embodiment, such as a physical object, quality, or event, contrasted with Abstract."@en ;
+    skos:editorialNote "Candidate concept, modeled as a class pair sibling to Continuant/Occurrent per maintainer-confirmed modeling recommendation; the boundary with Abstract is source-dependent."@en ;
+    dcterms:relation "docs/crosswalks/concepts/abstract-concrete.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Universal a rdfs:Class, skos:Concept ;
+    rdfs:label "Universal"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Universal"@en ;
+    skos:altLabel "Type"@en ;
+    skos:definition "An entity considered for comparison as a type, kind, category, or universal that classifies or is instantiated by individuals, contrasted with a particular individual."@en ;
+    skos:editorialNote "Candidate concept, modeled as a direct Entity subclass, paralleling GFO's own top-level Category/Individual split and the same sibling-of-Continuant/Occurrent modeling pattern used for Abstract/Concrete. SUMO's narrower framing (as an Abstract subtype) and UFO's internal rigidity typology are not yet formalized."@en ;
+    dcterms:relation "docs/crosswalks/concepts/universal-type.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Time a rdfs:Class, skos:Concept ;
+    rdfs:label "Time"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Time"@en ;
+    skos:definition "An entity considered for comparison as a temporal region, instant, or interval used to locate other entities in time."@en ;
+    skos:editorialNote "Candidate concept, modeled as a direct Entity subclass rather than under Continuant or Occurrent, since most source ontologies with a Time category treat it as independent of that split (BFO is the sole exception, classifying Time as occurrent)."@en ;
+    dcterms:relation "docs/crosswalks/concepts/time.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Space a rdfs:Class, skos:Concept ;
+    rdfs:label "Space"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Space"@en ;
+    skos:definition "An entity considered for comparison as a spatial region, place, or extent used to locate other entities in space."@en ;
+    skos:editorialNote "Candidate concept, modeled as a direct Entity subclass, consistent with Time's placement, though source ontologies diverge more on this classification than they do for Time (BFO: continuant; DOLCE/GFO/GUM: independent sibling category; SUMO: physical/concrete)."@en ;
+    dcterms:relation "docs/crosswalks/concepts/space.md"@en ;
+    skos:inScheme xwkont-core: .
+
 xwkont-core:Object a rdfs:Class, skos:Concept ;
     rdfs:label "Object"@en ;
     rdfs:subClassOf xwkont-core:Continuant ;
@@ -44,6 +90,24 @@ xwkont-core:Object a rdfs:Class, skos:Concept ;
     skos:definition "A continuant considered for comparison as an individual thing, body, system, or object-like entity."@en ;
     skos:editorialNote "Candidate concept; exact source-specific boundaries are deferred to concept crosswalk work."@en ;
     dcterms:relation "docs/crosswalks/concepts/object.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Aggregate a rdfs:Class, skos:Concept ;
+    rdfs:label "Aggregate"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Aggregate"@en ;
+    skos:definition "A continuant considered for comparison as a plurality of member parts that together form a unit under a uniform membership criterion, such as a collective of trees, contrasted with the more permissive Sum."@en ;
+    skos:editorialNote "Candidate concept, modeled as a sibling of Object under Continuant, and as one of two sibling sub-concepts (with Sum) per maintainer-confirmed modeling recommendation, reflecting an even source split on unity-criterion strictness."@en ;
+    dcterms:relation "docs/crosswalks/concepts/mereology-parthood-aggregate.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Sum a rdfs:Class, skos:Concept ;
+    rdfs:label "Sum"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Sum"@en ;
+    skos:definition "A continuant considered for comparison as a criterion-free mereological sum of two or more entities, with no unity requirement on its members, contrasted with the stricter Aggregate."@en ;
+    skos:editorialNote "Candidate concept, modeled as a sibling of Object under Continuant, and as one of two sibling sub-concepts (with Aggregate) per maintainer-confirmed modeling recommendation, reflecting an even source split on unity-criterion strictness."@en ;
+    dcterms:relation "docs/crosswalks/concepts/mereology-parthood-aggregate.md"@en ;
     skos:inScheme xwkont-core: .
 
 xwkont-core:Quality a rdfs:Class, skos:Concept ;
@@ -64,6 +128,24 @@ xwkont-core:Role a rdfs:Class, skos:Concept ;
     dcterms:relation "docs/crosswalks/concepts/role.md"@en ;
     skos:inScheme xwkont-core: .
 
+xwkont-core:Boundary a rdfs:Class, skos:Concept ;
+    rdfs:label "Boundary"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Boundary"@en ;
+    skos:definition "A continuant considered for comparison as a lower-dimensional, fiat-demarcated part of its host entity, such as an edge or surface, contrasted with the not-part-of-host Site."@en ;
+    skos:editorialNote "Candidate concept, modeled as one of two sibling sub-concepts (with Site) per maintainer-confirmed modeling recommendation, reflecting BFO's and DOLCE's independently-converging part-of-host/not-part-of-host split."@en ;
+    dcterms:relation "docs/crosswalks/concepts/boundary-site.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Site a rdfs:Class, skos:Concept ;
+    rdfs:label "Site"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Site"@en ;
+    skos:definition "A continuant considered for comparison as a dependent place or region whose location is determined by a host entity without being part of it, such as a hole or a shadow, contrasted with the part-of-host Boundary."@en ;
+    skos:editorialNote "Candidate concept, modeled as one of two sibling sub-concepts (with Boundary) per maintainer-confirmed modeling recommendation, reflecting BFO's and DOLCE's independently-converging part-of-host/not-part-of-host split."@en ;
+    dcterms:relation "docs/crosswalks/concepts/boundary-site.md"@en ;
+    skos:inScheme xwkont-core: .
+
 xwkont-core:Process a rdfs:Class, skos:Concept ;
     rdfs:label "Process"@en ;
     rdfs:subClassOf xwkont-core:Occurrent ;
@@ -80,6 +162,26 @@ xwkont-core:Event a rdfs:Class, skos:Concept ;
     skos:definition "An occurrent considered for comparison as a happening, occurrence, or temporally located unit."@en ;
     skos:editorialNote "Candidate concept; the distinction between Event and Process remains unsettled across source ontologies."@en ;
     dcterms:relation "docs/crosswalks/concepts/event.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Quantity a rdfs:Class, skos:Concept ;
+    rdfs:label "Quantity"@en ;
+    rdfs:subClassOf xwkont-core:Concrete ;
+    skos:prefLabel "Quantity"@en ;
+    skos:altLabel "Amount of Matter"@en ;
+    skos:definition "A concrete entity considered for comparison as an amount, portion, or quantity of matter or stuff, such as a mass of gold or a collection whose members can vary without changing its identity."@en ;
+    skos:editorialNote "Candidate concept; covers several related but distinct source-ontology senses (see docs/crosswalks/concepts/quantity-amount-of-matter.md) that this placement does not assume resolve to one class. Modeled under Concrete per the DOLCE/UFO/GFO majority; SUMO's Abstract-side treatment and YAMATO's quality-value-like sense diverge and are not yet formalized."@en ;
+    dcterms:relation "docs/crosswalks/concepts/quantity-amount-of-matter.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Proposition a rdfs:Class, skos:Concept ;
+    rdfs:label "Proposition"@en ;
+    rdfs:subClassOf xwkont-core:Abstract ;
+    skos:prefLabel "Proposition"@en ;
+    skos:altLabel "Content"@en ;
+    skos:definition "An abstract entity considered for comparison as a purely combinatorial, representation-independent content that can be borne by multiple concrete representations, such as strings, sounds, or icons expressing the same claim."@en ;
+    skos:editorialNote "Candidate concept, modeled under Abstract, following all three confirmed sources' (DOLCE, SUMO, YAMATO) own treatment of Proposition/Content as an Abstract subtype."@en ;
+    dcterms:relation "docs/crosswalks/concepts/proposition-content.md"@en ;
     skos:inScheme xwkont-core: .
 
 xwkont-core:Relation a rdfs:Class, skos:Concept ;

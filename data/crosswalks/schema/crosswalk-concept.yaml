@@ -1,0 +1,677 @@
+id: https://w3id.org/xwkont/schema/crosswalk-concept
+name: xwkont-crosswalk-concept
+title: XwkOnt Crosswalk Concept Schema
+description: >-
+  LinkML schema for a single crosswalk-concept record, modeling all nine
+  sections docs/INFORMATION_ARCHITECTURE.md defines for a concept crosswalk.
+  Per ADR-0024, an instance of this schema (data/crosswalks/<slug>/<slug>.yaml)
+  is the SSOT for a concept; docs/crosswalks/concepts/<slug>.md,
+  data/crosswalks/<slug>/<slug>.tsv, and data/crosswalks/<slug>/<slug>.ttl are
+  all generated projections of it. This schema validates structure and
+  controlled vocabulary; it does not shorten or constrain prose field length.
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  xwkont: https://w3id.org/xwkont/id#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: xwkont
+default_range: string
+
+imports:
+  - linkml:types
+
+# ---------------------------------------------------------------------------
+# Enums (controlled vocabulary). Permissible-value names match the literal
+# strings already used in docs/crosswalks/concepts/*.md tables, so a future
+# Markdown-rendering generator can round-trip a value without translation.
+# ---------------------------------------------------------------------------
+
+enums:
+  EditorialStatus:
+    description: >-
+      docs/INFORMATION_ARCHITECTURE.md's Editorial Status Values, adapting
+      ISO/IEC 11179 registration-status thinking.
+    permissible_values:
+      draft:
+        description: Work is incomplete and not ready for crosswalk review.
+      candidate:
+        description: Content is complete enough for substantive review.
+      reviewed:
+        description: Content has passed project review for its stated scope.
+      accepted:
+        description: Content is accepted as the current XwkOnt record for its scope.
+      superseded:
+        description: Content has been replaced by a newer artifact.
+      deprecated:
+        description: Content is retained for history but should not guide new work.
+
+  Dimension:
+    description: Per ADR-0010 — distinguishes formal/technical claims from philosophical ones.
+    permissible_values:
+      technical:
+        description: Formal/engineering representation (class hierarchy, properties, domain/range, formalism used).
+      philosophical:
+        description: Metaphysical/theoretical commitments (realism vs. conceptualism, endurantism vs. perdurantism, etc.).
+      both:
+        description: Both technical and philosophical content in one entry.
+
+  LabelRole:
+    description: The Role column of the Labels, Alternate Labels, and Source Terminology table.
+    permissible_values:
+      "XwkOnt working label":
+        description: The XwkOnt-internal working label for this concept.
+      "Source term":
+        description: A term used by a specific source ontology for this concept.
+      "Alternate label":
+        description: An alternate label, either XwkOnt's own or a source's.
+
+  ClaimType:
+    description: >-
+      Claim types used across both Source Definitions and Semantic Comparison
+      Notes. docs/INFORMATION_ARCHITECTURE.md's Provenance and Reference
+      Requirements formally documents four values (direct quotation,
+      paraphrase, editorial observation, inference) and restricts Source
+      Definitions rows to the first two; the 2026-07-05
+      Markdown-to-YAML migration found that actual practice across the
+      corpus already diverges from that restriction at real scale (47 of 212
+      Source Definitions rows across the 17 reviewed concepts use
+      "editorial observation", "inference", or "non-equivalence" -- most
+      commonly to record a verified *absence* of a source-ontology category,
+      e.g. "full-text search... returned zero matches"). Per the same
+      reasoning ADR-0013 already applied to the confidence vocabulary
+      (formalize observed practice rather than force a retroactive rewrite
+      or ignore the drift), this schema accepts all five values in both
+      contexts rather than enforcing IA's narrower two-value restriction for
+      Source Definitions. This is a finding for a maintainer decision
+      (whether to amend docs/INFORMATION_ARCHITECTURE.md itself to match),
+      not a decision this schema makes unilaterally.
+    permissible_values:
+      "direct quotation":
+        description: Text is copied verbatim from a source.
+      "paraphrase":
+        description: Source meaning is restated without verbatim wording.
+      "editorial observation":
+        description: XwkOnt records a comparison visible from cited evidence.
+      "inference":
+        description: XwkOnt derives a conclusion from multiple pieces of evidence.
+      "non-equivalence":
+        description: >-
+          XwkOnt records a verified absence of a comparable category in a
+          source, or an explicit structural non-equivalence -- observed in
+          corpus practice but not one of IA's originally documented four
+          values.
+
+  RelationCategory:
+    description: >-
+      Mapping-relation categories per docs/methodology/crosswalk-methodology.md,
+      amended by ADR-0009 with an explicit predicate_id/mapping_justification.
+    permissible_values:
+      "exact-equivalence-candidate":
+        description: Evidence suggests interchangeability in the scoped context, pending review.
+      "close-match":
+        description: Concepts are substantially similar but not safely interchangeable.
+      "broader-than":
+        description: The subject is broader than the object in the compared context.
+      "narrower-than":
+        description: The subject is narrower than the object in the compared context.
+      "related":
+        description: Concepts are associated but not hierarchical or equivalent.
+      "overlap":
+        description: Concepts share some extension or intent but each has unmatched parts.
+      "incompatible":
+        description: Modeling assumptions conflict for the scoped comparison.
+      "unknown":
+        description: Evidence is insufficient to classify the relation.
+      "explicit-non-equivalence":
+        description: XwkOnt records that equivalence should not be asserted.
+
+  ConfidenceLevel:
+    description: >-
+      Six-value categorical confidence scale per ADR-0009 (four base values)
+      and ADR-0013 (medium-high/low-medium sourcing-shift extension). Not
+      SSSOM's numeric 0.0-1.0 scale; ADR-0014 defines a fixed export
+      projection generated from this enum, never hand-authored.
+    permissible_values:
+      high:
+      medium-high:
+        description: >-
+          Confidence raised from medium for a sourcing reason (e.g. a claim
+          moved from secondary-sourced to primary-source-verified) without a
+          full-category shift in substantive judgment. Requires a stated
+          reason in the citing field's rationale/notes prose (ADR-0013).
+      medium:
+      low-medium:
+        description: >-
+          Confidence lowered from medium for a sourcing reason, symmetric
+          with medium-high. Requires a stated reason in the citing field's
+          rationale/notes prose (ADR-0013).
+      low:
+      unknown:
+
+  MappingStatus:
+    description: Review status of a single mapping assertion (distinct from concept-level EditorialStatus).
+    permissible_values:
+      candidate:
+      reviewed:
+      rejected:
+
+  UncertaintyType:
+    description: Per docs/INFORMATION_ARCHITECTURE.md section 7.
+    permissible_values:
+      "uncertainty":
+      "non-equivalence":
+      "incompatibility":
+      "open-question":
+
+# ---------------------------------------------------------------------------
+# Classes
+# ---------------------------------------------------------------------------
+
+classes:
+
+  CrosswalkConcept:
+    tree_root: true
+    description: >-
+      A single concept crosswalk record — the full nine-section structure
+      docs/INFORMATION_ARCHITECTURE.md defines, as one LinkML-validated unit.
+    slots:
+      - local_identifier
+      - slug
+      - title
+      - editorial_status
+      - created
+      - modified
+      - contributors
+      - scope_note
+      - labels
+      - source_definitions
+      - correspondences
+      - correspondences_note
+      - comparison_notes
+      - mapping_assertions
+      - mapping_assertions_note
+      - uncertainties
+      - references
+      - review_history
+      - future_work
+
+  LabelEntry:
+    description: One row of the Labels, Alternate Labels, and Source Terminology table.
+    slots:
+      - role
+      - label
+      - label_source
+      - language
+      - entry_notes
+
+  SourceDefinition:
+    description: One row of the Source Definitions and Contextual Notes table.
+    slots:
+      - source
+      - term_or_identifier
+      - dimension
+      - source_claim_type
+      - text
+      - reference
+      - reference_note
+      - locator
+      - entry_notes
+
+  Correspondence:
+    description: One row of the Source Ontology Correspondences table.
+    slots:
+      - correspondence_id
+      - source_ontology
+      - source_term
+      - source_identifier_or_iri
+      - source_version
+      - reference
+      - inclusion_rationale
+
+  ComparisonNote:
+    description: One row of the Semantic Comparison Notes table.
+    slots:
+      - note_id
+      - dimension
+      - claim_type
+      - claim_type_annotation
+      - note
+      - supporting_references
+      - supporting_references_note
+      - confidence
+      - confidence_annotation
+
+  MappingAssertion:
+    description: One row of the Mapping Assertions or Candidate Relations table.
+    slots:
+      - mapping_id
+      - subject
+      - relation_category
+      - object
+      - predicate_id
+      - mapping_justification
+      - status
+      - confidence
+      - rationale
+      - provenance
+
+  UncertaintyItem:
+    description: One row of the Uncertainty, Non-Equivalence, and Open Questions table.
+    slots:
+      - item_id
+      - uncertainty_type
+      - resolved
+      - resolved_date
+      - resolution_note
+      - description
+      - impact
+      - follow_up
+
+  ReferenceCitation:
+    description: One entry of the Provenance and References list.
+    slots:
+      - reference_id
+      - short_label
+      - verification_note
+
+  ReviewEvent:
+    description: One row of the Review History table.
+    slots:
+      - review_id
+      - review_date
+      - participants
+      - outcome
+      - review_notes
+
+# ---------------------------------------------------------------------------
+# Slots
+# ---------------------------------------------------------------------------
+
+slots:
+
+  # --- Section 1: Identity and Editorial Status ---
+  local_identifier:
+    description: 'xwkont:concept:<slug>'
+    range: string
+    required: true
+    pattern: "^xwkont:concept:[a-z0-9]+(-[a-z0-9]+)*$"
+  slug:
+    description: File-name-safe slug, must match the concept directory/file name.
+    range: string
+    required: true
+    pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
+  title:
+    range: string
+    required: true
+  editorial_status:
+    range: EditorialStatus
+    required: true
+  created:
+    range: date
+    required: true
+  modified:
+    range: date
+    required: false
+  contributors:
+    range: string
+    multivalued: true
+    required: false
+  scope_note:
+    description: >-
+      What the crosswalk compares and what it does not compare. Free-form,
+      arbitrary-length prose (may include correction/update notes) — this
+      schema validates structure, not prose length or content.
+    range: string
+    required: true
+
+  # --- Section 2: Labels ---
+  labels:
+    range: LabelEntry
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  role:
+    range: LabelRole
+    required: true
+  label:
+    range: string
+    required: true
+  label_source:
+    description: Source ontology name, or 'XwkOnt' for the working label.
+    range: string
+    required: true
+  language:
+    description: BCP 47 language tag, e.g. 'en'.
+    range: string
+    required: true
+    ifabsent: string(en)
+
+  # --- Section 3: Source Definitions and Contextual Notes ---
+  source_definitions:
+    range: SourceDefinition
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  source:
+    description: Source ontology name (e.g. BFO, DOLCE, SUMO, UFO, GFO, YAMATO, TUpper, GUM).
+    range: string
+    required: true
+  term_or_identifier:
+    range: string
+    required: true
+  dimension:
+    range: Dimension
+    required: true
+  source_claim_type:
+    description: >-
+      Uses the shared ClaimType enum (see its description for why this is
+      five values rather than IA's originally documented two for this
+      section).
+    range: ClaimType
+    required: true
+  text:
+    description: Definition text, quotation, or paraphrase.
+    range: string
+    required: true
+  reference:
+    description: >-
+      One or more xwkont:ref:<slug> reference-record identifiers. Usually
+      one, but a handful of Source Definitions and Correspondences rows in
+      corpus practice cite two or three references for a single row (e.g. a
+      primary paper plus its OWL translation) -- multivalued to match that
+      real usage rather than forcing a single-reference cardinality corpus
+      practice already exceeds.
+    range: string
+    multivalued: true
+    required: true
+    pattern: "^xwkont:ref:[a-z0-9]+(-[a-z0-9]+)*$"
+  reference_note:
+    description: >-
+      Verbatim original Reference cell text, set only when that cell has
+      more than a plain comma-separated ref-id list -- e.g. quality.md's
+      DOLCE Quale row: '`xwkont:ref:dolce-borgo-2022`, confirmed against
+      `xwkont:ref:dolce-wonderweb-d18` directly'. The connector prose
+      ('confirmed against ... directly') is a real evidentiary qualifier
+      (which reference does what), not decoration, so it is preserved
+      verbatim here rather than reconstructed from a leftover-text
+      heuristic. When present, a renderer should reproduce this field
+      directly instead of re-joining the reference list.
+    range: string
+    required: false
+  locator:
+    description: Section/page/IRI locating the cited text within the reference.
+    range: string
+    required: false
+  entry_notes:
+    description: >-
+      Free-text notes for a single LabelEntry or SourceDefinition row (the
+      table's own 'Notes' column). Distinct from the class-level ReviewEvent
+      'review_notes' and top-level 'future_work' list.
+    range: string
+    required: false
+
+  # --- Section 4: Source Ontology Correspondences ---
+  correspondences:
+    range: Correspondence
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  correspondences_note:
+    description: >-
+      Free-text prose trailing the Correspondences table itself, before the
+      next section heading (e.g. 'No UFO correspondence is recorded — see
+      Uncertainty.'). Found in 12 of 17 concepts during the 2026-07-05
+      migration -- the original migration script silently
+      dropped this content (it only parsed the table, not trailing prose in
+      the same section), a real data-loss bug caught by round-trip testing
+      the YAML-to-Markdown direction, not by the initial Markdown-to-YAML
+      pass alone.
+    range: string
+    required: false
+  correspondence_id:
+    range: string
+    required: true
+    pattern: "^xwkont:correspondence:[a-z0-9]+(-[a-z0-9]+)*:[0-9]{3}$"
+  source_ontology:
+    range: string
+    required: true
+  source_term:
+    range: string
+    required: true
+  source_identifier_or_iri:
+    description: >-
+      A concrete IRI/identifier, or 'unknown'/'not applicable' with an
+      explanatory note when no identifier scheme exists or none was found —
+      contributors do not guess (docs/INFORMATION_ARCHITECTURE.md, Claim
+      typing rules).
+    range: string
+    required: true
+  source_version:
+    range: string
+    required: true
+  inclusion_rationale:
+    range: string
+    required: true
+
+  # --- Section 5: Semantic Comparison Notes ---
+  comparison_notes:
+    range: ComparisonNote
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  note_id:
+    range: string
+    required: true
+    pattern: "^note-[0-9]{3}$"
+  claim_type:
+    range: ClaimType
+    required: true
+  claim_type_annotation:
+    description: >-
+      Free-text annotation for the '~~inference~~ **checked and unconfirmed,
+      2026-07-01**' style markup found in corpus practice, where a claim's
+      original classification was later revisited. claim_type itself holds
+      the unwrapped base value (e.g. 'inference'); this field holds the
+      revisiting note verbatim.
+    range: string
+    required: false
+  note:
+    range: string
+    required: true
+  supporting_references:
+    description: >-
+      Usually one or more xwkont:ref:<slug> ids; not pattern-constrained
+      because one corpus row (proposition-content.md note-003) uses a prose
+      placeholder here instead ('cross-cutting across this crosswalk and the
+      other 8 0.2.0-batch concepts') for a cross-cutting observation with no
+      single supporting reference of its own -- a real, found-in-migration
+      case, not a hypothetical one.
+    range: string
+    multivalued: true
+    required: true
+  supporting_references_note:
+    description: >-
+      Verbatim original Supporting references cell text, set only when that
+      cell has more than a plain comma-separated ref-id list -- e.g.
+      continuant-occurrent.md note-002's '`xwkont:ref:borgo-galton-kutz-2022`
+      (BFO only), `xwkont:ref:dolce-wonderweb-d18`, `xwkont:ref:ufo-2021`',
+      where '(BFO only)' is a real evidentiary qualifier (which reference
+      supports which specific part of a multi-source claim), not decoration.
+      When present, a renderer should reproduce this field directly instead
+      of re-joining supporting_references.
+    range: string
+    required: false
+  confidence:
+    range: ConfidenceLevel
+    required: true
+  confidence_annotation:
+    description: >-
+      Free-text qualifier found trailing a small number of Semantic
+      Comparison Notes confidence cells in corpus practice (e.g. 'high
+      (verified directly against each source's own text)'). confidence
+      itself holds the unwrapped base enum value; this field holds the
+      trailing qualifier verbatim.
+    range: string
+    required: false
+
+  # --- Section 6: Mapping Assertions or Candidate Relations ---
+  mapping_assertions:
+    range: MappingAssertion
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  mapping_assertions_note:
+    description: >-
+      Free-text prose preceding the Mapping Assertions table itself, after
+      the section heading (e.g. continuant-occurrent.md's "Per ADR-0009,
+      each mapping records a predicate_id... and a mapping_justification...").
+      Found in 1 of 17 concepts during the 2026-07-05 migration
+      -- the original migration script only parsed the table, silently
+      dropping this lead-in sentence, a real data-loss bug caught by
+      round-tripping the YAML back to Markdown and diffing against the
+      original.
+    range: string
+    required: false
+  mapping_id:
+    range: string
+    required: true
+    pattern: "^xwkont:mapping:[a-z0-9]+(-[a-z0-9]+)*:[0-9]{3}$"
+  subject:
+    description: "'<SourceOntology>:<Term>' notation, or free text for a no-counterpart row."
+    range: string
+    required: true
+  object:
+    description: "'<SourceOntology>:<Term>' notation, or free text for a no-counterpart row."
+    range: string
+    required: true
+  relation_category:
+    range: RelationCategory
+    required: true
+  predicate_id:
+    description: >-
+      SSSOM/SKOS predicate per ADR-0009 (e.g. 'skos:closeMatch'), or absent
+      for XwkOnt-only categories with no SKOS counterpart.
+    range: string
+    required: false
+  mapping_justification:
+    description: "SEMAPV vocabulary term, e.g. 'semapv:ManualMappingCuration' (ADR-0009)."
+    range: string
+    required: true
+    pattern: "^semapv:[A-Za-z]+$"
+  status:
+    range: MappingStatus
+    required: true
+  rationale:
+    range: string
+    required: true
+  provenance:
+    range: string
+    multivalued: true
+    required: true
+    pattern: "^xwkont:ref:[a-z0-9]+(-[a-z0-9]+)*$"
+
+  # --- Section 7: Uncertainty, Non-Equivalence, and Open Questions ---
+  uncertainties:
+    range: UncertaintyItem
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  item_id:
+    range: string
+    required: true
+    pattern: "^uncertainty-[0-9]{3}$"
+  uncertainty_type:
+    range: UncertaintyType
+    required: true
+  resolved:
+    description: >-
+      Whether this item has since been resolved (Markdown today marks this
+      with inline strikethrough/prose; this field replaces that convention).
+    range: boolean
+    required: true
+    ifabsent: "false"
+  resolved_date:
+    range: date
+    required: false
+  resolution_note:
+    description: >-
+      Verbatim text of the bolded resolution annotation from the Markdown
+      Type cell (e.g. 'resolved 2026-07-01, as a correction', 'fully
+      resolved 2026-07-01'), when resolved is true. resolved_date is a
+      best-effort YYYY-MM-DD extracted from this text for querying;
+      resolution_note preserves the full original wording (including
+      qualifiers like 'as a correction' or 'as a confirmed negative
+      finding') that resolved_date alone would lose.
+    range: string
+    required: false
+  description:
+    range: string
+    required: true
+  impact:
+    range: string
+    required: true
+  follow_up:
+    range: string
+    required: true
+
+  # --- Section 8: Provenance and References ---
+  references:
+    range: ReferenceCitation
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  reference_id:
+    description: >-
+      Normally an xwkont:ref:<slug> reference record. One corpus row
+      (continuant-occurrent.md's Provenance and References list) instead
+      cites an ADR directly ('ADR-0015' -- the scope-expansion decision
+      driving that crosswalk's own content buildout), found during the
+      2026-07-05 migration; the pattern accepts both forms
+      rather than dropping that citation.
+    range: string
+    required: true
+    pattern: "^(xwkont:ref:[a-z0-9]+(-[a-z0-9]+)*|ADR-[0-9]{4})$"
+  short_label:
+    range: string
+    required: true
+  verification_note:
+    description: >-
+      Free-text verification status, e.g. 'verified directly against
+      bfo-core.ttl, 2026-07-01' or 'unverified'. Kept as prose, not a
+      controlled vocabulary — the verification story itself varies too much
+      per source to force into an enum without losing information.
+    range: string
+    required: true
+
+  # --- Section 9: Review History and Future Work ---
+  review_history:
+    range: ReviewEvent
+    multivalued: true
+    inlined_as_list: true
+    required: false
+  review_id:
+    description: >-
+      'xwkont:review:<slug>:YYYY-MM-DD:NN', or absent for an interim,
+      not-yet-reviewed content-buildout entry (see docs/crosswalks/concepts/
+      review-history precedent, e.g. object.md's 2026-07-02 interim row).
+    range: string
+    required: false
+    pattern: "^xwkont:review:[a-z0-9]+(-[a-z0-9]+)*:[0-9]{4}-[0-9]{2}-[0-9]{2}:[0-9]{2}$"
+  review_date:
+    range: date
+    required: true
+  participants:
+    range: string
+    required: true
+  outcome:
+    range: string
+    required: true
+  review_notes:
+    range: string
+    required: false
+  future_work:
+    range: string
+    multivalued: true
+    required: false

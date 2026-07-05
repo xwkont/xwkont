@@ -1,0 +1,1052 @@
+local_identifier: xwkont:concept:continuant-occurrent
+slug: continuant-occurrent
+title: Continuant / Occurrent
+editorial_status: reviewed
+created: "2026-07-01"
+modified: "2026-07-02"
+scope_note: 'This crosswalk compares the top-level temporal-persistence split found in BFO
+  (continuant/occurrent), DOLCE (endurant/perdurant), and UFO (endurant/perdurant), and a
+  structurally different but often-compared analog in SUMO (Object/Process under a Physical/Abstract
+  partition). It is XwkOnt''s first concept crosswalk, chosen deliberately over a more concrete
+  concept (e.g., Object) because it is the most abstract split each source ontology makes,
+  is the best-evidenced in existing comparative literature, and directly validates XwkOnt''s
+  own top-level scaffold (`xwkont-core:Continuant`, `xwkont-core:Occurrent` in `data/ontology/core.ttl`)
+  against real source definitions.
+
+
+
+  Exclusions: this crosswalk does not resolve the Process/Event distinction within Occurrent
+  (a separate, already-flagged open question — see Uncertainty).
+
+
+
+  **Update (2026-07-02), GFO/YAMATO/TUpper/GUM buildout:** `ADR-0015` (2026-07-02) expanded
+  XwkOnt''s source-ontology scope to include GFO, YAMATO, TUpper, and GUM. This crosswalk
+  is the first to receive the resulting content buildout, resolving `uncertainty-004`. None
+  of the four use "continuant/occurrent" terminology identically to BFO/DOLCE/UFO:
+
+
+
+  - **GFO** uses its own top-level pair, **Presential/Occurrent** (not "Continuant") — Occurrent
+  is shared vocabulary with BFO/DOLCE/UFO''s occurrent side, but the continuant-side term
+  differs.
+
+  - **YAMATO** uses **Continuant/Occurrent** directly, parenthetically glossed as Object/Process,
+  with an explicit refusal to use "perdurant."
+
+  - **TUpper** uses no continuant/occurrent-style label at all — its PSL-derived vocabulary
+  (`object`/`activity_occurrence`) defines `object` negatively (anything that is not a timepoint,
+  activity, or activity-occurrence).
+
+  - **GUM** uses no continuant/occurrent-style label either — its `SimpleThing`/`Process`
+  split is grounded in systemic-functional linguistics (participant vs. verb-realized "goings-on"),
+  not a metaphysical persistence criterion, structurally closer to this crosswalk''s existing
+  SUMO precedent than to BFO/DOLCE/UFO.
+
+
+
+  Each source''s OWL/CLIF files were fetched and read directly (no PDF extraction needed for
+  GFO or TUpper/GUM''s OWL; a 2010 YAMATO technical report PDF was extracted for YAMATO since
+  its dedicated 2022 paper and OWL/Hozo download were both inaccessible — see `note-004` and
+  the relevant reference records for details).
+
+
+
+  **Update (2026-07-01), following direct primary-source verification of DOLCE and UFO:**
+  the WonderWeb D18 report and the UFO 2021 Applied Ontology paper (already fetched and extracted
+  for other crosswalks — `object.md`, `role.md`, `process.md`, `relation.md`) were reused
+  to verify this crosswalk''s DOLCE and UFO content directly, resolving `uncertainty-001`.
+  Findings:
+
+
+
+  - **DOLCE''s endurant/perdurant definitions are confirmed**, with more exact wording than
+  the earlier secondary-source paraphrase: "Endurants are wholly present (i.e., all their
+  proper parts are present) at any time they are present. Perdurants, on the other hand, just
+  extend in time by accumulating different temporal parts, so that, at any time they are present,
+  they are only partially present." D18 also **directly confirms** `note-002`''s claim about
+  DOLCE''s cognitive orientation, in the authors'' own words: "we must emphasise that this
+  distinction is motivated by our cognitive bias, and we do not commit to the fact that both
+  these kinds of entity really exist."
+
+  - **UFO''s endurant/perdurant definitions are confirmed** as originally paraphrased, now
+  as a direct quotation: "UFO distinguishes between endurants and perdurants. Endurants are
+  individuals that exist in time with all their parts. Perdurants are individuals that unfold
+  in time accumulating temporal parts. An endurant can change while maintaining its identity,
+  a perdurant cannot."
+
+  - **`uncertainty-001` (UFO''s philosophical grounding) is resolved.** The 2021 paper traces
+  UFO''s origin to conceptual-modeling ontology evaluation work (Bunge-Wand-Weber), later
+  merging with DOLCE and the General Formal Ontology (GFO) on the basis of a shared commitment
+  to a **four-category ontology** ("the Aristotelian Square," per Lowe 2006) distinguishing
+  individuals/types crossed with substantials/moments. This is a different philosophical lineage
+  from both BFO''s realist/scientific-practice grounding and DOLCE''s cognitive/linguistic
+  orientation — UFO''s stated motivation is explicitly the practical requirements of conceptual
+  modeling languages, informed by analytic four-category ontology, not a cognitive-bias disclaimer
+  or a scientific-realist stance.
+
+
+
+  **Epistemic note:** BFO and SUMO content is verified directly against primary sources (`bfo-core.ttl`,
+  `Merge.kif`). DOLCE and UFO content is now also directly verified (2026-07-01), reusing
+  extractions performed for other crosswalks in this repository. The `xwkont:ref:borgo-galton-kutz-2022`
+  editorial framing (BFO''s "realist" and DOLCE''s "cognitive/linguistic" characterizations)
+  remains secondary-sourced and unverified — see Future Work.'
+labels:
+- role: XwkOnt working label
+  label: Continuant / Occurrent
+  label_source: XwkOnt
+  language: en
+  entry_notes: Matches `xwkont-core:Continuant`/`xwkont-core:Occurrent` in `data/ontology/core.ttl`.
+- role: Source term
+  label: continuant / occurrent
+  label_source: BFO
+  language: en
+- role: Source term
+  label: endurant / perdurant
+  label_source: DOLCE
+  language: en
+- role: Source term
+  label: endurant / perdurant (event)
+  label_source: UFO
+  language: en
+  entry_notes: UFO uses "event" for a kind of perdurant; see Source Definitions.
+- role: Alternate label
+  label: Object / Process (under Physical)
+  label_source: SUMO
+  language: en
+  entry_notes: Not labeled "continuant/occurrent" by SUMO itself; included as a structural
+    analog only — see Uncertainty.
+- role: Source term
+  label: Presential / Occurrent
+  label_source: GFO
+  language: en
+  entry_notes: GFO's own top-level pair; "Continuant" is not GFO's term (see Uncertainty).
+- role: Source term
+  label: Continuant(Object) / Occurrent(Process)
+  label_source: YAMATO
+  language: en
+  entry_notes: YAMATO uses "Continuant"/"Occurrent" directly, glossing them parenthetically
+    as Object/Process.
+- role: Alternate label
+  label: object / activity_occurrence
+  label_source: TUpper
+  language: en
+  entry_notes: Not labeled "continuant/occurrent" by TUpper; PSL-derived vocabulary, `object`
+    defined negatively — see Uncertainty.
+- role: Alternate label
+  label: SimpleThing / Process
+  label_source: GUM
+  language: en
+  entry_notes: Not labeled "continuant/occurrent" by GUM; a linguistic (participant vs. verb-realized
+    "goings-on") split, not a metaphysical one — see Uncertainty.
+source_definitions:
+- source: BFO
+  term_or_identifier: continuant (BFO_0000002)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) A continuant is an entity that persists, endures, or continues to
+    exist through time while maintaining its identity." Examples: "A human being; a tennis
+    ball; a cave; a region of space; someone''s temperature."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000002, fetched and read directly 2026-07-01'
+  entry_notes: Confirms the earlier secondary-source paraphrase closely.
+- source: BFO
+  term_or_identifier: occurrent (BFO_0000003)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) An occurrent is an entity that unfolds itself in time or it is the
+    start or end of such an entity or it is a temporal or spatiotemporal region." Examples
+    given: "process, history, process boundary, spatiotemporal region, zero-dimensional temporal
+    region, one-dimensional temporal region, temporal interval, temporal instant."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000003, fetched and read directly 2026-07-01'
+  entry_notes: Confirms the earlier paraphrase and additionally reveals a fuller definition
+    (occurrent also covers temporal/spatiotemporal regions, not just "dynamic processes").
+- source: BFO
+  term_or_identifier: continuant/occurrent split
+  dimension: philosophical
+  source_claim_type: paraphrase
+  text: BFO's continuant/occurrent split reflects a realist framework grounded in scientific
+    practice.
+  reference:
+  - xwkont:ref:borgo-galton-kutz-2022
+  locator: editorial framing from the special-issue editorial, not BFO's own text
+  entry_notes: This is a secondary characterization, not BFO's self-description.
+- source: DOLCE
+  term_or_identifier: endurant
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Endurants are wholly present (i.e., all their proper parts are present) at any time
+    they are present."'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified**: WonderWeb D18 PDF, manually extracted 2026-07-01'
+  entry_notes: Corrects the earlier secondary-source wording ("necessarily wholly present
+    in each time interval at which they exist") to the primary text's exact phrasing — same
+    meaning, now exact.
+- source: DOLCE
+  term_or_identifier: perdurant
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Perdurants, on the other hand, just extend in time by accumulating different temporal
+    parts, so that, at any time they are present, they are only partially present."'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified**: WonderWeb D18 PDF, manually extracted 2026-07-01'
+  entry_notes: Same correction as the endurant row above.
+- source: DOLCE
+  term_or_identifier: endurant/perdurant split
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"[W]e must emphasise that this distinction is motivated by our cognitive bias, and
+    we do not commit to the fact that both these kinds of entity really exist."'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified**: WonderWeb D18 PDF, manually extracted 2026-07-01'
+  entry_notes: This is now DOLCE's own text, directly confirming (not just via editorial paraphrase
+    from `xwkont:ref:borgo-galton-kutz-2022`) the "cognitive bias" framing in `note-002`.
+- source: UFO
+  term_or_identifier: endurant
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Endurants are individuals that exist in time with all their parts."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: Confirms the earlier paraphrase exactly; now a direct quotation.
+- source: UFO
+  term_or_identifier: perdurant / event
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Perdurants are individuals that unfold in time accumulating temporal parts. An endurant
+    can change while maintaining its identity, a perdurant cannot."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: UFO's theory of events additionally covers mereology, temporal ordering, participation,
+    causation, and change — see `event.md`, not elaborated here.
+- source: UFO
+  term_or_identifier: endurant/perdurant split (philosophical grounding)
+  dimension: philosophical
+  source_claim_type: paraphrase
+  text: UFO's project began from evaluating conceptual-modeling languages against the Bunge-Wand-Weber
+    (BWW) ontology, then merged DOLCE with the General Formal Ontology (GFO) on the shared
+    basis of a four-category ontology ("the Aristotelian Square," per Lowe 2006) crossing
+    individuals/types with substantials/moments.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: 'Resolves `uncertainty-001`. A different lineage from BFO''s realist/scientific-practice
+    grounding and DOLCE''s cognitive-bias disclaimer: UFO''s stated motivation is conceptual-modeling
+    practice, informed by analytic four-category ontology.'
+- source: SUMO
+  term_or_identifier: Physical
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(subclass Physical Entity)... An entity that has a location in space-time. Note
+    that locations are themselves understood to have a location in space-time." Object and
+    Process are both `(subclass ... Physical)`.'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: `Merge.kif`, `documentation Physical EnglishLanguage`, fetched and
+    read directly 2026-07-01'
+  entry_notes: The source contains a commented-out (inactive) `(partition Physical Object
+    Process)` line — Object/Process are each independently asserted as subclasses of Physical,
+    but their joint-exhaustiveness as a formal partition is not an active axiom in current
+    SUMO, only an apparent intention.
+- source: SUMO
+  term_or_identifier: Object
+  dimension: technical
+  source_claim_type: paraphrase
+  text: 'Object is a subclass of Physical, one branch of SUMO''s top-level `Entity` → `Physical`/`Abstract`
+    partition. Confirmed directly (see `object.md`''s verified quote: "Corresponds roughly
+    to the class of ordinary objects").'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified** (see `object.md` for the full quotation)'
+  entry_notes: Not labeled "continuant" by SUMO.
+- source: SUMO
+  term_or_identifier: Process
+  dimension: technical
+  source_claim_type: paraphrase
+  text: 'Process is a subclass of Physical, the sibling branch to Object. Confirmed directly
+    (see `process.md`''s verified quote: "anything that occurs in time but is not an Object").'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified** (see `process.md` for the full quotation)'
+  entry_notes: SUMO's partition criterion is physicality, not temporal persistence — see Uncertainty.
+- source: SUMO
+  term_or_identifier: Object/Process split
+  dimension: philosophical
+  source_claim_type: editorial observation
+  text: SUMO is organized for interoperability among automated reasoning engines, an engineering-first
+    purpose rather than an explicit metaphysical grounding of the kind BFO/DOLCE/UFO state.
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: paraphrase of the source's own stated purpose
+  entry_notes: This is an observation about stated purpose, not a claim that SUMO lacks any
+    philosophical basis.
+- source: GFO
+  term_or_identifier: Occurrent
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Occurrents have temporal parts and thus cannot be present at a time-boundary. Time
+    belongs to them, because they happen in time and the time of the occurrent is built into
+    it. The relation between an occurrent and a chronoid is determined by the projection relation.
+    Occurrents are also called generalized processes in the GFO."'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Occurrent`, fetched and read directly
+    2026-07-02'
+  entry_notes: '`owl:disjointWith` `Presential`. Shares the term "occurrent" with BFO/DOLCE/UFO''s
+    occurrent side.'
+- source: GFO
+  term_or_identifier: Presential
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A presential exists wholly at exactly one time boundary."'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Presential`, fetched and read directly
+    2026-07-02'
+  entry_notes: GFO's continuant-side term is "Presential," not "Continuant" — GFO does not
+    use "continuant" anywhere in the base module.
+- source: GFO
+  term_or_identifier: Process
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Processes are a special kind of occurrent. Processes are directly in time, they
+    have characteristics which cannot be captured by a collection of time boundaries."'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Process`, fetched and read directly
+    2026-07-02'
+  entry_notes: Subclass of `Occurrent`, included for comparison with the other sources' Process/Occurrent
+    nesting.
+- source: GFO
+  term_or_identifier: Presential/Occurrent split
+  dimension: philosophical
+  source_claim_type: editorial observation
+  text: 'GFO is explicitly 4D-oriented (per YAMATO''s own comparative framing, `xwkont:ref:yamato-mizoguchi-2010`:
+    "GFO is based on 4D view"), unlike DOLCE''s stated 3D orientation. GFO''s own OWL files
+    carry no explicit philosophical-grounding prose comparable to DOLCE''s "cognitive bias"
+    disclaimer or UFO''s four-category-ontology lineage.'
+  reference:
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: secondary characterization (YAMATO's framing of GFO), not GFO's own text
+  entry_notes: Included with lower confidence than the BFO/DOLCE/UFO philosophical rows, which
+    are either primary-sourced or (for BFO) explicitly flagged unverified.
+- source: YAMATO
+  term_or_identifier: Continuant(Object)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(4) Continuant(Object) vs. Occurrent(Process) ... Common sense is based on 3D model
+    which consists of the 3D Euclidean space with absolute time. YAMATO is based on a solid
+    theory of objects, processes and events, and it deals with them of equal importance (Galton
+    2009)."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: 2010 technical report PDF, manually extracted 2026-07-02'
+  entry_notes: YAMATO uses "Continuant" directly as a top-level label, parenthetically glossed
+    as "Object."
+- source: YAMATO
+  term_or_identifier: Occurrent(Process)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Furthermore, it clearly identifies events are made of processes and while processes
+    can change, events cannot. We do not use the term perdurant for explaining processes because
+    it blocks to talk about the difference between processes and events."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: 2010 technical report PDF, manually extracted 2026-07-02'
+  entry_notes: YAMATO explicitly declines DOLCE/UFO's "perdurant" terminology for this reason.
+- source: YAMATO
+  term_or_identifier: Continuant/Occurrent split
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"The standpoint taken in YAMATO consists of Newtonian world point of view and 3D-like
+    modeling, that is, the world is considered as being composed of the three-dimensional
+    Euclidean space with the absolute time and both object(continuant) and process (occurrent)
+    exist with equal importance in a mutually-dependent manner."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: 2010 technical report PDF, manually extracted 2026-07-02'
+  entry_notes: 'Distinct from BFO/DOLCE/UFO: YAMATO explicitly treats continuant and occurrent
+    as *mutually dependent*, rejecting the idea that either is ontologically prior to the
+    other.'
+- source: TUpper
+  term_or_identifier: object
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An object is anything that is not a timepoint, nor an activity nor an activity-occurrence.
+    Intuitively, an object is a concrete or abstract thing that can participate in an activity.
+    Objects can come into existence (be created) and go out of existence (be ''used up'' as
+    a resource) at certain points in time."'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified**: `TUpper-Terms.html`, term `object`, fetched and read directly 2026-07-02'
+  entry_notes: Defined negatively (by exclusion), not by a positive temporal-persistence criterion
+    — a different definitional style from every other source in this crosswalk.
+- source: TUpper
+  term_or_identifier: activity_occurrence
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An activity occurrence is associated with a unique activity" via the `occurrence_of`
+    relation; "occ is a member of the class of activity occurrences in the universe of discourse
+    of the interpretation."'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified**: `TUpper-Terms.html`, term `activity_occurrence`, fetched and read
+    directly 2026-07-02'
+  entry_notes: TUpper's closest analog to "occurrent" — an occurrence tied to a specific activity,
+    inherited from PSL.
+- source: TUpper
+  term_or_identifier: object/activity_occurrence split
+  dimension: philosophical
+  source_claim_type: editorial observation
+  text: TUpper's vocabulary is inherited from PSL (Process Specification Language), an engineering/manufacturing-process
+    ontology, not a philosophical top-level ontology in the BFO/DOLCE/UFO sense — closer in
+    spirit to SUMO's engineering-first framing (`note-003`) than to the three metaphysically-grounded
+    sources.
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: paraphrase, based on PSL's documented purpose and TUpper's own negative-definition
+    style
+  entry_notes: Not a claim that TUpper lacks any theoretical grounding — ISO/IEC 21838-4:2023's
+    own text (not accessed in this pass) may state one explicitly.
+- source: GUM
+  term_or_identifier: SimpleThing
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An entity which may participate in a configuration."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `SimpleThing`, fetched and read directly 2026-07-02'
+  entry_notes: Subclass of `Element`; GUM's closest analog to "continuant" — a participant,
+    not a temporally-persisting substance per se.
+- source: GUM
+  term_or_identifier: Process
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A Process is the linguistic construal of ''goings-on'' or events. Processes are
+    similar to Configurations, but factor out Participants, Circumstances, and other elements.
+    As such, entities classified under Process can be expressed as verbs and are frequently
+    the main verb in a clause."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `Process`, fetched and read directly 2026-07-02'
+  entry_notes: '`owl:disjointWith` `SimpleThing`; a linguistic (verb-realized) criterion,
+    not temporal persistence.'
+- source: GUM
+  term_or_identifier: SimpleThing/Process split
+  dimension: philosophical
+  source_claim_type: editorial observation
+  text: GUM's split is grounded in systemic-functional linguistics (Halliday & Matthiessen's
+    transitivity model — participants vs. processes as clause elements), explicitly stated
+    in GUM's own class comments, not in a metaphysical persistence criterion.
+  reference:
+  - xwkont:ref:gum-owl
+  locator: direct quotation basis, editorial synthesis of the pattern across GUM's class comments
+  entry_notes: Structurally the closest precedent in this crosswalk is SUMO's engineering-first
+    framing (`note-003`), though GUM's motivation (linguistic mediation) differs from SUMO's
+    (reasoner interoperability).
+correspondences:
+- correspondence_id: xwkont:correspondence:continuant-occurrent:001
+  source_ontology: BFO
+  source_term: continuant
+  source_identifier_or_iri: BFO_0000002
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: XwkOnt's own scaffold (`xwkont-core:Continuant`) is most directly modeled
+    on BFO's split.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:002
+  source_ontology: BFO
+  source_term: occurrent
+  source_identifier_or_iri: BFO_0000003
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Same as above, for `xwkont-core:Occurrent`.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:003
+  source_ontology: DOLCE
+  source_term: endurant
+  source_identifier_or_iri: '`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant` (confirmed
+    directly, 2026-07-01)'
+  source_version: WonderWeb D18, 2003 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Widely cited alternate top-level pair using the same temporal-persistence
+    criterion as BFO.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:004
+  source_ontology: DOLCE
+  source_term: perdurant
+  source_identifier_or_iri: '`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant` (confirmed
+    directly, 2026-07-01)'
+  source_version: WonderWeb D18, 2003 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Same as above.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:005
+  source_ontology: UFO
+  source_term: endurant
+  source_identifier_or_iri: not applicable — UFO's 2021 paper is natural-language prose with
+    no IRI scheme of its own; gUFO (a derived OWL implementation) has IRIs but is not treated
+    as identical to UFO's own theoretical claims, per `xwkont:ref:ufo-2021`'s Source Relation
+    Notes
+  source_version: Applied Ontology, 2021 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: UFO explicitly continues DOLCE's endurant/perdurant lineage.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:006
+  source_ontology: UFO
+  source_term: perdurant / event
+  source_identifier_or_iri: not applicable — same as row 005
+  source_version: Applied Ontology, 2021 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: Same as above.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:007
+  source_ontology: SUMO
+  source_term: Object
+  source_identifier_or_iri: '`Object` (SUMO/SUO-KIF has no separate opaque identifier scheme
+    — the term name itself, as it appears in `Merge.kif`, is the identifier)'
+  source_version: 2001 (Niles & Pease)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Included as an exploratory structural analog despite a different top-level
+    partition criterion (physicality, not temporal persistence).
+- correspondence_id: xwkont:correspondence:continuant-occurrent:008
+  source_ontology: SUMO
+  source_term: Process
+  source_identifier_or_iri: '`Process` (same identifier convention as row 007)'
+  source_version: 2001 (Niles & Pease)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Same as above.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:009
+  source_ontology: GFO
+  source_term: Presential
+  source_identifier_or_iri: https://w3id.org/gfo/base/Presential
+  source_version: GFO 2024-11-18 release (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: GFO's own continuant-side term, structurally parallel to BFO's continuant
+    despite the different label.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:010
+  source_ontology: GFO
+  source_term: Occurrent
+  source_identifier_or_iri: https://w3id.org/gfo/base/Occurrent
+  source_version: GFO 2024-11-18 release (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Same term label as BFO/DOLCE/UFO's occurrent side.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:011
+  source_ontology: YAMATO
+  source_term: Continuant(Object)
+  source_identifier_or_iri: not applicable — the 2010 technical report has no OWL IRI scheme;
+    YAMATO's OWL files exist but were not fetched in this pass (registration-gated download,
+    see `xwkont:ref:yamato-mizoguchi-2010`)
+  source_version: 2010 technical report (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: YAMATO uses "Continuant" as its own top-level label, the closest terminological
+    match to BFO/XwkOnt of any of the four ADR-0015 sources.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:012
+  source_ontology: YAMATO
+  source_term: Occurrent(Process)
+  source_identifier_or_iri: not applicable — same as row 011
+  source_version: 2010 technical report (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Same as above.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:013
+  source_ontology: TUpper
+  source_term: object
+  source_identifier_or_iri: '`object` (TUpper/COLORE term name, as it appears in `TUpper-Terms.html`
+    and the CLIF/OWL files — no opaque identifier scheme, similar in convention to SUMO''s
+    `Merge.kif` terms)'
+  source_version: COLORE formalization (directly verified 2026-07-02); ISO/IEC 21838-4:2023
+    standard text not independently accessed
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: 'Included as a structural analog: TUpper''s `object` is defined negatively
+    and inherited from PSL, not a positive temporal-persistence criterion.'
+- correspondence_id: xwkont:correspondence:continuant-occurrent:014
+  source_ontology: TUpper
+  source_term: activity_occurrence
+  source_identifier_or_iri: '`activity_occurrence` (same identifier convention as row 013)'
+  source_version: COLORE formalization (directly verified 2026-07-02); ISO/IEC 21838-4:2023
+    standard text not independently accessed
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: Same as above.
+- correspondence_id: xwkont:correspondence:continuant-occurrent:015
+  source_ontology: GUM
+  source_term: SimpleThing
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing
+  source_version: GUM 3.1 (directly verified 2026-07-02, via Internet Archive; canonical `purl.org/net/gum2`
+    host chain confirmed dead 2026-07-02)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: 'Included as a structural analog only, per the same rationale as SUMO''s
+    Object/Process rows (006/007): a different partition criterion (linguistic, not temporal-persistence).'
+- correspondence_id: xwkont:correspondence:continuant-occurrent:016
+  source_ontology: GUM
+  source_term: Process
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process
+  source_version: GUM 3.1 (directly verified 2026-07-02, via Internet Archive)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Same as above.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: 'BFO, DOLCE, and UFO all use the same temporal-persistence criterion for their top-level
+    split: an entity''s parts are either all present at once (continuant/endurant) or accumulated/extended
+    through time (occurrent/perdurant), now confirmed directly against all three primary sources.
+    SUMO''s `Physical`/`Abstract` → `Object`/`Process` split uses a different criterion (physicality),
+    so structural position in the hierarchy is not identical even where the labels invite
+    comparison.'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-002
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'BFO''s split is characterized in comparative literature as reflecting a realist framework
+    grounded in scientific practice (unverified, secondary-sourced — see Uncertainty). DOLCE''s
+    cognitive/linguistic orientation is now **directly confirmed** in the primary source''s
+    own words: "we must emphasise that this distinction is motivated by our cognitive bias,
+    and we do not commit to the fact that both these kinds of entity really exist." UFO''s
+    grounding, previously unconfirmed (`uncertainty-001`), is now also directly confirmed:
+    a conceptual-modeling origin (evaluating BWW-based approaches) that merged DOLCE and GFO
+    on the basis of a shared four-category-ontology commitment (individuals/types × substantials/moments).
+    Three different philosophical lineages for a formally similar-looking split, two now confirmed
+    by primary-source quotation rather than editorial paraphrase.'
+  supporting_references:
+  - xwkont:ref:borgo-galton-kutz-2022
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  confidence: high
+  supporting_references_note: '`xwkont:ref:borgo-galton-kutz-2022` (BFO only), `xwkont:ref:dolce-wonderweb-d18`,
+    `xwkont:ref:ufo-2021`'
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: SUMO's Object/Process pair is included as a structural analog only; Niles & Pease
+    (2001) frame SUMO's purpose as interoperability among automated reasoning engines rather
+    than an explicitly philosophically motivated top-level split, in contrast to BFO/DOLCE/UFO's
+    stated theoretical grounding.
+  supporting_references:
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: medium
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: 'The four `ADR-0015` sources use continuant/occurrent-equivalent vocabulary with markedly
+    different terminological fidelity to BFO. YAMATO uses "Continuant"/"Occurrent" directly
+    (the closest match of any source in this crosswalk besides BFO itself). GFO uses "Occurrent"
+    for the same side but "Presential" (not "Continuant") for the other. TUpper and GUM use
+    neither term: TUpper''s `object`/`activity_occurrence` (PSL-derived, engineering-oriented)
+    and GUM''s `SimpleThing`/`Process` (linguistically-oriented) are structural analogs only,
+    in the same sense SUMO''s `Object`/`Process` (`note-003`) already is — a pattern that
+    now recurs across three of the crosswalk''s eight sources rather than being a SUMO-specific
+    exception.'
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:tupper-colore
+  - xwkont:ref:gum-owl
+  confidence: high
+  confidence_annotation: (terminology comparison directly verified against each source's own
+    text); confidence on individual cross-source *mapping* claims is set per-mapping below,
+    not uniformly here
+mapping_assertions:
+- mapping_id: xwkont:mapping:continuant-occurrent:001
+  subject: BFO:continuant
+  relation_category: close-match
+  object: DOLCE:endurant
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Both defined by the same temporal-persistence criterion (wholly present at each
+    time of existence). Not `exact-equivalence-candidate` because the two sources' philosophical
+    framing differs (realist vs. cognitive/linguistic per `note-002`), so full interchangeability
+    across every context is not asserted.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:borgo-galton-kutz-2022
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:002
+  subject: BFO:occurrent
+  relation_category: close-match
+  object: DOLCE:perdurant
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Same rationale as mapping-001, inverse pairing.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:borgo-galton-kutz-2022
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:003
+  subject: BFO:continuant
+  relation_category: close-match
+  object: UFO:endurant
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: UFO continues DOLCE's endurant/perdurant lineage using the same temporal-persistence
+    criterion.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:004
+  subject: BFO:occurrent
+  relation_category: close-match
+  object: UFO:perdurant/event
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Same rationale as mapping-003, inverse pairing.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:005
+  subject: DOLCE:endurant
+  relation_category: exact-equivalence-candidate
+  object: UFO:endurant
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: '**Raised 2026-07-01** from medium: both primary sources are now directly verified
+    and their endurant definitions are near-verbatim ("wholly present... at any time they
+    are present" vs. "individuals that exist in time with all their parts") — UFO''s endurant/perdurant
+    split directly continues DOLCE''s, confirmed rather than merely asserted.'
+  provenance:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:exactMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:006
+  subject: BFO:continuant
+  relation_category: unknown
+  object: SUMO:Object
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: 'Structural analog only: SUMO''s Object sits under a physicality partition, not
+    a temporal-persistence one. Whether SUMO:Object behaves like a continuant/endurant in
+    practice is not confirmed by Niles & Pease (2001) alone.'
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:continuant-occurrent:007
+  subject: BFO:occurrent
+  relation_category: unknown
+  object: SUMO:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Same rationale as mapping-006.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:continuant-occurrent:008
+  subject: BFO:continuant
+  relation_category: close-match
+  object: GFO:Presential
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Both defined by a temporal-presence criterion (BFO: wholly present at each time
+    it exists; GFO: "exists wholly at exactly one time boundary"), but GFO''s Presential is
+    defined over discrete time-boundaries specifically, a narrower formal commitment than
+    BFO''s continuant. Medium rather than high pending a closer read of GFO''s time-boundary/chronoid
+    theory.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:009
+  subject: BFO:occurrent
+  relation_category: close-match
+  object: GFO:Occurrent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Both sources use the identical term "occurrent" with matching temporal-extension
+    criteria (BFO: "unfolds itself in time"; GFO: "have temporal parts... happen in time").
+    Highest-confidence mapping among the four new sources'' correspondences, on par with the
+    BFO/DOLCE/UFO occurrent mappings.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:010
+  subject: BFO:continuant
+  relation_category: close-match
+  object: YAMATO:Continuant(Object)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: YAMATO uses "Continuant" as its own top-level label with an explicitly stated
+    3D/persistence orientation, the closest terminological and conceptual match to BFO of
+    any `ADR-0015` source. Not `exact-equivalence-candidate` because YAMATO explicitly treats
+    continuant and occurrent as mutually dependent rather than either being ontologically
+    prior — a stated philosophical difference from BFO's framing.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:011
+  subject: BFO:occurrent
+  relation_category: close-match
+  object: YAMATO:Occurrent(Process)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Same rationale as mapping-010, inverse pairing. YAMATO additionally distinguishes
+    process (can change) from event (cannot) within occurrent, a finer-grained split than
+    BFO makes explicitly at this level — noted, not resolved, per `uncertainty-003`.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:continuant-occurrent:012
+  subject: BFO:continuant
+  relation_category: unknown
+  object: TUpper:object
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: 'Structural analog only, same rationale as SUMO''s Object mapping (mapping-006):
+    TUpper''s `object` is defined negatively (by exclusion of timepoint/activity/activity-occurrence)
+    rather than by a positive temporal-persistence criterion, so equivalence to BFO''s continuant
+    is not established by the definition text alone.'
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:continuant-occurrent:013
+  subject: BFO:occurrent
+  relation_category: unknown
+  object: TUpper:activity_occurrence
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Same rationale as mapping-012. `activity_occurrence` is tied to a specific `activity`
+    via `occurrence_of`, a PSL-derived structure not obviously equivalent to BFO's broader
+    occurrent (which also covers temporal/spatiotemporal regions).
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:continuant-occurrent:014
+  subject: BFO:continuant
+  relation_category: unknown
+  object: GUM:SimpleThing
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: 'Structural analog only, same rationale as SUMO''s Object mapping (mapping-006):
+    GUM''s SimpleThing/Process split is linguistically motivated (participant vs. verb-realized
+    "goings-on"), not a temporal-persistence criterion.'
+  provenance:
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:continuant-occurrent:015
+  subject: BFO:occurrent
+  relation_category: unknown
+  object: GUM:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Same rationale as mapping-014.
+  provenance:
+  - xwkont:ref:gum-owl
+mapping_assertions_note: Per `ADR-0009`, each mapping records a `predicate_id` (SSSOM/SKOS
+  predicate, or none for XwkOnt-only categories) and a `mapping_justification` (SEMAPV term).
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: uncertainty
+  resolved: true
+  description: 'UFO''s own philosophical/metaphysical grounding for its endurant/perdurant
+    split is now confirmed directly against `xwkont:ref:ufo-2021`: a conceptual-modeling origin
+    (evaluating Bunge-Wand-Weber-based approaches), later merging DOLCE and GFO on the shared
+    basis of a four-category ontology ("the Aristotelian Square").'
+  impact: '`mapping-005` raised from medium to high; UFO''s philosophical-dimension row in
+    Source Definitions now filled with a cited paraphrase.'
+  follow_up: Resolved — no further action needed.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: SUMO's Object/Process pair is not asserted as equivalent to Continuant/Occurrent.
+    SUMO's top-level partition criterion is physicality (`Physical` vs. `Abstract`), not temporal
+    persistence.
+  impact: Low confidence on all SUMO rows in this crosswalk (`mapping-006`, `mapping-007`).
+  follow_up: Read SUMO's current source files directly (not just the 2001 founding paper)
+    for `Process`'s exact temporal semantics before raising confidence.
+- item_id: uncertainty-003
+  uncertainty_type: open-question
+  resolved: false
+  description: This crosswalk does not resolve the Process/Event distinction within Occurrent,
+    already flagged as an unresolved boundary in `docs/releases/core-ontology-release-notes.md`.
+  impact: Scopes this crosswalk to the Continuant/Occurrent level only.
+  follow_up: Create Process and Event concept crosswalks per `TODO.md`.
+- item_id: uncertainty-004
+  uncertainty_type: uncertainty
+  resolved: true
+  description: 'Scope question resolved by `ADR-0015`: GFO, YAMATO, TUpper, and GUM (the other
+    ontologies in `xwkont:ref:borgo-galton-kutz-2022`''s special issue) are now in XwkOnt''s
+    source-ontology scope, alongside the original BFO/DOLCE/SUMO/UFO. The content buildout
+    for this crosswalk (correspondences 009-016, mappings 008-015) is also now complete, directly
+    verified against each new source''s own OWL/CLIF/technical-report text.'
+  impact: This crosswalk now covers all 8 `ADR-0015` sources. The remaining 7 concept crosswalks
+    (`object.md`, `event.md`, `information-artifact.md`, `process.md`, `quality.md`, `relation.md`,
+    `role.md`) still cover only the original 4 — tracked in `TODO.md` as ongoing work.
+  follow_up: This crosswalk's buildout is done. Extend the same pattern to the remaining 7
+    crosswalks in future work, per `TODO.md`'s pacing note (don't attempt all 8 at once without
+    checking with the maintainer, per the precedent set for the scope decision itself).
+  resolved_date: "2026-07-02"
+  resolution_note: resolved 2026-07-02 (scope); content buildout also completed 2026-07-02
+- item_id: uncertainty-005
+  uncertainty_type: open-question
+  resolved: false
+  description: YAMATO's OWL/Hozo files were not fetched (registration-gated download requiring
+    name/organization/email submission — see `xwkont:ref:yamato-mizoguchi-2010`); this crosswalk's
+    YAMATO correspondences (011-012) cite section/quotation locators, not OWL class IRIs,
+    unlike GFO/TUpper/GUM's correspondences (009-010, 013-016). The three new sources' dedicated
+    2022 Applied Ontology papers (YAMATO, TUpper, GUM) were also not accessed — same Cloudflare
+    block that hit `xwkont:ref:borgo-galton-kutz-2022`, confirmed independently for each (HTTP
+    403 on direct fetch).
+  impact: Lower-precision locator for YAMATO than for GFO/TUpper/GUM; the three 2022 papers'
+    comparative framing (e.g., any explicit continuant/occurrent equivalence claims the papers'
+    authors themselves make) is unverified.
+  follow_up: If the maintainer completes YAMATO's registration form manually, fetch and cite
+    the resulting OWL IRIs. Periodically re-check the three Applied Ontology papers in case
+    the Cloudflare block lifts.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified** directly against `bfo-core.ttl`, 2026-07-01'
+- reference_id: xwkont:ref:dolce-wonderweb-d18
+  short_label: 'WonderWeb Deliverable D18: Ontology Library (Masolo et al., 2003)'
+  verification_note: '**verified** directly (manual PDF extraction), 2026-07-01'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly (fetched as plain-text RDF/XML), 2026-07-01; supplies
+    exact class IRIs for `endurant`/`perdurant`'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified** directly (manual PDF extraction), 2026-07-01'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-01'
+- reference_id: xwkont:ref:borgo-galton-kutz-2022
+  short_label: Foundational ontologies in action (Borgo, Galton, Kutz, 2022)
+  verification_note: unverified (full text blocked by publisher access control, not a parsing
+    failure; see reference record's 2026-07-02 access-attempt note); only used for BFO's "realist"
+    characterization
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO), 2024-11-18 release
+  verification_note: '**verified** directly (`gfo.owl`, `modules/gfo-base.owl`), 2026-07-02'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: 'YAMATO: Yet Another More Advanced Top-level Ontology, 2010 technical report
+    (Mizoguchi)'
+  verification_note: '**verified** directly (manual PDF extraction), 2026-07-02; note this
+    is not the 2022 Applied Ontology paper, which was inaccessible (Cloudflare block)'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper (COLORE CLIF/OWL formalization, Grüninger)
+  verification_note: '**verified** directly (`tupper.all.owl`, `tupper.clif`, `TUpper-Terms.html`),
+    2026-07-02; ISO/IEC 21838-4:2023 standard text and the 2022 Applied Ontology paper not
+    accessed'
+- reference_id: xwkont:ref:gum-owl
+  short_label: 'GUM: The Generalized Upper Model, OWL 3.1 (Bateman)'
+  verification_note: '**verified** directly (`GUM-31.owl`, fetched via Internet Archive after
+    confirming the canonical `purl.org/net/gum2` host chain is dead), 2026-07-02; the 2022
+    Applied Ontology paper not accessed'
+- reference_id: ADR-0015
+  short_label: Expand Source-Ontology Scope to Include GFO, YAMATO, TUpper, and GUM
+  verification_note: resolves `uncertainty-004`; content buildout for the four new sources
+    completed in this crosswalk 2026-07-02 (first of the 8 crosswalks to receive it)
+review_history:
+- review_date: "2026-07-01"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:continuant-occurrent:2026-07-01:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved (compares source ontologies, introduces nothing new); all four source-ontology
+    claims cite directly-verified primary sources; mapping categories/confidence values are
+    all valid per `crosswalk-methodology.md` (as extended by `ADR-0013`); no `xwkont-core:mapsTo`
+    or OWL-modeling-layer concerns (this artifact doesn''t touch `core.ttl`); every `xwkont:ref:*`
+    citation resolves to an existing reference record. One known gap — `xwkont:ref:borgo-galton-kutz-2022`
+    remains unverified, used only for BFO''s "realist" philosophical characterization — is
+    explicitly disclosed in Provenance/Future Work rather than glossed over, consistent with
+    uncertainty being first-class content per `docs/INFORMATION_ARCHITECTURE.md` §7, not a
+    defect blocking review. This was a self-review (the same work performed both the verification
+    and this review pass), not independent third-party review; noted here rather than implied
+    otherwise.'
+- review_date: "2026-07-02"
+  outcome: Editorial status reverted `reviewed` → `candidate`
+  review_notes: The `ADR-0015` buildout (GFO/YAMATO/TUpper/GUM correspondences 009-016, mappings
+    008-015, four new reference records) roughly doubled this crosswalk's Source Ontology
+    Correspondences and Mapping Assertions content. Per `docs/INFORMATION_ARCHITECTURE.md`'s
+    status semantics ("reviewed" = passed review for its stated scope), a scope-expanding
+    content addition of this size should not silently retain the prior review's status — the
+    new content has not itself been reviewed. Awaiting a maintainer review pass before advancing
+    back to `reviewed`.
+- review_date: "2026-07-02"
+  outcome: Passed — advanced `candidate` → `reviewed`
+  review_id: xwkont:review:continuant-occurrent:2026-07-02:02
+  review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
+    Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks. Checked:
+    scope preserved (no new terminology or structure introduced beyond the already-decided
+    `ADR-0015` scope expansion); every `xwkont:ref:*` citation resolves to a real reference
+    record; correspondence/mapping/note/uncertainty ID numbering is sequential with no gaps
+    or duplicates; every relation-category and confidence value falls within the vocabularies
+    `docs/methodology/crosswalk-methodology.md`/`ADR-0013` define, and every `medium-high`/`low-medium`
+    usage states a sourcing-driven reason in its rationale, not a general hedge; spot-checked
+    primary-source quotations (GFO''s `Occurrent`/`Presential` classes, YAMATO''s continuant/occurrent
+    passage) against the fetched artifacts and found no transcription errors. Self-review
+    performed at the maintainer''s explicit request, not independent third-party review.'
+future_work:
+- ~~Read `xwkont:ref:bfo-2020` in full primary-source detail~~ — **done 2026-07-01**; confirmed
+  the earlier paraphrases with exact quotations (BFO_0000002 continuant, BFO_0000003 occurrent).
+- ~~Read `xwkont:ref:dolce-wonderweb-d18` and `xwkont:ref:ufo-2021` in full primary-source
+  detail~~ — **done 2026-07-01**, reusing extractions from `object.md`/`role.md`/`process.md`/`relation.md`;
+  endurant/perdurant definitions confirmed for both, and UFO's philosophical grounding resolved
+  (`uncertainty-001`).
+- Confirm exact IRIs/identifiers for each source term (currently `unknown` in Source Ontology
+  Correspondences) — BFO IRIs now known (BFO_0000002, BFO_0000003).
+- ~~Verify SUMO's current source files directly for `Process`'s exact temporal semantics~~
+  — **done 2026-07-01**; see `process.md` for the verified quotation, now cross-referenced
+  here.
+- ~~Find or confirm a citation for UFO's philosophical grounding~~ — **done 2026-07-01**,
+  `uncertainty-001` resolved.
+- Find a primary or independently-verifiable source for BFO's "realist framework grounded
+  in scientific practice" characterization, currently sourced only to the unverified `xwkont:ref:borgo-galton-kutz-2022`
+  editorial.
+- Create Process and Event concept crosswalks, building on this one — both now exist (`process.md`,
+  `event.md`).
+- ~~Revisit whether GFO/YAMATO/TUpper/GUM should be added to XwkOnt's source-ontology scope~~
+  — **done 2026-07-02**, `ADR-0015` expanded scope to all 8; this crosswalk's content buildout
+  for the four new sources is also now complete.
+- Obtain a maintainer review pass for the 2026-07-02 buildout, to advance editorial status
+  back from `candidate` to `reviewed`.
+- Fetch YAMATO's OWL/Hozo files if the maintainer completes the `hozo.jp` registration form,
+  to replace `uncertainty-005`'s section/quotation locators with OWL class IRIs.
+- Periodically re-check the three blocked 2022 Applied Ontology papers (YAMATO, TUpper, GUM)
+  in case the Cloudflare/paywall block lifts.
+- Extend this crosswalk's GFO/YAMATO/TUpper/GUM buildout pattern to the remaining 7 concept
+  crosswalks (`object.md`, `event.md`, `information-artifact.md`, `process.md`, `quality.md`,
+  `relation.md`, `role.md`), per `TODO.md` — ongoing work, pace with the maintainer rather
+  than attempting all at once.

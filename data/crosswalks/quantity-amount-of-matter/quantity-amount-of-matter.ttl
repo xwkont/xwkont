@@ -1,0 +1,81 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:001> a sssom:Mapping ;
+    rdfs:comment "Near-identical worked examples (mass-noun stuff/puddle-pile examples) and near-identical unity criterion (mereological invariance / topological self-connectedness); both are endurant/substantial-side categories. The closest structural pairing in this crosswalk."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Quantity ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Amount_of_matter .
+
+<https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:002> a sssom:Mapping ;
+    rdfs:comment "Both are physical/concrete, endurant-equivalent (Presential) categories with parallel naming (\"amount of matter\"/\"amount of substrate\"), but GFO's class has no prose definition to compare against DOLCE's detailed gloss — not `high` for that reason."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Amount_of_substrate ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Amount_of_matter .
+
+<https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:003> a sssom:Mapping ;
+    rdfs:comment "Both endurant/substantial-side, physical-stuff categories; same caveat as `mapping-002` about GFO's missing prose definition."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Amount_of_substrate ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:UFO-Quantity .
+
+<https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:004> a sssom:Mapping ;
+    rdfs:comment "Same subject-matter label but a genuine top-level classification divergence: DOLCE files it as a physical-endurant; SUMO files it as Abstract, defined by measurement/specification rather than physical stuff-hood (SUMO's own \"need not be material\" clause). Not `close-match` because the classification difference is structural, per `note-001`."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Quantity ;
+    sssom:subject_id xwkont-source-term:DOLCE-Amount_of_matter .
+
+<https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:005> a sssom:Mapping ;
+    rdfs:comment "SUMO's \"how many/how much\" measurement-centric framing is closer in kind to YAMATO's own unit-independent, value-like \"true quantity\" than either is to DOLCE's/UFO's mass-noun-stuff sense — but SUMO's Quantity still covers Number and PhysicalQuantity broadly, while YAMATO's is embedded in a specific quality/quale theory, so `related`, not `close-match`."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Quantity ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:SUMO-Quantity .
+
+<https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:006> a sssom:Mapping ;
+    rdfs:comment "Recorded explicitly as a non-equivalence, not a correspondence, despite the identical English label — see `note-002`. Naive name-matching would incorrectly treat these as the same concept."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Amount_of_matter ;
+    sssom:subject_id xwkont-source-term:YAMATO-Quantity .
+
+<https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:007> a sssom:Mapping ;
+    rdfs:comment "Recorded explicitly as a type mismatch (relation vs. entity class), not a correspondence — see `note-003`."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Quantity ;
+    sssom:subject_id xwkont-source-term:xwkont-core-Quantity_candidate .
+
+xwkont-source-term:GUM-Quantity rdfs:label "Quantity"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:xwkont-core-Quantity_candidate rdfs:label "Quantity (candidate)"@en ;
+    dcterms:source "xwkont-core" .
+
+xwkont-source-term:GFO-Amount_of_substrate rdfs:label "Amount_of_substrate"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:SUMO-Quantity rdfs:label "Quantity"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:UFO-Quantity rdfs:label "Quantity"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:YAMATO-Quantity rdfs:label "Quantity"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:DOLCE-Amount_of_matter rdfs:label "Amount-of-matter"@en ;
+    dcterms:source "DOLCE" .
+

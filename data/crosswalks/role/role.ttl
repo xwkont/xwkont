@@ -1,0 +1,108 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:role:001> a sssom:Mapping ;
+    rdfs:comment "Both are anti-rigid, foundation/dependence-grounded, relationally-conditioned types; UFO explicitly continues this OntoClean-adjacent lineage. Confidence raised from medium: Masolo et al. (2004) and the UFO 2021 paper are now both independently fetched and directly verified (2026-07-01), not just reported via `xwkont:ref:dolce-borgo-2022`. Not raised to high because the two frameworks still differ in formal apparatus (DOLCE-driven: `CF`-classification of a `Concept`; UFO: anti-rigid sortal specializing a Kind) even though the informal characterization matches closely."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Role ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-driven-Role_Masolo_et_al_2004_not_core_DOLCE .
+
+<https://w3id.org/xwkont/id#mapping:role:002> a sssom:Mapping ;
+    rdfs:comment "Both are dependent, context-grounded, non-defining characterizations of a bearer. Not `exact-equivalence-candidate` because BFO's structural definition and the anti-rigidity/foundation meta-property definition are formally different apparatus (`note-002`), and the object here is extension literature, not core DOLCE (now independently verified against `xwkont:ref:masolo-vieu-2004`, though this does not change the formal-apparatus divergence)."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-driven-Role ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Role .
+
+<https://w3id.org/xwkont/id#mapping:role:003> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-002."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Role ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Role .
+
+<https://w3id.org/xwkont/id#mapping:role:004> a sssom:Mapping ;
+    rdfs:comment "Same confirmed metaphysical divergence as `quality.md` mapping-004: BFO's Role is a realizable entity dependent on a bearer; SUMO's SocialRole is an abstract entity."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-SocialRole ;
+    sssom:subject_id xwkont-source-term:BFO-Role .
+
+<https://w3id.org/xwkont/id#mapping:role:005> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-004."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-SocialRole ;
+    sssom:subject_id xwkont-source-term:DOLCE-driven-Role .
+
+<https://w3id.org/xwkont/id#mapping:role:006> a sssom:Mapping ;
+    rdfs:comment "Both are `Dependent` roles specifically grounded in a Relator/relator-like mediator (`role_of` some `Relator` in GFO; UFO's Role held \"in the scope of\" a Relator), directly paralleling `relation.md`'s GFO/UFO Relator convergence at the Role-specific level (`note-005`). Not `high` because GFO's `Relational_role` carries only structural axioms, no prose theory to compare against UFO's elaborated account."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Relational_role ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:UFO-Role_Relator .
+
+<https://w3id.org/xwkont/id#mapping:role:007> a sssom:Mapping ;
+    rdfs:comment "A confirmed metaphysical divergence within the trope/dependent-particular camp itself, not just against SUMO: BFO's Role is a dependent Realizable Entity, while GFO's `Social_role` is explicitly `Independent` (`owl:disjointWith` `Dependent`) — the only source in this crosswalk to treat any role subtype as independent of a bearer (`note-005`)."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Social_role ;
+    sssom:subject_id xwkont-source-term:BFO-Role .
+
+<https://w3id.org/xwkont/id#mapping:role:008> a sssom:Mapping ;
+    rdfs:comment "Both are context-dependent, non-abstract role treatments illustrated with directly comparable examples (BFO: \"student role... university\"; YAMATO: \"teacher role... school\") (`note-006`). Not `high` because YAMATO's own text discloses its role theory is not fully elaborated in this paper — deferred to Mizoguchi (2007), not independently fetched."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Role ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Role .
+
+<https://w3id.org/xwkont/id#mapping:role:010> a sssom:Mapping ;
+    rdfs:comment "GUM's `RolePlaying` is a relation type (subclass of `Symbolization`), not an object/entity type — the same pattern already found for GUM's Information-Artifact and Relation analogs (`note-007`). Not confidently placed in any existing category."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-RolePlaying ;
+    sssom:subject_id xwkont-source-term:xwkont-core-Role .
+
+xwkont-source-term:DOLCE-driven-Role_Masolo_et_al_2004_not_core_DOLCE rdfs:label "Role (Masolo et al. 2004, not core DOLCE)"@en ;
+    dcterms:source "DOLCE-driven" .
+
+xwkont-source-term:GFO-Relational_role rdfs:label "Relational_role"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GFO-Social_role rdfs:label "Social_role"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GUM-RolePlaying rdfs:label "RolePlaying"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:UFO-Role_Relator rdfs:label "Role (+ Relator)"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:YAMATO-Role rdfs:label "Role"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:xwkont-core-Role rdfs:label "Role"@en ;
+    dcterms:source "xwkont-core" .
+
+xwkont-source-term:DOLCE-driven-Role rdfs:label "Role"@en ;
+    dcterms:source "DOLCE-driven" .
+
+xwkont-source-term:SUMO-SocialRole rdfs:label "SocialRole"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:UFO-Role rdfs:label "Role"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:BFO-Role rdfs:label "Role"@en ;
+    dcterms:source "BFO" .
+

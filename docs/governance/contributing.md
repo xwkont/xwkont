@@ -18,6 +18,15 @@ Contributors should read:
 4. `docs/governance/governance.md` for decision types.
 5. `docs/governance/change-management.md` for compatibility expectations.
 
+## Picking a Candidate Concept to Crosswalk
+
+`docs/crosswalks/candidate-concepts.md` is the public backlog: every class across all 8 in-scope source ontologies, triaged into candidate buckets. To contribute a new crosswalk:
+
+1. Pick a bucket that isn't already one of the `reviewed`/`draft` concepts in `docs/crosswalks/concepts/`.
+2. Confirm it meets `ADR-0018`'s admission bar (a genuine, source-evidenced recurring pattern — see the matrix in `docs/evaluations/foundational-ontology-concept-terms-matrix.md` for the ranking method).
+3. Follow the same selection/sourcing/scoping/review process every existing concept went through — start from `TEMPLATE.md` in `docs/crosswalks/concepts/`, and use `docs/methodology/crosswalk-runbook.md` for the step-by-step procedure.
+4. A row tagged `Ungrouped` in the candidate backlog is not yet triaged into any bucket at all — proposing one as a new concept, with source-count evidence, is itself a useful contribution, not just picking from an existing bucket.
+
 ## Contribution Categories
 
 | Category | Examples | Minimum expectation |

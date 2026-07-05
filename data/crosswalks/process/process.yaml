@@ -1,0 +1,687 @@
+local_identifier: xwkont:concept:process
+slug: process
+title: Process
+editorial_status: reviewed
+created: "2026-07-01"
+modified: "2026-07-02"
+scope_note: 'This crosswalk compares BFO''s `Process`, DOLCE''s `Process` (a subtype of `Stative`),
+  UFO''s informal "process" notion, and SUMO''s `Process` (sibling of `Object` under `Physical`),
+  completing the pair started with `docs/crosswalks/concepts/event.md` and directly resolving
+  that crosswalk''s `uncertainty-004`.
+
+
+
+  **The asymmetry runs in the opposite direction from `event.md`, and just as cleanly.** There,
+  BFO and SUMO lacked a top-level "Event" category while DOLCE and UFO had one. Here, it''s
+  the reverse: BFO and SUMO both treat `Process` as a genuine top-level formal category, while
+  DOLCE nests `Process` one level down as a subtype of `Stative` (alongside `State`), and
+  **UFO has no distinct formal `Process` class at all** — "process" appears in UFO/UFO-B literature
+  only informally, for "the life of an endurant" (the sum of events that manifest an endurant''s
+  dispositions), with `Event` serving as UFO''s actual primary perdurant category. Read together,
+  `event.md` and this crosswalk show that each of the four sources picks a different primary
+  term for the perdurant-with-duration territory: BFO picks `Process`, SUMO picks `Process`,
+  DOLCE keeps both `Process` and `Event` as siblings one level down, and UFO picks `Event`
+  alone.
+
+
+
+  **Confirmation (2026-07-01), following direct primary-source verification:** unlike `object.md`''s
+  correction (where "UFO has no `Object` class" turned out to be wrong), this crosswalk''s
+  claim about `Process` is confirmed correct after fetching and manually extracting text from
+  UFO''s actual 2021 Applied Ontology paper. The primary source is explicit that "process"
+  is a deliberately informal label, not a distinct formal class: "there is a special perdurant
+  (which we may call a process, in a very particular sense) that is the life of an endurant."
+  The paper''s own worked example reinforces this: its "Jogging Process" case (the maximal
+  sum of "Jogging Event"s manifesting a jogger''s disposition) is formalized in the axioms
+  as `EventType(JoggingProcess)` — i.e., `JoggingProcess` is typed *under* `EventType`, not
+  under any separate `ProcessType`. No axiom or definition anywhere in the paper introduces
+  a class literally named `Process`. See Source Definitions and Uncertainty for the verified
+  picture.
+
+
+
+  Exclusions: this crosswalk does not re-litigate Event (see `event.md`) and does not attempt
+  UFO-B''s disposition/manifestation theory in full.
+
+
+
+  **Update (2026-07-02), ADR-0015 buildout:** extended to GFO, YAMATO, TUpper, and GUM. Unlike
+  UFO, all four new sources positively name a Process-equivalent term, so the crosswalk''s
+  central "some sources lack a distinct Process category" asymmetry is a BFO/DOLCE/SUMO/UFO-specific
+  finding, not one that recurs among the newly added sources. GFO''s `Process` is a genuine
+  top-level formal category (subclass of `Occurrent`, explicitly `owl:disjointWith` `Change`
+  and `History`) with a positive criterion ("directly in time," not reducible to a collection
+  of time boundaries) — the closest structural match to BFO''s Process of any new source.
+  YAMATO''s 2010 technical report does not subdivide its `Occurrent` class further in the
+  passages reviewed; "process" there is essentially synonymous with the top-level Occurrent(Process)
+  label already used in `continuant-occurrent.md`, not a distinct finer-grained class the
+  way GFO/BFO have one. TUpper''s `activity` (the repeatable type) is a different correspondence
+  than `event.md`''s `activity_occurrence` (a token occurrence of that type) — a type/token
+  pair without a clean BFO:Process analog, since BFO''s Process is itself a particular, not
+  a type. GUM''s own class is literally named `Process`, the closest terminological match
+  of any new source, but its criterion (verb-realizability in systemic-functional grammar)
+  is linguistic rather than temporal/metaphysical.
+
+
+
+  **Epistemic note:** BFO, DOLCE, UFO, and SUMO content is all now verified directly against
+  primary sources (`bfo-core.ttl`, WonderWeb D18, the 2021 Applied Ontology paper, and `Merge.kif`,
+  respectively). All four extractions reuse the same manual `zlib`-stream-decompression technique,
+  since no PDF-text-extraction tool is otherwise available in this environment.'
+labels:
+- role: XwkOnt working label
+  label: Process
+  label_source: XwkOnt
+  language: en
+  entry_notes: Matches `xwkont-core:Process` (`rdfs:subClassOf xwkont-core:Occurrent`) in
+    `data/ontology/core.ttl`.
+- role: Source term
+  label: Process
+  label_source: BFO
+  language: en
+  entry_notes: Sibling of Process Boundary under Occurrent (see `event.md`).
+- role: Source term
+  label: Process
+  label_source: DOLCE
+  language: en
+  entry_notes: Subtype of `Stative`, sibling of `State` — not a direct sibling of `Event`.
+- role: Source term
+  label: '*(none — see "life of an endurant")*'
+  label_source: UFO
+  language: en
+  entry_notes: No distinct formal Process class; confirmed 2026-07-01 by direct primary-source
+    reading — see Scope Note.
+- role: Source term
+  label: Process
+  label_source: SUMO
+  language: en
+  entry_notes: Sibling of `Object` under `Physical`.
+- role: Source term
+  label: Process
+  label_source: GFO
+  language: en
+  entry_notes: Subclass of `Occurrent`; `owl:disjointWith` `Change` and `History`.
+- role: Source term
+  label: Occurrent(Process)
+  label_source: YAMATO
+  language: en
+  entry_notes: Same top-level term used for Occurrent generally in `continuant-occurrent.md`;
+    no finer-grained Process subclass found in the fetched passages.
+- role: Source term
+  label: activity
+  label_source: TUpper
+  language: en
+  entry_notes: The repeatable type, distinct from `activity_occurrence` (used in `event.md`
+    for a token occurrence).
+- role: Source term
+  label: Process
+  label_source: GUM
+  language: en
+  entry_notes: Same class as used in `event.md`'s correspondence row 010; the literal label
+    "Process" is the closest terminological match to this crosswalk's subject of any new source.
+source_definitions:
+- source: BFO
+  term_or_identifier: Process (BFO_0000015)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(Elucidation) p is a process means p is an occurrent that has some temporal proper
+    part and for some time t, p has some material entity as participant." Examples: "An act
+    of selling; the life of an organism; a process of sleeping; a process of cell-division;
+    a beating of the heart; a process of meiosis; the taxiing of an aircraft; the programming
+    of a computer."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified**: `bfo-core.ttl`, class BFO_0000015, fetched and read directly 2026-07-01'
+- source: DOLCE
+  term_or_identifier: Process
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An occurrence-type is stative [or] eventive according to whether it holds of the
+    mereological sum of two of its instances, i.e. if it is cumulative or not... Within stative
+    occurrences, we distinguish between states [and] processes according to homeomericity:
+    sitting is classified as a state but running is classified as a process, since there are
+    (very short) temporal parts of a running that are not themselves runnings."'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified**: WonderWeb D18 PDF, manually extracted 2026-07-01'
+  entry_notes: Confirms the earlier paraphrase closely, now with the primary source's exact
+    cumulativity/homeomericity criteria and its own worked example (sitting vs. running).
+- source: DOLCE
+  term_or_identifier: Process vs. State, Vendler parallel
+  dimension: philosophical
+  source_claim_type: non-equivalence
+  text: 'DOLCE''s four-way perdurant split (State, Process, Accomplishment, Achievement) maps
+    cleanly onto Vendler''s (1957) four Aktionsart classes (state, activity, accomplishment,
+    achievement) — DOLCE''s Process corresponding to Vendler''s activity. **Checked and confirmed
+    absent (2026-07-01)**: D18''s own 90-item bibliography, read directly, contains no citation
+    to Vendler. This is this crosswalk''s own external observation, not a connection Masolo
+    et al. (2003) draw themselves — same finding as `event.md`''s `note-003`/`uncertainty-003`.'
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: '**verified absence**: D18''s reference list checked directly, 2026-07-01'
+- source: UFO
+  term_or_identifier: '"process" (informal, not a distinct class)'
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"So, there is a special perdurant (which we may call a process, in a very particular
+    sense) that is the life of an endurant, i.e., the sum of everything that is a manifestation
+    of the dispositions inhering in that... perdurant."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: The author's own parenthetical ("which we may call a process, in a very particular
+    sense") confirms this is a deliberately informal label, not a distinct formal category.
+- source: UFO
+  term_or_identifier: '"Jogging Process" (worked example)'
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'UFO-B''s worked example: "we have Jogging Event s, which are direct manifestations
+    of the dispositions constituting a [Jogger], and Jogging Process es, which are constituted...
+    At each situation, we have a particular type of maximal Jogging Process (termed the life
+    of a [Jogger]) that is constituted by (exactly) the sum of Jogging Event s that are manifestations
+    of that [Jogger]." Formalized as `EventType(JoggingProcess)` and `EventType(JoggingEvent)`
+    — both typed under `EventType`, with no separate `ProcessType`.'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: Applied Ontology 2021 PDF, manually extracted 2026-07-01'
+  entry_notes: 'Resolves `uncertainty-001`: even in UFO''s own most detailed "process" example,
+    the formal axiomatization classifies `JoggingProcess` under `EventType`, confirming `Process`
+    is not a distinct top-level formal category in UFO.'
+- source: SUMO
+  term_or_identifier: Process
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(subclass Process Physical)... The class of things that happen and have temporal
+    parts or stages. Examples include extended events like a football match or a race, actions
+    like Pursuing and Reading, and biological processes. The formal definition is: anything
+    that occurs in time but is not an Object. Note that a Process may have participants ''inside''
+    it which are Objects, such as the players in a football match."'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: `Merge.kif`, `documentation Process EnglishLanguage`, fetched and
+    read directly 2026-07-01'
+  entry_notes: Resolves this crosswalk's original `uncertainty-003` (no specific defining
+    criterion found) — SUMO's Process is formally defined by exclusion from Object, a genuinely
+    different criterion from BFO's temporal-proper-part-and-participant test.
+- source: GFO
+  term_or_identifier: Process
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Processes are a special kind of occurrent. Processes are directly in time, they
+    have characteristics which cannot be captured by a collection of time boundaries." Subclass
+    of `Occurrent`; `owl:disjointWith` `Change`, `owl:disjointWith` `History`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Process`, fetched and read directly
+    2026-07-02'
+  entry_notes: GFO's own text draws the same "not reducible to time-boundaries" criterion
+    that distinguishes it from `Change`'s instantaneous case (see `event.md`'s GFO content)
+    — a positive criterion, unlike DOLCE's or SUMO's which are exclusion/cumulativity-based.
+- source: YAMATO
+  term_or_identifier: Occurrent(Process)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"both object(continuant) and process (occurrent) exist with equal importance in a
+    mutually-dependent manner"; "YAMATO is based on a solid theory of objects, processes and
+    events, and it deals with them of equal importance (Galton 2009)."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: `YAMATO101216.pdf`, Section 2.1, extracted 2026-07-02 (same passage
+    as `continuant-occurrent.md`''s and `event.md`''s YAMATO content)'
+  entry_notes: No finer-grained OWL class distinguishing "process-in-general" from the top-level
+    Occurrent label was found in the fetched passages — "process" and "occurrent" are used
+    near-interchangeably at this level of the report.
+- source: TUpper
+  term_or_identifier: activity
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"(activity a) is TRUE in an interpretation of TUpper if and only if a is a member
+    of the class of activities in the universe of discourse of the interpretation."'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified**: `TUpper-Terms.html`, term `activity`, fetched and read directly
+    2026-07-02'
+  entry_notes: A minimal, circular-looking informal semantics (typical of PSL's axiomatic
+    style, where the substantive content lives in the CLIF axioms, not the English gloss)
+    — `activity` is the repeatable type of which `activity_occurrence` (used in `event.md`)
+    is a token occurrence.
+- source: GUM
+  term_or_identifier: Process
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A Process is the linguistic construal of ''goings-on'' or events. Processes are
+    similar to Configurations, but factor out Participants, Circumstances, and other elements.
+    As such, entities classified under Process can be expressed as verbs and are frequently
+    the main verb in a clause."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `Process`, fetched and read directly 2026-07-02
+    (same class as `event.md`''s correspondence row 010)'
+  entry_notes: The only new source whose class is literally named "Process" — the strongest
+    terminological match of the four, though the underlying criterion (verb-realizability)
+    is linguistic, not temporal/metaphysical.
+correspondences:
+- correspondence_id: xwkont:correspondence:process:001
+  source_ontology: BFO
+  source_term: Process
+  source_identifier_or_iri: BFO_0000015
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Direct, top-level formal analog to XwkOnt's `xwkont-core:Process`.
+- correspondence_id: xwkont:correspondence:process:002
+  source_ontology: DOLCE
+  source_term: Process
+  source_identifier_or_iri: '`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#process` (confirmed
+    directly, 2026-07-01)'
+  source_version: WonderWeb D18, 2003 (directly verified 2026-07-01)
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Closest DOLCE analog, though nested one level down under `Stative`.
+- correspondence_id: xwkont:correspondence:process:003
+  source_ontology: UFO
+  source_term: '"life of an endurant" (informal)'
+  source_identifier_or_iri: not applicable — UFO's 2021 paper has no IRI scheme of its own,
+    and this is explicitly an informal notion rather than a formal class; see `continuant-occurrent.md`'s
+    correspondence rows 005/006 for the gUFO caveat
+  source_version: Applied Ontology, 2021 (UFO-B literature)
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: Included as an exploratory analog despite not being a distinct UFO
+    class; confirmed 2026-07-01 by direct primary-source reading — see Scope Note and Uncertainty.
+- correspondence_id: xwkont:correspondence:process:004
+  source_ontology: SUMO
+  source_term: Process
+  source_identifier_or_iri: '`Process` (SUMO/SUO-KIF has no separate opaque identifier scheme
+    — the term name itself is the identifier)'
+  source_version: 2001 (Niles & Pease)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Direct, top-level formal analog.
+- correspondence_id: xwkont:correspondence:process:005
+  source_ontology: GFO
+  source_term: Process
+  source_identifier_or_iri: https://w3id.org/gfo/base/Process
+  source_version: GFO 2024-11-18 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Direct, top-level formal analog with a positive temporal-extension
+    criterion; closest structural match to BFO of any new source.
+- correspondence_id: xwkont:correspondence:process:006
+  source_ontology: YAMATO
+  source_term: Occurrent(Process)
+  source_identifier_or_iri: not applicable — registration-gated OWL/Hozo download not fetched;
+    cited by quotation, same as `continuant-occurrent.md`'s correspondence row and `event.md`'s
+    row 008
+  source_version: 2010 technical report (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Reuses the same top-level Occurrent(Process) label already established
+    in `continuant-occurrent.md`; no more granular Process-specific class found.
+- correspondence_id: xwkont:correspondence:process:007
+  source_ontology: TUpper
+  source_term: activity
+  source_identifier_or_iri: not applicable — PSL/COLORE CLIF has no opaque identifier scheme;
+    term name is the identifier
+  source_version: COLORE formalization (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: Included as an exploratory structural analog despite the type/token
+    mismatch with BFO's particular-denoting Process.
+- correspondence_id: xwkont:correspondence:process:008
+  source_ontology: GUM
+  source_term: Process
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process
+  source_version: GUM 3.1 (directly verified 2026-07-02)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Same class as `event.md`'s correspondence row 010; the only new source
+    with a class literally named "Process."
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: BFO and SUMO both treat `Process` as a genuine top-level formal category (siblings
+    of Process Boundary and Object, respectively). DOLCE nests `Process` one level down as
+    a `Stative` subtype. UFO has no distinct `Process` class at all, using `Event` as its
+    general perdurant category instead — confirmed 2026-07-01 by direct primary-source reading,
+    including UFO's own worked "Jogging Process" example, which is formally typed under `EventType`
+    rather than any separate `ProcessType`. This is the mirror image of `event.md`'s finding
+    (there, BFO/SUMO lacked "Event"; here, UFO lacks "Process") — each source picks a different
+    primary term for the same conceptual territory.
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: 'UFO''s 2021 paper uses "Jogging Process" as a named, recurring term across its worked
+    example (contrasted with "Jogging Event"), which could read as a distinct formal category
+    on a casual pass. Close reading shows this is not the case: the paper explicitly flags
+    "process" as an informal label ("which we may call a process, in a very particular sense"),
+    and the accompanying axioms type the example instance as `EventType(JoggingProcess)`,
+    not any separate `ProcessType`. The term names a *pattern* (a maximal cumulative sum of
+    manifestation events) applied within `Event`, not a new top-level class.'
+  supporting_references:
+  - xwkont:ref:ufo-2021
+  confidence: high
+- note_id: note-002
+  dimension: philosophical
+  claim_type: inference
+  note: DOLCE's four-way perdurant classification (State, Process, Accomplishment, Achievement)
+    parallels Vendler's (1957) four-way linguistic Aktionsart classification exactly, one
+    category per category. Direct reading of D18's own 90-item bibliography confirms **no
+    citation to Vendler exists in the primary source** — this remains this crosswalk's own
+    external observation, not something DOLCE's authors themselves draw. Same finding as `event.md`'s
+    `note-003`.
+  supporting_references:
+  - xwkont:ref:dolce-wonderweb-d18
+  confidence: low
+  claim_type_annotation: checked and unconfirmed, 2026-07-01
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: Unlike UFO, all four `ADR-0015` sources positively name a Process-equivalent term
+    — this crosswalk's central "no distinct Process class" finding does not recur among the
+    new sources. GFO's `Process` is the closest structural match to BFO (a genuine `Occurrent`
+    subclass with a positive, non-boundary-reducible criterion). GUM's is the closest terminological
+    match (a class literally named "Process"), though grounded in verb-realizability rather
+    than temporal extension. YAMATO does not subdivide its top-level Occurrent(Process) label
+    further in the passages reviewed, so its "process" content here largely restates `continuant-occurrent.md`'s
+    existing YAMATO finding rather than adding a new one. TUpper's `activity` (type) is a
+    different correspondence from `event.md`'s `activity_occurrence` (token) — a type/token
+    pair with no single clean analog to BFO's particular-denoting Process.
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:tupper-colore
+  - xwkont:ref:gum-owl
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:process:001
+  subject: BFO:Process
+  relation_category: close-match
+  object: SUMO:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: 'Both are genuine top-level formal siblings in their respective hierarchies,
+    both denoting physical activity/happening. Not `exact-equivalence-candidate` because their
+    defining criteria differ (BFO: temporal-parts-and-participant-based; SUMO: physicality-partition-based,
+    per `continuant-occurrent.md`).'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:process:002
+  subject: BFO:Process
+  relation_category: close-match
+  object: DOLCE:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: DOLCE's Process is the closest analog but sits one level down in DOLCE's hierarchy
+    (under Stative), unlike BFO's direct top-level placement.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-wonderweb-d18
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:process:003
+  subject: DOLCE:Process
+  relation_category: close-match
+  object: SUMO:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: Same rationale as mapping-001/002 combined.
+  provenance:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:process:004
+  subject: BFO:Process
+  relation_category: unknown
+  object: UFO:"life of an endurant"
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: UFO has no distinct Process class (confirmed 2026-07-01 by direct primary-source
+    reading); the informal "life of an endurant" notion is a different kind of thing (a sum
+    of manifestation events tied to a specific endurant) than BFO's general Process category.
+    Confidence raised from low to low-medium because the non-equivalence itself is now directly
+    confirmed rather than inferred from secondary sources — the mapping remains `unknown`/non-equivalent
+    either way.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:ufo-2021
+- mapping_id: xwkont:mapping:process:005
+  subject: BFO:Process
+  relation_category: close-match
+  object: GFO:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Both are genuine, positively-defined top-level-ish formal categories under their
+    respective occurrent branches, both explicitly grounded in temporal extension rather than
+    exclusion or cumulativity. Not `exact-equivalence-candidate` because BFO's criterion (temporal-proper-part-and-participant)
+    and GFO's (not reducible to a collection of time-boundaries) are formally different tests.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:process:006
+  subject: GFO:Process
+  relation_category: close-match
+  object: SUMO:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Same rationale pattern as `mapping-001`/`mapping-003` (BFO/SUMO, DOLCE/SUMO):
+    both top-level-ish formal Process categories, different defining criteria (GFO: positive/temporal;
+    SUMO: exclusion-from-Object).'
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:process:007
+  subject: GFO:Process
+  relation_category: close-match
+  object: DOLCE:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Same rationale pattern as `mapping-002`: DOLCE''s Process sits one level down
+    under `Stative`, GFO''s sits directly under `Occurrent`, but both use the same term for
+    the same conceptual territory.'
+  provenance:
+  - xwkont:ref:gfo
+  - xwkont:ref:dolce-wonderweb-d18
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:process:008
+  subject: BFO:Process
+  relation_category: close-match
+  object: YAMATO:Occurrent(Process)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Restates `continuant-occurrent.md`''s mapping-011 at this crosswalk''s finer
+    grain: YAMATO''s report does not distinguish a Process-specific class from its top-level
+    Occurrent(Process) label, so this mapping is the same underlying correspondence, not new
+    evidence at a finer level of detail.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:process:009
+  subject: BFO:Process
+  relation_category: unknown
+  object: TUpper:activity
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: 'Structural analog only: `activity` is a repeatable type, while BFO''s Process
+    denotes particulars — a type/token mismatch, not a category-definition mismatch (contrast
+    `mapping-005`/`006`/`007`, which compare like-for-like particular-denoting categories).
+    Consistent with TUpper''s `unknown`/low precedent throughout this buildout.'
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:process:010
+  subject: BFO:Process
+  relation_category: close-match
+  object: GUM:Process
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: The only new source with an identically-named class ("Process"), but GUM's criterion
+    is linguistic (verb-realizability in systemic-functional grammar) rather than temporal/metaphysical
+    — a terminological match without a matching definitional criterion, so capped at medium
+    despite the label match.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gum-owl
+  predicate_id: skos:closeMatch
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: non-equivalence
+  resolved: true
+  description: 'UFO has no distinct formal `Process` class; its informal "life of an endurant"
+    notion is conceptually different from BFO/DOLCE/SUMO''s `Process`. Confirmed directly
+    against the UFO 2021 Applied Ontology paper: the text explicitly calls "process" an informal
+    label, and the paper''s own "Jogging Process" worked example is formally typed under `EventType`,
+    not any separate `ProcessType`. Resolves `event.md`''s `uncertainty-004` by clarifying
+    (not eliminating) the asymmetry: each source picks a different primary perdurant-with-duration
+    term.'
+  impact: Confidence on `mapping-004` raised from low to low-medium.
+  follow_up: Resolved — no further action needed. If a dedicated UFO-B events paper (e.g.,
+    Guizzardi et al.'s conceptual-modeling-of-events work) is read in a future pass, confirm
+    this finding is consistent there too.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-002
+  uncertainty_type: uncertainty
+  resolved: true
+  description: '`note-002`''s stronger Vendler (1957) parallel (all four DOLCE perdurant subtypes
+    mapping onto all four Vendler classes) is not confirmed against Masolo et al.''s own citations
+    — D18''s own bibliography, read directly, contains **no citation to Vendler**, same finding
+    as `event.md`''s `uncertainty-003`.'
+  impact: Confidence on `note-002` reduced to low, now for a confirmed reason (checked absence)
+    rather than an unchecked one.
+  follow_up: Resolved — no further action needed. A Vendler (1957) reference record is not
+    warranted unless a future pass needs Vendler's own paper directly, independent of any
+    DOLCE citation.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01, as a confirmed negative finding
+- item_id: uncertainty-003
+  uncertainty_type: uncertainty
+  resolved: true
+  description: 'SUMO''s formal defining criterion for `Process` is confirmed directly against
+    `Merge.kif`: "anything that occurs in time but is not an Object." A genuinely different
+    criterion from BFO''s temporal-proper-part-and-participant test (exclusion-based vs. inclusion-based).'
+  impact: '`mapping-001`/`mapping-003`''s rationale can now cite this precisely rather than
+    noting the criterion as unknown.'
+  follow_up: Resolved — no further action needed.
+  resolved_date: "2026-07-01"
+  resolution_note: resolved 2026-07-01
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: YAMATO's own OWL/Hozo files were not fetched in this pass (registration-gated
+    download; see `xwkont:ref:yamato-mizoguchi-2010`), so `correspondence-006`/`mapping-008`
+    are cited by quotation from the 2010 technical report, not by class IRI, and it remains
+    unconfirmed whether a later or more detailed YAMATO source (the gated OWL, or the blocked
+    2022 paper) subdivides Occurrent/Process further the way GFO does.
+  impact: '`mapping-008`''s high confidence rests on the same evidence already used in `continuant-occurrent.md`,
+    not new finer-grained evidence.'
+  follow_up: Fetch YAMATO's OWL/Hozo files if the registration gate is completed later.
+- item_id: uncertainty-005
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: TUpper's `activity`/`activity_occurrence` type/token pair has no single clean
+    analog to BFO's Process, which denotes particulars directly (not a type with instances
+    in TUpper's sense). `mapping-009` treats `activity` as the closer-by-convention correspondence,
+    but this is a judgment call, not a settled equivalence — a case could also be made for
+    `activity_occurrence` (already used for Event in `event.md`) depending on how strictly
+    "Process" is read as type vs. token in a given downstream use.
+  impact: Confidence on `mapping-009` is capped at low partly for this reason, not only the
+    type/token mismatch itself.
+  follow_up: No further action needed unless a future pass wants to formally resolve which
+    TUpper term is the "correct" Process correspondence.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified** directly against `bfo-core.ttl`, 2026-07-01'
+- reference_id: xwkont:ref:dolce-wonderweb-d18
+  short_label: 'WonderWeb Deliverable D18: Ontology Library (Masolo et al., 2003)'
+  verification_note: '**verified** directly (manual PDF extraction, including a direct check
+    of the bibliography for a Vendler 1957 citation), 2026-07-01'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly (fetched as plain-text RDF/XML), 2026-07-01; supplies
+    the exact `process` class IRI'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified** directly against the paper''s PDF text (manually extracted),
+    2026-07-01'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-01'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl` (`Process`), 2026-07-02'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified** directly (PDF extraction, Section 2.1), 2026-07-02'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified** directly against `TUpper-Terms.html` (`activity`), 2026-07-02'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified** directly against `GUM-31.owl` (`Process`), 2026-07-02'
+review_history:
+- review_date: "2026-07-01"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:process:2026-07-01:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; BFO/DOLCE/UFO/SUMO content all verified directly, including confirming (not
+    overturning) UFO''s "no distinct Process class" claim and a confirmed-absent Vendler (1957)
+    citation check; mapping categories/confidence valid (`mapping-004`''s `low-medium` value
+    now compliant with `ADR-0013`); every `xwkont:ref:*` citation resolves. No undisclosed
+    gaps found. Self-review, not independent third-party review.'
+- review_date: "2026-07-02"
+  outcome: Not yet reviewed — status reverted `reviewed` → `candidate`
+  review_notes: ADR-0015 buildout added GFO/YAMATO/TUpper/GUM correspondences (005-008), mappings
+    (005-010), a new note (004), and two new uncertainty items (004-005). All four sources'
+    content directly verified against already-fetched primary artifacts (`modules/gfo-base.owl`,
+    `YAMATO101216.pdf`, `TUpper-Terms.html`, `GUM-31.owl`); no re-fetching needed. Pending
+    maintainer review before advancing back to `reviewed`.
+- review_date: "2026-07-02"
+  outcome: Passed — advanced `candidate` → `reviewed`
+  review_id: xwkont:review:process:2026-07-02:02
+  review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
+    Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks. Checked:
+    scope preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential with no gaps or duplicates; relation-category and confidence values
+    compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013` (the `medium-high`
+    mapping here states a sourcing-driven reason); spot-checked GFO''s `Process` quotation
+    against the fetched artifact and found no transcription errors. Self-review performed
+    at the maintainer''s explicit request, not independent third-party review.'
+future_work:
+- '~~Read UFO-B literature directly to confirm no distinct Process class exists anywhere in
+  UFO~~ — **done 2026-07-01**, `uncertainty-001` resolved: the 2021 Applied Ontology paper
+  explicitly calls "process" an informal label, and its own "Jogging Process" worked example
+  is formally typed under `EventType`.'
+- '~~Read the primary DOLCE paper''s citations directly for the Vendler (1957) connection~~
+  — **done 2026-07-01**, `uncertainty-002` resolved: no Vendler citation exists in D18''s
+  bibliography.'
+- ~~Read SUMO's current `Merge.kif` directly~~ — **done 2026-07-01**, `uncertainty-003` resolved.
+- ~~Extend GFO/YAMATO/TUpper/GUM correspondences to this crosswalk~~ — **done 2026-07-02**
+  (ADR-0015 buildout, 4 of 8 crosswalks). Pending maintainer review (`uncertainty-004`/`uncertainty-005`
+  remain open).
+- Fetch YAMATO's OWL/Hozo files if the registration gate is completed, to check whether a
+  finer-grained Process-specific class exists beyond the top-level Occurrent(Process) label
+  (`uncertainty-004`).

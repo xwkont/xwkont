@@ -1,0 +1,641 @@
+local_identifier: xwkont:concept:quantity-amount-of-matter
+slug: quantity-amount-of-matter
+title: Quantity / Amount of Matter
+editorial_status: reviewed
+created: "2026-07-04"
+modified: "2026-07-05"
+scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Quantity / Amount
+  of Matter is the fourth concept drafted from the `0.2.0` batch. Direct primary-source verification
+  this session found a nameable category in **6 of the 8 source ontologies** (DOLCE `amount-of-matter`,
+  SUMO `Quantity`, UFO `Quantity`, GFO `Amount_of_substrate`, YAMATO `quantity`, GUM `Quantity`)
+  — two more sources than `TODO.md`''s seed credited (the seed listed only SUMO, DOLCE, GFO,
+  UFO; this pass additionally found YAMATO''s own elaborate quantity apparatus and GUM''s
+  `Quantity`, both previously uncredited). BFO and TUpper were confirmed to have no reified
+  class of this kind.
+
+
+
+  This crosswalk compares each source ontology''s own treatment of quantity/amount-of-matter
+  as a category — mass-noun-denoted stuff ("gold," "water," "sand") or a measured/graded quantitative
+  entity — distinct from Quality (already `reviewed` in `quality.md`, which covers qualitative
+  *properties* like color or shape, not amount-like entities) and from Number/measurement
+  machinery treated as a sub-branch where a source has one. Sources compared: BFO, DOLCE,
+  SUMO, UFO, GFO, YAMATO, TUpper, GUM (per `ADR-0015`''s 8-source scope).
+
+
+
+  **This label covers (at least) four distinct senses across the 6 sources with content, made
+  explicit here per a 2026-07-04 external review pass
+  rather than left implicit in the notes below:**
+
+  1. **mass-noun stuff / amount of matter** — a physical, no-unity, mereologically-invariant
+  category: DOLCE `amount-of-matter`, UFO `Quantity`, GFO `Amount_of_substrate` (`note-001`,
+  `note-004`).
+
+  2. **measurement/specification quantity** — an Abstract, "how many/how much" category that
+  need not be material (SUMO''s own worked example is currency): SUMO `Quantity`/`PhysicalQuantity`
+  (`note-001`).
+
+  3. **value-like true quantity** — a generically-dependent, unit-independent value distinct
+  from its own measurement, closer to a quale than to mass-noun stuff: YAMATO `quantity` (`note-002`).
+
+  4. **linguistic quantity-ascription relation** — not an entity at all, but the clause-level
+  relation of predicating a quantity of something: GUM `Quantity`/`QuantityAscription` (`note-003`).
+
+
+
+  These four senses are related by family resemblance and a shared English label, not by a
+  single underlying commitment — this crosswalk records all four under one `xwkont:concept:quantity-amount-of-matter`
+  identifier because `TODO.md`''s seed and `ADR-0018`''s admission bar treat them as one candidate,
+  but the eventual core.ttl placement (`uncertainty-001`) should not assume they resolve to
+  one class.
+
+
+
+  **Cross-cutting finding, established this session:** three of the four sources with a "physical
+  stuff" reading of this concept (DOLCE, UFO, GFO) converge on classifying it as **physical/concrete**,
+  alongside or under their own material-endurant-equivalent branch — DOLCE''s `amount-of-matter`
+  is a `physical-endurant`; UFO''s `Quantity` is a leaf of `Substantial` (endurant-equivalent),
+  defined as "maximally-topologically-self-connected... of homeomerous amounts of matter";
+  GFO''s `Amount_of_substrate` is `Continuous`+`Presential` (equivalent to `Mass_entity`).
+  **SUMO alone classifies `Quantity` as Abstract** — the opposite side of its own top-level
+  split from where the other three sources'' equivalent categories sit — a divergence structurally
+  parallel to (though the reverse orientation of) the BFO-vs-rest pattern `time.md` found
+  for Time. YAMATO''s own "quantity" is a genuine citation-precision trap: it denotes a *quality-value*-like
+  generically-dependent entity (closer to DOLCE''s `quale`/quality-value machinery than to
+  DOLCE''s/UFO''s/GFO''s amount-of-matter sense), not a mass-noun-stuff category — see `note-002`.
+  GUM''s `Quantity` is a linguistic *ascription relation* (how a quantity is predicated of
+  an entity in a clause), not an entity class at all — the same relation-not-entity pattern
+  GUM showed for other `0.2.0`-batch concepts. See `note-001`.
+
+
+
+  Exclusions: this crosswalk does not address Quality (already `reviewed`; `quality.md` already
+  covers the qualitative-property side of the Quality/Quantity distinction that both SUMO''s
+  and YAMATO''s own documentation explicitly discuss) or Mereology/Parthood/Aggregate (a separate
+  `0.2.0`-batch candidate; DOLCE''s `amount-of-matter`''s "mereologically invariant" character
+  and UFO''s "maximally-topologically-self-connected" criterion are directly relevant background,
+  noted below but not crosswalked here).
+
+
+
+  **Core.ttl placement is deliberately left open at this `draft` stage**, for the same reasons
+  as the three prior `0.2.0`-batch crosswalks. No `xwkont-core:Quantity`/`AmountOfMatter`
+  class exists yet in `data/ontology/core.ttl` — see Uncertainty.'
+labels:
+- role: XwkOnt working label
+  label: Quantity / Amount of Matter
+  label_source: XwkOnt
+  language: en
+  entry_notes: Not yet in `data/ontology/core.ttl` — see Scope Note.
+- role: Alternate label
+  label: '*(no class — see Uncertainty)*'
+  label_source: BFO
+  language: en
+  entry_notes: Zero occurrences of "quantity" or "amount" in `bfo-core.ttl`'s class labels/definitions.
+- role: Source term
+  label: Amount-of-matter
+  label_source: DOLCE
+  language: en
+  entry_notes: Subtype of `physical-endurant` — a "stuff" denoted by mass nouns ("gold," "iron,"
+    "wood," "sand," "meat").
+- role: Source term
+  label: Quantity (+ Number, PhysicalQuantity, ConstantQuantity, FunctionQuantity)
+  label_source: SUMO
+  language: en
+  entry_notes: Direct subclass of `Abstract` — the only source filing this concept on the
+    abstract, not physical, side.
+- role: Source term
+  label: Quantity
+  label_source: UFO
+  language: en
+  entry_notes: One of three leaf categories of `Substantial` (alongside `Object`, `Collective`),
+    per the 2021 paper's own partition axioms; `ontouml:quantity`/`ontouml:quantityNature`
+    in the OntoUML vocabulary fallback.
+- role: Source term
+  label: Amount of substrate (+ Mass_entity, Continuous)
+  label_source: GFO
+  language: en
+  entry_notes: '`owl:equivalentClass` `Mass_entity`; a `Continuous` `Presential`.'
+- role: Alternate label
+  label: Quantity
+  label_source: YAMATO
+  language: en
+  entry_notes: '**Not equivalent in sense to the other sources'' Quantity/Amount-of-matter**
+    — see `note-002`; denotes a quality-value-like generically-dependent entity, not mass-noun
+    stuff.'
+- role: Alternate label
+  label: '*(informal predicates only — see Uncertainty)*'
+  label_source: TUpper
+  language: en
+  entry_notes: '`amount`, `mass`, `physical_mass`, `constitutes` — informal-semantics predicates
+    about matter/measurement, no reified `Quantity`/`AmountOfMatter` class.'
+- role: Source term
+  label: Quantity (+ QuantityAscription)
+  label_source: GUM
+  language: en
+  entry_notes: A linguistic ascription *relation*, not an entity class — the relation of ascribing
+    a quantity to an entity in a clause.
+source_definitions:
+- source: BFO
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Full-text grep of `bfo-core.ttl` for "quantity" and "amount" (case-insensitive) returned
+    zero matches anywhere in the file.
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified absence**: `bfo-core.ttl`, fetched and read directly 2026-07-04'
+  entry_notes: Consistent with BFO's general austerity about quantitative/measurement machinery
+    — no Number, Quantity, or Amount-of-matter class exists at all in this module.
+- source: DOLCE
+  term_or_identifier: Amount-of-matter
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"The common trait of amounts of matter is that they are endurants with no unity (according
+    to Gangemi et al. 2001 none of them is an essential whole). Amounts of matter — ''stuffs''
+    referred to by mass nouns like ''gold'', ''iron'', ''wood'', ''sand'', ''meat'', etc.
+    — are mereologically invariant, in the sense that they change their identity when they
+    change some parts." `rdfs:subClassOf physical-endurant`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified**: `DOLCE-Lite.owl`, class `#amount-of-matter`, fetched and read directly
+    2026-07-04'
+  entry_notes: A `physical-endurant` — the physical/concrete side, not DOLCE's own `abstract`
+    branch (already documented in `abstract-concrete.md`). "Mereologically invariant... change
+    identity when they change some parts" is a genuine no-unity criterion, directly relevant
+    to the planned Mereology/Parthood/Aggregate crosswalk.
+- source: SUMO
+  term_or_identifier: Quantity (+ Number, PhysicalQuantity)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Any specification of how many or how much of something there is. Accordingly, there
+    are two subclasses of Quantity: Number (how many) and PhysicalQuantity (how much)." `(subclass
+    Quantity Abstract)`. PhysicalQuantity: "a measure of some quantifiable aspect of the modeled
+    world... Although the name and definition of PhysicalQuantity is borrowed from physics,
+    a PhysicalQuantity need not be material... nonphysical dimensions such as currency are
+    also possible." `(partition PhysicalQuantity ConstantQuantity FunctionQuantity)`.'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: current `Merge.kif`, fetched and read directly 2026-07-04'
+  entry_notes: The only source classifying this concept as Abstract, not physical/concrete
+    — the opposite orientation from DOLCE/UFO/GFO. SUMO's own documentation explicitly notes
+    PhysicalQuantity "need not be material" (currency is a worked example) — a broader, measurement-centric
+    reading than DOLCE's/UFO's mass-noun-stuff sense.
+- source: UFO
+  term_or_identifier: Quantity
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"The term quantity is reserved for substantials that are maximally-topologically-self-connected
+    of homeomerous amounts of matter, e.g., that puddle of water, this particular pile of
+    sand." One of three partition members of `Substantial` (`Object`, `Collective`, `Quantity`),
+    themselves one of six leaf categories that jointly partition `Endurant`.'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: 2021 Applied Ontology paper, already-extracted text re-searched
+    directly 2026-07-04'
+  entry_notes: A `Substantial` — UFO's endurant-equivalent branch — not an abstract category.
+    Near-identical worked examples to DOLCE's ("puddle of water"/"pile of sand" vs. DOLCE's
+    "gold"/"iron"/"wood"/"sand"/"meat"), both converging on homeomerous, unity-lacking physical
+    stuff.
+- source: UFO
+  term_or_identifier: quantity (stereotype) / quantityNature
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`ontouml:quantity`: "Construct used to represent rigid concepts that provide an identity
+    principle for their instances." `ontouml:quantityNature`: "Indicates that the restricted
+    type includes quantity individuals among its instances."'
+  reference:
+  - xwkont:ref:ontouml-vocabulary
+  locator: '**verified**: `ontouml.ttl`, fetched and read directly 2026-07-04'
+  entry_notes: Confirms `TODO.md`'s seed naming exactly (`quantity` stereotype, `quantityNature`)
+    — these are OntoUML's own modeling-notation vocabulary terms, not the 2021 paper's own
+    prose (which uses plain "Quantity"), consistent with `docs/methodology/primary-source-verification.md`'s
+    established UFO/gUFO/OntoUML distinction.
+- source: GFO
+  term_or_identifier: Amount of substrate (+ Mass_entity)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: 'No `rdfs:comment`/`skos:definition` prose exists for this class in the fetched module
+    — only the label, subclass axioms, and an `owl:equivalentClass` link. `rdfs:subClassOf`
+    both `Continuous` and `Presential`; `owl:equivalentClass Mass_entity`. `Mass_entity` itself:
+    `rdfs:subClassOf Continuous`, `Presential`; `owl:disjointWith Discrete_presential`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, class `Amount_of_substrate`, fetched and
+    read directly 2026-07-04'
+  entry_notes: A `Presential` (GFO's endurant-equivalent branch, per the established `time.md`/`space.md`
+    findings) — not `Abstract`. GFO is the only source among the four "physical stuff" sources
+    to leave this class without prose definition, relying entirely on its equivalence to `Mass_entity`
+    and its position in the `Continuous`/`Discrete` split.
+- source: YAMATO
+  term_or_identifier: Quantity
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"Now, what is quantity? Philosophically speaking, quantity is generically-dependent
+    entity in the sense that while it is not specifically-dependent on any physical entity,
+    it cannot exist if all physical objects... disappear from the world... There are two kinds
+    of quantity: true quantity and its measurement... True quantity is unit-independent. A
+    length quantity is independent of how long 1m is." Further subdivided into `quantitative
+    quantity` and `qualitative quantity`.'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: 2010 technical report, full extracted text re-searched directly
+    2026-07-04'
+  entry_notes: '**Not the same sense as DOLCE''s/UFO''s/GFO''s mass-noun-stuff Quantity**
+    — see `note-002`. YAMATO''s own text explicitly frames quantity as a generically-dependent,
+    unit-independent *value*-like entity (a "true quantity" distinct from its measurement),
+    structurally much closer to DOLCE''s `quale`/quality-value apparatus than to DOLCE''s
+    own `amount-of-matter`.'
+- source: TUpper
+  term_or_identifier: '*(informal predicates only, no reified class)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: '`amount`: "d is a member of the class of quantities used to measure the amount of
+    some chunk of matter... The set of amounts forms a vector space." `mass`/`physical_mass`:
+    "d is the amount of the chunk of matter m" / "...that constitutes x." `constitutes`: "m
+    is the matter that constitutes the material object x."'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified absence, informal only**: `TUpper-Terms.html`, fetched and read directly
+    2026-07-04'
+  entry_notes: No `Quantity`/`AmountOfMatter` predicate or class is separately declared —
+    `amount`/`mass`/`constitutes` are relations connecting a matter-quantity value to a material
+    object, not a reified stuff-category the way DOLCE's/UFO's/GFO's classes are.
+- source: GUM
+  term_or_identifier: Quantity (+ QuantityAscription)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Quantity`: "The relation of ascribing a quantity to some entity. This contrasts
+    with NumberFocusing, which provides information additional to the value of the quantity
+    being ascribed, e.g. a range bounded by some value." `rdfs:subClassOf QuantityAscription`.
+    `QuantityAscription`: "The relation of ascribing a quantity to an entity." `rdfs:subClassOf
+    Ascription`.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, classes `#Quantity`/`#QuantityAscription`, fetched
+    and read directly 2026-07-04'
+  entry_notes: Not credited in `TODO.md`'s seed. A linguistic ascription *relation* (how a
+    clause predicates a quantity of something), not an entity-denoting class — the same relation-not-entity
+    pattern already found for other GUM classes across this batch; there is no GUM entity
+    class analogous to DOLCE's `amount-of-matter` or UFO's `Quantity`.
+correspondences:
+- correspondence_id: xwkont:correspondence:quantity-amount-of-matter:001
+  source_ontology: DOLCE
+  source_term: Amount-of-matter
+  source_identifier_or_iri: http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#amount-of-matter
+  source_version: DOLCE-Lite v397 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Direct terminological match; a physical-endurant, no-unity category.
+- correspondence_id: xwkont:correspondence:quantity-amount-of-matter:002
+  source_ontology: SUMO
+  source_term: Quantity (+ Number, PhysicalQuantity)
+  source_identifier_or_iri: '`Quantity` (SUMO term names are their own identifiers)'
+  source_version: Current `Merge.kif` (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Direct terminological match; the only source filing this concept as
+    Abstract.
+- correspondence_id: xwkont:correspondence:quantity-amount-of-matter:003
+  source_ontology: UFO
+  source_term: Quantity
+  source_identifier_or_iri: not applicable — no IRI scheme in the 2021 paper itself; `ontouml:quantity`/`ontouml:quantityNature`
+    for the OntoUML fallback
+  source_version: Applied Ontology, 2021 (directly re-verified 2026-07-04); OntoUML vocabulary
+    (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:ontouml-vocabulary
+  inclusion_rationale: Direct terminological match; a leaf partition member of `Substantial`,
+    near-identical worked examples to DOLCE's.
+- correspondence_id: xwkont:correspondence:quantity-amount-of-matter:004
+  source_ontology: GFO
+  source_term: Amount of substrate (+ Mass_entity)
+  source_identifier_or_iri: '`https://w3id.org/gfo/base/Amount_of_substrate`, `/Mass_entity`'
+  source_version: GFO 2024-11-18 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Direct terminological match; a Presential/Continuous category, unglossed
+    beyond its `Mass_entity` equivalence.
+- correspondence_id: xwkont:correspondence:quantity-amount-of-matter:005
+  source_ontology: YAMATO
+  source_term: Quantity
+  source_identifier_or_iri: not applicable — informal prose category, no IRI scheme found
+    for YAMATO's own vocabulary
+  source_version: 2010 technical report (directly re-verified 2026-07-04)
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Included despite the sense-divergence flagged in `note-002` — YAMATO's
+    own text uses the identical English term, so the correspondence is recorded with an explicit
+    non-equivalence caveat rather than silently omitted.
+- correspondence_id: xwkont:correspondence:quantity-amount-of-matter:006
+  source_ontology: GUM
+  source_term: Quantity (+ QuantityAscription)
+  source_identifier_or_iri: '`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Quantity`,
+    `#QuantityAscription`'
+  source_version: GUM 3.1 (directly verified 2026-07-04)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Corrects `TODO.md`'s seed, which omitted GUM; included despite being
+    a relation, not an entity class — recorded with an explicit type-mismatch caveat.
+correspondences_note: No BFO correspondence is recorded (confirmed absence). No TUpper correspondence
+  is recorded — only informal, unreified predicates exist.
+comparison_notes:
+- note_id: note-001
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'Three of the four sources with a "physical stuff" reading (DOLCE, UFO, GFO) converge
+    on classifying Quantity/Amount-of-matter as physical/concrete — DOLCE''s `physical-endurant`,
+    UFO''s `Substantial`, GFO''s `Presential`/`Continuous`. SUMO alone classifies its `Quantity`
+    as `Abstract`. This is the same divergence *shape* already found for Time (`time.md`''s
+    `note-001`, BFO the lone occurrent-classifying holdout) and partially for Space (`space.md`''s
+    `note-001`, a 3-way split) — but here it is SUMO, not BFO, that is the outlier, and the
+    outlier sits on the abstract side rather than a special third branch. SUMO''s own documentation
+    explains why: `PhysicalQuantity` "need not be material" (currency is the worked example)
+    — SUMO''s Quantity is defined by measurement/specification, not by physical stuff-hood,
+    a genuinely different criterion from the other three sources''.'
+  supporting_references:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:gfo
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-002
+  dimension: philosophical
+  claim_type: editorial observation
+  note: 'YAMATO''s "quantity" is a citation-precision trap: its own text defines quantity
+    as a generically-dependent, unit-independent *value*-like entity ("true quantity... independent
+    of how long 1m is"), explicitly contrasted with its own measurement — this is structurally
+    much closer to DOLCE''s `quale`/quality-value machinery (an atomic region within a quality
+    space) than to DOLCE''s own `amount-of-matter` (mass-noun stuff like gold or sand) or
+    to UFO''s/GFO''s matter-denoting categories. Naively mapping YAMATO''s "quantity" onto
+    DOLCE''s/UFO''s "Quantity"/"amount-of-matter" by name alone would conflate two different
+    concepts; this crosswalk records the correspondence (`correspondence-005`) but flags the
+    sense mismatch explicitly rather than silently treating them as equivalent.'
+  supporting_references:
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:dolce-lite-owl
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: GUM's `Quantity` is a linguistic ascription *relation* (the relation of predicating
+    a quantity of an entity within a clause), not an entity-denoting class — GUM has no class
+    analogous to DOLCE's `amount-of-matter` or UFO's `Quantity` as a kind of thing that exists.
+    This is the same relation-not-entity pattern already implicit in GUM's clause-grounded
+    apparatus for other `0.2.0`-batch concepts (its Time/Space content is at least entity-shaped;
+    here even that is absent) — GUM's own ontology is oriented toward how language *ascribes*
+    quantities, not toward reifying quantities or amounts of matter as things in the world.
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: medium-high
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: 'DOLCE''s and UFO''s own worked examples converge closely: DOLCE''s "gold," "iron,"
+    "wood," "sand," "meat" (mass nouns) and UFO''s "puddle of water," "pile of sand" both
+    illustrate homeomerous, no-unity physical stuff, and both sources independently invoke
+    a mereological/topological unity criterion (DOLCE: "mereologically invariant... change
+    identity when they change some parts"; UFO: "maximally-topologically-self-connected...
+    homeomerous amounts of matter") to distinguish this category from Object. This is the
+    closest cross-source terminological and conceptual convergence found in this crosswalk,
+    directly relevant background for the planned Mereology/Parthood/Aggregate crosswalk.'
+  supporting_references:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:ufo-2021
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:001
+  subject: DOLCE:Amount-of-matter
+  relation_category: close-match
+  object: UFO:Quantity
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: Near-identical worked examples (mass-noun stuff/puddle-pile examples) and near-identical
+    unity criterion (mereological invariance / topological self-connectedness); both are endurant/substantial-side
+    categories. The closest structural pairing in this crosswalk.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:002
+  subject: DOLCE:Amount-of-matter
+  relation_category: close-match
+  object: GFO:Amount_of_substrate
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Both are physical/concrete, endurant-equivalent (Presential) categories with
+    parallel naming ("amount of matter"/"amount of substrate"), but GFO's class has no prose
+    definition to compare against DOLCE's detailed gloss — not `high` for that reason.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:003
+  subject: UFO:Quantity
+  relation_category: close-match
+  object: GFO:Amount_of_substrate
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Both endurant/substantial-side, physical-stuff categories; same caveat as `mapping-002`
+    about GFO's missing prose definition.
+  provenance:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:gfo
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:004
+  subject: DOLCE:Amount-of-matter
+  relation_category: overlap
+  object: SUMO:Quantity
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Same subject-matter label but a genuine top-level classification divergence:
+    DOLCE files it as a physical-endurant; SUMO files it as Abstract, defined by measurement/specification
+    rather than physical stuff-hood (SUMO''s own "need not be material" clause). Not `close-match`
+    because the classification difference is structural, per `note-001`.'
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:005
+  subject: SUMO:Quantity
+  relation_category: related
+  object: YAMATO:Quantity
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: SUMO's "how many/how much" measurement-centric framing is closer in kind to YAMATO's
+    own unit-independent, value-like "true quantity" than either is to DOLCE's/UFO's mass-noun-stuff
+    sense — but SUMO's Quantity still covers Number and PhysicalQuantity broadly, while YAMATO's
+    is embedded in a specific quality/quale theory, so `related`, not `close-match`.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:006
+  subject: YAMATO:Quantity
+  relation_category: unknown
+  object: DOLCE:Amount-of-matter
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Recorded explicitly as a non-equivalence, not a correspondence, despite the identical
+    English label — see `note-002`. Naive name-matching would incorrectly treat these as the
+    same concept.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:dolce-lite-owl
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:007
+  subject: xwkont-core:Quantity (candidate)
+  relation_category: unknown
+  object: GUM:Quantity
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Recorded explicitly as a type mismatch (relation vs. entity class), not a correspondence
+    — see `note-003`.
+  provenance:
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:008
+  subject: xwkont-core:Quantity (candidate)
+  relation_category: unknown
+  object: BFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No BFO correspondence identified; zero occurrences of "quantity"/"amount" anywhere
+    in `bfo-core.ttl`.
+  provenance:
+  - xwkont:ref:bfo-2020
+- mapping_id: xwkont:mapping:quantity-amount-of-matter:009
+  subject: xwkont-core:Quantity (candidate)
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No reified TUpper correspondence identified; `amount`/`mass`/`constitutes` are
+    informal-semantics predicates relating a value to a material object, not a stuff-denoting
+    class.
+  provenance:
+  - xwkont:ref:tupper-colore
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: Where should `xwkont-core:Quantity`/`AmountOfMatter` subclass from once added
+    to `data/ontology/core.ttl`? Three of four "physical stuff" sources (DOLCE, UFO, GFO)
+    treat it as physical/concrete, but SUMO's Abstract-side placement and YAMATO's distinct
+    quality-value-like sense mean there is no clean majority the way there almost was for
+    Abstract vs. Concrete's own placement question.
+  impact: Blocks final core.ttl placement; does not block continuing this crosswalk's research/review.
+  follow_up: Decide at review time, likely informed by how `abstract-concrete.md`'s own still-open
+    placement question (`uncertainty-001` there) resolves, since this concept sits astride
+    that split in different ways per source.
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: YAMATO's "quantity" denotes a quality-value-like generically-dependent entity,
+    not mass-noun stuff — a genuine sense divergence from DOLCE's/UFO's/GFO's usage, confirmed
+    by direct quotation (`note-002`). This crosswalk records the correspondence with an explicit
+    non-equivalence caveat rather than omitting it, since the identical English label makes
+    silent conflation a real risk for future readers.
+  impact: Affects how `mapping-005`/`mapping-006` should be read — not a straightforward cross-source
+    correspondence.
+  follow_up: None outstanding; recorded here and in `note-002` for traceability.
+- item_id: uncertainty-003
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: BFO has no reified Quantity/Number/Amount-of-matter class anywhere in `bfo-core.ttl`
+    — confirmed by a full-text grep for both terms (case-insensitive), returning zero matches.
+  impact: No BFO correspondence recorded.
+  follow_up: None outstanding; this is treated as a confirmed, structural absence, not a gap
+    needing further fetching — consistent with BFO's general minimalism about quantitative/measurement
+    machinery already observed across this batch.
+- item_id: uncertainty-004
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: '**Policy decided 2026-07-04, in response to external review:** a source''s
+    relation-only treatment of a concept (GUM''s `Quantity`/`QuantityAscription`) stays recorded
+    in the Source Ontology Correspondences table, with an explicit type-mismatch caveat in
+    both the Inclusion Rationale column and a supporting Semantic Comparison Note — it is
+    not moved to Source Definitions/Semantic Notes only. Rationale: omitting it from Correspondences
+    would silently under-represent GUM''s actual coverage of this concept (it does address
+    quantity, just relationally, not as an entity), and this repository''s established practice
+    (`docs/methodology/primary-source-verification.md`) is to record negative/partial findings
+    explicitly rather than omit them — a relation-only correspondence with a caveat is the
+    partial-finding case, not a new category needing its own claim type.'
+  impact: Resolves the "decide relation-only correspondence policy" item flagged by the 2026-07-04
+    external review; no change needed to `correspondence-006`'s
+    existing caveat, which already implements this policy.
+  follow_up: If a future crosswalk needs a *third* mapping-table row shape (neither entity-correspondence
+    nor the existing caveated-relation pattern), revisit `docs/methodology/crosswalk-methodology.md`
+    then — not needed for the pattern seen so far (GUM across Time, Space, Quantity).
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
+  verification_note: '**verified absence** directly against `bfo-core.ttl`, 2026-07-04'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified** directly against `DOLCE-Lite.owl`, 2026-07-04'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (Niles & Pease, 2001)
+  verification_note: '**verified** directly against current SUMO `Merge.kif`, 2026-07-04'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology (Guizzardi et al., 2021)'
+  verification_note: '**verified** directly (full-text re-search), 2026-07-04'
+- reference_id: xwkont:ref:ontouml-vocabulary
+  short_label: OntoUML Vocabulary (OWL/Turtle)
+  verification_note: '**verified** directly, 2026-07-04'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl`, 2026-07-04'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report (Mizoguchi)
+  verification_note: '**verified** directly against the extracted PDF, 2026-07-04'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization (Grüninger)
+  verification_note: '**verified absence, informal only** directly against `TUpper-Terms.html`,
+    2026-07-04'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL (Bateman)
+  verification_note: '**verified** directly against `GUM-31.owl`, 2026-07-04, correcting `TODO.md`''s
+    prior omission'
+review_history:
+- review_date: "2026-07-04"
+  outcome: Not yet reviewed — `draft`
+  review_notes: Fourth concept of the `0.2.0` batch (`ADR-0018`), following `time.md`, `space.md`,
+    and `abstract-concrete.md`. All 8 sources checked directly against primary artifacts already
+    cached from prior crosswalks' research. Corrected `TODO.md`'s seed by finding YAMATO's
+    and GUM's previously-uncredited quantity content — GUM's is the fourth consecutive `0.2.0`-batch
+    concept where GUM content was undercredited in the seed (see `abstract-concrete.md`'s
+    `uncertainty-004`, which already flagged this as a recurring pattern). YAMATO's own "quantity"
+    was found to be a genuine sense-divergence from the other sources' usage, not a straightforward
+    addition — see `note-002`. Pending maintainer review before advancing to `reviewed`; core.ttl
+    placement (`uncertainty-001`) is an open question to resolve at that review.
+- review_date: "2026-07-05"
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_id: xwkont:review:quantity-amount-of-matter:2026-07-05:01
+  review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
+    preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
+    ID numbering sequential (correspondences 001-006, mappings 001-009, notes 001-004, uncertainty
+    001-004); all confidence values within the `ADR-0013` vocabulary, and the `medium-high`
+    mappings/note state their sourcing rationale (GFO''s missing prose); the four-sense scope
+    breakdown and the relation-only-correspondence policy (`uncertainty-004`) both confirmed
+    sound and consistently applied across the Correspondences table. `uncertainty-001` (core.ttl
+    placement) is **not** resolved by this review and remains deferred jointly with `abstract-concrete.md`''s
+    now-confirmed class-pair decision, as separate `data/ontology/core.ttl` work. Self-review,
+    not independent third-party review.'
+future_work:
+- '~~Resolve `uncertainty-001`~~ — **done 2026-07-05**: advanced `draft` → `reviewed` (`xwkont:review:quantity-amount-of-matter:2026-07-05:01`);
+  core.ttl placement remains a separately-tracked open question, jointly with `abstract-concrete.md`''s
+  now-confirmed class-pair decision.'
+- ~~Consider formalizing the relation-vs-entity-class distinction in mapping records~~ Decided
+  2026-07-04 (`uncertainty-004`) — relation-only correspondences stay in the Correspondences
+  table with an explicit caveat; no new claim type needed for the pattern seen so far.
+- ~~Create the Situation/State of Affairs crosswalk next~~ Done — the rest of the `0.2.0`
+  batch is now drafted.

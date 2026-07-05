@@ -1,0 +1,99 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:object:001> a sssom:Mapping ;
+    rdfs:comment "Both use an explicit unity criterion distinguishing Object from mere matter/stuff. Not `exact-equivalence-candidate` given the differing philosophical framing inferred in `note-004`."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:DOLCE-Physical_Object ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Object .
+
+<https://w3id.org/xwkont/id#mapping:object:002> a sssom:Mapping ;
+    rdfs:comment "**Revised 2026-07-01**: both are genuine, directly named formal categories with a structural/functional distinguishing criterion (BFO: causal unity; UFO: differentiated functional parts). Raised from the original draft's medium confidence now that UFO:Object is confirmed to exist and be a direct terminological match, not just a partial structural analog."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Object ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Object .
+
+<https://w3id.org/xwkont/id#mapping:object:003> a sssom:Mapping ;
+    rdfs:comment "Same revision as mapping-002; UFO's endurant theory directly continues DOLCE's lineage (per `continuant-occurrent.md` mapping-005), and both now confirmed as directly named, structurally comparable categories."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-Object ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:DOLCE-Physical_Object .
+
+<https://w3id.org/xwkont/id#mapping:object:004> a sssom:Mapping ;
+    rdfs:comment "SUMO's Object is broader/looser; no confirmed formal unity criterion found in this pass. Consistent with `continuant-occurrent.md`'s low-confidence SUMO treatment."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Object ;
+    sssom:subject_id xwkont-source-term:BFO-Object .
+
+<https://w3id.org/xwkont/id#mapping:object:005> a sssom:Mapping ;
+    rdfs:comment "Same rationale as mapping-004."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Object ;
+    sssom:subject_id xwkont-source-term:DOLCE-Physical_Object .
+
+<https://w3id.org/xwkont/id#mapping:object:006> a sssom:Mapping ;
+    rdfs:comment "Both are structurally-defined material individuals with identity-bearing persistence, but GFO's definition is a conjunction of independently-defined GFO categories (presential, substrate-consisting, persistant-instantiating) rather than a single unity criterion like BFO's causal unity — medium rather than high pending closer comparison of the two criteria's actual extension."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Material_object ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Object .
+
+<https://w3id.org/xwkont/id#mapping:object:007> a sssom:Mapping ;
+    rdfs:comment "Both pick out ordinary material individuals (organisms, artifacts), but the defining criterion differs sharply: BFO's causal unity is intrinsic to the object, while YAMATO's \"interface between internal and external processes\" is explicitly relational/process-dependent. Not high because the two criteria could diverge on edge cases (e.g., YAMATO's own river/waterfall examples turn on process-boundary judgments BFO's causal-unity criterion does not require)."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-Object ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:BFO-Object .
+
+<https://w3id.org/xwkont/id#mapping:object:008> a sssom:Mapping ;
+    rdfs:comment "Same rationale as `continuant-occurrent.md` mapping-012: TUpper's `object` is defined negatively and has no more specific sub-term for this concept; equivalence to BFO's positively-defined Object is not established by the definition text alone."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:TUpper-object ;
+    sssom:subject_id xwkont-source-term:BFO-Object .
+
+<https://w3id.org/xwkont/id#mapping:object:009> a sssom:Mapping ;
+    rdfs:comment "Structural analog only, same rationale as SUMO's Object mapping (mapping-004): GUM's Decomposable/NonDecomposable split is a discourse-level (parts mentioned in text) criterion, not BFO's causal-unity criterion."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-DecomposableObject ;
+    sssom:subject_id xwkont-source-term:BFO-Object .
+
+xwkont-source-term:GFO-Material_object rdfs:label "Material object"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GUM-DecomposableObject rdfs:label "DecomposableObject"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:TUpper-object rdfs:label "object"@en ;
+    dcterms:source "TUpper" .
+
+xwkont-source-term:YAMATO-Object rdfs:label "Object"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:SUMO-Object rdfs:label "Object"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:UFO-Object rdfs:label "Object"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:DOLCE-Physical_Object rdfs:label "Physical Object"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:BFO-Object rdfs:label "Object"@en ;
+    dcterms:source "BFO" .
+
