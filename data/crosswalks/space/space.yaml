@@ -3,7 +3,7 @@ slug: space
 title: Spatial Region / Space
 editorial_status: reviewed
 created: "2026-07-04"
-modified: "2026-07-05"
+modified: "2026-07-06"
 scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Spatial Region/Space
   is the second concept drafted from the `0.2.0` batch, following `time.md`. It clears `ADR-0018`''s
   ≥3-source threshold: direct primary-source verification this session found a nameable spatial-region
@@ -533,7 +533,7 @@ comparison_notes:
     union axiom. Space did not receive the same top-level promotion Time did in this source.
   supporting_references:
   - xwkont:ref:tupper-colore
-  confidence: medium-high
+  confidence: high
 mapping_assertions:
 - mapping_id: xwkont:mapping:space:001
   subject: BFO:Spatial region
@@ -555,10 +555,13 @@ mapping_assertions:
   object: SUMO:Region
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
+  confidence: medium
   rationale: 'Both are continuant/physical-side categories (BFO: continuant; SUMO: Physical/Object),
     closer to each other than either is to their own source''s Time-side category — but "immaterial
-    entity" and "topographic location under Object" are still distinct formal framings.'
+    entity" and "topographic location under Object" are still distinct formal framings. `medium`,
+    not a hedge value: the divergence itself is clearly evidenced (each source''s own text
+    quoted above), not a matter of incomplete sourcing — consistent with `mapping-003`''s
+    plain `medium` for the same kind of confidently-observed partial overlap.'
   provenance:
   - xwkont:ref:bfo-2020
   - xwkont:ref:sumo-niles-pease-2001
@@ -596,7 +599,7 @@ mapping_assertions:
   object: SUMO:Region
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: low-medium
+  confidence: high
   rationale: '**Downgraded from `close-match` (2026-07-04 review pass)** — both denote an
     ordinary spatial/geographic extent, but DOLCE''s is an abstract quality-space region while
     SUMO''s is a physical `Object` subtype — an abstract-vs-physical divergence, a stronger
@@ -604,7 +607,9 @@ mapping_assertions:
     where both sides are region-denoting categories on the same side of that divide). `close-match`
     per `docs/methodology/crosswalk-methodology.md` is reserved for concepts that align for
     many purposes despite differing scope/axioms/usage; an abstract/physical split is closer
-    to `overlap` ("partially intersect but neither subsumes the other").'
+    to `overlap` ("partially intersect but neither subsumes the other"). `high` confidence in
+    the `overlap` category itself: the abstract/physical divergence is directly evidenced by
+    each source''s own text, not a sourcing gap or open question.'
   provenance:
   - xwkont:ref:dolce-lite-owl
   - xwkont:ref:sumo-niles-pease-2001
@@ -614,41 +619,47 @@ mapping_assertions:
   object: GUM:SpaceInterval
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: low-medium
+  confidence: high
   rationale: '**Downgraded from `close-match` (2026-07-04 review pass, for consistency with
     `time.md`''s equivalent GFO/GUM downgrade)** — both are decomposable, non-atomic spatial-region
     categories under a broader Space branch, with a parallel atomic counterpart (`Topoid`/`SpacePoint`),
     but GFO''s grounding is metaphysical (Brentano) while GUM''s is linguistic (Halliday &
     Matthiessen) — a difference in the *kind* of independence claimed, not just scope or axioms
-    within a shared formal kind.'
+    within a shared formal kind. `high` confidence in the `overlap` category: this grounding
+    difference is directly stated in each source''s own text, not an open sourcing question.'
   provenance:
   - xwkont:ref:gfo
   - xwkont:ref:gum-owl
 - mapping_id: xwkont:mapping:space:007
   subject: BFO:Zero-dimensional spatial region
-  relation_category: close-match
+  relation_category: overlap
   object: TUpper:spatial_region (point case)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: low-medium
-  rationale: TUpper's `spatial_region` is a single undifferentiated mereotopology predicate,
-    not dimensionally subdivided the way BFO's four classes are — a rough correspondence only
-    for the point/zero-dimensional case, not the dimensional apparatus as a whole.
+  confidence: high
+  rationale: 'Corrected from `close-match` (this pass): TUpper''s `spatial_region` is a single
+    undifferentiated mereotopology predicate, confirmed not dimensionally subdivided the way
+    BFO''s four classes are — a rough correspondence only for the point/zero-dimensional case,
+    not the dimensional apparatus as a whole. `close-match` overstates a match confirmed only
+    for one narrow sub-case; `overlap` (partial intersection, neither subsumes the other) is
+    the correct category, and confidence is `high` because TUpper''s lack of subdivision is
+    directly confirmed in its own source file, not an open question.'
   provenance:
   - xwkont:ref:bfo-2020
   - xwkont:ref:tupper-colore
-  predicate_id: skos:closeMatch
 - mapping_id: xwkont:mapping:space:008
   subject: SUMO:Region
   relation_category: related
   object: GUM:GeneralizedLocation
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: low-medium
-  rationale: Both function as the general spatial-extent/location node in their respective
-    sources, but SUMO's is a topographic-location Object subtype while GUM's is a clause-level
+  confidence: high
+  rationale: 'Both function as the general spatial-extent/location node in their respective
+    sources, but SUMO''s is a topographic-location Object subtype while GUM''s is a clause-level
     directional-relation range class grounded in systemic-functional linguistics — related
-    in function, not close enough in formal apparatus for `close-match`.
+    in function, not close enough in formal apparatus for `close-match`. `high` confidence
+    in the `related` category: the formal-apparatus divergence is directly evidenced by each
+    source''s own text, not an open sourcing question.'
   provenance:
   - xwkont:ref:sumo-niles-pease-2001
   - xwkont:ref:gum-owl
@@ -789,14 +800,25 @@ review_history:
   review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
     preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
     ID numbering sequential (correspondences 001-007, mappings 001-010, notes 001-005, uncertainty
-    001-005); all confidence values within the `ADR-0013` vocabulary, and the `medium-high`
-    mapping/note each state a sourcing rationale; the 2026-07-04 external review''s downgrade
-    of `mapping-005`/`mapping-006` from `close-match` to `overlap` confirmed correctly applied;
-    the `time.md` GUM ancestor-chain correction (`uncertainty-001`) confirmed present in both
-    files. `uncertainty-002` (core.ttl placement — Space''s three-way-split classification
-    evidence) is **not** resolved by this review and remains deferred jointly with `time.md`''s
-    `uncertainty-001`, as separate `data/ontology/core.ttl` (Turtle-change) work — same precedent
-    as `time.md`. Self-review, not independent third-party review.'
+    001-005); all confidence values within the `ADR-0013` vocabulary. **Correction (2026-07-06):**
+    this entry originally also claimed "the `medium-high` mapping/note each state a sourcing
+    rationale" -- that claim was false on inspection during a full-corpus audit: `mapping-002`,
+    `mapping-005`, `mapping-006`, `mapping-007`, `mapping-008`, and `note-005` all used
+    `medium-high`/`low-medium` with substantive/evidentiary rationales (differing formal framing,
+    grounding, or scope), not the sourcing-change justification `ADR-0013` reserves those values
+    for. Fixed in the same audit pass: `mapping-002` set to plain `medium`; `mapping-005`,
+    `mapping-006`, `mapping-008`, and `note-005` kept their already-correct relation category
+    but raised to `high` confidence (the divergence itself is clearly evidenced, not a sourcing
+    gap); `mapping-007` recategorized from `close-match` to `overlap` (a match confirmed only
+    for one narrow sub-case) at `high` confidence. See `docs/methodology/crosswalk-runbook.md`''s
+    governing principle and `_private/sessions/` for the audit that found this. The 2026-07-04
+    external review''s downgrade of `mapping-005`/`mapping-006` from `close-match` to `overlap`
+    remains confirmed correctly applied; the `time.md` GUM ancestor-chain correction
+    (`uncertainty-001`) confirmed present in both files. `uncertainty-002` (core.ttl placement
+    — Space''s three-way-split classification evidence) is **not** resolved by this review and
+    remains deferred jointly with `time.md`''s `uncertainty-001`, as separate
+    `data/ontology/core.ttl` (Turtle-change) work — same precedent as `time.md`. Self-review,
+    not independent third-party review.'
 future_work:
 - '~~Resolve `uncertainty-002`~~ — **done 2026-07-05**: advanced `draft` → `reviewed` (`xwkont:review:space:2026-07-05:01`);
   core.ttl placement remains a separately-tracked open question, jointly with `time.md`''s

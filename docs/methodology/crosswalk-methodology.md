@@ -1,7 +1,7 @@
 # Crosswalk Methodology
 
 > **Status:** Accepted, in active use; mapping-record fields amended by `ADR-0009`; confidence vocabulary extended by `ADR-0013`; numeric export projection defined by `ADR-0014`  
-> **Date:** 2026-06-30 (mapping fields amended 2026-07-01; confidence vocabulary extended 2026-07-01; numeric export projection defined 2026-07-01)  
+> **Date:** 2026-06-30 (mapping fields amended 2026-07-01; confidence vocabulary extended 2026-07-01; numeric export projection defined 2026-07-01; Claim Typing amended 2026-07-06 with a directionality/attribution rule — do not restate one source's claim using another source's framing or direction)  
 > **Related specification:** `docs/INFORMATION_ARCHITECTURE.md`
 
 ## Purpose
@@ -46,6 +46,10 @@ Per `ADR-0009`, each mapping assertion also records a `mapping_justification` va
 ## Claim Typing
 
 Crosswalk prose distinguishes direct quotation, paraphrase, editorial observation, and inference. Inferences should explain the evidence chain and identify uncertainty.
+
+**Preserve each source's own direction and framing; do not restate one source's claim in another source's words.** If Source 1 states "A `subClassOf` B" and Source 2 states "B `subClassOf` A" (or any other directional relation — `partOf`, `dependsOn`, `broaderThan`, etc.), these are different claims, not the same claim from two angles, even when they look like they're "about the same relationship." Do not paraphrase Source 2 as having said "A is B" — that attributes a formulation to Source 2 that it did not make, regardless of whether the two claims turn out to be logically related once compared. This applies equally to non-hierarchical claims: if Source 1 defines a term one way and Source 2's own text defines a related term differently, describe each source's actual definition in its own terms before drawing any comparison, rather than describing Source 2 using terminology or a claim-direction borrowed from Source 1. A comparison note is the place to say "Source 1 states X; Source 2 states Y; these appear to relate as follows" — never the place to silently substitute one source's framing for the other's.
+
+This is a specific instance of the governing principle in `crosswalk-runbook.md`: map what each source actually says, don't produce a synthesized restatement that reads as more settled or more aligned across sources than the sources' own words support.
 
 ## Neutrality Rules
 

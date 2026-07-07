@@ -90,7 +90,6 @@ The canonical template lives at `docs/crosswalks/concepts/TEMPLATE.md`. A new co
 | Editorial status | Required | 1 | Controlled status value. | ISO/IEC 11179-inspired registration status. |
 | Created | Required | 1 | ISO-profile date. | DCMI `created`; ADR-0006. |
 | Modified | Recommended | 0..1 | ISO-profile date for latest substantive edit. | DCMI `modified`; ADR-0006. |
-| Contributors | Recommended | 0..n | Names or handles when known. | DCMI `contributor`. |
 | Scope note | Required | 1 | What the crosswalk compares and what it does not compare. | SKOS `scopeNote`. |
 
 ### 2. Labels, Alternate Labels, and Source Terminology
@@ -131,7 +130,7 @@ Every source claim, quotation, paraphrase, mapping assertion, and inference link
 
 ### 9. Review History and Future Work
 
-Review history records review event identifiers, dates, participants, outcome, and notes. Future work distinguishes required fixes for acceptance from optional improvements and later machine-readable representation tasks.
+Review history records review event identifiers, dates, outcome, and notes. Future work distinguishes required fixes for acceptance from optional improvements and later machine-readable representation tasks.
 
 ## Provenance and Reference Requirements
 

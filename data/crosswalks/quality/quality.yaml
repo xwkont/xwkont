@@ -3,7 +3,7 @@ slug: quality
 title: Quality
 editorial_status: reviewed
 created: "2026-07-01"
-modified: "2026-07-02"
+modified: "2026-07-06"
 scope_note: 'This crosswalk compares BFO''s `Quality` (a `Specifically Dependent Continuant`),
   DOLCE''s `Quality`/`Quale` pair, UFO''s `Moment`/`Quality`, and SUMO''s `Attribute`, as
   Object''s sibling under Continuant in `data/ontology/core.ttl`.
@@ -100,6 +100,15 @@ labels:
   language: en
   entry_notes: Matches `xwkont-core:Quality` (`rdfs:subClassOf xwkont-core:Continuant`) in
     `data/ontology/core.ttl`.
+- role: Alternate label
+  label: Quality Space / Quale
+  label_source: XwkOnt
+  language: en
+  entry_notes: 'Evaluated 2026-07-06 as a possible standalone `0.3.0`-batch concept; confirmed
+    by maintainer (2026-07-06) to be covered by this crosswalk''s existing `Quale`/quality-space
+    material rather than get its own document. Added here specifically so a search for "Quality
+    Space / Quale" finds this concept directly. See Future Work for the full cross-reference
+    and `TODO.md`''s corresponding entry.'
 - role: Source term
   label: Quality (a Specifically Dependent Continuant)
   label_source: BFO
@@ -605,10 +614,12 @@ mapping_assertions:
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: medium-high
-  rationale: Both are dependent particulars tied to an individual entity ("a certain dependent
-    property possessed by an entity"). Not `high` because YAMATO's four-tier apparatus (generic
-    type/role type/quality/instance) is considerably more elaborated than BFO's single Quality
-    class, and YAMATO's own OWL is not fetched (quotation-only citation).
+  rationale: 'Both are dependent particulars tied to an individual entity ("a certain dependent
+    property possessed by an entity"). `medium-high`, not `high`, specifically because YAMATO''s
+    own OWL/Hozo files are not fetched (quotation-only citation) — a genuine sourcing-completeness
+    gap, not because of the elaboration difference alone: YAMATO''s four-tier apparatus (generic
+    type/role type/quality/instance) is more elaborated than BFO''s single Quality class, but
+    that structural fact is confidently known, not itself an open question.'
   provenance:
   - xwkont:ref:bfo-2020
   - xwkont:ref:yamato-mizoguchi-2010
@@ -619,13 +630,14 @@ mapping_assertions:
   object: YAMATO:Quality
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
+  confidence: high
   rationale: 'Structurally the closest pairing among the new sources: both split a particular
     quality from its value/realization (DOLCE: Quality/Quale; YAMATO: Quality/Quality instance),
     and YAMATO''s own text explicitly engages DOLCE''s quality-space concept by name (`note-005`)
-    rather than this crosswalk drawing the comparison unassisted. Not `high` because YAMATO
-    explicitly argues DOLCE''s coverage is incomplete — a disclosed point of disagreement,
-    not a clean equivalence.'
+    rather than this crosswalk drawing the comparison unassisted. YAMATO explicitly argues
+    DOLCE''s coverage is incomplete — a disclosed point of disagreement, not a clean equivalence,
+    but a confidently and directly quoted one (YAMATO''s own critique), not an open sourcing
+    question, so it does not itself justify a hedged confidence value.'
   provenance:
   - xwkont:ref:dolce-wonderweb-d18
   - xwkont:ref:yamato-mizoguchi-2010
@@ -779,9 +791,14 @@ review_history:
   review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
     Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks. Checked:
     scope preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
-    ID numbering sequential with no gaps or duplicates; relation-category and confidence values
-    compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013` (both `medium-high`
-    mappings here state a sourcing-driven reason); independently re-verified GFO''s `Value_space`
+    ID numbering sequential with no gaps or duplicates. **Correction (2026-07-06, full-corpus
+    audit):** this entry originally claimed "both `medium-high` mappings here state a
+    sourcing-driven reason" — true for `mapping-009` (YAMATO''s OWL/Hozo files genuinely
+    unfetched), false for `mapping-010`, whose rationale described YAMATO''s own directly-quoted
+    critique of DOLCE''s coverage — a confidently-known disagreement, not a sourcing gap.
+    `mapping-010` raised to `high` confidence in this pass; see
+    `docs/methodology/crosswalk-runbook.md`''s governing principle. Independently re-verified
+    GFO''s `Value_space`
     definition text against `modules/gfo-base.owl` and confirmed the Gärdenfors (2000)/DOLCE
     (Masolo, 2003) citation is exact, not paraphrased or overstated. Self-review performed
     at the maintainer''s explicit request, not independent third-party review.'
@@ -805,3 +822,17 @@ future_work:
   family, not a one-off. **Written up as a standalone cross-cutting observation** at `docs/methodology/sumo-modeling-patterns.md`,
   which also documents where the pattern does *not* hold (`information-artifact.md`''s `ContentBearingPhysical`
   goes the opposite direction).'
+- '**Cross-reference note (2026-07-06, confirmed by maintainer 2026-07-06):** "Quality Space
+  / Quale" was evaluated as a possible standalone `0.3.0`-batch concept, distinct from this
+  one. The recommendation from that evaluation (Codex draft + independent primary-source
+  re-verification, per `docs/methodology/crosswalk-runbook.md`''s "Off-ramp" section) was
+  that it is fully covered by this crosswalk''s existing `Quale`/quality-space material above
+  (DOLCE `quale`/`quality-space`, GFO `Property_value`/`Value_space`) and by `note-002`''s
+  Gärdenfors convergence finding, and does not merit its own document. That was a scoping
+  judgment, not a source-evidence fact alone, so it was routed to the maintainer rather than
+  self-closed — the maintainer has now confirmed it. Added as an Alternate Label above so a
+  direct search for "Quality Space / Quale" finds this concept. See `TODO.md`''s corresponding
+  entry and `docs/crosswalks/candidate-concepts.md`''s retagged DOLCE/GFO/YAMATO rows for the
+  full trail. This confirmation is revisitable, not permanent, per the runbook''s stated
+  revisit condition — if a future source reifies the value-space/quality-space layer as an
+  entity independent of a specific quality, reopen this question.'

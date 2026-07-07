@@ -42,11 +42,11 @@ One convention change from the Markdown status quo: Uncertainty items no longer 
 
 ## Validation Toolchain
 
-LinkML is not yet installed in the repository (this project otherwise describes itself as having no build system or package manager). Until a maintainer decides to add it as a tracked dependency, work against a throwaway virtualenv:
+LinkML, PyYAML, and RDFLib (pinned versions verified working as of 2026-07-05) are tracked in `scripts/requirements.txt` — install into a virtualenv, not system Python (this project's own "no build system, package manager... in the conventional sense" framing per `CLAUDE.md` still holds for the repository as a whole; this covers only the scripts under `scripts/`):
 
 ```bash
-python3 -m venv /tmp/linkml-venv && source /tmp/linkml-venv/bin/activate
-pip install linkml
+python3 -m venv /tmp/xwkont-scripts-venv && source /tmp/xwkont-scripts-venv/bin/activate
+pip install -r scripts/requirements.txt
 
 # Schema self-check (structural lint; standard_naming warnings on the
 # deliberately-literal enum values above are expected and not defects):
@@ -117,7 +117,6 @@ python3 scripts/crosswalk-yaml-to-md.py --write <slug>  # actually overwrite -- 
 ## Deferred (Not Done by This Pass)
 
 - **Amending `docs/INFORMATION_ARCHITECTURE.md`** to formally document the `ClaimType` five-value vocabulary, multi-reference cells, or the annotation-markup convention — left as a maintainer decision per "A Real Finding" above, not made by this pass.
-- **A `requirements`/dependency-pinning file for LinkML** — not added; `ADR-0024`'s own trade-off note ("materially heavier dependency... will need updating [the project's own no-build-system framing], not glossed over") is a maintainer decision to make once (and if) the schema moves from migrated-and-validated to the actual, contributor-facing SSOT workflow.
 
 ## Addendum, 2026-07-05 (second pass): Both Previously-Deferred Items Now Done
 
@@ -131,4 +130,8 @@ All 17 concepts regenerated cleanly with both scripts (`--check` passes on both 
 
 No LinkML-vs-Markdown-vs-old-TSV data discrepancy requiring a judgment call was found beyond the backtick artifact above, which is a bug-fix (same underlying data, corrected serialization), not a genuine content conflict.
 
-**New runtime dependency note: PyYAML.** `scripts/crosswalk-yaml-to-md.py` (prior pass) and `scripts/crosswalk-to-sssom-tsv.py` (this pass) both `import yaml` directly — this is a lighter dependency than the full LinkML toolchain (no schema validation happens in either script, just structured reads), but it is a real dependency beyond the RDFLib-only baseline `docs/publication/validation-commands.md` currently documents. Confirmed: PyYAML is **not** present in this machine's system Python (blocked from installing via `pip` by Homebrew's PEP 668 externally-managed-environment guard); verifying these scripts required building a throwaway venv (`python3 -m venv ... && pip install pyyaml rdflib`), the same pattern this document already recommends for LinkML itself. Not resolved by this pass — same class of open question as the LinkML dependency-pinning file noted above, just for a smaller dependency.
+**New runtime dependency note: PyYAML.** `scripts/crosswalk-yaml-to-md.py` (prior pass) and `scripts/crosswalk-to-sssom-tsv.py` (this pass) both `import yaml` directly — this is a lighter dependency than the full LinkML toolchain (no schema validation happens in either script, just structured reads), but it is a real dependency beyond the RDFLib-only baseline `docs/publication/validation-commands.md` currently documents. Confirmed: PyYAML is **not** present in this machine's system Python (blocked from installing via `pip` by Homebrew's PEP 668 externally-managed-environment guard); verifying these scripts required building a throwaway venv, the same pattern this document already recommends for LinkML itself.
+
+## Addendum, 2026-07-05 (third pass): dependency-pinning file added
+
+`scripts/requirements.txt` now tracks `linkml==1.11.1`, `PyYAML==6.0.3`, and `rdflib==7.6.0` — the exact versions verified working in this pass's throwaway venv. This closes both previously-deferred dependency items (the LinkML pinning file and the smaller PyYAML note above) with a single file, per `ADR-0024`'s own trade-off note that the project's "no build system" framing "will need updating... not glossed over." The pinning is scoped to `scripts/` tooling only — `docs/publication/validation-commands.md`'s repository-wide validation commands still assume only RDFLib, which remains true (its own commands never import `linkml` or `yaml`).

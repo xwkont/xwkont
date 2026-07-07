@@ -3,7 +3,7 @@ slug: process
 title: Process
 editorial_status: reviewed
 created: "2026-07-01"
-modified: "2026-07-02"
+modified: "2026-07-06"
 scope_note: 'This crosswalk compares BFO''s `Process`, DOLCE''s `Process` (a subtype of `Stative`),
   UFO''s informal "process" notion, and SUMO''s `Process` (sibling of `Object` under `Physical`),
   completing the pair started with `docs/crosswalks/concepts/event.md` and directly resolving
@@ -408,11 +408,13 @@ mapping_assertions:
   object: SUMO:Process
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
+  confidence: medium
   rationale: 'Both are genuine top-level formal siblings in their respective hierarchies,
     both denoting physical activity/happening. Not `exact-equivalence-candidate` because their
     defining criteria differ (BFO: temporal-parts-and-participant-based; SUMO: physicality-partition-based,
-    per `continuant-occurrent.md`).'
+    per `continuant-occurrent.md`) — a confidently-established, directly-evidenced divergence,
+    not a sourcing gap; `medium`, consistent with `mapping-002`/`mapping-003`''s treatment of
+    the same kind of finding, not a `medium-high` hedge.'
   provenance:
   - xwkont:ref:bfo-2020
   - xwkont:ref:sumo-niles-pease-2001
@@ -464,11 +466,13 @@ mapping_assertions:
   object: GFO:Process
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
+  confidence: medium
   rationale: Both are genuine, positively-defined top-level-ish formal categories under their
     respective occurrent branches, both explicitly grounded in temporal extension rather than
     exclusion or cumulativity. Not `exact-equivalence-candidate` because BFO's criterion (temporal-proper-part-and-participant)
-    and GFO's (not reducible to a collection of time-boundaries) are formally different tests.
+    and GFO's (not reducible to a collection of time-boundaries) are formally different tests
+    — a confidently-established divergence, not a sourcing gap; `medium`, consistent with this
+    file's other same-territory-different-criteria mappings, not a `medium-high` hedge.
   provenance:
   - xwkont:ref:bfo-2020
   - xwkont:ref:gfo
@@ -507,11 +511,16 @@ mapping_assertions:
   object: YAMATO:Occurrent(Process)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: high
-  rationale: 'Restates `continuant-occurrent.md`''s mapping-011 at this crosswalk''s finer
-    grain: YAMATO''s report does not distinguish a Process-specific class from its top-level
-    Occurrent(Process) label, so this mapping is the same underlying correspondence, not new
-    evidence at a finer level of detail.'
+  confidence: medium
+  rationale: 'Corrected from `high` (full-corpus audit, 2026-07-06): this restates
+    `continuant-occurrent.md`''s mapping-011 (BFO:occurrent vs. YAMATO:Occurrent, `high`) at
+    this crosswalk''s finer, Process-specific grain, but YAMATO''s report does not itself
+    distinguish a Process-specific class from its top-level Occurrent(Process) label — there
+    is no independent Process-level evidence beyond the coarser Occurrent-level correspondence
+    already confirmed elsewhere. `high` overstated this: it borrowed the confidence of a
+    different, coarser-grained mapping for a claim specifically about the finer Process level,
+    which the source material does not itself support at that level of detail. `medium` reflects
+    a real but evidentially thinner correspondence at the level this mapping is actually about.'
   provenance:
   - xwkont:ref:bfo-2020
   - xwkont:ref:yamato-mizoguchi-2010
@@ -665,11 +674,18 @@ review_history:
   review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
     Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks. Checked:
     scope preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
-    ID numbering sequential with no gaps or duplicates; relation-category and confidence values
-    compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013` (the `medium-high`
-    mapping here states a sourcing-driven reason); spot-checked GFO''s `Process` quotation
-    against the fetched artifact and found no transcription errors. Self-review performed
-    at the maintainer''s explicit request, not independent third-party review.'
+    ID numbering sequential with no gaps or duplicates. **Correction (2026-07-06, full-corpus
+    audit):** this entry originally claimed "the `medium-high` mapping here states a
+    sourcing-driven reason" — false for `mapping-001` and `mapping-005`, both of which used
+    `medium-high` with substantive "formally different criteria" rationales, not a sourcing-change
+    justification (fixed to plain `medium` in this pass, matching this file''s own established
+    treatment of the same kind of finding in `mapping-002`/`003`/`006`/`007`). Separately,
+    `mapping-008` used `high` confidence for a Process-specific BFO/YAMATO claim that the cited
+    source material only supports at the coarser Occurrent level (fixed to `medium`). See
+    `docs/methodology/crosswalk-runbook.md`''s governing principle. Spot-checked GFO''s
+    `Process` quotation against the fetched artifact and found no transcription errors.
+    Self-review performed at the maintainer''s explicit request, not independent third-party
+    review.'
 future_work:
 - '~~Read UFO-B literature directly to confirm no distinct Process class exists anywhere in
   UFO~~ — **done 2026-07-01**, `uncertainty-001` resolved: the 2021 Applied Ontology paper

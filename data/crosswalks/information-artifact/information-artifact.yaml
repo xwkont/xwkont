@@ -3,7 +3,7 @@ slug: information-artifact
 title: Information Artifact
 editorial_status: reviewed
 created: "2026-07-01"
-modified: "2026-07-02"
+modified: "2026-07-06"
 scope_note: 'This crosswalk asks the question `TODO.md` posed directly: does `xwkont-core:InformationArtifact`
   (a direct child of `Entity`, described in `data/ontology/core.ttl` as XwkOnt''s own "candidate
   support concept") correspond to anything in BFO, DOLCE, UFO, or SUMO, or is it purely XwkOnt-introduced
@@ -519,9 +519,14 @@ mapping_assertions:
   confidence: medium-high
   rationale: 'Structurally the closest pairing found in this crosswalk: both sources independently
     split an abstract content-bearing class from its concrete realization (DUL: `InformationObject`/`InformationRealization`;
-    YAMATO: `Representation`/`Representing thing`), per `note-004`. Not `high` because this
-    is this crosswalk''s own observed convergence, not a comparison either source''s authors
-    draw themselves (contrast `mapping-004`, where YAMATO explicitly cites BFO).'
+    YAMATO: `Representation`/`Representing thing`), per `note-004`. `medium-high`, not `high`,
+    for the same sourcing-completeness reason as `mapping-004` (see `uncertainty-005`): YAMATO''s
+    own OWL/Hozo files are not fetched, so this is cited by quotation from the 2010 report,
+    not verified against a formal class. Separately disclosed, but not the basis for the
+    confidence value: this pairing is this crosswalk''s own observed convergence, not a
+    comparison either source''s authors draw themselves (contrast `mapping-004`, where YAMATO
+    explicitly cites BFO) — a confidently-known fact, not an open question, so it does not
+    itself justify a hedged confidence value.'
   provenance:
   - xwkont:ref:gangemi-dul
   - xwkont:ref:yamato-mizoguchi-2010
@@ -692,13 +697,20 @@ review_history:
   review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
     Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks. Checked:
     scope preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
-    ID numbering sequential with no gaps or duplicates; relation-category and confidence values
-    compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013` (both `medium-high`
-    mappings here state a sourcing-driven reason); spot-checked YAMATO''s "content-bearing
-    thing"/"representing thing" quotations against the fetched artifact and found no transcription
-    errors. This crosswalk''s pre-existing genuinely open research question (`uncertainty-002`,
-    UFO-A/UFO-C not fetched) remains unresolved and is not affected by this review pass. Self-review
-    performed at the maintainer''s explicit request, not independent third-party review.'
+    ID numbering sequential with no gaps or duplicates. **Correction (2026-07-06, full-corpus
+    audit):** this entry originally also claimed "both `medium-high` mappings here state a
+    sourcing-driven reason" — true for `mapping-004`, but not for `mapping-005` as originally
+    worded, whose stated reason (an inference not drawn by the sources'' own authors) is not
+    a sourcing reason under `ADR-0013`. `mapping-005`''s rationale rewritten in this pass to
+    state the sourcing-driven reason that already applies to it per `uncertainty-005` (YAMATO''s
+    OWL/Hozo files not fetched, same as `mapping-004`), with the inference-provenance point
+    kept as disclosure, not as the confidence justification. See
+    `docs/methodology/crosswalk-runbook.md`''s governing principle. Spot-checked YAMATO''s
+    "content-bearing thing"/"representing thing" quotations against the fetched artifact and
+    found no transcription errors. This crosswalk''s pre-existing genuinely open research
+    question (`uncertainty-002`, UFO-A/UFO-C not fetched) remains unresolved and is not affected
+    by this review pass. Self-review performed at the maintainer''s explicit request, not
+    independent third-party review.'
 future_work:
 - '~~Create proper reference records for IAO (Ceusters & Smith, "Aboutness: Towards Foundations
   for the Information Artifact Ontology") and DOLCE Lite Plus~~ — **done 2026-07-01**, `uncertainty-001`
@@ -715,3 +727,19 @@ future_work:
 - Check GFO's `situation` module for a content-bearing/informational-object concept not present
   in the base module (`uncertainty-004`); fetch YAMATO's OWL/Hozo files if the registration
   gate is completed (`uncertainty-005`).
+- '**Cross-reference note (narrowed by maintainer 2026-07-06):**
+  the draft `symbol-sign-representation` concept originally cited this crosswalk''s own YAMATO
+  evidence (`correspondence-004`, `mapping-004`/`mapping-005` -- the `Representation`/`Representing
+  thing` quotation) as its own strongest correspondence, and cited SUMO `SymbolicString`/`Icon`/`LinguisticExpression`,
+  confirmed subclasses of `ContentBearingPhysical` (this crosswalk''s own SUMO correspondence).
+  That was recorded as a fact, not a conclusion, per this repo''s governing principle. The
+  maintainer has now resolved it as a **narrowing, not an off-ramp**: YAMATO''s `representing
+  thing` and the SUMO terms were excluded from `symbol-sign-representation.yaml` as duplicative
+  of this crosswalk''s own evidence (same referent, different words -- an alternate-label
+  relationship, not a distinct concept). GFO''s `Symbol_structure` and GUM''s `Symbolization`/`Signification`
+  were retained there, precisely because this crosswalk itself already treats them as the
+  wrong *kind* of thing for its own scope (see the GFO/GUM Source Term entries above) rather
+  than as already-covered material -- adjacent, not duplicative, the same reuse pattern as
+  SUMO''s `Attribute` across Role/Quality/Relation. `symbol-sign-representation.yaml`''s own
+  `uncertainty-004` records the full resolution and the two narrower open questions
+  (`uncertainty-005`, `uncertainty-006`) that remain there.'

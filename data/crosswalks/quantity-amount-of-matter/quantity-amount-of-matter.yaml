@@ -3,7 +3,7 @@ slug: quantity-amount-of-matter
 title: Quantity / Amount of Matter
 editorial_status: reviewed
 created: "2026-07-04"
-modified: "2026-07-05"
+modified: "2026-07-06"
 scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Quantity / Amount
   of Matter is the fourth concept drafted from the `0.2.0` batch. Direct primary-source verification
   this session found a nameable category in **6 of the 8 source ontologies** (DOLCE `amount-of-matter`,
@@ -389,7 +389,7 @@ comparison_notes:
     quantities, not toward reifying quantities or amounts of matter as things in the world.
   supporting_references:
   - xwkont:ref:gum-owl
-  confidence: medium-high
+  confidence: high
 - note_id: note-004
   dimension: technical
   claim_type: editorial observation
@@ -427,9 +427,11 @@ mapping_assertions:
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: medium-high
-  rationale: Both are physical/concrete, endurant-equivalent (Presential) categories with
-    parallel naming ("amount of matter"/"amount of substrate"), but GFO's class has no prose
-    definition to compare against DOLCE's detailed gloss — not `high` for that reason.
+  rationale: 'Both are physical/concrete, endurant-equivalent (Presential) categories with
+    parallel naming ("amount of matter"/"amount of substrate"). `medium-high`, not `high`, for
+    a genuine sourcing-completeness reason: GFO''s own file supplies no prose definition to
+    compare against DOLCE''s detailed gloss (a documentation gap in the primary source itself,
+    not a confirmed substantive divergence between the two categories).'
   provenance:
   - xwkont:ref:dolce-lite-owl
   - xwkont:ref:gfo
@@ -441,8 +443,9 @@ mapping_assertions:
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: medium-high
-  rationale: Both endurant/substantial-side, physical-stuff categories; same caveat as `mapping-002`
-    about GFO's missing prose definition.
+  rationale: Both endurant/substantial-side, physical-stuff categories; same genuine sourcing-completeness
+    caveat as `mapping-002` — GFO's own file supplies no prose definition to compare, not a
+    confirmed substantive divergence.
   provenance:
   - xwkont:ref:ufo-2021
   - xwkont:ref:gfo
@@ -623,10 +626,15 @@ review_history:
   review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
     preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
     ID numbering sequential (correspondences 001-006, mappings 001-009, notes 001-004, uncertainty
-    001-004); all confidence values within the `ADR-0013` vocabulary, and the `medium-high`
-    mappings/note state their sourcing rationale (GFO''s missing prose); the four-sense scope
-    breakdown and the relation-only-correspondence policy (`uncertainty-004`) both confirmed
-    sound and consistently applied across the Correspondences table. `uncertainty-001` (core.ttl
+    001-004); all confidence values within the `ADR-0013` vocabulary. **Correction (2026-07-06):**
+    this entry claimed "the `medium-high` mappings/note state their sourcing rationale" — accurate
+    for `mapping-002`/`mapping-003` (GFO''s own file genuinely lacks a prose definition, a real
+    documentation gap), but not for `note-003`, which used `medium-high` with no stated rationale
+    for the confidence choice at all, for what is actually a directly-confirmed structural
+    finding (GUM''s `Quantity` is a relation, not an entity class). `note-003` raised to `high`
+    confidence in this pass — see `docs/methodology/crosswalk-runbook.md`''s governing principle.
+    The four-sense scope breakdown and the relation-only-correspondence policy (`uncertainty-004`)
+    both confirmed sound and consistently applied across the Correspondences table. `uncertainty-001` (core.ttl
     placement) is **not** resolved by this review and remains deferred jointly with `abstract-concrete.md`''s
     now-confirmed class-pair decision, as separate `data/ontology/core.ttl` work. Self-review,
     not independent third-party review.'

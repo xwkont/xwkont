@@ -3,7 +3,7 @@ slug: abstract-concrete
 title: Abstract vs. Concrete
 editorial_status: reviewed
 created: "2026-07-04"
-modified: "2026-07-05"
+modified: "2026-07-06"
 scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Abstract vs. Concrete
   is the third concept drafted from the `0.2.0` batch. Direct primary-source verification
   this session found an explicit, nameable Abstract (and, in some sources, Concrete) category
@@ -366,7 +366,7 @@ comparison_notes:
     existence-condition).'
   supporting_references:
   - xwkont:ref:yamato-mizoguchi-2010
-  confidence: medium-high
+  confidence: high
 - note_id: note-004
   dimension: technical
   claim_type: editorial observation
@@ -428,7 +428,7 @@ mapping_assertions:
   object: GUM:Abstraction
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
+  confidence: high
   rationale: '**Retained as `close-match` after explicit re-justification (2026-07-04 review
     pass)** — unlike the region/quantity or metaphysical/linguistic-grounding pairs downgraded
     elsewhere in this batch (`time.md` `mapping-006`/`mapping-008`, `space.md` `mapping-005`/`mapping-006`),
@@ -436,8 +436,9 @@ mapping_assertions:
     source''s Time/Space branch, defined by the identical criterion (absence of physical spatiotemporal
     location). GUM''s "metaphorical or qualitative space" phrasing is a framing gloss on the
     same criterion, not a different criterion the way DOLCE''s "region" vs. SUMO''s "physical
-    Object" was — hence `close-match`, not `overlap`, with `medium-high` (not `high`) confidence
-    to flag that residual framing difference.'
+    Object" was — hence `close-match`, not `overlap`. `high` confidence, not a hedge value:
+    this is a directly analyzed, confidently-reached conclusion (same criterion, cosmetic
+    framing difference only), not an open sourcing question.'
   provenance:
   - xwkont:ref:gfo
   - xwkont:ref:gum-owl
@@ -448,10 +449,12 @@ mapping_assertions:
   object: DOLCE:Abstract
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
-  rationale: Same absence-of-time-and-space criterion; not `high` because YAMATO's own three-way
-    split (with `semi-abstract` as an explicit intermediate) has no counterpart category in
-    DOLCE's binary abstract/non-abstract framing.
+  confidence: high
+  rationale: Same absence-of-time-and-space criterion for the Abstract node itself. YAMATO's
+    additional `semi-abstract` intermediate tier has no DOLCE counterpart, but that divergence
+    is already recorded separately (`mapping-006`, `unknown`) rather than diluting this mapping's
+    confidence — the Abstract-to-Abstract correspondence itself is directly and confidently
+    supported by each source's own criterion, not an open sourcing question.
   provenance:
   - xwkont:ref:yamato-mizoguchi-2010
   - xwkont:ref:dolce-lite-owl
@@ -470,16 +473,20 @@ mapping_assertions:
   - xwkont:ref:yamato-mizoguchi-2010
 - mapping_id: xwkont:mapping:abstract-concrete:007
   subject: xwkont-core:Abstract (candidate)
-  relation_category: unknown
+  relation_category: explicit-non-equivalence
   object: BFO:Generically dependent continuant
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: low-medium
-  rationale: Related in subject matter (both concern content/pattern-like entities) but not
-    a correspondence for the crosswalk's own Abstract/Concrete split, since BFO's category
-    is defined by a different criterion (multiple-copy sharing, not absence of spatiotemporal
-    location) and remains a Continuant. Recorded to make the non-equivalence explicit rather
-    than silently omitting BFO.
+  confidence: high
+  rationale: 'Corrected from `unknown`/`low-medium` (this pass): this is not a case of insufficient
+    evidence -- it is a confidently-reached non-equivalence finding. Related in subject matter
+    (both concern content/pattern-like entities) but not a correspondence for the crosswalk''s
+    own Abstract/Concrete split, since BFO''s category is defined by a different criterion
+    (multiple-copy sharing, not absence of spatiotemporal location) and remains a Continuant.
+    `explicit-non-equivalence` (used "to prevent accidental equivalence claims" per
+    `crosswalk-methodology.md`) is the category this rationale actually describes; `unknown`
+    ("evidence is insufficient") understated how clear this finding is. Recorded to make the
+    non-equivalence explicit rather than silently omitting BFO.'
   provenance:
   - xwkont:ref:bfo-2020
   predicate_id: skos:relatedMatch
@@ -597,10 +604,19 @@ review_history:
   review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
     preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
     ID numbering sequential (correspondences 001-006, mappings 001-009, notes 001-004, uncertainty
-    001-004); all confidence values within the `ADR-0013` vocabulary, and the `medium-high`
-    mappings/note each state a sourcing rationale; `mapping-004`''s re-justified `close-match`
-    retention (rather than downgrade) confirmed sound — genuinely different formal-kind mismatch
-    pattern than the pairs downgraded in `time.md`/`space.md`. **Confirmed the `uncertainty-001`
+    001-004); all confidence values within the `ADR-0013` vocabulary. **Correction (2026-07-06):**
+    this entry originally also claimed "the `medium-high` mappings/note each state a sourcing
+    rationale" -- false on inspection during a full-corpus audit: `note-003`, `mapping-004`,
+    and `mapping-005` used `medium-high` with substantive/evidentiary rationales, not a sourcing-change
+    justification; `mapping-007` used `unknown`/`low-medium` for what its own rationale describes
+    as a confidently-reached non-equivalence finding, not insufficient evidence. Fixed in the
+    same audit pass: `note-003`, `mapping-004`, and `mapping-005` raised to `high` confidence
+    (each divergence/convergence is directly evidenced, not a sourcing gap); `mapping-007`
+    recategorized to `explicit-non-equivalence` at `high` confidence. See
+    `docs/methodology/crosswalk-runbook.md`''s governing principle for the rule this enforces.
+    `mapping-004`''s re-justified `close-match` retention (rather than downgrade) confirmed
+    sound — genuinely different formal-kind mismatch pattern than the pairs downgraded in
+    `time.md`/`space.md`. **Confirmed the `uncertainty-001`
     modeling-shape recommendation**: `xwkont-core:Abstract`/`Concrete` will be modeled as
     a class pair, sibling-level to Continuant/Occurrent under `Entity`, per the Scope Note''s
     rationale (5-of-8-source class-not-property pattern; `quantity-amount-of-matter.md`/`proposition-content.md`

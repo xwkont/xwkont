@@ -4,8 +4,7 @@
 > **Slug:** `<slug>`  
 > **Editorial status:** `draft`  
 > **Created:** `YYYY-MM-DD`  
-> **Modified:** `YYYY-MM-DD`  
-> **Contributors:** `<name or handle>`
+> **Modified:** `YYYY-MM-DD`
 
 ## Scope Note
 
@@ -63,9 +62,9 @@ List repository-local reference identifiers used by this crosswalk. Every quotat
 
 ## Review History
 
-| Review ID | Date | Reviewer | Outcome | Notes |
-|---|---|---|---|---|
-| `xwkont:review:<slug>:YYYY-MM-DD:01` | `YYYY-MM-DD` | `<reviewer>` | `<outcome>` | `<notes>` |
+| Review ID | Date | Outcome | Notes |
+|---|---|---|---|
+| `xwkont:review:<slug>:YYYY-MM-DD:01` | `YYYY-MM-DD` | `<outcome>` | `<notes>` |
 
 ## Future Work
 

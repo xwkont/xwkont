@@ -1,0 +1,16 @@
+# Pinned top-level dependencies for scripts/*.py and the LinkML schema
+# toolchain (data/crosswalks/schema/crosswalk-concept.yaml). Not a
+# project-wide build system — see CLAUDE.md's "no build system, package
+# manager, or test runner in the conventional sense" framing, which still
+# holds for the repository as a whole; this covers only the small set of
+# Python tooling scripts under scripts/.
+#
+# Usage:
+#   python3 -m venv /tmp/xwkont-scripts-venv && source /tmp/xwkont-scripts-venv/bin/activate
+#   pip install -r scripts/requirements.txt
+#
+# Versions pinned to what was verified working as of 2026-07-05
+# (docs/methodology/crosswalk-concept-linkml-schema.md).
+linkml==1.11.1
+PyYAML==6.0.3
+rdflib==7.6.0

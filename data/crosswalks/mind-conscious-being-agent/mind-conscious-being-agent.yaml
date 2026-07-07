@@ -1,0 +1,653 @@
+local_identifier: xwkont:concept:mind-conscious-being-agent
+slug: mind-conscious-being-agent
+title: Mind / Conscious Being / Agent
+editorial_status: reviewed
+created: "2026-07-06"
+modified: "2026-07-06"
+scope_note: "This draft keeps the bearer-level entity layer for agentive or conscious beings\n\
+  and explicitly off-ramps the two main false positives from the raw inventory:\n\n\n- GUM's\
+  \ mental-state terms (`Believe`, `Cognition`, `Know`, `Perception`,\n  `Think`, `Wanting`,\
+  \ `MentalActive`, `MentalInactive`, `Disliking`,\n  `Fearing`, `Liking`, `ReactionAndEmotion`,\
+  \ `Striving`) are modeled as mental\n  processes / reactions, not as bearer classes. They\
+  \ belong with\n  `process.md` / `event.md`, not here.\n- GUM's `Female` and `Male` are pronominalization\
+  \ refinements under `Person`,\n  not core mind/agent classes. `Person` is kept as a peripheral\
+  \ conscious-being\n  subtype, but gender-marking subclasses are not central to the concept.\n\
+  - YAMATO's `mind` is a semi-abstract category in the figure, not a continuant\n  or object.\
+  \ It is retained as a source-side label for audit purposes, but it is\n  not a core bearer-class\
+  \ correspondence.\n\n\nThe surviving standalone scope is therefore narrower than the raw\
+  \ inventory\nsuggested: conscious-being / agent as an entity class, not mental processing,\n\
+  not socially conferred role, and not object-level body/organism treatment."
+labels:
+- role: XwkOnt working label
+  label: Mind / Conscious Being / Agent
+  label_source: XwkOnt
+  language: en
+  entry_notes: Working label for the bearer-level conscious/agentive class family.
+- role: Source term
+  label: Agentive Physical Object / Social Agent
+  label_source: DOLCE
+  language: en
+  entry_notes: Agentivity is split across the object layer, not reified as a separate mind
+    class.
+- role: Source term
+  label: AutonomousAgent / SentientAgent / CognitiveAgent / ArtificialIntelligenceAgent
+  label_source: SUMO
+  language: en
+  entry_notes: SUMO's primary agentive bearer family.
+- role: Source term
+  label: weak agent
+  label_source: YAMATO
+  language: en
+  entry_notes: Object-side agentive subtype.
+- role: Source term
+  label: mind
+  label_source: YAMATO
+  language: en
+  entry_notes: Semi-abstract in YAMATO; kept only as an excluded/off-ramp label.
+- role: Source term
+  label: ConsciousBeing / Person
+  label_source: GUM
+  language: en
+  entry_notes: Person is a conscious-being subtype; `Female` / `Male` refine `Person` for
+    pronominalization.
+- role: Source term
+  label: Female / Male
+  label_source: GUM
+  language: en
+  entry_notes: Peripheral personhood/pronominalization subclasses, not core scope.
+- role: Source term
+  label: '*(no dedicated class found in core source material checked today)*'
+  label_source: BFO
+  language: en
+  entry_notes: No separate mind/agent entity class found in the core BFO artifact checked
+    for this pass.
+- role: Source term
+  label: '*(no dedicated class found in the fetched 2021 paper / fallback notes)*'
+  label_source: UFO
+  language: en
+  entry_notes: The extracted UFO material did not surface a dedicated mind/agent entity class.
+- role: Source term
+  label: '*(no dedicated class found in the base module checked today)*'
+  label_source: GFO
+  language: en
+  entry_notes: No dedicated mind/agent entity class found in the base GFO module checked for
+    this pass.
+- role: Source term
+  label: '*(no dedicated class found in the fetched TUpper files)*'
+  label_source: TUpper
+  language: en
+  entry_notes: No dedicated mind/agent entity class found in the fetched TUpper artifacts.
+source_definitions:
+- source: DOLCE
+  term_or_identifier: Agentive Physical Object / Non-agentive Physical Object
+  dimension: technical
+  source_claim_type: paraphrase
+  text: DOLCE distinguishes physical objects to which intentions, beliefs, and desires are
+    ascribed from those that are not. The same passage also treats a person as an agentive
+    physical object constituted by an organism.
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: D18, section 3.4.2
+  entry_notes: This is the cleanest DOLCE-side agentivity split, but it still lives in the
+    object layer, so it is adjacent to object.md rather than a separate role/process concept.
+- source: DOLCE
+  term_or_identifier: Social Agent / Agentive Social Object
+  dimension: technical
+  source_claim_type: paraphrase
+  text: The later D18 discussion also distinguishes a social-agent layer, including legal
+    persons and contractants, from non-agentive social objects.
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  locator: D18, agentive/non-agentive social-object discussion
+  entry_notes: Useful as an agentive-bearing analog, but not a mind class.
+- source: SUMO
+  term_or_identifier: AutonomousAgent / SentientAgent / CognitiveAgent / ArtificialIntelligenceAgent
+  dimension: technical
+  source_claim_type: paraphrase
+  text: SUMO makes `AutonomousAgent` the superclass for entities that can act on their own
+    and cause change ("Something or someone that can act on its own and produce changes in
+    the world"), then refines it into sentient, cognitive, and AI-agent subtypes. Confirmed
+    `(subclass AutonomousAgent Object)` directly in `Merge.kif` -- SUMO places this at the
+    object layer, the same pattern found in DOLCE and YAMATO.
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '`Merge.kif`, agent hierarchy around `AutonomousAgent` (verified directly against
+    the current `ontologyportal/sumo` `Merge.kif`, 2026-07-06)'
+  entry_notes: The strongest direct agentive-bearer family in the candidate set.
+- source: YAMATO
+  term_or_identifier: weak agent / mind
+  dimension: technical
+  source_claim_type: paraphrase
+  text: The figure-based top-level taxonomy places `weak agent` under the object/functional
+    branch, while `mind` sits under semi-abstract. The surrounding prose treats `mind` as
+    non-continuant and the object/continuant side as mutually dependent with process.
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: Fig. 2, plus Section 2.2
+  entry_notes: '`weak agent` stays in scope; `mind` is retained only as an excluded label
+    because it is not an entity-class bearer term in YAMATO.'
+- source: GUM
+  term_or_identifier: ConsciousBeing
+  dimension: technical
+  source_claim_type: paraphrase
+  text: GUM defines `ConsciousBeing` as an active entity capable of producing information
+    that may count as consciousness, with `Person` as a conscious-being subtype.
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl`, class `ConsciousBeing`'
+  entry_notes: This is the primary GUM-side entity-class anchor for the concept.
+- source: GUM
+  term_or_identifier: Person
+  dimension: technical
+  source_claim_type: paraphrase
+  text: '`Person` is a conscious being that is pronominalized by `she` / `he` rather than
+    `it`.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl`, class `Person`'
+  entry_notes: Included as a conscious-being refinement, but it is peripheral to the core
+    agent/conscious-being scope.
+- source: GUM
+  term_or_identifier: Female / Male
+  dimension: technical
+  source_claim_type: paraphrase
+  text: '`Female` and `Male` are subclasses of `Person` with a pronominalization purpose,
+    not core bearer classes.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl`, classes `Female` and `Male`'
+  entry_notes: Kept as a disposition note only; not central to the crosswalk.
+- source: GUM
+  term_or_identifier: Believe / Cognition / Know / Perception / Think / Wanting / MentalActive
+    / MentalInactive / Disliking / Fearing / Liking / ReactionAndEmotion / Striving
+  dimension: technical
+  source_claim_type: paraphrase
+  text: 'These are explicitly mental-process or mental-reaction classes in GUM: cognition,
+    perception, belief, desire, fear, liking, striving, and related categories.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl`, mental-process hierarchy'
+  entry_notes: Excluded from this crosswalk and routed to `process.md` / `event.md`.
+- source: BFO
+  term_or_identifier: '*(no dedicated class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: No agent/mind/conscious-being term of any kind was found in `bfo-core.ttl` (direct
+    grep against the fetched file, 2026-07-06).
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '`bfo-core.ttl` (`BFO-ontology/BFO-2020` repository)'
+  entry_notes: This is a scoped absence, not a claim that BFO lacks agentive participation
+    or role-bearing.
+- source: UFO
+  term_or_identifier: '*(no dedicated class found; `Person` used only as a worked example)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: The 2021 paper does not introduce a dedicated Agent/Mind/ConsciousBeing class -- confirmed
+    by a full-text search of the paper (re-fetched and re-extracted directly, 2026-07-06),
+    which finds "agent" only inside an unrelated bibliography title (Laurier et al.'s "resource-event-agent
+    ontology"). `Person` does appear repeatedly as `ObjectKind(Person)` in the paper's own
+    worked OntoUML examples (Teacher/Student, Jogger, Walker, Spouse sections), but this repository's
+    own established precedent for this same source treats worked-example instantiations as
+    distinct from formally introduced core-theory classes (cf. `process.md`'s "Jogging Process"
+    finding) -- so this is recorded as absence-with-a-caveat, not a positive correspondence.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: Guizzardi et al. 2021, full text (re-fetched from `inf.ufes.br/~gguizzardi`, since
+    the DOI mirror 403s)
+  entry_notes: Keep separate from role and process/event claims already covered elsewhere.
+- source: GFO
+  term_or_identifier: '*(no reified Agent/Person/Mind class; stratum-level material exists)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: 'No `owl:Class` named Agent, Person, or Mind was found in `modules/gfo-base.owl`,
+    but the module is not silent on the topic: it declares `Mental_stratum` (subclass of `Stratum`,
+    "we divide the psychological/mental stratum into the layer of awareness and the layer
+    of personality"), `Awareness_level`, `Personality_level`, and `Social_stratum` ("Agents
+    are the bearers of the social roles that humans play"). This is a conceptual acknowledgment
+    of mind/agent without a corresponding bearer-class declaration in this module.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '`modules/gfo-base.owl` classes `Mental_stratum`, `Awareness_level`, `Personality_level`,
+    `Social_stratum` (direct fetch and grep, 2026-07-06)'
+  entry_notes: Later modules (only a `situation` module exists alongside base in the `Onto-Med/GFO`
+    repository as of this pass) might refine this further; not fetched here since it is out
+    of this candidate's declared scope. The stratum material itself is directly relevant to
+    the separate "Ontological Level / Stratum" `0.3.0` candidate.
+- source: TUpper
+  term_or_identifier: '*(no dedicated class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: No agent/mind/conscious-being term found in the fetched `tupper.all.owl` or `tupper.clif`
+    (direct grep, 2026-07-06, excluding the `MinDim` false-positive substring match on "mind").
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '`tupper.all.owl`, `tupper.clif` (fetched directly from `gruninger/colore`)'
+  entry_notes: Agent-like usage in action predicates is not a bearer class.
+correspondences:
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:001
+  source_ontology: SUMO
+  source_term: AutonomousAgent
+  source_identifier_or_iri: AutonomousAgent
+  source_version: current `Merge.kif`
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Direct agentive bearer class; the clearest SUMO anchor.
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:002
+  source_ontology: GUM
+  source_term: ConsciousBeing
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ConsciousBeing
+  source_version: GUM 3.1
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Direct conscious-being bearer class.
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:003
+  source_ontology: GUM
+  source_term: Person
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Person
+  source_version: GUM 3.1
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Conscious-being subtype; kept as a peripheral refinement.
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:004
+  source_ontology: YAMATO
+  source_term: weak agent
+  source_identifier_or_iri: not applicable
+  source_version: 2010 report
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Direct object-side agentive label from the figure taxonomy.
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:005
+  source_ontology: DOLCE
+  source_term: Agentive Physical Object
+  source_identifier_or_iri: not applicable
+  source_version: WonderWeb D18
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  inclusion_rationale: Agentivity is explicitly modeled, but at the physical-object layer
+    rather than as a separate mind class.
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:006
+  source_ontology: BFO
+  source_term: '*(no dedicated class found)*'
+  source_identifier_or_iri: none
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Scoped absence, directly verified against `bfo-core.ttl`.
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:007
+  source_ontology: UFO
+  source_term: '*(no dedicated class found; `Person` used only as a worked example)*'
+  source_identifier_or_iri: none
+  source_version: UFO 2021
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: Scoped absence in the paper's core theory; `Person` appears only as
+    a worked `ObjectKind` example, not a formally introduced class -- see Source Definitions
+    notes.
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:008
+  source_ontology: GFO
+  source_term: '*(no reified Agent/Person/Mind class)*'
+  source_identifier_or_iri: none
+  source_version: GFO base module
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Scoped absence of a bearer class, though `Mental_stratum`/`Social_stratum`
+    discuss agents conceptually -- see Source Definitions notes.
+- correspondence_id: xwkont:correspondence:mind-conscious-being-agent:009
+  source_ontology: TUpper
+  source_term: '*(no dedicated class found)*'
+  source_identifier_or_iri: none
+  source_version: TUpper fetched files
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: Scoped absence, directly verified against `tupper.all.owl` and `tupper.clif`.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: 'The candidate is genuinely distinct from `object.md`, `role.md`, `process.md`, and
+    `event.md` only after it is narrowed to the bearer-level agent/conscious-being layer.
+    The raw inventory was too broad: GUM mental classes are process/event material, and YAMATO
+    `mind` is semi-abstract rather than a bearer class.'
+  supporting_references:
+  - xwkont:ref:gum-owl
+  - xwkont:ref:yamato-mizoguchi-2010
+  confidence: high
+  supporting_references_note: '`xwkont:ref:gum-owl`, `xwkont:ref:yamato-mizoguchi-2010`, `object.md`,
+    `role.md`, `process.md`, `event.md`'
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: 'SUMO, GUM, YAMATO, and DOLCE all support some version of agentive or conscious-bearing
+    entities, but they do so with different ontological commitments: object-level agentivity
+    in DOLCE, explicit agent subclasses in SUMO, object-side `weak agent` in YAMATO, and conscious-being/personhood
+    classes in GUM.'
+  supporting_references:
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:gum-owl
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:dolce-wonderweb-d18
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: GUM's `Female` and `Male` are not central concepts here. They are pronominalization
+    subclasses of `Person`, so they belong in the draft as a disposition note, not as peer
+    correspondences to the main entity class.
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: 'YAMATO `mind` is the key off-ramp: it is real source material, but it is semi-abstract,
+    not an object/continuant-like bearer. If a future crosswalk wants to chase `mind` specifically,
+    it should probably sit with abstract/semi-abstract or content, not here.'
+  supporting_references:
+  - xwkont:ref:yamato-mizoguchi-2010
+  confidence: high
+- note_id: note-005
+  dimension: technical
+  claim_type: editorial observation
+  note: 'GUM''s mental-state terms are the opposite of this concept: the source itself describes
+    them as mental processes or reactions, which makes them process/event material rather
+    than bearer classes.'
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:001
+  subject: SUMO:AutonomousAgent
+  relation_category: close-match
+  object: xwkont-core:MindConsciousBeingAgent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: '`AutonomousAgent` is SUMO''s direct, explicitly-defined bearer class for "something
+    or someone that can act on its own and produce changes in the world," refined into sentient/cognitive/AI-agent
+    subtypes. Confirmed `(subclass AutonomousAgent Object)` in `Merge.kif` -- SUMO models
+    this at the object layer, same pattern as DOLCE and YAMATO.'
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:002
+  subject: GUM:ConsciousBeing
+  relation_category: close-match
+  object: xwkont-core:MindConsciousBeingAgent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: GUM's own comment defines `ConsciousBeing` as "an active entity capable of producing
+    information that may be ascribed consciousness; e.g. a person" -- the clearest direct
+    anchor for this candidate among all eight sources, verified verbatim against the fetched
+    `GUM-31.owl.txt`.
+  provenance:
+  - xwkont:ref:gum-owl
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:003
+  subject: YAMATO:weak agent
+  relation_category: overlap
+  object: xwkont-core:MindConsciousBeingAgent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Confirmed directly from Fig. 2''s diagram (not extractable as text -- verified
+    by rendering the page as an image): `weak agent` is a direct child of `continuant > object`,
+    alongside `morphological whole`, sibling to the `functional` branch (`living organism`,
+    `artifact`). It is a real object-side agentive label, but the paper''s own body text never
+    elaborates it beyond the figure, so `overlap` rather than `close-match`.'
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:004
+  subject: DOLCE:Agentive Physical Object / Social Agent
+  relation_category: overlap
+  object: xwkont-core:MindConsciousBeingAgent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'D18 section 3.4.2 confirmed verbatim: "a special place have those to which we
+    ascribe intentions, beliefs, and desires. These are called Agentive" (physical layer),
+    plus a separate Social Agent layer including legal persons and contractants (Table 1:
+    "a (legal) person, a contractant"). Agentivity is explicitly modeled but split across
+    the object/social-object layers rather than reified as one bearer class, so `overlap`
+    rather than `close-match`.'
+  provenance:
+  - xwkont:ref:dolce-wonderweb-d18
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:005
+  subject: GUM:Person
+  relation_category: related
+  object: xwkont-core:MindConsciousBeingAgent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Confirmed verbatim: "A type of conscious being pronominalizeable by `she`, `he`,
+    etc. rather than by `it`." A genuine conscious-being subtype, but peripheral to the core
+    scope, not a peer anchor.'
+  provenance:
+  - xwkont:ref:gum-owl
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:006
+  subject: GUM:Female / Male
+  relation_category: explicit-non-equivalence
+  object: xwkont-core:MindConsciousBeingAgent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Confirmed verbatim: both are subclasses of `Person` defined only "for, e.g.,
+    pronominalization purposes." Pronominalization refinements, not core bearer-class content
+    -- equivalence should not be asserted at the concept level.'
+  provenance:
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:007
+  subject: GUM:Believe / Cognition / Know / Perception / Think / Wanting / MentalActive /
+    MentalInactive / Disliking / Fearing / Liking / ReactionAndEmotion / Striving
+  relation_category: explicit-non-equivalence
+  object: xwkont-core:MindConsciousBeingAgent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Confirmed verbatim for every term: each is commented as a "mental process" or
+    "mental reaction" (e.g. `Think`: "The mental process of thinking"; `ReactionAndEmotion`:
+    "An inactive mental process..."), all descending from `Internal` (a process branch), not
+    from any bearer/entity class. These belong with `process.md`/`event.md`, not here.'
+  provenance:
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:008
+  subject: YAMATO:mind
+  relation_category: explicit-non-equivalence
+  object: xwkont-core:MindConsciousBeingAgent
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Confirmed directly from Fig. 2''s diagram: `mind` is a direct child of `semi-abstract`
+    (sibling to `content` and `representation`), not of `continuant`/`object`. YAMATO''s own
+    text defines semi-abstract things as needing "only time to exist" -- the opposite ontological
+    commitment from a bearer/agent class.'
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:009
+  subject: xwkont-core:MindConsciousBeingAgent
+  relation_category: unknown
+  object: BFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No agent/mind/conscious-being term of any kind found in `bfo-core.ttl` (direct
+    grep against the fetched file, 2026-07-06).
+  provenance:
+  - xwkont:ref:bfo-2020
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:010
+  subject: xwkont-core:MindConsciousBeingAgent
+  relation_category: unknown
+  object: UFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: The 2021 paper does not introduce a dedicated Agent/Mind/ConsciousBeing class
+    -- confirmed by a full-text search of the freshly re-extracted paper, which finds "agent"
+    only inside an unrelated bibliography title. `Person` does appear repeatedly as `ObjectKind(Person)`
+    in the paper's own worked OntoUML examples (Teacher/Student, Jogger, Walker, Spouse),
+    but per this repository's established precedent for this same source (`process.md`'s "Jogging
+    Process" finding), a worked example instantiation is not the same as a formally introduced
+    core-theory class -- so this stays `unknown` rather than becoming a positive correspondence.
+  provenance:
+  - xwkont:ref:ufo-2021
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:011
+  subject: xwkont-core:MindConsciousBeingAgent
+  relation_category: unknown
+  object: GFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: 'No reified `Agent`/`Person`/`Mind` class found in `modules/gfo-base.owl`, but
+    the module is not silent on the topic: it declares `Mental_stratum`, `Awareness_level`,
+    `Personality_level`, and `Social_stratum` classes, and `Social_stratum`''s own definition
+    states "Agents are the bearers of the social roles that humans play" -- a conceptual acknowledgment
+    of agents without a corresponding bearer-class declaration in this module. Kept at `unknown`
+    rather than a blank absence because the distinction matters: this material is directly
+    relevant to the separate "Ontological Level / Stratum" candidate later in the `0.3.0`
+    batch.'
+  provenance:
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:mind-conscious-being-agent:012
+  subject: xwkont-core:MindConsciousBeingAgent
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No agent/mind/conscious-being term found in the fetched `tupper.all.owl` or `tupper.clif`
+    (direct grep, excluding the `MinDim` false-positive substring match on "mind").
+  provenance:
+  - xwkont:ref:tupper-colore
+mapping_assertions_note: Per `ADR-0009`, each mapping records a `predicate_id` (SSSOM/SKOS
+  predicate, or none for XwkOnt-only categories) and a `mapping_justification` (SEMAPV term,
+  e.g. `semapv:ManualMappingCuration`) in addition to the free-text rationale.
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: Whether DOLCE's social-agent layer should be treated as a first-class part
+    of this crosswalk or left as object-adjacent detail needs a reviewer decision.
+  impact: Affects how broad the DOLCE side should be.
+  follow_up: Decide whether the crosswalk wants physical-agentivity only, or physical plus
+    social agentivity.
+- item_id: uncertainty-002
+  uncertainty_type: open-question
+  resolved: false
+  description: UFO, GFO, TUpper, and BFO did not surface a dedicated mind/agent bearer class
+    in the material checked for this draft.
+  impact: Keeps those rows at absence rather than forcing a false positive.
+  follow_up: Revisit only if a broader source sweep pulls in more specialized modules or later
+    literature.
+- item_id: uncertainty-003
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: YAMATO `mind` is intentionally kept out of the core correspondence set because
+    it is semi-abstract, not a bearer class.
+  impact: This is the main scope correction that keeps the draft honest.
+  follow_up: Leave `mind` for an abstract/semi-abstract candidate, not this one.
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: GFO's base module discusses `Mental_stratum`/`Awareness_level`/`Personality_level`/`Social_stratum`
+    and explicitly names "Agents" as bearers of social roles in prose, but reifies none of
+    these as an `Agent`/`Person` entity class. Independently found during this review pass
+    (2026-07-06); the draft's original claim was a blank absence that missed this material.
+  impact: Kept `mind-conscious-being-agent:011`'s mapping at `unknown` rather than a stronger
+    category, since no class exists to map to; the stratum/level material itself is more relevant
+    to the later "Ontological Level / Stratum" `0.3.0` candidate.
+  follow_up: When that later candidate is drafted, check GFO's `Stratum`/`Level` hierarchy
+    directly rather than starting from zero.
+- item_id: uncertainty-005
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: 'UFO''s 2021 paper repeatedly uses `ObjectKind(Person)` as a worked OntoUML
+    example (Teacher/Student, Jogger, Walker, Spouse), but never formally introduces Person,
+    Agent, or Mind as a core UFO category the way it does for `Object`, `Quantity`, `Relator`,
+    etc. Independently found during this review pass (2026-07-06); resolved using this repository''s
+    own established precedent for the same source (`process.md`''s "Jogging Process" finding:
+    worked examples are not core theory).'
+  impact: Kept `mind-conscious-being-agent:010` at `unknown` rather than treating `Person`
+    as a positive UFO correspondence.
+  follow_up: None needed unless a later UFO-adjacent source (e.g. gUFO, UFO-S/UFO-A extensions)
+    formally reifies Person/Agent as a core class.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020
+  verification_note: '**verified** directly against `bfo-core.ttl` (`BFO-ontology/BFO-2020`
+    repository, `21838-2/owl/bfo-core.ttl`) -- no agent/mind/conscious-being term of any kind
+    found, 2026-07-06'
+- reference_id: xwkont:ref:dolce-wonderweb-d18
+  short_label: 'WonderWeb Deliverable D18: Ontology Library'
+  verification_note: '**verified** directly against the D18 PDF (fetched and `pdftotext`-extracted),
+    section 3.4.2 (Agentive/Non-agentive physical objects) and the agentive/non-agentive
+    social-object discussion, plus Table 1''s leaf-category examples (`Social Agent`: "a
+    (legal) person, a contractant"), 2026-07-06'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology'
+  verification_note: '**verified** directly against the paper (re-fetched from `inf.ufes.br/~gguizzardi`
+    since the DOI mirror 403s, `pdftotext`-extracted) -- confirmed no dedicated Agent/Mind/ConsciousBeing
+    class; `Person` appears only as a worked `ObjectKind(Person)` example (Teacher/Student,
+    Jogger, Walker, Spouse sections), not a formally introduced core-theory class, 2026-07-06'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology
+  verification_note: '**verified** directly against the current `ontologyportal/sumo` `Merge.kif`
+    -- confirmed `AutonomousAgent`/`SentientAgent`/`CognitiveAgent`/`ArtificialIntelligenceAgent`
+    definitions verbatim and `(subclass AutonomousAgent Object)`, 2026-07-06'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology
+  verification_note: '**verified** directly against `modules/gfo-base.owl` (`Onto-Med/GFO`
+    repository) -- no reified Agent/Person/Mind class found, but `Mental_stratum`, `Awareness_level`,
+    `Personality_level`, and `Social_stratum` classes confirmed, including `Social_stratum`''s
+    own definition naming "Agents" as bearers of social roles, 2026-07-06'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: 'YAMATO: Yet Another More Advanced Top-level Ontology'
+  verification_note: '**verified** directly against the PDF (fetched and rendered as page
+    images, since Fig. 2''s labels are not present in the extractable text layer) -- confirmed
+    `weak agent` as a direct child of `continuant > object` and `mind` as a direct child of
+    `semi-abstract` in Fig. 2''s diagram, 2026-07-06'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization
+  verification_note: '**verified** directly against `tupper.all.owl` and `tupper.clif`
+    (fetched from `gruninger/colore`) -- no agent/mind/conscious-being term found, 2026-07-06'
+- reference_id: xwkont:ref:gum-owl
+  short_label: 'GUM: The Generalized Upper Model'
+  verification_note: '**verified** directly against `GUM-31.owl.txt` (fetched via the Wayback
+    Machine snapshot per the reference record) -- confirmed `ConsciousBeing`, `Person`,
+    `Female`, `Male` comments verbatim, and confirmed every cited mental-state/reaction term
+    (`Believe`, `Cognition`, `Know`, `Perception`, `Think`, `Wanting`, `MentalActive`,
+    `MentalInactive`, `Disliking`, `Fearing`, `Liking`, `ReactionAndEmotion`, `Striving`)
+    is commented as a mental process/reaction descending from `Internal`, 2026-07-06'
+review_history:
+- review_id: xwkont:review:mind-conscious-being-agent:2026-07-06:01
+  review_date: '2026-07-06'
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_notes: 'Content originally drafted by Codex (external run, GPT-5.4-Mini, Extra-High
+    reasoning) per the standing Codex-delegation process, after an earlier attempt found the
+    `codex` CLI unavailable in-session, so this pass ran Codex externally and handed the draft
+    back for review. The scope-overlap check against `object.md`, `role.md`,
+    `process.md`, and `event.md` correctly found a genuinely distinct bearer-level agent/conscious-being
+    layer, but only after off-ramping GUM''s mental-process cluster (to `process.md`/`event.md`)
+    and YAMATO''s `mind` (semi-abstract, not a bearer class). Every direct quotation independently
+    re-verified against primary sources (`bfo-core.ttl`, the D18 PDF, `Merge.kif`, the YAMATO
+    PDF rendered as page images since Fig. 2''s labels are not in the extractable text layer,
+    `GUM-31.owl.txt`, the re-fetched UFO 2021 paper, `modules/gfo-base.owl`, `tupper.all.owl`/`tupper.clif`)
+    rather than trusting the draft as-is. Two substantive gaps found and fixed during this review:
+    (1) UFO''s absence claim was too flat -- the paper repeatedly uses `ObjectKind(Person)` as
+    a worked OntoUML example, which per this repository''s own established precedent for the
+    same source (`process.md`''s "Jogging Process" finding) is an example instantiation, not
+    a formally introduced core-theory class, so the absence claim survives but is now recorded
+    with that nuance; (2) GFO''s absence claim missed real, relevant material -- the base module
+    declares `Mental_stratum`, `Awareness_level`, `Personality_level`, and `Social_stratum`
+    classes, with `Social_stratum`''s own definition naming "Agents" as bearers of social roles,
+    which is directly relevant to the separate "Ontological Level / Stratum" `0.3.0` candidate.
+    Also authored the "Mapping Assertions or Candidate Relations" section from scratch, since
+    the Codex draft omitted it entirely.'
+future_work:
+- Decide whether DOLCE should keep both physical and social agentivity in this crosswalk,
+  or whether the social-agent layer wants its own narrower follow-up.
+- If a later pass decides to split `mind` out as a separate candidate, anchor it to the semi-abstract
+  / abstract-concrete family instead of this bearer-level agent draft.
+- If the reviewer wants a tighter conceptual boundary, fold `Person` back into `ConsciousBeing`
+  and keep `Female` / `Male` as excluded refinements only.

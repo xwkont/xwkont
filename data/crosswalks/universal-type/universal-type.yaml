@@ -3,7 +3,7 @@ slug: universal-type
 title: Universal / Type
 editorial_status: reviewed
 created: "2026-07-04"
-modified: "2026-07-05"
+modified: "2026-07-06"
 scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Universal / Type is
   the sixth concept drafted from the `0.2.0` batch. Direct primary-source verification this
   session found a nameable category in **3 of 8 sources** (GFO `Category`/`Universal`, SUMO
@@ -368,13 +368,14 @@ mapping_assertions:
   object: UFO:Kind
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
+  confidence: high
   rationale: 'Both denote a rigid classifier providing an identity/individuation principle
     to its instances (GFO: "immanent universals... exist in re"; UFO: "uniform principles
-    of individuation, identity, and persistence"). Not `high` because GFO''s `Universal` is
-    not itself internally subdivided by rigidity/sortality the way UFO''s `Kind` is positioned
-    within a much larger typology — a difference in surrounding theoretical apparatus, not
-    core definition.'
+    of individuation, identity, and persistence"). GFO''s `Universal` is not itself internally
+    subdivided by rigidity/sortality the way UFO''s `Kind` is positioned within a much larger
+    typology — a difference in surrounding theoretical apparatus, not core definition, and a
+    confidently-established one directly evidenced by each source''s own text, not an open
+    sourcing question.'
   provenance:
   - xwkont:ref:gfo
   - xwkont:ref:ufo-2021
@@ -579,8 +580,14 @@ review_history:
   review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
     preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
     ID numbering sequential (correspondences 001-003, mappings 001-009, notes 001-003, uncertainty
-    001-004); all confidence values within the `ADR-0013` vocabulary, and `mapping-001`''s
-    `medium-high` value states its sourcing rationale; confirmed the already-recorded dispositions
+    001-004); all confidence values within the `ADR-0013` vocabulary. **Correction (2026-07-06,
+    full-corpus audit):** this entry originally claimed "`mapping-001`''s `medium-high` value
+    states its sourcing rationale" — false on inspection: the actual rationale described a
+    difference in surrounding theoretical apparatus (GFO vs. UFO''s typology), a substantive
+    finding, not a sourcing-change justification. Raised to `high` confidence in this pass —
+    the divergence is directly evidenced, not an open sourcing question. See
+    `docs/methodology/crosswalk-runbook.md`''s governing principle. Confirmed the already-recorded
+    dispositions
     of `uncertainty-003` (DOLCE DnS gap accepted as scoped future work, not a blocker) and
     `uncertainty-004` (UFO granularity — single-correspondence-row treatment) remain sound.
     `uncertainty-001` (core.ttl placement) is **not** resolved by this review and remains

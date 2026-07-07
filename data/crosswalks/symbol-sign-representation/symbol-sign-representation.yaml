@@ -1,0 +1,514 @@
+local_identifier: xwkont:concept:symbol-sign-representation
+slug: symbol-sign-representation
+title: Symbol / Sign / Representation
+editorial_status: draft
+created: "2026-07-06"
+modified: "2026-07-06"
+scope_note: "This crosswalk asks whether XwkOnt needs a distinct concept for the **sign\n\
+  vehicle / representation-form / symbolization layer** that shows up across\nseveral source\
+  \ ontologies. It is intentionally narrower than\n[`information-artifact.md`](information-artifact.md)\
+  \ and\n[`proposition-content.md`](proposition-content.md).\n\n\n**Narrowed 2026-07-06\
+  \ (maintainer decision).** Verification against\n`information-artifact.md`'s own cited evidence\
+  \ found the following:\n\n\n- YAMATO's `representing thing` and `representation`/`representation\
+  \ form` quote\n  the same passage `information-artifact.md`'s own YAMATO correspondence already\n\
+  \  quotes in full, including the \"form and content\" line. Excluded from this crosswalk.\n\
+  - SUMO's `SymbolicString`/`Icon`/`LinguisticExpression` are `rdfs:subClassOf ContentBearingPhysical`,\n\
+  \  the class `information-artifact.md` already crosswalks. Excluded from this crosswalk.\n\
+  - GFO's `Symbol_structure` and GUM's `Symbolization`/`Signification` are terms `information-artifact.md`\n\
+  \  itself lists as considered and rejected for its own scope (type-side category; relation-type).\n\
+  \  Retained in this crosswalk.\n- GUM's `NameOf`/`NameRelation` are relation-types, the same\
+  \ kind as `Symbolization`/`Signification`.\n  Retained in this crosswalk.\n- GUM's `Name` has\
+  \ a stated definition (\"an accepted but possibly arbitrary label for\n  some entity\") comparable\
+  \ in form to BFO(IAO)'s own Information Content Entity definition\n  (generically dependent,\
+  \ stands in a relation of aboutness to some entity). Excluded from\n  this crosswalk; not added\
+  \ to `information-artifact.md` by this pass — see Future Work.\n- GUM's `NameEvent` (\"the process\
+  \ of giving something a name\") is a process/event term. Excluded\n  from this crosswalk; not\
+  \ checked against `process.md`/`event.md` by this pass — see Future Work.\n\n\nThis crosswalk's\
+  \ current evidence is GFO's `Symbol_structure` and GUM's `Symbolization`/`Signification`/`NameOf`/`NameRelation`.\n\
+  \n\nCore placement remains an open question for review. The concept is clearly\ncandidate-stage\
+  \ only."
+labels:
+- role: XwkOnt working label
+  label: Symbol / Sign / Representation
+  label_source: XwkOnt
+  language: en
+  entry_notes: Working label for the sign vehicle / representation-form layer.
+- role: Alternate label
+  label: Sign vehicle
+  label_source: XwkOnt
+  language: en
+  entry_notes: Search-friendly alternate label for the same concept family.
+- role: Source term
+  label: Symbol / Symbol sequence / Symbol structure
+  label_source: GFO
+  language: en
+  entry_notes: Formal symbol-structure family on GFO's type side.
+- role: Source term
+  label: SymbolicString / Icon / LinguisticExpression / Word
+  label_source: SUMO
+  language: en
+  entry_notes: SUMO splits the vehicle layer across alphanumeric sequences, visual icons,
+    and language-related expressions.
+- role: Source term
+  label: '*(excluded, see Scope Note)*'
+  label_source: YAMATO
+  language: en
+  entry_notes: YAMATO's `representation`/`representation form`/`representing thing` quote the
+    passage `information-artifact.md`'s own YAMATO correspondence already quotes in full.
+- role: Source term
+  label: NameOf / NameRelation / Symbolization / Signification
+  label_source: GUM
+  language: en
+  entry_notes: GUM's naming/signification relation family. `Name` and `NameEvent` excluded —
+    see Scope Note.
+- role: Source term
+  label: '*(no class found with confidence)*'
+  label_source: BFO
+  language: en
+  entry_notes: No dedicated sign/symbol/representation class found in core BFO.
+- role: Source term
+  label: '*(no class found with confidence)*'
+  label_source: DOLCE
+  language: en
+  entry_notes: No dedicated sign/symbol/representation class found in core DOLCE-Lite.
+- role: Source term
+  label: '*(no class found with confidence)*'
+  label_source: UFO
+  language: en
+  entry_notes: No dedicated sign/symbol/representation class found in the 2021 comprehensive
+    UFO paper.
+- role: Source term
+  label: '*(no class found with confidence)*'
+  label_source: TUpper
+  language: en
+  entry_notes: No dedicated sign/symbol/representation class found in the fetched TUpper files.
+source_definitions:
+- source: BFO
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Core BFO uses the word "representation" only incidentally in examples and scope notes,
+    not as a dedicated symbol/sign/representation class. A direct search for `symbol`, `sign`,
+    `representation`, `name`, and `word` found no formal sign-vehicle term.
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified absence**: `bfo-core.ttl`, fetched and read directly 2026-07-06'
+  entry_notes: The content-bearing side in BFO belongs to the separate information-artifact
+    / IAO lineage, not to a formal symbol/sign class in BFO core.
+- source: DOLCE
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Core DOLCE-Lite mentions "representation" in commentary about situations and processes,
+    but the module does not formalize a dedicated symbol/sign/representation class.
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified absence**: `DOLCE-Lite.owl`, fetched and read directly 2026-07-06'
+  entry_notes: The sign/representation vehicle layer is not reified in core DOLCE-Lite.
+- source: UFO
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: The 2021 UFO paper discusses representation in the broad conceptual-modeling sense,
+    but a direct search for `symbol`, `sign`, `representation`, `name`, and `word` found no
+    dedicated sign/signifier class.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified absence**: UFO PDF text extraction, fetched and read directly 2026-07-06'
+  entry_notes: UFO's reified content is elsewhere (e.g. relation theory, social entities),
+    not in a standalone symbol/sign class.
+- source: SUMO
+  term_or_identifier: SymbolicString / Icon / LinguisticExpression / Word
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`SymbolicString`: "The Class of alphanumeric sequences." `Icon`: subclass of `ContentBearingPhysical`;
+    its examples include "symbolic roadway signs, representational art works, photographs."
+    `LinguisticExpression`: language-related `ContentBearingPhysical`, encompassing "Language
+    and the elements of Languages, e.g. Words." `Word`: "A term of a Language that represents
+    a concept."'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: current `Merge.kif`, fetched and read directly 2026-07-06'
+  entry_notes: '**Excluded from this crosswalk''s correspondences (2026-07-06,
+    maintainer decision).** All four terms are confirmed `rdfs:subClassOf ContentBearingPhysical`,
+    the same SUMO class `information-artifact.md` already crosswalks -- a subclass of an already-crosswalked
+    class, not a different kind of thing. See `information-artifact.md`''s own Future Work cross-reference
+    note for the other side of this record.'
+- source: GFO
+  term_or_identifier: Symbol / Symbol sequence / Symbol structure
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Symbol` and `Symbol_sequence` are subclasses of `Symbol_structure`; `Symbol_structure`
+    is a `Category`, and `Category`''s own definition says categories are "closely related
+    to language."'
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified**: `modules/gfo-base.owl`, fetched and read directly 2026-07-06'
+  entry_notes: GFO formalizes symbol structure on the universal/type side, not as an individual
+    artifact.
+- source: YAMATO
+  term_or_identifier: Representation / representation form / representing thing
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"By representation, we here mean content-bearing thing." "A representation is composed
+    of two parts, form and content." "It becomes a physical individual only when it becomes
+    a representing thing." The report also says representation form includes language as a
+    symbol sequence.'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified**: `YAMATO101216.pdf`, "Ontology of informational objects" section,
+    extracted 2026-07-06'
+  entry_notes: 'Excluded from this crosswalk (2026-07-06). `information-artifact.md`''s
+    own YAMATO correspondence quotes the same passage in full, including "A representation
+    is composed of two parts, form and content." The one line not in that quote — that representation
+    form includes language as a symbol sequence — is a paraphrase, not a direct quotation, and
+    was not independently re-verified. See `uncertainty-005`.'
+- source: TUpper
+  term_or_identifier: '*(no class found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: Search of `tupper.all.owl` and `TUpper-Terms.html` for `symbol`, `sign`, `representation`,
+    `name`, `word`, `icon`, and `linguistic` returned no formal sign/signifier class.
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified absence**: fetched TUpper files, read directly 2026-07-06'
+  entry_notes: TUpper does not formalize a sign/representation layer in the fetched artifacts.
+- source: GUM
+  term_or_identifier: Name / NameEvent / NameOf / NameRelation / Symbolization / Signification
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Name`: "An accepted but possibly arbitrary label for some entity." `NameEvent`:
+    "The process of giving something a name." `NameOf`: "The relation that holds between a
+    name and its bearer." `NameRelation`: "The relation that holds between a name''s bearer
+    and that name." `Symbolization`: relations that hold between entities and other entities
+    they symbolize. `Signification`: relations realized by verbs like "represent", "mean",
+    "express."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, fetched and read directly 2026-07-06'
+  entry_notes: 'Narrowed 2026-07-06. `NameOf`/`NameRelation`/`Symbolization`/`Signification`
+    are relation-types, retained in this crosswalk. `Name` has a stated definition comparable
+    in form to `information-artifact.md`''s BFO(IAO) Information Content Entity definition
+    (generically dependent, aboutness toward an entity); excluded from this crosswalk, not added
+    to `information-artifact.md` by this pass. `NameEvent` is a process/event term; excluded
+    from this crosswalk, not checked against `process.md`/`event.md` by this pass. See
+    `uncertainty-006`.'
+correspondences:
+- correspondence_id: xwkont:correspondence:symbol-sign-representation:001
+  source_ontology: GFO
+  source_term: Symbol / Symbol sequence / Symbol structure
+  source_identifier_or_iri: '`https://w3id.org/gfo/base/Symbol_structure` (`Symbol` and `Symbol_sequence`
+    are subclasses)'
+  source_version: GFO 2024-11-18 release
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Closest formal anchor on the type side for a symbol/sign structure
+    concept.
+- correspondence_id: xwkont:correspondence:symbol-sign-representation:002
+  source_ontology: GUM
+  source_term: NameOf / NameRelation / Symbolization / Signification
+  source_identifier_or_iri: '`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NameOf`,
+    `#NameRelation`, `#Symbolization`, `#Signification`'
+  source_version: GUM 3.1 OWL
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: GUM's naming/signification relation family — relation-types, the same
+    kind of thing across all four terms, and the same reason `information-artifact.md` lists
+    `Symbolization`/`Signification` as considered and rejected for its own scope. `Name` and
+    `NameEvent` excluded from this correspondence — see `uncertainty-006`.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: The sources divide the sign/representation family into different formal kinds. GFO
+    puts symbol structure on the `Category`/type side; GUM turns naming and symbolization into
+    relations. This crosswalk covers those two kinds; YAMATO and SUMO evidence was excluded
+    as duplicative of `information-artifact.md` (see Scope Note).
+  supporting_references:
+  - xwkont:ref:gfo
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: 'Narrowed 2026-07-06. GFO `Symbol_structure` and GUM `Symbolization`/`Signification`/`NameOf`/`NameRelation`
+    are the terms `information-artifact.md` lists as considered and rejected for its own scope
+    (type-side category; relation-type) — retained here. YAMATO''s `representation`/`representation
+    form`/`representing thing` and SUMO''s `SymbolicString`/`Icon`/`LinguisticExpression` quote
+    or match the same evidence `information-artifact.md` already crosswalks — excluded here.'
+  supporting_references:
+  - '`information-artifact.md`'
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: GUM's `Name` has a stated definition (generically dependent, aboutness toward an entity)
+    comparable in form to `information-artifact.md`'s BFO(IAO) Information Content Entity
+    definition. GUM's `NameEvent` is a process/event term, not checked against `process.md`/`event.md`.
+    Both excluded from this crosswalk; neither added elsewhere by this pass — see `uncertainty-006`.
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: medium
+mapping_assertions:
+- mapping_id: xwkont:mapping:symbol-sign-representation:001
+  subject: GFO:Symbol_structure
+  relation_category: overlap
+  object: xwkont-core:SymbolSignRepresentation
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: GFO formalizes symbol structure as a type-level category; that overlaps the candidate
+    concept's symbol/sign vehicle scope, but the kind mismatch keeps this short of close-match.
+  provenance:
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:symbol-sign-representation:002
+  subject: GUM:NameOf / NameRelation / Symbolization / Signification
+  relation_category: related
+  object: xwkont-core:SymbolSignRepresentation
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: All four terms are relation-types, the same kind of thing `information-artifact.md`
+    lists `Symbolization`/`Signification` as considered and rejected for its own scope. `Name`
+    and `NameEvent` are excluded from this mapping — see `uncertainty-006`.
+  provenance:
+  - xwkont:ref:gum-owl
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:symbol-sign-representation:003
+  subject: xwkont-core:SymbolSignRepresentation
+  relation_category: unknown
+  object: BFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No dedicated sign/signifier class found in core BFO.
+  provenance:
+  - xwkont:ref:bfo-2020
+- mapping_id: xwkont:mapping:symbol-sign-representation:004
+  subject: xwkont-core:SymbolSignRepresentation
+  relation_category: unknown
+  object: DOLCE
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No dedicated sign/signifier class found in core DOLCE-Lite.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+- mapping_id: xwkont:mapping:symbol-sign-representation:005
+  subject: xwkont-core:SymbolSignRepresentation
+  relation_category: unknown
+  object: UFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: The comprehensive UFO paper does not reify a symbol/sign class in the searched
+    text.
+  provenance:
+  - xwkont:ref:ufo-2021
+- mapping_id: xwkont:mapping:symbol-sign-representation:006
+  subject: xwkont-core:SymbolSignRepresentation
+  relation_category: unknown
+  object: TUpper
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: TUpper's fetched files contain no dedicated sign/representation class.
+  provenance:
+  - xwkont:ref:tupper-colore
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: 'The evidence suggests at least three formal kinds inside the candidate family:
+    symbol-structure types, content-bearing physicals / linguistic expressions, and naming/signification
+    relations. It is not yet settled whether XwkOnt should model these as one class, a class
+    plus relation(s), or multiple sibling concepts.'
+  impact: This affects eventual `core.ttl` placement and the granularity of any future review
+    decision.
+  follow_up: Maintain as an explicit reviewer question rather than silently flattening the
+    family into a single class.
+- item_id: uncertainty-002
+  uncertainty_type: open-question
+  resolved: false
+  description: BFO, DOLCE, UFO, and TUpper all lack a confident dedicated symbol/sign/representation
+    class in the artifacts searched for this draft. That may be a genuine absence, or it may
+    reflect a need to search adjacent modules / narrower literature more deeply.
+  impact: Keeps those rows at `unknown` rather than forcing a false equivalence.
+  follow_up: Revisit only if later scope work pulls in a broader BFO extension, a DOLCE successor
+    module, or UFO-adjacent literature that formalizes a signifier layer.
+- item_id: uncertainty-003
+  uncertainty_type: open-question
+  resolved: false
+  description: GUM's `Word` exists, but its definition as an abstraction referring to a numerical
+    value is not clearly the right kind of symbol/representation class for this crosswalk,
+    so it is not treated as a primary correspondence.
+  impact: Prevents overclaiming a lexical term that may belong to a different part of GUM's
+    vocabulary.
+  follow_up: Reconsider only if a later pass broadens the symbol/representation scope to numeric
+    or token-level abstractions.
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: true
+  resolved_date: "2026-07-06"
+  resolution_note: 'Maintainer decision : narrow, not off-ramp or keep-as-is.
+    Applying the rule discussed with the maintainer -- two terms picking out the same referent
+    under different words is an alternate label (e.g. "I"/"me" both denoting self-reference),
+    not a distinct concept; two terms of a genuinely different ontological kind (type vs.
+    individual, relation vs. entity) are not an alternate label even when evidentially adjacent
+    -- YAMATO''s `representing thing` and SUMO''s `SymbolicString`/`Icon`/`LinguisticExpression`
+    were excluded as duplicative (same referent/class as `information-artifact.md`''s own
+    evidence). GFO''s `Symbol_structure` and GUM''s `Symbolization`/`Signification` were
+    retained: `information-artifact.md` itself explicitly rejected them as the wrong *kind*
+    (type-side category; relation-type), which is precisely why they are not duplicative of
+    it. `mapping-001` (GFO) and `mapping-003` (GUM, renumbered from `mapping-004`) survive;
+    the former `mapping-002` (SUMO) was removed; the former `mapping-003` (YAMATO) was narrowed
+    to exclude `representing thing`, retaining only `representation`/`representation form`
+    at low confidence pending `uncertainty-005`.'
+  description: 'Independent re-verification (2026-07-06) found that this crosswalk''s
+    original `mapping-003` (YAMATO `Representation`/`representation form`/`representing thing`,
+    `close-match`, medium-high confidence) cited the same primary-source passage
+    already used as `information-artifact.md`''s own flagship YAMATO correspondence
+    (`xwkont:correspondence:information-artifact:004`, `close-match`/medium-high to
+    BFO(IAO)/DOLCE(DUL)) -- both crosswalks quote "A representation is composed of
+    two parts, form and content... It becomes a physical individual only when it
+    becomes a representing thing" verbatim. Separately, the original `correspondence-002`
+    (SUMO `SymbolicString`/`Icon`/`LinguisticExpression`) are, on direct verification against
+    `Merge.kif`, literal `rdfs:subClassOf ContentBearingPhysical` -- the same SUMO
+    class `information-artifact.md` already crosswalks via its parent. This repo has
+    an existing precedent for subclasses of an already-crosswalked class not getting
+    their own concept (UFO''s ~19 `RelationStereotype` entries, ruled sub-kinds of
+    the already-crosswalked Relation concept, per `TODO.md`). By contrast, GFO''s
+    `Symbol_structure` and GUM''s `Symbolization`/`Signification` were explicitly
+    considered and *rejected* by `information-artifact.md` (wrong kind: type-side,
+    not individual-side; relation-type, not entity-type) -- those are not in conflict,
+    the same reuse pattern already established for SUMO''s `Attribute` across
+    Role/Quality/Relation.'
+  impact: Resolved the scope question that previously blocked any advance past `draft`.
+    Affected the former `mapping-001` (GFO, retained), `mapping-002` (SUMO, removed), and
+    `mapping-003` (YAMATO, narrowed) directly. Two narrower open questions followed
+    (`uncertainty-005`, `uncertainty-006`); both are now also resolved.
+  follow_up: Resolved by explicit maintainer confirmation , per this repo's
+    standing practice of routing this class of decision rather than self-closing it.
+- item_id: uncertainty-005
+  uncertainty_type: open-question
+  resolved: true
+  resolved_date: "2026-07-06"
+  resolution_note: Checked `information-artifact.md`'s own YAMATO source_definition text
+    directly. It quotes "A representation is composed of two parts, form and content... It
+    becomes a physical individual only when it becomes a representing thing" in full — the
+    same passage this crosswalk cited for `representation`/`representation form`, not a
+    narrower excerpt. The one YAMATO claim not in that quote (representation form includes
+    language as a symbol sequence) is a paraphrase, not a direct quotation, and was not
+    independently re-verified. YAMATO is excluded from this crosswalk's correspondences and
+    mappings; `mapping-002` (formerly YAMATO) is removed.
+  description: YAMATO's `representation`/`representation form` (the type/pattern half of
+    the form-content split, prior to physical embodiment as a `representing thing`) was
+    retained as this crosswalk's evidence pending a check of whether `information-artifact.md`'s
+    own Information Content Entity scope already reaches that type-level form, or stops at
+    the individual/embodied side (`representing thing`, already excluded per `uncertainty-004`'s
+    resolution).
+  impact: Removes this crosswalk's only YAMATO evidence. Remaining evidence is GFO's
+    `Symbol_structure` and GUM's `Symbolization`/`Signification`/`NameOf`/`NameRelation`.
+  follow_up: None — resolved by direct comparison against `information-artifact.md`'s own
+    Source Definitions text.
+- item_id: uncertainty-006
+  uncertainty_type: open-question
+  resolved: true
+  resolved_date: "2026-07-06"
+  resolution_note: 'Checked all four terms'' stated definitions (already directly verified
+    against `GUM-31.owl`) against `information-artifact.md`''s own evidence. `NameOf` ("the
+    relation that holds between a name and its bearer") and `NameRelation` (its inverse) are
+    relation-types, the same kind as `Symbolization`/`Signification` — added to this crosswalk''s
+    correspondence and mapping. `Name` ("an accepted but possibly arbitrary label for some
+    entity") has a definition comparable in form to `information-artifact.md`''s BFO(IAO)
+    Information Content Entity definition ("generically dependent... stands in a relation of
+    aboutness to some entity") — excluded from this crosswalk; not added to `information-artifact.md`
+    by this pass, recorded in Future Work instead. `NameEvent` ("the process of giving something
+    a name") is a process/event term, not checked against `process.md`/`event.md` — excluded
+    from this crosswalk, recorded in Future Work instead.'
+  description: GUM's `Name`/`NameEvent`/`NameOf`/`NameRelation` were part of the original
+    draft's GUM correspondence but had not been independently verified against `information-artifact.md`'s
+    own evidence.
+  impact: '`NameOf`/`NameRelation` are now part of this crosswalk''s GUM correspondence/mapping.
+    `Name` and `NameEvent` are excluded from this crosswalk and not placed elsewhere by this
+    pass.'
+  follow_up: 'Two items remain for a future pass, not decided here: whether `Name` should be
+    added to `information-artifact.md` as GUM evidence (its current GUM mapping states no
+    correspondence was found with confidence); and whether `NameEvent` corresponds to anything
+    in `process.md`/`event.md` (`docs/crosswalks/candidate-concepts.md`''s `GUM.102` row already
+    tags it "Event," independently of this crosswalk''s draft, but that tag has not been
+    checked against `event.md`''s own Source Definitions/Correspondences).'
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020
+  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology'
+  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: SUMO / current Merge.kif
+  verification_note: '**verified** directly, 2026-07-06'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly, 2026-07-06'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report
+  verification_note: '**verified** directly, 2026-07-06'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization
+  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL
+  verification_note: '**verified** directly, 2026-07-06'
+review_history:
+- review_date: "2026-07-06"
+  outcome: Not yet reviewed — `draft`
+  review_notes: First pass of the `0.3.0` batch. The scope-overlap check against `information-artifact.md`
+    and `proposition-content.md` found a distinct sign/representation layer, but the family
+    splits across different formal kinds and still needs reviewer confirmation before any
+    `reviewed` claim.
+- review_date: "2026-07-06"
+  outcome: Narrowed, still `draft`
+  review_notes: 'A further independent re-verification pass found the initial scope-overlap
+    check (against `information-artifact.md`''s prose Scope Note) missed that two of the four
+    correspondences cited the identical primary-source evidence `information-artifact.md`
+    already crosswalks, not merely an adjacent topic — recorded as `uncertainty-004`. The
+    maintainer applied an explicit rule (two terms for the same referent are an alternate
+    label, e.g. "I"/"me" both denoting self-reference; two terms of a genuinely different
+    ontological kind are not, even when evidentially adjacent) to resolve it as a narrowing,
+    not an off-ramp or a keep-as-is: YAMATO''s `representing thing` and SUMO''s `SymbolicString`/`Icon`/`LinguisticExpression`
+    excluded as duplicative; GFO''s `Symbol_structure` and GUM''s `Symbolization`/`Signification`
+    retained since `information-artifact.md` itself rejected them as the wrong kind, not
+    as already covered. Two narrower open questions (`uncertainty-005`, `uncertainty-006`)
+    remained open at that point.'
+- review_date: "2026-07-06"
+  outcome: Both remaining open questions resolved, still `draft`
+  review_notes: 'Checked `information-artifact.md`''s own Source Definitions text directly for
+    `uncertainty-005`. Found `information-artifact.md`''s YAMATO correspondence already quotes
+    the "form and content" passage in full; YAMATO is excluded from this crosswalk. For
+    `uncertainty-006`, checked all four GUM terms'' verified definitions against
+    `information-artifact.md`''s evidence: `NameOf`/`NameRelation` are the same kind as the
+    already-retained `Symbolization`/`Signification` and were added to this crosswalk''s
+    correspondence; `Name`''s definition is comparable in form to `information-artifact.md`''s
+    own ICE definition, and `NameEvent` is a process/event term — both excluded here, neither
+    added elsewhere, recorded in Future Work as open items for `information-artifact.md` and
+    `process.md`/`event.md` respectively. This crosswalk''s evidence is now GFO''s `Symbol_structure`
+    and GUM''s `Symbolization`/`Signification`/`NameOf`/`NameRelation`. Still `draft` — no
+    reviewer pass against `docs/governance/contributing.md`''s Review Checklist has happened yet.'
+future_work:
+- Check whether GUM's `Name` should be added to `information-artifact.md` as new evidence —
+  its current GUM mapping there states no correspondence was found with confidence, and
+  `Name`'s definition (generically dependent, aboutness toward an entity) is comparable in
+  form to that crosswalk's own BFO(IAO) Information Content Entity definition. Not decided
+  here; `information-artifact.md` is already `reviewed` and reopening it is a separate step.
+- Check whether GUM's `NameEvent` ("the process of giving something a name") corresponds to
+  anything in `process.md`/`event.md`. `docs/crosswalks/candidate-concepts.md` (`GUM.102`)
+  already tags it "Event" independently of this crosswalk's draft; that tag has not been
+  checked against `event.md`'s own Source Definitions/Correspondences.
+- Resolve whether the candidate should stay as one class or become a class-plus-relation family
+  before any `core.ttl` placement decision.
+- After review, generate the machine-readable YAML and Markdown projections from the verified
+  draft.

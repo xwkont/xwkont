@@ -3,7 +3,7 @@ slug: proposition-content
 title: Proposition / Content
 editorial_status: reviewed
 created: "2026-07-04"
-modified: "2026-07-05"
+modified: "2026-07-06"
 scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Proposition / Content
   is the ninth and final concept of the `0.2.0` batch. Direct primary-source verification
   this session found a nameable category in exactly the **3 of 8 sources** `TODO.md`''s seed
@@ -351,10 +351,13 @@ mapping_assertions:
   object: YAMATO:Proposition
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
-  rationale: Same core distinction, but YAMATO's own further subdivision (representation-primary/-secondary,
-    designed/product proposition) has no counterpart in DOLCE's single undifferentiated `proposition`
-    class — not `high` for that reason.
+  confidence: high
+  rationale: Same core distinction between DOLCE's and YAMATO's Proposition, directly and
+    confidently compared. YAMATO's own further subdivision (representation-primary/-secondary,
+    designed/product proposition) has no counterpart in DOLCE's single undifferentiated
+    `proposition` class — a confirmed structural fact about YAMATO's additional tier, not an
+    open sourcing question about the core Proposition-to-Proposition match itself, which is
+    directly and clearly evidenced.
   provenance:
   - xwkont:ref:dolce-lite-owl
   - xwkont:ref:yamato-mizoguchi-2010
@@ -509,9 +512,14 @@ review_history:
   review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
     preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
     ID numbering sequential (correspondences 001-003, mappings 001-009, notes 001-003, uncertainty
-    001-003); all confidence values within the `ADR-0013` vocabulary, and `mapping-003`''s
-    `medium-high` value states its sourcing rationale. External review''s "PASS" assessment
-    confirmed — no fixes were needed and none were fabricated to manufacture review activity.
+    001-003); all confidence values within the `ADR-0013` vocabulary. **Correction (2026-07-06,
+    full-corpus audit):** this entry originally claimed "`mapping-003`''s `medium-high` value
+    states its sourcing rationale" — false on inspection: the actual rationale described
+    YAMATO''s additional subdivision having no DOLCE counterpart, a confirmed structural fact,
+    not a sourcing-change justification. Raised to `high` confidence in this pass — the core
+    Proposition-to-Proposition match is directly and confidently evidenced; see
+    `docs/methodology/crosswalk-runbook.md`''s governing principle. External review''s "PASS"
+    assessment confirmed — no fixes were needed and none were fabricated to manufacture review activity.
     `uncertainty-001` (core.ttl placement) is **not** resolved by this review and remains
     downstream of `abstract-concrete.md`''s now-confirmed class-pair decision, as separate
     `data/ontology/core.ttl` work — this crosswalk''s own content does not depend on that

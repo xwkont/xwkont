@@ -1,6 +1,6 @@
 # Raw-Class Inventory — Candidate Triage Toward Concepts
 
-<!-- updated at: 2026-07-05 18:30 Z   (2026-07-05 14:30 EDT) -->
+<!-- updated at: 2026-07-07 03:30 Z   (2026-07-06 23:30 EDT) -->
 
 > **This is XwkOnt's public contribution backlog.** It enumerates every class in all 8 source ontologies, each tagged with its nearest existing XwkOnt bucket — a **candidate** for a future crosswalk concept. If you want to contribute a crosswalk, this is where to find one: pick a bucket below that isn't yet one of the 17 `reviewed` concepts in [`docs/crosswalks/concepts/`](crosswalks/concepts/), and follow the selection/sourcing/scoping/review process in [`docs/governance/contributing.md`](governance/contributing.md). "Ungrouped" rows are not yet triaged into any bucket at all — flagging one you think deserves its own concept, with source-count evidence per `ADR-0018`, is itself a useful contribution.
 >
@@ -52,7 +52,7 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | BFO.7 | two-dimensional spatial region | Spatial Region / Space (candidate) |
 | BFO.8 | spatiotemporal region | Time / Spatial Region (candidate) |
 | BFO.9 | process | Process |
-| BFO.10 | disposition | Disposition / Capacity (candidate) |
+| BFO.10 | disposition | Disposition / Capacity |
 | BFO.11 | realizable entity | Role / Disposition |
 | BFO.12 | zero-dimensional spatial region | Spatial Region / Space (candidate) |
 | BFO.13 | quality | Quality |
@@ -65,7 +65,7 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | BFO.20 | site | Boundary / Site (candidate) |
 | BFO.21 | object | Object |
 | BFO.22 | generically dependent continuant | Information Artifact / Abstract vs. Concrete (candidate) |
-| BFO.23 | function | Disposition / Capacity (candidate) |
+| BFO.23 | function | Disposition / Capacity |
 | BFO.24 | process boundary | Boundary / Site (candidate) |
 | BFO.25 | one-dimensional temporal region | Time (candidate) |
 | BFO.26 | material entity | Object |
@@ -107,9 +107,9 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | DOLCE.19 | physical-region | Spatial Region / Space (candidate) |
 | DOLCE.20 | process | Process |
 | DOLCE.21 | proposition | Proposition / Content (candidate) |
-| DOLCE.22 | quale | Quality Space / Quale (candidate) |
+| DOLCE.22 | quale | Quality (was tagged "Quality Space / Quale"; confirmed by maintainer 2026-07-06: covered by `quality.md`, not a separate concept) |
 | DOLCE.23 | quality | Quality |
-| DOLCE.24 | quality-space | Quality Space / Quale (candidate) |
+| DOLCE.24 | quality-space | Quality (was tagged "Quality Space / Quale"; confirmed by maintainer 2026-07-06: covered by `quality.md`, not a separate concept) |
 | DOLCE.25 | region | Spatial Region / Space (candidate) |
 | DOLCE.26 | relevant-part | Mereology / Parthood / Aggregate (candidate) |
 | DOLCE.27 | set | Universal / Type (candidate) |
@@ -118,11 +118,11 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | DOLCE.30 | spatio-temporal-region | Time / Spatial Region (candidate) |
 | DOLCE.31 | state | Situation / State of Affairs (candidate) |
 | DOLCE.32 | stative | Process |
-| DOLCE.33 | temporal-location_q | Quality Space / Quale (candidate) |
+| DOLCE.33 | temporal-location_q | Quality (was tagged "Quality Space / Quale"; confirmed by maintainer 2026-07-06 as a genuine Quality subtype, not a separate "quality space" category) |
 | DOLCE.34 | temporal-quality | Quality |
 | DOLCE.35 | temporal-region | Time (candidate) |
 | DOLCE.36 | time-interval | Time (candidate) |
-| DOLCE.37 | spatial-location_q | Quality Space / Quale (candidate) |
+| DOLCE.37 | spatial-location_q | Quality (was tagged "Quality Space / Quale"; confirmed by maintainer 2026-07-06 as a genuine Quality subtype, not a separate "quality space" category) |
 
 ---
 
@@ -145,7 +145,7 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | SUMO.13 | Proposition | Proposition / Content (candidate) |
 | SUMO.14 | SelfConnectedObject | Object |
 | SUMO.15 | Region | Spatial Region / Space (candidate) |
-| SUMO.16 | AutonomousAgent | Mind / Conscious Being / Agent (candidate) |
+| SUMO.16 | AutonomousAgent | Mind / Conscious Being / Agent |
 | SUMO.17 | AstronomicalBody | Object |
 | SUMO.18 | Artifact | Information Artifact |
 | SUMO.19 | ContactSite | Boundary / Site (candidate) |
@@ -153,9 +153,9 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | SUMO.21 | CollectionOfProcesses | Mereology / Parthood / Aggregate (candidate) |
 | SUMO.22 | ContentBearingProcess | Information Artifact / Process (multiple inheritance: also child of Process) |
 | SUMO.23 | ContentBearingObject | Information Artifact |
-| SUMO.24 | SymbolicString | Symbol / Sign / Representation (candidate) |
-| SUMO.25 | Icon | Symbol / Sign / Representation (candidate) |
-| SUMO.26 | LinguisticExpression | Symbol / Sign / Representation (candidate) |
+| SUMO.24 | SymbolicString | Information Artifact (was tagged "Symbol / Sign / Representation"; narrowed by maintainer 2026-07-06: SymbolicString confirmed rdfs:subClassOf ContentBearingPhysical, already crosswalked) |
+| SUMO.25 | Icon | Information Artifact (was tagged "Symbol / Sign / Representation"; narrowed by maintainer 2026-07-06: Icon confirmed rdfs:subClassOf ContentBearingPhysical, already crosswalked) |
+| SUMO.26 | LinguisticExpression | Information Artifact (was tagged "Symbol / Sign / Representation"; narrowed by maintainer 2026-07-06: LinguisticExpression confirmed rdfs:subClassOf ContentBearingPhysical, already crosswalked) |
 | SUMO.27 | VisualContentBearingPhysical | Information Artifact |
 | SUMO.28 | DualObjectProcess | Process |
 | SUMO.29 | SingleAgentProcess | Process |
@@ -188,7 +188,7 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | SUMO.56 | Graph | Ungrouped |
 | SUMO.57 | GraphElement | Ungrouped |
 | SUMO.58 | FieldOfStudy | Ungrouped |
-| SUMO.59 | Procedure | Disposition / Capacity (candidate) |
+| SUMO.59 | Procedure | Disposition / Capacity |
 | SUMO.60 | Argument | Proposition / Content (candidate) |
 
 ---
@@ -209,7 +209,7 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | UFO.8 | historicalRoleMixin | Universal / Type (candidate) — rigidity-taxonomy detail |
 | UFO.9 | kind | Universal / Type (candidate) — rigidity-taxonomy detail |
 | UFO.10 | mixin | Universal / Type (candidate) — rigidity-taxonomy detail |
-| UFO.11 | mode | Disposition / Capacity (candidate) |
+| UFO.11 | mode | Disposition / Capacity |
 | UFO.12 | phase | Universal / Type (candidate) — rigidity-taxonomy detail |
 | UFO.13 | phaseMixin | Universal / Type (candidate) — rigidity-taxonomy detail |
 | UFO.14 | quality | Quality |
@@ -261,9 +261,9 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | UFO.43 | abstractNature | Abstract vs. Concrete (candidate) |
 | UFO.44 | collectiveNature | Mereology / Parthood / Aggregate (candidate) |
 | UFO.45 | eventNature | Event |
-| UFO.46 | extrinsicModeNature | Disposition / Capacity (candidate) |
+| UFO.46 | extrinsicModeNature | Disposition / Capacity |
 | UFO.47 | functionalComplexNature | Object |
-| UFO.48 | intrinsicModeNature | Disposition / Capacity (candidate) |
+| UFO.48 | intrinsicModeNature | Disposition / Capacity |
 | UFO.49 | qualityNature | Quality |
 | UFO.50 | quantityNature | Quantity / Amount of Matter (candidate) |
 | UFO.51 | relatorNature | Relation |
@@ -306,7 +306,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GFO.20 | Discrete_process | Process |
 | GFO.21 | Entity | Continuant-Occurrent (root) |
 | GFO.22 | Extrinsic_change | Change (candidate) — deprecated in source |
-| GFO.23 | Function | Disposition / Capacity (candidate) |
+| GFO.23 | Function | Disposition / Capacity |
 | GFO.24 | History | Process |
 | GFO.25 | Independent | Continuant-Occurrent |
 | GFO.26 | Individual | Continuant-Occurrent |
@@ -335,7 +335,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GFO.49 | Process | Process |
 | GFO.50 | Processual_role | Role |
 | GFO.51 | Property | Quality |
-| GFO.52 | Property_value | Quality Space / Quale (candidate) |
+| GFO.52 | Property_value | Quality (was tagged "Quality Space / Quale"; confirmed by maintainer 2026-07-06: covered by `quality.md`, not a separate concept) |
 | GFO.53 | Relational_role | Role |
 | GFO.54 | Relator | Relation |
 | GFO.55 | Role | Role |
@@ -360,7 +360,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GFO.74 | Token | Object |
 | GFO.75 | Topoid | Spatial Region / Space (candidate) |
 | GFO.76 | Universal | Universal / Type (candidate) |
-| GFO.77 | Value_space | Quality Space / Quale (candidate) |
+| GFO.77 | Value_space | Quality (was tagged "Quality Space / Quale"; confirmed by maintainer 2026-07-06: covered by `quality.md`, not a separate concept) |
 
 ---
 
@@ -385,23 +385,23 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | YAMATO.15 | living organism | Ungrouped — domain-specific leaf, `TODO.md` "likely NOT core" |
 | YAMATO.16 | artifact | Information Artifact |
 | YAMATO.17 | non-representing thing | Object |
-| YAMATO.18 | representing thing | Symbol / Sign / Representation (candidate) |
+| YAMATO.18 | representing thing | Information Artifact (was tagged "Symbol / Sign / Representation"; narrowed by maintainer 2026-07-06: representing thing quotes the identical passage already used as information-artifact.md's own flagship YAMATO correspondence) |
 | YAMATO.19 | Chemical compound | Ungrouped — domain-specific leaf, `TODO.md` "likely NOT core" |
 | YAMATO.20 | morphological whole | Ungrouped — domain-specific leaf, `TODO.md` "likely NOT core" |
-| YAMATO.21 | weak agent | Mind / Conscious Being / Agent (candidate) |
+| YAMATO.21 | weak agent | Mind / Conscious Being / Agent |
 | YAMATO.22 | non-unitary | Mereology / Parthood / Aggregate (candidate) |
 | YAMATO.23 | abstract | Abstract vs. Concrete (candidate) |
 | YAMATO.24 | semi-abstract | Abstract vs. Concrete (candidate) |
-| YAMATO.25 | mind | Mind / Conscious Being / Agent (candidate) |
+| YAMATO.25 | mind | Mind / Conscious Being / Agent |
 | YAMATO.26 | content | Proposition / Content (candidate) |
 | YAMATO.27 | proposition | Proposition / Content (candidate) |
 | YAMATO.28 | content_2 | Proposition / Content (candidate) |
-| YAMATO.29 | representation | Symbol / Sign / Representation (candidate) |
-| YAMATO.30 | representation form | Symbol / Sign / Representation (candidate) |
+| YAMATO.29 | representation | Information Artifact (was tagged "Symbol / Sign / Representation"; narrowed by maintainer 2026-07-06: quotes the identical passage already used as information-artifact.md's own flagship YAMATO correspondence, including the form-and-content line) |
+| YAMATO.30 | representation form | Information Artifact (was tagged "Symbol / Sign / Representation"; narrowed by maintainer 2026-07-06: quotes the identical passage already used as information-artifact.md's own flagship YAMATO correspondence, including the form-and-content line) |
 | YAMATO.31 | dependent entity | Quality |
 | YAMATO.32 | generically dependent | Information Artifact / Abstract vs. Concrete (candidate) |
-| YAMATO.33 | quality value | Quality Space / Quale (candidate) |
-| YAMATO.34 | categorical | Quality Space / Quale (candidate) |
+| YAMATO.33 | quality value | Quality (was tagged "Quality Space / Quale"; confirmed by maintainer 2026-07-06: internal subdivision of YAMATO's quality apparatus, not a separate concept) |
+| YAMATO.34 | categorical | Quality (was tagged "Quality Space / Quale"; confirmed by maintainer 2026-07-06: internal subdivision of YAMATO's quality apparatus, not a separate concept) |
 | YAMATO.35 | quantity | Quantity / Amount of Matter (candidate) |
 | YAMATO.36 | role_3 | Role |
 | YAMATO.37 | specifically dependent | Quality |
@@ -409,7 +409,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | YAMATO.39 | property | Quality |
 | YAMATO.40 | generic quality | Quality |
 | YAMATO.41 | role | Role |
-| YAMATO.42 | function | Disposition / Capacity (candidate) |
+| YAMATO.42 | function | Disposition / Capacity |
 | YAMATO.43 | role_2 | Role |
 | YAMATO.44 | feature | Quality |
 
@@ -463,7 +463,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 
 | # | Class | Nearest XwkOnt bucket |
 |---|---|---|
-| GUM.1 | Ability | Disposition / Capacity (candidate) |
+| GUM.1 | Ability | Disposition / Capacity |
 | GUM.2 | Abstraction | Abstract vs. Concrete (candidate) |
 | GUM.3 | AddresseeOriented | Ungrouped — linguistic clause type, `TODO.md` "likely NOT core" |
 | GUM.4 | Addressing | Ungrouped — linguistic |
@@ -479,14 +479,14 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.14 | BehavioralQuality | Quality |
 | GUM.15 | BehavioralVerbal | Ungrouped — linguistic |
 | GUM.16 | BeingAndHaving | Situation / State of Affairs (candidate) |
-| GUM.17 | Believe | Mind / Conscious Being / Agent (candidate) |
+| GUM.17 | Believe | Mind / Conscious Being / Agent |
 | GUM.18 | Causal | Ungrouped — linguistic |
 | GUM.19 | Circumstance | Ungrouped — linguistic |
 | GUM.20 | Circumstantial | Ungrouped — linguistic |
 | GUM.21 | CircumstantialOther | Ungrouped — linguistic |
 | GUM.22 | ClassAscription | Universal / Type (candidate) |
 | GUM.23 | ClassQuality | Quality |
-| GUM.24 | Cognition | Mind / Conscious Being / Agent (candidate) |
+| GUM.24 | Cognition | Mind / Conscious Being / Agent |
 | GUM.25 | Color | Quality |
 | GUM.26 | ColorPropertyAscription | Quality |
 | GUM.27 | CommunicativeAttitude | Ungrouped — linguistic |
@@ -500,13 +500,13 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.35 | ConfigurationResuming | Situation / State of Affairs (candidate) |
 | GUM.36 | ConfigurationStaging | Situation / State of Affairs (candidate) |
 | GUM.37 | Conjunction | Ungrouped — linguistic |
-| GUM.38 | ConsciousBeing | Mind / Conscious Being / Agent (candidate) |
+| GUM.38 | ConsciousBeing | Mind / Conscious Being / Agent |
 | GUM.39 | CreativeMaterialAction | Ungrouped — linguistic |
 | GUM.40 | DecomposableObject | Mereology / Parthood / Aggregate (candidate) |
 | GUM.41 | DiffuseMatter | Quantity / Amount of Matter (candidate) |
 | GUM.42 | Disjunction | Ungrouped — linguistic |
 | GUM.43 | DisjunctiveSet | Universal / Type (candidate) |
-| GUM.44 | Disliking | Mind / Conscious Being / Agent (candidate) |
+| GUM.44 | Disliking | Mind / Conscious Being / Agent |
 | GUM.45 | DispositiveMaterialAction | Ungrouped — linguistic |
 | GUM.46 | DoingAndHappening | Situation / State of Affairs (candidate) |
 | GUM.47 | DurationInTime | Time (candidate) |
@@ -522,11 +522,11 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.57 | Expansion | Ungrouped — linguistic |
 | GUM.58 | Extension | Ungrouped — linguistic |
 | GUM.59 | External | Ungrouped — linguistic |
-| GUM.60 | Fearing | Mind / Conscious Being / Agent (candidate) |
-| GUM.61 | Female | Mind / Conscious Being / Agent (candidate) |
+| GUM.60 | Fearing | Mind / Conscious Being / Agent |
+| GUM.61 | Female | Mind / Conscious Being / Agent |
 | GUM.62 | Future | Time (candidate) |
 | GUM.63 | GUMThing | Continuant-Occurrent (root) |
-| GUM.64 | GeneralPossibility | Disposition / Capacity (candidate) |
+| GUM.64 | GeneralPossibility | Disposition / Capacity |
 | GUM.65 | GeneralizedLocating | Spatial Region / Space (candidate) |
 | GUM.66 | GeneralizedPossession | Relation |
 | GUM.67 | GeneralizedPossessionInverse | Relation |
@@ -540,30 +540,30 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.75 | Identity | Ungrouped — linguistic |
 | GUM.76 | InstantaneousInTime | Time (candidate) |
 | GUM.77 | Intensive | Relation |
-| GUM.78 | Intention | Disposition / Capacity (candidate) |
+| GUM.78 | Intention | Disposition / Capacity |
 | GUM.79 | Internal | Ungrouped — linguistic |
-| GUM.80 | Know | Mind / Conscious Being / Agent (candidate) |
+| GUM.80 | Know | Mind / Conscious Being / Agent |
 | GUM.81 | LessThan | Quantity / Amount of Matter (candidate) |
 | GUM.82 | LessThanComparison | Quantity / Amount of Matter (candidate) |
-| GUM.83 | Liking | Mind / Conscious Being / Agent (candidate) |
+| GUM.83 | Liking | Mind / Conscious Being / Agent |
 | GUM.84 | LocutionProjection | Ungrouped — linguistic |
 | GUM.85 | LocutionQuoting | Ungrouped — linguistic |
 | GUM.86 | LocutionReporting | Ungrouped — linguistic |
 | GUM.87 | LogicalPropertyAscription | Quality |
 | GUM.88 | LogicalQuality | Quality |
 | GUM.89 | LogicalUniqueness | Quality |
-| GUM.90 | Male | Mind / Conscious Being / Agent (candidate) |
+| GUM.90 | Male | Mind / Conscious Being / Agent |
 | GUM.91 | MaterialClassQuality | Quality |
 | GUM.92 | MaterialPropertyAscription | Quality |
 | GUM.93 | MaterialWorldQuality | Quality |
-| GUM.94 | MentalActive | Mind / Conscious Being / Agent (candidate) |
-| GUM.95 | MentalInactive | Mind / Conscious Being / Agent (candidate) |
+| GUM.94 | MentalActive | Mind / Conscious Being / Agent |
+| GUM.95 | MentalInactive | Mind / Conscious Being / Agent |
 | GUM.96 | MessageOriented | Ungrouped — linguistic |
 | GUM.97 | MessageTransfer | Ungrouped — linguistic |
 | GUM.98 | ModalPropertyAscription | Modality (candidate) |
 | GUM.99 | ModalQuality | Modality (candidate) |
 | GUM.100 | MultiConfiguration | Situation / State of Affairs (candidate) |
-| GUM.101 | Name | Symbol / Sign / Representation (candidate) |
+| GUM.101 | Name | Symbol / Sign / Representation (candidate; excluded from that crosswalk's evidence 2026-07-06 — its definition is comparable in form to information-artifact.md's own BFO(IAO) Information Content Entity definition; not added there by this pass, open question, see symbol-sign-representation.yaml's Future Work) |
 | GUM.102 | NameEvent | Event |
 | GUM.103 | NameOf | Symbol / Sign / Representation (candidate) |
 | GUM.104 | NameRelation | Symbol / Sign / Representation (candidate) |
@@ -592,8 +592,8 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.127 | PartOf | Mereology / Parthood / Aggregate (candidate) |
 | GUM.128 | PartWhole | Mereology / Parthood / Aggregate (candidate) |
 | GUM.129 | Past | Time (candidate) |
-| GUM.130 | Perception | Mind / Conscious Being / Agent (candidate) |
-| GUM.131 | Person | Mind / Conscious Being / Agent (candidate) |
+| GUM.130 | Perception | Mind / Conscious Being / Agent |
+| GUM.131 | Person | Mind / Conscious Being / Agent |
 | GUM.132 | PolarQuality | Quality |
 | GUM.133 | Possibility | Modality (candidate) |
 | GUM.134 | Present | Time (candidate) |
@@ -609,7 +609,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.144 | QuantityAscription | Quantity / Amount of Matter (candidate) |
 | GUM.145 | Quoting | Ungrouped — linguistic |
 | GUM.146 | Raining | Ungrouped — linguistic |
-| GUM.147 | ReactionAndEmotion | Mind / Conscious Being / Agent (candidate) |
+| GUM.147 | ReactionAndEmotion | Mind / Conscious Being / Agent |
 | GUM.148 | Relating | Relation |
 | GUM.149 | Reporting | Ungrouped — linguistic |
 | GUM.150 | RoleOrOffice | Role |
@@ -632,7 +632,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.167 | SpecificMatter | Quantity / Amount of Matter (candidate) |
 | GUM.168 | StativeQuality | Quality |
 | GUM.169 | StatusQuality | Quality |
-| GUM.170 | Striving | Mind / Conscious Being / Agent (candidate) |
+| GUM.170 | Striving | Mind / Conscious Being / Agent |
 | GUM.171 | SubjectMatter | Ungrouped — linguistic |
 | GUM.172 | Substance | Quantity / Amount of Matter (candidate) |
 | GUM.173 | Sunning | Ungrouped — linguistic |
@@ -642,7 +642,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.177 | TemporalProfile | Time (candidate) |
 | GUM.178 | TemporallyBounded | Time (candidate) |
 | GUM.179 | TemporallyUnbounded | Time (candidate) |
-| GUM.180 | Think | Mind / Conscious Being / Agent (candidate) |
+| GUM.180 | Think | Mind / Conscious Being / Agent |
 | GUM.181 | ThreeDLocation | Spatial Region / Space (candidate) |
 | GUM.182 | ThreeDTime | Time (candidate) |
 | GUM.183 | Time | Time (candidate) |
@@ -651,7 +651,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.186 | UMSet | Universal / Type (candidate) |
 | GUM.187 | UsePropertyAscription | Quality |
 | GUM.188 | Volitional | Modality (candidate) |
-| GUM.189 | Wanting | Mind / Conscious Being / Agent (candidate) |
+| GUM.189 | Wanting | Mind / Conscious Being / Agent |
 | GUM.190 | Winding | Ungrouped — linguistic |
 | GUM.191 | Word | Symbol / Sign / Representation (candidate) |
 | GUM.192 | ZeroDLocation | Spatial Region / Space (candidate) |

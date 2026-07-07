@@ -3,7 +3,7 @@ slug: role
 title: Role
 editorial_status: reviewed
 created: "2026-07-01"
-modified: "2026-07-02"
+modified: "2026-07-06"
 scope_note: 'This crosswalk compares BFO''s `Role` (a `Realizable Entity`, the other branch
   of `Specifically Dependent Continuant` alongside Quality), DOLCE''s Role treatment (formalized
   via OntoClean meta-properties: anti-rigid, founded/dependent — **but see correction below:
@@ -511,22 +511,26 @@ comparison_notes:
 mapping_assertions:
 - mapping_id: xwkont:mapping:role:001
   subject: DOLCE-driven:Role (Masolo et al. 2004, not core DOLCE)
-  relation_category: exact-equivalence-candidate
+  relation_category: close-match
   object: UFO:Role
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: medium-high
-  rationale: 'Both are anti-rigid, foundation/dependence-grounded, relationally-conditioned
-    types; UFO explicitly continues this OntoClean-adjacent lineage. Confidence raised from
-    medium: Masolo et al. (2004) and the UFO 2021 paper are now both independently fetched
-    and directly verified (2026-07-01), not just reported via `xwkont:ref:dolce-borgo-2022`.
-    Not raised to high because the two frameworks still differ in formal apparatus (DOLCE-driven:
-    `CF`-classification of a `Concept`; UFO: anti-rigid sortal specializing a Kind) even though
-    the informal characterization matches closely.'
+  confidence: high
+  rationale: 'Corrected (2026-07-06, full-corpus audit) from `exact-equivalence-candidate`:
+    both are anti-rigid, foundation/dependence-grounded, relationally-conditioned types; UFO
+    explicitly continues this OntoClean-adjacent lineage, and the informal characterization
+    matches unusually closely. But the two frameworks still differ in formal apparatus
+    (DOLCE-driven: `CF`-classification of a `Concept`; UFO: anti-rigid sortal specializing a
+    Kind) — the same kind of divergence `mapping-002`/`mapping-003` already use to withhold
+    `exact-equivalence-candidate` for BFO against these same two sources. Applying that
+    standard consistently: `close-match`, not `exact-equivalence-candidate`. `high` confidence
+    in `close-match`, higher than `mapping-002`/`003`''s `medium`: both sources are independently
+    fetched and directly verified (2026-07-01), and the informal-level convergence here is
+    textually closer than either BFO comparison — a confidently-established, not open, finding.'
   provenance:
   - xwkont:ref:masolo-vieu-2004
   - xwkont:ref:ufo-2021
-  predicate_id: skos:exactMatch
+  predicate_id: skos:closeMatch
 - mapping_id: xwkont:mapping:role:002
   subject: BFO:Role
   relation_category: close-match
@@ -585,11 +589,13 @@ mapping_assertions:
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: medium-high
-  rationale: Both are `Dependent` roles specifically grounded in a Relator/relator-like mediator
-    (`role_of` some `Relator` in GFO; UFO's Role held "in the scope of" a Relator), directly
-    paralleling `relation.md`'s GFO/UFO Relator convergence at the Role-specific level (`note-005`).
-    Not `high` because GFO's `Relational_role` carries only structural axioms, no prose theory
-    to compare against UFO's elaborated account.
+  rationale: 'Both are `Dependent` roles specifically grounded in a Relator/relator-like mediator
+    (`role_of` some `Relator` in GFO; UFO''s Role held "in the scope of" a Relator), directly
+    paralleling `relation.md`''s GFO/UFO Relator convergence at the Role-specific level (`note-005`).
+    `medium-high`, not `high`, for a genuine sourcing-completeness reason: GFO''s own file
+    supplies `Relational_role` with only structural axioms, no prose theory to compare against
+    UFO''s elaborated account — a documentation gap in the primary source, not a confirmed
+    substantive divergence.'
   provenance:
   - xwkont:ref:gfo
   - xwkont:ref:ufo-2021
@@ -780,11 +786,17 @@ review_history:
   review_notes: 'Consolidated review pass, per `docs/governance/contributing.md`''s Review
     Checklist, of the `ADR-0015` buildout content across all 8 concept crosswalks — the final
     crosswalk in that pass. Checked: scope preserved; every `xwkont:ref:*` citation resolves;
-    correspondence/mapping/note/uncertainty ID numbering sequential with no gaps or duplicates;
-    relation-category and confidence values compliant with `docs/methodology/crosswalk-methodology.md`/`ADR-0013`
-    (all three `medium-high` mappings here state a sourcing-driven reason); independently
-    re-verified GFO''s `Social_role`/`Independent` classification and YAMATO''s "teacher role...
-    school" quotation against the fetched artifacts and found no transcription errors. With
+    correspondence/mapping/note/uncertainty ID numbering sequential with no gaps or duplicates.
+    **Correction (2026-07-06, full-corpus audit):** this entry originally claimed "all three
+    `medium-high` mappings here state a sourcing-driven reason" — true for `mapping-006`/`008`
+    (genuine GFO documentation gap; unfetched Mizoguchi 2007), false for `mapping-001`, which
+    used `exact-equivalence-candidate`/`medium-high` despite its own rationale disclosing a
+    formal-apparatus divergence identical in kind to what `mapping-002`/`003` already use to
+    withhold that category for BFO against the same two sources. Corrected to `close-match`
+    at `high` confidence in this pass, applying the file''s own standard consistently — see
+    `docs/methodology/crosswalk-runbook.md`''s governing principle. Independently re-verified
+    GFO''s `Social_role`/`Independent` classification and YAMATO''s "teacher role... school"
+    quotation against the fetched artifacts and found no transcription errors. With
     this crosswalk advanced, all 8 concept crosswalks are now `reviewed` again. Self-review
     performed at the maintainer''s explicit request, not independent third-party review.'
 future_work:

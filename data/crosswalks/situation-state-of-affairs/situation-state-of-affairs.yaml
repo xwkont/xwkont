@@ -3,7 +3,7 @@ slug: situation-state-of-affairs
 title: Situation / State of Affairs
 editorial_status: reviewed
 created: "2026-07-04"
-modified: "2026-07-05"
+modified: "2026-07-06"
 scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Situation / State
   of Affairs is the fifth concept drafted from the `0.2.0` batch. `TODO.md`''s own seed flagged
   this candidate as "weaker/more UFO-centric than [Space, Abstract, Quantity]; good test of
@@ -543,10 +543,18 @@ mapping_assertions:
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: medium
-  rationale: DOLCE's DnS `situation` is itself historically and terminologically the closer
-    ancestor of UFO/OntoUML's own situation-semantics tradition (both trace to description-and-situation-style
-    modeling) — recorded as `close-match` on the same substantive grounds as `mapping:001`/`mapping:008`,
-    not independently re-derived.
+  rationale: 'Corrected (2026-07-06, full-corpus audit): the original rationale asserted a
+    historical/genealogical claim ("DOLCE''s DnS situation is itself historically and terminologically
+    the closer ancestor of UFO/OntoUML''s tradition") with no cited source text supporting it,
+    and explicitly conceded it was "not independently re-derived." The actual evidentiary basis
+    available is a triangulated one, via GFO: `mapping-008` directly quotes DOLCE''s `situation`
+    as "comprehended as a whole"; `mapping-001` directly quotes UFO''s stereotype sharing the
+    same "whole-comprehension criterion" against GFO''s own "comprehended as a whole" text.
+    DOLCE and UFO are not directly compared against each other by any cited quotation here --
+    the correspondence is inferred by both sharing the same criterion with GFO, not confirmed
+    by a direct DOLCE-UFO textual comparison. `close-match` and `medium` confidence (not
+    raised) reflect that this is an inference from two other mappings'' cited evidence, not an
+    independently-verified direct comparison.'
   provenance:
   - xwkont:ref:dolce-extendeddns-owl
   - xwkont:ref:ontouml-vocabulary
@@ -742,8 +750,16 @@ review_history:
     sequential with no gaps or duplicates (verified: correspondences 001-005, mappings 001-009,
     notes 001-005, uncertainty 001-004); all confidence values are within the `ADR-0013`-approved
     vocabulary (3 `high`, 5 `medium`, 6 `low` — no `medium-high`/`low-medium` used, so no
-    sourcing-rationale requirement triggered); mapping categories (`close-match`, `unknown`)
-    match their stated justifications. Resolves `uncertainty-001`: the original HOLD rested
+    sourcing-rationale requirement triggered). **Correction (2026-07-06, full-corpus audit):**
+    this entry originally also claimed "mapping categories... match their stated justifications"
+    — false for `mapping-009`, which asserted an unevidenced historical/genealogical claim
+    about DOLCE DnS being UFO/OntoUML''s "closer ancestor," explicitly conceding it was "not
+    independently re-derived." Rewritten in this pass to state the actual evidentiary basis:
+    a triangulated inference through GFO (`mapping-001`/`mapping-008`'' shared "comprehended
+    as a whole" quotations), not a direct DOLCE-UFO comparison. Category and confidence
+    (`close-match`/`medium`) were already appropriate and are unchanged — only the rationale''s
+    fabricated claim was corrected. See `docs/methodology/crosswalk-runbook.md`''s governing
+    principle. Resolves `uncertainty-001`: the original HOLD rested
     on a thin 1-of-8 source count *and* a conflated-senses concern (DOLCE''s occurrent `state`
     being read as this concept''s "situation" sense) — the 2026-07-05 primary-source pass
     resolved both by finding a genuine 3-source (GFO, DOLCE via DnS, UFO via OntoUML) convergence

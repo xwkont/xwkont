@@ -1,0 +1,598 @@
+local_identifier: xwkont:concept:disposition-capacity
+slug: disposition-capacity
+title: Disposition / Capacity
+editorial_status: reviewed
+created: '2026-07-06'
+modified: '2026-07-06'
+scope_note: 'This crosswalk compares bearer-inherent capacities in the BFO sense: `disposition` and its
+  etiological subtype `function`, against candidate analogs in GFO, UFO/OntoUML, SUMO, YAMATO, and GUM.
+
+
+
+  It does **not** compare Role or Relator. Those are social/relational positions or truthmakers, not intrinsic
+  capacities. It also does not treat procedure, intention, or other modal-looking lexical neighbors as
+  equivalent just because they sound ability-like.
+
+
+
+  Checked DOLCE materials (`D18`, `DOLCE-Lite`, and DUL) did not yield a confirmed bearer-capacity analogue
+  in the source material read for this pass. That is recorded here as a scoped negative finding, not as
+  a claim about every later DOLCE extension.'
+labels:
+- role: XwkOnt working label
+  label: Disposition / Capacity
+  label_source: XwkOnt
+  language: en
+  entry_notes: Working label for the bearer-inherent realizable-capacity family.
+- role: Source term
+  label: disposition
+  label_source: BFO
+  language: en
+  entry_notes: Internally-grounded realizable entity; the core bearer-capacity term.
+- role: Source term
+  label: function
+  label_source: BFO
+  language: en
+  entry_notes: A disposition that exists in virtue of the bearer's physical make-up and realizes processes
+    of a certain sort.
+- role: Source term
+  label: Function
+  label_source: GFO
+  language: en
+  entry_notes: Teleological universal / conceptual structure, ascribed to realizations or intended realizations.
+- role: Source term
+  label: mode
+  label_source: UFO / OntoUML proxy
+  language: en
+  entry_notes: Proxy for the UFO mode branch; see `intrinsicModeNature` and `extrinsicModeNature`. UFO
+    itself has no IRI scheme.
+- role: Source term
+  label: Ability
+  label_source: GUM
+  language: en
+  entry_notes: Modal qualification of a process, realized by `can`.
+- role: Source term
+  label: GeneralPossibility
+  label_source: GUM
+  language: en
+  entry_notes: Modal qualification of a process, realized by `may`.
+- role: Source term
+  label: Intention
+  label_source: GUM
+  language: en
+  entry_notes: Mental-process configuration that captures actively pursuing a determinate aim.
+- role: Source term
+  label: Procedure
+  label_source: SUMO
+  language: en
+  entry_notes: Sequence-dependent specification.
+- role: Source term
+  label: function
+  label_source: YAMATO
+  language: en
+  entry_notes: Functional-ontology terminology; no standalone capacity class was confirmed in the fetchable
+    report.
+source_definitions:
+- source: BFO
+  term_or_identifier: disposition (BFO_0000016)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A disposition is a realizable entity such that if it ceases to exist then its bearer is physically
+    changed and its realization occurs when and because this bearer is in some special physical circumstances
+    and this realization occurs in virtue of the bearer''s physical make-up."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '`bfo-core.ttl`, class `BFO_0000016`'
+  entry_notes: The core capacity-like term in BFO.
+- source: BFO
+  term_or_identifier: function (BFO_0000034)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A function is a disposition that exists in virtue of its bearer''s physical make-up and this
+    physical make-up is something the bearer possesses because it came into being either through evolution
+    ... or through intentional design ... in order to realize processes of a certain sort."'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '`bfo-core.ttl`, class `BFO_0000034`'
+  entry_notes: BFO explicitly places function under disposition.
+- source: GFO
+  term_or_identifier: Function
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A function F is a universal (conceptual structure) defined in purely teleological terms with
+    respect to a given goal G which commonly is ascribed by means of has-function relation to entities
+    that are the realizations of the function F, execute such a realization or are intended to do it."'
+  reference:
+  - xwkont:ref:gfo
+  locator: '`modules/gfo-base.owl`, class `https://w3id.org/gfo/base/Function`'
+  entry_notes: Teleological, but not bearer-inhering in the BFO sense.
+- source: UFO / OntoUML proxy
+  term_or_identifier: mode / intrinsicModeNature / extrinsicModeNature
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`mode`: "A particular type of intrinsic property that has no structured value." `intrinsicModeNature`:
+    "Indicates that the restricted type includes intrinsic mode individuals among its instances." `extrinsicModeNature`:
+    "Identifies what inheres in a concrete individual and depends on others for its existence."'
+  reference:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:ontouml-vocabulary
+  locator: UFO paper extraction notes; `ontouml.ttl` classes `ontouml:mode`, `ontouml:intrinsicModeNature`,
+    `ontouml:extrinsicModeNature`
+  entry_notes: UFO itself has no IRI scheme; OntoUML is the machine-readable proxy.
+- source: GUM
+  term_or_identifier: Ability / GeneralPossibility / Intention (linguistic grounding)
+  dimension: philosophical
+  source_claim_type: editorial observation
+  text: GUM's modal and intention classes are explicitly embedded in a systemic-functional-linguistic
+    ontology of clause realization, where `Ability` and `GeneralPossibility` qualify processes and `Intention`
+    captures a mental process pursuing a determinate aim.
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl`, classes `Ability`, `GeneralPossibility`, `Intention`'
+  entry_notes: This row records the source's own theoretical grounding, not a claim that these classes
+    are bearer capacities.
+- source: GUM
+  term_or_identifier: Ability
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A modal qualification of the process, with respect to the ability to perform that process; typically
+    realized by `can`."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl`, class `Ability`'
+  entry_notes: Modal/process qualification, not a bearer-inherent capacity class.
+- source: GUM
+  term_or_identifier: GeneralPossibility
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A general possibility relationship is a modal modification of a process that indicates that
+    the process may occur; it is typically realized using the modal `may`."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl`, class `GeneralPossibility`'
+  entry_notes: Modal/process qualification, not a bearer-inherent capacity class.
+- source: GUM
+  term_or_identifier: Intention
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An Intention configuration has a mental process that captures the notion of actively pursuing
+    a determinate aim."'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl`, class `Intention`'
+  entry_notes: Mental aim/configuration, not a bearer capacity.
+- source: SUMO
+  term_or_identifier: Procedure
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"A sequence-dependent specification. Some examples are ComputerPrograms, finite-state machines,
+    cooking recipes, musical scores, conference schedules, driving directions, and the scripts of plays
+    and movies."'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '`Merge.kif`, class `Procedure`'
+  entry_notes: 'A good false friend: procedural specification, not disposition/capacity.'
+- source: YAMATO
+  term_or_identifier: functional ontology / roles
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"The separation of what to do and how to do is the very philosophy of our functional ontology."
+    The same section adds that roles are defined within a context and are used in defining all the types
+    in YAMATO.'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '`YAMATO101216.pdf`, section 6, "Roles, functions and relations"'
+  entry_notes: This is the clearest YAMATO grounding relevant to the candidate. The fetchable report does
+    not confirm a standalone `Function` class.
+- source: YAMATO
+  term_or_identifier: functional ontology (explicit exclusion)
+  dimension: philosophical
+  source_claim_type: direct quotation
+  text: '"Although we have already developed a convincing functional ontology which is compliant with
+    YAMATO, it is not incorporated into YAMATO because it is too professional for general readers."'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '`YAMATO101216.pdf`, section 6, "Roles, functions and relations"'
+  entry_notes: A direct, explicit statement that a compliant functional ontology exists but is deliberately
+    not incorporated into YAMATO -- the same strength of evidence as DOLCE's "does not formalize functions
+    and roles" (see `role.md`), not merely an absence-from-the-fetched-report finding.
+- source: DOLCE
+  term_or_identifier: '*(none confirmed in checked materials)*'
+  dimension: technical
+  source_claim_type: editorial observation
+  text: Checked D18, DOLCE-Lite, and DUL for a bearer-capacity/disposition analogue and did not confirm
+    one in the materials read for this pass. The checked DOLCE sources discuss qualities, roles, relations,
+    and (in extension literature) function-like notions, but not a confirmed disposition/capacity class.
+  reference:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:gangemi-dul
+  locator: checked full text / grep passes; no direct term confirmed
+  entry_notes: Scoped negative finding, not a universal claim about every possible DOLCE extension.
+correspondences:
+- correspondence_id: xwkont:correspondence:disposition-capacity:001
+  source_ontology: BFO
+  source_term: disposition
+  source_identifier_or_iri: BFO_0000016
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Core bearer-capacity term in the source most directly aligned with the scope.
+- correspondence_id: xwkont:correspondence:disposition-capacity:002
+  source_ontology: BFO
+  source_term: function
+  source_identifier_or_iri: BFO_0000034
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Included because BFO treats function as a disposition subtype.
+- correspondence_id: xwkont:correspondence:disposition-capacity:003
+  source_ontology: GFO
+  source_term: Function
+  source_identifier_or_iri: https://w3id.org/gfo/base/Function
+  source_version: GFO 2024-11-18
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Candidate teleological analog; not bearer-inhering in the BFO sense, but too close
+    to ignore.
+- correspondence_id: xwkont:correspondence:disposition-capacity:004
+  source_ontology: UFO (OntoUML proxy)
+  source_term: mode
+  source_identifier_or_iri: not applicable -- UFO has no IRI scheme; proxy terms are `ontouml:mode`, `ontouml:intrinsicModeNature`,
+    and `ontouml:extrinsicModeNature`
+  source_version: UFO 2021 / OntoUML vocabulary snapshot
+  reference:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:ontouml-vocabulary
+  inclusion_rationale: Candidate modality-like analogue; kept because the mode branch is the closest machine-readable
+    UFO family near this scope.
+- correspondence_id: xwkont:correspondence:disposition-capacity:005
+  source_ontology: GUM
+  source_term: Ability
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Ability
+  source_version: GUM 3.1
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Checked because it is the most capacity-like GUM term; excluded from exact matching
+    because it qualifies processes, not bearers.
+- correspondence_id: xwkont:correspondence:disposition-capacity:006
+  source_ontology: GUM
+  source_term: GeneralPossibility
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralPossibility
+  source_version: GUM 3.1
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Checked as a modal neighbor; excluded because it is process-level possibility,
+    not a bearer capacity.
+- correspondence_id: xwkont:correspondence:disposition-capacity:007
+  source_ontology: GUM
+  source_term: Intention
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Intention
+  source_version: GUM 3.1
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Checked because it can look ability-like in ordinary language, but it is a mental-process
+    configuration.
+- correspondence_id: xwkont:correspondence:disposition-capacity:008
+  source_ontology: SUMO
+  source_term: Procedure
+  source_identifier_or_iri: Procedure
+  source_version: Merge.kif (current SUMO source)
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Candidate false friend; sequence specification is not a capacity/disposition. Note
+    also `(subclass Procedure Proposition)` in `Merge.kif` -- Procedure sits under SUMO's `Proposition`,
+    the same abstract-entity branch already crosswalked for Information Artifact/Proposition-Content,
+    and the same systemic pattern `role.md`/`quality.md` document for SUMO's `Attribute` branch.
+- correspondence_id: xwkont:correspondence:disposition-capacity:009
+  source_ontology: YAMATO
+  source_term: function
+  source_identifier_or_iri: not applicable -- YAMATO's own paper explicitly excludes a compliant functional
+    ontology from YAMATO itself (see Source Definitions)
+  source_version: 2010 technical report
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Candidate investigated; excluded on direct textual evidence that a compliant functional
+    ontology exists but was deliberately not incorporated into YAMATO, not merely left uncategorized for
+    lack of fetchable evidence.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: BFO is the only source in this pass that explicitly defines the scope term as a realizable entity
+    that comes into being and is realized under special conditions. Its `function` subclass makes the
+    etiological side of the hierarchy explicit, so BFO gives the cleanest bearer-capacity baseline for
+    the crosswalk.
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: GFO's `Function` is close to the scope in that it is teleological and tied to realizations or
+    intended realizations, but GFO frames it as a universal/conceptual structure rather than a bearer-inhering
+    realizable entity. That is why it stays `related` rather than `close-match`.
+  supporting_references:
+  - xwkont:ref:gfo
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: The UFO/OntoUML mode branch is modal/property-like, not a capacity hierarchy. `mode` is an intrinsic
+    property with no structured value, `intrinsicModeNature` identifies types with intrinsic mode instances,
+    and `extrinsicModeNature` identifies types that depend on others for existence. That makes the branch
+    adjacent to the scope, but not a confirmed disposition/capacity equivalent.
+  supporting_references:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:ontouml-vocabulary
+  confidence: medium
+- note_id: note-004
+  dimension: technical
+  claim_type: editorial observation
+  note: GUM's `Ability` and `GeneralPossibility` are process modalities, and `Intention` is a mental configuration
+    pursuing an aim. Those are linguistically useful modality classes, but they are not bearer-inherent
+    capacities in the BFO sense.
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-005
+  dimension: philosophical
+  claim_type: direct quotation
+  note: YAMATO explicitly frames its functional ontology as a distinction between "what to do" and "how
+    to do", and says roles are defined within a context and used in defining all types. That is a functional-theoretic
+    and role-theoretic grounding, not a standalone bearer-capacity class in the fetchable report. The same
+    section goes further, stating directly that a "convincing functional ontology which is compliant with
+    YAMATO" already exists but "is not incorporated into YAMATO because it is too professional for general
+    readers" -- an explicit exclusion, not merely an absence of evidence.
+  supporting_references:
+  - xwkont:ref:yamato-mizoguchi-2010
+  confidence: high
+- note_id: note-006
+  dimension: technical
+  claim_type: editorial observation
+  note: SUMO's `Procedure` is sequence-dependent specification. It is a useful false friend because it
+    sounds action-oriented, but its own definition is about specification, not a bearer capacity or disposition.
+    `Merge.kif` also gives `(subclass Procedure Proposition)` -- Procedure sits under SUMO's abstract `Proposition`
+    branch, the same corpus-wide pattern `role.md` and `quality.md` already found for SUMO's `Attribute`
+    branch (BFO/DOLCE/UFO dependent particulars land under SUMO's abstract-entity hierarchy instead).
+  supporting_references:
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-007
+  dimension: technical
+  claim_type: editorial observation
+  note: The checked DOLCE materials did not surface a confirmed disposition/capacity analogue. That negative
+    finding matters because it prevents the crosswalk from treating DOLCE's quality, role, or extension-literature
+    function notions as if they were bearer capacities.
+  supporting_references:
+  - xwkont:ref:dolce-wonderweb-d18
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:gangemi-dul
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:disposition-capacity:001
+  subject: BFO:function
+  relation_category: related
+  object: GFO:Function
+  mapping_justification: semapv:ManualMappingCuration
+  predicate_id: skos:relatedMatch
+  status: candidate
+  confidence: low
+  rationale: Both are teleological and both connect to realizations or intended realizations, but GFO
+    makes function a universal/conceptual structure rather than a bearer-inhering realizable entity. That
+    is enough for a relation, not enough for a stronger match.
+  provenance:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:disposition-capacity:002
+  subject: BFO:disposition
+  relation_category: unknown
+  object: UFO:mode (OntoUML proxy)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: The UFO mode branch is the closest bearer-dependent property family checked here, but the
+    source text and proxy vocabulary do not establish it as a capacity/tendency equivalent. Keep it open
+    rather than forcing a match.
+  provenance:
+  - xwkont:ref:ufo-2021
+  - xwkont:ref:ontouml-vocabulary
+- mapping_id: xwkont:mapping:disposition-capacity:003
+  subject: BFO:disposition
+  relation_category: unknown
+  object: GUM:Ability
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: GUM's `Ability` is about the ability to perform a process, not about an enduring bearer capacity.
+    It is close in ordinary language but not structurally the same thing.
+  provenance:
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:disposition-capacity:004
+  subject: BFO:disposition
+  relation_category: unknown
+  object: GUM:GeneralPossibility
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: '`GeneralPossibility` modally qualifies a process as possible, which is still process-centered
+    rather than bearer-centered.'
+  provenance:
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:disposition-capacity:005
+  subject: BFO:disposition
+  relation_category: explicit-non-equivalence
+  object: GUM:Intention
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: '`Intention` is a mental-process configuration pursuing an aim. That is a different ontological
+    kind from an intrinsic bearer capacity, so equivalence should not be asserted.'
+  provenance:
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:disposition-capacity:006
+  subject: BFO:function
+  relation_category: explicit-non-equivalence
+  object: SUMO:Procedure
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: SUMO's `Procedure` is a sequence-dependent specification, not a bearer capacity/disposition.
+    The lexical similarity is a false friend.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:disposition-capacity:007
+  subject: BFO:function
+  relation_category: explicit-non-equivalence
+  object: YAMATO:function
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: YAMATO's own paper states directly that a "convincing functional ontology which is compliant
+    with YAMATO" already exists but "is not incorporated into YAMATO because it is too professional for
+    general readers" -- an explicit exclusion of a standalone Function class from YAMATO itself, not merely
+    an absence of evidence in the fetchable report. Equivalence should not be asserted against a class
+    that YAMATO's own authors deliberately chose not to include.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: uncertainty
+  resolved: false
+  description: DOLCE core/lite/DUL did not yield a confirmed disposition/capacity analogue in the checked
+    material. The closest checked concepts remain quality, role, relation, and extension-literature function
+    notions, all of which are adjacent but not the same as a bearer capacity.
+  impact: Prevents a false DOLCE equivalence claim.
+  follow_up: Re-check any later DOLCE extension only if a source explicitly names a capacity/disposition-like
+    class.
+- item_id: uncertainty-002
+  uncertainty_type: uncertainty
+  resolved: false
+  description: The UFO/OntoUML mode branch is still only a proxy-level candidate for this scope. The checked
+    material shows it is intrinsic/extrinsic property language, but not a confirmed disposition/capacity
+    hierarchy.
+  impact: Keeps `mapping-002` at `unknown`.
+  follow_up: Revisit only if a later UFO source or a more direct formalization explicitly treats mode
+    as capacity-like.
+- item_id: uncertainty-003
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: GFO `Function` remains only `related` because the source treats it as a universal/conceptual
+    structure. Whether future review wants to keep `related` or downgrade to `unknown` is an editorial
+    decision, not a source fact.
+  impact: Affects `mapping-001` confidence and relation category.
+  follow_up: Confirm the intended XwkOnt threshold for teleological universals versus bearer-inhering
+    capacities.
+- item_id: uncertainty-004
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: GUM's `Ability`, `GeneralPossibility`, and `Intention` are process/modality/mental-aim
+    classes, not bearer capacities.
+  impact: Supports the `unknown`/`explicit-non-equivalence` split in the mapping table.
+  follow_up: None needed unless a later GUM module introduces a distinct capacity class.
+- item_id: uncertainty-005
+  uncertainty_type: non-equivalence
+  resolved: true
+  resolved_date: '2026-07-06'
+  resolution_note: resolved 2026-07-06, following re-verification of the YAMATO PDF's own text
+  description: YAMATO's report talks about functional ontology and roles. Original pass left this at `unknown`
+    for lack of a standalone `Function` class; re-verification against the primary source found the paper
+    explicitly states a compliant functional ontology exists but is deliberately not incorporated into
+    YAMATO ("too professional for general readers") -- a direct exclusion, not an absence of evidence.
+  impact: Resolved `mapping-007` from `unknown` to `explicit-non-equivalence`, `low` to `high` confidence.
+  follow_up: Fetch YAMATO's OWL/Hozo files if the registration gate is ever completed, to check whether
+    the separately-developed functional ontology (Kitamura 2006) is later formalized as an IRI-bearing
+    class outside YAMATO proper.
+- item_id: uncertainty-006
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: SUMO `Procedure` is a specification, not a capacity/disposition, so it stays a negative
+    finding rather than a near-equivalence.
+  impact: Prevents procedure/function drift.
+  follow_up: None needed.
+- item_id: uncertainty-007
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: BFO's `function` is safely included only because BFO itself defines it as a disposition
+    subtype; no other source in this pass provided an equally direct bearer-inhering function analogue.
+  impact: Supports keeping BFO function as the strongest source-side anchor in the crosswalk.
+  follow_up: If a future source defines a bearer-inhering function directly, compare it against `BFO_0000034`
+    first, not against a looser modal/process class.
+- item_id: uncertainty-008
+  uncertainty_type: open-question
+  resolved: false
+  description: 'GUM `Ability`/`GeneralPossibility` (`rdfs:subClassOf Possibility`, a modal-relation branch)
+    and `Intention` (`rdfs:subClassOf Internal` -> `SayingAndSensing`, a mental-process branch) are both
+    non-entity, non-bearer-capacity classes for structurally the same underlying reason -- neither branch
+    reifies a bearer-inhering property the way BFO''s `disposition` does. `Intention` was assigned `explicit-non-equivalence`
+    (mapping-005) while `Ability`/`GeneralPossibility` were left at `unknown` (mapping-003/004), without
+    a stated reason for the differential treatment. This also does not yet invoke `role.md`''s own established
+    finding that GUM systematically reifies this whole family (Role, Relation, Information Artifact) as
+    relations rather than entities -- the same pattern plausibly extends here.'
+  impact: Mapping-003/004 may be under-categorized relative to mapping-005's precedent, or mapping-005
+    may be over-categorized relative to mapping-003/004 -- reviewer should pick one consistent treatment
+    rather than leaving the split unexplained.
+  follow_up: On review, either escalate mapping-003/004 to `explicit-non-equivalence` to match mapping-005's
+    reasoning, or document explicitly why `Intention`'s mental-process framing warrants a stronger claim
+    than `Ability`/`GeneralPossibility`'s modal framing.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020
+  verification_note: '**verified** directly against `bfo-core.ttl` (`disposition` BFO_0000016, `function`
+    BFO_0000034), 2026-07-06'
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: '**verified** directly against `modules/gfo-base.owl` (`Function`), 2026-07-06'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology'
+  verification_note: '**verified** directly (UFO 2021 paper extraction; no IRI scheme of its own),
+    2026-07-06'
+- reference_id: xwkont:ref:ontouml-vocabulary
+  short_label: OntoUML Vocabulary (UFO proxy for mode stereotypes)
+  verification_note: '**verified** directly against the OntoUML vocabulary TTL (`mode`, `intrinsicModeNature`,
+    `extrinsicModeNature`), 2026-07-06'
+- reference_id: xwkont:ref:gum-owl
+  short_label: 'GUM: The Generalized Upper Model (OWL, GUM-3.1)'
+  verification_note: '**verified** directly against `GUM-31.owl` (`Ability`, `GeneralPossibility`,
+    `Intention`), 2026-07-06'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology (SUMO)
+  verification_note: '**verified** directly against current SUMO `Merge.kif` (`Procedure`), 2026-07-06'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: 'YAMATO: Yet Another More Advanced Top-level Ontology'
+  verification_note: '**verified** directly (PDF extraction, `YAMATO101216.pdf` section 6, "Roles,
+    functions and relations"; no standalone Function class confirmed), 2026-07-06'
+- reference_id: xwkont:ref:dolce-wonderweb-d18
+  short_label: 'WonderWeb Deliverable D18: Ontology Library (final) - DOLCE'
+  verification_note: '**checked** directly; no bearer-capacity/disposition analogue confirmed
+    (scoped negative finding), 2026-07-06'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL Translation
+  verification_note: '**checked** directly; no bearer-capacity/disposition analogue confirmed
+    (scoped negative finding), 2026-07-06'
+- reference_id: xwkont:ref:gangemi-dul
+  short_label: DOLCE+DnS Ultralite (DUL) OWL Ontology
+  verification_note: '**checked** directly; no bearer-capacity/disposition analogue confirmed
+    (scoped negative finding), 2026-07-06'
+review_history:
+- review_id: xwkont:review:disposition-capacity:2026-07-06:01
+  review_date: '2026-07-06'
+  outcome: Passed — advanced `draft` → `reviewed`
+  review_notes: 'Content originally drafted by Codex (GPT-5.4-Mini, High) as a trial delegation; every
+    direct quotation independently re-verified against primary sources (`bfo-core.ttl`, `modules/gfo-base.owl`,
+    the OntoUML vocabulary TTL, `GUM-31.owl`, `Merge.kif`, the YAMATO PDF, DOLCE-Lite/DUL) rather than
+    trusting the draft as-is. Two substantive gaps found and fixed during this review: (1) YAMATO''s explicit
+    exclusion of a compliant functional ontology from YAMATO itself was under-cited and mapping-007 was
+    accordingly strengthened from `unknown` to `explicit-non-equivalence`; (2) SUMO `Procedure`''s `Proposition`
+    parent and its parallel to the `role.md`/`quality.md` SUMO-abstract-branch pattern was added. A GUM
+    Ability/GeneralPossibility-vs-Intention categorization inconsistency was left open as `uncertainty-008`
+    rather than silently resolved. Full evaluation of the delegated-authoring trial recorded separately
+    in `_private/codex-crosswalk-evaluation-disposition-capacity.md` (private, not part of this review
+    record).'
+future_work:
+- Verify whether any later DOLCE extension introduces a true bearer-capacity analogue that belongs here.
+- Fetch YAMATO's OWL/Hozo files if the registration gate is ever completed, so the `function` candidate
+  can be checked against a formal class instead of the report's functional-ontology prose.
+- Re-evaluate whether GFO `Function` should stay `related` or be downgraded to `unknown` after review.
+- Add a machine-readable companion only after the review pass confirms the source-side boundaries are
+  stable.

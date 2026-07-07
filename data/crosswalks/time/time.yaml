@@ -3,7 +3,7 @@ slug: time
 title: Time
 editorial_status: reviewed
 created: "2026-07-04"
-modified: "2026-07-05"
+modified: "2026-07-06"
 scope_note: '**Selection rationale (per `ADR-0018`''s admission bar and a decision
   that each `0.2.0`-batch concept gets real rationale recorded as it is scoped, not backfilled):**
   Time is the first concept selected from the `0.2.0` batch. It clears `ADR-0018`''s ≥3-source
@@ -589,14 +589,16 @@ mapping_assertions:
   object: GUM:TemporalObject
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: low-medium
+  confidence: high
   rationale: '**Downgraded from `close-match` (2026-07-04 review pass)** — both are independent,
     sui-generis-flavored top-level categories not subsumed under either occurrent-like or
     continuant-like classes, but GFO''s grounding is metaphysical (Brentano/Allen & Hayes)
     while GUM''s is linguistic (Halliday & Matthiessen) — a difference in the *kind* of independence
     claimed, not just scope or axioms within a shared formal kind. `overlap` ("partially intersect
     but neither subsumes the other," per `docs/methodology/crosswalk-methodology.md`) better
-    reflects that than `close-match`.'
+    reflects that than `close-match`. `high` confidence in the `overlap` category: the
+    grounding difference is directly stated in each source''s own text, not an open sourcing
+    question.'
   provenance:
   - xwkont:ref:gfo
   - xwkont:ref:gum-owl
@@ -606,10 +608,12 @@ mapping_assertions:
   object: GUM:Time
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
-  confidence: low-medium
-  rationale: Both treat time as a measured/graded quantity-like thing rather than an occurrent,
-    but SUMO's framing is a universal-timeline quantity while GUM's is a clause-level aspectual
+  confidence: high
+  rationale: 'Both treat time as a measured/graded quantity-like thing rather than an occurrent,
+    but SUMO''s framing is a universal-timeline quantity while GUM''s is a clause-level aspectual
     category — related in spirit, not close enough in formal apparatus for `close-match`.
+    `high` confidence in the `related` category: this formal-apparatus divergence is directly
+    evidenced by each source''s own text, not an open sourcing question.'
   provenance:
   - xwkont:ref:sumo-niles-pease-2001
   - xwkont:ref:gum-owl
@@ -760,8 +764,15 @@ review_history:
   review_notes: 'Checked against `docs/governance/contributing.md`''s Review Checklist: scope
     preserved; every `xwkont:ref:*` citation resolves; correspondence/mapping/note/uncertainty
     ID numbering sequential (correspondences 001-007, mappings 001-011, notes 001-005, uncertainty
-    001-006); all confidence values within the `ADR-0013` vocabulary, and both `medium-high`/`low-medium`
-    mappings (`004`, `008`, `009`) state a sourcing-driven rationale; the 2026-07-04 external
+    001-006); all confidence values within the `ADR-0013` vocabulary. **Correction (2026-07-06,
+    full-corpus audit):** this entry originally claimed "both `medium-high`/`low-medium` mappings
+    (`004`, `008`, `009`) state a sourcing-driven rationale" — true for `004` (TUpper''s narrower
+    scope, a genuine coverage gap), false for `008`/`009`, whose rationales explicitly describe
+    substantive/kind-level differences (metaphysical vs. linguistic grounding; universal-timeline
+    quantity vs. clause-level aspect), not sourcing changes. Both raised to `high` confidence
+    in this pass, keeping their already-correct `overlap`/`related` categories — the divergence
+    itself is clearly evidenced, not an open sourcing question. See
+    `docs/methodology/crosswalk-runbook.md`''s governing principle. The 2026-07-04 external
     review''s downgrade of `mapping-006`/`mapping-008` from `close-match` to `overlap` confirmed
     correctly applied. `uncertainty-001` (core.ttl placement — whether Time gets an independent
     third branch alongside Continuant/Occurrent) is **not** resolved by this review and is

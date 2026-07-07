@@ -54,8 +54,6 @@ def render_frontmatter(r):
     lines.append(f"> **Created:** `{r['created']}`")
     if r.get("modified"):
         lines.append(f"> **Modified:** `{r['modified']}`")
-    contributors = ", ".join(r.get("contributors", []))
-    lines.append(f"> **Contributors:** {contributors}")
     return "\n".join(lines)
 
 
@@ -204,11 +202,11 @@ def render_references(r):
 
 
 def render_review_history(r):
-    header = ["Review ID", "Date", "Reviewer", "Outcome", "Notes"]
+    header = ["Review ID", "Date", "Outcome", "Notes"]
     rows = []
     for e in r.get("review_history", []):
         review_id = bt(e["review_id"]) if e.get("review_id") else "—"
-        rows.append([review_id, e["review_date"], e["participants"], e["outcome"],
+        rows.append([review_id, e["review_date"], e["outcome"],
                      e.get("review_notes", "")])
     return "## Review History\n\n" + render_table(header, rows)
 
