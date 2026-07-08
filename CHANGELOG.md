@@ -1,8 +1,10 @@
 # Changelog
 
-<!-- updated at: 2026-07-08 14:05 Z   (2026-07-08 10:05 EDT) -->
+<!-- updated at: 2026-07-08 15:00 Z   (2026-07-08 11:00 EDT) -->
 
 All notable changes to XwkOnt are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+> **Retracted: `ontology-core-v0.3.1` (tagged 2026-07-08, retracted the same day).** It was cut before `core.ttl` placement work already in flight (Symbol/Sign/Representation, Situation/State of Affairs) completed `0.3.0`'s own scope — those two concepts were the last ones left unplaced from the `0.2.0`/`0.3.0` batches. Rather than let a `0.3.1` exist that undersold what `0.3.0` was actually finishing, the tag was deleted (both the private repo and the public `xwkont/xwkont` repo) and `ontology-core-v0.3.0` was force-moved to the consolidated commit covering everything through `v0.3.1` plus the completed placements. **If anything pins `ontology-core-v0.3.1` by tag name, that tag no longer exists — re-pin to `ontology-core-v0.3.0`,** which is a superset (everything `v0.3.1` had, plus both placements). This is the first time a published XwkOnt tag has been retagged; see [docs/governance/release-versioning-policy.md](docs/governance/release-versioning-policy.md) for the versioning policy this doesn't yet formally commit to immutable release tags against.
 
 ## [0.3.0] - 2026-07-08
 

@@ -1,6 +1,6 @@
 # XwkOnt
 
-<!-- updated at: 2026-07-08 13:15 Z   (2026-07-08 09:15 EDT) -->
+<!-- updated at: 2026-07-08 15:00 Z   (2026-07-08 11:00 EDT) -->
 
 > **The Crosswalk of Foundational Ontologies**
 
@@ -68,6 +68,8 @@ Decision order:
 4. Introduce (last resort)
 
 ## Project Status
+
+> **Note (2026-07-08):** `ontology-core-v0.3.1` was tagged and then retracted the same day, folded back into a consolidated `ontology-core-v0.3.0` — see [CHANGELOG.md](CHANGELOG.md) for why. If you pinned `v0.3.1` by tag name, re-pin to `v0.3.0`, a superset of it.
 
 The project has completed its first **core ontology publication package**, a public-IRI redirect implementation posture, and two full rounds of **concept crosswalk content**.
 
