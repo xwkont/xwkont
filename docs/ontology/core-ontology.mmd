@@ -23,11 +23,13 @@ classDiagram
     Continuant <|-- MindConsciousBeingAgent
     Continuant <|-- NonPhysicalObject
     Continuant <|-- Disposition
+    Continuant <|-- SituationStateOfAffairs
     Occurrent <|-- Process
     Occurrent <|-- Event
     Concrete <|-- Quantity
     Abstract <|-- Proposition
     Quality <|-- Modality
+    Universal <|-- SymbolSignRepresentation
 
     Entity --> Entity : hasPart / partOf
     Continuant --> Occurrent : participatesIn
@@ -36,5 +38,6 @@ classDiagram
     Quality --> Entity : qualityOf
     Entity --> Role : bearsRole
     Role --> Entity : roleOf
+    Entity --> Entity : symbolizes / symbolizedBy
     Entity --> Entity : dependsOn
     Entity --> InformationArtifact : documentedBy

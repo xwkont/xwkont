@@ -1,37 +1,31 @@
 # Changelog
 
-<!-- updated at: 2026-07-08 03:50 Z   (2026-07-07 23:50 EDT) -->
+<!-- updated at: 2026-07-08 14:05 Z   (2026-07-08 10:05 EDT) -->
 
 All notable changes to XwkOnt are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [0.3.1] - 2026-07-08
+## [0.3.0] - 2026-07-08
 
-Tagged `ontology-core-v0.3.1`. Corrections and clarifications to `0.3.0`-era content; no new concepts, no `core.ttl` schema changes.
-
-### Fixed
-
-- Scrubbed five dangling `_private/`-path/`SESSION-NNN` citations left in synced or sync-adjacent docs (`space.yaml`, `disposition-capacity.yaml`, `crosswalk-runbook.md`, plus two caught in `change.yaml`/`continuous-discrete.yaml` left over from unsynced work).
-- Added GUM `Name` as new evidence to `information-artifact.md` and GUM `NameEvent`'s `Configuration` branch to `event.md`, resolving `symbol-sign-representation.md`'s two previously-unchecked Future Work items. Both crosswalks keep `editorial_status: reviewed`.
-- Independently re-verified four carried-over UFO/YAMATO absence-recheck claims (`change.md`, `continuous-discrete.md`, `list-sequence.md`, `non-physical-social-object.md`), confirming every one against fresh or cached primary-source extractions.
-- Fixed a naming-drift bug in `non-physical-social-object.md` and `continuous-discrete.md`, whose mapping rows referenced `core.ttl` class names (`NonPhysicalSocialObject`, `ContinuousDiscrete`) that were never actually placed — corrected to the real placed classes (`NonPhysicalObject`, and a `Continuous`/`Discrete` split respectively).
-
-### Added
-
-- Closed glossary entries (`docs/ontology/core-glossary.md`) for all 20 `core.ttl` classes added across the `0.2.0` and `0.3.0` batches, deferred at both original placement passes.
-
-## [0.3.0] - 2026-07-07
-
-Tagged `ontology-core-v0.3.0`. All 9 candidates from the `0.3.0` batch have now been through a crosswalk pass — 9 reviewed, 1 (Quality Space/Quale) off-ramped as not-distinct — bringing the total to 26 reviewed concepts.
+Tagged `ontology-core-v0.3.0`. All 9 candidates from the `0.3.0` batch have now been through a crosswalk pass — 9 reviewed, 1 (Quality Space/Quale) off-ramped as not-distinct — bringing the total to 26 reviewed concepts, all of which now have `core.ttl` placement, completing every concept from both the `0.2.0` and `0.3.0` batches. (Originally split across `0.3.0`/`0.3.1` tags; consolidated into a single `0.3.0` release, since the placement work below completes rather than extends that batch's own scope.)
 
 ### Added
 
 - 9 new concept crosswalks — Disposition/Capacity, Symbol/Sign/Representation, Mind/Conscious Being/Agent, Ontological Level/Stratum, Change, List/Sequence, Continuous vs. Discrete, Modality, and Non-physical/Social Object ([docs/crosswalks/concepts/](docs/crosswalks/concepts/)) — bringing the total to 26 reviewed concepts.
-- `data/ontology/core.ttl` expanded from 21 to 29 classes: `Change`, `Continuous`, `Discrete`, `OntologicalLevelStratum`, and `ListSequence` as direct `Entity` subclasses; `MindConsciousBeingAgent`, `NonPhysicalObject`, and `Disposition` under `Continuant`; `Modality` under `Quality` ([ADR-0021](docs/adr/ADR-0021-source-classified-core-placement-criterion.md)). Symbol/Sign/Representation was deliberately left unplaced pending an unresolved single-class-vs-class-plus-relation-family question, alongside `0.2.0`'s already-unplaced Situation/State of Affairs.
+- `data/ontology/core.ttl` expanded from 21 to 32 classes: `Change`, `Continuous`, `Discrete`, `OntologicalLevelStratum`, and `ListSequence` as direct `Entity` subclasses; `MindConsciousBeingAgent`, `NonPhysicalObject`, and `Disposition` under `Continuant`; `Modality` under `Quality`; `SymbolSignRepresentation` under `Universal`, plus a new `symbolizes`/`symbolizedBy` relation pair, resolving that concept's own single-class-vs-class-plus-relation-family question; and `SituationStateOfAffairs` under `Continuant`, resolving `0.2.0`'s last remaining placement gap once its flagged three-way sense split was found to already be disentangled within the crosswalk's own reviewed content ([ADR-0021](docs/adr/ADR-0021-source-classified-core-placement-criterion.md)). No concept from either batch remains unplaced.
 - `.tsv`/`.ttl` SSSOM/RDF exports for all 9 new concepts, generated from their YAML records ([ADR-0023](docs/adr/ADR-0023-machine-readable-crosswalk-export-sssom-tsv-generated-ttl.md)); all 26 reviewed concepts now have a machine-readable export.
+- Closed glossary entries (`docs/ontology/core-glossary.md`) for all 20 `core.ttl` classes added across the `0.2.0` and `0.3.0` batches, deferred at both original placement passes.
+- GUM `Name` added as new evidence to `information-artifact.md`, and GUM `NameEvent`'s `Configuration` branch added to `event.md`, resolving `symbol-sign-representation.md`'s two previously-unchecked Future Work items.
+- Formal `xwkont:ref:*` reference records for ROMULUS and WFOL ([docs/references/](docs/references/)), the two closest historical predecessor projects `README.md`'s Related Prior Art section has cited since `0.1.0`.
+- CI (`validate.yml`) now runs `linkml-validate` against every crosswalk YAML and `--check` mode for both export scripts, not just a manual local check.
 
 ### Fixed
 
 - Regenerated `.tsv`/`.ttl` exports for 15 of the original 17 concepts, which had drifted out of sync with confidence-value corrections made in their own YAML during later review passes.
+- Scrubbed dangling `_private/`-path/`SESSION-NNN` citations left in synced or sync-adjacent docs across several passes (`space.yaml`, `disposition-capacity.yaml`, `crosswalk-runbook.md`, `change.yaml`, `continuous-discrete.yaml`, and this repo's own review-notes working files).
+- Independently re-verified four carried-over UFO/YAMATO absence-recheck claims (`change.md`, `continuous-discrete.md`, `list-sequence.md`, `non-physical-social-object.md`) against fresh or cached primary-source extractions.
+- Fixed naming-drift bugs where mapping rows referenced `core.ttl` class names that were never actually placed, or a placeholder left over from before placement: `non-physical-social-object.md` (`NonPhysicalSocialObject` → `NonPhysicalObject`), `continuous-discrete.md` (`ContinuousDiscrete` → its real `Continuous`/`Discrete` split), and `situation-state-of-affairs.md` (`Situation (candidate)` → `SituationStateOfAffairs`).
+- Corrected `docs/methodology/crosswalk-runbook.md`'s Step 4, which told contributors to hand-edit the generated `docs/crosswalks/concepts/` directory directly; now points to drafting in `_private/` first.
+- Corrected stale `README.md`/`docs/crosswalks/concepts/README.md` claims about `core.ttl` placement completion that had outpaced the actual work at the time they were written.
 
 ## [0.2.0] - 2026-07-05
 

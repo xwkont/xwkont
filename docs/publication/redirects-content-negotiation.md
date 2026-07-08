@@ -1,7 +1,7 @@
 # Redirects and Content Negotiation Policy
 
-> **Status:** Implementation note; external request submitted and merged (`perma-id/w3id.org#6277`), full content-negotiation deployment still pending  
-> **Date:** 2026-07-01  
+> **Status:** Deployed and verified live (`perma-id/w3id.org#6277`, `#6292`); re-verified 2026-07-08 — see Verification Result below  
+> **Date:** 2026-07-01 (re-verified 2026-07-08)  
 > **Scope:** Current XwkOnt core ontology namespace and first ontology milestone preparation
 
 ## Purpose
@@ -87,7 +87,18 @@ Expected results:
 
 ## Verification Result
 
-An earlier attempt to check `https://w3id.org/xwkont/` and `https://w3id.org/xwkont/core` on 2026-07-01, including the proposed GitHub landing page and raw Turtle targets, returned `curl: (56) CONNECT tunnel failed, response 403` from that environment, so public deployment behavior could not be verified at the time. A later check (2026-07-02) confirmed `https://w3id.org/xwkont/` resolves live; `https://w3id.org/xwkont/core` still 404s pending the content-negotiation rules described above. Full dereferenceability remains unadvertised until that gap closes.
+**Superseded — this section described the pre-deployment state.** An earlier attempt to check `https://w3id.org/xwkont/` and `https://w3id.org/xwkont/core` on 2026-07-01 returned `curl: (56) CONNECT tunnel failed, response 403` from that environment; a 2026-07-02 recheck found `https://w3id.org/xwkont/` live but `https://w3id.org/xwkont/core` still `404` pending the content-negotiation rules described above. Both gaps have since closed: `perma-id/w3id.org#6292` (merged 2026-07-03) added the `/core` content-negotiation rules, and `docs/releases/core-ontology-release-notes.md`'s "Content-Negotiation Verification" section recorded the 2026-07-03 verified-live result. This document's own status line above simply hadn't been updated to match — fixed 2026-07-08.
+
+**Re-verified live, 2026-07-08** (this session, real `curl` against the deployed redirect, no changes needed):
+
+- `curl -I -L -H 'Accept: text/turtle' https://w3id.org/xwkont/core` → `302` → `https://raw.githubusercontent.com/xwkont/xwkont/main/data/ontology/core.ttl` → final `200`.
+- `curl -I -L -H 'Accept: text/html' https://w3id.org/xwkont/core` → `302` → `https://github.com/xwkont/xwkont/blob/main/docs/ontology/core-ontology.md` → final `200`.
+- `curl -I -L https://w3id.org/xwkont/core#Entity` → same `302`/`200` as the fragmentless namespace document, confirming fragment IRIs resolve correctly.
+- `curl -I -L https://w3id.org/xwkont/` → `302` → `https://github.com/xwkont` → final `200`.
+- Served Turtle body's class count (`grep -c 'a owl:Class'`) matches `data/ontology/core.ttl`'s local count (30) exactly — the deployed content reflects the current `0.3.0`-era `core.ttl`, not a stale cached copy.
+- `https://w3id.org/xwkont/ontology/core/0.1.0` (the immutable versioned document path) still returns `404`, consistent with "Blockers Before Advertising Dereferenceability" below — versioned IRIs remain correctly un-activated.
+
+Full dereferenceability of the current (non-versioned) namespace is live and verified; only immutable versioned document IRIs remain deferred.
 
 The implementation blockers are tracked in `docs/publication/w3id-redirect-request.md`: the canonical repository target must be confirmed by a maintainer, the redirect configuration must be submitted to external w3id infrastructure, and deployed behavior must be verified after deployment.
 
@@ -100,3 +111,5 @@ XwkOnt must not advertise public dereferenceability until:
 3. HTML retrieval is verified.
 4. Verification results are recorded in release notes.
 5. The README and publication guide are updated from target-namespace language to verified-dereferenceability language.
+
+All five are satisfied for the current (non-versioned) namespace as of the 2026-07-08 re-verification above. This does not extend to immutable versioned ontology document IRIs, which remain a separate, still-deferred decision (see `TODO.md`'s "Publication & Release" section).

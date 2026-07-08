@@ -3,30 +3,47 @@ slug: symbol-sign-representation
 title: Symbol / Sign / Representation
 editorial_status: reviewed
 created: "2026-07-06"
-modified: "2026-07-07"
-scope_note: "This crosswalk asks whether XwkOnt needs a distinct concept for the **sign\n\
-  vehicle / representation-form / symbolization layer** that shows up across\nseveral source\
-  \ ontologies. It is intentionally narrower than\n[`information-artifact.md`](information-artifact.md)\
-  \ and\n[`proposition-content.md`](proposition-content.md).\n\n\n**Narrowed 2026-07-06\
-  \ (maintainer decision).** Verification against\n`information-artifact.md`'s own cited evidence\
-  \ found the following:\n\n\n- YAMATO's `representing thing` and `representation`/`representation\
-  \ form` quote\n  the same passage `information-artifact.md`'s own YAMATO correspondence already\n\
-  \  quotes in full, including the \"form and content\" line. Excluded from this crosswalk.\n\
-  - SUMO's `SymbolicString`/`Icon`/`LinguisticExpression` are `rdfs:subClassOf ContentBearingPhysical`,\n\
-  \  the class `information-artifact.md` already crosswalks. Excluded from this crosswalk.\n\
-  - GFO's `Symbol_structure` and GUM's `Symbolization`/`Signification` are terms `information-artifact.md`\n\
-  \  itself lists as considered and rejected for its own scope (type-side category; relation-type).\n\
-  \  Retained in this crosswalk.\n- GUM's `NameOf`/`NameRelation` are relation-types, the same\
-  \ kind as `Symbolization`/`Signification`.\n  Retained in this crosswalk.\n- GUM's `Name` has\
-  \ a stated definition (\"an accepted but possibly arbitrary label for\n  some entity\") comparable\
-  \ in form to BFO(IAO)'s own Information Content Entity definition\n  (generically dependent,\
-  \ stands in a relation of aboutness to some entity). Excluded from\n  this crosswalk; not added\
-  \ to `information-artifact.md` by this pass — see Future Work.\n- GUM's `NameEvent` (\"the process\
-  \ of giving something a name\") is a process/event term. Excluded\n  from this crosswalk; not\
-  \ checked against `process.md`/`event.md` by this pass — see Future Work.\n\n\nThis crosswalk's\
-  \ current evidence is GFO's `Symbol_structure` and GUM's `Symbolization`/`Signification`/`NameOf`/`NameRelation`.\n\
-  \n\nCore placement remains an open question for review. The concept is clearly\ncandidate-stage\
-  \ only."
+modified: "2026-07-08"
+scope_note: |-
+  This crosswalk asks whether XwkOnt needs a distinct concept for the **sign
+  vehicle / representation-form / symbolization layer** that shows up across
+  several source ontologies. It is intentionally narrower than
+  [`information-artifact.md`](information-artifact.md) and
+  [`proposition-content.md`](proposition-content.md).
+
+
+  **Narrowed 2026-07-06 (maintainer decision).** Verification against
+  `information-artifact.md`'s own cited evidence found the following:
+
+
+  - YAMATO's `representing thing` and `representation`/`representation form` quote
+    the same passage `information-artifact.md`'s own YAMATO correspondence already
+    quotes in full, including the "form and content" line. Excluded from this crosswalk.
+  - SUMO's `SymbolicString`/`Icon`/`LinguisticExpression` are `rdfs:subClassOf ContentBearingPhysical`,
+    the class `information-artifact.md` already crosswalks. Excluded from this crosswalk.
+  - GFO's `Symbol_structure` and GUM's `Symbolization`/`Signification` are terms `information-artifact.md`
+    itself lists as considered and rejected for its own scope (type-side category; relation-type).
+    Retained in this crosswalk.
+  - GUM's `NameOf`/`NameRelation` are relation-types, the same kind as `Symbolization`/`Signification`.
+    Retained in this crosswalk.
+  - GUM's `Name` has a stated definition ("an accepted but possibly arbitrary label for
+    some entity") comparable in form to BFO(IAO)'s own Information Content Entity definition
+    (generically dependent, stands in a relation of aboutness to some entity). Excluded from
+    this crosswalk; not added to `information-artifact.md` by this pass — see Future Work.
+  - GUM's `NameEvent` ("the process of giving something a name") is a process/event term. Excluded
+    from this crosswalk; not checked against `process.md`/`event.md` by this pass — see Future Work.
+
+
+  This crosswalk's current evidence is GFO's `Symbol_structure` and GUM's `Symbolization`/`Signification`/`NameOf`/`NameRelation`.
+
+
+  **Core placement resolved 2026-07-08 (session-059, maintainer-confirmed).** The single-class-vs-family
+  question (`uncertainty-001`) is resolved as class-plus-relation-family, directly following the same
+  class-vs-relation split `note-001` already observed: `xwkont-core:SymbolSignRepresentation` (a class
+  under `xwkont-core:Universal`, mirroring GFO's own `Symbol_structure rdfs:subClassOf Category`) covers
+  the type-side evidence; a new `xwkont-core:symbolizes`/`symbolizedBy` relation pair (mirroring the
+  existing Role/`bearsRole`/`roleOf` pattern) covers GUM's relation-type evidence instead. See
+  `data/ontology/core.ttl`.
 labels:
 - role: XwkOnt working label
   label: Symbol / Sign / Representation
@@ -274,13 +291,16 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:symbol-sign-representation:002
   subject: GUM:NameOf / NameRelation / Symbolization / Signification
   relation_category: related
-  object: xwkont-core:SymbolSignRepresentation
+  object: xwkont-core:symbolizes
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: medium
-  rationale: All four terms are relation-types, the same kind of thing `information-artifact.md`
-    lists `Symbolization`/`Signification` as considered and rejected for its own scope. `Name`
-    and `NameEvent` are excluded from this mapping — see `uncertainty-006`.
+  rationale: 'Retargeted 2026-07-08 (session-059) from `xwkont-core:SymbolSignRepresentation`
+    to `xwkont-core:symbolizes`, resolving `uncertainty-001`''s class-plus-relation-family
+    decision: all four terms are relation-types, not type/category-side evidence, so they
+    correspond to the new relation property (which XwkOnt does not further subdivide into
+    Symbolization/Signification/NameOf/NameRelation), not to the `SymbolSignRepresentation`
+    class. `Name` and `NameEvent` remain excluded from this mapping — see `uncertainty-006`.'
   provenance:
   - xwkont:ref:gum-owl
   predicate_id: skos:relatedMatch
@@ -328,15 +348,27 @@ mapping_assertions:
 uncertainties:
 - item_id: uncertainty-001
   uncertainty_type: open-question
-  resolved: false
+  resolved: true
+  resolved_date: "2026-07-08"
+  resolution_note: 'Maintainer-confirmed (session-059): class-plus-relation-family, directly
+    following the class-vs-relation kind split `note-001` already observed in this crosswalk''s
+    remaining evidence (GFO type-side vs. GUM relation-type). `xwkont-core:SymbolSignRepresentation`
+    was added to `data/ontology/core.ttl` as a class under `xwkont-core:Universal`, mirroring
+    GFO''s own `Symbol_structure rdfs:subClassOf Category` treatment (the same GFO-Category
+    parallel already used for `Universal` itself, per `docs/crosswalks/concepts/universal-type.md`).
+    A new `xwkont-core:symbolizes`/`symbolizedBy` relation pair (domain/range Entity) was added
+    to cover GUM''s `Symbolization` family, mirroring the existing Role/`bearsRole`/`roleOf`
+    pattern. `mapping-002` (GUM) was retargeted from the class to the new `symbolizes` property
+    accordingly; `mapping-001` (GFO) is unchanged, still targeting the class. `docs/ontology/core-ontology.md`,
+    `core-axioms.md`, `core-ontology.mmd`, and `docs/publication/validation-commands.md`/`.github/workflows/validate.yml`''s
+    structural-fallback `required_terms` lists were kept in sync in the same pass.'
   description: 'The evidence suggests at least three formal kinds inside the candidate family:
     symbol-structure types, content-bearing physicals / linguistic expressions, and naming/signification
     relations. It is not yet settled whether XwkOnt should model these as one class, a class
     plus relation(s), or multiple sibling concepts.'
   impact: This affects eventual `core.ttl` placement and the granularity of any future review
     decision.
-  follow_up: Maintain as an explicit reviewer question rather than silently flattening the
-    family into a single class.
+  follow_up: Resolved; this concept is now placed in `core.ttl`. No further follow-up.
 - item_id: uncertainty-002
   uncertainty_type: open-question
   resolved: false
@@ -564,6 +596,18 @@ review_history:
     GUM `Configuration`/`NameEvent` correspondence (`mapping-011`). Both reopenings are additive
     evidence on those crosswalks, not re-reviews; this crosswalk''s own `reviewed` content and
     mapping assertions are unchanged.'
+- review_date: "2026-07-08"
+  outcome: Core placement resolved — class-plus-relation-family
+  review_notes: 'Session-059. Resolved `uncertainty-001`, the last open item blocking `core.ttl`
+    placement, per the maintainer''s explicit confirmation of a class-plus-relation-family
+    resolution. Added `xwkont-core:SymbolSignRepresentation` (class, under `xwkont-core:Universal`,
+    mirroring GFO''s own `Symbol_structure rdfs:subClassOf Category`) and a new `xwkont-core:symbolizes`/`symbolizedBy`
+    relation pair (mirroring the Role/`bearsRole`/`roleOf` pattern) to `data/ontology/core.ttl`.
+    Retargeted `mapping-002` (GUM) from the class to the new `symbolizes` property, since GUM''s
+    evidence is relation-type, not type/category-side. `docs/ontology/core-ontology.md`,
+    `core-axioms.md`, `core-ontology.mmd`, and the structural-fallback `required_terms` lists in
+    `docs/publication/validation-commands.md`/`.github/workflows/validate.yml` were kept in sync.
+    This completes `core.ttl` placement for all ten `0.3.0`-batch concepts.'
 future_work:
 - '~~Check whether GUM''s `Name` should be added to `information-artifact.md` as new evidence~~
   — **done 2026-07-07**: added as `correspondence-005`/`mapping-009` (`related`, `low-medium`
@@ -574,9 +618,10 @@ future_work:
   `Configuration` correspondence-011 (`mapping-011`), a structurally distinct branch from the
   crosswalk''s existing `Process` correspondence — see `event.yaml`''s `uncertainty-007` for the
   still-open Process-vs-Configuration weighting question.'
-- Resolve whether the candidate should stay as one class or become a class-plus-relation family
-  before any `core.ttl` placement decision (per `ADR-0021`; not yet started for this concept,
-  same as the `0.3.0` batch's 8 newer `reviewed` concepts).
+- '~~Resolve whether the candidate should stay as one class or become a class-plus-relation
+  family before any `core.ttl` placement decision~~ — **done 2026-07-08 (session-059)**: resolved
+  as class-plus-relation-family (`xwkont-core:SymbolSignRepresentation` class plus `symbolizes`/`symbolizedBy`
+  relation pair); see `uncertainty-001`''s resolution note and `data/ontology/core.ttl`.'
 - 'Cross-reference: `docs/crosswalks/concepts/list-sequence.md` (2026-07-07) independently re-confirmed
   GFO''s `Symbol_sequence` and YAMATO''s "symbol sequence" language belong to this crosswalk''s
   territory, not a general ordered-collection concept — cited there as an exclusion, not re-litigated.

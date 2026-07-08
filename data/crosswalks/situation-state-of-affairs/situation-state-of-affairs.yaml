@@ -3,7 +3,7 @@ slug: situation-state-of-affairs
 title: Situation / State of Affairs
 editorial_status: reviewed
 created: "2026-07-04"
-modified: "2026-07-06"
+modified: "2026-07-08"
 scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Situation / State
   of Affairs is the fifth concept drafted from the `0.2.0` batch. `TODO.md`''s own seed flagged
   this candidate as "weaker/more UFO-centric than [Space, Abstract, Quantity]; good test of
@@ -80,8 +80,21 @@ scope_note: '**Selection rationale (per `ADR-0018`''s admission bar):** Situatio
 
 
 
-  **Core.ttl placement is deliberately left open at this `draft` stage**, and is a live question
-  of *whether* to place this concept at all, not just where — see Uncertainty.'
+  **Core.ttl placement resolved 2026-07-08 (session-060, maintainer-confirmed).** Re-examination
+  found the external review''s three-way sense split (configuration/comprehended-whole sense:
+  GFO `Configuration`/`Situation`, UFO OntoUML `situation`; stative occurrent sense: DOLCE `State`;
+  fluent/proposition-holding sense: TUpper `state`) was already resolved within this crosswalk''s
+  own content by the 2026-07-05 follow-up pass: the reviewed correspondence set covers only the
+  configuration/comprehended-whole sense (GFO `Situation` in both its modules, DOLCE''s DnS-module
+  `situation`, UFO''s OntoUML `situation` stereotype — 3 real sources); DOLCE''s occurrent `State`
+  is retained only as an explicitly-flagged non-equivalent entry (`mapping-002`), and TUpper''s
+  fluent-like `state` was never given a correspondence at all. The senses were never actually
+  collapsed — `uncertainty-001`''s structured field had simply never been marked resolved to
+  reflect what the Review History narrative already claimed. `xwkont-core:SituationStateOfAffairs`
+  was added to `data/ontology/core.ttl` as a sibling of Object under Continuant, following GFO''s
+  own Presential-side `Situation` and DOLCE''s own non-agentive-social-object placement of
+  `situation` — both continuant-committing sources place their evidence on the continuant side.
+  See `data/ontology/core.ttl`.'
 labels:
 - role: XwkOnt working label
   label: Situation / State of Affairs
@@ -560,7 +573,7 @@ mapping_assertions:
   - xwkont:ref:ontouml-vocabulary
   predicate_id: skos:closeMatch
 - mapping_id: xwkont:mapping:situation-state-of-affairs:003
-  subject: xwkont-core:Situation (candidate)
+  subject: xwkont-core:SituationStateOfAffairs
   relation_category: unknown
   object: BFO
   mapping_justification: semapv:ManualMappingCuration
@@ -571,7 +584,7 @@ mapping_assertions:
   provenance:
   - xwkont:ref:bfo-2020
 - mapping_id: xwkont:mapping:situation-state-of-affairs:004
-  subject: xwkont-core:Situation (candidate)
+  subject: xwkont-core:SituationStateOfAffairs
   relation_category: unknown
   object: SUMO
   mapping_justification: semapv:ManualMappingCuration
@@ -582,7 +595,7 @@ mapping_assertions:
   provenance:
   - xwkont:ref:sumo-niles-pease-2001
 - mapping_id: xwkont:mapping:situation-state-of-affairs:005
-  subject: xwkont-core:Situation (candidate)
+  subject: xwkont-core:SituationStateOfAffairs
   relation_category: unknown
   object: TUpper
   mapping_justification: semapv:ManualMappingCuration
@@ -593,7 +606,7 @@ mapping_assertions:
   provenance:
   - xwkont:ref:tupper-colore
 - mapping_id: xwkont:mapping:situation-state-of-affairs:006
-  subject: xwkont-core:Situation (candidate)
+  subject: xwkont-core:SituationStateOfAffairs
   relation_category: unknown
   object: YAMATO
   mapping_justification: semapv:ManualMappingCuration
@@ -604,7 +617,7 @@ mapping_assertions:
   provenance:
   - xwkont:ref:yamato-mizoguchi-2010
 - mapping_id: xwkont:mapping:situation-state-of-affairs:007
-  subject: xwkont-core:Situation (candidate)
+  subject: xwkont-core:SituationStateOfAffairs
   relation_category: unknown
   object: GUM
   mapping_justification: semapv:ManualMappingCuration
@@ -618,7 +631,31 @@ mapping_assertions:
 uncertainties:
 - item_id: uncertainty-001
   uncertainty_type: open-question
-  resolved: false
+  resolved: true
+  resolved_date: "2026-07-08"
+  resolution_note: 'Maintainer-confirmed (session-060). The remaining blocker this item flagged
+    — a maintainer judgment call on scope stability, given the external review''s "concept scope
+    is unstable" comment (three different senses) — is resolved by re-examining what the 2026-07-05
+    pass already did: the reviewed correspondence set covers only the configuration/comprehended-whole
+    sense (GFO `Situation` in both its modules, DOLCE''s DnS-module `situation`, UFO''s OntoUML
+    `situation` stereotype — 3 real sources). DOLCE''s occurrent `State` (`correspondence-003`)
+    is retained only as an explicitly-flagged non-equivalent entry — `mapping-002` records it
+    as `unknown`/non-equivalence against GFO''s `Situation`, per `note-001`''s own explanation
+    that `state` and DnS''s `situation` "are not the same thing." TUpper''s fluent-like `state`
+    was never given a correspondence at all (`mapping-005` records only an absence). The three
+    senses the external review worried about were never actually collapsed into one reviewed
+    correspondence set — this item''s own structured `resolved` field had simply never been
+    updated to reflect what the Review History narrative already claimed on 2026-07-06. Placed
+    in `data/ontology/core.ttl` as `xwkont-core:SituationStateOfAffairs`, a sibling of Object
+    under Continuant, following GFO''s own Presential-side `Situation` and DOLCE''s own
+    non-agentive-social-object placement of `situation` — both continuant-committing sources
+    place their evidence on the continuant side; UFO''s OntoUML stereotype does not contradict
+    this. `mapping-003` through `mapping-007`''s `xwkont-core:Situation (candidate)` placeholder
+    subject was renamed to the real `xwkont-core:SituationStateOfAffairs` identifier across
+    all five rows, matching the class actually placed. `docs/ontology/core-ontology.md`,
+    `core-axioms.md`, `core-ontology.mmd`, and the structural-fallback `required_terms` lists
+    in `docs/publication/validation-commands.md`/`.github/workflows/validate.yml` were kept in
+    sync in the same pass.'
   description: '**Updated 2026-07-05 — evidence base materially strengthened, decision still
     open.** The 2026-07-04 pass found only 1 of 8 sources (GFO) with an unambiguous formal
     class, and an independent external review
@@ -639,10 +676,7 @@ uncertainties:
     the remaining blocker is a maintainer judgment call on scope stability and whether 3-source
     (with DOLCE's DnS-derived, not core-module, evidence) meets `reviewed` standards comparable
     to the batch's other concepts.
-  follow_up: 'Raise at the next maintainer review, now with materially stronger evidence in
-    hand: advance as `reviewed` (does the DnS-sourced DOLCE correspondence count as "core
-    DOLCE" for citation-precision purposes established elsewhere in this repo?), or still
-    re-scope/defer on concept-scope-stability grounds independent of source count.'
+  follow_up: Resolved; this concept is now placed in `core.ttl`. No further follow-up.
 - item_id: uncertainty-002
   uncertainty_type: uncertainty
   resolved: true
@@ -770,14 +804,29 @@ review_history:
     module (`xwkont:ref:dolce-extendeddns-owl`), not core `DOLCE-Lite.owl` (`xwkont:ref:dolce-lite-owl`)
     — do not assume DOLCE''s core module covers this concept. Self-review, not independent
     third-party review.'
+- review_date: "2026-07-08"
+  outcome: Core placement resolved — sibling of Object under Continuant
+  review_notes: 'Session-060. Resolved `uncertainty-001`, the last open item blocking `core.ttl`
+    placement, per the maintainer''s explicit confirmation. Re-examined the external review''s
+    "concept scope is unstable" (three-way sense split) comment against this crosswalk''s own
+    2026-07-05-resolved content and found the three senses were never actually collapsed into
+    one reviewed correspondence set — the reviewed scope already covers only the configuration/comprehended-whole
+    sense (GFO, DOLCE DnS, UFO OntoUML), with DOLCE''s occurrent `State` and TUpper''s unreified
+    `state` correctly excluded/flagged rather than conflated in. `uncertainty-001`''s own
+    structured field had simply never been updated to reflect what this review history''s
+    2026-07-06 entry already narratively claimed. Added `xwkont-core:SituationStateOfAffairs`
+    (sibling of Object, under Continuant) to `data/ontology/core.ttl`, following GFO''s
+    Presential-side `Situation` and DOLCE''s non-agentive-social-object `situation` (DnS).
+    `docs/ontology/core-ontology.md`, `core-axioms.md`, `core-ontology.mmd`, and the
+    structural-fallback `required_terms` lists in `docs/publication/validation-commands.md`/`.github/workflows/validate.yml`
+    were kept in sync.'
 future_work:
 - '~~Resolve `uncertainty-001` (whether to advance, re-scope, or defer this crosswalk)~~ —
   **done 2026-07-05**: advanced `draft` → `reviewed` (`xwkont:review:situation-state-of-affairs:2026-07-05:01`),
   on the strength of the 3-of-8-source convergence found in the same pass.'
-- Core.ttl placement remains an open question (per the Scope Note) — this crosswalk being
-  `reviewed` does not itself resolve whether/where `Situation` is placed in `data/ontology/core.ttl`;
-  that is separate future work, consistent with `proposition-content.md`'s precedent of advancing
-  to `reviewed` with placement still deferred.
+- '~~Core.ttl placement remains an open question~~ — **done 2026-07-08 (session-060)**: placed
+  as `xwkont-core:SituationStateOfAffairs`, a sibling of Object under Continuant; see
+  `uncertainty-001`''s resolution note and `data/ontology/core.ttl`.'
 - Consider whether GFO's two `Situation` lineages (`note-005`) warrant a follow-up question
   to GFO's own maintainers or documentation, separate from this crosswalk's own scope.
 - Create the Universal/Type crosswalk next (per `TODO.md`'s `0.2.0` batch) — UFO's OntoUML

@@ -62,6 +62,8 @@ Verified 2026-07-03 with live `curl` checks against the deployed w3id redirect (
 
 Both retrieval paths behave as specified in `docs/publication/redirects-content-negotiation.md`.
 
+**Re-verified 2026-07-08**, after `core.ttl` grew from 21 to 30 classes across the `0.2.0`/`0.3.0` batches — checking whether the deployed redirect still served current content, not just whether it still redirected: both retrieval paths returned the same `302`/final-`200` behavior as 2026-07-03, the fragment IRI `https://w3id.org/xwkont/core#Entity` resolves via the same namespace-document redirect, and the served Turtle body's class count matches `data/ontology/core.ttl`'s local count (30) exactly — confirming the deployment reflects current content, not a stale cache. `https://w3id.org/xwkont/ontology/core/0.1.0` still returns `404`, unchanged from this milestone's original deferral of immutable versioned IRIs. See `docs/publication/redirects-content-negotiation.md`'s Verification Result section for the full command output.
+
 ## Validation Posture
 
 Publication-time validation is intentionally minimal:

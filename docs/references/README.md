@@ -1,6 +1,6 @@
 # References
 
-<!-- updated at: 2026-07-04 21:10 Z   (2026-07-04 17:10 EDT) -->
+<!-- updated at: 2026-07-08 11:05 Z   (2026-07-08 07:05 EDT) -->
 
 Repository-local reference records, one per cited external source, per [docs/INFORMATION_ARCHITECTURE.md](../INFORMATION_ARCHITECTURE.md)'s required-fields and identifier conventions (`xwkont:ref:*`). New reference records follow [TEMPLATE.md](TEMPLATE.md).
 
@@ -21,4 +21,6 @@ Repository-local reference records, one per cited external source, per [docs/INF
 - [ref-masolo-vieu-2004.md](ref-masolo-vieu-2004.md) — Social Roles and their Descriptions (2004)
 - [ref-borgo-galton-kutz-2022.md](ref-borgo-galton-kutz-2022.md) — Foundational Ontologies in Action
 - [ref-trojahn-2022.md](ref-trojahn-2022.md) — Foundational Ontologies Meet Ontology Matching: A Survey
+- [ref-romulus.md](ref-romulus.md) — ROMULUS (Repository of Ontologies for MULtiple USes) — comparable prior art, not a crosswalk source
+- [ref-wfol.md](ref-wfol.md) — WonderWeb Foundational Ontologies Library (WFOL) — comparable prior art, not a crosswalk source
 - [TEMPLATE.md](TEMPLATE.md) — template for new reference records

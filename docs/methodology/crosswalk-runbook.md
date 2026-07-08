@@ -1,8 +1,8 @@
 # Crosswalk Runbook: Selecting, Sourcing, and Drafting a Concept
 
 > **Status:** Accepted, in active use
-> **Date:** 2026-07-04 (non-distinct-candidate off-ramp added 2026-07-06, corrected same day after its first real application surfaced two gaps; a lesson-learned subsection added to Step 1 the same day, on not pre-ranking unverified candidates by "evidentiary strength"; a governing principle added the same day, above Step 1, stating explicitly that a crosswalk maps the territory rather than judging it — added after this specific lesson had to be repeated more than once in one session; a symmetric check added 2026-07-07 after the governing principle itself was misapplied in the opposite direction — manufacturing an open maintainer-decision question for a fact-and-existing-rule-determined finding — during the `Ontological Level / Stratum` pass; a "Reviewed-eligibility criterion" section added 2026-07-07, same day, stating explicitly that a single core term (per `ADR-0020`/`ADR-0021`'s definition) from one authoritative source is sufficient for `reviewed` — extending `ADR-0021`'s existing existential core-placement logic rather than introducing a new principle, corrected same day from an initial draft that used "primitive/upper-level," a label `ADR-0011` already rejected — and the Off-ramp section's trigger condition tightened the same day to require a source's own explicit alternate/equivalence assertion, not an XwkOnt-side read of evidentiary overlap)
-> **Related specification:** `docs/methodology/crosswalk-methodology.md`, `docs/methodology/primary-source-verification.md`, `docs/governance/contributing.md`, `docs/crosswalks/concepts/TEMPLATE.md`, `ADR-0015`, `ADR-0018`
+> **Date:** 2026-07-04 (non-distinct-candidate off-ramp added 2026-07-06, corrected same day after its first real application surfaced two gaps; a lesson-learned subsection added to Step 1 the same day, on not pre-ranking unverified candidates by "evidentiary strength"; a governing principle added the same day, above Step 1, stating explicitly that a crosswalk maps the territory rather than judging it — added after this specific lesson had to be repeated more than once in one session; a symmetric check added 2026-07-07 after the governing principle itself was misapplied in the opposite direction — manufacturing an open maintainer-decision question for a fact-and-existing-rule-determined finding — during the `Ontological Level / Stratum` pass; a "Reviewed-eligibility criterion" section added 2026-07-07, same day, stating explicitly that a single core term (per `ADR-0020`/`ADR-0021`'s definition) from one authoritative source is sufficient for `reviewed` — extending `ADR-0021`'s existing existential core-placement logic rather than introducing a new principle, corrected same day from an initial draft that used "primitive/upper-level," a label `ADR-0011` already rejected — and the Off-ramp section's trigger condition tightened the same day to require a source's own explicit alternate/equivalence assertion, not an XwkOnt-side read of evidentiary overlap; Step 4 corrected 2026-07-08 — it had said to fill in `TEMPLATE.md` directly, which by then meant writing into `docs/crosswalks/concepts/`, a directory `ADR-0024` had since made generated-only; a new Step 5 added the same day making the draft-to-YAML-to-generated-Markdown conversion an explicit step rather than an undocumented gap, and subsequent steps renumbered)
+> **Related specification:** `docs/methodology/crosswalk-methodology.md`, `docs/methodology/primary-source-verification.md`, `docs/governance/contributing.md`, `docs/crosswalks/concepts/TEMPLATE.md`, `_private/codex-delegation-process.md`, `ADR-0015`, `ADR-0018`, `ADR-0024`
 
 ## Purpose
 
@@ -40,7 +40,7 @@ This is not a new principle. It is the same existential-quantifier logic `ADR-00
 
 **Framing note, per `ADR-0019`:** this criterion is stated at the level of a source **term**'s status, not a claim that "the concept" (XwkOnt's own working-label heading) is itself validated by that status. `ADR-0019`'s Decision section is explicit that mapping assertions run source-term-to-source-term and "XwkOnt's Concept is the human-readable heading a cluster of those correspondences is filed under, not a third node they pass through." A single core, verified term filed under a heading is exactly as sound a basis for `reviewed` as five terms would be — the heading was never carrying evidentiary weight on its own.
 
-**This does not relax verification.** Step 3 through Step 5 below still apply in full — every claim still needs direct primary-source verification, every absence still needs to be checked across all 8 sources, and the Off-ramp below still applies where relevant. What this section settles is narrower: `ADR-0018`'s per-batch source-count thresholds (`0.2.0`'s ≥3 sources, `0.3.0`'s 2-then-1-source rungs) are a **batch-sequencing device** — which candidates get worked on, and in what order, within a given release — not a quality gate on what "reviewed" means. A candidate meeting a batch's admission threshold and a candidate's eventual source count once actually verified are two different numbers, and only the second one (verified content) has ever mattered for whether a finished crosswalk is sound.
+**This does not relax verification.** Step 3 through Step 6 below still apply in full — every claim still needs direct primary-source verification, every absence still needs to be checked across all 8 sources, and the Off-ramp below still applies where relevant. What this section settles is narrower: `ADR-0018`'s per-batch source-count thresholds (`0.2.0`'s ≥3 sources, `0.3.0`'s 2-then-1-source rungs) are a **batch-sequencing device** — which candidates get worked on, and in what order, within a given release — not a quality gate on what "reviewed" means. A candidate meeting a batch's admission threshold and a candidate's eventual source count once actually verified are two different numbers, and only the second one (verified content) has ever mattered for whether a finished crosswalk is sound.
 
 ## Step 1 — Confirm the concept is admissible
 
@@ -99,7 +99,7 @@ This disposition is a distinct third state from two others already in use, and t
 
 ## Step 4 — Fill in the template, section by section
 
-Use `docs/crosswalks/concepts/TEMPLATE.md` directly. Populate in this order (later sections depend on earlier ones):
+**Author into `_private/<slug>-draft.md`, shaped like `docs/crosswalks/concepts/TEMPLATE.md` — never directly into `docs/crosswalks/concepts/<slug>.md`.** Since `ADR-0024`, that directory is a generated-only projection of each concept's YAML record (see `docs/crosswalks/concepts/README.md`); a hand-authored file placed there risks being mistaken for canonical content or silently overwritten by the next regeneration. `TEMPLATE.md` still supplies the section shape — it is a shape reference, not itself the file to edit. See `_private/codex-delegation-process.md` for the fuller rationale (written for the Codex-delegation case, but the generated-directory rule applies to any contributor). Populate in this order (later sections depend on earlier ones):
 
 1. **Scope Note** — selection rationale with real source-count evidence (not backfilled from the seed), what the concept covers and excludes, cross-cutting findings established this session, and whether core.ttl placement is an open question (it almost always is at `draft` stage — a class is only added to `data/ontology/core.ttl` once the crosswalk reaches `reviewed`).
 2. **Labels, Alternate Labels, and Source Terminology** — one row per source, including explicit "no class found" rows for confirmed absences.
@@ -112,19 +112,28 @@ Use `docs/crosswalks/concepts/TEMPLATE.md` directly. Populate in this order (lat
 9. **Review History** — leave as `*(unreviewed)*` with a summary of what this drafting pass found, corrected, or left open.
 10. **Future Work** — concrete, actionable follow-ups (which uncertainty items to resolve, what to fetch next, what the next concept in the batch should be).
 
-## Step 5 — Self-check before committing
+## Step 5 — Convert the draft to the YAML SSOT and generate the real Markdown
+
+The `_private/<slug>-draft.md` from Step 4 is not itself a deliverable — it is superseded once this step is done, and can be left in place afterward as a historical record (same spirit as the Codex evaluation notes), not deleted.
+
+1. Run `python3 scripts/crosswalk-draft-md-to-yaml.py <slug>` to mechanically transcribe the draft into `data/crosswalks/<slug>/<slug>.yaml`. This is a deterministic field transcription, not a verification step.
+2. Independently re-verify every citation against its primary source and hand-edit the YAML directly — the YAML, not the draft Markdown, is the record that gets trusted from here on (`ADR-0024`).
+3. Validate: `linkml-validate -s data/crosswalks/schema/crosswalk-concept.yaml data/crosswalks/<slug>/<slug>.yaml`.
+4. Generate the real Markdown: `python3 scripts/crosswalk-yaml-to-md.py --write <slug>`, and the machine-readable exports: `python3 scripts/crosswalk-to-sssom-tsv.py` and `python3 scripts/sssom-tsv-to-ttl.py`.
+
+## Step 6 — Self-check before committing
 
 - Re-read `docs/INFORMATION_ARCHITECTURE.md`'s slug/filename rules, local identifier patterns (`xwkont:concept:<slug>`, `xwkont:mapping:...`, `xwkont:ref:...`), and claim-typing rules if this is a new contributor's first crosswalk in a session — don't assume they're memorized.
-- Run `docs/governance/contributing.md`'s Review Checklist and the validation commands relevant to the artifact class (crosswalk = Markdown only, no `core.ttl` touch expected at `draft`).
+- Run `docs/governance/contributing.md`'s Review Checklist and the validation commands relevant to the artifact class (crosswalk = the YAML SSOT plus its generated Markdown/TSV/Turtle; no `core.ttl` touch expected at `draft`).
 - Confirm every reference used has a `docs/references/ref-*.md` record (or reuses an existing one) per `ADR-0012`.
 - `git status --short` clean check before calling the concept done.
 
-## Step 6 — Commit and update navigation
+## Step 7 — Commit and update navigation
 
-- Commit the new/updated crosswalk file with a `feat:` (new concept) or `fix:`/`docs:` (correction) Conventional Commits message.
+- Commit the YAML, the generated Markdown/TSV/Turtle, and the superseded `_private/<slug>-draft.md` together, with a `feat:` (new concept) or `fix:`/`docs:` (correction) Conventional Commits message.
 - Update `TODO.md`'s batch item with a per-concept findings summary, and `docs/crosswalks/README.md`'s index if this is a new file.
 
-## Step 7 — Batch-level review
+## Step 8 — Batch-level review
 
 Once every concept in the batch is drafted, an external or maintainer review pass checks the batch as a whole — cross-crosswalk consistency (does one crosswalk's finding correct another's, and has that correction actually been applied?), mapping-category strictness, and whether any concept's evidentiary base is too thin to advance with the rest of the batch (`HOLD`) versus ready with targeted fixes (`PASS WITH FIXES`) versus ready as-is (`PASS`). Apply mechanical fixes directly; record scope/structure decisions (e.g. "model as one class or two") as maintainer-confirmable recommendations in the crosswalk's own Uncertainty section rather than silently deciding `core.ttl` structure. A concept that gets a genuine `HOLD` should stay at `draft`, not be pushed to `reviewed` by lowering the evidentiary bar — see `docs/crosswalks/concepts/situation-state-of-affairs.md`'s `uncertainty-001` for a worked example of a concept that failed its own admission bar on direct verification and was left open rather than forced through.
 

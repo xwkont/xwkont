@@ -13,10 +13,10 @@
     sssom:subject_id xwkont-source-term:GFO-Symbol_structure .
 
 <https://w3id.org/xwkont/id#mapping:symbol-sign-representation:002> a sssom:Mapping ;
-    rdfs:comment "All four terms are relation-types, the same kind of thing `information-artifact.md` lists `Symbolization`/`Signification` as considered and rejected for its own scope. `Name` and `NameEvent` are excluded from this mapping — see `uncertainty-006`."@en ;
+    rdfs:comment "Retargeted 2026-07-08 (session-059) from `xwkont-core:SymbolSignRepresentation` to `xwkont-core:symbolizes`, resolving `uncertainty-001`'s class-plus-relation-family decision: all four terms are relation-types, not type/category-side evidence, so they correspond to the new relation property (which XwkOnt does not further subdivide into Symbolization/Signification/NameOf/NameRelation), not to the `SymbolSignRepresentation` class. `Name` and `NameEvent` remain excluded from this mapping — see `uncertainty-006`."@en ;
     sssom:confidence 6e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-SymbolSignRepresentation ;
+    sssom:object_id xwkont-source-term:xwkont-core-symbolizes ;
     sssom:predicate_id skos:relatedMatch ;
     sssom:subject_id xwkont-source-term:GUM-NameOf_NameRelation_Symbolization_Signification .
 
@@ -27,5 +27,8 @@ xwkont-source-term:GUM-NameOf_NameRelation_Symbolization_Signification rdfs:labe
     dcterms:source "GUM" .
 
 xwkont-source-term:xwkont-core-SymbolSignRepresentation rdfs:label "SymbolSignRepresentation"@en ;
+    dcterms:source "xwkont-core" .
+
+xwkont-source-term:xwkont-core-symbolizes rdfs:label "symbolizes"@en ;
     dcterms:source "xwkont-core" .
 

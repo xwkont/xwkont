@@ -62,6 +62,8 @@ required_terms = [
     'xwkont-core:OntologicalLevelStratum', 'xwkont-core:ListSequence',
     'xwkont-core:MindConsciousBeingAgent', 'xwkont-core:NonPhysicalObject',
     'xwkont-core:Disposition', 'xwkont-core:Modality',
+    'xwkont-core:SymbolSignRepresentation', 'xwkont-core:symbolizes',
+    'xwkont-core:symbolizedBy', 'xwkont-core:SituationStateOfAffairs',
 ]
 missing = [term for term in required_terms if term not in core]
 if missing:

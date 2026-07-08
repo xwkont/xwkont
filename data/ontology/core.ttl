@@ -166,6 +166,26 @@ xwkont-core:Modality a rdfs:Class, skos:Concept ;
     dcterms:relation "docs/crosswalks/concepts/modality.md"@en ;
     skos:inScheme xwkont-core: .
 
+xwkont-core:SituationStateOfAffairs a rdfs:Class, skos:Concept ;
+    rdfs:label "Situation / State of Affairs"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Situation / State of Affairs"@en ;
+    skos:altLabel "Configuration"@en ;
+    skos:definition "A continuant considered for comparison as a configuration or collection of entities comprehended as a whole, typically dependent on a description or unifying criterion, distinct from an occurrent process or event."@en ;
+    skos:editorialNote "Candidate concept, modeled as a sibling of Object under Continuant, following GFO's own Presential-side Situation and DOLCE's own non-agentive-social-object placement of situation (DnS module) — both sources that commit to a continuant/occurrent-style framing place their evidence on the continuant side, and UFO's OntoUML situation stereotype does not contradict this. Resolves the three-way sense split flagged by external review: this class covers only the configuration/comprehended-whole sense (GFO Situation, DOLCE DnS situation, UFO OntoUML situation), not DOLCE's occurrent State (a different, non-equivalent sense per the concept's own mapping-002) or TUpper's unreified fluent-like state (never a formal correspondence)."@en ;
+    dcterms:relation "docs/crosswalks/concepts/situation-state-of-affairs.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:SymbolSignRepresentation a rdfs:Class, skos:Concept ;
+    rdfs:label "Symbol / Sign / Representation"@en ;
+    rdfs:subClassOf xwkont-core:Universal ;
+    skos:prefLabel "Symbol / Sign / Representation"@en ;
+    skos:altLabel "Sign Vehicle"@en ;
+    skos:definition "A universal considered for comparison as a symbol, sign, or representation-form type that some entity can instantiate as a sign vehicle, distinct from the information content it may carry."@en ;
+    skos:editorialNote "Candidate concept, modeled under Universal following GFO's own direct structural treatment (Symbol_structure as rdfs:subClassOf Category). Class-plus-relation-family resolution of the single-class-vs-family question flagged in `docs/crosswalks/concepts/symbol-sign-representation.md`'s Uncertainty section: this class covers the type-side evidence (GFO's Symbol_structure); the relation-type evidence (GUM's Symbolization family) is covered instead by the `symbolizes`/`symbolizedBy` relation pair, mirroring the existing Role/bearsRole/roleOf pattern."@en ;
+    dcterms:relation "docs/crosswalks/concepts/symbol-sign-representation.md"@en ;
+    skos:inScheme xwkont-core: .
+
 xwkont-core:Object a rdfs:Class, skos:Concept ;
     rdfs:label "Object"@en ;
     rdfs:subClassOf xwkont-core:Continuant ;
@@ -341,6 +361,20 @@ xwkont-core:roleOf a rdf:Property ;
     rdfs:range xwkont-core:Entity ;
     skos:definition "Relates a role to the entity that bears it."@en ;
     skos:editorialNote "Context and dependence axioms are deferred."@en .
+
+xwkont-core:symbolizes a rdf:Property ;
+    rdfs:label "symbolizes"@en ;
+    rdfs:domain xwkont-core:Entity ;
+    rdfs:range xwkont-core:Entity ;
+    skos:definition "Relates a symbol, sign, or representation-form entity to another entity it symbolizes."@en ;
+    skos:editorialNote "Follows GUM's Symbolization relation family (Symbolization/Signification/NameOf/NameRelation), which XwkOnt does not further subdivide; structural only, GUM's own SYMBOL/SYMBOLIZED domain-range roles are not separately formalized."@en .
+
+xwkont-core:symbolizedBy a rdf:Property ;
+    rdfs:label "symbolized by"@en ;
+    rdfs:domain xwkont-core:Entity ;
+    rdfs:range xwkont-core:Entity ;
+    skos:definition "Relates an entity to a symbol, sign, or representation-form entity that symbolizes it."@en ;
+    skos:editorialNote "Inverse formalization with symbolizes is deferred."@en .
 
 xwkont-core:dependsOn a rdf:Property ;
     rdfs:label "depends on"@en ;

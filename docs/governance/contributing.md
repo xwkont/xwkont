@@ -24,7 +24,7 @@ Contributors should read:
 
 1. Pick a bucket that isn't already one of the `reviewed`/`draft` concepts in `docs/crosswalks/concepts/`.
 2. Confirm it meets `ADR-0018`'s admission bar (a genuine, source-evidenced recurring pattern — see the matrix in `docs/evaluations/foundational-ontology-concept-terms-matrix.md` for the ranking method).
-3. Follow the same selection/sourcing/scoping/review process every existing concept went through — start from `TEMPLATE.md` in `docs/crosswalks/concepts/`, and use `docs/methodology/crosswalk-runbook.md` for the step-by-step procedure.
+3. Follow the same selection/sourcing/scoping/review process every existing concept went through — use `docs/methodology/crosswalk-runbook.md` for the step-by-step procedure, which shapes the draft on `TEMPLATE.md` in `docs/crosswalks/concepts/` but authors it into `_private/<slug>-draft.md` (that directory is generated-only, per `ADR-0024`).
 4. A row tagged `Ungrouped` in the candidate backlog is not yet triaged into any bucket at all — proposing one as a new concept, with source-count evidence, is itself a useful contribution, not just picking from an existing bucket.
 
 ## Contribution Categories
