@@ -587,8 +587,7 @@ review_history:
     parent and its parallel to the `role.md`/`quality.md` SUMO-abstract-branch pattern was added. A GUM
     Ability/GeneralPossibility-vs-Intention categorization inconsistency was left open as `uncertainty-008`
     rather than silently resolved. Full evaluation of the delegated-authoring trial recorded separately
-    in `_private/codex-crosswalk-evaluation-disposition-capacity.md` (private, not part of this review
-    record).'
+    in a private working note, not part of this review record.'
 future_work:
 - Verify whether any later DOLCE extension introduces a true bearer-capacity analogue that belongs here.
 - Fetch YAMATO's OWL/Hozo files if the registration gate is ever completed, so the `function` candidate

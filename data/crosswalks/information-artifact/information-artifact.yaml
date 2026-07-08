@@ -3,7 +3,7 @@ slug: information-artifact
 title: Information Artifact
 editorial_status: reviewed
 created: "2026-07-01"
-modified: "2026-07-06"
+modified: "2026-07-07"
 scope_note: 'This crosswalk asks the question `TODO.md` posed directly: does `xwkont-core:InformationArtifact`
   (a direct child of `Entity`, described in `data/ontology/core.ttl` as XwkOnt''s own "candidate
   support concept") correspond to anything in BFO, DOLCE, UFO, or SUMO, or is it purely XwkOnt-introduced
@@ -175,11 +175,17 @@ labels:
   entry_notes: Zero occurrences of "information," "content," or "represent" in the fetched
     files.
 - role: Source term
-  label: '*(none found with confidence)*'
+  label: '*(none found with confidence, object/entity-level Information-Object equivalent)*'
   label_source: GUM
   language: en
   entry_notes: '`Signification`/`Symbolization` are relation types, not an entity/object-level
     analog.'
+- role: Source term
+  label: Name
+  label_source: GUM
+  language: en
+  entry_notes: 'Added 2026-07-07: a narrow, object/entity-level analog (a label for an entity),
+    not the same scope as ICE but a genuine class-level correspondence, unlike `Signification`/`Symbolization`.'
 source_definitions:
 - source: BFO (IAO extension)
   term_or_identifier: Information Content Entity
@@ -347,6 +353,19 @@ source_definitions:
     types — a categorically different kind of thing than BFO(IAO)'s ICE, DOLCE(DUL)'s InformationObject,
     SUMO's ContentBearingObject, or YAMATO's Representation, all of which are entity classes.
     No correspondence recorded, same standard as GFO above.
+- source: GUM
+  term_or_identifier: Name
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Name`: "An accepted but possibly arbitrary label for some entity." `rdfs:subClassOf`
+    `Word`, itself `rdfs:subClassOf Abstraction`.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `Name` (and its `Word`/`Abstraction` ancestry),
+    fetched and read directly 2026-07-07'
+  entry_notes: Added 2026-07-07, checking `symbol-sign-representation.yaml`''s own Future Work
+    item. Unlike `Signification`/`Symbolization` above, this is a genuine object/entity-level
+    class — a narrow correspondence recorded as `mapping-009`, not a rejected candidate.
 correspondences:
 - correspondence_id: xwkont:correspondence:information-artifact:001
   source_ontology: BFO (IAO extension)
@@ -387,9 +406,25 @@ correspondences:
   inclusion_rationale: The most developed Information-Object treatment of any source in this
     crosswalk; a positively-defined `Representation`/`Representing thing` (abstract/concrete)
     split, with its own text explicitly engaging BFO's ICE as a point of comparison.
-correspondences_note: No UFO correspondence is recorded — see Uncertainty. No GFO, TUpper,
-  or GUM correspondence is recorded either (`ADR-0015` buildout, 2026-07-02) — see Source
-  Definitions above and Uncertainty for the considered-and-rejected candidates in each case.
+- correspondence_id: xwkont:correspondence:information-artifact:005
+  source_ontology: GUM
+  source_term: Name
+  source_identifier_or_iri: '`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Name`
+    (confirmed directly against `GUM-31.owl.txt`, 2026-07-07)'
+  source_version: GUM 3.1, per `xwkont:ref:gum-owl`, directly verified 2026-07-07
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: 'Added 2026-07-07, checking `symbol-sign-representation.yaml`''s own
+    Future Work item. A narrow but genuine object/entity-level correspondence — unlike
+    `Signification`/`Symbolization` (relation types, still correctly excluded), `Name` is a
+    class-level, "label for an entity" analog, comparable in form to ICE''s aboutness relation
+    though far narrower in scope; recorded as `mapping-009` at `low-medium` confidence, not
+    `close-match`.'
+correspondences_note: No UFO correspondence is recorded — see Uncertainty. No GFO or TUpper
+  correspondence is recorded (`ADR-0015` buildout, 2026-07-02) — see Source Definitions above
+  and Uncertainty for the considered-and-rejected candidates in each case. GUM's `Name` was
+  added 2026-07-07 as a narrow correspondence; `Signification`/`Symbolization` remain
+  considered-and-rejected (relation types, not object/entity types).
 comparison_notes:
 - note_id: note-001
   dimension: technical
@@ -564,11 +599,34 @@ mapping_assertions:
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
-  rationale: No GUM correspondence identified with confidence; `Signification`/`Symbolization`
-    were considered and rejected — both are relation types (subclasses of `Intensive`), not
-    object/entity types, a categorically different kind of thing than an Information-Object-equivalent
-    class.
+  rationale: No GUM object/entity-level Information-Object-equivalent class identified with
+    confidence; `Signification`/`Symbolization` were considered and rejected — both are relation
+    types (subclasses of `Intensive`), not object/entity types, a categorically different kind
+    of thing than an Information-Object-equivalent class.
   provenance:
+  - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:information-artifact:009
+  subject: BFO(IAO):Information Content Entity
+  relation_category: related
+  object: GUM:Name
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: '**Added 2026-07-07** (`symbol-sign-representation.yaml`''s own Future Work flagged
+    this for a check, not decided there since this crosswalk was already `reviewed`). GUM''s
+    `Name` (`rdfs:subClassOf Word`, itself `rdfs:subClassOf Abstraction`): "An accepted but
+    possibly arbitrary label for some entity" — comparable in form to BFO(IAO)''s ICE (a
+    generically dependent entity that stands in an aboutness relation to some entity): a name
+    is a label *for* an entity, structurally an aboutness-like relationship, and unlike
+    `Signification`/`Symbolization` it is a genuine object/entity-level class, not a relation
+    type. `related`, not `close-match`: `Name` sits in an entirely different, linguistics-specific
+    branch (`Word`/`Abstraction`) with no shared ancestor with any of GUM''s occurrent-like
+    or continuant-like top classes, and denotes only a narrow label/naming-word kind of content,
+    not ICE''s full range (documents, procedures, plans, etc.). `low-medium`, not higher: the
+    aboutness comparison is this crosswalk''s own observed structural parallel, not a comparison
+    GUM''s own text draws itself (contrast `mapping-004`, where YAMATO explicitly cites BFO).'
+  provenance:
+  - xwkont:ref:ceusters-smith-2015
   - xwkont:ref:gum-owl
 uncertainties:
 - item_id: uncertainty-001
@@ -711,6 +769,20 @@ review_history:
     question (`uncertainty-002`, UFO-A/UFO-C not fetched) remains unresolved and is not affected
     by this review pass. Self-review performed at the maintainer''s explicit request, not
     independent third-party review.'
+- review_date: "2026-07-07"
+  outcome: Reopened — new GUM correspondence added, no editorial_status change
+  review_notes: 'Checked `symbol-sign-representation.yaml`''s own Future Work item: whether
+    GUM''s `Name` should be added as new evidence. Fetched `GUM-31.owl.txt` fresh and confirmed
+    `Name` (`rdfs:subClassOf Word`, itself `rdfs:subClassOf Abstraction`): "An accepted but
+    possibly arbitrary label for some entity." A genuine object/entity-level class, unlike
+    the already-considered-and-rejected `Signification`/`Symbolization` relation types. Added
+    as `mapping-009` (BFO(IAO):Information Content Entity — GUM:Name, `related`, `low-medium`
+    confidence) plus a new Source Definitions entry, `correspondences` entry
+    (`xwkont:correspondence:information-artifact:005`), and a `labels` entry. `mapping-008`
+    (the existing GUM "unknown" row) left in place and its rationale narrowed to
+    object/entity-level scope specifically, since it still correctly documents that no GUM
+    class matches ICE''s full range. `editorial_status` remains `reviewed` — this is additive
+    evidence, not a re-review of the crosswalk''s existing content.'
 future_work:
 - '~~Create proper reference records for IAO (Ceusters & Smith, "Aboutness: Towards Foundations
   for the Information Artifact Ontology") and DOLCE Lite Plus~~ — **done 2026-07-01**, `uncertainty-001`

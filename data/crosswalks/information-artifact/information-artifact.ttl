@@ -36,6 +36,16 @@
     sssom:predicate_id skos:closeMatch ;
     sssom:subject_id xwkont-source-term:DOLCE\(DUL\)-Information_Object .
 
+<https://w3id.org/xwkont/id#mapping:information-artifact:009> a sssom:Mapping ;
+    rdfs:comment "**Added 2026-07-07** (`symbol-sign-representation.yaml`'s own Future Work flagged this for a check, not decided there since this crosswalk was already `reviewed`). GUM's `Name` (`rdfs:subClassOf Word`, itself `rdfs:subClassOf Abstraction`): \"An accepted but possibly arbitrary label for some entity\" — comparable in form to BFO(IAO)'s ICE (a generically dependent entity that stands in an aboutness relation to some entity): a name is a label *for* an entity, structurally an aboutness-like relationship, and unlike `Signification`/`Symbolization` it is a genuine object/entity-level class, not a relation type. `related`, not `close-match`: `Name` sits in an entirely different, linguistics-specific branch (`Word`/`Abstraction`) with no shared ancestor with any of GUM's occurrent-like or continuant-like top classes, and denotes only a narrow label/naming-word kind of content, not ICE's full range (documents, procedures, plans, etc.). `low-medium`, not higher: the aboutness comparison is this crosswalk's own observed structural parallel, not a comparison GUM's own text draws itself (contrast `mapping-004`, where YAMATO explicitly cites BFO)."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Name ;
+    sssom:subject_id xwkont-source-term:BFO\(IAO\)-Information_Content_Entity .
+
+xwkont-source-term:GUM-Name rdfs:label "Name"@en ;
+    dcterms:source "GUM" .
+
 xwkont-source-term:SUMO-ContentBearingPhysical rdfs:label "ContentBearingPhysical"@en ;
     dcterms:source "SUMO" .
 

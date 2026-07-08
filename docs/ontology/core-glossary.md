@@ -34,6 +34,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 
 ## Glossary Entries
 
+### Abstract
+
+- **Preferred label:** Abstract
+- **Local identifier:** `xwkont:core:Abstract`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as lacking spatiotemporal location or embodiment, such as a number or type, contrasted with Concrete.
+- **Parent:** Entity
+- **Editorial note:** Modeled as a class-pair sibling to Continuant/Occurrent; the boundary with Concrete is source-dependent.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### accepted
 
 - **Preferred label:** accepted
@@ -41,6 +51,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** Approved for use in the repository as a current XwkOnt artifact, decision, or status.
 - **Editorial note:** Acceptance in XwkOnt does not make a source ontology claim true; it records a repository decision.
 - **Traceability:** Used by ADR and roadmap status notes.
+
+### Aggregate
+
+- **Preferred label:** Aggregate
+- **Local identifier:** `xwkont:core:Aggregate`
+- **Status:** Core candidate concept
+- **Definition:** A continuant considered for comparison as a plurality of member parts that together form a unit under a uniform membership criterion, contrasted with the more permissive Sum.
+- **Parent:** Continuant
+- **Editorial note:** One of two sibling sub-concepts with Sum, reflecting an even source split on unity-criterion strictness.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### alternate label
 
@@ -100,6 +120,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** The RFC 2119 and RFC 8174 convention for using requirement keywords in normative documents.
 - **Traceability:** Standards baseline and ADR-0006.
 
+### Boundary
+
+- **Preferred label:** Boundary
+- **Local identifier:** `xwkont:core:Boundary`
+- **Status:** Core candidate concept
+- **Definition:** A continuant considered for comparison as a lower-dimensional, fiat-demarcated part of its host entity, such as an edge or surface, contrasted with the not-part-of-host Site.
+- **Parent:** Continuant
+- **Editorial note:** One of two sibling sub-concepts with Site, reflecting a part-of-host/not-part-of-host split found across multiple source ontologies.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### candidate
 
 - **Preferred label:** candidate
@@ -122,6 +152,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Status:** Methodological
 - **Definition:** A grouping used to organize terms, concepts, entities, or classes for description or comparison.
 - **Traceability:** Used by class, domain, range, and ontology definitions.
+
+### Change
+
+- **Preferred label:** Change
+- **Local identifier:** `xwkont:core:Change`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as an alteration, transition, or difference an entity undergoes, contrasted with the entity's own persisting or unfolding through time.
+- **Parent:** Entity
+- **Editorial note:** Modeled as a direct Entity subclass since source ontologies diverge on whether change belongs with continuants or occurrents.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### claim
 
@@ -160,6 +200,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** A collection that organizes related concepts for documentation or SKOS-compatible representation.
 - **Traceability:** Turtle `skos:ConceptScheme` declaration.
 
+### Concrete
+
+- **Preferred label:** Concrete
+- **Local identifier:** `xwkont:core:Concrete`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as having spatiotemporal location or embodiment, such as a physical object, quality, or event, contrasted with Abstract.
+- **Parent:** Entity
+- **Editorial note:** Modeled as Abstract's sibling class pair; the boundary with Abstract is source-dependent.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### consistency
 
 - **Preferred label:** consistency
@@ -193,6 +243,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** An entity considered for comparison as persisting, enduring, or being present through time, such as an object, quality, or role.
 - **Parent:** Entity
 - **Editorial note:** Source ontologies differ on this label and boundary; XwkOnt does not make a final commitment in this glossary.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
+### Continuous
+
+- **Preferred label:** Continuous
+- **Local identifier:** `xwkont:core:Continuous`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as gapless or without discrete boundaries between its parts or values, contrasted with the gap-having Discrete.
+- **Parent:** Entity
+- **Editorial note:** One of two sibling sub-concepts with Discrete.
 - **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### core ontology
@@ -250,6 +310,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** A maintainable text file used to produce or review a diagram.
 - **Traceability:** Core ontology Mermaid source.
 
+### Discrete
+
+- **Preferred label:** Discrete
+- **Local identifier:** `xwkont:core:Discrete`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as separated into distinct, countable, gap-bounded units or values, contrasted with the gapless Continuous.
+- **Parent:** Entity
+- **Editorial note:** Continuous's sibling sub-concept.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### disjointness
 
 - **Preferred label:** disjointness
@@ -257,6 +327,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** A formal statement that categories cannot share the same members.
 - **Editorial note:** Disjointness is assigned to later formal-axiom work and is not asserted by this glossary.
 - **Traceability:** Core ontology out-of-scope notes.
+
+### Disposition
+
+- **Preferred label:** Disposition
+- **Local identifier:** `xwkont:core:Disposition`
+- **Status:** Core candidate concept
+- **Definition:** A continuant considered for comparison as a tendency, capacity, or potential an entity has to behave or be realized in a certain way under certain conditions.
+- **Parent:** Continuant
+- **Editorial note:** Modeled as a sibling of Role under Continuant.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### DOLCE
 
@@ -425,6 +505,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** A human-readable name for a term, concept, relationship, property, or artifact.
 - **Traceability:** SKOS/RDFS labels and glossary normalization objective.
 
+### List / Sequence
+
+- **Preferred label:** List / Sequence
+- **Local identifier:** `xwkont:core:ListSequence`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as an ordered collection whose members have an intrinsic sequence or position, such as a list or ordered set.
+- **Parent:** Entity
+- **Editorial note:** Modeled as a direct Entity subclass since source ontologies diverge on whether ordered collections belong with abstract or concrete entities.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### local identifier
 
 - **Preferred label:** local identifier
@@ -472,6 +562,26 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** Information that describes an artifact, source, term, concept, relationship, or record.
 - **Traceability:** Information architecture and Information Artifact uncertainty note.
 
+### Mind / Conscious Being / Agent
+
+- **Preferred label:** Mind / Conscious Being / Agent
+- **Local identifier:** `xwkont:core:MindConsciousBeingAgent`
+- **Status:** Core candidate concept
+- **Definition:** A continuant considered for comparison as a mind, conscious being, or agent capable of cognition, intention, or autonomous action, contrasted with the more generic Object.
+- **Parent:** Continuant
+- **Editorial note:** Modeled as a sibling of Object under Continuant.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
+### Modality
+
+- **Preferred label:** Modality
+- **Local identifier:** `xwkont:core:Modality`
+- **Status:** Core candidate concept
+- **Definition:** A quality considered for comparison as a way of qualifying necessity, possibility, or contingency.
+- **Parent:** Quality
+- **Editorial note:** Modeled under Quality.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### model
 
 - **Preferred label:** model
@@ -494,6 +604,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** XwkOnt's practice of documenting and comparing source ontologies without advocating one source ontology or resolving foundational disputes as project doctrine.
 - **Traceability:** Founding principles, architectural principles, and glossary constraints.
 
+### Non-physical Object
+
+- **Preferred label:** Non-physical Object
+- **Local identifier:** `xwkont:core:NonPhysicalObject`
+- **Status:** Core candidate concept
+- **Definition:** A continuant considered for comparison as an entity that is neither a physical object nor an amount of matter, such as a mental or social object.
+- **Parent:** Continuant
+- **Editorial note:** Modeled under Continuant as a single umbrella class, not split into a separate social-object branch.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### Object
 
 - **Preferred label:** Object
@@ -512,6 +632,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** An entity considered for comparison as unfolding, occurring, happening, or extending through time, such as a process or event.
 - **Parent:** Entity
 - **Editorial note:** Source ontologies differ on this label and boundary.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
+### Ontological Level / Stratum
+
+- **Preferred label:** Ontological Level / Stratum
+- **Local identifier:** `xwkont:core:OntologicalLevelStratum`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as a level, stratum, or layer used to classify other entities by kind of reality, such as material, mental, or social strata.
+- **Parent:** Entity
+- **Editorial note:** Modeled as a direct Entity subclass and single umbrella class, a meta-level classifier orthogonal to the Continuant/Occurrent split.
 - **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### ontology
@@ -585,6 +715,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Editorial note:** In this glossary, property does not imply OWL object-property or datatype-property commitments.
 - **Traceability:** Core ontology relationship types and Turtle `rdf:Property` declarations.
 
+### Proposition
+
+- **Preferred label:** Proposition
+- **Local identifier:** `xwkont:core:Proposition`
+- **Status:** Core candidate concept
+- **Definition:** An abstract entity considered for comparison as a purely combinatorial content that can be borne by multiple concrete representations, such as strings, sounds, or icons expressing the same claim.
+- **Parent:** Abstract
+- **Editorial note:** Modeled under Abstract.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### provenance
 
 - **Preferred label:** provenance
@@ -612,6 +752,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Range note:** Candidate range is Entity.
 - **Editorial note:** Dependence formalization is deferred.
 - **Traceability:** Core ontology relationship table; Turtle property declaration.
+
+### Quantity
+
+- **Preferred label:** Quantity
+- **Local identifier:** `xwkont:core:Quantity`
+- **Status:** Core candidate concept
+- **Definition:** A concrete entity considered for comparison as an amount, portion, or quantity of matter or stuff, such as a mass of gold.
+- **Parent:** Concrete
+- **Editorial note:** Modeled under Concrete; covers several related but distinct source-ontology senses.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### range
 
@@ -705,6 +855,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Definition:** An explanatory note that describes intended use, limits, or interpretation of a term, concept, relationship, or artifact.
 - **Traceability:** Core ontology SKOS and Markdown notes.
 
+### Site
+
+- **Preferred label:** Site
+- **Local identifier:** `xwkont:core:Site`
+- **Status:** Core candidate concept
+- **Definition:** A continuant considered for comparison as a dependent place or region whose location is determined by a host entity without being part of it, such as a hole or a shadow, contrasted with the part-of-host Boundary.
+- **Parent:** Continuant
+- **Editorial note:** Boundary's sibling sub-concept.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### SKOS
 
 - **Preferred label:** SKOS
@@ -719,6 +879,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Status:** Methodological
 - **Definition:** An external ontology that XwkOnt documents, compares, or maps without replacing it.
 - **Traceability:** README, core ontology purpose, crosswalk methodology.
+
+### Space
+
+- **Preferred label:** Space
+- **Local identifier:** `xwkont:core:Space`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as a spatial region, place, or extent used to locate other entities in space.
+- **Parent:** Entity
+- **Editorial note:** Modeled as a direct Entity subclass, consistent with Time's placement.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### SPDX
 
@@ -744,6 +914,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Editorial note:** In this glossary, subclass is used as lightweight RDFS-style structure and not as a complete OWL commitment.
 - **Traceability:** Core ontology candidate inheritance relationships and Turtle `rdfs:subClassOf` declarations.
 
+### Sum
+
+- **Preferred label:** Sum
+- **Local identifier:** `xwkont:core:Sum`
+- **Status:** Core candidate concept
+- **Definition:** A continuant considered for comparison as a criterion-free sum of two or more entities, with no unity requirement on its members, contrasted with the stricter Aggregate.
+- **Parent:** Continuant
+- **Editorial note:** Aggregate's sibling sub-concept.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
+
 ### SUMO
 
 - **Preferred label:** SUMO
@@ -758,6 +938,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Status:** Methodological
 - **Definition:** A word or phrase used with a meaning relevant to XwkOnt documentation, representation, or comparison.
 - **Traceability:** Glossary closure objective.
+
+### Time
+
+- **Preferred label:** Time
+- **Local identifier:** `xwkont:core:Time`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as a temporal region, instant, or interval used to locate other entities in time.
+- **Parent:** Entity
+- **Editorial note:** Modeled as a direct Entity subclass rather than under Continuant or Occurrent.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### traceability
 
@@ -794,6 +984,16 @@ Where a term cannot be closed without premature modeling, the entry marks the un
 - **Status:** Methodological
 - **Definition:** A term used with XwkOnt-specific meaning that lacks a glossary entry or explicit deferral.
 - **Traceability:** Glossary validation notes.
+
+### Universal
+
+- **Preferred label:** Universal
+- **Local identifier:** `xwkont:core:Universal`
+- **Status:** Core candidate concept
+- **Definition:** An entity considered for comparison as a type, kind, category, or universal that classifies or is instantiated by individuals, contrasted with a particular individual.
+- **Parent:** Entity
+- **Editorial note:** Modeled as a direct Entity subclass paralleling a top-level category/individual split found in one source ontology.
+- **Traceability:** Core ontology top-level concepts; Turtle class declaration.
 
 ### URI
 
@@ -837,6 +1037,8 @@ This glossary closure found that the core ontology used several internal or semi
 - Representation terms: class, property, subclass, domain, range, RDF, RDFS, SKOS, OWL, Turtle, IRI, URI, concept scheme, namespace.
 - Methodological terms: candidate, source ontology, crosswalk, mapping, glossary closure, structural consistency, provenance, uncertainty, formalization, validation, traceability.
 - Deferred formalization terms: logical axiom, axiomatization, disjointness, cardinality, reasoner-grade constraint, inverse formalization.
+- `0.2.0`-batch core concepts (closed 2026-07-07, session-051): Abstract, Concrete, Universal, Time, Space, Aggregate, Sum, Boundary, Site, Quantity, Proposition.
+- `0.3.0`-batch core concepts (closed 2026-07-07, session-051): Change, Continuous, Discrete, Ontological Level / Stratum, List / Sequence, Mind / Conscious Being / Agent, Non-physical Object, Disposition, Modality. Symbol / Sign / Representation is not included — it remains deliberately unplaced in `core.ttl`, so it has no glossary entry either.
 
 ### Circular Definitions
 

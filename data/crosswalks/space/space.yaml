@@ -811,7 +811,7 @@ review_history:
     but raised to `high` confidence (the divergence itself is clearly evidenced, not a sourcing
     gap); `mapping-007` recategorized from `close-match` to `overlap` (a match confirmed only
     for one narrow sub-case) at `high` confidence. See `docs/methodology/crosswalk-runbook.md`''s
-    governing principle and `_private/sessions/` for the audit that found this. The 2026-07-04
+    governing principle for the audit method that found this. The 2026-07-04
     external review''s downgrade of `mapping-005`/`mapping-006` from `close-match` to `overlap`
     remains confirmed correctly applied; the `time.md` GUM ancestor-chain correction
     (`uncertainty-001`) confirmed present in both files. `uncertainty-002` (core.ttl placement

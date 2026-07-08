@@ -557,16 +557,23 @@ review_history:
     own for `reviewed`, and GUM''s `NameOf`/`NameRelation`/`Symbolization`/`Signification`
     (also independently verified against `GUM-31.owl` directly) is a genuine second source.
     Advanced `editorial_status` from `draft` to `reviewed`.'
+- review_date: "2026-07-07"
+  outcome: Cross-reference update — no scope change
+  review_notes: 'Resolved this crosswalk''s own two Future Work items: `information-artifact.yaml`
+    now has a new GUM `Name` correspondence (`mapping-009`), and `event.yaml` now has a new
+    GUM `Configuration`/`NameEvent` correspondence (`mapping-011`). Both reopenings are additive
+    evidence on those crosswalks, not re-reviews; this crosswalk''s own `reviewed` content and
+    mapping assertions are unchanged.'
 future_work:
-- Check whether GUM's `Name` should be added to `information-artifact.md` as new evidence —
-  its current GUM mapping there states no correspondence was found with confidence, and
-  `Name`'s definition (generically dependent, aboutness toward an entity) is comparable in
-  form to that crosswalk's own BFO(IAO) Information Content Entity definition. Not decided
-  here; `information-artifact.md` is already `reviewed` and reopening it is a separate step.
-- Check whether GUM's `NameEvent` ("the process of giving something a name") corresponds to
-  anything in `process.md`/`event.md`. `docs/crosswalks/candidate-concepts.md` (`GUM.102`)
-  already tags it "Event" independently of this crosswalk's draft; that tag has not been
-  checked against `event.md`'s own Source Definitions/Correspondences.
+- '~~Check whether GUM''s `Name` should be added to `information-artifact.md` as new evidence~~
+  — **done 2026-07-07**: added as `correspondence-005`/`mapping-009` (`related`, `low-medium`
+  confidence) — a genuine but narrow object/entity-level analog, unlike the already-rejected
+  `Signification`/`Symbolization` relation types.'
+- '~~Check whether GUM''s `NameEvent` ("the process of giving something a name") corresponds to
+  anything in `process.md`/`event.md`~~ — **done 2026-07-07**: traced to `event.md`''s new
+  `Configuration` correspondence-011 (`mapping-011`), a structurally distinct branch from the
+  crosswalk''s existing `Process` correspondence — see `event.yaml`''s `uncertainty-007` for the
+  still-open Process-vs-Configuration weighting question.'
 - Resolve whether the candidate should stay as one class or become a class-plus-relation family
   before any `core.ttl` placement decision (per `ADR-0021`; not yet started for this concept,
   same as the `0.3.0` batch's 8 newer `reviewed` concepts).

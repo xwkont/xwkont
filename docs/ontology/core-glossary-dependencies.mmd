@@ -65,3 +65,25 @@ flowchart TD
     StructuralConsistency --> Declared["declared"]
     Provenance --> Evidence["evidence"]
     Formalization --> Representation["representation"]
+
+    Abstract["Abstract"] --> Entity
+    Concrete["Concrete"] --> Entity
+    Universal["Universal"] --> Entity
+    Time["Time"] --> Entity
+    Space["Space"] --> Entity
+    Aggregate["Aggregate"] --> Continuant
+    Sum["Sum"] --> Continuant
+    Boundary["Boundary"] --> Continuant
+    Site["Site"] --> Continuant
+    Quantity["Quantity"] --> Concrete
+    Proposition["Proposition"] --> Abstract
+
+    Change["Change"] --> Entity
+    Continuous["Continuous"] --> Entity
+    Discrete["Discrete"] --> Entity
+    OntologicalLevelStratum["Ontological Level / Stratum"] --> Entity
+    ListSequence["List / Sequence"] --> Entity
+    MindConsciousBeingAgent["Mind / Conscious Being / Agent"] --> Continuant
+    NonPhysicalObject["Non-physical Object"] --> Continuant
+    Disposition["Disposition"] --> Continuant
+    Modality["Modality"] --> Quality

@@ -217,17 +217,23 @@ source_definitions:
   locator: '`TUpper-Terms.html`, fetched and read directly 2026-07-07 (zero occurrences in `tupper.all.owl`/`tupper.clif`)'
   entry_notes: Scoped absence.
 - source: UFO
-  term_or_identifier: '*(not independently re-checked this session)*'
+  term_or_identifier: '*(no dedicated ordered-collection class found)*'
   dimension: technical
   source_claim_type: editorial observation
-  text: This source was not independently re-checked this session. The DOI-linked primary source
-    (`https://doi.org/10.3233/AO-210256`) returned HTTP 403; no other accessible mirror was
-    found. The Codex draft also did not check this source.
+  text: 'Full-text search of a complete 2021-paper extraction for "list", "sequence", "tuple",
+    and "ordered" found only incidental, non-technical prose uses: "a more comprehensive list
+    is provided in Section 5" and "UFO''s core positions in the list below" (meta-discourse
+    about the paper''s own structure, not a class), and "In the sequence, we present a
+    simulation..." (an adverbial "next," not an ordered-collection term). No dedicated
+    list/sequence/ordered-collection class or apparatus found anywhere in the paper.'
   reference:
   - xwkont:ref:ufo-2021
-  locator: not fetched this session
-  entry_notes: Flagged as an open verification gap, not treated as a confirmed absence. See
-    Future Work.
+  locator: '**verified 2026-07-07** against a complete full-text extraction of the 2021 paper
+    (the DOI-linked primary source again returned HTTP 403 this session, the same recurring
+    block recorded elsewhere in this repository; the extraction reused here is the same one
+    `modality.md`, `non-physical-social-object.md`, and `symbol-sign-representation.md`
+    independently located and reused for their own UFO checks).'
+  entry_notes: Confirmed absence, resolving the prior open verification gap.
 correspondences:
 - correspondence_id: xwkont:correspondence:list-sequence:001
   source_ontology: SUMO
@@ -293,13 +299,13 @@ correspondences:
   inclusion_rationale: Scoped absence in the checked artifacts.
 - correspondence_id: xwkont:correspondence:list-sequence:008
   source_ontology: UFO
-  source_term: '*(not independently re-checked this session)*'
+  source_term: '*(no dedicated ordered-collection class found)*'
   source_identifier_or_iri: none
-  source_version: UFO 2021 paper (not fetched this session)
+  source_version: UFO 2021 paper (verified against a complete full-text extraction, 2026-07-07)
   reference:
   - xwkont:ref:ufo-2021
-  inclusion_rationale: Open verification gap, not a confirmed absence -- primary source returned
-    HTTP 403 this session.
+  inclusion_rationale: Confirmed absence -- full-text search found no list/sequence/tuple/ordered
+    apparatus, only incidental meta-discourse prose uses of "list" and "sequence."
 comparison_notes:
 - note_id: note-001
   dimension: technical
@@ -399,15 +405,20 @@ uncertainties:
   follow_up: None needed; recorded here for traceability.
 - item_id: uncertainty-003
   uncertainty_type: uncertainty
-  resolved: false
+  resolved: true
+  resolved_date: "2026-07-07"
+  resolution_note: 'Resolved 2026-07-07 (session-051): the DOI-linked primary source returned
+    HTTP 403 again, but a complete full-text extraction of the 2021 paper (independently
+    located and reused by `modality.md`, `non-physical-social-object.md`, and
+    `symbol-sign-representation.md` for their own UFO checks) was found and full-text searched
+    for "list," "sequence," "tuple," and "ordered." No dedicated ordered-collection class found
+    -- confirmed absence, not an open gap.'
   description: UFO was not independently re-checked this session -- the DOI-linked primary source
     (`https://doi.org/10.3233/AO-210256`) returned HTTP 403, and no other accessible mirror was
     found. The Codex draft did not check this source either.
   impact: This crosswalk's absence claim for UFO is unverified, not confirmed, unlike the other
     6 non-positive sources (BFO, DOLCE, GFO, YAMATO, TUpper independently re-checked this session).
-  follow_up: Fetch the UFO 2021 paper via an accessible mirror (or ask the maintainer for one)
-    and full-text search for "list," "sequence," "tuple," and "ordered" before treating this
-    source as a confirmed absence.
+  follow_up: Resolved -- no further action needed.
 references:
 - reference_id: xwkont:ref:sumo-niles-pease-2001
   short_label: SUMO `Merge.kif` / Niles and Pease 2001 record
@@ -474,13 +485,21 @@ review_history:
     does not block advancement, consistent with `Ontological Level/Stratum`''s and `Change`''s
     precedent of advancing once the eligibility bar is met on confirmed sources, with open
     gaps recorded rather than blocking.'
+- review_date: "2026-07-07"
+  outcome: Cross-reference update — UFO absence confirmed, no editorial_status change
+  review_notes: 'Resolved `uncertainty-003`: a complete full-text extraction of the UFO 2021
+    paper (the DOI-linked source again returned HTTP 403) was located and full-text searched
+    for "list," "sequence," "tuple," and "ordered." Found only incidental meta-discourse prose
+    uses, no dedicated ordered-collection class. UFO''s status changed from open verification
+    gap to confirmed absence; `editorial_status` remains `reviewed`.'
 future_work:
 - Decide whether `xwkont-core:ListSequence` should sit under SUMO's `Abstract` lineage, GUM's
   `DecomposableObject` lineage, or both/neither, once reviewed.
 - Keep `abstract-concrete.md` as the broader abstract/concrete split record; do not duplicate
   its scope here.
-- Fetch UFO's 2021 paper via an accessible mirror and full-text search for "list"/"sequence"/"tuple"/"ordered"
-  before treating UFO as a confirmed absence (`uncertainty-003`).
+- '~~Fetch UFO''s 2021 paper via an accessible mirror and full-text search for
+  "list"/"sequence"/"tuple"/"ordered"~~ — **done 2026-07-07**: confirmed absence via a complete
+  full-text extraction (`uncertainty-003` resolved).'
 - Consider whether `docs/evaluations/foundational-ontology-concept-terms-matrix.md`'s GUM tree
   needs a dedicated re-survey pass against the full `GUM-31.owl` class list -- this is the fourth
   crosswalk in a row to find GUM content the seed/drafting pass missed (`note-005`).

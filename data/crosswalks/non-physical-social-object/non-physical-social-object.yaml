@@ -24,7 +24,8 @@ scope_note: 'This crosswalk compares how the checked source ontologies model non
 
 
 
-  Core.ttl placement is still an open review question for the eventual XwkOnt concept class.'
+  Core.ttl placement was resolved 2026-07-07 (session-050): `xwkont-core:NonPhysicalObject`,
+  a single umbrella class under `Continuant`, not split into a separate Social Object branch.'
 labels:
 - role: XwkOnt working label
   label: Non-physical / Social Object
@@ -228,8 +229,15 @@ source_definitions:
     thing, but the fetchable report does not reify a dedicated social-object class.
   reference:
   - xwkont:ref:yamato-mizoguchi-2010
-  locator: '`YAMATO101216.txt`, fetched and read directly 2026-07-07'
-  entry_notes: Section-level conceptual apparatus only.
+  locator: '**independently re-verified 2026-07-07** (session-051): `YAMATO101216.pdf`
+    re-fetched fresh via the Wayback Machine snapshot and re-extracted with `pdftotext`,
+    grepped for "social object," "non-physical," and "nonphysical" -- zero hits for all three.
+    The informational-object/representation apparatus was independently confirmed present
+    (section-level discussion of informational objects, representation vs. representing
+    thing). Prior review flagged this row as inherited from the Codex draft, not independently
+    re-checked; now confirmed.'
+  entry_notes: Section-level conceptual apparatus only, confirmed absent of a social-object
+    class by independent full-text search, not merely inherited from the draft.
 - source: TUpper
   term_or_identifier: object
   dimension: technical
@@ -310,11 +318,13 @@ correspondences:
   source_ontology: YAMATO
   source_term: informational object / representation
   source_identifier_or_iri: not applicable
-  source_version: 2010-12-16 report
+  source_version: 2010-12-16 report (independently re-fetched and re-extracted, 2026-07-07)
   reference:
   - xwkont:ref:yamato-mizoguchi-2010
-  inclusion_rationale: YAMATO discusses the territory conceptually, but the fetchable report
-    does not reify a dedicated class.
+  inclusion_rationale: Confirmed absence -- YAMATO discusses the territory conceptually
+    (informational object, representation vs. representing thing), but the fetchable report
+    does not reify a dedicated social-object class; independent full-text search for "social
+    object"/"non-physical"/"nonphysical" found zero hits.
 - correspondence_id: xwkont:correspondence:non-physical-social-object:007
   source_ontology: TUpper
   source_term: object
@@ -403,7 +413,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:001
   subject: DOLCE:non-physical-endurant
   relation_category: broader-than
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: high
@@ -415,7 +425,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:002
   subject: DOLCE:non-physical-object
   relation_category: close-match
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: medium
@@ -427,7 +437,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:003
   subject: BFO:generically dependent continuant
   relation_category: broader-than
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low-medium
@@ -439,7 +449,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:004
   subject: SUMO:Abstract / Proposition
   relation_category: broader-than
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
@@ -451,7 +461,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:005
   subject: UFO:non-physical endurants
   relation_category: related
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: medium
@@ -466,7 +476,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:006
   subject: GFO:Material_object / Material_persistant / Social_stratum / Social_role
   relation_category: unknown
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
@@ -477,7 +487,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:007
   subject: YAMATO:informational object / representation
   relation_category: related
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
@@ -489,7 +499,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:008
   subject: TUpper:object
   relation_category: broader-than
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
@@ -501,7 +511,7 @@ mapping_assertions:
 - mapping_id: xwkont:mapping:non-physical-social-object:009
   subject: GUM:SimpleThing
   relation_category: broader-than
-  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  object: xwkont-core:NonPhysicalObject (candidate)
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
@@ -516,13 +526,17 @@ mapping_assertions_note: Per `ADR-0009`, each mapping records a `predicate_id` (
 uncertainties:
 - item_id: uncertainty-001
   uncertainty_type: open-question
-  resolved: false
+  resolved: true
+  resolved_date: "2026-07-07"
+  resolution_note: 'Resolved 2026-07-07 (session-050): the maintainer confirmed umbrella-only
+    placement — `xwkont-core:NonPhysicalObject` as a single class under `Continuant`, not
+    split into a separate Social Object branch, since DOLCE-Lite''s own base module supports
+    only the broader class. See `data/ontology/core.ttl` and `docs/ontology/core-ontology.md`.'
   description: Should XwkOnt eventually model this as one umbrella class or as a split between
     a non-physical-object branch and a separate social-object branch? DOLCE-Lite.owl itself
     only supports the first half in its base module.
   impact: Blocks final core.ttl placement.
-  follow_up: Confirm at review time; do not collapse the missing DOLCE-family social-object
-    leaves into the base-module evidence.
+  follow_up: Resolved -- no further action needed.
 - item_id: uncertainty-002
   uncertainty_type: non-equivalence
   resolved: false
@@ -546,10 +560,29 @@ uncertainties:
     usage.
 - item_id: uncertainty-004
   uncertainty_type: open-question
-  resolved: false
+  resolved: true
+  resolved_date: "2026-07-07"
+  resolution_note: 'Resolved 2026-07-07 (session-050): `xwkont-core:NonPhysicalObject` (not
+    `NonPhysicalSocialObject` -- renamed to match the actual placed class) now exists in
+    `data/ontology/core.ttl`, under `Continuant`. Mapping rows'' candidate placeholder renamed
+    to match (session-051 cleanup).'
   description: '`xwkont-core:NonPhysicalSocialObject` does not yet exist in `data/ontology/core.ttl`.'
   impact: Core placement remains unresolved.
-  follow_up: Decide only when this crosswalk reaches review.
+  follow_up: Resolved -- no further action needed.
+- item_id: uncertainty-005
+  uncertainty_type: uncertainty
+  resolved: true
+  resolved_date: "2026-07-07"
+  resolution_note: 'Resolved 2026-07-07 (session-051): `YAMATO101216.pdf` re-fetched fresh via
+    the Wayback Machine snapshot and re-extracted with `pdftotext`; full-text search for "social
+    object," "non-physical," and "nonphysical" found zero hits, independently confirming the
+    absence claim previously carried unverified from the Codex draft.'
+  description: YAMATO's absence finding (informational object / representation, no dedicated
+    social-object class) was not independently re-fetched during the session-048 review pass
+    -- carried from the Codex draft.
+  impact: This source's absence claim was unverified, not confirmed, unlike the directly
+    re-fetched sources.
+  follow_up: Resolved -- no further action needed.
 references:
 - reference_id: xwkont:ref:dolce-lite-owl
   short_label: DOLCE-Lite OWL translation
@@ -602,17 +635,28 @@ review_history:
     re-confirmed against, prior crosswalks'' own YAMATO findings. Advanced directly to `reviewed`
     per the reviewed-eligibility criterion: DOLCE-Lite.owl is DOLCE''s own base module, an authoritative
     core source for `non-physical-endurant`/`non-physical-object`.'
+- review_date: "2026-07-07"
+  outcome: Cross-reference update — YAMATO absence confirmed, no editorial_status change
+  review_notes: 'Resolved `uncertainty-005`: `YAMATO101216.pdf` re-fetched fresh and full-text
+    searched for "social object," "non-physical," and "nonphysical" — zero hits, independently
+    confirming the absence claim. Also recorded `uncertainty-001`''s and `uncertainty-004`''s
+    resolutions here for traceability (already decided in `core.ttl` by session-050: umbrella-only
+    `xwkont-core:NonPhysicalObject`); renamed this crosswalk''s own mapping placeholders from
+    `NonPhysicalSocialObject` to `NonPhysicalObject` to match. `editorial_status` remains
+    `reviewed`.'
 future_work:
-- Confirm whether the XwkOnt core should keep this as a single umbrella concept or split off
-  a separate social-object follow-up.
+- '~~Confirm whether the XwkOnt core should keep this as a single umbrella concept or split
+  off a separate social-object follow-up~~ — **done 2026-07-07** (session-050): umbrella only,
+  `xwkont-core:NonPhysicalObject` (`uncertainty-001` resolved).'
 - If the maintainer wants the classic DOLCE social-object leaves documented in this concept
   family, fetch and cite the extension artifact there rather than reusing the base-module
   file.
 - Revisit the broad-analog sources only if a later artifact reifies a closer non-physical/social-object
   branch.
-- YAMATO's absence finding (informational object / representation, no dedicated social-object
-  class) was not independently re-fetched during the session-048 review pass — carried from
-  the Codex draft. A future pass should re-fetch `YAMATO101216.pdf` directly to confirm.
+- '~~YAMATO''s absence finding (informational object / representation, no dedicated
+  social-object class) was not independently re-fetched during the session-048 review pass~~
+  — **done 2026-07-07** (session-051): re-fetched and confirmed absent (`uncertainty-005`
+  resolved).'
 - UFO's gUFO/OWL artifacts (not consulted in this crosswalk, which used only the 2021 paper's
   extracted text) may formalize the "non-physical endurants" footnote as an actual class —
   worth checking if gUFO is ever added as its own independently-cited source.

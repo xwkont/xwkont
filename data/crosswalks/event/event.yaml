@@ -310,6 +310,26 @@ source_definitions:
   entry_notes: GUM's own definition text is the only one of the four new sources to use the
     literal word "events" in a class definition — but, like BFO, it treats "event" as informally
     synonymous with its general occurrent-side class rather than naming a separate category.
+- source: GUM
+  term_or_identifier: Configuration (NameEvent's ancestor branch)
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`Configuration`: `rdfs:subClassOf GUMThing`; requires exactly one `processInConfiguration`
+    (a `Process`). `NameEvent`: "The process of giving something a name. It does not intrinsically
+    require an addressee (non-addressee-oriented)." `rdfs:subClassOf DispositiveMaterialAction`
+    and `External`; `DispositiveMaterialAction rdfs:subClassOf AffectingAction`; `AffectingAction
+    rdfs:subClassOf DoingAndHappening`; `DoingAndHappening rdfs:subClassOf Configuration`.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, classes `Configuration`, `NameEvent`, `DispositiveMaterialAction`,
+    `AffectingAction`, `DoingAndHappening`, fetched and read directly 2026-07-07'
+  entry_notes: Added 2026-07-07, checking `symbol-sign-representation.yaml`''s own Future Work
+    item. `NameEvent` traces to `Configuration`, not `Process` (this crosswalk''s existing GUM
+    correspondence, `mapping-010`) — a structurally distinct branch, not the same class.
+    `Configuration` requires exactly one `Process` component plus (per `Process`''s own comment)
+    factors in Participants/Circumstances that `Process` alone factors out — i.e. `Configuration`
+    is GUM''s whole-clause, event-with-participants category, arguably closer to a BFO/DOLCE-style
+    Event than the narrower `Process` element inside it. Not fully resolved; see `uncertainty-007`.
 correspondences:
 - correspondence_id: xwkont:correspondence:event:001
   source_ontology: BFO
@@ -411,6 +431,19 @@ correspondences:
   inclusion_rationale: GUM's own definition text uses the literal word "events" (alongside
     "goings-on"), the only new source besides BFO's altLabel usage to do so directly — but
     names no separate Event class.
+- correspondence_id: xwkont:correspondence:event:011
+  source_ontology: GUM
+  source_term: Configuration (NameEvent's ancestor branch)
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Configuration
+  source_version: GUM 3.1 (directly verified 2026-07-07)
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Added 2026-07-07, checking `symbol-sign-representation.yaml`'s own
+    Future Work item. `NameEvent` traces to `Configuration`, not `Process` (correspondence-010)
+    — a structurally distinct branch, not the same class; see `mapping-011` and `uncertainty-007`.
+correspondences_note: GUM's `NameEvent` (`candidate-concepts.md`'s `GUM.102` row, tagged
+  "Event") belongs to the `Configuration` branch above, not the already-cited `Process`
+  correspondence-010 — a genuinely distinct GUM class, not duplicative evidence.
 comparison_notes:
 - note_id: note-001
   dimension: technical
@@ -634,6 +667,31 @@ mapping_assertions:
     — an umbrella pattern like BFO/SUMO's rather than a named Event category, per `note-004`.
   provenance:
   - xwkont:ref:gum-owl
+- mapping_id: xwkont:mapping:event:011
+  subject: GUM:Configuration
+  relation_category: related
+  object: Event (general)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: '**Added 2026-07-07**, checking `symbol-sign-representation.yaml`''s own Future
+    Work item on GUM''s `NameEvent` (`docs/crosswalks/candidate-concepts.md`''s `GUM.102` row
+    tags it "Event"). Fetched `GUM-31.owl.txt` fresh: `NameEvent` ("the process of giving
+    something a name") is `rdfs:subClassOf DispositiveMaterialAction` and `External`, which
+    trace up through `AffectingAction` → `DoingAndHappening` → `Configuration` — **not**
+    `Process`, this crosswalk''s existing GUM correspondence (`mapping-010`). `Configuration`
+    itself requires exactly one `processInConfiguration` (a `Process`) plus (per `Process`''s
+    own comment) factors in Participants and Circumstances that `Process` alone factors out
+    — i.e. `Configuration` is GUM''s whole-clause, event-with-participants category, while
+    `Process` is the narrower verbal/predicate element inside it. This makes `Configuration`
+    arguably the closer structural analog to a BFO/DOLCE-style Event (a happening with
+    participants), not a duplicate of the already-cited `Process` correspondence. `related`,
+    not `close-match`: this is this crosswalk''s own structural observation about GUM''s
+    internal architecture, not a comparison GUM''s own text draws to any other source''s
+    Event/Process split, and the Process/Configuration relationship itself is not yet fully
+    worked through (see `uncertainty-007`).'
+  provenance:
+  - xwkont:ref:gum-owl
 uncertainties:
 - item_id: uncertainty-001
   uncertainty_type: non-equivalence
@@ -715,6 +773,21 @@ uncertainties:
   follow_up: 'Resolved: see `docs/crosswalks/concepts/change.md` for the extended-process reading.
     Mapping GFO:Change''s extended-case reading against DOLCE:Accomplishment specifically remains
     optional future work for that crosswalk, not this one.'
+- item_id: uncertainty-007
+  uncertainty_type: open-question
+  resolved: false
+  description: 'GUM''s `Configuration` (added 2026-07-07, `correspondence-011`) requires exactly
+    one `Process` component plus, per `Process`''s own comment, factors in Participants and
+    Circumstances that `Process` alone factors out — i.e. `Configuration` may be the closer
+    structural analog to a BFO/DOLCE-style Event (a happening with participants) than the
+    already-cited `Process` correspondence-010, which is closer to a bare verbal/predicate
+    element. This crosswalk has not fully worked through whether `Configuration` should replace,
+    supplement, or remain secondary to the existing `Process` correspondence as GUM''s primary
+    Event analog.'
+  impact: Affects `mapping-011`''s confidence and whether a future pass should re-weight GUM''s
+    primary Event correspondence from `Process` to `Configuration`.
+  follow_up: Revisit if a future crosswalk pass needs a definitive single GUM Event correspondence
+    rather than two related candidates; not urgent, since both are already recorded.
 references:
 - reference_id: xwkont:ref:bfo-2020
   short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
@@ -786,6 +859,19 @@ review_history:
     crosswalk''s own `reviewed` content and mapping assertions (`event-005`, `event-006`) are
     unchanged -- only the open-question record was closed with a pointer to where the remaining
     territory is now addressed.'
+- review_date: "2026-07-07"
+  outcome: Reopened — new GUM correspondence added, no editorial_status change
+  review_notes: 'Checked `symbol-sign-representation.yaml`''s own Future Work item: whether
+    GUM''s `NameEvent` corresponds to anything here (`docs/crosswalks/candidate-concepts.md`''s
+    `GUM.102` row already tags it "Event"). Fetched `GUM-31.owl.txt` fresh and traced
+    `NameEvent`''s ancestry: `DispositiveMaterialAction` → `AffectingAction` → `DoingAndHappening`
+    → `Configuration` — a structurally distinct branch from `Process` (`mapping-010`, this
+    crosswalk''s existing GUM correspondence). Added `Configuration` as
+    `correspondence-011`/`mapping-011` (`related`, `low-medium` confidence) and a new
+    `uncertainty-007` recording that `Configuration` (which packages a `Process` plus
+    Participants/Circumstances) may be the closer structural analog to a BFO/DOLCE-style Event
+    than the bare `Process` element — not fully resolved. `editorial_status` remains `reviewed`
+    — this is additive evidence, not a re-review of the crosswalk''s existing content.'
 future_work:
 - ~~Read `xwkont:ref:bfo-2020` directly~~ — **done 2026-07-01**; found the crosswalk's original
   claim was too strong and corrected it (`uncertainty-001`).
@@ -803,3 +889,6 @@ future_work:
 - Process concept crosswalk exists at `docs/crosswalks/concepts/process.md`.
 - Fetch YAMATO's OWL/Hozo files if the registration gate is completed, to move `event-007`/`event-008`
   off quotation-only citation (`uncertainty-005`).
+- '~~Check whether GUM''s `NameEvent` corresponds to anything here~~ — **done 2026-07-07**:
+  added `Configuration` (`correspondence-011`/`mapping-011`); `uncertainty-007` records the
+  still-open Process-vs-Configuration weighting question.'

@@ -210,22 +210,42 @@ source_definitions:
   term_or_identifier: '*(no dedicated change class found)*'
   dimension: technical
   source_claim_type: non-equivalence
-  text: The checked UFO 2021 paper uses `change` in prose about events and processes, but
-    does not introduce a dedicated `Change` class.
+  text: 'The checked UFO 2021 paper uses `change` extensively in prose -- including two whole
+    subsections, "4.3. Property change" and "4.4. Event change" -- but never introduces a
+    dedicated `Change` class or formal definition (`grep`-confirmed: zero occurrences of
+    "Change ::" or any capitalized standalone "Change" term). The subsections instead model
+    change using UFO''s existing apparatus (Quality, Situation, Kind), e.g.: "Events are past
+    entities in UFO and cannot genuinely change. Alleged change in a perdurant is thus either
+    a reflection of a perdurant having temporal parts with different properties, or, a change
+    in the underlying endurant that is the focus of that event."'
   reference:
   - xwkont:ref:ufo-2021
-  locator: 2021 Applied Ontology paper, fetched and read directly 2026-07-07
-  entry_notes: Prose-only usage.
+  locator: '**independently re-verified 2026-07-07** (session-051) against a complete full-text
+    extraction of the 2021 paper (the DOI-linked source returned HTTP 403 again this session,
+    the same recurring block recorded elsewhere in this repository; the extraction reused
+    here is the same one `modality.md`, `non-physical-social-object.md`,
+    `symbol-sign-representation.md`, `list-sequence.md`, and `continuous-discrete.md`
+    independently located and reused for their own UFO checks). Prior review flagged this
+    row as inherited from the Codex draft, not independently re-checked; now confirmed.'
+  entry_notes: Prose-only usage, confirmed by independent full-text search, not merely inherited
+    from the draft.
 - source: YAMATO
   term_or_identifier: '*(no dedicated change class found)*'
   dimension: technical
   source_claim_type: non-equivalence
-  text: The checked YAMATO report uses `change` as a verb in process/event discussion, but
-    not as a first-class change category.
+  text: 'The checked YAMATO report has a dedicated prose subsection, "3.2.3 On change" ("in
+    order to talk about change properly, we need a non-changing thing keeping its identity
+    during the change process, otherwise, there cannot exist a change but just a difference"),
+    but this motivates the following quality-role discussion rather than defining a first-class
+    `Change` category -- no capitalized standalone "Change" term or formal definition found.'
   reference:
   - xwkont:ref:yamato-mizoguchi-2010
-  locator: '`YAMATO101216.pdf`, extracted directly 2026-07-07'
-  entry_notes: Prose-only usage.
+  locator: '**independently re-verified 2026-07-07** (session-051): `YAMATO101216.pdf`
+    re-fetched fresh via the Wayback Machine snapshot and re-extracted with `pdftotext`. Prior
+    review flagged this row as inherited from the Codex draft, not independently re-checked;
+    now confirmed.'
+  entry_notes: Prose-only usage, confirmed by independent full-text search, not merely inherited
+    from the draft.
 - source: TUpper
   term_or_identifier: '*(no dedicated change class found)*'
   dimension: technical
@@ -240,12 +260,19 @@ source_definitions:
   term_or_identifier: '*(no dedicated change class found)*'
   dimension: technical
   source_claim_type: non-equivalence
-  text: Change language appears inside other class glosses, but no dedicated `Change` class
-    was found.
+  text: 'Change language appears inside other class glosses (`DoingANDHappening`: "It also
+    involves change over time, such as circumstantial change, qualitative change, or change
+    in possession (HM 1999: 132)"), but no dedicated `Change` class exists (`grep`-confirmed:
+    no `owl:Class` block for a `Change` IRI anywhere in the file).'
   reference:
   - xwkont:ref:gum-owl
-  locator: '`GUM-31.owl.txt`, fetched and read directly 2026-07-07'
-  entry_notes: Scoped absence.
+  locator: '**independently re-verified 2026-07-07** (session-051) against `GUM-31.owl.txt`,
+    re-fetched fresh via the same Wayback Machine snapshot used elsewhere in this repository.
+    Prior review flagged this row as inherited from the Codex draft, not independently
+    re-checked (a same-session fetch attempt via a different archive URL had failed); now
+    confirmed via the working snapshot URL.'
+  entry_notes: Scoped absence, confirmed by independent full-text search, not merely inherited
+    from the draft.
 correspondences:
 - correspondence_id: xwkont:correspondence:change:001
   source_ontology: GFO
@@ -287,18 +314,23 @@ correspondences:
   source_ontology: UFO
   source_term: '*(no dedicated change class found)*'
   source_identifier_or_iri: none
-  source_version: UFO 2021 paper
+  source_version: UFO 2021 paper (independently verified against a complete full-text
+    extraction, 2026-07-07)
   reference:
   - xwkont:ref:ufo-2021
-  inclusion_rationale: Scoped absence in the checked paper.
+  inclusion_rationale: Confirmed absence -- two dedicated prose subsections ("Property change,"
+    "Event change") discuss the phenomenon at length using existing UFO apparatus, but no
+    dedicated `Change` class exists.
 - correspondence_id: xwkont:correspondence:change:006
   source_ontology: YAMATO
   source_term: '*(no dedicated change class found)*'
   source_identifier_or_iri: none
-  source_version: YAMATO 2010 report
+  source_version: YAMATO 2010 report (independently re-fetched and re-extracted, 2026-07-07)
   reference:
   - xwkont:ref:yamato-mizoguchi-2010
-  inclusion_rationale: Scoped absence in the checked report.
+  inclusion_rationale: Confirmed absence -- a dedicated prose subsection ("3.2.3 On change")
+    motivates the quality-role discussion that follows, but no first-class `Change` category
+    is defined.
 - correspondence_id: xwkont:correspondence:change:007
   source_ontology: TUpper
   source_term: '*(no dedicated change class found)*'
@@ -311,10 +343,11 @@ correspondences:
   source_ontology: GUM
   source_term: '*(no dedicated change class found)*'
   source_identifier_or_iri: none
-  source_version: GUM 3.1 OWL
+  source_version: GUM 3.1 OWL (independently re-fetched, 2026-07-07)
   reference:
   - xwkont:ref:gum-owl
-  inclusion_rationale: Scoped absence in the checked artifact.
+  inclusion_rationale: Confirmed absence -- `DoingANDHappening`'s own comment describes "change
+    over time," but no dedicated `Change` class exists in the file.
 comparison_notes:
 - note_id: note-001
   dimension: technical
@@ -406,6 +439,23 @@ uncertainties:
     later if a source-side justification for a closer relation appears.
   impact: Confidence only; does not affect scope.
   follow_up: Leave as `related` unless a later source directly asserts a stronger link.
+- item_id: uncertainty-005
+  uncertainty_type: uncertainty
+  resolved: true
+  resolved_date: "2026-07-07"
+  resolution_note: 'Resolved 2026-07-07 (session-051): UFO''s, YAMATO''s, and GUM''s absence
+    claims, previously carried unverified from the Codex draft, were independently
+    re-fetched/re-extracted and full-text searched for "change." All three confirmed: UFO has
+    two dedicated prose subsections ("Property change," "Event change") but no formal `Change`
+    class; YAMATO has a dedicated prose subsection ("On change") but no first-class `Change`
+    category; GUM has descriptive "change over time" language inside `DoingANDHappening`''s
+    comment but no dedicated `Change` class. The Codex draft''s original claims turn out
+    correct in substance, now independently confirmed rather than merely inherited.'
+  description: UFO's, YAMATO's, and GUM's absence claims were not independently re-fetched
+    during the prior review pass -- carried from the Codex draft's own citations, not freshly
+    re-verified.
+  impact: These three sources' absence claims were unverified, not confirmed, unlike GFO/SUMO/BFO/DOLCE/TUpper.
+  follow_up: Resolved -- no further action needed.
 references:
 - reference_id: xwkont:ref:gfo
   short_label: General Formal Ontology (GFO) base module
@@ -477,6 +527,16 @@ review_history:
     declared directly in `gfo-base.owl`, GFO's own base/core module, and that classification is
     directly verified against the primary artifact -- SUMO's second-source status is additional
     confirmed content, not a requirement for this advancement.
+- review_date: "2026-07-07"
+  outcome: Cross-reference update — three absences independently confirmed, no editorial_status
+    change
+  review_notes: 'Resolved `uncertainty-005`: UFO''s, YAMATO''s, and GUM''s absence claims,
+    previously carried unverified from the Codex draft, were independently re-fetched/re-extracted
+    (a cached complete UFO 2021 full-text extraction, a freshly re-fetched and `pdftotext`-extracted
+    `YAMATO101216.pdf`, and a freshly re-fetched `GUM-31.owl.txt`) and full-text searched for
+    "change." All three confirmed absent as dedicated classes, despite substantial prose
+    discussion in UFO (two subsections) and YAMATO (one subsection). `editorial_status` remains
+    `reviewed`.'
 future_work:
 - Decide whether the GFO/SUMO relation should stay `related` or be refined later if a source-side
   equivalence appears.
@@ -484,9 +544,7 @@ future_work:
   is the best canonical anchor.
 - Keep `event.md` and `process.md` as cross-references for the instantaneous-reading and `Process`/`Change`-disjointness
   material, not duplicated source content.
-- UFO's, YAMATO's, and GUM's absence findings were not independently re-fetched during this
-  session's review pass (carried from the Codex draft's own citations; the GUM archive URL
-  used elsewhere in this repository returned an empty response when re-tried here) -- a future
-  pass should re-fetch the 2021 UFO paper, `YAMATO101216.pdf`, and `GUM-31.owl.txt` directly
-  and confirm the "change" full-text search independently before treating those three absences
-  as equally verified to GFO/SUMO/BFO/DOLCE/TUpper's.
+- '~~UFO''s, YAMATO''s, and GUM''s absence findings were not independently re-fetched during
+  this session''s review pass~~ — **done 2026-07-07** (session-051): all three re-fetched and
+  full-text searched for "change" independently, confirming the Codex draft''s original claims
+  (`uncertainty-005` resolved).'

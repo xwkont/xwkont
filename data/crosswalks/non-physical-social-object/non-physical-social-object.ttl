@@ -9,7 +9,7 @@
     rdfs:comment "The source term names the whole non-physical endurant branch, which is broader than the candidate's object/social-object reading."@en ;
     sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:predicate_id skos:broadMatch ;
     sssom:subject_id xwkont-source-term:DOLCE-non_physical_endurant .
 
@@ -17,7 +17,7 @@
     rdfs:comment "This is the closest DOLCE base-module anchor, but it is still description/concept-centered and lacks the classic social-object leaf split inside the base file."@en ;
     sssom:confidence 6e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:predicate_id skos:closeMatch ;
     sssom:subject_id xwkont-source-term:DOLCE-non_physical_object .
 
@@ -25,7 +25,7 @@
     rdfs:comment "BFO's branch is broader and departs from object/social-object modeling, but it is still the closest non-physical dependent-continuant hit in the core file."@en ;
     sssom:confidence 4e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:predicate_id skos:broadMatch ;
     sssom:subject_id xwkont-source-term:BFO-generically_dependent_continuant .
 
@@ -33,7 +33,7 @@
     rdfs:comment "SUMO routes non-physical content into an abstract branch; that branch is broader than the candidate and not object/social-object specific."@en ;
     sssom:confidence 2e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:predicate_id skos:broadMatch ;
     sssom:subject_id xwkont-source-term:SUMO-Abstract_Proposition .
 
@@ -41,7 +41,7 @@
     rdfs:comment "Corrected during independent review (2026-07-07), raised from `unknown`/low: UFO's paper uses the identical phrase \"non-physical endurants\" (footnote 8) with a worked example, a direct terminological and conceptual match — but not `close-match`, since UFO does not reify the phrase as its own class, definition, or formal branch the way DOLCE does; it appears only in service of an argument about the constitution relation."@en ;
     sssom:confidence 6e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:predicate_id skos:relatedMatch ;
     sssom:subject_id xwkont-source-term:UFO-non_physical_endurants .
 
@@ -49,14 +49,14 @@
     rdfs:comment "GFO has social vocabulary and a material-object branch, but no dedicated non-physical/social-object class in the checked base module."@en ;
     sssom:confidence 2e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:subject_id xwkont-source-term:GFO-Material_object_Material_persistant_Social_stratum_Social_role .
 
 <https://w3id.org/xwkont/id#mapping:non-physical-social-object:007> a sssom:Mapping ;
     rdfs:comment "YAMATO's content-bearing representation theory is adjacent to the candidate, but the evidence is conceptual prose rather than a reified class."@en ;
     sssom:confidence 2e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:predicate_id skos:relatedMatch ;
     sssom:subject_id xwkont-source-term:YAMATO-informational_object_representation .
 
@@ -64,7 +64,7 @@
     rdfs:comment "TUpper's `object` is intentionally broad enough to include abstract things; that makes it broader than the candidate, not a social-object branch."@en ;
     sssom:confidence 2e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:predicate_id skos:broadMatch ;
     sssom:subject_id xwkont-source-term:TUpper-object .
 
@@ -72,7 +72,7 @@
     rdfs:comment "GUM's object-like top-level class is broader than the candidate and shaped by linguistic realization, not by a social-object ontology."@en ;
     sssom:confidence 2e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-NonPhysicalObject_candidate ;
     sssom:predicate_id skos:broadMatch ;
     sssom:subject_id xwkont-source-term:GUM-SimpleThing .
 
@@ -103,6 +103,6 @@ xwkont-source-term:UFO-non_physical_endurants rdfs:label "non-physical endurants
 xwkont-source-term:YAMATO-informational_object_representation rdfs:label "informational object / representation"@en ;
     dcterms:source "YAMATO" .
 
-xwkont-source-term:xwkont-core-NonPhysicalSocialObject_candidate rdfs:label "NonPhysicalSocialObject (candidate)"@en ;
+xwkont-source-term:xwkont-core-NonPhysicalObject_candidate rdfs:label "NonPhysicalObject (candidate)"@en ;
     dcterms:source "xwkont-core" .
 
