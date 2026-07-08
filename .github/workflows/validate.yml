@@ -15,8 +15,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install RDFLib
-        run: pip install rdflib
+      - name: Install crosswalk tooling dependencies
+        run: pip install -r scripts/requirements.txt
 
       - name: Parse Turtle artifacts
         run: |
@@ -34,6 +34,10 @@ jobs:
       - name: Structural checks (mapsTo constraint, required terms, namespace tokens)
         run: |
           python - <<'PY'
+          # Keep this required_terms list in sync with docs/publication/validation-commands.md's
+          # own copy -- both must be updated together whenever data/ontology/core.ttl gains or
+          # loses a class/property, per the same three-file sync convention used for
+          # core-ontology.md/core-axioms.md/core-ontology.mmd at each core.ttl placement pass.
           from pathlib import Path
           core = Path('data/ontology/core.ttl').read_text()
           example = Path('data/ontology/examples/core-validation-example.ttl').read_text()
@@ -47,6 +51,14 @@ jobs:
               'xwkont-core:qualityOf', 'xwkont-core:bearsRole',
               'xwkont-core:roleOf', 'xwkont-core:dependsOn',
               'xwkont-core:mapsTo', 'xwkont-core:documentedBy',
+              'xwkont-core:Abstract', 'xwkont-core:Concrete', 'xwkont-core:Universal',
+              'xwkont-core:Time', 'xwkont-core:Space', 'xwkont-core:Aggregate',
+              'xwkont-core:Sum', 'xwkont-core:Boundary', 'xwkont-core:Site',
+              'xwkont-core:Quantity', 'xwkont-core:Proposition',
+              'xwkont-core:Change', 'xwkont-core:Continuous', 'xwkont-core:Discrete',
+              'xwkont-core:OntologicalLevelStratum', 'xwkont-core:ListSequence',
+              'xwkont-core:MindConsciousBeingAgent', 'xwkont-core:NonPhysicalObject',
+              'xwkont-core:Disposition', 'xwkont-core:Modality',
           ]
           missing = [term for term in required_terms if term not in core]
           if missing:
@@ -78,3 +90,13 @@ jobs:
               raise SystemExit(f'Missing publication artifacts: {missing}')
           print('Publication navigation artifacts present')
           PY
+
+      - name: Validate crosswalk YAML against LinkML schema
+        run: |
+          linkml-validate --schema data/crosswalks/schema/crosswalk-concept.yaml $(ls data/crosswalks/*/*.yaml | grep -v /schema/)
+
+      - name: Check SSSOM/TSV exports are in sync with YAML
+        run: python3 scripts/crosswalk-to-sssom-tsv.py --check
+
+      - name: Check RDF/Turtle mapping exports are in sync with TSV
+        run: python3 scripts/sssom-tsv-to-ttl.py --check
