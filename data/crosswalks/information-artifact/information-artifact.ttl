@@ -29,7 +29,7 @@
     sssom:subject_id xwkont-source-term:BFO\(IAO\)-Information_Content_Entity .
 
 <https://w3id.org/xwkont/id#mapping:information-artifact:005> a sssom:Mapping ;
-    rdfs:comment "Structurally the closest pairing found in this crosswalk: both sources independently split an abstract content-bearing class from its concrete realization (DUL: `InformationObject`/`InformationRealization`; YAMATO: `Representation`/`Representing thing`), per `note-004`. Not `high` because this is this crosswalk's own observed convergence, not a comparison either source's authors draw themselves (contrast `mapping-004`, where YAMATO explicitly cites BFO)."@en ;
+    rdfs:comment "Structurally the closest pairing found in this crosswalk: both sources independently split an abstract content-bearing class from its concrete realization (DUL: `InformationObject`/`InformationRealization`; YAMATO: `Representation`/`Representing thing`), per `note-004`. `medium-high`, not `high`, for the same sourcing-completeness reason as `mapping-004` (see `uncertainty-005`): YAMATO's own OWL/Hozo files are not fetched, so this is cited by quotation from the 2010 report, not verified against a formal class. Separately disclosed, but not the basis for the confidence value: this pairing is this crosswalk's own observed convergence, not a comparison either source's authors draw themselves (contrast `mapping-004`, where YAMATO explicitly cites BFO) — a confidently-known fact, not an open question, so it does not itself justify a hedged confidence value."@en ;
     sssom:confidence 8e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:YAMATO-Representation ;

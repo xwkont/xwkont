@@ -13,8 +13,8 @@
     sssom:subject_id xwkont-source-term:BFO-Spatial_region .
 
 <https://w3id.org/xwkont/id#mapping:space:002> a sssom:Mapping ;
-    rdfs:comment "Both are continuant/physical-side categories (BFO: continuant; SUMO: Physical/Object), closer to each other than either is to their own source's Time-side category — but \"immaterial entity\" and \"topographic location under Object\" are still distinct formal framings."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Both are continuant/physical-side categories (BFO: continuant; SUMO: Physical/Object), closer to each other than either is to their own source's Time-side category — but \"immaterial entity\" and \"topographic location under Object\" are still distinct formal framings. `medium`, not a hedge value: the divergence itself is clearly evidenced (each source's own text quoted above), not a matter of incomplete sourcing — consistent with `mapping-003`'s plain `medium` for the same kind of confidently-observed partial overlap."@en ;
+    sssom:confidence 6e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:SUMO-Region ;
     sssom:subject_id xwkont-source-term:BFO-Spatial_region .
@@ -35,30 +35,29 @@
     sssom:subject_id xwkont-source-term:DOLCE-Space_region .
 
 <https://w3id.org/xwkont/id#mapping:space:005> a sssom:Mapping ;
-    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass)** — both denote an ordinary spatial/geographic extent, but DOLCE's is an abstract quality-space region while SUMO's is a physical `Object` subtype — an abstract-vs-physical divergence, a stronger disagreement than differing scope/axioms within a shared formal kind (contrast `mapping-004`, where both sides are region-denoting categories on the same side of that divide). `close-match` per `docs/methodology/crosswalk-methodology.md` is reserved for concepts that align for many purposes despite differing scope/axioms/usage; an abstract/physical split is closer to `overlap` (\"partially intersect but neither subsumes the other\")."@en ;
-    sssom:confidence 4e-01 ;
+    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass)** — both denote an ordinary spatial/geographic extent, but DOLCE's is an abstract quality-space region while SUMO's is a physical `Object` subtype — an abstract-vs-physical divergence, a stronger disagreement than differing scope/axioms within a shared formal kind (contrast `mapping-004`, where both sides are region-denoting categories on the same side of that divide). `close-match` per `docs/methodology/crosswalk-methodology.md` is reserved for concepts that align for many purposes despite differing scope/axioms/usage; an abstract/physical split is closer to `overlap` (\"partially intersect but neither subsumes the other\"). `high` confidence in the `overlap` category itself: the abstract/physical divergence is directly evidenced by each source's own text, not a sourcing gap or open question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:SUMO-Region ;
     sssom:subject_id xwkont-source-term:DOLCE-Space_region .
 
 <https://w3id.org/xwkont/id#mapping:space:006> a sssom:Mapping ;
-    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass, for consistency with `time.md`'s equivalent GFO/GUM downgrade)** — both are decomposable, non-atomic spatial-region categories under a broader Space branch, with a parallel atomic counterpart (`Topoid`/`SpacePoint`), but GFO's grounding is metaphysical (Brentano) while GUM's is linguistic (Halliday & Matthiessen) — a difference in the *kind* of independence claimed, not just scope or axioms within a shared formal kind."@en ;
-    sssom:confidence 4e-01 ;
+    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass, for consistency with `time.md`'s equivalent GFO/GUM downgrade)** — both are decomposable, non-atomic spatial-region categories under a broader Space branch, with a parallel atomic counterpart (`Topoid`/`SpacePoint`), but GFO's grounding is metaphysical (Brentano) while GUM's is linguistic (Halliday & Matthiessen) — a difference in the *kind* of independence claimed, not just scope or axioms within a shared formal kind. `high` confidence in the `overlap` category: this grounding difference is directly stated in each source's own text, not an open sourcing question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GUM-SpaceInterval ;
     sssom:subject_id xwkont-source-term:GFO-Spatial_region .
 
 <https://w3id.org/xwkont/id#mapping:space:007> a sssom:Mapping ;
-    rdfs:comment "TUpper's `spatial_region` is a single undifferentiated mereotopology predicate, not dimensionally subdivided the way BFO's four classes are — a rough correspondence only for the point/zero-dimensional case, not the dimensional apparatus as a whole."@en ;
-    sssom:confidence 4e-01 ;
+    rdfs:comment "Corrected from `close-match` (this pass): TUpper's `spatial_region` is a single undifferentiated mereotopology predicate, confirmed not dimensionally subdivided the way BFO's four classes are — a rough correspondence only for the point/zero-dimensional case, not the dimensional apparatus as a whole. `close-match` overstates a match confirmed only for one narrow sub-case; `overlap` (partial intersection, neither subsumes the other) is the correct category, and confidence is `high` because TUpper's lack of subdivision is directly confirmed in its own source file, not an open question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:TUpper-spatial_region_point_case ;
-    sssom:predicate_id skos:closeMatch ;
     sssom:subject_id xwkont-source-term:BFO-Zero_dimensional_spatial_region .
 
 <https://w3id.org/xwkont/id#mapping:space:008> a sssom:Mapping ;
-    rdfs:comment "Both function as the general spatial-extent/location node in their respective sources, but SUMO's is a topographic-location Object subtype while GUM's is a clause-level directional-relation range class grounded in systemic-functional linguistics — related in function, not close enough in formal apparatus for `close-match`."@en ;
-    sssom:confidence 4e-01 ;
+    rdfs:comment "Both function as the general spatial-extent/location node in their respective sources, but SUMO's is a topographic-location Object subtype while GUM's is a clause-level directional-relation range class grounded in systemic-functional linguistics — related in function, not close enough in formal apparatus for `close-match`. `high` confidence in the `related` category: the formal-apparatus divergence is directly evidenced by each source's own text, not an open sourcing question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GUM-GeneralizedLocation ;
     sssom:predicate_id skos:relatedMatch ;

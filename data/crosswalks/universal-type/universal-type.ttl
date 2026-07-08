@@ -6,8 +6,8 @@
 @prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
 
 <https://w3id.org/xwkont/id#mapping:universal-type:001> a sssom:Mapping ;
-    rdfs:comment "Both denote a rigid classifier providing an identity/individuation principle to its instances (GFO: \"immanent universals... exist in re\"; UFO: \"uniform principles of individuation, identity, and persistence\"). Not `high` because GFO's `Universal` is not itself internally subdivided by rigidity/sortality the way UFO's `Kind` is positioned within a much larger typology — a difference in surrounding theoretical apparatus, not core definition."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Both denote a rigid classifier providing an identity/individuation principle to its instances (GFO: \"immanent universals... exist in re\"; UFO: \"uniform principles of individuation, identity, and persistence\"). GFO's `Universal` is not itself internally subdivided by rigidity/sortality the way UFO's `Kind` is positioned within a much larger typology — a difference in surrounding theoretical apparatus, not core definition, and a confidently-established one directly evidenced by each source's own text, not an open sourcing question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:UFO-Kind ;
     sssom:predicate_id skos:closeMatch ;

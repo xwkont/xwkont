@@ -1,0 +1,118 @@
+# Change
+
+> **Local identifier:** `xwkont:concept:change`
+> **Slug:** `change`
+> **Editorial status:** `reviewed`
+> **Created:** `2026-07-07`
+> **Modified:** `2026-07-07`
+
+## Scope Note
+
+This candidate is about a source ontology's own change apparatus, meaning change as a reified class or explicit family of classes, not about:
+
+- the instantaneous-reading case of GFO `Change` already handled in `docs/crosswalks/concepts/event.md` (`event:006` / `event:007`);
+- GFO `Process` versus `Change` disjointness already handled in `docs/crosswalks/concepts/process.md`;
+- ordinary prose uses of `change`, `alter`, `transform`, or `modify` inside unrelated class glosses.
+
+Direct verification leaves two positive sources, not one: GFO and SUMO. In GFO, the remaining uncrosswalked thread after `event.md` is the extended-process reading of `Change`, surfaced as `Continuous_change` and its deprecated equivalent `Intrinsic_change`, plus the source-internal deprecated pair `Extrinsic_change` / `Instantaneous_change`. In SUMO, `InternalChange` is a real subclass of `Process` with its own change family underneath it, including `StateChange`, `QuantityChange`, `SurfaceChange`, `ShapeChange`, `ChemicalProcess`, `BiologicalProcess`, and `Creation`.
+
+The other six sources did not surface a dedicated change class in the artifacts checked today. DOLCE, UFO, YAMATO, TUpper, and GUM do use change language, but in the checked source text that language stays local to other class glosses or prose rather than becoming a first-class change apparatus. BFO does not reify change separately in the checked core artifact.
+
+No source-side explicit equivalence or alternate-label assertion was found that would off-ramp this candidate into `event.md` or `process.md`. The source-side structure remains distinct enough to keep this as a standalone crosswalk.
+
+## Labels, Alternate Labels, and Source Terminology
+
+| Role | Label or term | Source | Language | Notes |
+|---|---|---|---|---|
+| XwkOnt working label | Change | XwkOnt | `en` | Working label for source-side change apparatuses. |
+| Source term | Change | GFO | `en` | Broad source anchor; the instantaneous-reading case is already handled in `event.md`, so this draft keeps the extended-process reading in view. |
+| Source term | Continuous_change | GFO | `en` | The surviving GFO class for the extended-reading side of `Change`. |
+| Source term | Intrinsic_change | GFO | `en` | Obsolete/deprecated in source; explicitly paired with `Continuous_change`. |
+| Source term | Extrinsic_change | GFO | `en` | Obsolete/deprecated in source; explicitly paired with `Instantaneous_change`, which `event.md` already covers. |
+| Source term | InternalChange | SUMO | `en` | Real change-family class under `Process`. |
+| Source term | StateChange | SUMO | `en` | Concrete `InternalChange` subtype for physical-state change. |
+| Source term | *(no dedicated change class found)* | BFO | `en` | No dedicated change apparatus found in the checked BFO core artifact. |
+| Source term | *(no dedicated change class found; change language only)* | DOLCE | `en` | Change language appears in comments and related prose, but not as a first-class `Change` class in the checked artifact. |
+| Source term | *(no dedicated change class found)* | UFO | `en` | Change appears in prose about events and processes, but not as a dedicated class in the checked paper. |
+| Source term | *(no dedicated change class found)* | YAMATO | `en` | Change language appears in prose about processes and events, not as a dedicated class. |
+| Source term | *(no dedicated change class found)* | TUpper | `en` | No dedicated change class found in the fetched TUpper artifacts. |
+| Source term | *(no dedicated change class found)* | GUM | `en` | Change language appears inside other class glosses, but not as a dedicated class. |
+
+## Source Definitions and Contextual Notes
+
+| Source | Term or identifier | Dimension | Claim type | Definition, quotation, or paraphrase | Reference | Locator | Notes |
+|---|---|---|---|---|---|---|---|
+| GFO | Change | technical | editorial observation | The broad GFO `Change` class already has its instantaneous-reading case mapped in `event.md` (`event:006` / `event:007`). This draft keeps the remaining extended-process reading in view rather than restating that already-reviewed content. | `xwkont:ref:gfo` | `modules/gfo-base.owl`, class `Change`, fetched and read directly 2026-07-07 | `Process` is separately `owl:disjointWith Change` in the same module, a relation already recorded in `process.md`. |
+| GFO | Continuous_change | technical | direct quotation | For the purpose of formalizing continuous changes, a minimal chronoid universal `D(c)` is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate `change(e1,e2, u1, u2, u, D(c))` is intended to formalize this approach. Continuous changes occur over time (a chronoid). | `xwkont:ref:gfo` | `modules/gfo-base.owl`, class `Continuous_change`, fetched and read directly 2026-07-07 | The source makes this a subclass of `Change` and explicitly pairs it with deprecated `Intrinsic_change`. |
+| GFO | Intrinsic_change | technical | direct quotation | For the purpose of formalizing intrinsic changes, a minimal chronoid universal `D(c)` is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate `change(e1,e2, u1, u2, u, D(c))` is intended to formalize this approach. | `xwkont:ref:gfo` | `modules/gfo-base.owl`, class `Intrinsic_change`, fetched and read directly 2026-07-07 | Marked `owl:deprecated true` in source and `owl:equivalentClass` to `Continuous_change`. Keep as source history, not live primary terminology. |
+| GFO | Extrinsic_change | technical | direct quotation | Extrinsic changes are represented by `change(e1,e2, u1, u2, u)`, where `e1` and `e2` are a pair of coincident process boundaries, and `u1` and `u2` are disjoint sub-universals of `u`. | `xwkont:ref:gfo` | `modules/gfo-base.owl`, class `Extrinsic_change`, fetched and read directly 2026-07-07 | Marked `owl:deprecated true` in source and `owl:equivalentClass` to `Instantaneous_change`; the instantaneous branch is already handled in `event.md`. |
+| SUMO | InternalChange | technical | direct quotation | Processes which involve altering an internal property of an Object, e.g. the shape of the Object, its coloring, its structure, etc. Processes that are not instances of this class include changes that only affect the relationship to other objects, e.g. changes in spatial or temporal location. | `xwkont:ref:sumo-niles-pease-2001` | `Merge.kif`, class `InternalChange`, fetched and read directly 2026-07-07 | A real subclass of `Process`; the source also places `StateChange`, `QuantityChange`, `SurfaceChange`, `ShapeChange`, `ChemicalProcess`, `BiologicalProcess`, and `Creation` under this family. |
+| SUMO | StateChange | technical | direct quotation | Any `Process` where the `PhysicalState` of part of the patient of the `Process` changes. | `xwkont:ref:sumo-niles-pease-2001` | `Merge.kif`, class `StateChange`, fetched and read directly 2026-07-07 | A concrete `InternalChange` subtype, useful as a witness to the family structure. |
+| BFO | *(no dedicated change class found)* | technical | non-equivalence | Direct search of the checked BFO core artifact found no dedicated change class or property. | `xwkont:ref:bfo-2020` | `bfo-core.ttl`, fetched and read directly 2026-07-07 | Scoped absence in the checked artifact. |
+| DOLCE | *(no dedicated change class found; change language only)* | technical | non-equivalence | The checked DOLCE-Lite artifact uses `change` in comments and nearby prose, but does not reify a dedicated `Change` class in the file read for this pass. | `xwkont:ref:dolce-lite-owl` | `DOLCE-Lite.owl`, fetched and read directly 2026-07-07 | Adjacent evidence only. |
+| UFO | *(no dedicated change class found)* | technical | non-equivalence | The checked UFO 2021 paper uses `change` in prose about events and processes, but does not introduce a dedicated `Change` class. | `xwkont:ref:ufo-2021` | 2021 Applied Ontology paper, fetched and read directly 2026-07-07 | Prose-only usage. |
+| YAMATO | *(no dedicated change class found)* | technical | non-equivalence | The checked YAMATO report uses `change` as a verb in process/event discussion, but not as a first-class change category. | `xwkont:ref:yamato-mizoguchi-2010` | `YAMATO101216.pdf`, extracted directly 2026-07-07 | Prose-only usage. |
+| TUpper | *(no dedicated change class found)* | technical | non-equivalence | No dedicated change class was found in the fetched TUpper artifacts. | `xwkont:ref:tupper-colore` | `TUpper-Terms.html`, `tupper.all.owl`, `tupper.clif`, fetched and read directly 2026-07-07 | Scoped absence. |
+| GUM | *(no dedicated change class found)* | technical | non-equivalence | Change language appears inside other class glosses, but no dedicated `Change` class was found. | `xwkont:ref:gum-owl` | `GUM-31.owl.txt`, fetched and read directly 2026-07-07 | Scoped absence. |
+
+## Source Ontology Correspondences
+
+| Correspondence ID | Source ontology | Source term | Source identifier or IRI | Source version | Reference | Inclusion rationale |
+|---|---|---|---|---|---|---|
+| `xwkont:correspondence:change:001` | GFO | Change / Continuous_change / Intrinsic_change / Extrinsic_change | `https://w3id.org/gfo/base/Change`, `https://w3id.org/gfo/base/Continuous_change`, `https://w3id.org/gfo/base/Intrinsic_change`, `https://w3id.org/gfo/base/Extrinsic_change` | GFO base 2024-11-18 | `xwkont:ref:gfo` | GFO reifies change as a real source-side apparatus, but the instantaneous side is already handled in `event.md`. This row keeps the extended-process side and the source-internal deprecated names visible together. |
+| `xwkont:correspondence:change:002` | SUMO | InternalChange / StateChange | `InternalChange` / `StateChange` | SUMO `Merge.kif` | `xwkont:ref:sumo-niles-pease-2001` | SUMO reifies a dedicated change family under `Process`, with `StateChange` as a concrete subtype. |
+| `xwkont:correspondence:change:003` | BFO | *(no dedicated change class found)* | `none` | BFO 2020 | `xwkont:ref:bfo-2020` | Scoped absence in the checked core artifact. |
+| `xwkont:correspondence:change:004` | DOLCE | *(no dedicated change class found; change language only)* | `none` | DOLCE-Lite OWL | `xwkont:ref:dolce-lite-owl` | Scoped absence in the checked artifact. |
+| `xwkont:correspondence:change:005` | UFO | *(no dedicated change class found)* | `none` | UFO 2021 paper | `xwkont:ref:ufo-2021` | Scoped absence in the checked paper. |
+| `xwkont:correspondence:change:006` | YAMATO | *(no dedicated change class found)* | `none` | YAMATO 2010 report | `xwkont:ref:yamato-mizoguchi-2010` | Scoped absence in the checked report. |
+| `xwkont:correspondence:change:007` | TUpper | *(no dedicated change class found)* | `none` | TUpper COLORE formalization | `xwkont:ref:tupper-colore` | Scoped absence in the checked artifacts. |
+| `xwkont:correspondence:change:008` | GUM | *(no dedicated change class found)* | `none` | GUM 3.1 OWL | `xwkont:ref:gum-owl` | Scoped absence in the checked artifact. |
+
+## Semantic Comparison Notes
+
+| Note ID | Dimension | Claim type | Note | Supporting references | Confidence |
+|---|---|---|---|---|---|
+| `note-001` | technical | editorial observation | GFO's change apparatus is internally split along two source-side axes: one axis distinguishes the instantaneous reading already handled in `event.md` from the remaining extended-process reading, and the other axis distinguishes intrinsic from extrinsic change. The deprecated names are explicit source history, not separate conceptual territory. | `xwkont:ref:gfo`, `docs/crosswalks/concepts/event.md` | high |
+| `note-002` | technical | editorial observation | SUMO's `InternalChange` is a real family under `Process`, not a prose-only gloss. Its defining criterion is internal-property alteration, which excludes changes that only alter spatial or temporal location. That makes it a genuine source-side change apparatus, but with a different organizing principle from GFO's chronoid-based split. | `xwkont:ref:sumo-niles-pease-2001` | high |
+| `note-003` | technical | editorial observation | The other six sources remain scoped absences for this candidate. DOLCE, UFO, YAMATO, TUpper, and GUM use change language in other contexts, but none of the checked artifacts reify a dedicated change class; BFO's checked core artifact also does not. | `xwkont:ref:bfo-2020`, `xwkont:ref:dolce-lite-owl`, `xwkont:ref:ufo-2021`, `xwkont:ref:yamato-mizoguchi-2010`, `xwkont:ref:tupper-colore`, `xwkont:ref:gum-owl` | high |
+| `note-004` | technical | editorial observation | This is a multi-source crosswalk, but the second source does not come from an explicit source-side equivalence assertion. It survives as a standalone scope because SUMO reifies `InternalChange` directly; `event.md` and `process.md` do not already settle that material. | `xwkont:ref:gfo`, `xwkont:ref:sumo-niles-pease-2001` | high |
+
+## Mapping Assertions or Candidate Relations
+
+| Mapping ID | Subject | Relation category | Object | `predicate_id` | `mapping_justification` | Status | Confidence | Rationale | Provenance |
+|---|---|---|---|---|---|---|---|---|---|
+| `xwkont:mapping:change:001` | GFO:Continuous_change | `related` | SUMO:InternalChange | none | `semapv:ManualMappingCuration` | candidate | low | Both are real source-side change classes, but their defining tests differ: GFO anchors continuous change in chronoids and observable differences over time, while SUMO anchors internal change in alteration of an object's internal properties. Related, but not equivalent. | `xwkont:ref:gfo`, `xwkont:ref:sumo-niles-pease-2001` |
+
+## Uncertainty, Non-Equivalence, and Open Questions
+
+| Item ID | Type | Description | Impact | Follow-up |
+|---|---|---|---|---|
+| `uncertainty-001` | resolved | The instantaneous-reading side of GFO `Change` is already handled in `event.md` (`event:006` / `event:007`). This draft intentionally does not restate that content. | Keeps scope on the remaining extended-process side and avoids duplication. | No action needed. |
+| `uncertainty-002` | resolved | GFO explicitly pairs `Continuous_change` with deprecated `Intrinsic_change`, and `Extrinsic_change` with deprecated `Instantaneous_change`. The source also marks the latter two as `owl:deprecated true`. | The deprecated names remain source history, not separate live correspondences. | No action needed. |
+| `uncertainty-003` | resolved | SUMO's `InternalChange` is a genuine subclass of `Process`, and the checked source file shows a larger internal-change family under it. | Confirms the candidate is not GFO-only. | No action needed. |
+| `uncertainty-004` | open-question | Whether `xwkont:mapping:change:001` should remain `related` or be tightened later if a source-side justification for a closer relation appears. | Confidence only; does not affect scope. | Leave as `related` unless a later source directly asserts a stronger link. |
+
+## Provenance and References
+
+- `xwkont:ref:gfo` — General Formal Ontology (GFO) base module — **verified** directly against `modules/gfo-base.owl`, 2026-07-07; confirmed `Change`, `Continuous_change`, deprecated `Intrinsic_change`, deprecated `Extrinsic_change`, and the `Process`/`Change` disjointness
+- `xwkont:ref:sumo-niles-pease-2001` — SUMO `Merge.kif` / Niles and Pease 2001 record — **verified** directly against `Merge.kif`, 2026-07-07; confirmed `InternalChange` and `StateChange`
+- `xwkont:ref:bfo-2020` — BFO 2020 — **verified absence** of a dedicated change class directly against `bfo-core.ttl`, 2026-07-07
+- `xwkont:ref:dolce-lite-owl` — DOLCE-Lite OWL translation — **verified absence** of a dedicated change class directly against `DOLCE-Lite.owl`, 2026-07-07
+- `xwkont:ref:ufo-2021` — UFO: Unified Foundational Ontology — **verified absence** of a dedicated change class directly against the 2021 paper text, 2026-07-07
+- `xwkont:ref:yamato-mizoguchi-2010` — YAMATO technical report — **verified absence** of a dedicated change class directly against the report, 2026-07-07
+- `xwkont:ref:tupper-colore` — TUpper COLORE formalization — **verified absence** of a dedicated change class directly against the fetched TUpper artifacts, 2026-07-07
+- `xwkont:ref:gum-owl` — GUM 3.1 OWL — **verified absence** of a dedicated change class directly against `GUM-31.owl.txt`, 2026-07-07
+
+## Review History
+
+| Review ID | Date | Outcome | Notes |
+|---|---|---|---|
+| — | 2026-07-07 | Draft created | Created after direct verification of all 8 source ontologies. The draft records GFO's remaining extended-change branch and SUMO's real `InternalChange` family, plus scoped absences in the other six sources. |
+| — | 2026-07-07 | Passed — advanced `draft` → `reviewed` | Content originally drafted by Codex (external run, GPT-5.4-Mini, Extra-High reasoning) per the standing Codex-delegation process. Independently re-verified this session, directly against re-fetched primary artifacts: GFO's `Change`, `Continuous_change`, `Intrinsic_change`, `Extrinsic_change`, and the `Process`/`Change` `owl:disjointWith` pair, all confirmed verbatim against `modules/gfo-base.owl` (including the exact `owl:equivalentClass` pairing of each deprecated name to its surviving one -- `Intrinsic_change` to `Continuous_change`, `Extrinsic_change` to `Instantaneous_change` -- and both deprecated classes' `owl:deprecated true` flag); SUMO's `InternalChange` and `StateChange` confirmed verbatim against `Merge.kif`, including `InternalChange`'s `subclass Process` declaration and its documented subtype family; BFO's and DOLCE's absence claims confirmed by direct grep of `21838-2/owl/bfo-core.ttl` and `DOLCE-Lite.owl` (only informal "change"-as-verb usage found in both, no dedicated class); TUpper's absence claim confirmed by direct grep of `tupper.all.owl` and `tupper.clif` (zero occurrences of "change" in either). Found and fixed one defect in the Codex draft: the GFO `Change` row's `source_claim_type` was given as `cross-reference`, a value not in `docs/INFORMATION_ARCHITECTURE.md`'s four-value claim-typing table (`direct quotation`, `paraphrase`, `editorial observation`, `inference`) and not an established repository convention (unlike `non-equivalence`, which is precedented across `event.md`/`process.md`/ `ontological-level-stratum.md` for absence rows) -- corrected to `editorial observation`, the correct type for a comparison XwkOnt draws from already-cited evidence. UFO's, YAMATO's, and GUM's absence claims were not independently re-fetched this session (a GUM fetch attempt failed on a dead archive redirect) and are carried from the Codex draft's own citations rather than freshly re-verified -- flagged in Future Work, not treated as fully closed. This crosswalk meets the reviewed-eligibility criterion (`docs/methodology/crosswalk-runbook.md`) on GFO alone: `Change`/`Continuous_change` are declared directly in `gfo-base.owl`, GFO's own base/core module, and that classification is directly verified against the primary artifact -- SUMO's second-source status is additional confirmed content, not a requirement for this advancement. |
+
+## Future Work
+
+- Decide whether the GFO/SUMO relation should stay `related` or be refined later if a source-side equivalence appears.
+- If a later pass wants finer SUMO granularity, check whether `StateChange` or another child is the best canonical anchor.
+- Keep `event.md` and `process.md` as cross-references for the instantaneous-reading and `Process`/`Change`-disjointness material, not duplicated source content.
+- UFO's, YAMATO's, and GUM's absence findings were not independently re-fetched during this session's review pass (carried from the Codex draft's own citations; the GUM archive URL used elsewhere in this repository returned an empty response when re-tried here) -- a future pass should re-fetch the 2021 UFO paper, `YAMATO101216.pdf`, and `GUM-31.owl.txt` directly and confirm the "change" full-text search independently before treating those three absences as equally verified to GFO/SUMO/BFO/DOLCE/TUpper's.

@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:ontological-level-stratum:001> a sssom:Mapping ;
+    rdfs:comment "GFO reifies a general umbrella `Ontological_layer` class and splits it into `Stratum` (material/mental/social) and `Level` (physical/chemical/biological under Stratum; awareness/personality under Mental_stratum) branches. This is the clearest, most directly verified anchor for the candidate concept."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-OntologicalLevelStratum ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:GFO-Ontological_layer_Stratum_Level .
+
+<https://w3id.org/xwkont/id#mapping:ontological-level-stratum:002> a sssom:Mapping ;
+    rdfs:comment "Corrected from the Codex draft's `overlap`/high-confidence framing. This is a settled, evidence-based exclusion, not an open scope call: a direct full-text search of the re-fetched 2021 paper found zero occurrences of \"stratum\", \"strata\", or \"layer\" for this partition, and its substance (endurant/perdurant; social-intentional entities) duplicates content already crosswalked in `continuant-occurrent.md` and `role.md`. This candidate was already admitted to the `0.3.0` batch on single-source (GFO-only) terms on 2026-07-06, so excluding UFO does not require a new scope decision -- it confirms the batch's original single-source framing rather than creating one. See `uncertainty-001` for the full resolution record."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-OntologicalLevelStratum ;
+    sssom:subject_id xwkont-source-term:UFO-UFO_A_UFO_B_UFO_C .
+
+<https://w3id.org/xwkont/id#mapping:ontological-level-stratum:003> a sssom:Mapping ;
+    rdfs:comment "DOLCE acknowledges layering/strata language in a property comment, but does not reify a comparable layer apparatus. Kept as a nearby cue, not a positive match."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-OntologicalLevelStratum ;
+    sssom:subject_id xwkont-source-term:DOLCE-specific_constant_constituent .
+
+<https://w3id.org/xwkont/id#mapping:ontological-level-stratum:004> a sssom:Mapping ;
+    rdfs:comment "YAMATO's level language is real source content, but in the checked report it stays local to quality-description and representation identity, not a general layer theory of reality."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-OntologicalLevelStratum ;
+    sssom:subject_id xwkont-source-term:YAMATO-two_level_reality_representation_levels .
+
+xwkont-source-term:DOLCE-specific_constant_constituent rdfs:label "specific-constant-constituent"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:GFO-Ontological_layer_Stratum_Level rdfs:label "Ontological_layer / Stratum / Level"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:UFO-UFO_A_UFO_B_UFO_C rdfs:label "UFO-A / UFO-B / UFO-C"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:YAMATO-two_level_reality_representation_levels rdfs:label "two-level reality / representation levels"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:xwkont-core-OntologicalLevelStratum rdfs:label "OntologicalLevelStratum"@en ;
+    dcterms:source "xwkont-core" .
+

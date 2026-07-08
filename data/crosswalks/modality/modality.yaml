@@ -1,0 +1,581 @@
+local_identifier: xwkont:concept:modality
+slug: modality
+title: Modality
+editorial_status: reviewed
+created: "2026-07-07"
+modified: "2026-07-07"
+scope_note: 'This crosswalk compares how the source ontologies represent modal qualification:
+  necessity, possibility, conditionality, and volitional/non-volitional framing when those
+  are attached to a process, state of affairs, proposition, or related bearer.
+
+
+
+  GUM is the only source here that reifies that space as a dedicated quality branch, `ModalQuality`,
+  paired with a dedicated ascription relation, `ModalPropertyAscription`. SUMO also reifies
+  modality, but at a different level: an alethic attribute layer on propositions (`AlethicAttribute`
+  with `modalAttribute`, plus `Possibility` and `Necessity`). TUpper provides an explicit
+  possibility predicate (`poss`). UFO uses modal logic substantively — a dedicated first-order
+  modal-logic formalization section for its own axioms, plus a "modally fragile" characterization
+  of perdurants/events — but does not introduce a dedicated modality-of-the-subject-matter
+  class in the ontology vocabulary itself, the way GUM and SUMO do. BFO, DOLCE, GFO, and YAMATO
+  yielded only incidental uses of "possible" / "necessary" in comments or prose, independently
+  re-verified directly against their primary artifacts.
+
+
+
+  This draft does not re-derive `quality.md`''s `SimpleQuality` finding (`xwkont:correspondence:quality:007`,
+  `xwkont:mapping:quality:012`) and does not re-map `disposition-capacity.md`''s `GeneralPossibility`
+  / `Ability` findings (`xwkont:correspondence:disposition-capacity:005-006`, `xwkont:mapping:disposition-capacity:003-004`).'
+labels:
+- role: XwkOnt working label
+  label: Modality
+  label_source: XwkOnt
+  language: en
+  entry_notes: Working label for modal qualification as a source-side construct.
+- role: Source term
+  label: '*(no dedicated modality class/operator found)*'
+  label_source: BFO
+  language: en
+  entry_notes: Full-text search of `bfo-core.ttl` returned no modal hits.
+- role: Source term
+  label: '*(no dedicated modality class/operator found)*'
+  label_source: DOLCE
+  language: en
+  entry_notes: Only incidental lexical uses of "possible" / "necessary" were found.
+- role: Source term
+  label: Formal semantics in a modal logic
+  label_source: UFO
+  language: en
+  entry_notes: Modal operators (necessity, possibility) appear in the paper's own Section
+    3 formalization of UFO's axioms, not as a dedicated ontology class over the subject matter.
+- role: Source term
+  label: AlethicAttribute / modalAttribute / Possibility / Necessity
+  label_source: SUMO
+  language: en
+  entry_notes: Explicit alethic modal layer; SUMO also has deontic and subjective-assessment
+    siblings.
+- role: Source term
+  label: '*(no dedicated modality class/operator found)*'
+  label_source: GFO
+  language: en
+  entry_notes: Only `necessary` / `necessary_for` surfaced in the checked base module.
+- role: Source term
+  label: '*(no dedicated modality class/operator found)*'
+  label_source: YAMATO
+  language: en
+  entry_notes: Only ordinary English uses of "necessary" / "possible" were found.
+- role: Source term
+  label: poss
+  label_source: TUpper
+  language: en
+  entry_notes: Explicit possibility predicate over activity/occurrence structure.
+- role: Source term
+  label: '`ModalQuality` / `Conditional` / `NonConditional` / `NonVolitional` / `Volitional`
+    / `Necessity` / `Possibility` / `ModalPropertyAscription`'
+  label_source: GUM
+  language: en
+  entry_notes: The dedicated modal-quality branch and its ascription relation.
+source_definitions:
+- source: BFO
+  term_or_identifier: '*(no dedicated modality class or operator)*'
+  dimension: technical
+  source_claim_type: editorial observation
+  text: Full-text search of `bfo-core.ttl` returned no hits for modal, modality, necessity,
+    possibility, necessary, possible, deontic, or alethic.
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '**verified absence**: `bfo-core.ttl`, searched directly 2026-07-07'
+  entry_notes: No modality branch was found.
+- source: DOLCE
+  term_or_identifier: '*(no dedicated modality class or operator)*'
+  dimension: technical
+  source_claim_type: editorial observation
+  text: The checked base file uses ordinary language only, e.g. "possibilia" and "as large
+    as possible," and one unrelated comment mentions a "necessary axiom of compresence." No
+    modal class/operator was found.
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '**verified absence**: `DOLCE-Lite.owl`, searched directly 2026-07-07'
+  entry_notes: Lexical hits only, not a reified modality layer.
+- source: UFO
+  term_or_identifier: Formal semantics in a modal logic
+  dimension: both
+  source_claim_type: direct quotation
+  text: 'The paper names "a formal semantics in a sortal quantified modal logic" among UFO''s
+    constituent theories, and Section 3 ("The formalization of UFO in First-Order Modal Logic")
+    states: "the first-order modal logic QS5 plus the Barcan formula and its converse suffices...
+    The modal operators of necessity (2) and possibility (3) are used with their usual meaning."
+    Perdurants/events are separately characterized as "modally fragile... there is no cross-world
+    identity between them."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: '**verified**: full paper text, checked against a complete extraction dated 2026-07-06
+    (a day before this session; today''s own DOI/mirror fetch attempts returned HTTP 403,
+    so this session reused that extraction rather than a fresh fetch)'
+  entry_notes: This is formalization/theory machinery (a modal logic used to state UFO's own
+    axioms), not a dedicated modality-of-the-subject-matter class the way GUM's `ModalQuality`
+    or SUMO's `AlethicAttribute` are.
+- source: SUMO
+  term_or_identifier: AlethicAttribute / modalAttribute / Possibility / Necessity
+  dimension: technical
+  source_claim_type: paraphrase
+  text: 'SUMO reifies an alethic modal layer: `AlethicAttribute` is the class of attributes
+    relating to possibility and necessity; `Possibility` and `Necessity` are instances of
+    it; `modalAttribute` carries the normative force of a proposition. SUMO also has a separate
+    deontic branch under `NormativeAttribute`.'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '**verified**: `Merge.kif`, searched directly 2026-07-07'
+  entry_notes: This is the clearest explicit modal reification outside GUM.
+- source: GFO
+  term_or_identifier: '*(no dedicated modality class or operator)*'
+  dimension: technical
+  source_claim_type: editorial observation
+  text: The only hits were `necessary` inside the `Material_persistant` definition and the
+    property name `necessary_for`; both are relational or ordinary uses, not a modal branch.
+  reference:
+  - xwkont:ref:gfo
+  locator: '**verified absence**: `gfo-base.owl`, searched directly 2026-07-07'
+  entry_notes: No modality class/operator was found.
+- source: YAMATO
+  term_or_identifier: '*(no dedicated modality class or operator)*'
+  dimension: philosophical
+  source_claim_type: editorial observation
+  text: The report uses "necessary" and "possible" in ordinary prose, e.g. the ontology premise
+    being "necessary" and some quantity descriptions having "possible values," but it does
+    not define a modal class or operator.
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '**verified absence**: `YAMATO101216.txt`, searched directly 2026-07-07'
+  entry_notes: Incidental lexical hits only.
+- source: TUpper
+  term_or_identifier: poss
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`poss` is an explicit predicate: an activity "can possibly occur" after an occurrence.
+    Other `possible` hits are ordinary prose in `beginof`, `endof`, and `precedes`.'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '**verified**: `TUpper-Terms.html`, searched directly 2026-07-07'
+  entry_notes: Operator-level modality, not a reified class.
+- source: GUM
+  term_or_identifier: ModalQuality
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"being able" to do something; `rdfs:subClassOf` `SimpleQuality`. This is the root
+    of GUM''s modal branch.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `ModalQuality`, fetched and read directly 2026-07-07'
+  entry_notes: The superclass `SimpleQuality` is already covered in `quality.md`; this row
+    only uses it as inherited context.
+- source: GUM
+  term_or_identifier: Conditional
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"would, might, could"'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `Conditional`, fetched and read directly 2026-07-07'
+  entry_notes: '`rdfs:subClassOf ModalQuality`; `owl:disjointWith` `NonConditional`, `NonVolitional`,
+    `Volitional`.'
+- source: GUM
+  term_or_identifier: NonConditional
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"will, must, can"'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `NonConditional`, fetched and read directly
+    2026-07-07'
+  entry_notes: '`rdfs:subClassOf ModalQuality`; `owl:disjointWith` `NonVolitional`, `Volitional`.'
+- source: GUM
+  term_or_identifier: NonVolitional
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"did not take" direct responsibility for the process'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `NonVolitional`, fetched and read directly 2026-07-07'
+  entry_notes: '`rdfs:subClassOf ModalQuality`; `owl:disjointWith` `Volitional`.'
+- source: GUM
+  term_or_identifier: Volitional
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"active decision" or volition in performing a process'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `Volitional`, fetched and read directly 2026-07-07'
+  entry_notes: '`rdfs:subClassOf ModalQuality`; no explicit `owl:disjointWith` in the class
+    block itself.'
+- source: GUM
+  term_or_identifier: Necessity
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"must, should" / "necessary" / "required"'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `Necessity`, fetched and read directly 2026-07-07'
+  entry_notes: '`rdfs:subClassOf NonVolitional`; `owl:disjointWith Possibility`.'
+- source: GUM
+  term_or_identifier: Possibility
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"general modal quality"'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `Possibility`, fetched and read directly 2026-07-07'
+  entry_notes: '`rdfs:subClassOf NonVolitional`; no explicit `owl:disjointWith` in the class
+    block itself.'
+- source: GUM
+  term_or_identifier: ModalPropertyAscription
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"ascription of a modal quality"'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '**verified**: `GUM-31.owl`, class `ModalPropertyAscription`, fetched and read
+    directly 2026-07-07'
+  entry_notes: '`rdfs:subClassOf PropertyAscription`; `attribute` allValuesFrom `ModalQuality`;
+    `owl:disjointWith` `ProvenancePropertyAscription`, `ScaledComparison`, `SizePropertyAscription`,
+    and `UsePropertyAscription` (declared on this class''s own block), plus `LogicalPropertyAscription`
+    (declared reciprocally on that class''s own block — corrected during review, see `uncertainty-005`).
+    Five disjoint classes total, not four.'
+correspondences:
+- correspondence_id: xwkont:correspondence:modality:001
+  source_ontology: BFO
+  source_term: '*(no dedicated modality class/operator found)*'
+  source_identifier_or_iri: not applicable
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: No modal branch or operator was found in the checked core file.
+- correspondence_id: xwkont:correspondence:modality:002
+  source_ontology: DOLCE
+  source_term: '*(no dedicated modality class/operator found)*'
+  source_identifier_or_iri: not applicable
+  source_version: DOLCE-Lite v397
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Only incidental lexical hits; no modal branch was found.
+- correspondence_id: xwkont:correspondence:modality:003
+  source_ontology: UFO
+  source_term: formal semantics in modal logic
+  source_identifier_or_iri: not applicable
+  source_version: Applied Ontology, 2021
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: Kept because the paper explicitly names and uses first-order modal
+    logic (QS5 plus Barcan formula) to formalize UFO's own axioms in Section 3, and separately
+    characterizes perdurants/events as "modally fragile" — but this is formalization/theory
+    machinery, not a source ontology class or operator analogous to GUM's `ModalQuality` branch
+    or SUMO's `AlethicAttribute`.
+- correspondence_id: xwkont:correspondence:modality:004
+  source_ontology: SUMO
+  source_term: AlethicAttribute / modalAttribute / Possibility / Necessity
+  source_identifier_or_iri: '`AlethicAttribute`, `modalAttribute`, `Possibility`, `Necessity`'
+  source_version: current `Merge.kif`
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Explicit alethic modal layer; the clearest non-GUM modal reification
+    in the checked sources.
+- correspondence_id: xwkont:correspondence:modality:005
+  source_ontology: GFO
+  source_term: '*(no dedicated modality class/operator found)*'
+  source_identifier_or_iri: not applicable
+  source_version: GFO 2024-11-18
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Only incidental lexical hits (`necessary`, `necessary_for`) were found.
+- correspondence_id: xwkont:correspondence:modality:006
+  source_ontology: YAMATO
+  source_term: '*(no dedicated modality class/operator found)*'
+  source_identifier_or_iri: not applicable
+  source_version: 2010-12-16 report
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Only ordinary prose uses of `possible` / `necessary` were found.
+- correspondence_id: xwkont:correspondence:modality:007
+  source_ontology: TUpper
+  source_term: poss
+  source_identifier_or_iri: poss
+  source_version: TUpper COLORE formalization
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: Explicit possibility predicate over activity-occurrence structure.
+- correspondence_id: xwkont:correspondence:modality:008
+  source_ontology: GUM
+  source_term: '`ModalQuality` / `Conditional` / `NonConditional` / `NonVolitional` / `Volitional`
+    / `Necessity` / `Possibility` / `ModalPropertyAscription`'
+  source_identifier_or_iri: '`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ModalQuality`,
+    `#Conditional`, `#NonConditional`, `#NonVolitional`, `#Volitional`, `#Necessity`, `#Possibility`,
+    `#ModalPropertyAscription`'
+  source_version: GUM 3.1
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: Dedicated modal-quality branch plus its ascription relation; this is
+    the source-side anchor for the crosswalk.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: 'GUM and SUMO are both explicit about modality, but they model it at different levels:
+    GUM treats modal qualification as a quality of a process and a dedicated ascription relation;
+    SUMO treats it as an alethic attribute of propositions plus a predicate that assigns the
+    attribute. That makes `ModalQuality` and `AlethicAttribute` comparable, but not interchangeable.'
+  supporting_references:
+  - xwkont:ref:gum-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: 'GUM''s modal branch is two-tiered: `Conditional` / `NonConditional` / `NonVolitional`
+    / `Volitional` are direct children of `ModalQuality`, while `Necessity` and `Possibility`
+    sit one level lower under `NonVolitional`. That is structurally different from a flat
+    "possible/necessary" pair and should not be flattened in comparison.'
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: TUpper's `poss` is an operator-level possibility predicate over activity and occurrence
+    structure. It is closer to a process-trajectory constraint than to a bearer-side quality,
+    so it is relevant to this crosswalk but not a direct class-level match to GUM's `ModalQuality`.
+  supporting_references:
+  - xwkont:ref:tupper-colore
+  confidence: high
+- note_id: note-004
+  dimension: both
+  claim_type: editorial observation
+  note: 'UFO does use modal vocabulary substantively, not just incidentally: Section 3 of
+    the paper is a first-order modal-logic formalization of UFO''s own axioms (QS5 plus the
+    Barcan formula, explicit necessity/possibility operators), and the paper separately uses
+    "modally fragile" to characterize perdurants/events. That vocabulary sits inside the paper''s
+    formalization and theory narrative, though — the checked UFO source does not introduce
+    a dedicated modality-of-the-subject-matter class or operator analogous to GUM''s branch
+    or SUMO''s `AlethicAttribute`/`modalAttribute`.'
+  supporting_references:
+  - xwkont:ref:ufo-2021
+  confidence: high
+- note_id: note-005
+  dimension: technical
+  claim_type: editorial observation
+  note: 'BFO, DOLCE, GFO, and YAMATO did not yield a dedicated modality branch in the checked
+    artifacts. Their hits were lexical only: ordinary "possible"/"necessary" wording in comments
+    or prose, not a reified modal category.'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:gfo
+  - xwkont:ref:yamato-mizoguchi-2010
+  confidence: high
+- note_id: note-006
+  dimension: philosophical
+  claim_type: editorial observation
+  note: GUM is the only source here that explicitly combines modal qualification with volitional
+    framing in the same branch. The source's `Conditional` / `NonConditional` split sits beside
+    `NonVolitional` / `Volitional`, which makes the modal family both semantically richer
+    and more linguistically motivated than the other sources' modal machinery.
+  supporting_references:
+  - xwkont:ref:gum-owl
+  confidence: high
+mapping_assertions:
+- mapping_id: xwkont:mapping:modality:001
+  subject: GUM:ModalQuality
+  relation_category: related
+  object: SUMO:AlethicAttribute
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium-high
+  rationale: Both are explicit modal branches, but GUM models modality as a quality of processes
+    while SUMO models it as an attribute of propositions. Same general semantic territory,
+    different formal level.
+  provenance:
+  - xwkont:ref:gum-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:modality:002
+  subject: GUM:ModalPropertyAscription
+  relation_category: related
+  object: SUMO:modalAttribute
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: Both are ascription mechanisms attaching modal force to a bearer, but one is
+    a class of property-ascription relations and the other is a binary predicate. Related,
+    not equivalent.
+  provenance:
+  - xwkont:ref:gum-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:modality:003
+  subject: GUM:Possibility
+  relation_category: explicit-non-equivalence
+  object: SUMO:Possibility
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Same lexical label, different formal kind and bearer level: GUM''s `Possibility`
+    is a process-quality class; SUMO''s `Possibility` is an `AlethicAttribute` instance applying
+    to propositions. Equivalence should not be asserted.'
+  provenance:
+  - xwkont:ref:gum-owl
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:modality:004
+  subject: GUM:Necessity
+  relation_category: explicit-non-equivalence
+  object: SUMO:Necessity
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Same reason as `mapping-003`: same lexical label, different ontological kind
+    and level.'
+  provenance:
+  - xwkont:ref:gum-owl
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:modality:005
+  subject: GUM:Possibility
+  relation_category: related
+  object: TUpper:poss
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: Both encode possibility, but TUpper does so as a predicate over activity/occurrence
+    structure, not as a quality class. The semantic overlap is real, but the formal kind differs.
+  provenance:
+  - xwkont:ref:gum-owl
+  - xwkont:ref:tupper-colore
+  predicate_id: skos:relatedMatch
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: SUMO's modal layer is explicit, but it is propositional and alethic rather
+    than process-quality based. That makes `mapping-001` and `mapping-002` intentionally conservative.
+  impact: Prevents a false equivalence between two real modal formalisms.
+  follow_up: Keep `related` unless a maintainer wants a stricter "same semantic field, different
+    level" policy.
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: '`GUM:Possibility` / `GUM:Necessity` are classes, while SUMO''s `Possibility`
+    / `Necessity` are instances of `AlethicAttribute`. The same lexical labels are not enough
+    to collapse that difference.'
+  impact: Keeps `mapping-003` / `mapping-004` out of `exact-equivalence-candidate`.
+  follow_up: None unless the source-side modeling changes.
+- item_id: uncertainty-003
+  uncertainty_type: open-question
+  resolved: false
+  description: 'UFO''s modal logic is theoretically relevant and substantively documented
+    (Section 3''s formalization, plus the "modally fragile" event characterization), but it
+    is formalization/theory machinery, not a source-term correspondence in the same sense
+    as GUM''s `ModalQuality` or SUMO''s `AlethicAttribute`. Separately: this session''s own
+    live fetch attempts (DOI `10.3233/AO-210256`, SageJournals, philpapers.org''s Semantic-Scholar-indexed
+    mirror) all returned HTTP 403, the same recurring block `continuous-discrete.md`''s and
+    `list-sequence.md`''s reviews hit for this exact paper earlier the same week — this row''s
+    verification relies on a complete extraction from a day earlier (2026-07-06), not a fresh
+    fetch today, so the finding is grounded but the access problem itself is ongoing.'
+  impact: Keeps UFO out of a misleading class-level mapping while still recording its real
+    modal-formalization content.
+  follow_up: Revisit only if a later UFO artifact introduces a dedicated modality-of-the-subject-matter
+    class or operator; separately, the DOI/mirror access block should be rechecked next time
+    this paper is needed, per the recurring problem already logged in `list-sequence.yaml`,
+    `change.yaml`, and `continuous-discrete.yaml`.
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: TUpper's `poss` is the only explicit modal predicate found in that source.
+    It is close enough to keep in the draft, but not close enough to claim equivalence to
+    GUM's process-quality branch.
+  impact: Supports `related`, not `close-match`.
+  follow_up: Revisit only if a deeper PSL module adds a stronger modal class or if the maintainer
+    wants a stricter operator-level comparison.
+- item_id: uncertainty-005
+  uncertainty_type: uncertainty
+  resolved: true
+  description: 'Corrected during Claude''s independent review pass (2026-07-07): `PropertyAscription`
+    (the shared superclass) itself is `owl:disjointWith` only `QuantityAscription` — it does
+    not disjoin `ModalPropertyAscription` from its sibling `*PropertyAscription` classes,
+    and no such disjointness is inherited. The real additional disjointness is declared reciprocally
+    on `LogicalPropertyAscription`''s own class block (`owl:disjointWith ModalPropertyAscription`,
+    alongside `MaterialPropertyAscription`, `ProvenancePropertyAscription`, `ScaledComparison`),
+    not on `ModalPropertyAscription`''s own block or on the superclass. So `ModalPropertyAscription`
+    is `owl:disjointWith` five classes total, not four: `ProvenancePropertyAscription`, `ScaledComparison`,
+    `SizePropertyAscription`, `UsePropertyAscription` (declared on its own block) plus `LogicalPropertyAscription`
+    (declared reciprocally on that class''s block).'
+  impact: Row 51 in Source Definitions understated the disjointness by one class; corrected
+    there.
+  follow_up: None — resolved by direct verification against `GUM-31.owl`.
+references:
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020
+  verification_note: verified absence directly against `bfo-core.ttl`, 2026-07-07
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: verified absence directly against `DOLCE-Lite.owl`, 2026-07-07
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology'
+  verification_note: verified directly against a complete paper-text extraction dated 2026-07-06
+    (this session's own DOI/mirror fetch attempts, 2026-07-07, returned HTTP 403, the same
+    recurring block `continuous-discrete.md`/`list-sequence.md` hit; the extraction predates
+    that block by one day and was reused rather than re-fetched)
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology
+  verification_note: verified directly against `Merge.kif`, 2026-07-07
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: verified absence directly against `gfo-base.owl`, 2026-07-07
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: 'YAMATO: Yet Another More Advanced Top-level Ontology'
+  verification_note: verified absence directly against `YAMATO101216.txt`, 2026-07-07
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization
+  verification_note: verified directly against `TUpper-Terms.html`, 2026-07-07
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL
+  verification_note: verified directly against `GUM-31.owl`, 2026-07-07
+review_history:
+- review_date: "2026-07-07"
+  outcome: Draft created
+  review_notes: Codex (GPT-5.4-Mini, Extra-High) verified GUM's modal branch directly, separated
+    SUMO/TUpper/UFO from incidental lexical hits in the other sources, and kept `quality.md`
+    / `disposition-capacity.md` findings cited rather than re-derived.
+- review_date: "2026-07-07"
+  outcome: Independent review pass (Claude), passed — advanced `draft` → `reviewed`
+  review_notes: 'Re-fetched and re-checked all 8 sources'' primary artifacts directly. The
+    UFO row''s two direct quotations were initially flagged as a possible repeat of the `continuous-discrete.md`/`list-sequence.md`
+    HTTP-403-access-block pattern (today''s own live DOI/mirror fetch attempts did return
+    HTTP 403, confirmed directly), but both quotations were then located and confirmed verbatim
+    in a complete paper-text extraction dated one day earlier (2026-07-06, from a different
+    session''s still-present scratchpad) — so the content is genuinely grounded, not fabricated,
+    though it relies on that slightly-earlier extraction rather than a fresh fetch this session;
+    the draft''s locator note was corrected to say so explicitly rather than implying a same-day
+    fetch. One real defect was found and corrected: `uncertainty-005` incorrectly stated that
+    GUM''s `PropertyAscription` superclass disjoins `ModalPropertyAscription` from its sibling
+    ascription classes — direct inspection of `GUM-31.owl` found `PropertyAscription` disjoins
+    only `QuantityAscription`, and the real additional disjointness (`LogicalPropertyAscription`)
+    is declared reciprocally on that sibling class''s own block, not inherited from the superclass;
+    corrected in both `uncertainty-005` and the Source Definitions row for `ModalPropertyAscription`
+    (five disjoint classes, not four). BFO, DOLCE, GFO, YAMATO, SUMO, TUpper, and all eight
+    GUM class definitions were independently re-fetched and re-verified with no other discrepancies
+    found. Advanced to `reviewed`: this candidate''s sole source (GUM) is directly verified,
+    consistent with `continuous-discrete.md`''s single-source precedent and every other GUM-sourced
+    `reviewed` crosswalk in this repository, notwithstanding GUM''s own base/core module structure
+    remaining an open, project-wide, previously-unresolved question (`xwkont:ref:gum-owl`''s
+    Citation and Locator Notes) not specific to this crosswalk.'
+future_work:
+- Decide whether `mapping-001` / `mapping-002` should stay `related` or be tightened to a
+  different category after maintainer review.
+- If a future source introduces a process-level modal class or a proposition-level modal class,
+  compare it first against GUM's `ModalQuality` / `ModalPropertyAscription` and SUMO's `AlethicAttribute`
+  / `modalAttribute`.
+- If this draft is exported later, preserve `ModalPropertyAscription`'s full five-class `owl:disjointWith`
+  set (four declared on its own block, one — `LogicalPropertyAscription` — declared reciprocally
+  on that sibling's block) rather than flattening or under-counting it.
+- This session's own live DOI/mirror fetch attempts for the UFO paper returned HTTP 403 (the
+  same recurring block hit by `continuous-discrete.md`/`list-sequence.md`); this crosswalk's
+  UFO content is grounded in a complete extraction from one day earlier (2026-07-06), not
+  a fresh fetch. A future pass with live access should confirm no additional modal vocabulary
+  was missed by that extraction.

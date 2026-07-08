@@ -8,6 +8,11 @@ classDiagram
     Entity <|-- Universal
     Entity <|-- Time
     Entity <|-- Space
+    Entity <|-- Change
+    Entity <|-- Continuous
+    Entity <|-- Discrete
+    Entity <|-- OntologicalLevelStratum
+    Entity <|-- ListSequence
     Continuant <|-- Object
     Continuant <|-- Quality
     Continuant <|-- Role
@@ -15,10 +20,14 @@ classDiagram
     Continuant <|-- Sum
     Continuant <|-- Boundary
     Continuant <|-- Site
+    Continuant <|-- MindConsciousBeingAgent
+    Continuant <|-- NonPhysicalObject
+    Continuant <|-- Disposition
     Occurrent <|-- Process
     Occurrent <|-- Event
     Concrete <|-- Quantity
     Abstract <|-- Proposition
+    Quality <|-- Modality
 
     Entity --> Entity : hasPart / partOf
     Continuant --> Occurrent : participatesIn

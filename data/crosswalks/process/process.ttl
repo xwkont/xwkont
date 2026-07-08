@@ -6,8 +6,8 @@
 @prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
 
 <https://w3id.org/xwkont/id#mapping:process:001> a sssom:Mapping ;
-    rdfs:comment "Both are genuine top-level formal siblings in their respective hierarchies, both denoting physical activity/happening. Not `exact-equivalence-candidate` because their defining criteria differ (BFO: temporal-parts-and-participant-based; SUMO: physicality-partition-based, per `continuant-occurrent.md`)."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Both are genuine top-level formal siblings in their respective hierarchies, both denoting physical activity/happening. Not `exact-equivalence-candidate` because their defining criteria differ (BFO: temporal-parts-and-participant-based; SUMO: physicality-partition-based, per `continuant-occurrent.md`) — a confidently-established, directly-evidenced divergence, not a sourcing gap; `medium`, consistent with `mapping-002`/`mapping-003`'s treatment of the same kind of finding, not a `medium-high` hedge."@en ;
+    sssom:confidence 6e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:SUMO-Process ;
     sssom:predicate_id skos:closeMatch ;
@@ -37,8 +37,8 @@
     sssom:subject_id xwkont-source-term:BFO-Process .
 
 <https://w3id.org/xwkont/id#mapping:process:005> a sssom:Mapping ;
-    rdfs:comment "Both are genuine, positively-defined top-level-ish formal categories under their respective occurrent branches, both explicitly grounded in temporal extension rather than exclusion or cumulativity. Not `exact-equivalence-candidate` because BFO's criterion (temporal-proper-part-and-participant) and GFO's (not reducible to a collection of time-boundaries) are formally different tests."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Both are genuine, positively-defined top-level-ish formal categories under their respective occurrent branches, both explicitly grounded in temporal extension rather than exclusion or cumulativity. Not `exact-equivalence-candidate` because BFO's criterion (temporal-proper-part-and-participant) and GFO's (not reducible to a collection of time-boundaries) are formally different tests — a confidently-established divergence, not a sourcing gap; `medium`, consistent with this file's other same-territory-different-criteria mappings, not a `medium-high` hedge."@en ;
+    sssom:confidence 6e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GFO-Process ;
     sssom:predicate_id skos:closeMatch ;
@@ -61,8 +61,8 @@
     sssom:subject_id xwkont-source-term:GFO-Process .
 
 <https://w3id.org/xwkont/id#mapping:process:008> a sssom:Mapping ;
-    rdfs:comment "Restates `continuant-occurrent.md`'s mapping-011 at this crosswalk's finer grain: YAMATO's report does not distinguish a Process-specific class from its top-level Occurrent(Process) label, so this mapping is the same underlying correspondence, not new evidence at a finer level of detail."@en ;
-    sssom:confidence 1e+00 ;
+    rdfs:comment "Corrected from `high` (full-corpus audit, 2026-07-06): this restates `continuant-occurrent.md`'s mapping-011 (BFO:occurrent vs. YAMATO:Occurrent, `high`) at this crosswalk's finer, Process-specific grain, but YAMATO's report does not itself distinguish a Process-specific class from its top-level Occurrent(Process) label — there is no independent Process-level evidence beyond the coarser Occurrent-level correspondence already confirmed elsewhere. `high` overstated this: it borrowed the confidence of a different, coarser-grained mapping for a claim specifically about the finer Process level, which the source material does not itself support at that level of detail. `medium` reflects a real but evidentially thinner correspondence at the level this mapping is actually about."@en ;
+    sssom:confidence 6e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:YAMATO-Occurrent_Process ;
     sssom:predicate_id skos:closeMatch ;

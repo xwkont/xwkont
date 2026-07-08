@@ -58,6 +58,15 @@ Every candidate inheritance relationship from the core ontology was reviewed. Al
 | Site | Continuant | Formalized, provisional | Keep `rdfs:subClassOf`. | Boundary's sibling sub-concept. |
 | Quantity | Concrete | Formalized, provisional | Keep `rdfs:subClassOf`. | Modeled under Concrete per the DOLCE/UFO/GFO majority; covers multiple related but distinct source senses. |
 | Proposition | Abstract | Formalized, provisional | Keep `rdfs:subClassOf`. | Follows DOLCE/SUMO/YAMATO's own treatment of Proposition/Content as an Abstract subtype. |
+| Change | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Direct Entity subclass since GFO's Change is disjoint with Process and SUMO's InternalChange is typically a Process subtype. |
+| Continuous | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Sibling of Discrete; reflects GFO's own sibling-class split under Individual. |
+| Discrete | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Continuous's sibling sub-concept. |
+| Ontological Level / Stratum | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Direct Entity subclass and single umbrella class, a meta-level classifier orthogonal to Continuant/Occurrent. |
+| List / Sequence | Entity | Formalized, provisional | Keep `rdfs:subClassOf`. | Direct Entity subclass since SUMO (Abstract) and GUM (concrete lineage) diverge. |
+| Mind / Conscious Being / Agent | Continuant | Formalized, provisional | Keep `rdfs:subClassOf`. | Sibling of Object; convergent cross-source object-layer pattern (SUMO, DOLCE, YAMATO). |
+| Non-physical Object | Continuant | Formalized, provisional | Keep `rdfs:subClassOf`. | Single umbrella class; DOLCE-Lite's base module supports only the broader class, not a Social Object split. |
+| Disposition | Continuant | Formalized, provisional | Keep `rdfs:subClassOf`. | Sibling of Role, following BFO's specifically-dependent-continuant treatment. |
+| Modality | Quality | Formalized, provisional | Keep `rdfs:subClassOf`. | Follows GUM's ModalQuality-under-SimpleQuality treatment, consistent with SUMO's AlethicAttribute. |
 
 ## Core Relationship Classification
 
@@ -77,7 +86,7 @@ Every candidate inheritance relationship from the core ontology was reviewed. Al
 
 ## Accepted Axioms
 
-The accepted axioms for this review are the RDFS class, property, subclass, domain, and range statements now present in `data/ontology/core.ttl`, except that `mapsTo` deliberately has no accepted domain or range axiom. This includes the eleven classes added for the `0.2.0` batch (Abstract, Concrete, Universal, Time, Space, Aggregate, Sum, Boundary, Site, Quantity, Proposition) — see `docs/ontology/core-ontology.md`'s Top-Level Concepts table for their per-class rationale and each concept's own crosswalk (linked via `dcterms:relation`) for the underlying source-ontology evidence.
+The accepted axioms for this review are the RDFS class, property, subclass, domain, and range statements now present in `data/ontology/core.ttl`, except that `mapsTo` deliberately has no accepted domain or range axiom. This includes the eleven classes added for the `0.2.0` batch (Abstract, Concrete, Universal, Time, Space, Aggregate, Sum, Boundary, Site, Quantity, Proposition) and the nine classes added for the `0.3.0` batch (Change, Continuous, Discrete, OntologicalLevelStratum, ListSequence, MindConsciousBeingAgent, NonPhysicalObject, Disposition, Modality) — see `docs/ontology/core-ontology.md`'s Top-Level Concepts table for their per-class rationale and each concept's own crosswalk (linked via `dcterms:relation`) for the underlying source-ontology evidence. Symbol / Sign / Representation, the ninth `0.3.0`-batch concept, was deliberately not added; see `docs/ontology/core-ontology.md`'s Unresolved Modeling Questions table.
 
 These axioms are accepted as lightweight vocabulary semantics only. They should be interpreted under RDF/RDFS open-world assumptions and should not be read as OWL definitions or source-ontology commitments.
 

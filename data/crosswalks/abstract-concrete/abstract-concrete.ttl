@@ -30,24 +30,24 @@
     sssom:subject_id xwkont-source-term:SUMO-Abstract .
 
 <https://w3id.org/xwkont/id#mapping:abstract-concrete:004> a sssom:Mapping ;
-    rdfs:comment "**Retained as `close-match` after explicit re-justification (2026-07-04 review pass)** — unlike the region/quantity or metaphysical/linguistic-grounding pairs downgraded elsewhere in this batch (`time.md` `mapping-006`/`mapping-008`, `space.md` `mapping-005`/`mapping-006`), both sides here are the *same formal kind*: a reified top-level class, sibling to the source's Time/Space branch, defined by the identical criterion (absence of physical spatiotemporal location). GUM's \"metaphorical or qualitative space\" phrasing is a framing gloss on the same criterion, not a different criterion the way DOLCE's \"region\" vs. SUMO's \"physical Object\" was — hence `close-match`, not `overlap`, with `medium-high` (not `high`) confidence to flag that residual framing difference."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "**Retained as `close-match` after explicit re-justification (2026-07-04 review pass)** — unlike the region/quantity or metaphysical/linguistic-grounding pairs downgraded elsewhere in this batch (`time.md` `mapping-006`/`mapping-008`, `space.md` `mapping-005`/`mapping-006`), both sides here are the *same formal kind*: a reified top-level class, sibling to the source's Time/Space branch, defined by the identical criterion (absence of physical spatiotemporal location). GUM's \"metaphorical or qualitative space\" phrasing is a framing gloss on the same criterion, not a different criterion the way DOLCE's \"region\" vs. SUMO's \"physical Object\" was — hence `close-match`, not `overlap`. `high` confidence, not a hedge value: this is a directly analyzed, confidently-reached conclusion (same criterion, cosmetic framing difference only), not an open sourcing question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GUM-Abstraction ;
     sssom:predicate_id skos:closeMatch ;
     sssom:subject_id xwkont-source-term:GFO-Abstract .
 
 <https://w3id.org/xwkont/id#mapping:abstract-concrete:005> a sssom:Mapping ;
-    rdfs:comment "Same absence-of-time-and-space criterion; not `high` because YAMATO's own three-way split (with `semi-abstract` as an explicit intermediate) has no counterpart category in DOLCE's binary abstract/non-abstract framing."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Same absence-of-time-and-space criterion for the Abstract node itself. YAMATO's additional `semi-abstract` intermediate tier has no DOLCE counterpart, but that divergence is already recorded separately (`mapping-006`, `unknown`) rather than diluting this mapping's confidence — the Abstract-to-Abstract correspondence itself is directly and confidently supported by each source's own criterion, not an open sourcing question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:DOLCE-Abstract ;
     sssom:predicate_id skos:closeMatch ;
     sssom:subject_id xwkont-source-term:YAMATO-Abstract .
 
 <https://w3id.org/xwkont/id#mapping:abstract-concrete:007> a sssom:Mapping ;
-    rdfs:comment "Related in subject matter (both concern content/pattern-like entities) but not a correspondence for the crosswalk's own Abstract/Concrete split, since BFO's category is defined by a different criterion (multiple-copy sharing, not absence of spatiotemporal location) and remains a Continuant. Recorded to make the non-equivalence explicit rather than silently omitting BFO."@en ;
-    sssom:confidence 4e-01 ;
+    rdfs:comment "Corrected from `unknown`/`low-medium` (this pass): this is not a case of insufficient evidence -- it is a confidently-reached non-equivalence finding. Related in subject matter (both concern content/pattern-like entities) but not a correspondence for the crosswalk's own Abstract/Concrete split, since BFO's category is defined by a different criterion (multiple-copy sharing, not absence of spatiotemporal location) and remains a Continuant. `explicit-non-equivalence` (used \"to prevent accidental equivalence claims\" per `crosswalk-methodology.md`) is the category this rationale actually describes; `unknown` (\"evidence is insufficient\") understated how clear this finding is. Recorded to make the non-equivalence explicit rather than silently omitting BFO."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:BFO-Generically_dependent_continuant ;
     sssom:predicate_id skos:relatedMatch ;

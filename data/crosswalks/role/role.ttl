@@ -6,11 +6,11 @@
 @prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
 
 <https://w3id.org/xwkont/id#mapping:role:001> a sssom:Mapping ;
-    rdfs:comment "Both are anti-rigid, foundation/dependence-grounded, relationally-conditioned types; UFO explicitly continues this OntoClean-adjacent lineage. Confidence raised from medium: Masolo et al. (2004) and the UFO 2021 paper are now both independently fetched and directly verified (2026-07-01), not just reported via `xwkont:ref:dolce-borgo-2022`. Not raised to high because the two frameworks still differ in formal apparatus (DOLCE-driven: `CF`-classification of a `Concept`; UFO: anti-rigid sortal specializing a Kind) even though the informal characterization matches closely."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Corrected (2026-07-06, full-corpus audit) from `exact-equivalence-candidate`: both are anti-rigid, foundation/dependence-grounded, relationally-conditioned types; UFO explicitly continues this OntoClean-adjacent lineage, and the informal characterization matches unusually closely. But the two frameworks still differ in formal apparatus (DOLCE-driven: `CF`-classification of a `Concept`; UFO: anti-rigid sortal specializing a Kind) — the same kind of divergence `mapping-002`/`mapping-003` already use to withhold `exact-equivalence-candidate` for BFO against these same two sources. Applying that standard consistently: `close-match`, not `exact-equivalence-candidate`. `high` confidence in `close-match`, higher than `mapping-002`/`003`'s `medium`: both sources are independently fetched and directly verified (2026-07-01), and the informal-level convergence here is textually closer than either BFO comparison — a confidently-established, not open, finding."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:UFO-Role ;
-    sssom:predicate_id skos:exactMatch ;
+    sssom:predicate_id skos:closeMatch ;
     sssom:subject_id xwkont-source-term:DOLCE-driven-Role_Masolo_et_al_2004_not_core_DOLCE .
 
 <https://w3id.org/xwkont/id#mapping:role:002> a sssom:Mapping ;
@@ -44,7 +44,7 @@
     sssom:subject_id xwkont-source-term:DOLCE-driven-Role .
 
 <https://w3id.org/xwkont/id#mapping:role:006> a sssom:Mapping ;
-    rdfs:comment "Both are `Dependent` roles specifically grounded in a Relator/relator-like mediator (`role_of` some `Relator` in GFO; UFO's Role held \"in the scope of\" a Relator), directly paralleling `relation.md`'s GFO/UFO Relator convergence at the Role-specific level (`note-005`). Not `high` because GFO's `Relational_role` carries only structural axioms, no prose theory to compare against UFO's elaborated account."@en ;
+    rdfs:comment "Both are `Dependent` roles specifically grounded in a Relator/relator-like mediator (`role_of` some `Relator` in GFO; UFO's Role held \"in the scope of\" a Relator), directly paralleling `relation.md`'s GFO/UFO Relator convergence at the Role-specific level (`note-005`). `medium-high`, not `high`, for a genuine sourcing-completeness reason: GFO's own file supplies `Relational_role` with only structural axioms, no prose theory to compare against UFO's elaborated account — a documentation gap in the primary source, not a confirmed substantive divergence."@en ;
     sssom:confidence 8e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GFO-Relational_role ;

@@ -1,0 +1,84 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:disposition-capacity:001> a sssom:Mapping ;
+    rdfs:comment "Both are teleological and both connect to realizations or intended realizations, but GFO makes function a universal/conceptual structure rather than a bearer-inhering realizable entity. That is enough for a relation, not enough for a stronger match."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GFO-Function ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:BFO-function .
+
+<https://w3id.org/xwkont/id#mapping:disposition-capacity:002> a sssom:Mapping ;
+    rdfs:comment "The UFO mode branch is the closest bearer-dependent property family checked here, but the source text and proxy vocabulary do not establish it as a capacity/tendency equivalent. Keep it open rather than forcing a match."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:UFO-mode_OntoUML_proxy ;
+    sssom:subject_id xwkont-source-term:BFO-disposition .
+
+<https://w3id.org/xwkont/id#mapping:disposition-capacity:003> a sssom:Mapping ;
+    rdfs:comment "GUM's `Ability` is about the ability to perform a process, not about an enduring bearer capacity. It is close in ordinary language but not structurally the same thing."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Ability ;
+    sssom:subject_id xwkont-source-term:BFO-disposition .
+
+<https://w3id.org/xwkont/id#mapping:disposition-capacity:004> a sssom:Mapping ;
+    rdfs:comment "`GeneralPossibility` modally qualifies a process as possible, which is still process-centered rather than bearer-centered."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-GeneralPossibility ;
+    sssom:subject_id xwkont-source-term:BFO-disposition .
+
+<https://w3id.org/xwkont/id#mapping:disposition-capacity:005> a sssom:Mapping ;
+    rdfs:comment "`Intention` is a mental-process configuration pursuing an aim. That is a different ontological kind from an intrinsic bearer capacity, so equivalence should not be asserted."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-Intention ;
+    sssom:subject_id xwkont-source-term:BFO-disposition .
+
+<https://w3id.org/xwkont/id#mapping:disposition-capacity:006> a sssom:Mapping ;
+    rdfs:comment "SUMO's `Procedure` is a sequence-dependent specification, not a bearer capacity/disposition. The lexical similarity is a false friend."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Procedure ;
+    sssom:subject_id xwkont-source-term:BFO-function .
+
+<https://w3id.org/xwkont/id#mapping:disposition-capacity:007> a sssom:Mapping ;
+    rdfs:comment "YAMATO's own paper states directly that a \"convincing functional ontology which is compliant with YAMATO\" already exists but \"is not incorporated into YAMATO because it is too professional for general readers\" -- an explicit exclusion of a standalone Function class from YAMATO itself, not merely an absence of evidence in the fetchable report. Equivalence should not be asserted against a class that YAMATO's own authors deliberately chose not to include."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:YAMATO-function ;
+    sssom:subject_id xwkont-source-term:BFO-function .
+
+xwkont-source-term:GFO-Function rdfs:label "Function"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GUM-Ability rdfs:label "Ability"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-GeneralPossibility rdfs:label "GeneralPossibility"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-Intention rdfs:label "Intention"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:SUMO-Procedure rdfs:label "Procedure"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:UFO-mode_OntoUML_proxy rdfs:label "mode (OntoUML proxy)"@en ;
+    dcterms:source "UFO" .
+
+xwkont-source-term:YAMATO-function rdfs:label "function"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:BFO-function rdfs:label "function"@en ;
+    dcterms:source "BFO" .
+
+xwkont-source-term:BFO-disposition rdfs:label "disposition"@en ;
+    dcterms:source "BFO" .
+

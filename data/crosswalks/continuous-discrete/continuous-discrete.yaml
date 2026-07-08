@@ -1,0 +1,493 @@
+local_identifier: xwkont:concept:continuous-discrete
+slug: continuous-discrete
+title: Continuous vs. Discrete
+editorial_status: reviewed
+created: "2026-07-07"
+modified: "2026-07-07"
+scope_note: 'This candidate is about GFO''s reified `Continuous` / `Discrete` split over `Individual`,
+  with `Discrete_presential` as the presential-side branch on that axis. It is not about the
+  already-covered source-side axioms in `quantity-amount-of-matter.md` (`Amount_of_substrate`
+  / `Mass_entity`), `object.md` (`Material_object`), or `continuant-occurrent.md` (`Presential`
+  as the continuant-equivalent branch with discrete time-boundary framing).
+
+
+
+  The source-count evidence remains single-source at the inventory level: `docs/crosswalks/candidate-concepts.md`
+  tags only GFO rows to this candidate. Claude''s independent review pass (2026-07-07) re-verified
+  GFO, BFO, DOLCE, SUMO, YAMATO, TUpper, and GUM directly against their primary artifacts,
+  confirming a direct GFO axis plus six non-GFO outcomes that are either incidental wording,
+  a one-sided analogue, or a clean absence. It also corrected two defects in the original
+  draft: a quote misattributed to SUMO that actually belongs to TUpper (see the Source Definitions
+  table), and an unsubstantiated claim that UFO''s paper was freshly re-accessed — UFO''s
+  absence is recorded as an open verification gap (`uncertainty-003`), not a confirmed absence,
+  since the DOI and every mirror tried (including one indexed as open-access) returned HTTP
+  403 this session.'
+labels:
+- role: XwkOnt working label
+  label: Continuous vs. Discrete
+  label_source: XwkOnt
+  language: en
+  entry_notes: Working label for the source-side split.
+- role: Alternate label
+  label: Continuous / Discrete
+  label_source: XwkOnt
+  language: en
+  entry_notes: Candidate shorthand; GFO reifies the split as `Continuous` and `Discrete` under
+    `Individual`.
+- role: Source term
+  label: Continuous
+  label_source: GFO
+  language: en
+  entry_notes: Named `Individual`-side class; defined in the file body as the complement of
+    `Discrete` within `Individual`.
+- role: Source term
+  label: Discrete
+  label_source: GFO
+  language: en
+  entry_notes: Named `Individual`-side class with no extra prose comment.
+- role: Source term
+  label: Discrete_presential
+  label_source: GFO
+  language: en
+  entry_notes: 'Presential-side branch: both `Discrete` and `Presential`, with an `instance_of`
+    restriction and a `disjointWith Mass_entity` axiom.'
+- role: Source term
+  label: '`continuous` wording only, no dedicated class'
+  label_source: BFO
+  language: en
+  entry_notes: The only hits are inside unrelated class elucidations.
+- role: Source term
+  label: '`atomic` / granularity wording only, no dedicated continuous-discrete axis'
+  label_source: DOLCE
+  language: en
+  entry_notes: '`atomic` is used as a local adjective/property qualifier, not as a split.'
+- role: Source term
+  label: '`continuous` / `discrete` wording only, no dedicated continuous-discrete class'
+  label_source: SUMO
+  language: en
+  entry_notes: The hits are local prose or definitions in unrelated branches.
+- role: Source term
+  label: '*(no relevant hit found)*'
+  label_source: UFO
+  language: en
+  entry_notes: No continuous/discrete vocabulary hit in the paper or the OntoUML fallback.
+- role: Source term
+  label: '`continuous` / `finer-granular` wording only, no dedicated class'
+  label_source: YAMATO
+  language: en
+  entry_notes: The checked report uses the words in prose, not as a defined axis.
+- role: Source term
+  label: atomic
+  label_source: TUpper
+  language: en
+  entry_notes: A reified activity class, but activity-specific rather than an entity-level
+    continuous/discrete split.
+- role: Source term
+  label: '*(no relevant hit found)*'
+  label_source: GUM
+  language: en
+  entry_notes: No continuous/discrete vocabulary hit in the checked OWL file.
+source_definitions:
+- source: GFO
+  term_or_identifier: Continuous / Discrete
+  dimension: technical
+  source_claim_type: paraphrase
+  text: '`Continuous` and `Discrete` are the paired `Individual`-side classes. `Continuous`
+    is defined as the `Individual` complement of `Discrete`; `Discrete` sits directly under
+    `Individual`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '`modules/gfo-base.owl`, classes `Continuous` and `Discrete`, fetched and read
+    directly 2026-07-07'
+  entry_notes: This is the axis itself. The primary source puts both classes directly under
+    `Individual`, not under `Presential` or `Process`.
+- source: GFO
+  term_or_identifier: Discrete_presential
+  dimension: technical
+  source_claim_type: paraphrase
+  text: '`Discrete_presential` is a class under both `Discrete` and `Presential`, further
+    constrained by an `instance_of some Persistant` restriction and `owl:disjointWith Mass_entity`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '`modules/gfo-base.owl`, class `Discrete_presential`, fetched and read directly
+    2026-07-07'
+  entry_notes: This is the presential-side branch on the discrete side of the axis.
+- source: BFO
+  term_or_identifier: temporal interval / fiat line
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`continuous, thus without gaps or breaks` appears in the temporal-interval elucidation;
+    `fiat line` also uses continuous wording.'
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '`bfo-core.ttl`, `temporal interval` / `fiat line`, fetched and read directly 2026-07-07'
+  entry_notes: Incidental wording only, not a reified continuous/discrete split.
+- source: DOLCE
+  term_or_identifier: atomic-part-of / atomic region / constituent layering
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`An atomic region.` DOLCE also uses atomic/granularity language in `atomic-part-of`
+    and in the comment about `scientific granularities or ontological strata`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '`DOLCE-Lite.owl`, fetched and read directly 2026-07-07'
+  entry_notes: Local adjective/property usage only; no dedicated continuous/discrete axis.
+- source: SUMO
+  term_or_identifier: TimeDependentQuantity / ContinuousFunction / Version
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`continuous time`, `Functions which are continuous`, and `discrete stages or versions`
+    are the relevant hits.'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '`Merge.kif`, fetched and read directly 2026-07-07'
+  entry_notes: 'The hits are local to unrelated branches and do not amount to a reified continuous/discrete
+    axis. Corrected 2026-07-07 (Claude review pass): the draft''s original row also attributed
+    a fourth quote, "discrete partial ordering over the set of activities," to SUMO — a direct
+    re-check of the full `Merge.kif` found no such phrase anywhere in the file. That exact
+    wording is TUpper''s own ("The subactivity relation forms a discrete partial ordering
+    over the set of activities," `TUpper-Terms.html`), already correctly cited in this table''s
+    TUpper row; it was mistakenly cross-attributed to SUMO as well. Removed from this row.'
+- source: UFO
+  term_or_identifier: Perdurant
+  dimension: technical
+  source_claim_type: direct quotation
+  text: Perdurants are individuals that unfold in time accumulating temporal parts.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: reusing text already extracted 2026-07-01 per `xwkont:ref:ufo-2021`'s Citation
+    and Locator Notes
+  entry_notes: 'Corrected 2026-07-07 (Claude review pass): the draft''s original locator claimed
+    this was "re-searched directly 2026-07-07" against a PDF mirror. Independent re-verification
+    found the DOI (`https://doi.org/10.3233/AO-210256`), two plausible author-page mirrors,
+    and philpapers.org''s indexed open-access copy (per Semantic Scholar) all return HTTP
+    403 — the same block `list-sequence.md`''s review recorded for this exact paper earlier
+    the same day. No fresh full-text search
+    for "continuous"/"discrete"/"atomic"/"granular" across the whole paper was actually possible
+    this session; only the previously-extracted Perdurant definition (already on file from
+    2026-07-01, reused across several other crosswalks) could be reused. This claim is therefore
+    an **open verification gap, not a confirmed absence** — see `uncertainty-003`.'
+- source: YAMATO
+  term_or_identifier: '`continuous` / `finer-granular` prose'
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`finer-granular types` and `continuous` appear in ordinary prose, not as defined
+    classes.'
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '`YAMATO101216.pdf`, `pdftotext`-extracted directly 2026-07-07'
+  entry_notes: Informal wording only.
+- source: TUpper
+  term_or_identifier: atomic
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '`atomic` is an activity class whose informal semantics say it is either primitive
+    or a concurrent superposition of primitive activities; the source also says the subactivity
+    relation forms a discrete partial ordering over activities.'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '`tupper.all.owl` / `TUpper-Terms.html`, fetched and read directly 2026-07-07'
+  entry_notes: Reified hit, but activity-specific rather than an entity-level continuous/discrete
+    split.
+- source: GUM
+  term_or_identifier: '*(no relevant hit found)*'
+  dimension: technical
+  source_claim_type: non-equivalence
+  text: The checked OWL file does not use the relevant vocabulary at all.
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl.txt`, fetched and read directly 2026-07-07'
+  entry_notes: Clean absence.
+correspondences:
+- correspondence_id: xwkont:correspondence:continuous-discrete:001
+  source_ontology: GFO
+  source_term: Continuous / Discrete / Discrete_presential
+  source_identifier_or_iri: '`https://w3id.org/gfo/base/Continuous`, `https://w3id.org/gfo/base/Discrete`,
+    `https://w3id.org/gfo/base/Discrete_presential`'
+  source_version: GFO 2024-11-18 (directly verified 2026-07-07)
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: Direct source-side reification of the split under `Individual`, with
+    `Discrete_presential` on the discrete/presential side.
+- correspondence_id: xwkont:correspondence:continuous-discrete:002
+  source_ontology: BFO
+  source_term: '*(no dedicated continuous/discrete class found)*'
+  source_identifier_or_iri: not applicable
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: Only incidental continuous wording in unrelated class elucidations.
+- correspondence_id: xwkont:correspondence:continuous-discrete:003
+  source_ontology: DOLCE
+  source_term: '*(no dedicated continuous/discrete class found)*'
+  source_identifier_or_iri: not applicable
+  source_version: DOLCE-Lite OWL
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: Only local atomic/granularity wording, not a split.
+- correspondence_id: xwkont:correspondence:continuous-discrete:004
+  source_ontology: SUMO
+  source_term: '*(no dedicated continuous/discrete class found)*'
+  source_identifier_or_iri: not applicable
+  source_version: Current `Merge.kif`
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: Continuous/discrete wording occurs only inside unrelated classes and
+    prose.
+- correspondence_id: xwkont:correspondence:continuous-discrete:005
+  source_ontology: UFO
+  source_term: '*(open verification gap)*'
+  source_identifier_or_iri: not applicable
+  source_version: Applied Ontology, 2021
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: 'Not a confirmed absence: the paper''s DOI and every mirror tried (including
+    philpapers.org''s indexed open-access copy) returned HTTP 403 this session, the same block
+    `list-sequence.md`''s review hit for this paper earlier the same day. Only the already-extracted
+    2026-07-01 Perdurant definition could be reused; no fresh full-text search for continuous/discrete
+    vocabulary was possible. See `uncertainty-003`.'
+- correspondence_id: xwkont:correspondence:continuous-discrete:006
+  source_ontology: YAMATO
+  source_term: '*(no dedicated continuous/discrete class found)*'
+  source_identifier_or_iri: not applicable
+  source_version: 2010 technical report
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: Only prose-level continuous/granular wording.
+- correspondence_id: xwkont:correspondence:continuous-discrete:007
+  source_ontology: TUpper
+  source_term: atomic
+  source_identifier_or_iri: atomic
+  source_version: TUpper COLORE formalization
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: Reified hit, but activity-specific and one-sided; not enough to establish
+    the general axis.
+- correspondence_id: xwkont:correspondence:continuous-discrete:008
+  source_ontology: GUM
+  source_term: '*(no relevant hit found)*'
+  source_identifier_or_iri: not applicable
+  source_version: GUM 3.1
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: No relevant vocabulary hit in the checked OWL file.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: GFO is the only source here that reifies the split as a first-class axis. `Continuous`
+    and `Discrete` sit directly under `Individual`, and `Continuous` is defined by complementing
+    `Discrete` rather than by hanging from a single branch.
+  supporting_references:
+  - xwkont:ref:gfo
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: 'Six of the other seven sources do not reify the same axis at that level. BFO, DOLCE,
+    SUMO, and YAMATO use the vocabulary only locally or informally; TUpper has an `atomic`
+    activity class but not an entity-level continuous/discrete split; GUM had no relevant
+    hit at all — all six independently re-confirmed directly against their primary artifacts
+    (2026-07-07). UFO''s status is an open verification gap, not a confirmed absence: its
+    primary source was inaccessible this session (HTTP 403 on the DOI and every mirror tried,
+    including one indexed as open-access by Semantic Scholar) — see `uncertainty-003`.'
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:dolce-lite-owl
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:yamato-mizoguchi-2010
+  - xwkont:ref:tupper-colore
+  - xwkont:ref:gum-owl
+  confidence: high
+- note_id: note-003
+  dimension: technical
+  claim_type: inference
+  note: '`Discrete_presential` is the source-internal nuance that matters most for this crosswalk:
+    the split is not just a bare adjective pair, but one that GFO immediately specializes
+    on the presential side.'
+  supporting_references:
+  - xwkont:ref:gfo
+  confidence: medium-high
+mapping_assertions:
+- mapping_id: xwkont:mapping:continuous-discrete:001
+  subject: GFO:Continuous / Discrete / Discrete_presential
+  relation_category: exact-equivalence-candidate
+  object: xwkont-core:ContinuousDiscrete (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: GFO directly reifies the split under `Individual`, which is exactly the concept
+    this crosswalk is tracking.
+  provenance:
+  - xwkont:ref:gfo
+  predicate_id: skos:exactMatch
+- mapping_id: xwkont:mapping:continuous-discrete:002
+  subject: xwkont-core:ContinuousDiscrete (candidate)
+  relation_category: unknown
+  object: BFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Only incidental continuous wording in unrelated class elucidations.
+  provenance:
+  - xwkont:ref:bfo-2020
+- mapping_id: xwkont:mapping:continuous-discrete:003
+  subject: xwkont-core:ContinuousDiscrete (candidate)
+  relation_category: unknown
+  object: DOLCE
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Only atomic/granularity wording, not a reified split.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+- mapping_id: xwkont:mapping:continuous-discrete:004
+  subject: xwkont-core:ContinuousDiscrete (candidate)
+  relation_category: unknown
+  object: SUMO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Continuous/discrete wording occurs only inside unrelated classes and prose.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+- mapping_id: xwkont:mapping:continuous-discrete:005
+  subject: xwkont-core:ContinuousDiscrete (candidate)
+  relation_category: unknown
+  object: UFO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Open verification gap, not a confirmed absence — primary source inaccessible
+    this session (HTTP 403 on every mirror tried); see `uncertainty-003`.
+  provenance:
+  - xwkont:ref:ufo-2021
+- mapping_id: xwkont:mapping:continuous-discrete:006
+  subject: xwkont-core:ContinuousDiscrete (candidate)
+  relation_category: unknown
+  object: YAMATO
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Only prose-level continuous/granular wording.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+- mapping_id: xwkont:mapping:continuous-discrete:007
+  subject: xwkont-core:ContinuousDiscrete (candidate)
+  relation_category: unknown
+  object: TUpper:atomic
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: Reified hit, but activity-specific and one-sided; not enough to establish the
+    general axis.
+  provenance:
+  - xwkont:ref:tupper-colore
+- mapping_id: xwkont:mapping:continuous-discrete:008
+  subject: xwkont-core:ContinuousDiscrete (candidate)
+  relation_category: unknown
+  object: GUM
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: No relevant vocabulary hit in the checked OWL file.
+  provenance:
+  - xwkont:ref:gum-owl
+mapping_assertions_note: Per `ADR-0009`, each mapping records a `predicate_id` (SSSOM/SKOS
+  predicate, or none for XwkOnt-only categories) and a `mapping_justification` (SEMAPV term,
+  e.g. `semapv:ManualMappingCuration`) in addition to the free-text rationale.
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: Should `xwkont-core:ContinuousDiscrete` be modeled as a single umbrella class
+    or as a paired split in `data/ontology/core.ttl`? GFO itself reifies the distinction with
+    two sibling classes under `Individual`, plus `Discrete_presential` on the discrete/presential
+    side.
+  impact: Blocks final core.ttl placement; does not block the crosswalk research itself.
+  follow_up: Decide at review time, using the GFO source-side shape as the main constraint.
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: TUpper's `atomic` class is a real source hit, but it is an activity-specific
+    notion and should not be silently treated as an entity-level `Discrete`.
+  impact: Prevents over-claiming a correspondence where the source side is only one-sided.
+  follow_up: None needed unless a future TUpper pass finds an entity-level counterpart.
+- item_id: uncertainty-003
+  uncertainty_type: open-question
+  resolved: false
+  description: UFO's absence finding for this candidate was not independently re-checked against
+    the primary paper this session — the DOI (`10.3233/AO-210256`), two guessed author-page
+    mirrors, and philpapers.org's Semantic-Scholar-indexed open-access copy all returned HTTP
+    403, the same block `list-sequence.md`'s review hit for this exact paper earlier the same
+    day (2026-07-07). Only the already-extracted 2026-07-01 Perdurant definition (reused across
+    several other crosswalks) was available; no fresh full-text search for continuous/discrete/atomic/granular
+    vocabulary across the whole paper was possible.
+  impact: UFO's row in this crosswalk should read as an open verification gap, not a confirmed
+    absence, until a future pass gets real access to the paper text.
+  follow_up: Recheck UFO's full text (not just the already-extracted Perdurant definition)
+    once an accessible mirror is found — same follow-up already logged as Future Work in `list-sequence.yaml`
+    and `change.yaml` for this recurring UFO-access problem.
+references:
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO) base module
+  verification_note: '**verified** directly against `modules/gfo-base.owl`, 2026-07-07'
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020
+  verification_note: '**verified directly**, 2026-07-07; continuous wording only'
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: '**verified directly**, 2026-07-07; atomic/granularity wording only'
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: SUMO `Merge.kif` / Niles and Pease 2001 record
+  verification_note: '**verified directly**, 2026-07-07; continuous/discrete wording only'
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology'
+  verification_note: '**open verification gap**, 2026-07-07: DOI and all mirrors tried returned
+    HTTP 403; only already-extracted 2026-07-01 text reused, no fresh full-text search possible;
+    see `uncertainty-003`'
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: YAMATO 2010 technical report
+  verification_note: '**verified directly**, 2026-07-07; prose-only hit'
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization
+  verification_note: '**verified directly**, 2026-07-07; atomic hit'
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL
+  verification_note: '**verified absence** directly, 2026-07-07'
+review_history:
+- review_date: "2026-07-07"
+  outcome: Draft created
+  review_notes: Verified GFO's `Continuous` / `Discrete` split directly in `modules/gfo-base.owl`,
+    then checked the remaining seven source artifacts directly. Only GFO reifies the split
+    as a first-class axis; the other sources are documented as incidental wording, one-sided
+    analogs, or clean absences. Core.ttl placement remains open.
+- review_date: "2026-07-07"
+  outcome: Independent review pass (Claude)
+  review_notes: 'Re-fetched and re-checked GFO, BFO, DOLCE, SUMO, YAMATO, TUpper, and GUM''s
+    primary artifacts directly; all six non-GFO/non-UFO findings confirmed accurate except
+    one defect: the SUMO row''s "discrete partial ordering over the set of activities" quote
+    does not appear in `Merge.kif` at all — it is TUpper''s own wording, corrected in the
+    Source Definitions table. UFO''s claimed fresh re-search could not be substantiated (DOI
+    and all mirrors tried, including a Semantic-Scholar-indexed open-access copy, returned
+    HTTP 403 — the same block `list-sequence.md`''s same-day review hit); UFO''s row downgraded
+    from confirmed absence to open verification gap (`uncertainty-003`).'
+- review_date: "2026-07-07"
+  outcome: Advanced to reviewed
+  review_notes: Advanced directly to `reviewed`, applying the reviewed-eligibility criterion
+    (`docs/methodology/crosswalk-runbook.md`) on GFO's `Continuous`/`Discrete`/`Discrete_presential`
+    alone. All three classes live in `modules/gfo-base.owl`, the exact file `ADR-0020` independently
+    confirmed is GFO's own self-described "core module" (per GFO's root `README.md`), satisfying
+    `ADR-0021`'s core-placement rule. UFO's open verification gap (`uncertainty-003`) and the
+    core.ttl placement question (`uncertainty-001`) don't block advancement, consistent with
+    `list-sequence.md`'s precedent the same day.
+future_work:
+- Decide whether `xwkont-core:ContinuousDiscrete` should be added as a single umbrella class
+  or as a paired class structure under `Individual`.
+- If the maintainer wants the source-side GFO axis reflected more literally, decide whether
+  the candidate should name the axis or the individual poles first.
+- Recheck TUpper only if a future pass finds an entity-level continuous/discrete counterpart
+  rather than the current activity-specific `atomic` hit.
+- Recheck UFO's full paper text for continuous/discrete/atomic/granular vocabulary once an
+  accessible mirror is found (`uncertainty-003`) — the same recurring UFO-access gap already
+  logged in `list-sequence.yaml`'s and `change.yaml`'s Future Work.

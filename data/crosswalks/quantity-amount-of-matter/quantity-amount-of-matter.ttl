@@ -14,7 +14,7 @@
     sssom:subject_id xwkont-source-term:DOLCE-Amount_of_matter .
 
 <https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:002> a sssom:Mapping ;
-    rdfs:comment "Both are physical/concrete, endurant-equivalent (Presential) categories with parallel naming (\"amount of matter\"/\"amount of substrate\"), but GFO's class has no prose definition to compare against DOLCE's detailed gloss — not `high` for that reason."@en ;
+    rdfs:comment "Both are physical/concrete, endurant-equivalent (Presential) categories with parallel naming (\"amount of matter\"/\"amount of substrate\"). `medium-high`, not `high`, for a genuine sourcing-completeness reason: GFO's own file supplies no prose definition to compare against DOLCE's detailed gloss (a documentation gap in the primary source itself, not a confirmed substantive divergence between the two categories)."@en ;
     sssom:confidence 8e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GFO-Amount_of_substrate ;
@@ -22,7 +22,7 @@
     sssom:subject_id xwkont-source-term:DOLCE-Amount_of_matter .
 
 <https://w3id.org/xwkont/id#mapping:quantity-amount-of-matter:003> a sssom:Mapping ;
-    rdfs:comment "Both endurant/substantial-side, physical-stuff categories; same caveat as `mapping-002` about GFO's missing prose definition."@en ;
+    rdfs:comment "Both endurant/substantial-side, physical-stuff categories; same genuine sourcing-completeness caveat as `mapping-002` — GFO's own file supplies no prose definition to compare, not a confirmed substantive divergence."@en ;
     sssom:confidence 8e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GFO-Amount_of_substrate ;

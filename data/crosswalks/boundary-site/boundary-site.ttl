@@ -22,7 +22,7 @@
     sssom:subject_id xwkont-source-term:BFO-Site .
 
 <https://w3id.org/xwkont/id#mapping:boundary-site:003> a sssom:Mapping ;
-    rdfs:comment "Both denote a boundary dependent on a material entity, but GFO's has no dimensional (point/line/surface) subdivision the way BFO's does, and lacks a prose definition to compare in detail — `overlap`, not `close-match`, reflects this asymmetric level of documentation."@en ;
+    rdfs:comment "Both denote a boundary dependent on a material entity, but GFO's has no dimensional (point/line/surface) subdivision the way BFO's does — `overlap`, not `close-match`, reflects this structural asymmetry, confidently established from GFO's own class hierarchy. `low-medium`, not a plain value, specifically because GFO's own file also lacks a prose definition to compare against BFO's detailed gloss — a genuine sourcing-completeness gap in the primary source, not an additional substantive divergence."@en ;
     sssom:confidence 4e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GFO-Material_boundary ;

@@ -38,11 +38,11 @@
     sssom:subject_id xwkont-source-term:BFO-occurrent .
 
 <https://w3id.org/xwkont/id#mapping:continuant-occurrent:005> a sssom:Mapping ;
-    rdfs:comment "**Raised 2026-07-01** from medium: both primary sources are now directly verified and their endurant definitions are near-verbatim (\"wholly present... at any time they are present\" vs. \"individuals that exist in time with all their parts\") — UFO's endurant/perdurant split directly continues DOLCE's, confirmed rather than merely asserted."@en ;
+    rdfs:comment "**Corrected (2026-07-06, full-corpus audit)** from `exact-equivalence-candidate` (itself raised 2026-07-01 from `medium`): both primary sources are directly verified and their endurant definitions are near-verbatim (\"wholly present... at any time they are present\" vs. \"individuals that exist in time with all their parts\") — UFO's endurant/perdurant split directly continues DOLCE's, confirmed rather than merely asserted. But `note-002` documents that DOLCE's split is motivated by an explicit cognitive-bias disclaimer (\"we do not commit to the fact that both these kinds of entity really exist\"), while UFO's is grounded in a four-category ontology merged from Bunge-Wand-Weber conceptual-modeling work — a different philosophical lineage, the same kind of divergence `mapping-001`/`mapping-003` already use to withhold `exact-equivalence-candidate` for BFO-DOLCE and BFO-UFO. Applying that same standard consistently: `close-match`, not `exact-equivalence-candidate`, for this pair too. `high` confidence in `close-match`: both the near-verbatim wording and the philosophical divergence are directly evidenced, not open questions."@en ;
     sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:UFO-endurant ;
-    sssom:predicate_id skos:exactMatch ;
+    sssom:predicate_id skos:closeMatch ;
     sssom:subject_id xwkont-source-term:DOLCE-endurant .
 
 <https://w3id.org/xwkont/id#mapping:continuant-occurrent:006> a sssom:Mapping ;

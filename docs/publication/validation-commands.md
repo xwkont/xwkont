@@ -58,6 +58,10 @@ required_terms = [
     'xwkont-core:Time', 'xwkont-core:Space', 'xwkont-core:Aggregate',
     'xwkont-core:Sum', 'xwkont-core:Boundary', 'xwkont-core:Site',
     'xwkont-core:Quantity', 'xwkont-core:Proposition',
+    'xwkont-core:Change', 'xwkont-core:Continuous', 'xwkont-core:Discrete',
+    'xwkont-core:OntologicalLevelStratum', 'xwkont-core:ListSequence',
+    'xwkont-core:MindConsciousBeingAgent', 'xwkont-core:NonPhysicalObject',
+    'xwkont-core:Disposition', 'xwkont-core:Modality',
 ]
 missing = [term for term in required_terms if term not in core]
 if missing:

@@ -1,10 +1,10 @@
 # Raw-Class Inventory — Candidate Triage Toward Concepts
 
-<!-- updated at: 2026-07-07 03:30 Z   (2026-07-06 23:30 EDT) -->
+<!-- updated at: 2026-07-07 21:45 Z   (2026-07-07 17:45 EDT) -->
 
-> **This is XwkOnt's public contribution backlog.** It enumerates every class in all 8 source ontologies, each tagged with its nearest existing XwkOnt bucket — a **candidate** for a future crosswalk concept. If you want to contribute a crosswalk, this is where to find one: pick a bucket below that isn't yet one of the 17 `reviewed` concepts in [`docs/crosswalks/concepts/`](crosswalks/concepts/), and follow the selection/sourcing/scoping/review process in [`docs/governance/contributing.md`](governance/contributing.md). "Ungrouped" rows are not yet triaged into any bucket at all — flagging one you think deserves its own concept, with source-count evidence per `ADR-0018`, is itself a useful contribution.
+> **This is XwkOnt's public contribution backlog.** It enumerates every class in all 8 source ontologies, each tagged with its nearest existing XwkOnt bucket — a **candidate** for a future crosswalk concept. If you want to contribute a crosswalk, this is where to find one: pick a bucket below that isn't yet one of the 26 `reviewed` concepts in [`docs/crosswalks/concepts/`](concepts/), and follow the selection/sourcing/scoping/review process in [`docs/governance/contributing.md`](../governance/contributing.md). "Ungrouped" rows are not yet triaged into any bucket at all — flagging one you think deserves its own concept, with source-count evidence per `ADR-0018`, is itself a useful contribution.
 >
-> "Core" was dropped from this file's original name (`core-concepts.md`, 2026-07-04) pending a future pass that actually defines what would qualify a candidate as "core." **That pass is now done, in two ADRs: `docs/adr/ADR-0020-define-core-as-base-module-not-domain-tier.md` (2026-07-05) defines "core" as XwkOnt's base module (distinct from optional extension modules), not a domain-tier "core ontology" in the Scherp-et-al. sense; `docs/adr/ADR-0021-source-classified-core-placement-criterion.md` (2026-07-05) then sets the actual placement rule — a concept qualifies as XwkOnt-core if *any one* contributing source ontology classifies it as part of that source's own core/base module, no cross-source majority or popularity filter on top.** Applying `ADR-0021`'s rule to the 17 reviewed concepts is now mechanical, not judgment-based, but is still a separate, not-yet-started pass. Until it happens, this file continues to use only already-grounded vocabulary: a row is either a source's own **Concept Term** (`ADR-0011`/`ADR-0019`, e.g. BFO's `role`), a **candidate** if `ADR-0018`'s source-count threshold is met, or a real **Concept** once actually selected/sourced/scoped/reviewed (17 exist today, across `docs/crosswalks/concepts/` — the original 8 plus all 9 of the `0.2.0` batch, reviewed 2026-07-05). Nothing here is placed into `core.ttl`'s base module or an extension module yet.
+> "Core" was dropped from this file's original name (`core-concepts.md`, 2026-07-04) pending a future pass that actually defines what would qualify a candidate as "core." **That pass is now done, in two ADRs: `docs/adr/ADR-0020-define-core-as-base-module-not-domain-tier.md` (2026-07-05) defines "core" as XwkOnt's base module (distinct from optional extension modules), not a domain-tier "core ontology" in the Scherp-et-al. sense; `docs/adr/ADR-0021-source-classified-core-placement-criterion.md` (2026-07-05) then sets the actual placement rule — a concept qualifies as XwkOnt-core if *any one* contributing source ontology classifies it as part of that source's own core/base module, no cross-source majority or popularity filter on top.** Applying `ADR-0021`'s rule to the 26 reviewed concepts is now mechanical, not judgment-based, but is still a separate, not-yet-started pass for the `0.3.0` batch's 9 newer concepts (it's already done for the original 17). Until it happens, this file continues to use only already-grounded vocabulary: a row is either a source's own **Concept Term** (`ADR-0011`/`ADR-0019`, e.g. BFO's `role`), a **candidate** if `ADR-0018`'s source-count threshold is met, or a real **Concept** once actually selected/sourced/scoped/reviewed (26 exist today, across `docs/crosswalks/concepts/` — the original 8, all 9 of the `0.2.0` batch (reviewed 2026-07-05), and all 10 of the `0.3.0` batch: Disposition/Capacity, Symbol/Sign/Representation, Mind/Conscious Being/Agent, Ontological Level/Stratum, Change, List/Sequence, Continuous vs. Discrete, Modality, and Non-physical/Social Object). Nothing here is placed into `core.ttl`'s base module or an extension module yet for the `0.3.0` batch's concepts.
 >
 > Enumerates every class exactly once verified against each of the 8 source ontologies' own primary artifact (re-fetched and parsed directly for this pass — the earlier draft relied on `docs/evaluations/foundational-ontology-concept-terms-matrix.md`'s simplified ASCII trees, which undercounted several sources badly). Every row is numbered `<ONTOLOGY>.<n>` and tagged with its nearest existing XwkOnt bucket (one of the 8 `reviewed` crosswalks, one of `TODO.md`'s 19 candidates, or **Ungrouped** if no existing bucket fits). **Ungrouped does not mean "will become its own concept"** — it means "not yet triaged," per `ADR-0018`'s process: every future concept still needs its own selection/sourcing/scoping/review pass, no matter how it's listed here.
 >
@@ -141,7 +141,7 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | SUMO.9 | Attribute | Quality |
 | SUMO.10 | SetOrClass | Universal / Type (candidate) |
 | SUMO.11 | Relation | Relation |
-| SUMO.12 | List | List / Sequence (candidate) |
+| SUMO.12 | List | List / Sequence |
 | SUMO.13 | Proposition | Proposition / Content (candidate) |
 | SUMO.14 | SelfConnectedObject | Object |
 | SUMO.15 | Region | Spatial Region / Space (candidate) |
@@ -162,7 +162,7 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | SUMO.30 | NaturalProcess | Process |
 | SUMO.31 | IntentionalProcess | Process |
 | SUMO.32 | Motion | Process |
-| SUMO.33 | InternalChange | Change (candidate) |
+| SUMO.33 | InternalChange | Change |
 | SUMO.34 | Number | Quantity / Amount of Matter (candidate) |
 | SUMO.35 | PhysicalQuantity | Quantity / Amount of Matter (candidate) |
 | SUMO.36 | InternalAttribute | Quality |
@@ -184,7 +184,7 @@ The prior draft used the class-hierarchy matrix's simplified ASCII trees, which 
 | SUMO.52 | Predicate | Relation |
 | SUMO.53 | VariableArityRelation | Relation |
 | SUMO.54 | RelationExtendedToQuantities | Relation |
-| SUMO.55 | UniqueList | List / Sequence (candidate) |
+| SUMO.55 | UniqueList | List / Sequence |
 | SUMO.56 | Graph | Ungrouped |
 | SUMO.57 | GraphElement | Ungrouped |
 | SUMO.58 | FieldOfStudy | Ungrouped |
@@ -287,33 +287,33 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GFO.1 | Abstract | Abstract vs. Concrete (candidate) |
 | GFO.2 | Action | Event / Process |
 | GFO.3 | Amount_of_substrate | Quantity / Amount of Matter (candidate) |
-| GFO.4 | Awareness_level | Ontological Level / Stratum (candidate) |
-| GFO.5 | Biological_level | Ontological Level / Stratum (candidate) |
+| GFO.4 | Awareness_level | Ontological Level / Stratum |
+| GFO.5 | Biological_level | Ontological Level / Stratum |
 | GFO.6 | Category | Universal / Type (candidate) |
-| GFO.7 | Change | Change (candidate) |
-| GFO.8 | Chemical_level | Ontological Level / Stratum (candidate) |
+| GFO.7 | Change | Change |
+| GFO.8 | Chemical_level | Ontological Level / Stratum |
 | GFO.9 | Chronoid | Time (candidate) |
 | GFO.10 | Concept | Universal / Type (candidate) |
 | GFO.11 | Concrete | Abstract vs. Concrete (candidate) |
 | GFO.12 | Configuration | Situation / State of Affairs (candidate) |
 | GFO.13 | Configuroid | Ungrouped — flagged single-source, source-unique |
-| GFO.14 | Continuous | Continuous vs. Discrete (candidate) |
-| GFO.15 | Continuous_change | Change (candidate) |
+| GFO.14 | Continuous | Continuous vs. Discrete |
+| GFO.15 | Continuous_change | Change |
 | GFO.16 | Continuous_process | Process |
 | GFO.17 | Dependent | Quality |
-| GFO.18 | Discrete | Continuous vs. Discrete (candidate) |
-| GFO.19 | Discrete_presential | Continuous vs. Discrete (candidate) |
+| GFO.18 | Discrete | Continuous vs. Discrete |
+| GFO.19 | Discrete_presential | Continuous vs. Discrete |
 | GFO.20 | Discrete_process | Process |
 | GFO.21 | Entity | Continuant-Occurrent (root) |
-| GFO.22 | Extrinsic_change | Change (candidate) — deprecated in source |
+| GFO.22 | Extrinsic_change | Change — deprecated in source |
 | GFO.23 | Function | Disposition / Capacity |
 | GFO.24 | History | Process |
 | GFO.25 | Independent | Continuant-Occurrent |
 | GFO.26 | Individual | Continuant-Occurrent |
-| GFO.27 | Instantaneous_change | Change (candidate) |
-| GFO.28 | Intrinsic_change | Change (candidate) — deprecated in source |
+| GFO.27 | Instantaneous_change | Change |
+| GFO.28 | Intrinsic_change | Change — deprecated in source |
 | GFO.29 | Item | Universal / Type (candidate) |
-| GFO.30 | Level | Ontological Level / Stratum (candidate) |
+| GFO.30 | Level | Ontological Level / Stratum |
 | GFO.31 | Line | Boundary / Site (candidate) |
 | GFO.32 | Mass_entity | Quantity / Amount of Matter (candidate) |
 | GFO.33 | Material_boundary | Boundary / Site (candidate) |
@@ -321,15 +321,15 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GFO.35 | Material_object | Object |
 | GFO.36 | Material_persistant | Object |
 | GFO.37 | Material_point | Boundary / Site (candidate) |
-| GFO.38 | Material_stratum | Ontological Level / Stratum (candidate) |
+| GFO.38 | Material_stratum | Ontological Level / Stratum |
 | GFO.39 | Material_structure | Object |
 | GFO.40 | Material_surface | Boundary / Site (candidate) |
-| GFO.41 | Mental_stratum | Ontological Level / Stratum (candidate) |
+| GFO.41 | Mental_stratum | Ontological Level / Stratum |
 | GFO.42 | Occurrent | Continuant-Occurrent |
-| GFO.43 | Ontological_layer | Ontological Level / Stratum (candidate) |
+| GFO.43 | Ontological_layer | Ontological Level / Stratum |
 | GFO.44 | Persistant | Ungrouped |
-| GFO.45 | Personality_level | Ontological Level / Stratum (candidate) |
-| GFO.46 | Physical_level | Ontological Level / Stratum (candidate) |
+| GFO.45 | Personality_level | Ontological Level / Stratum |
+| GFO.46 | Physical_level | Ontological Level / Stratum |
 | GFO.47 | Point | Boundary / Site (candidate) |
 | GFO.48 | Presential | Continuant-Occurrent |
 | GFO.49 | Process | Process |
@@ -343,13 +343,13 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GFO.57 | Situation | Situation / State of Affairs (candidate) |
 | GFO.58 | Situoid | Situation / State of Affairs (candidate) |
 | GFO.59 | Social_role | Role |
-| GFO.60 | Social_stratum | Ontological Level / Stratum (candidate) |
+| GFO.60 | Social_stratum | Ontological Level / Stratum |
 | GFO.61 | Space | Spatial Region / Space (candidate) |
 | GFO.62 | Space_time | Time / Spatial Region (candidate) |
 | GFO.63 | Spatial_boundary | Boundary / Site (candidate) |
 | GFO.64 | Spatial_region | Spatial Region / Space (candidate) |
 | GFO.65 | State | Situation / State of Affairs (candidate) |
-| GFO.66 | Stratum | Ontological Level / Stratum (candidate) |
+| GFO.66 | Stratum | Ontological Level / Stratum |
 | GFO.67 | Surface | Boundary / Site (candidate) |
 | GFO.68 | Symbol | Symbol / Sign / Representation (candidate) |
 | GFO.69 | Symbol_sequence | Symbol / Sign / Representation (candidate) |
@@ -490,7 +490,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.25 | Color | Quality |
 | GUM.26 | ColorPropertyAscription | Quality |
 | GUM.27 | CommunicativeAttitude | Ungrouped — linguistic |
-| GUM.28 | Conditional | Modality (candidate) |
+| GUM.28 | Conditional | Modality |
 | GUM.29 | Configuration | Situation / State of Affairs (candidate) |
 | GUM.30 | ConfigurationBeginning | Situation / State of Affairs (candidate) |
 | GUM.31 | ConfigurationBoundary | Boundary / Site (candidate) |
@@ -560,8 +560,8 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.95 | MentalInactive | Mind / Conscious Being / Agent |
 | GUM.96 | MessageOriented | Ungrouped — linguistic |
 | GUM.97 | MessageTransfer | Ungrouped — linguistic |
-| GUM.98 | ModalPropertyAscription | Modality (candidate) |
-| GUM.99 | ModalQuality | Modality (candidate) |
+| GUM.98 | ModalPropertyAscription | Modality |
+| GUM.99 | ModalQuality | Modality |
 | GUM.100 | MultiConfiguration | Situation / State of Affairs (candidate) |
 | GUM.101 | Name | Symbol / Sign / Representation (candidate; excluded from that crosswalk's evidence 2026-07-06 — its definition is comparable in form to information-artifact.md's own BFO(IAO) Information Content Entity definition; not added there by this pass, open question, see symbol-sign-representation.yaml's Future Work) |
 | GUM.102 | NameEvent | Event |
@@ -569,23 +569,23 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.104 | NameRelation | Symbol / Sign / Representation (candidate) |
 | GUM.105 | NamedObject | Object |
 | GUM.106 | NaturalNumber | Quantity / Amount of Matter (candidate) |
-| GUM.107 | Necessity | Modality (candidate) |
+| GUM.107 | Necessity | Modality |
 | GUM.108 | NonAddresseeOriented | Ungrouped — linguistic |
 | GUM.109 | NonAddressing | Ungrouped — linguistic |
 | GUM.110 | NonAffectingAction | Situation / State of Affairs (candidate) |
 | GUM.111 | NonAffectingDoing | Ungrouped — linguistic |
 | GUM.112 | NonAffectingHappening | Ungrouped — linguistic |
-| GUM.113 | NonConditional | Modality (candidate) |
+| GUM.113 | NonConditional | Modality |
 | GUM.114 | NonConsciousThing | Object |
 | GUM.115 | NonDecomposableObject | Object |
 | GUM.116 | NonMessageOriented | Ungrouped — linguistic |
 | GUM.117 | NonScalableQuality | Quality |
-| GUM.118 | NonVolitional | Modality (candidate) |
+| GUM.118 | NonVolitional | Modality |
 | GUM.119 | NumberFocusing | Quantity / Amount of Matter (candidate) |
 | GUM.120 | OneOrTwoDLocation | Spatial Region / Space (candidate) |
 | GUM.121 | OneOrTwoDTime | Time (candidate) |
-| GUM.122 | OrderedObject | Mereology / Parthood / Aggregate (candidate) |
-| GUM.123 | OrderedSet | Universal / Type (candidate) |
+| GUM.122 | OrderedObject | List / Sequence (was tagged "Mereology / Parthood / Aggregate (candidate)"; retagged 2026-07-07, session verification: reifies the same ordered-collection apparatus as SUMO's `List`, not a part-whole aggregate) |
+| GUM.123 | OrderedSet | List / Sequence (was tagged "Universal / Type (candidate)"; retagged 2026-07-07, session verification: subclass of `OrderedObject`, the ordered-collection apparatus, not a type/universal-side class) |
 | GUM.124 | OwnedBy | Relation |
 | GUM.125 | Ownership | Relation |
 | GUM.126 | Part | Mereology / Parthood / Aggregate (candidate) |
@@ -595,7 +595,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.130 | Perception | Mind / Conscious Being / Agent |
 | GUM.131 | Person | Mind / Conscious Being / Agent |
 | GUM.132 | PolarQuality | Quality |
-| GUM.133 | Possibility | Modality (candidate) |
+| GUM.133 | Possibility | Modality |
 | GUM.134 | Present | Time (candidate) |
 | GUM.135 | Process | Process |
 | GUM.136 | ProfilesAndStages | Time (candidate) |
@@ -650,7 +650,7 @@ All 19 → **Relation** (already-crosswalked concept; UFO's own named sub-kinds 
 | GUM.185 | TimePoint | Time (candidate) |
 | GUM.186 | UMSet | Universal / Type (candidate) |
 | GUM.187 | UsePropertyAscription | Quality |
-| GUM.188 | Volitional | Modality (candidate) |
+| GUM.188 | Volitional | Modality |
 | GUM.189 | Wanting | Mind / Conscious Being / Agent |
 | GUM.190 | Winding | Ungrouped — linguistic |
 | GUM.191 | Word | Symbol / Sign / Representation (candidate) |

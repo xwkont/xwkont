@@ -29,7 +29,7 @@
     sssom:subject_id xwkont-source-term:DOLCE-situation_DnS .
 
 <https://w3id.org/xwkont/id#mapping:situation-state-of-affairs:009> a sssom:Mapping ;
-    rdfs:comment "DOLCE's DnS `situation` is itself historically and terminologically the closer ancestor of UFO/OntoUML's own situation-semantics tradition (both trace to description-and-situation-style modeling) — recorded as `close-match` on the same substantive grounds as `mapping:001`/`mapping:008`, not independently re-derived."@en ;
+    rdfs:comment "Corrected (2026-07-06, full-corpus audit): the original rationale asserted a historical/genealogical claim (\"DOLCE's DnS situation is itself historically and terminologically the closer ancestor of UFO/OntoUML's tradition\") with no cited source text supporting it, and explicitly conceded it was \"not independently re-derived.\" The actual evidentiary basis available is a triangulated one, via GFO: `mapping-008` directly quotes DOLCE's `situation` as \"comprehended as a whole\"; `mapping-001` directly quotes UFO's stereotype sharing the same \"whole-comprehension criterion\" against GFO's own \"comprehended as a whole\" text. DOLCE and UFO are not directly compared against each other by any cited quotation here -- the correspondence is inferred by both sharing the same criterion with GFO, not confirmed by a direct DOLCE-UFO textual comparison. `close-match` and `medium` confidence (not raised) reflect that this is an inference from two other mappings' cited evidence, not an independently-verified direct comparison."@en ;
     sssom:confidence 6e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:UFO-situation_OntoUML_stereotype ;

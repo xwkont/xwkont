@@ -67,7 +67,7 @@
     sssom:subject_id xwkont-source-term:GFO-Property .
 
 <https://w3id.org/xwkont/id#mapping:quality:009> a sssom:Mapping ;
-    rdfs:comment "Both are dependent particulars tied to an individual entity (\"a certain dependent property possessed by an entity\"). Not `high` because YAMATO's four-tier apparatus (generic type/role type/quality/instance) is considerably more elaborated than BFO's single Quality class, and YAMATO's own OWL is not fetched (quotation-only citation)."@en ;
+    rdfs:comment "Both are dependent particulars tied to an individual entity (\"a certain dependent property possessed by an entity\"). `medium-high`, not `high`, specifically because YAMATO's own OWL/Hozo files are not fetched (quotation-only citation) — a genuine sourcing-completeness gap, not because of the elaboration difference alone: YAMATO's four-tier apparatus (generic type/role type/quality/instance) is more elaborated than BFO's single Quality class, but that structural fact is confidently known, not itself an open question."@en ;
     sssom:confidence 8e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:YAMATO-Quality ;
@@ -75,8 +75,8 @@
     sssom:subject_id xwkont-source-term:BFO-Quality .
 
 <https://w3id.org/xwkont/id#mapping:quality:010> a sssom:Mapping ;
-    rdfs:comment "Structurally the closest pairing among the new sources: both split a particular quality from its value/realization (DOLCE: Quality/Quale; YAMATO: Quality/Quality instance), and YAMATO's own text explicitly engages DOLCE's quality-space concept by name (`note-005`) rather than this crosswalk drawing the comparison unassisted. Not `high` because YAMATO explicitly argues DOLCE's coverage is incomplete — a disclosed point of disagreement, not a clean equivalence."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Structurally the closest pairing among the new sources: both split a particular quality from its value/realization (DOLCE: Quality/Quale; YAMATO: Quality/Quality instance), and YAMATO's own text explicitly engages DOLCE's quality-space concept by name (`note-005`) rather than this crosswalk drawing the comparison unassisted. YAMATO explicitly argues DOLCE's coverage is incomplete — a disclosed point of disagreement, not a clean equivalence, but a confidently and directly quoted one (YAMATO's own critique), not an open sourcing question, so it does not itself justify a hedged confidence value."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:YAMATO-Quality ;
     sssom:predicate_id skos:closeMatch ;

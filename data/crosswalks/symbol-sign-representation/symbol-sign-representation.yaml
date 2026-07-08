@@ -1,9 +1,9 @@
 local_identifier: xwkont:concept:symbol-sign-representation
 slug: symbol-sign-representation
 title: Symbol / Sign / Representation
-editorial_status: draft
+editorial_status: reviewed
 created: "2026-07-06"
-modified: "2026-07-06"
+modified: "2026-07-07"
 scope_note: "This crosswalk asks whether XwkOnt needs a distinct concept for the **sign\n\
   vehicle / representation-form / symbolization layer** that shows up across\nseveral source\
   \ ontologies. It is intentionally narrower than\n[`information-artifact.md`](information-artifact.md)\
@@ -177,15 +177,25 @@ source_definitions:
   term_or_identifier: Name / NameEvent / NameOf / NameRelation / Symbolization / Signification
   dimension: technical
   source_claim_type: direct quotation
-  text: '`Name`: "An accepted but possibly arbitrary label for some entity." `NameEvent`:
-    "The process of giving something a name." `NameOf`: "The relation that holds between a
-    name and its bearer." `NameRelation`: "The relation that holds between a name''s bearer
-    and that name." `Symbolization`: relations that hold between entities and other entities
-    they symbolize. `Signification`: relations realized by verbs like "represent", "mean",
-    "express."'
+  text: '`Name`: "An accepted but possibly arbitrary label for some entity." `rdfs:subClassOf`
+    `Word`. `NameEvent`: "The process of giving something a name. It does not intrinsically
+    require an addressee (non-addressee-oriented)." `rdfs:subClassOf` `DispositiveMaterialAction`
+    and `External`. `NameOf`: "The relation that holds betwen a name and its bearer." [sic
+    — "betwen" in the source file itself]. `NameRelation`: "The relation that holds between a
+    name''s bearer and that name." `rdfs:subClassOf` `Symbolization`. `Symbolization`: "This
+    category contains relations that hold between entities and other entities they `symbolize''.
+    Concepts in this class logically have two roles: SYMBOL (the domain) and SYMBOLIZED (the
+    range). One relation in this category is the relation between an object and a name which
+    identifies that object." `rdfs:subClassOf` `Intensive`. `Signification`: "Relations
+    concerned with Signification are linguistically realized by verbs like ''represent'',
+    ''mean'', ''express'', e.g., ''green means go''." `rdfs:subClassOf` `Symbolization`.'
   reference:
   - xwkont:ref:gum-owl
-  locator: '**verified**: `GUM-31.owl`, fetched and read directly 2026-07-06'
+  locator: '**verified**: `GUM-31.owl`, re-fetched and read directly 2026-07-07 (session-049,
+    independent re-verification; corrected two truncated quotations from the prior 2026-07-06
+    pass — `Symbolization`''s comment dropped its SYMBOL/SYMBOLIZED domain-range framing and
+    worked example, and `Signification`''s comment dropped its "green means go" example and
+    "linguistically realized" framing)'
   entry_notes: 'Narrowed 2026-07-06. `NameOf`/`NameRelation`/`Symbolization`/`Signification`
     are relation-types, retained in this crosswalk. `Name` has a stated definition comparable
     in form to `information-artifact.md`''s BFO(IAO) Information Content Entity definition
@@ -441,28 +451,54 @@ uncertainties:
 references:
 - reference_id: xwkont:ref:bfo-2020
   short_label: Basic Formal Ontology (BFO) 2020
-  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06'
+  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06; independently
+    re-confirmed 2026-07-07 (session-049) against `21838-2/owl/bfo-core.ttl`, re-fetched fresh —
+    grep for "symbol"/"sign"/"signifier"/"representation"/"name"/"word" found only incidental
+    uses inside unrelated `skos:scopeNote`/`skos:definition` text, no dedicated class'
 - reference_id: xwkont:ref:dolce-lite-owl
   short_label: DOLCE-Lite OWL translation
-  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06'
+  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06; independently
+    re-confirmed 2026-07-07 (session-049) against `DOLCE-Lite.owl`, re-fetched fresh — grep for
+    "symbol"/"sign"/"signifier"/"representation"/"name"/"word" found only incidental uses inside
+    unrelated relation-composition comments, no dedicated class'
 - reference_id: xwkont:ref:ufo-2021
   short_label: 'UFO: Unified Foundational Ontology'
-  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06'
+  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06; independently
+    re-confirmed 2026-07-07 (session-049) against a complete 2026-07-06 full-text extraction
+    of the 2021 paper (reused per `modality.md`''s and `non-physical-social-object.md`''s
+    precedent for the recurring HTTP-403 live-fetch block) — grep for "symbol"/"sign"/"representation"
+    found only incidental prose uses ("representation artifacts," "symbolized as ::"), no
+    dedicated sign/symbol class'
 - reference_id: xwkont:ref:sumo-niles-pease-2001
   short_label: SUMO / current Merge.kif
-  verification_note: '**verified** directly, 2026-07-06'
+  verification_note: '**verified** directly, 2026-07-06; independently re-confirmed 2026-07-07
+    (session-049) against `Merge.kif`, re-fetched fresh — `SymbolicString`/`Icon`/`LinguisticExpression`/`Word`
+    quotations and `rdfs:subClassOf ContentBearingPhysical` chain match exactly'
 - reference_id: xwkont:ref:gfo
   short_label: General Formal Ontology (GFO)
-  verification_note: '**verified** directly, 2026-07-06'
+  verification_note: '**verified** directly, 2026-07-06; independently re-confirmed 2026-07-07
+    (session-049) against `modules/gfo-base.owl`, re-fetched fresh — `Symbol`/`Symbol_sequence`/`Symbol_structure`/`Category`
+    axioms match exactly (`Symbol_structure` itself carries no `skos:definition`; the quoted
+    text is `Category`''s own, inherited)'
 - reference_id: xwkont:ref:yamato-mizoguchi-2010
   short_label: YAMATO 2010 technical report
-  verification_note: '**verified** directly, 2026-07-06'
+  verification_note: '**verified** directly, 2026-07-06; independently re-confirmed 2026-07-07
+    (session-049) against `YAMATO101216.pdf`, re-fetched fresh and converted via `pdftotext` —
+    the "form and content"/"representing thing" quotes and the "representation form includes
+    language as a symbol sequence" paraphrase both confirmed verbatim/accurate in the "Ontology
+    of informational objects" section'
 - reference_id: xwkont:ref:tupper-colore
   short_label: TUpper COLORE formalization
-  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06'
+  verification_note: '**verified absence** for this crosswalk''s scope, 2026-07-06; independently
+    re-confirmed 2026-07-07 (session-049) against `tupper.all.owl` and `TUpper-Terms.html`,
+    re-fetched fresh — zero occurrences of "symbol"/"sign"/"signifier"/"name"/"linguistic"/"icon"/"word"
+    in either file'
 - reference_id: xwkont:ref:gum-owl
   short_label: GUM 3.1 OWL
-  verification_note: '**verified** directly, 2026-07-06'
+  verification_note: '**verified** directly, 2026-07-06; independently re-verified 2026-07-07
+    (session-049) against `GUM-31.owl`, re-fetched fresh through the Wayback Machine snapshot —
+    found and corrected two truncated quotations (`Symbolization`, `Signification`); see
+    Source Definitions and this reference''s own reuse note'
 review_history:
 - review_date: "2026-07-06"
   outcome: Not yet reviewed — `draft`
@@ -498,6 +534,29 @@ review_history:
     `process.md`/`event.md` respectively. This crosswalk''s evidence is now GFO''s `Symbol_structure`
     and GUM''s `Symbolization`/`Signification`/`NameOf`/`NameRelation`. Still `draft` — no
     reviewer pass against `docs/governance/contributing.md`''s Review Checklist has happened yet.'
+- review_date: "2026-07-07"
+  outcome: Independently re-verified against all 8 primary sources; advanced to `reviewed`
+  review_notes: 'Session-049. Re-fetched all 8 primary artifacts directly (not reused from the
+    prior 2026-07-06 pass) and re-checked every claim: `bfo-core.ttl`, `DOLCE-Lite.owl`,
+    a cached complete 2026-07-06 UFO 2021 full-text extraction (the live fetch''s recurring
+    HTTP-403 block recurred again this session), `Merge.kif`, `modules/gfo-base.owl`,
+    `YAMATO101216.pdf` (converted via `pdftotext`), `tupper.all.owl`/`TUpper-Terms.html`, and
+    `GUM-31.owl`. Found and corrected two truncated GUM quotations: `Symbolization`''s
+    `rdfs:comment` had dropped its SYMBOL/SYMBOLIZED domain-range framing and worked example,
+    and `Signification`''s had dropped its "green means go" example and "linguistically
+    realized" framing — both restored to their full verbatim text (see Source Definitions).
+    `NameEvent`''s comment was also found to have a second sentence ("It does not intrinsically
+    require an addressee") not previously quoted; restored. No other defects found: the GFO
+    `Symbol`/`Symbol_sequence`/`Symbol_structure`/`Category` axiom chain, the SUMO
+    `SymbolicString`/`Icon`/`LinguisticExpression`/`Word` quotations and subclass chain, the
+    YAMATO "form and content" quotes and "symbol sequence" paraphrase, and all 4 absence claims
+    (BFO, DOLCE, UFO, TUpper) all confirmed exactly as drafted. Per `docs/methodology/crosswalk-runbook.md`''s
+    reviewed-eligibility criterion, GFO''s `Symbol`/`Symbol_sequence`/`Symbol_structure` are
+    declared directly in `modules/gfo-base.owl` (GFO''s base module, not an extension) and are
+    now independently verified against that authoritative primary source — sufficient on its
+    own for `reviewed`, and GUM''s `NameOf`/`NameRelation`/`Symbolization`/`Signification`
+    (also independently verified against `GUM-31.owl` directly) is a genuine second source.
+    Advanced `editorial_status` from `draft` to `reviewed`.'
 future_work:
 - Check whether GUM's `Name` should be added to `information-artifact.md` as new evidence —
   its current GUM mapping there states no correspondence was found with confidence, and
@@ -509,6 +568,9 @@ future_work:
   already tags it "Event" independently of this crosswalk's draft; that tag has not been
   checked against `event.md`'s own Source Definitions/Correspondences.
 - Resolve whether the candidate should stay as one class or become a class-plus-relation family
-  before any `core.ttl` placement decision.
-- After review, generate the machine-readable YAML and Markdown projections from the verified
-  draft.
+  before any `core.ttl` placement decision (per `ADR-0021`; not yet started for this concept,
+  same as the `0.3.0` batch's 8 newer `reviewed` concepts).
+- 'Cross-reference: `docs/crosswalks/concepts/list-sequence.md` (2026-07-07) independently re-confirmed
+  GFO''s `Symbol_sequence` and YAMATO''s "symbol sequence" language belong to this crosswalk''s
+  territory, not a general ordered-collection concept — cited there as an exclusion, not re-litigated.
+  No action needed here; noted for cross-reference discoverability.'

@@ -1,0 +1,93 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:mind-conscious-being-agent:001> a sssom:Mapping ;
+    rdfs:comment "`AutonomousAgent` is SUMO's direct, explicitly-defined bearer class for \"something or someone that can act on its own and produce changes in the world,\" refined into sentient/cognitive/AI-agent subtypes. Confirmed `(subclass AutonomousAgent Object)` in `Merge.kif` -- SUMO models this at the object layer, same pattern as DOLCE and YAMATO."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-MindConsciousBeingAgent ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:SUMO-AutonomousAgent .
+
+<https://w3id.org/xwkont/id#mapping:mind-conscious-being-agent:002> a sssom:Mapping ;
+    rdfs:comment "GUM's own comment defines `ConsciousBeing` as \"an active entity capable of producing information that may be ascribed consciousness; e.g. a person\" -- the clearest direct anchor for this candidate among all eight sources, verified verbatim against the fetched `GUM-31.owl.txt`."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-MindConsciousBeingAgent ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:GUM-ConsciousBeing .
+
+<https://w3id.org/xwkont/id#mapping:mind-conscious-being-agent:003> a sssom:Mapping ;
+    rdfs:comment "Confirmed directly from Fig. 2's diagram (not extractable as text -- verified by rendering the page as an image): `weak agent` is a direct child of `continuant > object`, alongside `morphological whole`, sibling to the `functional` branch (`living organism`, `artifact`). It is a real object-side agentive label, but the paper's own body text never elaborates it beyond the figure, so `overlap` rather than `close-match`."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-MindConsciousBeingAgent ;
+    sssom:subject_id xwkont-source-term:YAMATO-weak_agent .
+
+<https://w3id.org/xwkont/id#mapping:mind-conscious-being-agent:004> a sssom:Mapping ;
+    rdfs:comment "D18 section 3.4.2 confirmed verbatim: \"a special place have those to which we ascribe intentions, beliefs, and desires. These are called Agentive\" (physical layer), plus a separate Social Agent layer including legal persons and contractants (Table 1: \"a (legal) person, a contractant\"). Agentivity is explicitly modeled but split across the object/social-object layers rather than reified as one bearer class, so `overlap` rather than `close-match`."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-MindConsciousBeingAgent ;
+    sssom:subject_id xwkont-source-term:DOLCE-Agentive_Physical_Object_Social_Agent .
+
+<https://w3id.org/xwkont/id#mapping:mind-conscious-being-agent:005> a sssom:Mapping ;
+    rdfs:comment "Confirmed verbatim: \"A type of conscious being pronominalizeable by `she`, `he`, etc. rather than by `it`.\" A genuine conscious-being subtype, but peripheral to the core scope, not a peer anchor."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-MindConsciousBeingAgent ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:GUM-Person .
+
+<https://w3id.org/xwkont/id#mapping:mind-conscious-being-agent:006> a sssom:Mapping ;
+    rdfs:comment "Confirmed verbatim: both are subclasses of `Person` defined only \"for, e.g., pronominalization purposes.\" Pronominalization refinements, not core bearer-class content -- equivalence should not be asserted at the concept level."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-MindConsciousBeingAgent ;
+    sssom:subject_id xwkont-source-term:GUM-Female_Male .
+
+<https://w3id.org/xwkont/id#mapping:mind-conscious-being-agent:007> a sssom:Mapping ;
+    rdfs:comment "Confirmed verbatim for every term: each is commented as a \"mental process\" or \"mental reaction\" (e.g. `Think`: \"The mental process of thinking\"; `ReactionAndEmotion`: \"An inactive mental process...\"), all descending from `Internal` (a process branch), not from any bearer/entity class. These belong with `process.md`/`event.md`, not here."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-MindConsciousBeingAgent ;
+    sssom:subject_id xwkont-source-term:GUM-Believe_Cognition_Know_Perception_Think_Wanting_MentalActive_MentalInactive_Disliking_Fearing_Liking_ReactionAndEmotion_Striving .
+
+<https://w3id.org/xwkont/id#mapping:mind-conscious-being-agent:008> a sssom:Mapping ;
+    rdfs:comment "Confirmed directly from Fig. 2's diagram: `mind` is a direct child of `semi-abstract` (sibling to `content` and `representation`), not of `continuant`/`object`. YAMATO's own text defines semi-abstract things as needing \"only time to exist\" -- the opposite ontological commitment from a bearer/agent class."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-MindConsciousBeingAgent ;
+    sssom:subject_id xwkont-source-term:YAMATO-mind .
+
+xwkont-source-term:DOLCE-Agentive_Physical_Object_Social_Agent rdfs:label "Agentive Physical Object / Social Agent"@en ;
+    dcterms:source "DOLCE" .
+
+xwkont-source-term:GUM-Believe_Cognition_Know_Perception_Think_Wanting_MentalActive_MentalInactive_Disliking_Fearing_Liking_ReactionAndEmotion_Striving rdfs:label "Believe / Cognition / Know / Perception / Think / Wanting / MentalActive / MentalInactive / Disliking / Fearing / Liking / ReactionAndEmotion / Striving"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-ConsciousBeing rdfs:label "ConsciousBeing"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-Female_Male rdfs:label "Female / Male"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-Person rdfs:label "Person"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:SUMO-AutonomousAgent rdfs:label "AutonomousAgent"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:YAMATO-mind rdfs:label "mind"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:YAMATO-weak_agent rdfs:label "weak agent"@en ;
+    dcterms:source "YAMATO" .
+
+xwkont-source-term:xwkont-core-MindConsciousBeingAgent rdfs:label "MindConsciousBeingAgent"@en ;
+    dcterms:source "xwkont-core" .
+

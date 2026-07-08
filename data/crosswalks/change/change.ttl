@@ -1,0 +1,19 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:change:001> a sssom:Mapping ;
+    rdfs:comment "Both are real source-side change classes, but their defining tests differ: GFO anchors continuous change in chronoids and observable differences over time, while SUMO anchors internal change in alteration of an object's internal properties. Related, but not equivalent."@en ;
+    sssom:confidence 2e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-InternalChange ;
+    sssom:subject_id xwkont-source-term:GFO-Continuous_change .
+
+xwkont-source-term:GFO-Continuous_change rdfs:label "Continuous_change"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:SUMO-InternalChange rdfs:label "InternalChange"@en ;
+    dcterms:source "SUMO" .
+

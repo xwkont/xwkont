@@ -1,8 +1,22 @@
 # Changelog
 
-<!-- updated at: 2026-07-05 17:35 Z   (2026-07-05 13:35 EDT) -->
+<!-- updated at: 2026-07-08 02:15 Z   (2026-07-07 22:15 EDT) -->
 
 All notable changes to XwkOnt are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [0.3.0] - 2026-07-07
+
+Tagged `ontology-core-v0.3.0`. All 9 candidates from the `0.3.0` batch have now been through a crosswalk pass — 9 reviewed, 1 (Quality Space/Quale) off-ramped as not-distinct — bringing the total to 26 reviewed concepts.
+
+### Added
+
+- 9 new concept crosswalks — Disposition/Capacity, Symbol/Sign/Representation, Mind/Conscious Being/Agent, Ontological Level/Stratum, Change, List/Sequence, Continuous vs. Discrete, Modality, and Non-physical/Social Object ([docs/crosswalks/concepts/](docs/crosswalks/concepts/)) — bringing the total to 26 reviewed concepts.
+- `data/ontology/core.ttl` expanded from 21 to 29 classes: `Change`, `Continuous`, `Discrete`, `OntologicalLevelStratum`, and `ListSequence` as direct `Entity` subclasses; `MindConsciousBeingAgent`, `NonPhysicalObject`, and `Disposition` under `Continuant`; `Modality` under `Quality` ([ADR-0021](docs/adr/ADR-0021-source-classified-core-placement-criterion.md)). Symbol/Sign/Representation was deliberately left unplaced pending an unresolved single-class-vs-class-plus-relation-family question, alongside `0.2.0`'s already-unplaced Situation/State of Affairs.
+- `.tsv`/`.ttl` SSSOM/RDF exports for all 9 new concepts, generated from their YAML records ([ADR-0023](docs/adr/ADR-0023-machine-readable-crosswalk-export-sssom-tsv-generated-ttl.md)); all 26 reviewed concepts now have a machine-readable export.
+
+### Fixed
+
+- Regenerated `.tsv`/`.ttl` exports for 15 of the original 17 concepts, which had drifted out of sync with confidence-value corrections made in their own YAML during later review passes.
 
 ## [0.2.0] - 2026-07-05
 

@@ -3,7 +3,7 @@ slug: event
 title: Event
 editorial_status: reviewed
 created: "2026-07-01"
-modified: "2026-07-02"
+modified: "2026-07-07"
 scope_note: 'This crosswalk compares how BFO, DOLCE, UFO, and SUMO treat "Event" on the occurrent/perdurant
   side of each source ontology''s top-level split, building directly on `docs/crosswalks/concepts/continuant-occurrent.md`.
   It also directly addresses that crosswalk''s `uncertainty-003` (the unresolved Process/Event
@@ -700,7 +700,11 @@ uncertainties:
     by the maintainer).
 - item_id: uncertainty-006
   uncertainty_type: non-equivalence
-  resolved: false
+  resolved: true
+  resolved_date: "2026-07-07"
+  resolution_note: 'resolved 2026-07-07, session-044: the broader `Change` class''s remaining
+    extended-process reading is now covered by `docs/crosswalks/concepts/change.md` (`0.3.0`
+    batch), not left permanently unmapped.'
   description: GFO's `Change` class spans both the instantaneous case ("instantaneous event")
     and the extended case ("a process of arbitrary extension") — it is not a clean Event-only
     class the way DOLCE's `Achievement`/`Accomplishment` pair is. Only the `Instantaneous_change`
@@ -708,8 +712,9 @@ uncertainties:
     broader `Change` class itself was not mapped.
   impact: None of this crosswalk's mapping assertions rely on the broader `Change` class directly
     — only its `Instantaneous_change` subtype.
-  follow_up: No further action needed unless a future pass wants to map GFO:Change's extended-case
-    reading against DOLCE:Accomplishment specifically.
+  follow_up: 'Resolved: see `docs/crosswalks/concepts/change.md` for the extended-process reading.
+    Mapping GFO:Change''s extended-case reading against DOLCE:Accomplishment specifically remains
+    optional future work for that crosswalk, not this one.'
 references:
 - reference_id: xwkont:ref:bfo-2020
   short_label: Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021
@@ -773,6 +778,14 @@ review_history:
     change" and GFO''s `Change`/`Instantaneous_change` quotations against the fetched artifacts
     and found no transcription errors. Self-review performed at the maintainer''s explicit
     request, not independent third-party review.'
+- review_date: "2026-07-07"
+  outcome: Cross-reference update — no scope change
+  review_notes: 'Resolved `uncertainty-006` (session-044): the broader GFO `Change` class''s
+    extended-process reading, previously left deliberately unmapped by this crosswalk, is now
+    covered by the new `docs/crosswalks/concepts/change.md` crosswalk (`0.3.0` batch). This
+    crosswalk''s own `reviewed` content and mapping assertions (`event-005`, `event-006`) are
+    unchanged -- only the open-question record was closed with a pointer to where the remaining
+    territory is now addressed.'
 future_work:
 - ~~Read `xwkont:ref:bfo-2020` directly~~ — **done 2026-07-01**; found the crosswalk's original
   claim was too strong and corrected it (`uncertainty-001`).
@@ -785,8 +798,8 @@ future_work:
 - ~~Read DOLCE's WonderWeb D18 and UFO's 2021 paper directly~~ — **done 2026-07-01**, reusing
   extractions from `object.md`/`role.md`/`process.md`/`relation.md`/`continuant-occurrent.md`.
 - ~~Extend GFO/YAMATO/TUpper/GUM correspondences to this crosswalk~~ — **done 2026-07-02**
-  (ADR-0015 buildout, 3 of 8 crosswalks). Pending maintainer review (`uncertainty-005`/`uncertainty-006`
-  remain open).
+  (ADR-0015 buildout, 3 of 8 crosswalks). `uncertainty-006` resolved 2026-07-07 (session-044,
+  see `change.md`); `uncertainty-005` remains open.
 - Process concept crosswalk exists at `docs/crosswalks/concepts/process.md`.
 - Fetch YAMATO's OWL/Hozo files if the registration gate is completed, to move `event-007`/`event-008`
   off quotation-only citation (`uncertainty-005`).

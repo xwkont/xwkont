@@ -83,6 +83,89 @@ xwkont-core:Space a rdfs:Class, skos:Concept ;
     dcterms:relation "docs/crosswalks/concepts/space.md"@en ;
     skos:inScheme xwkont-core: .
 
+xwkont-core:Change a rdfs:Class, skos:Concept ;
+    rdfs:label "Change"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Change"@en ;
+    skos:definition "An entity considered for comparison as an alteration, transition, or difference an entity undergoes, contrasted with the entity's own persisting or unfolding through time."@en ;
+    skos:editorialNote "Candidate concept, modeled as a direct Entity subclass rather than under Continuant or Occurrent, since sources diverge on this classification: GFO's own Change class is owl:disjointWith its Process class, while SUMO's InternalChange is typically treated as a Process subtype."@en ;
+    dcterms:relation "docs/crosswalks/concepts/change.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Continuous a rdfs:Class, skos:Concept ;
+    rdfs:label "Continuous"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Continuous"@en ;
+    skos:definition "An entity considered for comparison as gapless, densely ordered, or without discrete boundaries between its parts or values, contrasted with the gap-having Discrete."@en ;
+    skos:editorialNote "Candidate concept, modeled as one of two sibling sub-concepts (with Discrete) as direct Entity subclasses per maintainer-confirmed modeling recommendation, reflecting GFO's own sibling-class split under its top-level Individual category."@en ;
+    dcterms:relation "docs/crosswalks/concepts/continuous-discrete.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Discrete a rdfs:Class, skos:Concept ;
+    rdfs:label "Discrete"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Discrete"@en ;
+    skos:definition "An entity considered for comparison as separated into distinct, countable, gap-bounded units or values, contrasted with the gapless Continuous."@en ;
+    skos:editorialNote "Candidate concept, modeled as one of two sibling sub-concepts (with Continuous) as direct Entity subclasses per maintainer-confirmed modeling recommendation, reflecting GFO's own sibling-class split under its top-level Individual category."@en ;
+    dcterms:relation "docs/crosswalks/concepts/continuous-discrete.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:OntologicalLevelStratum a rdfs:Class, skos:Concept ;
+    rdfs:label "Ontological Level / Stratum"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "Ontological Level / Stratum"@en ;
+    skos:altLabel "Ontological Layer"@en ;
+    skos:definition "An entity considered for comparison as a level, stratum, or layer used to classify other entities by kind of reality, such as material, mental, or social strata."@en ;
+    skos:editorialNote "Candidate concept, modeled as a direct Entity subclass and as a single umbrella class rather than split, since it is a meta-level classifier orthogonal to the Continuant/Occurrent split, paralleling Universal's direct-Entity-sibling treatment. Source: GFO's own Ontological_layer class (gfo-base.owl), which further splits into Stratum and Level branches not yet formalized here."@en ;
+    dcterms:relation "docs/crosswalks/concepts/ontological-level-stratum.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:ListSequence a rdfs:Class, skos:Concept ;
+    rdfs:label "List / Sequence"@en ;
+    rdfs:subClassOf xwkont-core:Entity ;
+    skos:prefLabel "List / Sequence"@en ;
+    skos:definition "An entity considered for comparison as an ordered collection whose members have an intrinsic sequence or position, such as a list or ordered set."@en ;
+    skos:editorialNote "Candidate concept, modeled as a direct Entity subclass rather than under Abstract or Continuant, since sources diverge on this classification: SUMO places List under its own Abstract, while GUM places OrderedObject under its own concrete DecomposableObject lineage."@en ;
+    dcterms:relation "docs/crosswalks/concepts/list-sequence.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:MindConsciousBeingAgent a rdfs:Class, skos:Concept ;
+    rdfs:label "Mind / Conscious Being / Agent"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Mind / Conscious Being / Agent"@en ;
+    skos:definition "A continuant considered for comparison as a mind, conscious being, or agent capable of cognition, intention, or autonomous action, contrasted with the more generic Object."@en ;
+    skos:editorialNote "Candidate concept, modeled as a sibling of Object under Continuant rather than a subclass of Object, reflecting a convergent cross-source pattern (SUMO's AutonomousAgent, DOLCE's Agentive Physical Object, YAMATO's weak agent) that specializes an object-like layer without being folded into it."@en ;
+    dcterms:relation "docs/crosswalks/concepts/mind-conscious-being-agent.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:NonPhysicalObject a rdfs:Class, skos:Concept ;
+    rdfs:label "Non-physical Object"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Non-physical Object"@en ;
+    skos:definition "A continuant considered for comparison as an endurant that is neither a physical object nor an amount of matter, such as a mental or social object."@en ;
+    skos:editorialNote "Candidate concept, modeled under Continuant as a single umbrella class only, not split into a separate Social Object branch, since DOLCE-Lite's own base module (the qualifying core-tier source) supports only the broader non-physical-object class; the Mental-Object/Social-Object leaf split lives only in DOLCE's DnS extension module, out of this placement's scope."@en ;
+    dcterms:relation "docs/crosswalks/concepts/non-physical-social-object.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Disposition a rdfs:Class, skos:Concept ;
+    rdfs:label "Disposition"@en ;
+    rdfs:subClassOf xwkont-core:Continuant ;
+    skos:prefLabel "Disposition"@en ;
+    skos:altLabel "Capacity"@en ;
+    skos:definition "A continuant considered for comparison as a tendency, capacity, or potential an entity has to behave or be realized in a certain way under certain conditions."@en ;
+    skos:editorialNote "Candidate concept, modeled as a sibling of Role under Continuant, following BFO's own treatment of disposition as a specifically dependent continuant. BFO's own Function subtype of disposition is not split out as a separate class here, since that subsumption is not yet cross-source-confirmed."@en ;
+    dcterms:relation "docs/crosswalks/concepts/disposition-capacity.md"@en ;
+    skos:inScheme xwkont-core: .
+
+xwkont-core:Modality a rdfs:Class, skos:Concept ;
+    rdfs:label "Modality"@en ;
+    rdfs:subClassOf xwkont-core:Quality ;
+    skos:prefLabel "Modality"@en ;
+    skos:definition "A quality considered for comparison as a way of qualifying necessity, possibility, or contingency, such as an alethic or deontic modal characteristic."@en ;
+    skos:editorialNote "Candidate concept, modeled under Quality following GUM's own direct structural treatment (ModalQuality as rdfs:subClassOf SimpleQuality), consistent with SUMO's AlethicAttribute."@en ;
+    dcterms:relation "docs/crosswalks/concepts/modality.md"@en ;
+    skos:inScheme xwkont-core: .
+
 xwkont-core:Object a rdfs:Class, skos:Concept ;
     rdfs:label "Object"@en ;
     rdfs:subClassOf xwkont-core:Continuant ;

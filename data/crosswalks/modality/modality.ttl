@@ -1,0 +1,72 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:modality:001> a sssom:Mapping ;
+    rdfs:comment "Both are explicit modal branches, but GUM models modality as a quality of processes while SUMO models it as an attribute of propositions. Same general semantic territory, different formal level."@en ;
+    sssom:confidence 8e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-AlethicAttribute ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:GUM-ModalQuality .
+
+<https://w3id.org/xwkont/id#mapping:modality:002> a sssom:Mapping ;
+    rdfs:comment "Both are ascription mechanisms attaching modal force to a bearer, but one is a class of property-ascription relations and the other is a binary predicate. Related, not equivalent."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-modalAttribute ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:GUM-ModalPropertyAscription .
+
+<https://w3id.org/xwkont/id#mapping:modality:003> a sssom:Mapping ;
+    rdfs:comment "Same lexical label, different formal kind and bearer level: GUM's `Possibility` is a process-quality class; SUMO's `Possibility` is an `AlethicAttribute` instance applying to propositions. Equivalence should not be asserted."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Possibility ;
+    sssom:subject_id xwkont-source-term:GUM-Possibility .
+
+<https://w3id.org/xwkont/id#mapping:modality:004> a sssom:Mapping ;
+    rdfs:comment "Same reason as `mapping-003`: same lexical label, different ontological kind and level."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:SUMO-Necessity ;
+    sssom:subject_id xwkont-source-term:GUM-Necessity .
+
+<https://w3id.org/xwkont/id#mapping:modality:005> a sssom:Mapping ;
+    rdfs:comment "Both encode possibility, but TUpper does so as a predicate over activity/occurrence structure, not as a quality class. The semantic overlap is real, but the formal kind differs."@en ;
+    sssom:confidence 4e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:TUpper-poss ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:GUM-Possibility .
+
+xwkont-source-term:GUM-ModalPropertyAscription rdfs:label "ModalPropertyAscription"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-ModalQuality rdfs:label "ModalQuality"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:GUM-Necessity rdfs:label "Necessity"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:SUMO-AlethicAttribute rdfs:label "AlethicAttribute"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:SUMO-Necessity rdfs:label "Necessity"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:SUMO-Possibility rdfs:label "Possibility"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:SUMO-modalAttribute rdfs:label "modalAttribute"@en ;
+    dcterms:source "SUMO" .
+
+xwkont-source-term:TUpper-poss rdfs:label "poss"@en ;
+    dcterms:source "TUpper" .
+
+xwkont-source-term:GUM-Possibility rdfs:label "Possibility"@en ;
+    dcterms:source "GUM" .
+

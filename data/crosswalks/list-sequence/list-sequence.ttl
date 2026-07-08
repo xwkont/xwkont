@@ -1,0 +1,21 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:list-sequence:001> a sssom:Mapping ;
+    rdfs:comment "Both are direct, reified ordered-collection apparatuses (SUMO's `List` under `Abstract`; GUM's `OrderedObject` under `DecomposableObject`), each with a narrower subtype forbidding/imposing an additional constraint (`UniqueList` forbids repeats; `OrderedSet` is a `UMSet` whose elements are ordered). `close-match`, not a stronger exact-equivalence claim, because the two sit in structurally different type hierarchies (SUMO's abstract/physical split vs. GUM's decomposable-object apparatus) and no source itself asserts an equivalence between them."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:GUM-OrderedObject_OrderedSet ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id xwkont-source-term:SUMO-List_UniqueList .
+
+xwkont-source-term:GUM-OrderedObject_OrderedSet rdfs:label "OrderedObject / OrderedSet"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:SUMO-List_UniqueList rdfs:label "List / UniqueList"@en ;
+    dcterms:source "SUMO" .
+

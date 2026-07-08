@@ -57,15 +57,15 @@
     sssom:subject_id xwkont-source-term:DOLCE-Temporal_region .
 
 <https://w3id.org/xwkont/id#mapping:time:008> a sssom:Mapping ;
-    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass)** — both are independent, sui-generis-flavored top-level categories not subsumed under either occurrent-like or continuant-like classes, but GFO's grounding is metaphysical (Brentano/Allen & Hayes) while GUM's is linguistic (Halliday & Matthiessen) — a difference in the *kind* of independence claimed, not just scope or axioms within a shared formal kind. `overlap` (\"partially intersect but neither subsumes the other,\" per `docs/methodology/crosswalk-methodology.md`) better reflects that than `close-match`."@en ;
-    sssom:confidence 4e-01 ;
+    rdfs:comment "**Downgraded from `close-match` (2026-07-04 review pass)** — both are independent, sui-generis-flavored top-level categories not subsumed under either occurrent-like or continuant-like classes, but GFO's grounding is metaphysical (Brentano/Allen & Hayes) while GUM's is linguistic (Halliday & Matthiessen) — a difference in the *kind* of independence claimed, not just scope or axioms within a shared formal kind. `overlap` (\"partially intersect but neither subsumes the other,\" per `docs/methodology/crosswalk-methodology.md`) better reflects that than `close-match`. `high` confidence in the `overlap` category: the grounding difference is directly stated in each source's own text, not an open sourcing question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GUM-TemporalObject ;
     sssom:subject_id xwkont-source-term:GFO-Temporal_region .
 
 <https://w3id.org/xwkont/id#mapping:time:009> a sssom:Mapping ;
-    rdfs:comment "Both treat time as a measured/graded quantity-like thing rather than an occurrent, but SUMO's framing is a universal-timeline quantity while GUM's is a clause-level aspectual category — related in spirit, not close enough in formal apparatus for `close-match`."@en ;
-    sssom:confidence 4e-01 ;
+    rdfs:comment "Both treat time as a measured/graded quantity-like thing rather than an occurrent, but SUMO's framing is a universal-timeline quantity while GUM's is a clause-level aspectual category — related in spirit, not close enough in formal apparatus for `close-match`. `high` confidence in the `related` category: this formal-apparatus divergence is directly evidenced by each source's own text, not an open sourcing question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:GUM-Time ;
     sssom:predicate_id skos:relatedMatch ;

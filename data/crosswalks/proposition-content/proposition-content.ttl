@@ -22,8 +22,8 @@
     sssom:subject_id xwkont-source-term:SUMO-Proposition .
 
 <https://w3id.org/xwkont/id#mapping:proposition-content:003> a sssom:Mapping ;
-    rdfs:comment "Same core distinction, but YAMATO's own further subdivision (representation-primary/-secondary, designed/product proposition) has no counterpart in DOLCE's single undifferentiated `proposition` class — not `high` for that reason."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Same core distinction between DOLCE's and YAMATO's Proposition, directly and confidently compared. YAMATO's own further subdivision (representation-primary/-secondary, designed/product proposition) has no counterpart in DOLCE's single undifferentiated `proposition` class — a confirmed structural fact about YAMATO's additional tier, not an open sourcing question about the core Proposition-to-Proposition match itself, which is directly and clearly evidenced."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:YAMATO-Proposition ;
     sssom:predicate_id skos:closeMatch ;

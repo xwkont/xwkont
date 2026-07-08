@@ -1,0 +1,618 @@
+local_identifier: xwkont:concept:non-physical-social-object
+slug: non-physical-social-object
+title: Non-physical / Social Object
+editorial_status: reviewed
+created: "2026-07-07"
+modified: "2026-07-07"
+scope_note: 'This crosswalk compares how the checked source ontologies model non-physical
+  bearer-level entities that are not physical objects or amounts of matter: DOLCE''s base-module
+  `non-physical-endurant` / `non-physical-object` branch, plus the closest non-physical or
+  object-adjacent analogs found in the other seven source ontologies.
+
+
+
+  DOLCE-Lite.owl is the only source that directly reifies the in-scope axis as a formal class
+  in its core module. Its base file defines `non-physical-endurant` and `non-physical-object`
+  directly, but not the classic DOLCE-family `Mental-Object` / `Social-Object` leaf split. That
+  social-object apparatus lives in other DOLCE-family artifacts already crosswalked elsewhere,
+  so this crosswalk cites those crosswalks by ID where relevant instead of re-deriving them.
+
+  UFO is a second, independently-confirmed source (found during review, not in the original
+  draft): its 2021 paper uses the identical phrase "non-physical endurants," with a worked
+  example, in a footnote on the constitution relation — not a reified class or formal definition,
+  but a direct terminological and conceptual match, not incidental word use.
+
+
+
+  Core.ttl placement is still an open review question for the eventual XwkOnt concept class.'
+labels:
+- role: XwkOnt working label
+  label: Non-physical / Social Object
+  label_source: XwkOnt
+  language: en
+  entry_notes: Working label for the non-physical bearer-level object axis.
+- role: Source term
+  label: non-physical-endurant
+  label_source: DOLCE
+  language: en
+  entry_notes: Core DOLCE branch root for the in-scope axis.
+- role: Source term
+  label: non-physical-object
+  label_source: DOLCE
+  language: en
+  entry_notes: Core DOLCE base-module child on that axis.
+- role: Source term
+  label: generically dependent continuant
+  label_source: BFO
+  language: en
+  entry_notes: Closest BFO-dependent non-physical branch.
+- role: Source term
+  label: immaterial entity
+  label_source: BFO
+  language: en
+  entry_notes: Additional BFO non-material hit, but not the same branch as GDC.
+- role: Source term
+  label: Abstract
+  label_source: SUMO
+  language: en
+  entry_notes: SUMO's broad non-physical bucket.
+- role: Source term
+  label: Proposition
+  label_source: SUMO
+  language: en
+  entry_notes: SUMO's abstract content-like subclass.
+- role: Source term
+  label: non-physical endurants
+  label_source: UFO
+  language: en
+  entry_notes: Informal footnote usage (not a reified class), identical phrase to DOLCE's own
+    branch root, with a worked example. Found during independent review, missed by the original
+    draft. Closest additional formal terms in the paper are Object, Relator, Mode, Quality.
+- role: Source term
+  label: '*(no dedicated non-physical/social-object class found; closest formal terms are
+    Material_object, Material_persistant, Mental_stratum, Social_stratum, Social_role, Relator)*'
+  label_source: GFO
+  language: en
+  entry_notes: GFO splits material objects from mental/social strata and roles, but not a
+    non-physical/social-object class.
+- role: Source term
+  label: informational object / representation
+  label_source: YAMATO
+  language: en
+  entry_notes: Section-level conceptual apparatus, not a reified source class in the fetchable
+    report.
+- role: Source term
+  label: object
+  label_source: TUpper
+  language: en
+  entry_notes: TUpper's broad object class.
+- role: Source term
+  label: SimpleThing
+  label_source: GUM
+  language: en
+  entry_notes: GUM's broad object-like top-level class.
+source_definitions:
+- source: DOLCE
+  term_or_identifier: non-physical-endurant
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An endurant with no mass, generically constantly depending on some agent. Non-physical
+    endurants can have physical constituents (e.g. in the case of members of a collection)."
+    The base file makes this the root of the non-physical endurant branch, with `rdfs:subClassOf
+    endurant`, `part only non-physical-endurant`, and `has-quality only abstract-quality`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '`DOLCE-Lite.owl`, `owl:Class#non-physical-endurant`, fetched and read directly
+    2026-07-07'
+  entry_notes: 'Corrected during independent review (2026-07-07): the draft''s original quotation
+    truncated this `rdfs:comment` to "An endurant with no mass," dropping the constant-dependence-on-an-agent
+    clause and the physical-constituents caveat — both restored here from the primary source.
+    `owl:disjointWith` is asserted on sibling classes rather than locally on this class: `physical-endurant`
+    is disjoint with `non-physical-endurant`, and `arbitrary-sum` is also disjoint with it.'
+- source: DOLCE
+  term_or_identifier: non-physical-object
+  dimension: both
+  source_claim_type: direct quotation
+  text: '"Formerly known as description." The class is a unitary endurant with no mass, generically
+    dependent on an agent and a communication act, and the file says that both descriptions
+    and concepts are non-physical objects. `rdfs:subClassOf non-physical-endurant`; `part
+    only non-physical-object`; `generically-dependent-on some physical-endurant`.'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  locator: '`DOLCE-Lite.owl`, `owl:Class#non-physical-object`, fetched and read directly 2026-07-07'
+  entry_notes: No further subclasses beneath `non-physical-object` were found in the base
+    module.
+- source: BFO
+  term_or_identifier: generically dependent continuant
+  dimension: technical
+  source_claim_type: paraphrase
+  text: An entity that exists because there is at least one copy whose content or pattern
+    can be shared with other copies. This is the closest BFO non-physical dependent branch
+    on the core-file side.
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '`bfo-core.ttl`, class `generically dependent continuant`, fetched and read directly
+    2026-07-07'
+  entry_notes: '`immaterial entity` is also present in the same file, but it is a different
+    class and not a social-object branch.'
+- source: BFO
+  term_or_identifier: immaterial entity
+  dimension: technical
+  source_claim_type: paraphrase
+  text: An independent continuant with no material entity as continuant part. This is a non-material
+    hit, but it is not the same modeling choice as DOLCE's non-physical bearer branch.
+  reference:
+  - xwkont:ref:bfo-2020
+  locator: '`bfo-core.ttl`, class `immaterial entity`, fetched and read directly 2026-07-07'
+  entry_notes: Relevant as a lexical hit only, not as a social-object analog.
+- source: SUMO
+  term_or_identifier: Abstract
+  dimension: technical
+  source_claim_type: paraphrase
+  text: SUMO puts `List`, `Proposition`, `Attribute`, `Relation`, and related content-like
+    classes on the abstract side of its `Entity` partition. That is the broad non-physical
+    bucket closest to this candidate.
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '`Merge.kif`, `Abstract`, fetched and read directly 2026-07-07'
+  entry_notes: Broad abstract branch, not a social-object hierarchy.
+- source: SUMO
+  term_or_identifier: Proposition
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"Propositions are Abstract entities that express a complete thought or a set of such
+    thoughts... A Proposition is an abstraction that may have multiple representations: strings,
+    sounds, icons, etc." This is the most content-like SUMO hit in the checked material, but
+    it is still propositional content rather than a bearer-level social object.'
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  locator: '`Merge.kif`, `Proposition`, fetched and read directly 2026-07-07'
+  entry_notes: 'Corrected during independent review (2026-07-07): the draft''s original text
+    ("An abstract entity that may have multiple representations") was a paraphrase mislabeled
+    as a direct quotation — restored to `Merge.kif`''s actual documentation string, including
+    the primary "complete thought" definition the paraphrase dropped. Useful as a nearby non-physical
+    analog, not as an exact object branch.'
+- source: UFO
+  term_or_identifier: non-physical endurants
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"We do admit, however, relations of constitution between non-physical endurants. For
+    example, a software program is constituted by software code, not identical to it."'
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: complete extracted paper text reused from the 2026-07-06 extraction (footnote 8,
+    in the constitution-relation discussion); live fetch attempts in this session were blocked
+    by HTTP 403
+  entry_notes: 'Found during independent review (2026-07-07), missed entirely by the Codex
+    draft, which claimed "the searched text does not introduce a dedicated non-physical/social-object
+    class" without having actually located this passage. UFO does not reify "non-physical
+    endurant" as its own formal class or give it a dedicated definition the way DOLCE does
+    — it appears only in this one footnote, in service of an argument about the constitution
+    relation''s asymmetry — but it is a direct, literal use of the identical phrase DOLCE uses
+    for its own branch root, with a worked example (a software program constituted by, but
+    not identical to, its software code) that is itself a plausible non-physical-object instance.
+    This is the strongest textual hit of any of the 7 non-DOLCE sources checked.'
+- source: UFO
+  term_or_identifier: Object / Relator / Mode / Quality
+  dimension: both
+  source_claim_type: editorial observation
+  text: The paper builds a four-category ontology with object types, moments, and abstract
+    particulars. Beyond the "non-physical endurants" footnote above, the searched text does
+    not introduce a further dedicated non-physical/social-object class; the closest additional
+    formal terms are `Object`, `Relator`, `Mode`, and `Quality`, plus the theoretical phrase
+    `abstract particulars`.
+  reference:
+  - xwkont:ref:ufo-2021
+  locator: complete extracted paper text reused from the 2026-07-06 extraction; live fetch
+    attempts in this session were blocked by HTTP 403
+  entry_notes: Formal class-level hit, but not on the requested object/social-object axis.
+- source: GFO
+  term_or_identifier: Material_object / Material_persistant / Social_stratum / Social_role
+  dimension: both
+  source_claim_type: paraphrase
+  text: '`gfo-base.owl` reifies a material-object branch and a separate mental/social stratum
+    apparatus, but no dedicated non-physical/social-object class. `Material_persistant` says
+    these are the entities sometimes called continuants or objects; social and mental content
+    is handled via `Social_stratum`, `Mental_stratum`, `Social_role`, and `Relator`.'
+  reference:
+  - xwkont:ref:gfo
+  locator: '`modules/gfo-base.owl`, fetched and read directly 2026-07-07'
+  entry_notes: Reified classes are present, but not the requested bearer-level non-physical/social-object
+    branch.
+- source: YAMATO
+  term_or_identifier: informational object / representation
+  dimension: both
+  source_claim_type: paraphrase
+  text: The report has a dedicated section on informational objects and another on representation.
+    It treats them as content-bearing things and distinguishes representation from representing
+    thing, but the fetchable report does not reify a dedicated social-object class.
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  locator: '`YAMATO101216.txt`, fetched and read directly 2026-07-07'
+  entry_notes: Section-level conceptual apparatus only.
+- source: TUpper
+  term_or_identifier: object
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An object is anything that is not a timepoint, nor an activity nor an activity-occurrence."
+    The prose also says objects can be concrete or abstract things that participate in an
+    activity.'
+  reference:
+  - xwkont:ref:tupper-colore
+  locator: '`TUpper-Terms.html`, fetched and read directly 2026-07-07'
+  entry_notes: Broad object class, not a social-object branch.
+- source: GUM
+  term_or_identifier: SimpleThing
+  dimension: technical
+  source_claim_type: direct quotation
+  text: '"An entity which may participate in a configuration." GUM''s object-like top level
+    is a linguistic `SimpleThing` / `Process` split, not a non-physical/social-object hierarchy.'
+  reference:
+  - xwkont:ref:gum-owl
+  locator: '`GUM-31.owl.txt`, class `SimpleThing`, fetched and read directly 2026-07-07'
+  entry_notes: Broad object-like class, but linguistically motivated.
+correspondences:
+- correspondence_id: xwkont:correspondence:non-physical-social-object:001
+  source_ontology: DOLCE
+  source_term: non-physical-endurant / non-physical-object
+  source_identifier_or_iri: '`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#non-physical-endurant`
+    / `http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#non-physical-object`'
+  source_version: '397'
+  reference:
+  - xwkont:ref:dolce-lite-owl
+  inclusion_rationale: This is the only source that directly reifies the in-scope axis in
+    its base module. `non-physical-endurant` is the branch root, and `non-physical-object`
+    is the only base-module child found there.
+- correspondence_id: xwkont:correspondence:non-physical-social-object:002
+  source_ontology: BFO
+  source_term: generically dependent continuant / immaterial entity
+  source_identifier_or_iri: '`BFO_0000031` / `BFO_0000141`'
+  source_version: BFO 2020
+  reference:
+  - xwkont:ref:bfo-2020
+  inclusion_rationale: BFO's closest non-physical territory, but it is broader and not object/social-object
+    specific. Corrected during independent review (2026-07-07) — the draft's original IRI for
+    "immaterial entity" (`BFO_0000142`) is actually `bfo-core.ttl`'s "fiat line" class; "immaterial
+    entity" is `BFO_0000141`.
+- correspondence_id: xwkont:correspondence:non-physical-social-object:003
+  source_ontology: SUMO
+  source_term: Abstract / Proposition
+  source_identifier_or_iri: '`Abstract` / `Proposition`'
+  source_version: FOIS 2001 / current `Merge.kif`
+  reference:
+  - xwkont:ref:sumo-niles-pease-2001
+  inclusion_rationale: SUMO routes non-physical content into an abstract branch, with Proposition
+    as its most content-like subclass.
+- correspondence_id: xwkont:correspondence:non-physical-social-object:004
+  source_ontology: UFO
+  source_term: non-physical endurants
+  source_identifier_or_iri: not applicable — informal footnote usage, not a reified class or
+    IRI
+  source_version: UFO 2021 paper
+  reference:
+  - xwkont:ref:ufo-2021
+  inclusion_rationale: 'Corrected during independent review (2026-07-07): the draft''s original
+    row recorded "not applicable" here, having missed a direct hit. UFO''s own paper uses the
+    identical phrase "non-physical endurants," with a worked example, in a footnote on the
+    constitution relation — not a reified class, but a real terminological and conceptual match,
+    the strongest of any non-DOLCE source checked. The paper''s broader object/moment/abstract-particular
+    apparatus remains relevant background but is not itself the primary hit.'
+- correspondence_id: xwkont:correspondence:non-physical-social-object:005
+  source_ontology: GFO
+  source_term: '*(no dedicated non-physical/social-object class found)*'
+  source_identifier_or_iri: not applicable
+  source_version: GFO 2024-11-18 release
+  reference:
+  - xwkont:ref:gfo
+  inclusion_rationale: GFO separates material objects from social/mental strata and roles,
+    but not into a non-physical/social-object class.
+- correspondence_id: xwkont:correspondence:non-physical-social-object:006
+  source_ontology: YAMATO
+  source_term: informational object / representation
+  source_identifier_or_iri: not applicable
+  source_version: 2010-12-16 report
+  reference:
+  - xwkont:ref:yamato-mizoguchi-2010
+  inclusion_rationale: YAMATO discusses the territory conceptually, but the fetchable report
+    does not reify a dedicated class.
+- correspondence_id: xwkont:correspondence:non-physical-social-object:007
+  source_ontology: TUpper
+  source_term: object
+  source_identifier_or_iri: object
+  source_version: TUpper COLORE formalization
+  reference:
+  - xwkont:ref:tupper-colore
+  inclusion_rationale: A broad object class that includes abstract things, but not a dedicated
+    social-object branch.
+- correspondence_id: xwkont:correspondence:non-physical-social-object:008
+  source_ontology: GUM
+  source_term: SimpleThing
+  source_identifier_or_iri: http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing
+  source_version: GUM 3.1
+  reference:
+  - xwkont:ref:gum-owl
+  inclusion_rationale: GUM's broad object-like top-level class is the nearest formal hit,
+    but it is linguistically motivated and not a non-physical/social-object branch.
+comparison_notes:
+- note_id: note-001
+  dimension: technical
+  claim_type: editorial observation
+  note: 'DOLCE-Lite.owl is the only checked base module that directly reifies the non-physical
+    endurant/object axis in the requested sense. The file''s internal structure is shallow:
+    `non-physical-endurant` is the branch root, and `non-physical-object` is its only base-module
+    child.'
+  supporting_references:
+  - xwkont:ref:dolce-lite-owl
+  confidence: high
+- note_id: note-002
+  dimension: technical
+  claim_type: editorial observation
+  note: The classic DOLCE social-object leaf split is not in `DOLCE-Lite.owl` itself. That
+    matters because this draft is deliberately anchored to the base module only; the extension
+    material that introduces `Mental-Object` / `Social-Object` is already crosswalked elsewhere
+    and should stay cited there.
+  supporting_references:
+  - xwkont:ref:dolce-lite-owl
+  confidence: high
+  supporting_references_note: '`xwkont:ref:dolce-lite-owl`, docs/crosswalks/concepts/situation-state-of-affairs.md,
+    docs/crosswalks/concepts/role.md, docs/crosswalks/concepts/information-artifact.md'
+- note_id: note-003
+  dimension: technical
+  claim_type: editorial observation
+  note: BFO, SUMO, TUpper, and GUM all have broad object or content branches that can host
+    non-physical entities, but none of them reifies a DOLCE-style non-physical/social-object
+    hierarchy. Their best hits are broader than the candidate, not exact peers.
+  supporting_references:
+  - xwkont:ref:bfo-2020
+  - xwkont:ref:sumo-niles-pease-2001
+  - xwkont:ref:tupper-colore
+  - xwkont:ref:gum-owl
+  confidence: medium-high
+- note_id: note-004
+  dimension: both
+  claim_type: editorial observation
+  note: 'Corrected during independent review (2026-07-07): UFO''s own paper explicitly uses
+    the phrase "non-physical endurants" (footnote 8, constitution-relation discussion), with
+    a worked example (a software program constituted by, but not identical to, its software
+    code) — this is a genuine second source for the candidate, not merely nearby background,
+    even though UFO does not reify the phrase as its own formal class or definition the way
+    DOLCE does. The paper''s broader four-category apparatus (objects, moments, abstract particulars)
+    remains relevant structural context but is secondary to this direct textual hit.'
+  supporting_references:
+  - xwkont:ref:ufo-2021
+  confidence: medium
+- note_id: note-005
+  dimension: technical
+  claim_type: editorial observation
+  note: 'GFO splits the territory differently: material objects on one side, and mental/social
+    strata plus roles on the other. That gives it social vocabulary, but not a social-object
+    branch.'
+  supporting_references:
+  - xwkont:ref:gfo
+  confidence: medium-high
+- note_id: note-006
+  dimension: technical
+  claim_type: editorial observation
+  note: YAMATO's treatment of informational objects is explicitly about representation and
+    content-bearing things, not a bearer-level social-object class. The report is useful as
+    a conceptual analog, but it is prose-level rather than reified in the fetched artifact.
+  supporting_references:
+  - xwkont:ref:yamato-mizoguchi-2010
+  confidence: medium
+mapping_assertions:
+- mapping_id: xwkont:mapping:non-physical-social-object:001
+  subject: DOLCE:non-physical-endurant
+  relation_category: broader-than
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: The source term names the whole non-physical endurant branch, which is broader
+    than the candidate's object/social-object reading.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  predicate_id: skos:broadMatch
+- mapping_id: xwkont:mapping:non-physical-social-object:002
+  subject: DOLCE:non-physical-object
+  relation_category: close-match
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: This is the closest DOLCE base-module anchor, but it is still description/concept-centered
+    and lacks the classic social-object leaf split inside the base file.
+  provenance:
+  - xwkont:ref:dolce-lite-owl
+  predicate_id: skos:closeMatch
+- mapping_id: xwkont:mapping:non-physical-social-object:003
+  subject: BFO:generically dependent continuant
+  relation_category: broader-than
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low-medium
+  rationale: BFO's branch is broader and departs from object/social-object modeling, but it
+    is still the closest non-physical dependent-continuant hit in the core file.
+  provenance:
+  - xwkont:ref:bfo-2020
+  predicate_id: skos:broadMatch
+- mapping_id: xwkont:mapping:non-physical-social-object:004
+  subject: SUMO:Abstract / Proposition
+  relation_category: broader-than
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: SUMO routes non-physical content into an abstract branch; that branch is broader
+    than the candidate and not object/social-object specific.
+  provenance:
+  - xwkont:ref:sumo-niles-pease-2001
+  predicate_id: skos:broadMatch
+- mapping_id: xwkont:mapping:non-physical-social-object:005
+  subject: UFO:non-physical endurants
+  relation_category: related
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: medium
+  rationale: 'Corrected during independent review (2026-07-07), raised from `unknown`/low:
+    UFO''s paper uses the identical phrase "non-physical endurants" (footnote 8) with a worked
+    example, a direct terminological and conceptual match — but not `close-match`, since UFO
+    does not reify the phrase as its own class, definition, or formal branch the way DOLCE
+    does; it appears only in service of an argument about the constitution relation.'
+  provenance:
+  - xwkont:ref:ufo-2021
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:non-physical-social-object:006
+  subject: GFO:Material_object / Material_persistant / Social_stratum / Social_role
+  relation_category: unknown
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: GFO has social vocabulary and a material-object branch, but no dedicated non-physical/social-object
+    class in the checked base module.
+  provenance:
+  - xwkont:ref:gfo
+- mapping_id: xwkont:mapping:non-physical-social-object:007
+  subject: YAMATO:informational object / representation
+  relation_category: related
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: YAMATO's content-bearing representation theory is adjacent to the candidate,
+    but the evidence is conceptual prose rather than a reified class.
+  provenance:
+  - xwkont:ref:yamato-mizoguchi-2010
+  predicate_id: skos:relatedMatch
+- mapping_id: xwkont:mapping:non-physical-social-object:008
+  subject: TUpper:object
+  relation_category: broader-than
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: TUpper's `object` is intentionally broad enough to include abstract things; that
+    makes it broader than the candidate, not a social-object branch.
+  provenance:
+  - xwkont:ref:tupper-colore
+  predicate_id: skos:broadMatch
+- mapping_id: xwkont:mapping:non-physical-social-object:009
+  subject: GUM:SimpleThing
+  relation_category: broader-than
+  object: xwkont-core:NonPhysicalSocialObject (candidate)
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: low
+  rationale: GUM's object-like top-level class is broader than the candidate and shaped by
+    linguistic realization, not by a social-object ontology.
+  provenance:
+  - xwkont:ref:gum-owl
+  predicate_id: skos:broadMatch
+mapping_assertions_note: Per `ADR-0009`, each mapping records a `predicate_id` (SSSOM/SKOS
+  predicate, or none for XwkOnt-only categories) and a `mapping_justification` (SEMAPV term,
+  e.g. `semapv:ManualMappingCuration`) in addition to the free-text rationale.
+uncertainties:
+- item_id: uncertainty-001
+  uncertainty_type: open-question
+  resolved: false
+  description: Should XwkOnt eventually model this as one umbrella class or as a split between
+    a non-physical-object branch and a separate social-object branch? DOLCE-Lite.owl itself
+    only supports the first half in its base module.
+  impact: Blocks final core.ttl placement.
+  follow_up: Confirm at review time; do not collapse the missing DOLCE-family social-object
+    leaves into the base-module evidence.
+- item_id: uncertainty-002
+  uncertainty_type: non-equivalence
+  resolved: false
+  description: The classic DOLCE `Mental-Object` / `Social-Object` / `Agentive-Social-Object`
+    / `Non-Agentive-Social-Object` tree is not defined in `DOLCE-Lite.owl`. That tree belongs
+    to other DOLCE-family artifacts already crosswalked elsewhere.
+  impact: Prevents re-deriving the extension-module findings inside this draft.
+  follow_up: Keep citing the existing crosswalk IDs when those artifacts are relevant.
+- item_id: uncertainty-003
+  uncertainty_type: uncertainty
+  resolved: false
+  description: BFO, SUMO, GFO, YAMATO, TUpper, and GUM each provide a nearest hit, but most
+    are broader or structurally different rather than exact peers. UFO is the exception, found
+    during review — it uses the identical phrase "non-physical endurants," but only informally
+    (a footnote, not a reified class), so it is recorded at `related`/medium confidence rather
+    than `close-match`.
+  impact: Keeps the mapping categories conservative for 6 of the 7 non-DOLCE sources; UFO is
+    the strongest secondary hit.
+  follow_up: Revisit only if a later source or extension module reifies a more precise non-physical/social-object
+    class, or if UFO's own OWL/gUFO artifacts (not consulted here) formalize this footnote
+    usage.
+- item_id: uncertainty-004
+  uncertainty_type: open-question
+  resolved: false
+  description: '`xwkont-core:NonPhysicalSocialObject` does not yet exist in `data/ontology/core.ttl`.'
+  impact: Core placement remains unresolved.
+  follow_up: Decide only when this crosswalk reaches review.
+references:
+- reference_id: xwkont:ref:dolce-lite-owl
+  short_label: DOLCE-Lite OWL translation
+  verification_note: verified directly against `DOLCE-Lite.owl`, 2026-07-07
+- reference_id: xwkont:ref:bfo-2020
+  short_label: Basic Formal Ontology (BFO) 2020
+  verification_note: verified directly against `bfo-core.ttl`, 2026-07-07
+- reference_id: xwkont:ref:sumo-niles-pease-2001
+  short_label: Towards a Standard Upper Ontology
+  verification_note: verified directly against `Merge.kif`, 2026-07-07
+- reference_id: xwkont:ref:ufo-2021
+  short_label: 'UFO: Unified Foundational Ontology'
+  verification_note: verified directly against a complete paper-text extraction already present
+    on disk; this session's live fetch attempts returned HTTP 403, 2026-07-07
+- reference_id: xwkont:ref:gfo
+  short_label: General Formal Ontology (GFO)
+  verification_note: verified directly against `modules/gfo-base.owl`, 2026-07-07
+- reference_id: xwkont:ref:yamato-mizoguchi-2010
+  short_label: 'YAMATO: Yet Another More Advanced Top-level Ontology'
+  verification_note: verified directly against `YAMATO101216.txt`, 2026-07-07
+- reference_id: xwkont:ref:tupper-colore
+  short_label: TUpper COLORE formalization
+  verification_note: verified directly against `TUpper-Terms.html`, 2026-07-07
+- reference_id: xwkont:ref:gum-owl
+  short_label: GUM 3.1 OWL
+  verification_note: verified directly against `GUM-31.owl.txt`, 2026-07-07
+review_history:
+- review_date: "2026-07-07"
+  outcome: '*(unreviewed)*'
+  review_notes: Draft created (Codex, GPT-5.4-Mini, Extra-High) after direct primary-source
+    verification of DOLCE-Lite.owl and full-text searches of the other seven sources.
+- review_date: "2026-07-07"
+  outcome: reviewed
+  review_notes: 'Independently re-verified against all 8 primary sources (session-048). Three
+    defects found and corrected: (1) the DOLCE `non-physical-endurant` `rdfs:comment` quotation
+    was truncated, dropping the constant-dependence-on-an-agent clause and the physical-constituents
+    caveat; (2) the BFO correspondence table cited `BFO_0000142` for "immaterial entity" —
+    that IRI is actually "fiat line" in `bfo-core.ttl`; the correct IRI is `BFO_0000141`; (3)
+    SUMO''s `Proposition` row was labeled `direct quotation` but contained a paraphrase, missing
+    the primary "complete thought" definition. A genuine second source was also found, missed
+    entirely by the original draft: UFO''s 2021 paper uses the identical phrase "non-physical
+    endurants" (footnote 8, constitution-relation discussion) with a worked example — not a
+    reified class, but a direct terminological/conceptual hit, added as correspondence `004`
+    and mapping `005` at `related`/medium confidence. GFO''s absence finding (`Material_object`/`Material_persistant`/`Social_stratum`/`Social_role`
+    present, no dedicated non-physical/social-object class) was independently re-confirmed
+    directly against `modules/gfo-base.owl`. GUM''s `SimpleThing` quotation and IRI were confirmed
+    exact. TUpper''s `object` quotation was confirmed exact (reusing the prior verified quote
+    already on record in `xwkont:ref:tupper-colore`). YAMATO''s paraphrase-level absence claim
+    was not independently re-fetched this pass; treat as consistent with, but not independently
+    re-confirmed against, prior crosswalks'' own YAMATO findings. Advanced directly to `reviewed`
+    per the reviewed-eligibility criterion: DOLCE-Lite.owl is DOLCE''s own base module, an authoritative
+    core source for `non-physical-endurant`/`non-physical-object`.'
+future_work:
+- Confirm whether the XwkOnt core should keep this as a single umbrella concept or split off
+  a separate social-object follow-up.
+- If the maintainer wants the classic DOLCE social-object leaves documented in this concept
+  family, fetch and cite the extension artifact there rather than reusing the base-module
+  file.
+- Revisit the broad-analog sources only if a later artifact reifies a closer non-physical/social-object
+  branch.
+- YAMATO's absence finding (informational object / representation, no dedicated social-object
+  class) was not independently re-fetched during the session-048 review pass — carried from
+  the Codex draft. A future pass should re-fetch `YAMATO101216.pdf` directly to confirm.
+- UFO's gUFO/OWL artifacts (not consulted in this crosswalk, which used only the 2021 paper's
+  extracted text) may formalize the "non-physical endurants" footnote as an actual class —
+  worth checking if gUFO is ever added as its own independently-cited source.

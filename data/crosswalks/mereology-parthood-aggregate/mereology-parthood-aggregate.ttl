@@ -14,8 +14,8 @@
     sssom:subject_id xwkont-source-term:BFO-Object_aggregate .
 
 <https://w3id.org/xwkont/id#mapping:mereology-parthood-aggregate:002> a sssom:Mapping ;
-    rdfs:comment "Both permit a criterion-free, membership-changeable sum — DOLCE's \"no unity criterion... extensional\" and SUMO's \"members can be added and subtracted without thereby changing the identity\" describe the same permissive pattern. Not `high` because DOLCE's own framing (mereological sum, \"extensional\") and SUMO's (spacetime-located, Class-contrasted) emphasize different aspects of the same underlying idea."@en ;
-    sssom:confidence 8e-01 ;
+    rdfs:comment "Both permit a criterion-free, membership-changeable sum — DOLCE's \"no unity criterion... extensional\" and SUMO's \"members can be added and subtracted without thereby changing the identity\" describe the same permissive pattern. DOLCE's own framing (mereological sum, \"extensional\") and SUMO's (spacetime-located, Class-contrasted) emphasize different aspects of the same underlying idea — a confidently-identified nuance in framing, directly evidenced by each source's own text, not an open sourcing question."@en ;
+    sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:SUMO-Collection ;
     sssom:predicate_id skos:closeMatch ;

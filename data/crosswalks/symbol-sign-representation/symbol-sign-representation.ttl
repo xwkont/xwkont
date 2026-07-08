@@ -1,0 +1,31 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
+
+<https://w3id.org/xwkont/id#mapping:symbol-sign-representation:001> a sssom:Mapping ;
+    rdfs:comment "GFO formalizes symbol structure as a type-level category; that overlaps the candidate concept's symbol/sign vehicle scope, but the kind mismatch keeps this short of close-match."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-SymbolSignRepresentation ;
+    sssom:subject_id xwkont-source-term:GFO-Symbol_structure .
+
+<https://w3id.org/xwkont/id#mapping:symbol-sign-representation:002> a sssom:Mapping ;
+    rdfs:comment "All four terms are relation-types, the same kind of thing `information-artifact.md` lists `Symbolization`/`Signification` as considered and rejected for its own scope. `Name` and `NameEvent` are excluded from this mapping — see `uncertainty-006`."@en ;
+    sssom:confidence 6e-01 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-SymbolSignRepresentation ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id xwkont-source-term:GUM-NameOf_NameRelation_Symbolization_Signification .
+
+xwkont-source-term:GFO-Symbol_structure rdfs:label "Symbol_structure"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GUM-NameOf_NameRelation_Symbolization_Signification rdfs:label "NameOf / NameRelation / Symbolization / Signification"@en ;
+    dcterms:source "GUM" .
+
+xwkont-source-term:xwkont-core-SymbolSignRepresentation rdfs:label "SymbolSignRepresentation"@en ;
+    dcterms:source "xwkont-core" .
+
