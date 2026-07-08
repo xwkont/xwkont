@@ -1,8 +1,23 @@
 # Changelog
 
-<!-- updated at: 2026-07-08 02:15 Z   (2026-07-07 22:15 EDT) -->
+<!-- updated at: 2026-07-08 03:50 Z   (2026-07-07 23:50 EDT) -->
 
 All notable changes to XwkOnt are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [0.3.1] - 2026-07-08
+
+Tagged `ontology-core-v0.3.1`. Corrections and clarifications to `0.3.0`-era content; no new concepts, no `core.ttl` schema changes.
+
+### Fixed
+
+- Scrubbed five dangling `_private/`-path/`SESSION-NNN` citations left in synced or sync-adjacent docs (`space.yaml`, `disposition-capacity.yaml`, `crosswalk-runbook.md`, plus two caught in `change.yaml`/`continuous-discrete.yaml` left over from unsynced work).
+- Added GUM `Name` as new evidence to `information-artifact.md` and GUM `NameEvent`'s `Configuration` branch to `event.md`, resolving `symbol-sign-representation.md`'s two previously-unchecked Future Work items. Both crosswalks keep `editorial_status: reviewed`.
+- Independently re-verified four carried-over UFO/YAMATO absence-recheck claims (`change.md`, `continuous-discrete.md`, `list-sequence.md`, `non-physical-social-object.md`), confirming every one against fresh or cached primary-source extractions.
+- Fixed a naming-drift bug in `non-physical-social-object.md` and `continuous-discrete.md`, whose mapping rows referenced `core.ttl` class names (`NonPhysicalSocialObject`, `ContinuousDiscrete`) that were never actually placed — corrected to the real placed classes (`NonPhysicalObject`, and a `Continuous`/`Discrete` split respectively).
+
+### Added
+
+- Closed glossary entries (`docs/ontology/core-glossary.md`) for all 20 `core.ttl` classes added across the `0.2.0` and `0.3.0` batches, deferred at both original placement passes.
 
 ## [0.3.0] - 2026-07-07
 
