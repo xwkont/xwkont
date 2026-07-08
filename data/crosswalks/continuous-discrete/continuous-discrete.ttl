@@ -6,26 +6,40 @@
 @prefix xwkont-source-term: <https://w3id.org/xwkont/source-term#> .
 
 <https://w3id.org/xwkont/id#mapping:continuous-discrete:001> a sssom:Mapping ;
-    rdfs:comment "GFO directly reifies the split under `Individual`, which is exactly the concept this crosswalk is tracking."@en ;
+    rdfs:comment "Split 2026-07-08 (session-052) from a single row that had lumped GFO's Continuous/Discrete/Discrete_presential family against a placeholder 'ContinuousDiscrete' candidate that predated core.ttl's actual paired-split placement (session-050). GFO directly reifies `Continuous` as the `Individual`-side complement of `Discrete`, exactly the concept `xwkont-core:Continuous` is tracking."@en ;
     sssom:confidence 1e+00 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
-    sssom:object_id xwkont-source-term:xwkont-core-ContinuousDiscrete_candidate ;
+    sssom:object_id xwkont-source-term:xwkont-core-Continuous ;
     sssom:predicate_id skos:exactMatch ;
-    sssom:subject_id xwkont-source-term:GFO-Continuous_Discrete_Discrete_presential .
+    sssom:subject_id xwkont-source-term:GFO-Continuous .
 
-<https://w3id.org/xwkont/id#mapping:continuous-discrete:007> a sssom:Mapping ;
-    rdfs:comment "Reified hit, but activity-specific and one-sided; not enough to establish the general axis."@en ;
+<https://w3id.org/xwkont/id#mapping:continuous-discrete:002> a sssom:Mapping ;
+    rdfs:comment "Split 2026-07-08 (session-052) from the same original row as `mapping-001`. GFO directly reifies `Discrete` under `Individual`, exactly the concept `xwkont-core:Discrete` is tracking; `Discrete_presential` is a further presential-side specialization of `Discrete`, not a separate axis."@en ;
+    sssom:confidence 1e+00 ;
+    sssom:mapping_justification "semapv:ManualMappingCuration" ;
+    sssom:object_id xwkont-source-term:xwkont-core-Discrete ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:subject_id xwkont-source-term:GFO-Discrete_Discrete_presential .
+
+<https://w3id.org/xwkont/id#mapping:continuous-discrete:008> a sssom:Mapping ;
+    rdfs:comment "Reified hit, but activity-specific and one-sided; not enough to establish a general correspondence. TUpper's `atomic` is discrete-side vocabulary only -- unlike the other absence rows, this one is not axis-wide, so it maps against `xwkont-core:Discrete` alone, not the full `Continuous`/`Discrete` pair."@en ;
     sssom:confidence 2e-01 ;
     sssom:mapping_justification "semapv:ManualMappingCuration" ;
     sssom:object_id xwkont-source-term:TUpper-atomic ;
-    sssom:subject_id xwkont-source-term:xwkont-core-ContinuousDiscrete_candidate .
+    sssom:subject_id xwkont-source-term:xwkont-core-Discrete .
 
-xwkont-source-term:GFO-Continuous_Discrete_Discrete_presential rdfs:label "Continuous / Discrete / Discrete_presential"@en ;
+xwkont-source-term:GFO-Continuous rdfs:label "Continuous"@en ;
+    dcterms:source "GFO" .
+
+xwkont-source-term:GFO-Discrete_Discrete_presential rdfs:label "Discrete / Discrete_presential"@en ;
     dcterms:source "GFO" .
 
 xwkont-source-term:TUpper-atomic rdfs:label "atomic"@en ;
     dcterms:source "TUpper" .
 
-xwkont-source-term:xwkont-core-ContinuousDiscrete_candidate rdfs:label "ContinuousDiscrete (candidate)"@en ;
+xwkont-source-term:xwkont-core-Continuous rdfs:label "Continuous"@en ;
+    dcterms:source "xwkont-core" .
+
+xwkont-source-term:xwkont-core-Discrete rdfs:label "Discrete"@en ;
     dcterms:source "xwkont-core" .
 

@@ -3,7 +3,7 @@ slug: continuous-discrete
 title: Continuous vs. Discrete
 editorial_status: reviewed
 created: "2026-07-07"
-modified: "2026-07-07"
+modified: "2026-07-08"
 scope_note: 'This candidate is about GFO''s reified `Continuous` / `Discrete` split over `Individual`,
   with `Discrete_presential` as the presential-side branch on that axis. It is not about the
   already-covered source-side axioms in `quantity-amount-of-matter.md` (`Amount_of_substrate`
@@ -312,49 +312,69 @@ comparison_notes:
   confidence: medium-high
 mapping_assertions:
 - mapping_id: xwkont:mapping:continuous-discrete:001
-  subject: GFO:Continuous / Discrete / Discrete_presential
+  subject: GFO:Continuous
   relation_category: exact-equivalence-candidate
-  object: xwkont-core:ContinuousDiscrete (candidate)
+  object: xwkont-core:Continuous
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: high
-  rationale: GFO directly reifies the split under `Individual`, which is exactly the concept
-    this crosswalk is tracking.
+  rationale: 'Split 2026-07-08 (session-052) from a single row that had lumped GFO''s Continuous/Discrete/Discrete_presential
+    family against a placeholder ''ContinuousDiscrete'' candidate that predated core.ttl''s
+    actual paired-split placement (session-050). GFO directly reifies `Continuous` as the
+    `Individual`-side complement of `Discrete`, exactly the concept `xwkont-core:Continuous`
+    is tracking.'
   provenance:
   - xwkont:ref:gfo
   predicate_id: skos:exactMatch
 - mapping_id: xwkont:mapping:continuous-discrete:002
-  subject: xwkont-core:ContinuousDiscrete (candidate)
+  subject: GFO:Discrete / Discrete_presential
+  relation_category: exact-equivalence-candidate
+  object: xwkont-core:Discrete
+  mapping_justification: semapv:ManualMappingCuration
+  status: candidate
+  confidence: high
+  rationale: 'Split 2026-07-08 (session-052) from the same original row as `mapping-001`.
+    GFO directly reifies `Discrete` under `Individual`, exactly the concept `xwkont-core:Discrete`
+    is tracking; `Discrete_presential` is a further presential-side specialization of `Discrete`,
+    not a separate axis.'
+  provenance:
+  - xwkont:ref:gfo
+  predicate_id: skos:exactMatch
+- mapping_id: xwkont:mapping:continuous-discrete:003
+  subject: xwkont-core:Continuous / xwkont-core:Discrete
   relation_category: unknown
   object: BFO
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
-  rationale: Only incidental continuous wording in unrelated class elucidations.
+  rationale: Only incidental continuous wording in unrelated class elucidations; the absence
+    is axis-wide, not differentiated by pole.
   provenance:
   - xwkont:ref:bfo-2020
-- mapping_id: xwkont:mapping:continuous-discrete:003
-  subject: xwkont-core:ContinuousDiscrete (candidate)
+- mapping_id: xwkont:mapping:continuous-discrete:004
+  subject: xwkont-core:Continuous / xwkont-core:Discrete
   relation_category: unknown
   object: DOLCE
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
-  rationale: Only atomic/granularity wording, not a reified split.
+  rationale: Only atomic/granularity wording, not a reified split; the absence is axis-wide,
+    not differentiated by pole.
   provenance:
   - xwkont:ref:dolce-lite-owl
-- mapping_id: xwkont:mapping:continuous-discrete:004
-  subject: xwkont-core:ContinuousDiscrete (candidate)
+- mapping_id: xwkont:mapping:continuous-discrete:005
+  subject: xwkont-core:Continuous / xwkont-core:Discrete
   relation_category: unknown
   object: SUMO
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
-  rationale: Continuous/discrete wording occurs only inside unrelated classes and prose.
+  rationale: Continuous/discrete wording occurs only inside unrelated classes and prose; the
+    absence is axis-wide, not differentiated by pole.
   provenance:
   - xwkont:ref:sumo-niles-pease-2001
-- mapping_id: xwkont:mapping:continuous-discrete:005
-  subject: xwkont-core:ContinuousDiscrete (candidate)
+- mapping_id: xwkont:mapping:continuous-discrete:006
+  subject: xwkont-core:Continuous / xwkont-core:Discrete
   relation_category: unknown
   object: UFO
   mapping_justification: semapv:ManualMappingCuration
@@ -362,32 +382,36 @@ mapping_assertions:
   confidence: low
   rationale: 'Confirmed absence (resolved 2026-07-07, session-051): full-text search of a
     complete paper extraction found only one informal "continuous" occurrence and zero
-    "discrete"/"atomic"/"granular" hits; see `uncertainty-003`.'
+    "discrete"/"atomic"/"granular" hits; see `uncertainty-003`. The absence is axis-wide,
+    not differentiated by pole.'
   provenance:
   - xwkont:ref:ufo-2021
-- mapping_id: xwkont:mapping:continuous-discrete:006
-  subject: xwkont-core:ContinuousDiscrete (candidate)
+- mapping_id: xwkont:mapping:continuous-discrete:007
+  subject: xwkont-core:Continuous / xwkont-core:Discrete
   relation_category: unknown
   object: YAMATO
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
-  rationale: Only prose-level continuous/granular wording.
+  rationale: Only prose-level continuous/granular wording; the absence is axis-wide, not
+    differentiated by pole.
   provenance:
   - xwkont:ref:yamato-mizoguchi-2010
-- mapping_id: xwkont:mapping:continuous-discrete:007
-  subject: xwkont-core:ContinuousDiscrete (candidate)
+- mapping_id: xwkont:mapping:continuous-discrete:008
+  subject: xwkont-core:Discrete
   relation_category: unknown
   object: TUpper:atomic
   mapping_justification: semapv:ManualMappingCuration
   status: candidate
   confidence: low
-  rationale: Reified hit, but activity-specific and one-sided; not enough to establish the
-    general axis.
+  rationale: Reified hit, but activity-specific and one-sided; not enough to establish a
+    general correspondence. TUpper's `atomic` is discrete-side vocabulary only -- unlike the
+    other absence rows, this one is not axis-wide, so it maps against `xwkont-core:Discrete`
+    alone, not the full `Continuous`/`Discrete` pair.
   provenance:
   - xwkont:ref:tupper-colore
-- mapping_id: xwkont:mapping:continuous-discrete:008
-  subject: xwkont-core:ContinuousDiscrete (candidate)
+- mapping_id: xwkont:mapping:continuous-discrete:009
+  subject: xwkont-core:Continuous / xwkont-core:Discrete
   relation_category: unknown
   object: GUM
   mapping_justification: semapv:ManualMappingCuration
@@ -414,7 +438,8 @@ uncertainties:
     two sibling classes under `Individual`, plus `Discrete_presential` on the discrete/presential
     side.
   impact: Blocks final core.ttl placement; does not block the crosswalk research itself.
-  follow_up: Resolved -- no further action needed.
+  follow_up: Resolved -- no further action needed. A follow-on drift was found and fixed
+    2026-07-08 (session-052) -- see `uncertainty-004`.
 - item_id: uncertainty-002
   uncertainty_type: non-equivalence
   resolved: false
@@ -441,6 +466,32 @@ uncertainties:
     vocabulary across the whole paper was possible.
   impact: UFO's row in this crosswalk should read as an open verification gap, not a confirmed
     absence, until a future pass gets real access to the paper text.
+  follow_up: Resolved -- no further action needed.
+- item_id: uncertainty-004
+  uncertainty_type: uncertainty
+  resolved: true
+  resolved_date: "2026-07-08"
+  resolution_note: 'Resolved 2026-07-08 (session-052): this crosswalk''s own `mapping_assertions`
+    still referenced a stale `xwkont-core:ContinuousDiscrete (candidate)` placeholder after
+    `uncertainty-001`''s paired-split placement landed in `core.ttl` (session-050) -- a naming
+    drift, flagged but not fixed at the time (session-051''s summary). `mapping-001` (GFO''s
+    combined `Continuous`/`Discrete`/`Discrete_presential` row) split into two: `mapping-001`
+    (GFO:Continuous to xwkont-core:Continuous) and `mapping-002` (GFO:Discrete/Discrete_presential
+    to xwkont-core:Discrete), using evidence already fully documented in this file''s own
+    Source Definitions -- no new research needed. The seven axis-wide absence rows (BFO,
+    DOLCE, SUMO, UFO, YAMATO, GUM, renumbered `003`-`007`/`009`) were renamed to reference
+    both classes plainly (`xwkont-core:Continuous / xwkont-core:Discrete`) rather than split
+    into per-pole rows, since none of those absence findings differentiate between poles --
+    splitting them would have doubled the row count without adding real information. TUpper''s
+    `atomic` row (renumbered `008`) was corrected to map against `xwkont-core:Discrete` alone,
+    since `atomic` is discrete-side vocabulary only, not an axis-wide absence like the other
+    six.'
+  description: This crosswalk's own `mapping_assertions` subject/object fields referenced
+    `xwkont-core:ContinuousDiscrete (candidate)`, a class name that was never actually placed
+    in `core.ttl` -- `core.ttl` has two classes (`Continuous`/`Discrete`) instead, per
+    `uncertainty-001`'s own resolution.
+  impact: Mapping rows pointed at a nonexistent core.ttl class name, a real (if minor) data-integrity
+    defect in an already-`reviewed` crosswalk.
   follow_up: Resolved -- no further action needed.
 references:
 - reference_id: xwkont:ref:gfo
@@ -504,12 +555,25 @@ review_history:
     from open verification gap to confirmed absence. Also recorded `uncertainty-001`''s
     resolution here for traceability (already decided in `core.ttl` by session-050: paired
     `Continuous`/`Discrete` split). `editorial_status` remains `reviewed`.'
+- review_date: "2026-07-08"
+  outcome: Cross-reference update — mapping placeholder drift fixed, no editorial_status change
+  review_notes: 'Resolved `uncertainty-004`: `mapping_assertions`'' subject/object fields still
+    referenced a stale `xwkont-core:ContinuousDiscrete (candidate)` placeholder after
+    `uncertainty-001`''s paired-split placement landed in `core.ttl`. `mapping-001` split into
+    `mapping-001`/`mapping-002` (GFO:Continuous/GFO:Discrete against their respective
+    `xwkont-core:` classes, using already-documented Source Definitions evidence, no new
+    research); the seven axis-wide absence rows renamed to reference both classes plainly;
+    TUpper''s `atomic` row corrected to map against `xwkont-core:Discrete` alone, since it is
+    discrete-side-only evidence, not an axis-wide absence. `editorial_status` remains
+    `reviewed`.'
 future_work:
 - '~~Decide whether `xwkont-core:ContinuousDiscrete` should be added as a single umbrella class
   or as a paired class structure under `Individual`~~ — **done 2026-07-07** (session-050):
   added as a paired split, `Continuous`/`Discrete` (`uncertainty-001` resolved).'
-- If the maintainer wants the source-side GFO axis reflected more literally, decide whether
-  the candidate should name the axis or the individual poles first.
+- '~~If the maintainer wants the source-side GFO axis reflected more literally, decide whether
+  the candidate should name the axis or the individual poles first~~ — **done 2026-07-08**
+  (session-052): mapping rows now name the individual poles (`xwkont-core:Continuous`/`xwkont-core:Discrete`)
+  directly, matching `core.ttl`''s actual paired-class placement (`uncertainty-004` resolved).'
 - Recheck TUpper only if a future pass finds an entity-level continuous/discrete counterpart
   rather than the current activity-specific `atomic` hit.
 - '~~Recheck UFO''s full paper text for continuous/discrete/atomic/granular vocabulary once an
