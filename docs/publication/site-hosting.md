@@ -37,7 +37,9 @@ No `gh-pages` branch is used.
 
 ## Relationship to Explore visualizations
 
-The [Explore](../explore/index.md) section renders interactive coverage and mapping views from JSON generated at build time (`scripts/generate-explore-data.py`). Those views are projections only; they do not replace Markdown/YAML editorial artifacts.
+The [Explore](../explore/index.md) section renders interactive coverage, mapping, word-cloud, and core-hierarchy views from JSON generated at build time (`scripts/generate-explore-data.py`). Those views are projections only; they do not replace Markdown/YAML editorial artifacts.
+
+GitHub Pages caches `extra_javascript` assets for about ten minutes. When Explore gains a new mount point, **rename** the script file referenced from `mkdocs.yml` (for example `xwk-explore.js` → `xwk-explore.2.js`) so browsers do not keep a stale bundle that never initializes the new page and leaves it stuck on “Loading…”.
 
 ## Relationship to w3id
 

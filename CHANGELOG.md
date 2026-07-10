@@ -12,6 +12,10 @@ All notable changes to XwkOnt are documented here. Format follows [Keep a Change
 
 - Explore **concept word cloud** sized by mapping/correspondence evidence ([docs/explore/cloud.md](docs/explore/cloud.md)).
 
+### Fixed
+
+- Cache-bust Explore script filename (`xwk-explore.2.js`) so new mounts (word cloud, etc.) are not left on “Loading…” behind a stale cached bundle.
+
 ## [0.3.2] - 2026-07-10
 
 Tagged `ontology-core-v0.3.2`. Post-`0.3.0` stabilize and public-site milestone: no new reviewed crosswalks and no `core.ttl` class changes. Skips `0.3.1` as a live tag number because that name was retracted (see note above). The `0.4.0` concept batch is **selected only** here — drafting remains future work.
