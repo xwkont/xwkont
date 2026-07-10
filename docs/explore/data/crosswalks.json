@@ -1,0 +1,4267 @@
+{
+  "concept_count": 26,
+  "concepts": [
+    {
+      "correspondence_count": 6,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:abstract-concrete:001",
+          "identifier": "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#abstract",
+          "ontology": "DOLCE",
+          "term": "Abstract"
+        },
+        {
+          "id": "xwkont:correspondence:abstract-concrete:002",
+          "identifier": "`Abstract` (SUMO term names are their own identifiers)",
+          "ontology": "SUMO",
+          "term": "Abstract"
+        },
+        {
+          "id": "xwkont:correspondence:abstract-concrete:003",
+          "identifier": "`https://w3id.org/gfo/base/Abstract`, `/Concrete`",
+          "ontology": "GFO",
+          "term": "Abstract (+ Concrete)"
+        },
+        {
+          "id": "xwkont:correspondence:abstract-concrete:004",
+          "identifier": "not applicable \u2014 informal prose category, no IRI scheme found for YAMATO's own vocabulary",
+          "ontology": "YAMATO",
+          "term": "Abstract (+ semi-abstract)"
+        },
+        {
+          "id": "xwkont:correspondence:abstract-concrete:005",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Abstraction",
+          "ontology": "GUM",
+          "term": "Abstraction"
+        },
+        {
+          "id": "xwkont:correspondence:abstract-concrete:006",
+          "identifier": "`BFO_0000031` (noted for contrast only, not recorded as a correspondence)",
+          "ontology": "BFO",
+          "term": "*(none \u2014 generically dependent continuant noted as related, not equivalent)*"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:abstract-concrete:001",
+          "object": "SUMO:Abstract",
+          "object_ontology": "SUMO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Abstract",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:abstract-concrete:002",
+          "object": "GFO:Abstract",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Abstract",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:abstract-concrete:003",
+          "object": "GFO:Abstract",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "SUMO:Abstract",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:abstract-concrete:004",
+          "object": "GUM:Abstraction",
+          "object_ontology": "GUM",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GFO:Abstract",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:abstract-concrete:005",
+          "object": "DOLCE:Abstract",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "YAMATO:Abstract",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:abstract-concrete:006",
+          "object": "*(no counterpart in any other of the 8 sources)*",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "YAMATO:semi-abstract",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:abstract-concrete:007",
+          "object": "BFO:Generically dependent continuant",
+          "object_ontology": "BFO",
+          "predicate": "skos:relatedMatch",
+          "relation": "explicit-non-equivalence",
+          "subject": "xwkont-core:Abstract (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:abstract-concrete:008",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Abstract (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:abstract-concrete:009",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Abstract (candidate)",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "GFO",
+        "YAMATO",
+        "GUM"
+      ],
+      "slug": "abstract-concrete",
+      "status": "reviewed",
+      "title": "Abstract vs. Concrete"
+    },
+    {
+      "correspondence_count": 5,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:boundary-site:001",
+          "identifier": "`BFO_0000140`, `BFO_0000147`, `BFO_0000142`, `BFO_0000146`",
+          "ontology": "BFO",
+          "term": "Continuant fiat boundary (+ fiat point, fiat line, fiat surface)"
+        },
+        {
+          "id": "xwkont:correspondence:boundary-site:002",
+          "identifier": "BFO_0000029",
+          "ontology": "BFO",
+          "term": "Site"
+        },
+        {
+          "id": "xwkont:correspondence:boundary-site:003",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#feature`, `#relevant-part`, `#dependent-place`",
+          "ontology": "DOLCE",
+          "term": "Feature (+ relevant-part, dependent-place)"
+        },
+        {
+          "id": "xwkont:correspondence:boundary-site:004",
+          "identifier": "https://w3id.org/gfo/base/Material_boundary",
+          "ontology": "GFO",
+          "term": "Material_boundary"
+        },
+        {
+          "id": "xwkont:correspondence:boundary-site:005",
+          "identifier": "not applicable \u2014 TUpper/PSL term names are their own identifiers",
+          "ontology": "TUpper",
+          "term": "Edge (+ ridge, border, outer)"
+        }
+      ],
+      "mapping_count": 8,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:boundary-site:001",
+          "object": "DOLCE:Relevant-part",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Fiat surface (+ fiat line)",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:boundary-site:002",
+          "object": "DOLCE:Dependent-place",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Site",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low-medium",
+          "id": "xwkont:mapping:boundary-site:003",
+          "object": "GFO:Material_boundary",
+          "object_ontology": "GFO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Continuant fiat boundary",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:boundary-site:004",
+          "object": "TUpper:edge/ridge/border/outer",
+          "object_ontology": "TUpper",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Fiat point/line/surface",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:boundary-site:005",
+          "object": "SUMO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Boundary (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:boundary-site:006",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Boundary (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:boundary-site:007",
+          "object": "YAMATO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Boundary (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:boundary-site:008",
+          "object": "GUM",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Boundary (candidate)",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "GFO",
+        "TUpper"
+      ],
+      "slug": "boundary-site",
+      "status": "reviewed",
+      "title": "Boundary / Site"
+    },
+    {
+      "correspondence_count": 8,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:change:001",
+          "identifier": "`https://w3id.org/gfo/base/Change`, `https://w3id.org/gfo/base/Continuous_change`, `https://w3id.org/gfo/base/Intrinsic_change`, `https://w3id.org/gfo/base/Extrinsic_change`",
+          "ontology": "GFO",
+          "term": "Change / Continuous_change / Intrinsic_change / Extrinsic_change"
+        },
+        {
+          "id": "xwkont:correspondence:change:002",
+          "identifier": "`InternalChange` / `StateChange`",
+          "ontology": "SUMO",
+          "term": "InternalChange / StateChange"
+        },
+        {
+          "id": "xwkont:correspondence:change:003",
+          "identifier": "none",
+          "ontology": "BFO",
+          "term": "*(no dedicated change class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:change:004",
+          "identifier": "none",
+          "ontology": "DOLCE",
+          "term": "*(no dedicated change class found; change language only)*"
+        },
+        {
+          "id": "xwkont:correspondence:change:005",
+          "identifier": "none",
+          "ontology": "UFO",
+          "term": "*(no dedicated change class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:change:006",
+          "identifier": "none",
+          "ontology": "YAMATO",
+          "term": "*(no dedicated change class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:change:007",
+          "identifier": "none",
+          "ontology": "TUpper",
+          "term": "*(no dedicated change class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:change:008",
+          "identifier": "none",
+          "ontology": "GUM",
+          "term": "*(no dedicated change class found)*"
+        }
+      ],
+      "mapping_count": 1,
+      "mappings": [
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:change:001",
+          "object": "SUMO:InternalChange",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "related",
+          "subject": "GFO:Continuous_change",
+          "subject_ontology": "GFO"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "change",
+      "status": "reviewed",
+      "title": "Change"
+    },
+    {
+      "correspondence_count": 16,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:001",
+          "identifier": "BFO_0000002",
+          "ontology": "BFO",
+          "term": "continuant"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:002",
+          "identifier": "BFO_0000003",
+          "ontology": "BFO",
+          "term": "occurrent"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:003",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant` (confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE",
+          "term": "endurant"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:004",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant` (confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE",
+          "term": "perdurant"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:005",
+          "identifier": "not applicable \u2014 UFO's 2021 paper is natural-language prose with no IRI scheme of its own; gUFO (a derived OWL implementation) has IRIs but is not treated as identical to UFO's own theoretical claims, per `xwkont:ref:ufo-2021`'s Source Relation Notes",
+          "ontology": "UFO",
+          "term": "endurant"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:006",
+          "identifier": "not applicable \u2014 same as row 005",
+          "ontology": "UFO",
+          "term": "perdurant / event"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:007",
+          "identifier": "`Object` (SUMO/SUO-KIF has no separate opaque identifier scheme \u2014 the term name itself, as it appears in `Merge.kif`, is the identifier)",
+          "ontology": "SUMO",
+          "term": "Object"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:008",
+          "identifier": "`Process` (same identifier convention as row 007)",
+          "ontology": "SUMO",
+          "term": "Process"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:009",
+          "identifier": "https://w3id.org/gfo/base/Presential",
+          "ontology": "GFO",
+          "term": "Presential"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:010",
+          "identifier": "https://w3id.org/gfo/base/Occurrent",
+          "ontology": "GFO",
+          "term": "Occurrent"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:011",
+          "identifier": "not applicable \u2014 the 2010 technical report has no OWL IRI scheme; YAMATO's OWL files exist but were not fetched in this pass (registration-gated download, see `xwkont:ref:yamato-mizoguchi-2010`)",
+          "ontology": "YAMATO",
+          "term": "Continuant(Object)"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:012",
+          "identifier": "not applicable \u2014 same as row 011",
+          "ontology": "YAMATO",
+          "term": "Occurrent(Process)"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:013",
+          "identifier": "`object` (TUpper/COLORE term name, as it appears in `TUpper-Terms.html` and the CLIF/OWL files \u2014 no opaque identifier scheme, similar in convention to SUMO's `Merge.kif` terms)",
+          "ontology": "TUpper",
+          "term": "object"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:014",
+          "identifier": "`activity_occurrence` (same identifier convention as row 013)",
+          "ontology": "TUpper",
+          "term": "activity_occurrence"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:015",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing",
+          "ontology": "GUM",
+          "term": "SimpleThing"
+        },
+        {
+          "id": "xwkont:correspondence:continuant-occurrent:016",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process",
+          "ontology": "GUM",
+          "term": "Process"
+        }
+      ],
+      "mapping_count": 15,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuant-occurrent:001",
+          "object": "DOLCE:endurant",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:continuant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuant-occurrent:002",
+          "object": "DOLCE:perdurant",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:occurrent",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuant-occurrent:003",
+          "object": "UFO:endurant",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:continuant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuant-occurrent:004",
+          "object": "UFO:perdurant/event",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:occurrent",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuant-occurrent:005",
+          "object": "UFO:endurant",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:endurant",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuant-occurrent:006",
+          "object": "SUMO:Object",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:continuant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuant-occurrent:007",
+          "object": "SUMO:Process",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:occurrent",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:continuant-occurrent:008",
+          "object": "GFO:Presential",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:continuant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuant-occurrent:009",
+          "object": "GFO:Occurrent",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:occurrent",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuant-occurrent:010",
+          "object": "YAMATO:Continuant(Object)",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:continuant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuant-occurrent:011",
+          "object": "YAMATO:Occurrent(Process)",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:occurrent",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuant-occurrent:012",
+          "object": "TUpper:object",
+          "object_ontology": "TUpper",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:continuant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuant-occurrent:013",
+          "object": "TUpper:activity_occurrence",
+          "object_ontology": "TUpper",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:occurrent",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuant-occurrent:014",
+          "object": "GUM:SimpleThing",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:continuant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuant-occurrent:015",
+          "object": "GUM:Process",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:occurrent",
+          "subject_ontology": "BFO"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "continuant-occurrent",
+      "status": "reviewed",
+      "title": "Continuant / Occurrent"
+    },
+    {
+      "correspondence_count": 8,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:continuous-discrete:001",
+          "identifier": "`https://w3id.org/gfo/base/Continuous`, `https://w3id.org/gfo/base/Discrete`, `https://w3id.org/gfo/base/Discrete_presential`",
+          "ontology": "GFO",
+          "term": "Continuous / Discrete / Discrete_presential"
+        },
+        {
+          "id": "xwkont:correspondence:continuous-discrete:002",
+          "identifier": "not applicable",
+          "ontology": "BFO",
+          "term": "*(no dedicated continuous/discrete class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:continuous-discrete:003",
+          "identifier": "not applicable",
+          "ontology": "DOLCE",
+          "term": "*(no dedicated continuous/discrete class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:continuous-discrete:004",
+          "identifier": "not applicable",
+          "ontology": "SUMO",
+          "term": "*(no dedicated continuous/discrete class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:continuous-discrete:005",
+          "identifier": "not applicable",
+          "ontology": "UFO",
+          "term": "*(no dedicated continuous/discrete class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:continuous-discrete:006",
+          "identifier": "not applicable",
+          "ontology": "YAMATO",
+          "term": "*(no dedicated continuous/discrete class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:continuous-discrete:007",
+          "identifier": "atomic",
+          "ontology": "TUpper",
+          "term": "atomic"
+        },
+        {
+          "id": "xwkont:correspondence:continuous-discrete:008",
+          "identifier": "not applicable",
+          "ontology": "GUM",
+          "term": "*(no relevant hit found)*"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuous-discrete:001",
+          "object": "xwkont-core:Continuous",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:exactMatch",
+          "relation": "exact-equivalence-candidate",
+          "subject": "GFO:Continuous",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:continuous-discrete:002",
+          "object": "xwkont-core:Discrete",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:exactMatch",
+          "relation": "exact-equivalence-candidate",
+          "subject": "GFO:Discrete / Discrete_presential",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuous-discrete:003",
+          "object": "BFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Continuous / xwkont-core:Discrete",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuous-discrete:004",
+          "object": "DOLCE",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Continuous / xwkont-core:Discrete",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuous-discrete:005",
+          "object": "SUMO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Continuous / xwkont-core:Discrete",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuous-discrete:006",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Continuous / xwkont-core:Discrete",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuous-discrete:007",
+          "object": "YAMATO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Continuous / xwkont-core:Discrete",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuous-discrete:008",
+          "object": "TUpper:atomic",
+          "object_ontology": "TUpper",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Discrete",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:continuous-discrete:009",
+          "object": "GUM",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Continuous / xwkont-core:Discrete",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "continuous-discrete",
+      "status": "reviewed",
+      "title": "Continuous vs. Discrete"
+    },
+    {
+      "correspondence_count": 9,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:disposition-capacity:001",
+          "identifier": "BFO_0000016",
+          "ontology": "BFO",
+          "term": "disposition"
+        },
+        {
+          "id": "xwkont:correspondence:disposition-capacity:002",
+          "identifier": "BFO_0000034",
+          "ontology": "BFO",
+          "term": "function"
+        },
+        {
+          "id": "xwkont:correspondence:disposition-capacity:003",
+          "identifier": "https://w3id.org/gfo/base/Function",
+          "ontology": "GFO",
+          "term": "Function"
+        },
+        {
+          "id": "xwkont:correspondence:disposition-capacity:004",
+          "identifier": "not applicable -- UFO has no IRI scheme; proxy terms are `ontouml:mode`, `ontouml:intrinsicModeNature`, and `ontouml:extrinsicModeNature`",
+          "ontology": "UFO (OntoUML proxy)",
+          "term": "mode"
+        },
+        {
+          "id": "xwkont:correspondence:disposition-capacity:005",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Ability",
+          "ontology": "GUM",
+          "term": "Ability"
+        },
+        {
+          "id": "xwkont:correspondence:disposition-capacity:006",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralPossibility",
+          "ontology": "GUM",
+          "term": "GeneralPossibility"
+        },
+        {
+          "id": "xwkont:correspondence:disposition-capacity:007",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Intention",
+          "ontology": "GUM",
+          "term": "Intention"
+        },
+        {
+          "id": "xwkont:correspondence:disposition-capacity:008",
+          "identifier": "Procedure",
+          "ontology": "SUMO",
+          "term": "Procedure"
+        },
+        {
+          "id": "xwkont:correspondence:disposition-capacity:009",
+          "identifier": "not applicable -- YAMATO's own paper explicitly excludes a compliant functional ontology from YAMATO itself (see Source Definitions)",
+          "ontology": "YAMATO",
+          "term": "function"
+        }
+      ],
+      "mapping_count": 7,
+      "mappings": [
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:disposition-capacity:001",
+          "object": "GFO:Function",
+          "object_ontology": "GFO",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "BFO:function",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:disposition-capacity:002",
+          "object": "UFO:mode (OntoUML proxy)",
+          "object_ontology": "UFO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:disposition",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:disposition-capacity:003",
+          "object": "GUM:Ability",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:disposition",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:disposition-capacity:004",
+          "object": "GUM:GeneralPossibility",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:disposition",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:disposition-capacity:005",
+          "object": "GUM:Intention",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "BFO:disposition",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:disposition-capacity:006",
+          "object": "SUMO:Procedure",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "BFO:function",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:disposition-capacity:007",
+          "object": "YAMATO:function",
+          "object_ontology": "YAMATO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "BFO:function",
+          "subject_ontology": "BFO"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "SUMO",
+        "GFO",
+        "YAMATO",
+        "GUM",
+        "UFO (OntoUML proxy)"
+      ],
+      "slug": "disposition-capacity",
+      "status": "reviewed",
+      "title": "Disposition / Capacity"
+    },
+    {
+      "correspondence_count": 11,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:event:001",
+          "identifier": "BFO_0000015",
+          "ontology": "BFO",
+          "term": "Process"
+        },
+        {
+          "id": "xwkont:correspondence:event:002",
+          "identifier": "BFO_0000035",
+          "ontology": "BFO",
+          "term": "Process Boundary"
+        },
+        {
+          "id": "xwkont:correspondence:event:003",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#event`, `#achievement`, `#accomplishment` (confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE",
+          "term": "Event (Achievement/Accomplishment)"
+        },
+        {
+          "id": "xwkont:correspondence:event:004",
+          "identifier": "not applicable \u2014 UFO's 2021 paper has no IRI scheme of its own; see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat",
+          "ontology": "UFO",
+          "term": "Event"
+        },
+        {
+          "id": "xwkont:correspondence:event:005",
+          "identifier": "`IntentionalProcess` / `LifeEvent` (SUMO/SUO-KIF has no separate opaque identifier scheme; not independently confirmed against `Merge.kif` in this pass \u2014 see Uncertainty)",
+          "ontology": "SUMO",
+          "term": "IntentionalProcess / LifeEvent"
+        },
+        {
+          "id": "xwkont:correspondence:event:006",
+          "identifier": "https://w3id.org/gfo/base/Change",
+          "ontology": "GFO",
+          "term": "Change"
+        },
+        {
+          "id": "xwkont:correspondence:event:007",
+          "identifier": "https://w3id.org/gfo/base/Instantaneous_change",
+          "ontology": "GFO",
+          "term": "Instantaneous change"
+        },
+        {
+          "id": "xwkont:correspondence:event:008",
+          "identifier": "not applicable \u2014 registration-gated OWL/Hozo download not fetched; cited by quotation from the 2010 technical report, not by IRI",
+          "ontology": "YAMATO",
+          "term": "Event (as distinguished from Process)"
+        },
+        {
+          "id": "xwkont:correspondence:event:009",
+          "identifier": "not applicable \u2014 PSL/COLORE CLIF has no opaque identifier scheme; term name is the identifier",
+          "ontology": "TUpper",
+          "term": "activity_occurrence"
+        },
+        {
+          "id": "xwkont:correspondence:event:010",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process",
+          "ontology": "GUM",
+          "term": "Process"
+        },
+        {
+          "id": "xwkont:correspondence:event:011",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Configuration",
+          "ontology": "GUM",
+          "term": "Configuration (NameEvent's ancestor branch)"
+        }
+      ],
+      "mapping_count": 11,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:event:001",
+          "object": "UFO:Event",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Event",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:event:002",
+          "object": "DOLCE:Event",
+          "object_ontology": "DOLCE",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Process",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:event:003",
+          "object": "DOLCE:Achievement",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Process Boundary",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:event:004",
+          "object": "SUMO:IntentionalProcess/LifeEvent",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "UFO:Event",
+          "subject_ontology": "UFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:event:005",
+          "object": "DOLCE:Achievement",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GFO:Instantaneous_change",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:event:006",
+          "object": "BFO:Process Boundary",
+          "object_ontology": "BFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GFO:Instantaneous_change",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:event:007",
+          "object": "DOLCE:Event",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "YAMATO:Event",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:event:008",
+          "object": "UFO:Event",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "YAMATO:Event",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:event:009",
+          "object": "Event (general)",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "TUpper:activity_occurrence",
+          "subject_ontology": "TUpper"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:event:010",
+          "object": "Event (general)",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "GUM:Process",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "low-medium",
+          "id": "xwkont:mapping:event:011",
+          "object": "Event (general)",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "related",
+          "subject": "GUM:Configuration",
+          "subject_ontology": "GUM"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "event",
+      "status": "reviewed",
+      "title": "Event"
+    },
+    {
+      "correspondence_count": 5,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:information-artifact:001",
+          "identifier": "`IAO_0000030` (confirmed directly against `iao.owl`, 2026-07-01)",
+          "ontology": "BFO (IAO extension)",
+          "term": "Information Content Entity"
+        },
+        {
+          "id": "xwkont:correspondence:information-artifact:002",
+          "identifier": "`http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject` (confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE (DUL)",
+          "term": "Information Object"
+        },
+        {
+          "id": "xwkont:correspondence:information-artifact:003",
+          "identifier": "`ContentBearingPhysical` / `ContentBearingObject` (SUMO/SUO-KIF has no separate opaque identifier scheme \u2014 the term name itself is the identifier)",
+          "ontology": "SUMO",
+          "term": "ContentBearingObject / ContentBearingPhysical"
+        },
+        {
+          "id": "xwkont:correspondence:information-artifact:004",
+          "identifier": "not applicable \u2014 registration-gated OWL/Hozo download not fetched; cited by quotation from the 2010 technical report, not by IRI",
+          "ontology": "YAMATO",
+          "term": "Representation (Representing thing)"
+        },
+        {
+          "id": "xwkont:correspondence:information-artifact:005",
+          "identifier": "`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Name` (confirmed directly against `GUM-31.owl.txt`, 2026-07-07)",
+          "ontology": "GUM",
+          "term": "Name"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:information-artifact:001",
+          "object": "DOLCE(DUL):Information Object",
+          "object_ontology": "DOLCE(DUL)",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO(IAO):Information Content Entity",
+          "subject_ontology": "BFO(IAO)"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:information-artifact:002",
+          "object": "SUMO:ContentBearingPhysical",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO(IAO):Information Content Entity",
+          "subject_ontology": "BFO(IAO)"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:information-artifact:003",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:InformationArtifact",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:information-artifact:004",
+          "object": "YAMATO:Representation",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO(IAO):Information Content Entity",
+          "subject_ontology": "BFO(IAO)"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:information-artifact:005",
+          "object": "YAMATO:Representation",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE(DUL):Information Object",
+          "subject_ontology": "DOLCE(DUL)"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:information-artifact:006",
+          "object": "GFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:InformationArtifact",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:information-artifact:007",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:InformationArtifact",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:information-artifact:008",
+          "object": "GUM",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:InformationArtifact",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low-medium",
+          "id": "xwkont:mapping:information-artifact:009",
+          "object": "GUM:Name",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "related",
+          "subject": "BFO(IAO):Information Content Entity",
+          "subject_ontology": "BFO(IAO)"
+        }
+      ],
+      "ontologies": [
+        "SUMO",
+        "YAMATO",
+        "GUM",
+        "DOLCE (DUL)",
+        "BFO (IAO extension)"
+      ],
+      "slug": "information-artifact",
+      "status": "reviewed",
+      "title": "Information Artifact"
+    },
+    {
+      "correspondence_count": 8,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:list-sequence:001",
+          "identifier": "`List`, `UniqueList`",
+          "ontology": "SUMO",
+          "term": "List / UniqueList"
+        },
+        {
+          "id": "xwkont:correspondence:list-sequence:002",
+          "identifier": "`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#OrderedObject`, `#OrderedSet`",
+          "ontology": "GUM",
+          "term": "OrderedObject / OrderedSet"
+        },
+        {
+          "id": "xwkont:correspondence:list-sequence:003",
+          "identifier": "none",
+          "ontology": "GFO",
+          "term": "*(no dedicated ordered-collection class found; symbol-vehicle sequence only)*"
+        },
+        {
+          "id": "xwkont:correspondence:list-sequence:004",
+          "identifier": "none",
+          "ontology": "BFO",
+          "term": "*(no dedicated ordered-collection class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:list-sequence:005",
+          "identifier": "none",
+          "ontology": "DOLCE",
+          "term": "*(no dedicated ordered-collection class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:list-sequence:006",
+          "identifier": "none",
+          "ontology": "YAMATO",
+          "term": "*(no dedicated ordered-collection class found; symbol-vehicle sequence only)*"
+        },
+        {
+          "id": "xwkont:correspondence:list-sequence:007",
+          "identifier": "none",
+          "ontology": "TUpper",
+          "term": "*(no dedicated ordered-collection class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:list-sequence:008",
+          "identifier": "none",
+          "ontology": "UFO",
+          "term": "*(no dedicated ordered-collection class found)*"
+        }
+      ],
+      "mapping_count": 1,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:list-sequence:001",
+          "object": "GUM:OrderedObject / OrderedSet",
+          "object_ontology": "GUM",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "SUMO:List / UniqueList",
+          "subject_ontology": "SUMO"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "list-sequence",
+      "status": "reviewed",
+      "title": "List / Sequence"
+    },
+    {
+      "correspondence_count": 4,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:mereology-parthood-aggregate:001",
+          "identifier": "`BFO_0000027`, `BFO_0000024`",
+          "ontology": "BFO",
+          "term": "Object aggregate (+ Fiat object part)"
+        },
+        {
+          "id": "xwkont:correspondence:mereology-parthood-aggregate:002",
+          "identifier": "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#arbitrary-sum",
+          "ontology": "DOLCE",
+          "term": "Arbitrary-sum"
+        },
+        {
+          "id": "xwkont:correspondence:mereology-parthood-aggregate:003",
+          "identifier": "`Collection` (SUMO term names are their own identifiers)",
+          "ontology": "SUMO",
+          "term": "Collection"
+        },
+        {
+          "id": "xwkont:correspondence:mereology-parthood-aggregate:004",
+          "identifier": "not applicable \u2014 no IRI scheme in the 2021 paper itself",
+          "ontology": "UFO",
+          "term": "Collective"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:001",
+          "object": "UFO:Collective",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Object aggregate",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:002",
+          "object": "SUMO:Collection",
+          "object_ontology": "SUMO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Arbitrary-sum",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:003",
+          "object": "DOLCE:Arbitrary-sum",
+          "object_ontology": "DOLCE",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Object aggregate",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:004",
+          "object": "SUMO:Collection",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "UFO:Collective",
+          "subject_ontology": "UFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:005",
+          "object": "*(no counterpart in any other of the 8 sources)*",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Fiat object part",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:006",
+          "object": "GFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Aggregate (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:007",
+          "object": "YAMATO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Aggregate (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:008",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Aggregate (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mereology-parthood-aggregate:009",
+          "object": "GUM",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Aggregate (candidate)",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO"
+      ],
+      "slug": "mereology-parthood-aggregate",
+      "status": "reviewed",
+      "title": "Mereology / Parthood / Aggregate"
+    },
+    {
+      "correspondence_count": 9,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:001",
+          "identifier": "AutonomousAgent",
+          "ontology": "SUMO",
+          "term": "AutonomousAgent"
+        },
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:002",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ConsciousBeing",
+          "ontology": "GUM",
+          "term": "ConsciousBeing"
+        },
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:003",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Person",
+          "ontology": "GUM",
+          "term": "Person"
+        },
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:004",
+          "identifier": "not applicable",
+          "ontology": "YAMATO",
+          "term": "weak agent"
+        },
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:005",
+          "identifier": "not applicable",
+          "ontology": "DOLCE",
+          "term": "Agentive Physical Object"
+        },
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:006",
+          "identifier": "none",
+          "ontology": "BFO",
+          "term": "*(no dedicated class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:007",
+          "identifier": "none",
+          "ontology": "UFO",
+          "term": "*(no dedicated class found; `Person` used only as a worked example)*"
+        },
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:008",
+          "identifier": "none",
+          "ontology": "GFO",
+          "term": "*(no reified Agent/Person/Mind class)*"
+        },
+        {
+          "id": "xwkont:correspondence:mind-conscious-being-agent:009",
+          "identifier": "none",
+          "ontology": "TUpper",
+          "term": "*(no dedicated class found)*"
+        }
+      ],
+      "mapping_count": 12,
+      "mappings": [
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:mind-conscious-being-agent:001",
+          "object": "xwkont-core:MindConsciousBeingAgent",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "SUMO:AutonomousAgent",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:mind-conscious-being-agent:002",
+          "object": "xwkont-core:MindConsciousBeingAgent",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GUM:ConsciousBeing",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:mind-conscious-being-agent:003",
+          "object": "xwkont-core:MindConsciousBeingAgent",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "YAMATO:weak agent",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:mind-conscious-being-agent:004",
+          "object": "xwkont-core:MindConsciousBeingAgent",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "DOLCE:Agentive Physical Object / Social Agent",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:mind-conscious-being-agent:005",
+          "object": "xwkont-core:MindConsciousBeingAgent",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "GUM:Person",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:mind-conscious-being-agent:006",
+          "object": "xwkont-core:MindConsciousBeingAgent",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "GUM:Female / Male",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:mind-conscious-being-agent:007",
+          "object": "xwkont-core:MindConsciousBeingAgent",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "GUM:Believe / Cognition / Know / Perception / Think / Wanting / MentalActive / MentalInactive / Disliking / Fearing / Liking / ReactionAndEmotion / Striving",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:mind-conscious-being-agent:008",
+          "object": "xwkont-core:MindConsciousBeingAgent",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "YAMATO:mind",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mind-conscious-being-agent:009",
+          "object": "BFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:MindConsciousBeingAgent",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mind-conscious-being-agent:010",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:MindConsciousBeingAgent",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mind-conscious-being-agent:011",
+          "object": "GFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:MindConsciousBeingAgent",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:mind-conscious-being-agent:012",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:MindConsciousBeingAgent",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "mind-conscious-being-agent",
+      "status": "reviewed",
+      "title": "Mind / Conscious Being / Agent"
+    },
+    {
+      "correspondence_count": 8,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:modality:001",
+          "identifier": "not applicable",
+          "ontology": "BFO",
+          "term": "*(no dedicated modality class/operator found)*"
+        },
+        {
+          "id": "xwkont:correspondence:modality:002",
+          "identifier": "not applicable",
+          "ontology": "DOLCE",
+          "term": "*(no dedicated modality class/operator found)*"
+        },
+        {
+          "id": "xwkont:correspondence:modality:003",
+          "identifier": "not applicable",
+          "ontology": "UFO",
+          "term": "formal semantics in modal logic"
+        },
+        {
+          "id": "xwkont:correspondence:modality:004",
+          "identifier": "`AlethicAttribute`, `modalAttribute`, `Possibility`, `Necessity`",
+          "ontology": "SUMO",
+          "term": "AlethicAttribute / modalAttribute / Possibility / Necessity"
+        },
+        {
+          "id": "xwkont:correspondence:modality:005",
+          "identifier": "not applicable",
+          "ontology": "GFO",
+          "term": "*(no dedicated modality class/operator found)*"
+        },
+        {
+          "id": "xwkont:correspondence:modality:006",
+          "identifier": "not applicable",
+          "ontology": "YAMATO",
+          "term": "*(no dedicated modality class/operator found)*"
+        },
+        {
+          "id": "xwkont:correspondence:modality:007",
+          "identifier": "poss",
+          "ontology": "TUpper",
+          "term": "poss"
+        },
+        {
+          "id": "xwkont:correspondence:modality:008",
+          "identifier": "`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ModalQuality`, `#Conditional`, `#NonConditional`, `#NonVolitional`, `#Volitional`, `#Necessity`, `#Possibility`, `#ModalPropertyAscription`",
+          "ontology": "GUM",
+          "term": "`ModalQuality` / `Conditional` / `NonConditional` / `NonVolitional` / `Volitional` / `Necessity` / `Possibility` / `ModalPropertyAscription`"
+        }
+      ],
+      "mapping_count": 5,
+      "mappings": [
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:modality:001",
+          "object": "SUMO:AlethicAttribute",
+          "object_ontology": "SUMO",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "GUM:ModalQuality",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:modality:002",
+          "object": "SUMO:modalAttribute",
+          "object_ontology": "SUMO",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "GUM:ModalPropertyAscription",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:modality:003",
+          "object": "SUMO:Possibility",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "GUM:Possibility",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:modality:004",
+          "object": "SUMO:Necessity",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "GUM:Necessity",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "low-medium",
+          "id": "xwkont:mapping:modality:005",
+          "object": "TUpper:poss",
+          "object_ontology": "TUpper",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "GUM:Possibility",
+          "subject_ontology": "GUM"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "modality",
+      "status": "reviewed",
+      "title": "Modality"
+    },
+    {
+      "correspondence_count": 8,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:non-physical-social-object:001",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#non-physical-endurant` / `http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#non-physical-object`",
+          "ontology": "DOLCE",
+          "term": "non-physical-endurant / non-physical-object"
+        },
+        {
+          "id": "xwkont:correspondence:non-physical-social-object:002",
+          "identifier": "`BFO_0000031` / `BFO_0000141`",
+          "ontology": "BFO",
+          "term": "generically dependent continuant / immaterial entity"
+        },
+        {
+          "id": "xwkont:correspondence:non-physical-social-object:003",
+          "identifier": "`Abstract` / `Proposition`",
+          "ontology": "SUMO",
+          "term": "Abstract / Proposition"
+        },
+        {
+          "id": "xwkont:correspondence:non-physical-social-object:004",
+          "identifier": "not applicable \u2014 informal footnote usage, not a reified class or IRI",
+          "ontology": "UFO",
+          "term": "non-physical endurants"
+        },
+        {
+          "id": "xwkont:correspondence:non-physical-social-object:005",
+          "identifier": "not applicable",
+          "ontology": "GFO",
+          "term": "*(no dedicated non-physical/social-object class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:non-physical-social-object:006",
+          "identifier": "not applicable",
+          "ontology": "YAMATO",
+          "term": "informational object / representation"
+        },
+        {
+          "id": "xwkont:correspondence:non-physical-social-object:007",
+          "identifier": "object",
+          "ontology": "TUpper",
+          "term": "object"
+        },
+        {
+          "id": "xwkont:correspondence:non-physical-social-object:008",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing",
+          "ontology": "GUM",
+          "term": "SimpleThing"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:non-physical-social-object:001",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:broadMatch",
+          "relation": "broader-than",
+          "subject": "DOLCE:non-physical-endurant",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:non-physical-social-object:002",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:non-physical-object",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low-medium",
+          "id": "xwkont:mapping:non-physical-social-object:003",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:broadMatch",
+          "relation": "broader-than",
+          "subject": "BFO:generically dependent continuant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:non-physical-social-object:004",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:broadMatch",
+          "relation": "broader-than",
+          "subject": "SUMO:Abstract / Proposition",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:non-physical-social-object:005",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "UFO:non-physical endurants",
+          "subject_ontology": "UFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:non-physical-social-object:006",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "GFO:Material_object / Material_persistant / Social_stratum / Social_role",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:non-physical-social-object:007",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "YAMATO:informational object / representation",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:non-physical-social-object:008",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:broadMatch",
+          "relation": "broader-than",
+          "subject": "TUpper:object",
+          "subject_ontology": "TUpper"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:non-physical-social-object:009",
+          "object": "xwkont-core:NonPhysicalObject (candidate)",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:broadMatch",
+          "relation": "broader-than",
+          "subject": "GUM:SimpleThing",
+          "subject_ontology": "GUM"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "non-physical-social-object",
+      "status": "reviewed",
+      "title": "Non-physical / Social Object"
+    },
+    {
+      "correspondence_count": 10,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:object:001",
+          "identifier": "BFO_0000030",
+          "ontology": "BFO",
+          "term": "Object"
+        },
+        {
+          "id": "xwkont:correspondence:object:002",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#physical-object` (confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE",
+          "term": "Physical Object"
+        },
+        {
+          "id": "xwkont:correspondence:object:003",
+          "identifier": "not applicable \u2014 UFO's 2021 paper has no IRI scheme of its own; see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat",
+          "ontology": "UFO",
+          "term": "Object (aka Functional Complex)"
+        },
+        {
+          "id": "xwkont:correspondence:object:004",
+          "identifier": "not applicable \u2014 same as row 003",
+          "ontology": "UFO",
+          "term": "ObjectKind"
+        },
+        {
+          "id": "xwkont:correspondence:object:005",
+          "identifier": "`Object` (SUMO/SUO-KIF has no separate opaque identifier scheme \u2014 the term name itself is the identifier)",
+          "ontology": "SUMO",
+          "term": "Object"
+        },
+        {
+          "id": "xwkont:correspondence:object:006",
+          "identifier": "https://w3id.org/gfo/base/Material_object",
+          "ontology": "GFO",
+          "term": "Material object"
+        },
+        {
+          "id": "xwkont:correspondence:object:007",
+          "identifier": "not applicable \u2014 the 2010 technical report defines \"object\" in prose (Section 5), not as a numbered/IRI'd taxonomy node; YAMATO's OWL files were not fetched in this pass (registration-gated, see `xwkont:ref:yamato-mizoguchi-2010`)",
+          "ontology": "YAMATO",
+          "term": "Object"
+        },
+        {
+          "id": "xwkont:correspondence:object:008",
+          "identifier": "`object` (same identifier convention as `continuant-occurrent.md`'s TUpper rows \u2014 the term name itself, no opaque ID scheme)",
+          "ontology": "TUpper",
+          "term": "object"
+        },
+        {
+          "id": "xwkont:correspondence:object:009",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DecomposableObject",
+          "ontology": "GUM",
+          "term": "DecomposableObject"
+        },
+        {
+          "id": "xwkont:correspondence:object:010",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonDecomposableObject",
+          "ontology": "GUM",
+          "term": "NonDecomposableObject"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:object:001",
+          "object": "DOLCE:Physical Object",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Object",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:object:002",
+          "object": "UFO:Object",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Object",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:object:003",
+          "object": "UFO:Object",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Physical Object",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:object:004",
+          "object": "SUMO:Object",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Object",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:object:005",
+          "object": "SUMO:Object",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "DOLCE:Physical Object",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:object:006",
+          "object": "GFO:Material object",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Object",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:object:007",
+          "object": "YAMATO:Object",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Object",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:object:008",
+          "object": "TUpper:object",
+          "object_ontology": "TUpper",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Object",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:object:009",
+          "object": "GUM:DecomposableObject",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Object",
+          "subject_ontology": "BFO"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "object",
+      "status": "reviewed",
+      "title": "Object"
+    },
+    {
+      "correspondence_count": 10,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:001",
+          "identifier": "https://w3id.org/gfo/base/Ontological_layer",
+          "ontology": "GFO",
+          "term": "Ontological_layer"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:002",
+          "identifier": "https://w3id.org/gfo/base/Stratum",
+          "ontology": "GFO",
+          "term": "Stratum"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:003",
+          "identifier": "https://w3id.org/gfo/base/Level",
+          "ontology": "GFO",
+          "term": "Level"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:004",
+          "identifier": "not applicable -- the 2021 paper names the strata, but not as IRI-bearing classes",
+          "ontology": "UFO",
+          "term": "UFO-A / UFO-B / UFO-C"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:005",
+          "identifier": "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#specific-constant-constituent",
+          "ontology": "DOLCE",
+          "term": "specific-constant-constituent"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:006",
+          "identifier": "not applicable",
+          "ontology": "YAMATO",
+          "term": "two-level reality / representation levels"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:007",
+          "identifier": "none",
+          "ontology": "BFO",
+          "term": "*(no dedicated stratification class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:008",
+          "identifier": "none",
+          "ontology": "SUMO",
+          "term": "*(no dedicated stratification class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:009",
+          "identifier": "none",
+          "ontology": "TUpper",
+          "term": "*(no dedicated stratification class found)*"
+        },
+        {
+          "id": "xwkont:correspondence:ontological-level-stratum:010",
+          "identifier": "none",
+          "ontology": "GUM",
+          "term": "*(no dedicated stratification class found)*"
+        }
+      ],
+      "mapping_count": 8,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:ontological-level-stratum:001",
+          "object": "xwkont-core:OntologicalLevelStratum",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:closeMatch",
+          "relation": "exact-equivalence-candidate",
+          "subject": "GFO:Ontological_layer / Stratum / Level",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:ontological-level-stratum:002",
+          "object": "xwkont-core:OntologicalLevelStratum",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "UFO:UFO-A / UFO-B / UFO-C",
+          "subject_ontology": "UFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:ontological-level-stratum:003",
+          "object": "xwkont-core:OntologicalLevelStratum",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "related",
+          "subject": "DOLCE:specific-constant-constituent",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:ontological-level-stratum:004",
+          "object": "xwkont-core:OntologicalLevelStratum",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "related",
+          "subject": "YAMATO:two-level reality / representation levels",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:ontological-level-stratum:005",
+          "object": "BFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:OntologicalLevelStratum",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:ontological-level-stratum:006",
+          "object": "SUMO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:OntologicalLevelStratum",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:ontological-level-stratum:007",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:OntologicalLevelStratum",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:ontological-level-stratum:008",
+          "object": "GUM",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:OntologicalLevelStratum",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "ontological-level-stratum",
+      "status": "reviewed",
+      "title": "Ontological Level / Stratum"
+    },
+    {
+      "correspondence_count": 8,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:process:001",
+          "identifier": "BFO_0000015",
+          "ontology": "BFO",
+          "term": "Process"
+        },
+        {
+          "id": "xwkont:correspondence:process:002",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#process` (confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE",
+          "term": "Process"
+        },
+        {
+          "id": "xwkont:correspondence:process:003",
+          "identifier": "not applicable \u2014 UFO's 2021 paper has no IRI scheme of its own, and this is explicitly an informal notion rather than a formal class; see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat",
+          "ontology": "UFO",
+          "term": "\"life of an endurant\" (informal)"
+        },
+        {
+          "id": "xwkont:correspondence:process:004",
+          "identifier": "`Process` (SUMO/SUO-KIF has no separate opaque identifier scheme \u2014 the term name itself is the identifier)",
+          "ontology": "SUMO",
+          "term": "Process"
+        },
+        {
+          "id": "xwkont:correspondence:process:005",
+          "identifier": "https://w3id.org/gfo/base/Process",
+          "ontology": "GFO",
+          "term": "Process"
+        },
+        {
+          "id": "xwkont:correspondence:process:006",
+          "identifier": "not applicable \u2014 registration-gated OWL/Hozo download not fetched; cited by quotation, same as `continuant-occurrent.md`'s correspondence row and `event.md`'s row 008",
+          "ontology": "YAMATO",
+          "term": "Occurrent(Process)"
+        },
+        {
+          "id": "xwkont:correspondence:process:007",
+          "identifier": "not applicable \u2014 PSL/COLORE CLIF has no opaque identifier scheme; term name is the identifier",
+          "ontology": "TUpper",
+          "term": "activity"
+        },
+        {
+          "id": "xwkont:correspondence:process:008",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process",
+          "ontology": "GUM",
+          "term": "Process"
+        }
+      ],
+      "mapping_count": 10,
+      "mappings": [
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:process:001",
+          "object": "SUMO:Process",
+          "object_ontology": "SUMO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Process",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:process:002",
+          "object": "DOLCE:Process",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Process",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:process:003",
+          "object": "SUMO:Process",
+          "object_ontology": "SUMO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Process",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low-medium",
+          "id": "xwkont:mapping:process:004",
+          "object": "UFO:\"life of an endurant\"",
+          "object_ontology": "UFO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Process",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:process:005",
+          "object": "GFO:Process",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Process",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:process:006",
+          "object": "SUMO:Process",
+          "object_ontology": "SUMO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GFO:Process",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:process:007",
+          "object": "DOLCE:Process",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GFO:Process",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:process:008",
+          "object": "YAMATO:Occurrent(Process)",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Process",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:process:009",
+          "object": "TUpper:activity",
+          "object_ontology": "TUpper",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Process",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:process:010",
+          "object": "GUM:Process",
+          "object_ontology": "GUM",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Process",
+          "subject_ontology": "BFO"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "process",
+      "status": "reviewed",
+      "title": "Process"
+    },
+    {
+      "correspondence_count": 3,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:proposition-content:001",
+          "identifier": "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proposition",
+          "ontology": "DOLCE",
+          "term": "Proposition"
+        },
+        {
+          "id": "xwkont:correspondence:proposition-content:002",
+          "identifier": "`Proposition` (SUMO term names are their own identifiers)",
+          "ontology": "SUMO",
+          "term": "Proposition"
+        },
+        {
+          "id": "xwkont:correspondence:proposition-content:003",
+          "identifier": "not applicable \u2014 informal prose category, no IRI scheme found for YAMATO's own vocabulary",
+          "ontology": "YAMATO",
+          "term": "Proposition (+ Content)"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:proposition-content:001",
+          "object": "SUMO:Proposition",
+          "object_ontology": "SUMO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Proposition",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:proposition-content:002",
+          "object": "YAMATO:Proposition",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "SUMO:Proposition",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:proposition-content:003",
+          "object": "YAMATO:Proposition",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Proposition",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:proposition-content:004",
+          "object": "*(no counterpart in any other of the 8 sources)*",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "YAMATO:Designed proposition / Product proposition",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:proposition-content:005",
+          "object": "BFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Proposition (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:proposition-content:006",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Proposition (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:proposition-content:007",
+          "object": "GFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Proposition (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:proposition-content:008",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Proposition (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:proposition-content:009",
+          "object": "GUM",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Proposition (candidate)",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "DOLCE",
+        "SUMO",
+        "YAMATO"
+      ],
+      "slug": "proposition-content",
+      "status": "reviewed",
+      "title": "Proposition / Content"
+    },
+    {
+      "correspondence_count": 7,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:quality:001",
+          "identifier": "BFO_0000019",
+          "ontology": "BFO",
+          "term": "Quality"
+        },
+        {
+          "id": "xwkont:correspondence:quality:002",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#quality`, `#quale` (confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE",
+          "term": "Quality (+ Quale)"
+        },
+        {
+          "id": "xwkont:correspondence:quality:003",
+          "identifier": "not applicable \u2014 UFO's 2021 paper has no IRI scheme of its own; see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat",
+          "ontology": "UFO",
+          "term": "Quality (subtype of Moment)"
+        },
+        {
+          "id": "xwkont:correspondence:quality:004",
+          "identifier": "`Attribute` (SUMO/SUO-KIF has no separate opaque identifier scheme \u2014 the term name itself is the identifier)",
+          "ontology": "SUMO",
+          "term": "Attribute"
+        },
+        {
+          "id": "xwkont:correspondence:quality:005",
+          "identifier": "`https://w3id.org/gfo/base/Property`, `Property_value`, `Value_space`",
+          "ontology": "GFO",
+          "term": "Property (+ Property value, Value space)"
+        },
+        {
+          "id": "xwkont:correspondence:quality:006",
+          "identifier": "not applicable \u2014 registration-gated OWL/Hozo download not fetched; cited by quotation from the 2010 technical report, not by IRI",
+          "ontology": "YAMATO",
+          "term": "Quality (+ Generic quality type, Quality role type, Quality instance)"
+        },
+        {
+          "id": "xwkont:correspondence:quality:007",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleQuality",
+          "ontology": "GUM",
+          "term": "SimpleQuality"
+        }
+      ],
+      "mapping_count": 12,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:001",
+          "object": "DOLCE:Quality",
+          "object_ontology": "DOLCE",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Quality",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:002",
+          "object": "UFO:Quality",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Quality",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:003",
+          "object": "UFO:Quality",
+          "object_ontology": "UFO",
+          "predicate": "skos:exactMatch",
+          "relation": "exact-equivalence-candidate",
+          "subject": "DOLCE:Quality",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:004",
+          "object": "SUMO:Attribute",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "BFO:Quality",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:005",
+          "object": "SUMO:Attribute",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "DOLCE:Quality",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:006",
+          "object": "GFO:Property",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Quality",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:007",
+          "object": "GFO:Property",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Quality",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:008",
+          "object": "SUMO:Attribute",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "GFO:Property",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:quality:009",
+          "object": "YAMATO:Quality",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Quality",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quality:010",
+          "object": "YAMATO:Quality",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Quality",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:quality:011",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Quality",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:quality:012",
+          "object": "GUM:SimpleQuality",
+          "object_ontology": "GUM",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Quality",
+          "subject_ontology": "BFO"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "GUM"
+      ],
+      "slug": "quality",
+      "status": "reviewed",
+      "title": "Quality"
+    },
+    {
+      "correspondence_count": 6,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:quantity-amount-of-matter:001",
+          "identifier": "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#amount-of-matter",
+          "ontology": "DOLCE",
+          "term": "Amount-of-matter"
+        },
+        {
+          "id": "xwkont:correspondence:quantity-amount-of-matter:002",
+          "identifier": "`Quantity` (SUMO term names are their own identifiers)",
+          "ontology": "SUMO",
+          "term": "Quantity (+ Number, PhysicalQuantity)"
+        },
+        {
+          "id": "xwkont:correspondence:quantity-amount-of-matter:003",
+          "identifier": "not applicable \u2014 no IRI scheme in the 2021 paper itself; `ontouml:quantity`/`ontouml:quantityNature` for the OntoUML fallback",
+          "ontology": "UFO",
+          "term": "Quantity"
+        },
+        {
+          "id": "xwkont:correspondence:quantity-amount-of-matter:004",
+          "identifier": "`https://w3id.org/gfo/base/Amount_of_substrate`, `/Mass_entity`",
+          "ontology": "GFO",
+          "term": "Amount of substrate (+ Mass_entity)"
+        },
+        {
+          "id": "xwkont:correspondence:quantity-amount-of-matter:005",
+          "identifier": "not applicable \u2014 informal prose category, no IRI scheme found for YAMATO's own vocabulary",
+          "ontology": "YAMATO",
+          "term": "Quantity"
+        },
+        {
+          "id": "xwkont:correspondence:quantity-amount-of-matter:006",
+          "identifier": "`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Quantity`, `#QuantityAscription`",
+          "ontology": "GUM",
+          "term": "Quantity (+ QuantityAscription)"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:quantity-amount-of-matter:001",
+          "object": "UFO:Quantity",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Amount-of-matter",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:quantity-amount-of-matter:002",
+          "object": "GFO:Amount_of_substrate",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Amount-of-matter",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:quantity-amount-of-matter:003",
+          "object": "GFO:Amount_of_substrate",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "UFO:Quantity",
+          "subject_ontology": "UFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:quantity-amount-of-matter:004",
+          "object": "SUMO:Quantity",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "DOLCE:Amount-of-matter",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:quantity-amount-of-matter:005",
+          "object": "YAMATO:Quantity",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "SUMO:Quantity",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:quantity-amount-of-matter:006",
+          "object": "DOLCE:Amount-of-matter",
+          "object_ontology": "DOLCE",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "YAMATO:Quantity",
+          "subject_ontology": "YAMATO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:quantity-amount-of-matter:007",
+          "object": "GUM:Quantity",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Quantity (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:quantity-amount-of-matter:008",
+          "object": "BFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Quantity (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:quantity-amount-of-matter:009",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Quantity (candidate)",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "GUM"
+      ],
+      "slug": "quantity-amount-of-matter",
+      "status": "reviewed",
+      "title": "Quantity / Amount of Matter"
+    },
+    {
+      "correspondence_count": 7,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:relation:001",
+          "identifier": "BFO_0000145",
+          "ontology": "BFO",
+          "term": "Relational Quality"
+        },
+        {
+          "id": "xwkont:correspondence:relation:002",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation`, `#mediated-relation` (confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE",
+          "term": "immediate-relation / mediated-relation"
+        },
+        {
+          "id": "xwkont:correspondence:relation:003",
+          "identifier": "not applicable \u2014 UFO's 2021 paper has no IRI scheme of its own; see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat",
+          "ontology": "UFO",
+          "term": "formal/material relation + Relator"
+        },
+        {
+          "id": "xwkont:correspondence:relation:004",
+          "identifier": "`Relation` (SUMO/SUO-KIF has no separate opaque identifier scheme \u2014 the term name itself is the identifier)",
+          "ontology": "SUMO",
+          "term": "Relation"
+        },
+        {
+          "id": "xwkont:correspondence:relation:005",
+          "identifier": "https://w3id.org/gfo/base/Relator",
+          "ontology": "GFO",
+          "term": "Relator"
+        },
+        {
+          "id": "xwkont:correspondence:relation:006",
+          "identifier": "not applicable \u2014 registration-gated OWL/Hozo download not fetched; cited by quotation from the 2010 technical report, not by IRI",
+          "ontology": "YAMATO",
+          "term": "Relation (not abstract; theory deferred to Hozo)"
+        },
+        {
+          "id": "xwkont:correspondence:relation:007",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Relating",
+          "ontology": "GUM",
+          "term": "Relating"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "low-medium",
+          "id": "xwkont:mapping:relation:001",
+          "object": "UFO:material (external) relation",
+          "object_ontology": "UFO",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "DOLCE:mediated-relation",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:relation:002",
+          "object": "UFO:formal (internal) relation",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:immediate-relation",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:relation:003",
+          "object": "xwkont-core:Relation (structural placement)",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "BFO:Relational Quality",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:relation:004",
+          "object": "SUMO:Relation",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "UFO:material (external) relation + Relator",
+          "subject_ontology": "UFO"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:relation:005",
+          "object": "UFO:material (external) relation + Relator",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GFO:Relator",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:relation:006",
+          "object": "SUMO:Relation",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "GFO:Relator",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:relation:007",
+          "object": "YAMATO:relation (not abstract)",
+          "object_ontology": "YAMATO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "SUMO:Relation",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:relation:008",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Relation",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:relation:009",
+          "object": "GUM:Relating",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Relation",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "GUM"
+      ],
+      "slug": "relation",
+      "status": "reviewed",
+      "title": "Relation"
+    },
+    {
+      "correspondence_count": 7,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:role:001",
+          "identifier": "BFO_0000023",
+          "ontology": "BFO",
+          "term": "Role"
+        },
+        {
+          "id": "xwkont:correspondence:role:002",
+          "identifier": "`http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role` (DUL's OWL-native rendering of Masolo et al. 2004's `RL` predicate; core DOLCE's D18/DOLCE-Lite itself has no Role term at all, confirmed directly, 2026-07-01)",
+          "ontology": "DOLCE-driven (not core DOLCE)",
+          "term": "Role"
+        },
+        {
+          "id": "xwkont:correspondence:role:003",
+          "identifier": "not applicable \u2014 UFO's 2021 paper has no IRI scheme of its own; see `continuant-occurrent.md`'s correspondence rows 005/006 for the gUFO caveat",
+          "ontology": "UFO",
+          "term": "Role (+ Relator)"
+        },
+        {
+          "id": "xwkont:correspondence:role:004",
+          "identifier": "`SocialRole` (SUMO/SUO-KIF has no separate opaque identifier scheme \u2014 the term name itself is the identifier)",
+          "ontology": "SUMO",
+          "term": "SocialRole"
+        },
+        {
+          "id": "xwkont:correspondence:role:005",
+          "identifier": "`https://w3id.org/gfo/base/Role`, `Processual_role`, `Social_role`, `Relational_role`",
+          "ontology": "GFO",
+          "term": "Role (+ Processual role, Social role, Relational role)"
+        },
+        {
+          "id": "xwkont:correspondence:role:006",
+          "identifier": "not applicable \u2014 registration-gated OWL/Hozo download not fetched; cited by quotation from the 2010 technical report, not by IRI",
+          "ontology": "YAMATO",
+          "term": "Role (context-dependent)"
+        },
+        {
+          "id": "xwkont:correspondence:role:007",
+          "identifier": "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#RolePlaying",
+          "ontology": "GUM",
+          "term": "RolePlaying"
+        }
+      ],
+      "mapping_count": 10,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:role:001",
+          "object": "UFO:Role",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE-driven:Role (Masolo et al. 2004, not core DOLCE)",
+          "subject_ontology": "DOLCE-driven"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:role:002",
+          "object": "DOLCE-driven:Role",
+          "object_ontology": "DOLCE-driven",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Role",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:role:003",
+          "object": "UFO:Role",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Role",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:role:004",
+          "object": "SUMO:SocialRole",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "BFO:Role",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:role:005",
+          "object": "SUMO:SocialRole",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "DOLCE-driven:Role",
+          "subject_ontology": "DOLCE-driven"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:role:006",
+          "object": "GFO:Relational_role",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "UFO:Role (+ Relator)",
+          "subject_ontology": "UFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:role:007",
+          "object": "GFO:Social_role",
+          "object_ontology": "GFO",
+          "predicate": null,
+          "relation": "explicit-non-equivalence",
+          "subject": "BFO:Role",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:role:008",
+          "object": "YAMATO:Role",
+          "object_ontology": "YAMATO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Role",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:role:009",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Role",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:role:010",
+          "object": "GUM:RolePlaying",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Role",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "YAMATO",
+        "GUM",
+        "DOLCE-driven (not core DOLCE)"
+      ],
+      "slug": "role",
+      "status": "reviewed",
+      "title": "Role"
+    },
+    {
+      "correspondence_count": 5,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:situation-state-of-affairs:001",
+          "identifier": "https://w3id.org/gfo/base/Situation",
+          "ontology": "GFO",
+          "term": "Situation"
+        },
+        {
+          "id": "xwkont:correspondence:situation-state-of-affairs:002",
+          "identifier": "https://w3id.org/ontouml#situation",
+          "ontology": "UFO",
+          "term": "situation (stereotype)"
+        },
+        {
+          "id": "xwkont:correspondence:situation-state-of-affairs:003",
+          "identifier": "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#state",
+          "ontology": "DOLCE",
+          "term": "State"
+        },
+        {
+          "id": "xwkont:correspondence:situation-state-of-affairs:004",
+          "identifier": "http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#situation",
+          "ontology": "DOLCE",
+          "term": "situation"
+        },
+        {
+          "id": "xwkont:correspondence:situation-state-of-affairs:005",
+          "identifier": "https://w3id.org/gfo/situation/Situation",
+          "ontology": "GFO",
+          "term": "Situation (dedicated module)"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:situation-state-of-affairs:001",
+          "object": "UFO:situation (OntoUML stereotype)",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GFO:Situation",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:situation-state-of-affairs:002",
+          "object": "GFO:Situation",
+          "object_ontology": "GFO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "DOLCE:State",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:situation-state-of-affairs:008",
+          "object": "GFO:Situation",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:situation (DnS)",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:situation-state-of-affairs:009",
+          "object": "UFO:situation (OntoUML stereotype)",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:situation (DnS)",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:situation-state-of-affairs:003",
+          "object": "BFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SituationStateOfAffairs",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:situation-state-of-affairs:004",
+          "object": "SUMO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SituationStateOfAffairs",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:situation-state-of-affairs:005",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SituationStateOfAffairs",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:situation-state-of-affairs:006",
+          "object": "YAMATO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SituationStateOfAffairs",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:situation-state-of-affairs:007",
+          "object": "GUM",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SituationStateOfAffairs",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "DOLCE",
+        "UFO",
+        "GFO"
+      ],
+      "slug": "situation-state-of-affairs",
+      "status": "reviewed",
+      "title": "Situation / State of Affairs"
+    },
+    {
+      "correspondence_count": 7,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:space:001",
+          "identifier": "`BFO_0000006`, `BFO_0000018`, `BFO_0000026`, `BFO_0000009`, `BFO_0000028`",
+          "ontology": "BFO",
+          "term": "Spatial region (+ zero-/one-/two-/three-dimensional)"
+        },
+        {
+          "id": "xwkont:correspondence:space:002",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#space-region`, `#physical-region`",
+          "ontology": "DOLCE",
+          "term": "Space-region (+ physical-region)"
+        },
+        {
+          "id": "xwkont:correspondence:space:003",
+          "identifier": "`Region` (SUMO/SUO-KIF term names are their own identifiers)",
+          "ontology": "SUMO",
+          "term": "Region"
+        },
+        {
+          "id": "xwkont:correspondence:space:004",
+          "identifier": "not applicable \u2014 no class exists",
+          "ontology": "UFO",
+          "term": "*(none)*"
+        },
+        {
+          "id": "xwkont:correspondence:space:005",
+          "identifier": "`https://w3id.org/gfo/base/Space`, `/Spatial_region`, `/Spatial_boundary`, `/Topoid`, `/Surface`",
+          "ontology": "GFO",
+          "term": "Space (+ Spatial_region, Spatial_boundary, Topoid, Surface)"
+        },
+        {
+          "id": "xwkont:correspondence:space:006",
+          "identifier": "not applicable \u2014 TUpper/PSL predicate names are their own identifiers",
+          "ontology": "TUpper",
+          "term": "spatial_region (+ Curve, ArealRegion, VoluminalRegion)"
+        },
+        {
+          "id": "xwkont:correspondence:space:007",
+          "identifier": "`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Space` (+ sibling IRIs in the same namespace)",
+          "ontology": "GUM",
+          "term": "Space (+ SpaceInterval, SpacePoint, SpatialObject)"
+        }
+      ],
+      "mapping_count": 10,
+      "mappings": [
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:space:001",
+          "object": "DOLCE:Space-region",
+          "object_ontology": "DOLCE",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Spatial region",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:space:002",
+          "object": "SUMO:Region",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Spatial region",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:space:003",
+          "object": "GFO:Space",
+          "object_ontology": "GFO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Spatial region",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:space:004",
+          "object": "GFO:Spatial_region",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Space-region",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:space:005",
+          "object": "SUMO:Region",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "DOLCE:Space-region",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:space:006",
+          "object": "GUM:SpaceInterval",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "GFO:Spatial_region",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:space:007",
+          "object": "TUpper:spatial_region (point case)",
+          "object_ontology": "TUpper",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Zero-dimensional spatial region",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:space:008",
+          "object": "GUM:GeneralizedLocation",
+          "object_ontology": "GUM",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "SUMO:Region",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:space:009",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Space (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:space:010",
+          "object": "YAMATO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Space (candidate)",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "space",
+      "status": "reviewed",
+      "title": "Spatial Region / Space"
+    },
+    {
+      "correspondence_count": 2,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:symbol-sign-representation:001",
+          "identifier": "`https://w3id.org/gfo/base/Symbol_structure` (`Symbol` and `Symbol_sequence` are subclasses)",
+          "ontology": "GFO",
+          "term": "Symbol / Symbol sequence / Symbol structure"
+        },
+        {
+          "id": "xwkont:correspondence:symbol-sign-representation:002",
+          "identifier": "`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NameOf`, `#NameRelation`, `#Symbolization`, `#Signification`",
+          "ontology": "GUM",
+          "term": "NameOf / NameRelation / Symbolization / Signification"
+        }
+      ],
+      "mapping_count": 6,
+      "mappings": [
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:symbol-sign-representation:001",
+          "object": "xwkont-core:SymbolSignRepresentation",
+          "object_ontology": "xwkont-core",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "GFO:Symbol_structure",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:symbol-sign-representation:002",
+          "object": "xwkont-core:symbolizes",
+          "object_ontology": "xwkont-core",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "GUM:NameOf / NameRelation / Symbolization / Signification",
+          "subject_ontology": "GUM"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:symbol-sign-representation:003",
+          "object": "BFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SymbolSignRepresentation",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:symbol-sign-representation:004",
+          "object": "DOLCE",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SymbolSignRepresentation",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:symbol-sign-representation:005",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SymbolSignRepresentation",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:symbol-sign-representation:006",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:SymbolSignRepresentation",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "GFO",
+        "GUM"
+      ],
+      "slug": "symbol-sign-representation",
+      "status": "reviewed",
+      "title": "Symbol / Sign / Representation"
+    },
+    {
+      "correspondence_count": 7,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:time:001",
+          "identifier": "`BFO_0000008`, `BFO_0000038`, `BFO_0000148`, `BFO_0000202`, `BFO_0000203`",
+          "ontology": "BFO",
+          "term": "Temporal region (+ one-/zero-dimensional, interval, instant)"
+        },
+        {
+          "id": "xwkont:correspondence:time:002",
+          "identifier": "`http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#temporal-region`, `#time-interval`",
+          "ontology": "DOLCE",
+          "term": "Temporal-region (+ time-interval)"
+        },
+        {
+          "id": "xwkont:correspondence:time:003",
+          "identifier": "`TimeMeasure`, `TimeDuration`, `TimePosition`, `TimeInterval`, `TimePoint` (SUMO/SUO-KIF term names are their own identifiers)",
+          "ontology": "SUMO",
+          "term": "TimeMeasure (+ TimeDuration, TimePosition, TimeInterval, TimePoint)"
+        },
+        {
+          "id": "xwkont:correspondence:time:004",
+          "identifier": "not applicable \u2014 no class exists",
+          "ontology": "UFO",
+          "term": "*(none)*"
+        },
+        {
+          "id": "xwkont:correspondence:time:005",
+          "identifier": "`https://w3id.org/gfo/base/Time`, `/Space_time`, `/Temporal_region`, `/Chronoid`, `/Time_boundary`",
+          "ontology": "GFO",
+          "term": "Time (+ Space_time, Temporal_region, Chronoid, Time_boundary)"
+        },
+        {
+          "id": "xwkont:correspondence:time:006",
+          "identifier": "not applicable \u2014 TUpper/PSL term names are their own identifiers, no opaque ID scheme",
+          "ontology": "TUpper",
+          "term": "Timepoint"
+        },
+        {
+          "id": "xwkont:correspondence:time:007",
+          "identifier": "`http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Time` (+ sibling IRIs in the same namespace)",
+          "ontology": "GUM",
+          "term": "Time (+ TemporalObject, TimeInterval, TimePoint, 14 further subtypes)"
+        }
+      ],
+      "mapping_count": 11,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:time:001",
+          "object": "DOLCE:Temporal-region",
+          "object_ontology": "DOLCE",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Temporal region",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:time:002",
+          "object": "SUMO:TimeMeasure",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Temporal region",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:time:003",
+          "object": "GFO:Space_time",
+          "object_ontology": "GFO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Temporal region",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium-high",
+          "id": "xwkont:mapping:time:004",
+          "object": "TUpper:Timepoint",
+          "object_ontology": "TUpper",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "BFO:Temporal instant",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:time:005",
+          "object": "GUM:Time",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "BFO:Temporal region",
+          "subject_ontology": "BFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:time:006",
+          "object": "SUMO:TimeMeasure",
+          "object_ontology": "SUMO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "DOLCE:Temporal-region",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:time:007",
+          "object": "GFO:Temporal_region",
+          "object_ontology": "GFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "DOLCE:Temporal-region",
+          "subject_ontology": "DOLCE"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:time:008",
+          "object": "GUM:TemporalObject",
+          "object_ontology": "GUM",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "GFO:Temporal_region",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:time:009",
+          "object": "GUM:Time",
+          "object_ontology": "GUM",
+          "predicate": "skos:relatedMatch",
+          "relation": "related",
+          "subject": "SUMO:TimeMeasure",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:time:010",
+          "object": "UFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Time (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:time:011",
+          "object": "YAMATO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Time (candidate)",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "BFO",
+        "DOLCE",
+        "SUMO",
+        "UFO",
+        "GFO",
+        "TUpper",
+        "GUM"
+      ],
+      "slug": "time",
+      "status": "reviewed",
+      "title": "Time"
+    },
+    {
+      "correspondence_count": 3,
+      "correspondences": [
+        {
+          "id": "xwkont:correspondence:universal-type:001",
+          "identifier": "`SetOrClass`, `Set`, `Class` (SUMO term names are their own identifiers)",
+          "ontology": "SUMO",
+          "term": "SetOrClass (+ Set, Class)"
+        },
+        {
+          "id": "xwkont:correspondence:universal-type:002",
+          "identifier": "not applicable \u2014 no IRI scheme in the 2021 paper itself",
+          "ontology": "UFO",
+          "term": "Kind (+ Subkind, Phase, Role, Category, PhaseMixin, RoleMixin, Mixin)"
+        },
+        {
+          "id": "xwkont:correspondence:universal-type:003",
+          "identifier": "`https://w3id.org/gfo/base/Category`, `/Universal`",
+          "ontology": "GFO",
+          "term": "Category (+ Universal)"
+        }
+      ],
+      "mapping_count": 9,
+      "mappings": [
+        {
+          "confidence": "high",
+          "id": "xwkont:mapping:universal-type:001",
+          "object": "UFO:Kind",
+          "object_ontology": "UFO",
+          "predicate": "skos:closeMatch",
+          "relation": "close-match",
+          "subject": "GFO:Universal",
+          "subject_ontology": "GFO"
+        },
+        {
+          "confidence": "medium",
+          "id": "xwkont:mapping:universal-type:002",
+          "object": "GFO:Universal",
+          "object_ontology": "GFO",
+          "predicate": null,
+          "relation": "overlap",
+          "subject": "SUMO:Class",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:universal-type:003",
+          "object": "*(no counterpart in any other of the 8 sources)*",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "SUMO:Set",
+          "subject_ontology": "SUMO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:universal-type:004",
+          "object": "GFO:Category (Item-half)",
+          "object_ontology": "GFO",
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "UFO:Category (non-sortal)",
+          "subject_ontology": "UFO"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:universal-type:005",
+          "object": "BFO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Universal (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:universal-type:006",
+          "object": "DOLCE",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Universal (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:universal-type:007",
+          "object": "YAMATO",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Universal (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:universal-type:008",
+          "object": "TUpper",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Universal (candidate)",
+          "subject_ontology": "xwkont-core"
+        },
+        {
+          "confidence": "low",
+          "id": "xwkont:mapping:universal-type:009",
+          "object": "GUM",
+          "object_ontology": null,
+          "predicate": null,
+          "relation": "unknown",
+          "subject": "xwkont-core:Universal (candidate)",
+          "subject_ontology": "xwkont-core"
+        }
+      ],
+      "ontologies": [
+        "SUMO",
+        "UFO",
+        "GFO"
+      ],
+      "slug": "universal-type",
+      "status": "reviewed",
+      "title": "Universal / Type"
+    }
+  ],
+  "coverage_matrix": [
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 0,
+        "YAMATO": 1
+      },
+      "slug": "abstract-concrete",
+      "title": "Abstract vs. Concrete"
+    },
+    {
+      "counts": {
+        "BFO": 2,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 0,
+        "SUMO": 0,
+        "TUpper": 1,
+        "UFO": 0,
+        "YAMATO": 0
+      },
+      "slug": "boundary-site",
+      "title": "Boundary / Site"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "change",
+      "title": "Change"
+    },
+    {
+      "counts": {
+        "BFO": 2,
+        "DOLCE": 2,
+        "GFO": 2,
+        "GUM": 2,
+        "SUMO": 2,
+        "TUpper": 2,
+        "UFO": 2,
+        "YAMATO": 2
+      },
+      "slug": "continuant-occurrent",
+      "title": "Continuant / Occurrent"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "continuous-discrete",
+      "title": "Continuous vs. Discrete"
+    },
+    {
+      "counts": {
+        "BFO": 2,
+        "DOLCE": 0,
+        "GFO": 1,
+        "GUM": 3,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 0,
+        "YAMATO": 1
+      },
+      "slug": "disposition-capacity",
+      "title": "Disposition / Capacity"
+    },
+    {
+      "counts": {
+        "BFO": 2,
+        "DOLCE": 1,
+        "GFO": 2,
+        "GUM": 2,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "event",
+      "title": "Event"
+    },
+    {
+      "counts": {
+        "BFO": 0,
+        "DOLCE": 0,
+        "GFO": 0,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 0,
+        "YAMATO": 1
+      },
+      "slug": "information-artifact",
+      "title": "Information Artifact"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "list-sequence",
+      "title": "List / Sequence"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 0,
+        "GUM": 0,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 1,
+        "YAMATO": 0
+      },
+      "slug": "mereology-parthood-aggregate",
+      "title": "Mereology / Parthood / Aggregate"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 2,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "mind-conscious-being-agent",
+      "title": "Mind / Conscious Being / Agent"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "modality",
+      "title": "Modality"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "non-physical-social-object",
+      "title": "Non-physical / Social Object"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 2,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 2,
+        "YAMATO": 1
+      },
+      "slug": "object",
+      "title": "Object"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 3,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "ontological-level-stratum",
+      "title": "Ontological Level / Stratum"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "process",
+      "title": "Process"
+    },
+    {
+      "counts": {
+        "BFO": 0,
+        "DOLCE": 1,
+        "GFO": 0,
+        "GUM": 0,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 0,
+        "YAMATO": 1
+      },
+      "slug": "proposition-content",
+      "title": "Proposition / Content"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "quality",
+      "title": "Quality"
+    },
+    {
+      "counts": {
+        "BFO": 0,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "quantity-amount-of-matter",
+      "title": "Quantity / Amount of Matter"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "relation",
+      "title": "Relation"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 0,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 1,
+        "YAMATO": 1
+      },
+      "slug": "role",
+      "title": "Role"
+    },
+    {
+      "counts": {
+        "BFO": 0,
+        "DOLCE": 2,
+        "GFO": 2,
+        "GUM": 0,
+        "SUMO": 0,
+        "TUpper": 0,
+        "UFO": 1,
+        "YAMATO": 0
+      },
+      "slug": "situation-state-of-affairs",
+      "title": "Situation / State of Affairs"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 0
+      },
+      "slug": "space",
+      "title": "Spatial Region / Space"
+    },
+    {
+      "counts": {
+        "BFO": 0,
+        "DOLCE": 0,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 0,
+        "TUpper": 0,
+        "UFO": 0,
+        "YAMATO": 0
+      },
+      "slug": "symbol-sign-representation",
+      "title": "Symbol / Sign / Representation"
+    },
+    {
+      "counts": {
+        "BFO": 1,
+        "DOLCE": 1,
+        "GFO": 1,
+        "GUM": 1,
+        "SUMO": 1,
+        "TUpper": 1,
+        "UFO": 1,
+        "YAMATO": 0
+      },
+      "slug": "time",
+      "title": "Time"
+    },
+    {
+      "counts": {
+        "BFO": 0,
+        "DOLCE": 0,
+        "GFO": 1,
+        "GUM": 0,
+        "SUMO": 1,
+        "TUpper": 0,
+        "UFO": 1,
+        "YAMATO": 0
+      },
+      "slug": "universal-type",
+      "title": "Universal / Type"
+    }
+  ],
+  "generated_from": "data/crosswalks/*/*.yaml",
+  "source_order": [
+    "BFO",
+    "DOLCE",
+    "SUMO",
+    "UFO",
+    "GFO",
+    "YAMATO",
+    "TUpper",
+    "GUM"
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "classes": [
+    "Abstract",
+    "Aggregate",
+    "Boundary",
+    "Change",
+    "Concrete",
+    "Continuant",
+    "Continuous",
+    "Discrete",
+    "Disposition",
+    "Entity",
+    "Event",
+    "InformationArtifact",
+    "ListSequence",
+    "MindConsciousBeingAgent",
+    "Modality",
+    "NonPhysicalObject",
+    "Object",
+    "Occurrent",
+    "OntologicalLevelStratum",
+    "Process",
+    "Proposition",
+    "Quality",
+    "Quantity",
+    "Relation",
+    "Role",
+    "Site",
+    "SituationStateOfAffairs",
+    "Space",
+    "Sum",
+    "SymbolSignRepresentation",
+    "Time",
+    "Universal"
+  ],
+  "inheritance": [
+    {
+      "child": "Continuant",
+      "parent": "Entity"
+    },
+    {
+      "child": "Occurrent",
+      "parent": "Entity"
+    },
+    {
+      "child": "Relation",
+      "parent": "Entity"
+    },
+    {
+      "child": "InformationArtifact",
+      "parent": "Entity"
+    },
+    {
+      "child": "Abstract",
+      "parent": "Entity"
+    },
+    {
+      "child": "Concrete",
+      "parent": "Entity"
+    },
+    {
+      "child": "Universal",
+      "parent": "Entity"
+    },
+    {
+      "child": "Time",
+      "parent": "Entity"
+    },
+    {
+      "child": "Space",
+      "parent": "Entity"
+    },
+    {
+      "child": "Change",
+      "parent": "Entity"
+    },
+    {
+      "child": "Continuous",
+      "parent": "Entity"
+    },
+    {
+      "child": "Discrete",
+      "parent": "Entity"
+    },
+    {
+      "child": "OntologicalLevelStratum",
+      "parent": "Entity"
+    },
+    {
+      "child": "ListSequence",
+      "parent": "Entity"
+    },
+    {
+      "child": "Object",
+      "parent": "Continuant"
+    },
+    {
+      "child": "Quality",
+      "parent": "Continuant"
+    },
+    {
+      "child": "Role",
+      "parent": "Continuant"
+    },
+    {
+      "child": "Aggregate",
+      "parent": "Continuant"
+    },
+    {
+      "child": "Sum",
+      "parent": "Continuant"
+    },
+    {
+      "child": "Boundary",
+      "parent": "Continuant"
+    },
+    {
+      "child": "Site",
+      "parent": "Continuant"
+    },
+    {
+      "child": "MindConsciousBeingAgent",
+      "parent": "Continuant"
+    },
+    {
+      "child": "NonPhysicalObject",
+      "parent": "Continuant"
+    },
+    {
+      "child": "Disposition",
+      "parent": "Continuant"
+    },
+    {
+      "child": "SituationStateOfAffairs",
+      "parent": "Continuant"
+    },
+    {
+      "child": "Process",
+      "parent": "Occurrent"
+    },
+    {
+      "child": "Event",
+      "parent": "Occurrent"
+    },
+    {
+      "child": "Quantity",
+      "parent": "Concrete"
+    },
+    {
+      "child": "Proposition",
+      "parent": "Abstract"
+    },
+    {
+      "child": "Modality",
+      "parent": "Quality"
+    },
+    {
+      "child": "SymbolSignRepresentation",
+      "parent": "Universal"
+    }
+  ],
+  "relations": [
+    {
+      "label": "hasPart / partOf",
+      "source": "Entity",
+      "target": "Entity"
+    },
+    {
+      "label": "participatesIn",
+      "source": "Continuant",
+      "target": "Occurrent"
+    },
+    {
+      "label": "hasParticipant",
+      "source": "Occurrent",
+      "target": "Continuant"
+    },
+    {
+      "label": "hasQuality",
+      "source": "Entity",
+      "target": "Quality"
+    },
+    {
+      "label": "qualityOf",
+      "source": "Quality",
+      "target": "Entity"
+    },
+    {
+      "label": "bearsRole",
+      "source": "Entity",
+      "target": "Role"
+    },
+    {
+      "label": "roleOf",
+      "source": "Role",
+      "target": "Entity"
+    },
+    {
+      "label": "symbolizes / symbolizedBy",
+      "source": "Entity",
+      "target": "Entity"
+    },
+    {
+      "label": "dependsOn",
+      "source": "Entity",
+      "target": "Entity"
+    },
+    {
+      "label": "documentedBy",
+      "source": "Entity",
+      "target": "InformationArtifact"
+    }
+  ]
+}

@@ -38,10 +38,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-plugins:
-  - search
-  - tags
-
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -49,6 +45,16 @@ extra:
     - icon: fontawesome/solid/link
       link: https://w3id.org/xwkont/
   generator: false
+
+extra_css:
+  - stylesheets/explore.css
+
+extra_javascript:
+  - javascripts/explore.js
+
+plugins:
+  - search
+  - tags
 
 markdown_extensions:
   - admonition
@@ -75,6 +81,11 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Explore:
+    - explore/index.md
+    - Coverage matrix: explore/coverage.md
+    - Mapping network: explore/mappings.md
+    - Core hierarchy: explore/core.md
   - Concepts:
     - crosswalks/concepts/README.md
     - Continuant / Occurrent: crosswalks/concepts/continuant-occurrent.md

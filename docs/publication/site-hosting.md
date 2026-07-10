@@ -35,6 +35,10 @@ In GitHub → **Settings → Pages**:
 
 No `gh-pages` branch is used.
 
+## Relationship to Explore visualizations
+
+The [Explore](../explore/index.md) section renders interactive coverage and mapping views from JSON generated at build time (`scripts/generate-explore-data.py`). Those views are projections only; they do not replace Markdown/YAML editorial artifacts.
+
 ## Relationship to w3id
 
 HTML negotiation for `https://w3id.org/xwkont/` and `https://w3id.org/xwkont/core` is retargeted to this Pages site via `perma-id/w3id.org#6343` (pending merge as of 2026-07-10):

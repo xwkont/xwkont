@@ -12,6 +12,7 @@ XwkOnt is an open reference project whose sole purpose is to build a **concept-c
 
 | Path | What you get |
 |---|---|
+| [Explore](explore/index.md) | Interactive coverage matrix, mapping network, and core hierarchy |
 | [Concepts](crosswalks/concepts/README.md) | 26 reviewed concept crosswalks across all 8 sources |
 | [Core ontology](ontology/core-ontology.md) | Comparison scaffold vocabulary (`reviewed`) |
 | [Candidate backlog](crosswalks/candidate-concepts.md) | 540-class public contribution backlog |
