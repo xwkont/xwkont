@@ -15,6 +15,12 @@ All notable changes to XwkOnt are documented here. Format follows [Keep a Change
 - Core ontology specification, glossary, and axiom notes advanced from `draft` to `reviewed`, matching the completed `0.3.0` placement and glossary-closure work (known limitations such as Process/Event remain documented, not erased).
 - Stale open follow-ups in early crosswalk YAML (claims that Process/Event/Role/ADR-0015 buildouts were still pending) marked resolved and regenerated.
 
+### Added
+
+- `0.4.0` concept batch **selected** (not drafted): Dependence/Dependent Entity, Material/Immaterial, Set/Class, and History — see [docs/crosswalks/batch-0.4.0-selection.md](docs/crosswalks/batch-0.4.0-selection.md).
+
+## [0.3.0] - 2026-07-08
+
 Tagged `ontology-core-v0.3.0`. All 9 candidates from the `0.3.0` batch have now been through a crosswalk pass — 9 reviewed, 1 (Quality Space/Quale) off-ramped as not-distinct — bringing the total to 26 reviewed concepts, all of which now have `core.ttl` placement, completing every concept from both the `0.2.0` and `0.3.0` batches. (Originally split across `0.3.0`/`0.3.1` tags; consolidated into a single `0.3.0` release, since the placement work below completes rather than extends that batch's own scope.)
 
 ### Added
