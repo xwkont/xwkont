@@ -1,0 +1,161 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+site_name: XwkOnt
+site_description: The Crosswalk of Foundational Ontologies
+site_url: https://xwkont.github.io/xwkont/
+site_author: XwkOnt
+repo_url: https://github.com/xwkont/xwkont
+repo_name: xwkont/xwkont
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; XwkOnt contributors — docs CC BY 4.0, code MIT
+docs_dir: docs
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - tags
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/xwkont/xwkont
+    - icon: fontawesome/solid/link
+      link: https://w3id.org/xwkont/
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Concepts:
+    - crosswalks/concepts/README.md
+    - Continuant / Occurrent: crosswalks/concepts/continuant-occurrent.md
+    - Object: crosswalks/concepts/object.md
+    - Event: crosswalks/concepts/event.md
+    - Process: crosswalks/concepts/process.md
+    - Quality: crosswalks/concepts/quality.md
+    - Role: crosswalks/concepts/role.md
+    - Relation: crosswalks/concepts/relation.md
+    - Information Artifact: crosswalks/concepts/information-artifact.md
+    - Time: crosswalks/concepts/time.md
+    - Space: crosswalks/concepts/space.md
+    - Abstract / Concrete: crosswalks/concepts/abstract-concrete.md
+    - Quantity / Amount of Matter: crosswalks/concepts/quantity-amount-of-matter.md
+    - Situation / State of Affairs: crosswalks/concepts/situation-state-of-affairs.md
+    - Universal / Type: crosswalks/concepts/universal-type.md
+    - Mereology / Parthood / Aggregate: crosswalks/concepts/mereology-parthood-aggregate.md
+    - Boundary / Site: crosswalks/concepts/boundary-site.md
+    - Proposition / Content: crosswalks/concepts/proposition-content.md
+    - Disposition / Capacity: crosswalks/concepts/disposition-capacity.md
+    - Symbol / Sign / Representation: crosswalks/concepts/symbol-sign-representation.md
+    - Mind / Conscious Being / Agent: crosswalks/concepts/mind-conscious-being-agent.md
+    - Ontological Level / Stratum: crosswalks/concepts/ontological-level-stratum.md
+    - Change: crosswalks/concepts/change.md
+    - List / Sequence: crosswalks/concepts/list-sequence.md
+    - Continuous vs. Discrete: crosswalks/concepts/continuous-discrete.md
+    - Modality: crosswalks/concepts/modality.md
+    - Non-physical / Social Object: crosswalks/concepts/non-physical-social-object.md
+    - Candidate backlog: crosswalks/candidate-concepts.md
+    - 0.4.0 batch selection: crosswalks/batch-0.4.0-selection.md
+  - Core ontology:
+    - ontology/README.md
+    - Specification: ontology/core-ontology.md
+    - Glossary: ontology/core-glossary.md
+    - Axiom notes: ontology/core-axioms.md
+    - Competency questions: ontology/core-competency-questions.md
+    - Validation: ontology/core-validation.md
+  - Methodology:
+    - methodology/README.md
+    - Crosswalk methodology: methodology/crosswalk-methodology.md
+    - Crosswalk runbook: methodology/crosswalk-runbook.md
+    - Primary-source verification: methodology/primary-source-verification.md
+    - LinkML schema notes: methodology/crosswalk-concept-linkml-schema.md
+    - Source module conventions: methodology/source-ontology-module-conventions.md
+    - SUMO modeling patterns: methodology/sumo-modeling-patterns.md
+  - References:
+    - references/README.md
+    - BFO 2020: references/ref-bfo-2020.md
+    - DOLCE WonderWeb D18: references/ref-dolce-wonderweb-d18.md
+    - DOLCE Borgo 2022: references/ref-dolce-borgo-2022.md
+    - DOLCE-Lite OWL: references/ref-dolce-lite-owl.md
+    - DOLCE ExtendedDnS: references/ref-dolce-extendeddns-owl.md
+    - SUMO 2001: references/ref-sumo-niles-pease-2001.md
+    - UFO 2021: references/ref-ufo-2021.md
+    - GFO: references/ref-gfo.md
+    - YAMATO 2010: references/ref-yamato-mizoguchi-2010.md
+    - TUpper / COLORE: references/ref-tupper-colore.md
+    - GUM OWL: references/ref-gum-owl.md
+    - OntoUML vocabulary: references/ref-ontouml-vocabulary.md
+    - IAO OWL: references/ref-iao-owl.md
+    - ROMULUS: references/ref-romulus.md
+    - WFOL: references/ref-wfol.md
+  - Governance:
+    - governance/README.md
+    - Governance: governance/governance.md
+    - Contributing: governance/contributing.md
+    - Change management: governance/change-management.md
+    - Release and versioning: governance/release-versioning-policy.md
+    - Founding principles: FOUNDING_PRINCIPLES.md
+    - Architectural principles: ARCHITECTURAL_PRINCIPLES.md
+    - Editorial policy: EDITORIAL_POLICY.md
+    - Project lifecycle: PROJECT_LIFECYCLE.md
+    - Standards baseline: STANDARDS_BASELINE.md
+    - Information architecture: INFORMATION_ARCHITECTURE.md
+    - ADRs: adr/README.md
+  - Publication:
+    - publication/README.md
+    - Publication guide: publication/core-publication-guide.md
+    - URI / IRI policy: publication/uri-iri-policy.md
+    - Redirects and content negotiation: publication/redirects-content-negotiation.md
+    - Validation commands: publication/validation-commands.md
+    - Release tagging checklist: publication/release-tagging-checklist.md
+    - Site hosting: publication/site-hosting.md
+    - Release notes: releases/core-ontology-release-notes.md

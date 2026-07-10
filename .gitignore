@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .venv/
 .tmp/
+site/
+.cache/
+

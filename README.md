@@ -17,7 +17,7 @@ A library catalog uses a subject heading: one entry that different systems' own 
 New to XwkOnt? Three steps:
 
 1. Read [Goal](#goal) and [Scope](#scope) below to see what a crosswalk is (and is not).
-2. Browse a reviewed crosswalk in [docs/crosswalks/concepts/](docs/crosswalks/concepts/) — [`object.md`](docs/crosswalks/concepts/object.md) or [`event.md`](docs/crosswalks/concepts/event.md) are good short first examples.
+2. Browse a reviewed crosswalk in [docs/crosswalks/concepts/](docs/crosswalks/concepts/) — [`object.md`](docs/crosswalks/concepts/object.md) or [`event.md`](docs/crosswalks/concepts/event.md) are good short first examples. The same docs are published as a site at [https://xwkont.github.io/xwkont/](https://xwkont.github.io/xwkont/) (GitHub Pages; see [docs/publication/site-hosting.md](docs/publication/site-hosting.md)).
 3. Need machine-readable data? Each concept also has a validated YAML record under [`data/crosswalks/`](data/crosswalks/), plus generated SSSOM TSV and RDF/Turtle exports alongside it.
 
 ## Goal
