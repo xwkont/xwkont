@@ -1,12 +1,16 @@
 # Changelog
 
-<!-- updated at: 2026-07-10 12:15 Z   (2026-07-10 08:15 EDT) -->
+<!-- updated at: 2026-07-10 13:17 Z   (2026-07-10 09:17 EDT) -->
 
 All notable changes to XwkOnt are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-> **Retracted: `ontology-core-v0.3.1` (tagged 2026-07-08, retracted the same day).** It was cut before `core.ttl` placement work already in flight (Symbol/Sign/Representation, Situation/State of Affairs) completed `0.3.0`'s own scope — those two concepts were the last ones left unplaced from the `0.2.0`/`0.3.0` batches. Rather than let a `0.3.1` exist that undersold what `0.3.0` was actually finishing, the tag was deleted (both the private repo and the public `xwkont/xwkont` repo) and `ontology-core-v0.3.0` was force-moved to the consolidated commit covering everything through `v0.3.1` plus the completed placements. **If anything pins `ontology-core-v0.3.1` by tag name, that tag no longer exists — re-pin to `ontology-core-v0.3.0`,** which is a superset (everything `v0.3.1` had, plus both placements). This is the first and only accepted historical exception to tag immutability; [docs/governance/release-versioning-policy.md](docs/governance/release-versioning-policy.md) now forbids repeating it — future incomplete cuts must ship as a new tag with CHANGELOG supersession, not a retag.
+> **Retracted: `ontology-core-v0.3.1` (tagged 2026-07-08, retracted the same day).** It was cut before `core.ttl` placement work already in flight (Symbol/Sign/Representation, Situation/State of Affairs) completed `0.3.0`'s own scope — those two concepts were the last ones left unplaced from the `0.2.0`/`0.3.0` batches. Rather than let a `0.3.1` exist that undersold what `0.3.0` was actually finishing, the tag was deleted (both the private repo and the public `xwkont/xwkont` repo) and `ontology-core-v0.3.0` was force-moved to the consolidated commit covering everything through `v0.3.1` plus the completed placements. **If anything pins `ontology-core-v0.3.1` by tag name, that tag no longer exists — re-pin to `ontology-core-v0.3.0`,** which is a superset (everything `v0.3.1` had, plus both placements). This is the first and only accepted historical exception to tag immutability; [docs/governance/release-versioning-policy.md](docs/governance/release-versioning-policy.md) now forbids repeating it — future incomplete cuts must ship as a new tag with CHANGELOG supersession, not a retag. The version number `0.3.1` is permanently retired as a live tag; the next patch after `0.3.0` is **`ontology-core-v0.3.2`**.
 
 ## [Unreleased]
+
+## [0.3.2] - 2026-07-10
+
+Tagged `ontology-core-v0.3.2`. Post-`0.3.0` stabilize and public-site milestone: no new reviewed crosswalks and no `core.ttl` class changes. Skips `0.3.1` as a live tag number because that name was retracted (see note above). The `0.4.0` concept batch is **selected only** here — drafting remains future work.
 
 ### Changed
 
@@ -20,7 +24,7 @@ All notable changes to XwkOnt are documented here. Format follows [Keep a Change
 - `0.4.0` concept batch **selected** (not drafted): Dependence/Dependent Entity, Material/Immaterial, Set/Class, and History — see [docs/crosswalks/batch-0.4.0-selection.md](docs/crosswalks/batch-0.4.0-selection.md).
 - Public documentation site via **Material for MkDocs** on GitHub Pages ([mkdocs.yml](mkdocs.yml), [.github/workflows/pages.yml](.github/workflows/pages.yml), [docs/publication/site-hosting.md](docs/publication/site-hosting.md)). Target URL: `https://xwkont.github.io/xwkont/`.
 - w3id HTML retarget submitted as [`perma-id/w3id.org#6343`](https://github.com/perma-id/w3id.org/pull/6343): `/xwkont/` and HTML `/core` → Pages; Turtle `/core` unchanged.
-- Interactive **Explore** views on the docs site: coverage matrix, mapping network, and core Mermaid hierarchy ([docs/explore/](docs/explore/)).
+- Interactive **Explore** views on the docs site: coverage matrix, mapping network, and interactive core hierarchy ([docs/explore/](docs/explore/)).
 
 ## [0.3.0] - 2026-07-08
 
@@ -73,5 +77,7 @@ First tagged milestone, `ontology-core-v0.1.0`. See [docs/publication/release-ta
 - `https://w3id.org/xwkont/` and `https://w3id.org/xwkont/core` namespace redirects submitted and merged upstream (`perma-id/w3id.org#6277`, `perma-id/w3id.org#6292`), both verified live.
 - GitHub community-health files: [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [SECURITY.md](SECURITY.md), issue and pull request templates.
 
+[0.3.2]: https://github.com/xwkont/xwkont/releases/tag/ontology-core-v0.3.2
+[0.3.0]: https://github.com/xwkont/xwkont/releases/tag/ontology-core-v0.3.0
 [0.2.0]: https://github.com/xwkont/xwkont/releases/tag/ontology-core-v0.2.0
 [0.1.0]: https://github.com/xwkont/xwkont/releases/tag/ontology-core-v0.1.0

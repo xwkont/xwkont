@@ -124,7 +124,7 @@ Activating immutable versioned ontology document IRIs after these prerequisites 
 
 ## Current Release State
 
-Tagged milestones through `ontology-core-v0.3.0` are published. Immutable versioned ontology document IRIs remain deferred until the prerequisites above are met. Future incomplete cuts must follow the Tag Immutability rule (new tag + CHANGELOG supersession), not tag deletion or retargeting.
+Tagged milestones through `ontology-core-v0.3.2` are published (`0.3.1` was retracted and is not a live tag). Immutable versioned ontology document IRIs remain deferred until the prerequisites above are met. Future incomplete cuts must follow the Tag Immutability rule (new tag + CHANGELOG supersession), not tag deletion or retargeting.
 
 ## Deprecation and Supersession
 
