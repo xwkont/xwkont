@@ -24,7 +24,19 @@
 
   function siteRoot() {
     const match = location.pathname.match(/^(.*?)\/explore(?:\/|$)/);
-    return match ? match[1] : "";
+    if (match) return match[1];
+    // Material config.base is relative to the current page (e.g. "../..")
+    try {
+      const cfg = document.getElementById("__config");
+      if (cfg) {
+        const base = JSON.parse(cfg.textContent).base || ".";
+        const abs = new URL(base.endsWith("/") ? base : base + "/", location.href);
+        return abs.pathname.replace(/\/$/, "");
+      }
+    } catch (_) {
+      /* fall through */
+    }
+    return "";
   }
 
   function conceptUrl(slug) {
@@ -32,31 +44,22 @@
   }
 
   function dataUrl(name) {
-    const path = location.pathname.replace(/index\.html$/, "");
-    if (/\/explore\/?$/.test(path)) {
-      return [`data/${name}`, `./data/${name}`];
-    }
-    if (/\/explore\//.test(path)) {
-      return [`../data/${name}`, `./data/${name}`, `data/${name}`];
-    }
-    return [
-      `explore/data/${name}`,
-      `../explore/data/${name}`,
-      `./data/${name}`,
-      `data/${name}`,
-    ];
+    // Root-absolute path — immune to trailing-slash / nested-page quirks
+    return [`${siteRoot()}/explore/data/${name}`];
   }
 
   async function fetchFirst(urls) {
+    const errors = [];
     for (const url of urls) {
       try {
         const res = await fetch(url);
         if (res.ok) return res.json();
-      } catch (_) {
-        /* try next */
+        errors.push(`${url} → HTTP ${res.status}`);
+      } catch (err) {
+        errors.push(`${url} → ${err && err.message ? err.message : err}`);
       }
     }
-    throw new Error("Could not load explore data: " + urls.join(", "));
+    throw new Error("Could not load explore data. " + errors.join("; "));
   }
 
   const SVG_NS = "http://www.w3.org/2000/svg";
@@ -720,6 +723,17 @@
     }
   }
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
-  else boot();
+  function start() {
+    boot().catch((err) => {
+      const msg = document.createElement("p");
+      msg.className = "xwk-error";
+      msg.textContent = String(err && err.message ? err.message : err);
+      ["xwk-coverage-matrix", "xwk-mapping-network", "xwk-explore-stats", "xwk-core-hierarchy"].forEach((id) => {
+        const r = document.getElementById(id);
+        if (r) r.replaceChildren(msg.cloneNode(true));
+      });
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
 })();
