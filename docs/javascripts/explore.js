@@ -397,20 +397,326 @@
     ]);
   }
 
+  function prettyLabel(id) {
+    return id
+      .replace(/([a-z])([A-Z])/g, "$1 $2")
+      .replace(/Stratum$/, " / Stratum")
+      .replace(/Sequence$/, " / Sequence")
+      .replace(/Artifact$/, " Artifact")
+      .replace(/Object$/, (m, off, s) => (s.startsWith("NonPhysical") ? " Object" : m));
+  }
+
+  function renderCoreHierarchy(root, hierarchy) {
+    const controls = el("div", { className: "xwk-controls" });
+    const relToggle = el("input", { type: "checkbox", id: "xwk-core-rels" });
+    relToggle.checked = true;
+    const resetBtn = el("button", { type: "button", className: "xwk-btn", text: "Reset layout" });
+    controls.appendChild(el("label", {}, [relToggle, document.createTextNode(" Show relation edges")]));
+    controls.appendChild(resetBtn);
+
+    const meta = el("p", { className: "xwk-meta", text: `${hierarchy.classes.length} classes · drag nodes · click to highlight ancestry/descendants` });
+    const svgWrap = el("div", { className: "xwk-svg-wrap xwk-core-wrap" });
+    const tip = el("div", { className: "xwk-tip" });
+    tip.hidden = true;
+    root.replaceChildren(controls, meta, svgWrap);
+
+    const children = {};
+    const parents = {};
+    hierarchy.classes.forEach((c) => {
+      children[c] = [];
+    });
+    hierarchy.inheritance.forEach(({ parent, child }) => {
+      (children[parent] ||= []).push(child);
+      parents[child] = parent;
+    });
+
+    const levels = {};
+    function depth(id) {
+      if (levels[id] != null) return levels[id];
+      levels[id] = parents[id] ? depth(parents[id]) + 1 : 0;
+      return levels[id];
+    }
+    hierarchy.classes.forEach(depth);
+    const maxDepth = Math.max(...Object.values(levels), 0);
+    const byLevel = {};
+    hierarchy.classes.forEach((c) => {
+      (byLevel[levels[c]] ||= []).push(c);
+    });
+    Object.values(byLevel).forEach((arr) => arr.sort());
+
+    let selected = null;
+    let showRels = true;
+    let raf = 0;
+
+    function layoutSeed(width, height) {
+      const nodes = {};
+      hierarchy.classes.forEach((id) => {
+        const level = levels[id];
+        const row = byLevel[level];
+        const idx = row.indexOf(id);
+        const x = ((idx + 1) / (row.length + 1)) * (width - 80) + 40;
+        const y = ((level + 0.55) / (maxDepth + 1.2)) * (height - 60) + 30;
+        nodes[id] = { id, x, y, vx: 0, vy: 0, level };
+      });
+      return nodes;
+    }
+
+    function neighborhood(id) {
+      const set = new Set([id]);
+      let p = parents[id];
+      while (p) {
+        set.add(p);
+        p = parents[p];
+      }
+      const stack = [...(children[id] || [])];
+      while (stack.length) {
+        const c = stack.pop();
+        if (set.has(c)) continue;
+        set.add(c);
+        (children[c] || []).forEach((x) => stack.push(x));
+      }
+      return set;
+    }
+
+    function draw() {
+      if (raf) cancelAnimationFrame(raf);
+      const width = Math.max(svgWrap.clientWidth || 860, 720);
+      const height = Math.max(420 + maxDepth * 70, 560);
+      const nodes = layoutSeed(width, height);
+      svgWrap.replaceChildren();
+      tip.hidden = true;
+
+      const svg = el("svg", {
+        viewBox: `0 0 ${width} ${height}`,
+        width: "100%",
+        height: String(height),
+        class: "xwk-network",
+        role: "img",
+        "aria-label": "Interactive XwkOnt core class hierarchy",
+      });
+      const gRels = el("g", { class: "rels" });
+      const gInh = el("g", { class: "inh" });
+      const gNodes = el("g", { class: "nodes" });
+      svg.appendChild(gRels);
+      svg.appendChild(gInh);
+      svg.appendChild(gNodes);
+      svgWrap.appendChild(svg);
+      svgWrap.appendChild(tip);
+
+      const inhLines = hierarchy.inheritance.map((e) => {
+        const line = el("line", {
+          "stroke-width": "2",
+          "stroke-opacity": "0.7",
+          stroke: "#0f766e",
+        });
+        gInh.appendChild(line);
+        return { line, e };
+      });
+
+      const relLines = (hierarchy.relations || []).map((e) => {
+        const line = el("line", {
+          "stroke-width": "1.5",
+          "stroke-opacity": "0.55",
+          stroke: "#0369a1",
+          "stroke-dasharray": "5 4",
+        });
+        line.addEventListener("mouseenter", (ev) =>
+          showTip(ev, `${e.source} —[${e.label || "related"}]→ ${e.target}`)
+        );
+        line.addEventListener("mouseleave", hideTip);
+        gRels.appendChild(line);
+        return { line, e };
+      });
+
+      const nodeEls = hierarchy.classes.map((id) => {
+        const n = nodes[id];
+        const g = el("g", { class: "node", style: "cursor:grab" });
+        const labelText = prettyLabel(id);
+        const tw = Math.min(Math.max(labelText.length * 6.2 + 18, 64), 150);
+        const rect = el("rect", {
+          x: String(-tw / 2),
+          y: "-14",
+          width: String(tw),
+          height: "28",
+          rx: "8",
+          fill: id === "Entity" ? "#0f766e" : "#334155",
+          stroke: "#0f172a",
+          "stroke-width": "1",
+        });
+        const text = el("text", {
+          "text-anchor": "middle",
+          dy: "4",
+          "font-size": "11",
+          fill: "#f8fafc",
+          text: labelText.length > 22 ? labelText.slice(0, 21) + "…" : labelText,
+        });
+        g.appendChild(rect);
+        g.appendChild(text);
+        g.addEventListener("mouseenter", (ev) => {
+          const parent = parents[id] ? ` · parent ${prettyLabel(parents[id])}` : " · root";
+          const kids = (children[id] || []).length;
+          showTip(ev, `${prettyLabel(id)}${parent} · ${kids} child class(es)`);
+        });
+        g.addEventListener("mouseleave", hideTip);
+        g.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          selected = selected === id ? null : id;
+          paint();
+        });
+        enableDrag(g, n);
+        gNodes.appendChild(g);
+        return { g, rect, n, id };
+      });
+
+      function showTip(ev, text) {
+        tip.hidden = false;
+        tip.textContent = text;
+        const rect = svgWrap.getBoundingClientRect();
+        tip.style.left = `${ev.clientX - rect.left + 12}px`;
+        tip.style.top = `${ev.clientY - rect.top + 12}px`;
+      }
+      function hideTip() {
+        tip.hidden = true;
+      }
+
+      function enableDrag(g, n) {
+        let dragging = false;
+        g.addEventListener("pointerdown", (ev) => {
+          dragging = true;
+          g.setPointerCapture(ev.pointerId);
+          ev.preventDefault();
+        });
+        g.addEventListener("pointermove", (ev) => {
+          if (!dragging) return;
+          const rect = svg.getBoundingClientRect();
+          n.x = ((ev.clientX - rect.left) / rect.width) * width;
+          n.y = ((ev.clientY - rect.top) / rect.height) * height;
+          n.vx = 0;
+          n.vy = 0;
+          paint();
+        });
+        g.addEventListener("pointerup", () => {
+          dragging = false;
+        });
+      }
+
+      function paint() {
+        const focus = selected ? neighborhood(selected) : null;
+        inhLines.forEach(({ line, e }) => {
+          const a = nodes[e.parent];
+          const b = nodes[e.child];
+          line.setAttribute("x1", a.x);
+          line.setAttribute("y1", a.y);
+          line.setAttribute("x2", b.x);
+          line.setAttribute("y2", b.y);
+          const on = !focus || (focus.has(e.parent) && focus.has(e.child));
+          line.setAttribute("stroke-opacity", on ? "0.85" : "0.12");
+        });
+        relLines.forEach(({ line, e }) => {
+          line.style.display = showRels ? "" : "none";
+          const a = nodes[e.source];
+          const b = nodes[e.target];
+          // self-loops: small offset arc substitute via short stub
+          if (e.source === e.target) {
+            line.setAttribute("x1", a.x - 18);
+            line.setAttribute("y1", a.y - 18);
+            line.setAttribute("x2", a.x + 18);
+            line.setAttribute("y2", a.y - 18);
+          } else {
+            line.setAttribute("x1", a.x);
+            line.setAttribute("y1", a.y);
+            line.setAttribute("x2", b.x);
+            line.setAttribute("y2", b.y);
+          }
+          const on = !focus || focus.has(e.source) || focus.has(e.target);
+          line.setAttribute("stroke-opacity", on ? "0.6" : "0.08");
+        });
+        nodeEls.forEach(({ g, rect, n, id }) => {
+          g.setAttribute("transform", `translate(${n.x},${n.y})`);
+          const on = !focus || focus.has(id);
+          rect.setAttribute("opacity", on ? "1" : "0.22");
+          if (selected === id) {
+            rect.setAttribute("stroke", "#5eead4");
+            rect.setAttribute("stroke-width", "2.5");
+          } else {
+            rect.setAttribute("stroke", "#0f172a");
+            rect.setAttribute("stroke-width", "1");
+          }
+        });
+      }
+
+      // light force to reduce overlap while preserving levels
+      function tick() {
+        const list = Object.values(nodes);
+        for (let i = 0; i < list.length; i++) {
+          for (let j = i + 1; j < list.length; j++) {
+            const a = list[i];
+            const b = list[j];
+            let dx = a.x - b.x;
+            let dy = a.y - b.y;
+            let dist = Math.hypot(dx, dy) || 0.01;
+            if (dist < 90) {
+              const f = ((90 - dist) / dist) * 0.08;
+              a.vx += dx * f;
+              a.vy += dy * f;
+              b.vx -= dx * f;
+              b.vy -= dy * f;
+            }
+          }
+        }
+        list.forEach((n) => {
+          const targetY = ((n.level + 0.55) / (maxDepth + 1.2)) * (height - 60) + 30;
+          n.vy += (targetY - n.y) * 0.04;
+          n.vx *= 0.8;
+          n.vy *= 0.8;
+          n.x = Math.min(width - 40, Math.max(40, n.x + n.vx));
+          n.y = Math.min(height - 30, Math.max(24, n.y + n.vy));
+        });
+        paint();
+        raf = requestAnimationFrame(tick);
+      }
+      raf = requestAnimationFrame(tick);
+      paint();
+    }
+
+    relToggle.addEventListener("change", () => {
+      showRels = relToggle.checked;
+      // repaint relation visibility without full relayout
+      draw();
+    });
+    resetBtn.addEventListener("click", () => {
+      selected = null;
+      draw();
+    });
+    let resizeTimer = 0;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(draw, 150);
+    });
+    draw();
+  }
+
   async function boot() {
     const matrixRoot = document.getElementById("xwk-coverage-matrix");
     const networkRoot = document.getElementById("xwk-mapping-network");
     const statsRoot = document.getElementById("xwk-explore-stats");
-    if (!matrixRoot && !networkRoot && !statsRoot) return;
+    const coreRoot = document.getElementById("xwk-core-hierarchy");
+    if (!matrixRoot && !networkRoot && !statsRoot && !coreRoot) return;
 
     try {
-      const payload = await fetchFirst(dataUrl("crosswalks.json"));
-      if (statsRoot) renderStats(statsRoot, payload);
-      if (matrixRoot) renderCoverageMatrix(matrixRoot, payload);
-      if (networkRoot) renderNetwork(networkRoot, payload);
+      if (statsRoot || matrixRoot || networkRoot) {
+        const payload = await fetchFirst(dataUrl("crosswalks.json"));
+        if (statsRoot) renderStats(statsRoot, payload);
+        if (matrixRoot) renderCoverageMatrix(matrixRoot, payload);
+        if (networkRoot) renderNetwork(networkRoot, payload);
+      }
+      if (coreRoot) {
+        const hierarchy = await fetchFirst(dataUrl("core-hierarchy.json"));
+        renderCoreHierarchy(coreRoot, hierarchy);
+      }
     } catch (err) {
       const msg = el("p", { className: "xwk-error", text: String(err.message || err) });
-      [matrixRoot, networkRoot, statsRoot].forEach((r) => r && r.replaceChildren(msg.cloneNode(true)));
+      [matrixRoot, networkRoot, statsRoot, coreRoot].forEach((r) => r && r.replaceChildren(msg.cloneNode(true)));
     }
   }
 

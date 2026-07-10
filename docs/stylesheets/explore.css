@@ -182,3 +182,28 @@
 [data-md-color-scheme="slate"] .xwk-callout strong {
   color: #5eead4;
 }
+
+.xwk-btn {
+  margin-left: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+}
+
+.xwk-btn:hover {
+  border-color: #0f766e;
+}
+
+.xwk-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.xwk-core-wrap {
+  min-height: 28rem;
+}
