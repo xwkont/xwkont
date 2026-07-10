@@ -13,9 +13,13 @@ Interactive views over XwkOnt's reviewed crosswalks and core comparison vocabula
     <strong>Mapping network</strong>
     Drag a force-directed graph of source-term mapping assertions for any concept.
   </a>
+  <a class="xwk-callout" href="cloud/">
+    <strong>Concept word cloud</strong>
+    All reviewed concepts sized by mapping and correspondence evidence volume.
+  </a>
   <a class="xwk-callout" href="core/">
     <strong>Core hierarchy</strong>
-    Interactive Mermaid class diagram of the XwkOnt core scaffold.
+    Interactive SVG class tree of the XwkOnt core scaffold.
   </a>
 </div>
 

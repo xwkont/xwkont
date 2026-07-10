@@ -400,6 +400,180 @@
     ]);
   }
 
+  const CLOUD_COLORS = ["#0f766e", "#0369a1", "#334155", "#b45309", "#047857", "#1d4ed8", "#be123c", "#0e7490"];
+
+  function conceptWeight(c, mode) {
+    if (mode === "mappings") return Math.max(1, c.mapping_count || 0);
+    if (mode === "correspondences") return Math.max(1, c.correspondence_count || 0);
+    return Math.max(1, (c.mapping_count || 0) + (c.correspondence_count || 0));
+  }
+
+  function renderWordCloud(root, payload) {
+    const controls = el("div", { className: "xwk-controls" });
+    const select = el("select", { id: "xwk-cloud-weight", "aria-label": "Word size by" });
+    [
+      ["combined", "Size by mappings + correspondences"],
+      ["mappings", "Size by mapping assertions"],
+      ["correspondences", "Size by correspondence rows"],
+    ].forEach(([value, text]) => select.appendChild(el("option", { value, text })));
+    controls.appendChild(el("label", { text: "Weight " }));
+    controls.appendChild(select);
+
+    const meta = el("p", { className: "xwk-meta" });
+    const svgWrap = el("div", { className: "xwk-svg-wrap xwk-cloud-wrap" });
+    const tip = el("div", { className: "xwk-tip" });
+    tip.hidden = true;
+    root.replaceChildren(controls, meta, svgWrap);
+
+    const measureCtx = document.createElement("canvas").getContext("2d");
+    const pageFont = getComputedStyle(document.body).fontFamily || "sans-serif";
+
+    function measure(text, fontSize) {
+      measureCtx.font = `600 ${fontSize}px ${pageFont}`;
+      const w = measureCtx.measureText(text).width;
+      return { w, h: fontSize * 1.15 };
+    }
+
+    function overlaps(a, b, pad) {
+      return !(
+        a.x + a.w / 2 + pad < b.x - b.w / 2 ||
+        a.x - a.w / 2 - pad > b.x + b.w / 2 ||
+        a.y + a.h / 2 + pad < b.y - b.h / 2 ||
+        a.y - a.h / 2 - pad > b.y + b.h / 2
+      );
+    }
+
+    function place(items, width, height) {
+      const cx = width / 2;
+      const cy = height / 2;
+      const placed = [];
+      items.forEach((item, idx) => {
+        if (idx === 0) {
+          item.x = cx;
+          item.y = cy;
+          placed.push(item);
+          return;
+        }
+        let angle = idx * 0.7;
+        let radius = 8;
+        let found = false;
+        for (let step = 0; step < 2500; step++) {
+          const x = cx + Math.cos(angle) * radius;
+          const y = cy + Math.sin(angle) * radius * 0.72;
+          item.x = x;
+          item.y = y;
+          const hit = placed.some((p) => overlaps(item, p, 4));
+          const inBounds =
+            x - item.w / 2 > 8 &&
+            x + item.w / 2 < width - 8 &&
+            y - item.h / 2 > 8 &&
+            y + item.h / 2 < height - 8;
+          if (!hit && inBounds) {
+            found = true;
+            break;
+          }
+          angle += 0.35;
+          radius += 0.55;
+        }
+        if (!found) {
+          item.x = cx + (Math.random() - 0.5) * width * 0.6;
+          item.y = cy + (Math.random() - 0.5) * height * 0.6;
+        }
+        placed.push(item);
+      });
+      return placed;
+    }
+
+    function draw(mode) {
+      const width = Math.max(svgWrap.clientWidth || 860, 640);
+      const height = Math.max(420, Math.min(640, 280 + payload.concepts.length * 8));
+      const weights = payload.concepts.map((c) => conceptWeight(c, mode));
+      const minW = Math.min(...weights);
+      const maxW = Math.max(...weights);
+      const span = Math.max(maxW - minW, 1);
+
+      const items = payload.concepts
+        .map((c, i) => {
+          const weight = conceptWeight(c, mode);
+          const t = (weight - minW) / span;
+          const fontSize = Math.round(14 + t * 28);
+          const short = c.title.length > 28 ? c.title.slice(0, 27) + "…" : c.title;
+          const box = measure(short, fontSize);
+          return {
+            ...c,
+            weight,
+            fontSize,
+            short,
+            w: box.w,
+            h: box.h,
+            color: CLOUD_COLORS[i % CLOUD_COLORS.length],
+          };
+        })
+        .sort((a, b) => b.weight - a.weight);
+
+      place(items, width, height);
+
+      meta.textContent = `${payload.concepts.length} reviewed concepts · click a label to open its crosswalk`;
+      svgWrap.replaceChildren();
+      tip.hidden = true;
+
+      const svg = el("svg", {
+        viewBox: `0 0 ${width} ${height}`,
+        width: "100%",
+        height: String(height),
+        class: "xwk-network xwk-cloud",
+        role: "img",
+        "aria-label": "Word cloud of reviewed XwkOnt concepts",
+      });
+      svgWrap.appendChild(svg);
+      svgWrap.appendChild(tip);
+
+      items.forEach((item) => {
+        const g = el("g", {
+          class: "xwk-cloud-word",
+          transform: `translate(${item.x},${item.y})`,
+          style: "cursor:pointer",
+        });
+        const text = el("text", {
+          "text-anchor": "middle",
+          "dominant-baseline": "middle",
+          "font-size": String(item.fontSize),
+          "font-weight": "600",
+          fill: item.color,
+          text: item.short,
+        });
+        g.appendChild(text);
+        g.addEventListener("mouseenter", (ev) => {
+          tip.hidden = false;
+          tip.textContent = `${item.title} — ${item.mapping_count} mappings, ${item.correspondence_count} correspondences`;
+          const rect = svgWrap.getBoundingClientRect();
+          tip.style.left = `${ev.clientX - rect.left + 12}px`;
+          tip.style.top = `${ev.clientY - rect.top + 12}px`;
+        });
+        g.addEventListener("mousemove", (ev) => {
+          const rect = svgWrap.getBoundingClientRect();
+          tip.style.left = `${ev.clientX - rect.left + 12}px`;
+          tip.style.top = `${ev.clientY - rect.top + 12}px`;
+        });
+        g.addEventListener("mouseleave", () => {
+          tip.hidden = true;
+        });
+        g.addEventListener("click", () => {
+          location.href = conceptUrl(item.slug);
+        });
+        svg.appendChild(g);
+      });
+    }
+
+    select.addEventListener("change", () => draw(select.value));
+    let resizeTimer = 0;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => draw(select.value), 150);
+    });
+    draw(select.value);
+  }
+
   function prettyLabel(id) {
     return id
       .replace(/([a-z])([A-Z])/g, "$1 $2")
@@ -704,14 +878,16 @@
     const networkRoot = document.getElementById("xwk-mapping-network");
     const statsRoot = document.getElementById("xwk-explore-stats");
     const coreRoot = document.getElementById("xwk-core-hierarchy");
-    if (!matrixRoot && !networkRoot && !statsRoot && !coreRoot) return;
+    const cloudRoot = document.getElementById("xwk-concept-cloud");
+    if (!matrixRoot && !networkRoot && !statsRoot && !coreRoot && !cloudRoot) return;
 
     try {
-      if (statsRoot || matrixRoot || networkRoot) {
+      if (statsRoot || matrixRoot || networkRoot || cloudRoot) {
         const payload = await fetchFirst(dataUrl("crosswalks.json"));
         if (statsRoot) renderStats(statsRoot, payload);
         if (matrixRoot) renderCoverageMatrix(matrixRoot, payload);
         if (networkRoot) renderNetwork(networkRoot, payload);
+        if (cloudRoot) renderWordCloud(cloudRoot, payload);
       }
       if (coreRoot) {
         const hierarchy = await fetchFirst(dataUrl("core-hierarchy.json"));
@@ -719,7 +895,7 @@
       }
     } catch (err) {
       const msg = el("p", { className: "xwk-error", text: String(err.message || err) });
-      [matrixRoot, networkRoot, statsRoot, coreRoot].forEach((r) => r && r.replaceChildren(msg.cloneNode(true)));
+      [matrixRoot, networkRoot, statsRoot, coreRoot, cloudRoot].forEach((r) => r && r.replaceChildren(msg.cloneNode(true)));
     }
   }
 
@@ -728,7 +904,7 @@
       const msg = document.createElement("p");
       msg.className = "xwk-error";
       msg.textContent = String(err && err.message ? err.message : err);
-      ["xwk-coverage-matrix", "xwk-mapping-network", "xwk-explore-stats", "xwk-core-hierarchy"].forEach((id) => {
+      ["xwk-coverage-matrix", "xwk-mapping-network", "xwk-explore-stats", "xwk-core-hierarchy", "xwk-concept-cloud"].forEach((id) => {
         const r = document.getElementById(id);
         if (r) r.replaceChildren(msg.cloneNode(true));
       });

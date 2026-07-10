@@ -85,6 +85,7 @@ nav:
     - explore/index.md
     - Coverage matrix: explore/coverage.md
     - Mapping network: explore/mappings.md
+    - Concept word cloud: explore/cloud.md
     - Core hierarchy: explore/core.md
   - Concepts:
     - crosswalks/concepts/README.md

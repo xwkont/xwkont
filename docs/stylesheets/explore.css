@@ -207,3 +207,16 @@
 .xwk-core-wrap {
   min-height: 28rem;
 }
+
+.xwk-cloud-wrap {
+  min-height: 26rem;
+}
+
+.xwk-cloud-word text {
+  transition: opacity 0.15s ease, fill 0.15s ease;
+}
+
+.xwk-cloud-word:hover text {
+  opacity: 0.85;
+  text-decoration: underline;
+}
