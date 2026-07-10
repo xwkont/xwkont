@@ -50,7 +50,7 @@ extra_css:
   - stylesheets/explore.css
 
 extra_javascript:
-  - javascripts/xwk-explore.2.js
+  - javascripts/xwk-explore.3.js
 
 plugins:
   - search

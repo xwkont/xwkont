@@ -412,10 +412,11 @@
     const controls = el("div", { className: "xwk-controls" });
     const select = el("select", { id: "xwk-cloud-weight", "aria-label": "Word size by" });
     [
-      ["combined", "Size by mappings + correspondences"],
       ["mappings", "Size by mapping assertions"],
       ["correspondences", "Size by correspondence rows"],
+      ["combined", "Size by mappings + correspondences"],
     ].forEach(([value, text]) => select.appendChild(el("option", { value, text })));
+    select.value = "mappings";
     controls.appendChild(el("label", { text: "Weight " }));
     controls.appendChild(select);
 
@@ -431,7 +432,8 @@
     function measure(text, fontSize) {
       measureCtx.font = `600 ${fontSize}px ${pageFont}`;
       const w = measureCtx.measureText(text).width;
-      return { w, h: fontSize * 1.15 };
+      // Slightly tall boxes so descenders / visual weight do not collide
+      return { w: w + 6, h: fontSize * 1.35 };
     }
 
     function overlaps(a, b, pad) {
@@ -443,61 +445,80 @@
       );
     }
 
-    function place(items, width, height) {
+    function inBounds(item, width, height, margin) {
+      return (
+        item.x - item.w / 2 >= margin &&
+        item.x + item.w / 2 <= width - margin &&
+        item.y - item.h / 2 >= margin &&
+        item.y + item.h / 2 <= height - margin
+      );
+    }
+
+    function tryPlace(items, width, height, pad) {
       const cx = width / 2;
       const cy = height / 2;
       const placed = [];
-      items.forEach((item, idx) => {
-        if (idx === 0) {
-          item.x = cx;
-          item.y = cy;
-          placed.push(item);
-          return;
-        }
-        let angle = idx * 0.7;
-        let radius = 8;
+      for (let idx = 0; idx < items.length; idx++) {
+        const item = items[idx];
         let found = false;
-        for (let step = 0; step < 2500; step++) {
-          const x = cx + Math.cos(angle) * radius;
-          const y = cy + Math.sin(angle) * radius * 0.72;
-          item.x = x;
-          item.y = y;
-          const hit = placed.some((p) => overlaps(item, p, 4));
-          const inBounds =
-            x - item.w / 2 > 8 &&
-            x + item.w / 2 < width - 8 &&
-            y - item.h / 2 > 8 &&
-            y + item.h / 2 < height - 8;
-          if (!hit && inBounds) {
+        const maxSteps = 12000;
+        for (let step = 0; step < maxSteps; step++) {
+          // Archimedean spiral — fine steps, mild vertical squash
+          const t = step * 0.12;
+          const r = step === 0 && idx === 0 ? 0 : 6 + t * 2.1;
+          item.x = cx + Math.cos(t) * r;
+          item.y = cy + Math.sin(t) * r * 0.78;
+          if (inBounds(item, width, height, 10) && !placed.some((p) => overlaps(item, p, pad))) {
             found = true;
             break;
           }
-          angle += 0.35;
-          radius += 0.55;
         }
-        if (!found) {
-          item.x = cx + (Math.random() - 0.5) * width * 0.6;
-          item.y = cy + (Math.random() - 0.5) * height * 0.6;
-        }
+        if (!found) return false;
         placed.push(item);
-      });
-      return placed;
+      }
+      return true;
     }
 
-    function draw(mode) {
-      const width = Math.max(svgWrap.clientWidth || 860, 640);
-      const height = Math.max(420, Math.min(640, 280 + payload.concepts.length * 8));
+    function separate(items, width, height, rounds) {
+      for (let round = 0; round < rounds; round++) {
+        for (let i = 0; i < items.length; i++) {
+          for (let j = i + 1; j < items.length; j++) {
+            const a = items[i];
+            const b = items[j];
+            const pad = 6;
+            if (!overlaps(a, b, pad)) continue;
+            let dx = a.x - b.x;
+            let dy = a.y - b.y;
+            let dist = Math.hypot(dx, dy) || 0.01;
+            const minDist = (a.w + b.w) / 4 + (a.h + b.h) / 4 + pad;
+            if (dist >= minDist) continue;
+            const push = ((minDist - dist) / dist) * 0.5;
+            dx *= push;
+            dy *= push;
+            a.x += dx;
+            a.y += dy;
+            b.x -= dx;
+            b.y -= dy;
+          }
+        }
+        items.forEach((item) => {
+          item.x = Math.min(width - 10 - item.w / 2, Math.max(10 + item.w / 2, item.x));
+          item.y = Math.min(height - 10 - item.h / 2, Math.max(10 + item.h / 2, item.y));
+        });
+      }
+    }
+
+    function buildItems(mode, fontScale) {
       const weights = payload.concepts.map((c) => conceptWeight(c, mode));
       const minW = Math.min(...weights);
       const maxW = Math.max(...weights);
       const span = Math.max(maxW - minW, 1);
-
-      const items = payload.concepts
+      return payload.concepts
         .map((c, i) => {
           const weight = conceptWeight(c, mode);
           const t = (weight - minW) / span;
-          const fontSize = Math.round(14 + t * 28);
-          const short = c.title.length > 28 ? c.title.slice(0, 27) + "…" : c.title;
+          const fontSize = Math.max(11, Math.round((12 + t * 22) * fontScale));
+          const short = c.title.length > 24 ? c.title.slice(0, 23) + "…" : c.title;
           const box = measure(short, fontSize);
           return {
             ...c,
@@ -509,11 +530,40 @@
             color: CLOUD_COLORS[i % CLOUD_COLORS.length],
           };
         })
-        .sort((a, b) => b.weight - a.weight);
+        .sort((a, b) => b.weight - a.weight || a.title.localeCompare(b.title));
+    }
 
-      place(items, width, height);
+    function layout(mode) {
+      const width = Math.max(svgWrap.clientWidth || 860, 720);
+      let height = Math.max(560, Math.round(width * 0.72));
+      let fontScale = 1;
+      let items = null;
 
-      meta.textContent = `${payload.concepts.length} reviewed concepts · click a label to open its crosswalk`;
+      for (let attempt = 0; attempt < 10; attempt++) {
+        items = buildItems(mode, fontScale);
+        if (tryPlace(items, width, height, 7)) {
+          separate(items, width, height, 40);
+          // If separation reintroduced hard overlaps, accept; spiral already non-overlapping
+          return { items, width, height };
+        }
+        // Grow canvas, then shrink fonts if still cramped
+        if (attempt < 5) height += 80;
+        else fontScale *= 0.9;
+      }
+      // Last resort: still place with oversized canvas
+      height += 200;
+      items = buildItems(mode, fontScale * 0.85);
+      tryPlace(items, width, height, 5);
+      separate(items, width, height, 60);
+      return { items, width, height };
+    }
+
+    function draw(mode) {
+      const { items, width, height } = layout(mode);
+
+      meta.textContent = `${payload.concepts.length} reviewed concepts · sized by ${
+        mode === "mappings" ? "mapping assertions" : mode === "correspondences" ? "correspondence rows" : "mappings + correspondences"
+      } · click a label to open its crosswalk`;
       svgWrap.replaceChildren();
       tip.hidden = true;
 

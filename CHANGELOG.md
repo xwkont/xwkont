@@ -14,7 +14,8 @@ All notable changes to XwkOnt are documented here. Format follows [Keep a Change
 
 ### Fixed
 
-- Cache-bust Explore script filename (`xwk-explore.2.js`) so new mounts (word cloud, etc.) are not left on “Loading…” behind a stale cached bundle.
+- Cache-bust Explore script filename when mounts/layout change so pages are not left on “Loading…” behind a stale cached bundle.
+- Concept word cloud defaults to mapping-assertion sizing and uses stricter spiral packing (grow canvas / shrink fonts) to reduce label overlap.
 
 ## [0.3.2] - 2026-07-10
 

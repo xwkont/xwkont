@@ -1,6 +1,6 @@
 # Concept word cloud
 
-Reviewed crosswalk concepts sized by how much mapping and correspondence evidence they currently carry in LinkML. Larger labels are denser crosswalks, not “more important” ontology claims.
+Reviewed crosswalk concepts sized by mapping assertions by default (switchable to correspondence rows or combined). Larger labels are denser crosswalks, not “more important” ontology claims.
 
 **Click** a label to open its concept page · use the weight control to switch sizing · hover for counts.
 
