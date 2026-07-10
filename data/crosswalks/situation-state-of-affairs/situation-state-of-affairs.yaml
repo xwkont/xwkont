@@ -829,6 +829,6 @@ future_work:
   `uncertainty-001`''s resolution note and `data/ontology/core.ttl`.'
 - Consider whether GFO's two `Situation` lineages (`note-005`) warrant a follow-up question
   to GFO's own maintainers or documentation, separate from this crosswalk's own scope.
-- Create the Universal/Type crosswalk next (per `TODO.md`'s `0.2.0` batch) — UFO's OntoUML
+- ~~Create the Universal/Type crosswalk next~~ — **done** (`universal-type.md` reviewed). Residual OntoUML
   vocabulary (already this crosswalk's primary UFO source) is directly relevant there too
   (`type`/`kind`/`phase` stereotypes).

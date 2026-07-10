@@ -4,7 +4,7 @@ title: Information Artifact
 editorial_status: reviewed
 created: "2026-07-01"
 modified: "2026-07-07"
-scope_note: 'This crosswalk asks the question `TODO.md` posed directly: does `xwkont-core:InformationArtifact`
+scope_note: 'This crosswalk asks the original inventory question directly: does `xwkont-core:InformationArtifact`
   (a direct child of `Entity`, described in `data/ontology/core.ttl` as XwkOnt''s own "candidate
   support concept") correspond to anything in BFO, DOLCE, UFO, or SUMO, or is it purely XwkOnt-introduced
   and out of crosswalk scope?
@@ -656,13 +656,13 @@ uncertainties:
     general/comprehensive account rather than UFO-A/UFO-C specifically.
 - item_id: uncertainty-003
   uncertainty_type: open-question
-  resolved: false
-  description: This is the last planned concept crosswalk in the current inventory (`TODO.md`).
-    `xwkont-core:Entity` itself remains explicitly out of scope (decided separately).
-  impact: Completes the 8-concept inventory (7 crosswalked, 1 decided against).
-  follow_up: 'Decide next priorities: primary-source verification debt (accumulated across
-    all 7 crosswalks) vs. new scope (e.g., a 9th concept, or extending to GFO/YAMATO/TUpper/GUM
-    per `continuant-occurrent.md` `uncertainty-004`).'
+  resolved: true
+  description: Originally the last planned concept in the first inventory. Subsequent
+    `ADR-0015`/`ADR-0018` batches expanded scope; Entity remains out of scope.
+  impact: Original 8-concept inventory complete; 18 further concepts reviewed since.
+  follow_up: 'Use `docs/crosswalks/candidate-concepts.md` for future selection; no action on
+    this item.'
+  resolution_note: resolved 2026-07-10 — inventory expansion completed through ontology-core-v0.3.0
 - item_id: uncertainty-004
   uncertainty_type: open-question
   resolved: false

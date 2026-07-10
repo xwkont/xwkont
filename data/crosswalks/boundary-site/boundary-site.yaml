@@ -601,5 +601,5 @@ future_work:
   work.'
 - Re-check TUpper's `tupper.clif` file for clarifying axioms on `edge`/`ridge`/`border`/`outer`
   (`uncertainty-003`).
-- Create the Proposition/Content crosswalk next (per `TODO.md`'s `0.2.0` batch) — the ninth
+- ~~Create the Proposition/Content crosswalk next~~ — **done** (`proposition-content.md` reviewed). Was the ninth
   and final concept of this batch.

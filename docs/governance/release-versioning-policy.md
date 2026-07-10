@@ -1,8 +1,8 @@
 # XwkOnt Release and Versioning Policy
 
 > **Status:** Repository-first governance baseline  
-> **Date:** 2026-07-01  
-> **Scope:** Release tagging, versioning posture, and immutable ontology document IRI decision
+> **Date:** 2026-07-01 (tag-immutability rule added 2026-07-10 after the `ontology-core-v0.3.1` retraction)  
+> **Scope:** Release tagging, versioning posture, tag immutability, and immutable ontology document IRI decision
 
 ## Purpose
 
@@ -46,6 +46,20 @@ ontology-core-v0.1.0-rc.1
 ```
 
 A historical governance milestone tag candidate remains for early repository history, but future ontology releases should use ontology-specific milestone tags.
+
+## Tag Immutability
+
+**Published release tags are immutable.** Once a tag matching `ontology-core-vMAJOR.MINOR.PATCH` has been pushed to the public repository (or otherwise announced as a release), it MUST NOT be moved, force-updated, or deleted.
+
+If a tagged release is incomplete, incorrect, or undersells in-flight work that belonged in that same milestone:
+
+1. Prefer cutting a **new** tag (`PATCH` for corrections/clarifications; `MINOR` when scope actually expands) that supersedes the prior one.
+2. Document the supersession in `CHANGELOG.md` and release notes, naming both tags and the reason.
+3. Do **not** delete or retarget the prior tag after it has been published.
+
+### Exception record: `ontology-core-v0.3.1` (2026-07-08)
+
+On 2026-07-08, `ontology-core-v0.3.1` was tagged and then retracted the same day; `ontology-core-v0.3.0` was force-moved to a consolidated commit. That sequence is recorded in `CHANGELOG.md` and is the **only** accepted historical exception. It is not a precedent for future releases. This section exists so the next incomplete cut becomes a new tag, not another retag.
 
 ## Version Number Meaning
 
@@ -110,7 +124,7 @@ Activating immutable versioned ontology document IRIs after these prerequisites 
 
 ## Current Release State
 
-The first core ontology publication package remains a publication-ready repository milestone with immutable external versioning deferred. It may become an externally tagged milestone once redirect, distribution, and publication mechanics are ready.
+Tagged milestones through `ontology-core-v0.3.0` are published. Immutable versioned ontology document IRIs remain deferred until the prerequisites above are met. Future incomplete cuts must follow the Tag Immutability rule (new tag + CHANGELOG supersession), not tag deletion or retargeting.
 
 ## Deprecation and Supersession
 

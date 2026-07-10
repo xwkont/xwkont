@@ -1,7 +1,7 @@
 # XwkOnt Core Glossary
 
 > **Local identifier:** `xwkont:glossary:core`  
-> **Editorial status:** `draft`  
+> **Editorial status:** `reviewed`  
 > **Created:** `2026-07-01`  
 > **Primary source:** `docs/ontology/core-ontology.md`  
 > **Dependency graph:** `docs/ontology/core-glossary-dependencies.mmd`

@@ -911,7 +911,7 @@ uncertainties:
   description: This crosswalk does not resolve the Process/Event distinction within Occurrent,
     already flagged as an unresolved boundary in `docs/releases/core-ontology-release-notes.md`.
   impact: Scopes this crosswalk to the Continuant/Occurrent level only.
-  follow_up: Create Process and Event concept crosswalks per `TODO.md`.
+  follow_up: Process and Event concept crosswalks are reviewed; Process/Event boundary remains documented in release notes.
 - item_id: uncertainty-004
   uncertainty_type: uncertainty
   resolved: true
@@ -920,12 +920,11 @@ uncertainties:
     source-ontology scope, alongside the original BFO/DOLCE/SUMO/UFO. The content buildout
     for this crosswalk (correspondences 009-016, mappings 008-015) is also now complete, directly
     verified against each new source''s own OWL/CLIF/technical-report text.'
-  impact: This crosswalk now covers all 8 `ADR-0015` sources. The remaining 7 concept crosswalks
-    (`object.md`, `event.md`, `information-artifact.md`, `process.md`, `quality.md`, `relation.md`,
-    `role.md`) still cover only the original 4 — tracked in `TODO.md` as ongoing work.
-  follow_up: This crosswalk's buildout is done. Extend the same pattern to the remaining 7
-    crosswalks in future work, per `TODO.md`'s pacing note (don't attempt all 8 at once without
-    checking with the maintainer, per the precedent set for the scope decision itself).
+  impact: This crosswalk now covers all 8 `ADR-0015` sources. The other original-inventory
+    crosswalks have since completed the same GFO/YAMATO/TUpper/GUM buildout; all 26 reviewed
+    concepts cover all 8 sources.
+  follow_up: No further ADR-0015 buildout action on this item — completed across the concept
+    inventory.
   resolved_date: "2026-07-02"
   resolution_note: resolved 2026-07-02 (scope); content buildout also completed 2026-07-02
 - item_id: uncertainty-005
@@ -1063,7 +1062,7 @@ future_work:
   to replace `uncertainty-005`'s section/quotation locators with OWL class IRIs.
 - Periodically re-check the three blocked 2022 Applied Ontology papers (YAMATO, TUpper, GUM)
   in case the Cloudflare/paywall block lifts.
-- Extend this crosswalk's GFO/YAMATO/TUpper/GUM buildout pattern to the remaining 7 concept
+- ~~Extend this crosswalk's GFO/YAMATO/TUpper/GUM buildout pattern to the remaining 7 concept
   crosswalks (`object.md`, `event.md`, `information-artifact.md`, `process.md`, `quality.md`,
-  `relation.md`, `role.md`), per `TODO.md` — ongoing work, pace with the maintainer rather
-  than attempting all at once.
+  `relation.md`, `role.md`)~~ — **done**; all original-inventory and later-batch
+  crosswalks now cover all 8 `ADR-0015` sources.

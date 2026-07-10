@@ -738,8 +738,8 @@ uncertainties:
     future crosswalk.
   impact: Scopes this crosswalk to Space only, consistent with `ADR-0018`'s one-concept-per-pass
     process.
-  follow_up: Create the Boundary/Site concept crosswalk later in the `0.2.0` batch (per `TODO.md`),
-    and cross-check BFO's `site`/GFO's `Spatial_boundary` against this crosswalk's `spatial
+  follow_up: ~~Create the Boundary/Site concept crosswalk later in the `0.2.0` batch~~ —
+    **done** (`boundary-site.md` reviewed). Residual cross-check BFO's `site`/GFO's `Spatial_boundary` against this crosswalk's `spatial
     region`/`Space` findings.
 - item_id: uncertainty-005
   uncertainty_type: open-question
@@ -826,7 +826,7 @@ future_work:
 - ~~Correct `time.md`'s GUM ancestor-chain claim per `uncertainty-001`.~~ Done — applied in
   the same commit that drafted this file (`b0f55ea`); `time.md`'s Source Definitions row and
   `uncertainty-006` both carry the correction.
-- Create the Boundary/Site crosswalk next (per `TODO.md`'s `0.2.0` batch), cross-checking
+- ~~Create the Boundary/Site crosswalk next~~ — **done** (`boundary-site.md` reviewed). Residual cross-check
   against `uncertainty-004`.
 - Re-check TUpper's `tupper.clif` file for axioms connecting `MaterialObject`/`ShapedObject`
   to the spatial-region apparatus (`uncertainty-005`).

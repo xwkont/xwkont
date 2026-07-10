@@ -639,8 +639,8 @@ uncertainties:
   resolved: true
   description: This item originally flagged that only `InformationArtifact` remained among
     the direct `Entity` children. `docs/crosswalks/concepts/information-artifact.md` has since
-    been created and all 7 planned crosswalks are complete (confirmed via `TODO.md`'s full
-    concept inventory).
+    been created and all 7 planned crosswalks are complete (confirmed via the completed
+    original concept inventory).
   impact: N/A
   follow_up: Resolved — no further action needed.
   resolution_note: resolved (stale by the time of this update)

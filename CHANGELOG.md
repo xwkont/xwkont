@@ -1,12 +1,19 @@
 # Changelog
 
-<!-- updated at: 2026-07-08 15:00 Z   (2026-07-08 11:00 EDT) -->
+<!-- updated at: 2026-07-10 12:15 Z   (2026-07-10 08:15 EDT) -->
 
 All notable changes to XwkOnt are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-> **Retracted: `ontology-core-v0.3.1` (tagged 2026-07-08, retracted the same day).** It was cut before `core.ttl` placement work already in flight (Symbol/Sign/Representation, Situation/State of Affairs) completed `0.3.0`'s own scope — those two concepts were the last ones left unplaced from the `0.2.0`/`0.3.0` batches. Rather than let a `0.3.1` exist that undersold what `0.3.0` was actually finishing, the tag was deleted (both the private repo and the public `xwkont/xwkont` repo) and `ontology-core-v0.3.0` was force-moved to the consolidated commit covering everything through `v0.3.1` plus the completed placements. **If anything pins `ontology-core-v0.3.1` by tag name, that tag no longer exists — re-pin to `ontology-core-v0.3.0`,** which is a superset (everything `v0.3.1` had, plus both placements). This is the first time a published XwkOnt tag has been retagged; see [docs/governance/release-versioning-policy.md](docs/governance/release-versioning-policy.md) for the versioning policy this doesn't yet formally commit to immutable release tags against.
+> **Retracted: `ontology-core-v0.3.1` (tagged 2026-07-08, retracted the same day).** It was cut before `core.ttl` placement work already in flight (Symbol/Sign/Representation, Situation/State of Affairs) completed `0.3.0`'s own scope — those two concepts were the last ones left unplaced from the `0.2.0`/`0.3.0` batches. Rather than let a `0.3.1` exist that undersold what `0.3.0` was actually finishing, the tag was deleted (both the private repo and the public `xwkont/xwkont` repo) and `ontology-core-v0.3.0` was force-moved to the consolidated commit covering everything through `v0.3.1` plus the completed placements. **If anything pins `ontology-core-v0.3.1` by tag name, that tag no longer exists — re-pin to `ontology-core-v0.3.0`,** which is a superset (everything `v0.3.1` had, plus both placements). This is the first and only accepted historical exception to tag immutability; [docs/governance/release-versioning-policy.md](docs/governance/release-versioning-policy.md) now forbids repeating it — future incomplete cuts must ship as a new tag with CHANGELOG supersession, not a retag.
 
-## [0.3.0] - 2026-07-08
+## [Unreleased]
+
+### Changed
+
+- Release/versioning policy now commits to **published-tag immutability** after the `v0.3.1` retraction, with an explicit exception record for that one event ([docs/governance/release-versioning-policy.md](docs/governance/release-versioning-policy.md)).
+- Public contribution backlog (`docs/crosswalks/candidate-concepts.md`) refreshed: intro no longer claims `0.3.0` `core.ttl` placement is pending; bucket labels for all 26 reviewed concepts drop the stale `(candidate)` suffix; public roadmap pointers prefer this file over unpublished `TODO.md`.
+- Core ontology specification, glossary, and axiom notes advanced from `draft` to `reviewed`, matching the completed `0.3.0` placement and glossary-closure work (known limitations such as Process/Event remain documented, not erased).
+- Stale open follow-ups in early crosswalk YAML (claims that Process/Event/Role/ADR-0015 buildouts were still pending) marked resolved and regenerated.
 
 Tagged `ontology-core-v0.3.0`. All 9 candidates from the `0.3.0` batch have now been through a crosswalk pass — 9 reviewed, 1 (Quality Space/Quale) off-ramped as not-distinct — bringing the total to 26 reviewed concepts, all of which now have `core.ttl` placement, completing every concept from both the `0.2.0` and `0.3.0` batches. (Originally split across `0.3.0`/`0.3.1` tags; consolidated into a single `0.3.0` release, since the placement work below completes rather than extends that batch's own scope.)
 

@@ -737,12 +737,14 @@ uncertainties:
   resolution_note: resolved 2026-07-01, as a confirmed negative finding
 - item_id: uncertainty-004
   uncertainty_type: open-question
-  resolved: false
+  resolved: true
   description: This crosswalk does not resolve Process on its own terms — it treats BFO:Process
     and SUMO's Process-as-umbrella only in relation to Event.
-  impact: Process needs its own crosswalk (already tracked in `TODO.md`) to be treated fairly
-    as a concept in its own right, not just as Event's foil.
-  follow_up: Create the Process concept crosswalk next.
+  impact: Process now has its own reviewed crosswalk; Event continues to treat Process only
+    where sources require Event/Process contrast.
+  follow_up: No missing-crosswalk action; Process/Event boundary remains a documented open modeling
+    question.
+  resolution_note: resolved 2026-07-10 — Process crosswalk reviewed; boundary question remains in release notes
 - item_id: uncertainty-005
   uncertainty_type: open-question
   resolved: false

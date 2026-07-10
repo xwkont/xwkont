@@ -108,7 +108,7 @@ labels:
     by maintainer (2026-07-06) to be covered by this crosswalk''s existing `Quale`/quality-space
     material rather than get its own document. Added here specifically so a search for "Quality
     Space / Quale" finds this concept directly. See Future Work for the full cross-reference
-    and `TODO.md`''s corresponding entry.'
+    and `docs/crosswalks/candidate-concepts.md`.'
 - role: Source term
   label: Quality (a Specifically Dependent Continuant)
   label_source: BFO
@@ -698,10 +698,11 @@ uncertainties:
   resolution_note: fully resolved 2026-07-01
 - item_id: uncertainty-003
   uncertainty_type: open-question
-  resolved: false
+  resolved: true
   description: This crosswalk does not address Role, Object's other sibling under Continuant.
   impact: Scopes this crosswalk to Quality only.
-  follow_up: Create the Role concept crosswalk next, per `TODO.md`.
+  follow_up: Role concept crosswalk is reviewed; no further action on this item.
+  resolution_note: resolved 2026-07-10 — Role crosswalk reviewed
 - item_id: uncertainty-004
   uncertainty_type: open-question
   resolved: false
@@ -831,8 +832,8 @@ future_work:
   Gärdenfors convergence finding, and does not merit its own document. That was a scoping
   judgment, not a source-evidence fact alone, so it was routed to the maintainer rather than
   self-closed — the maintainer has now confirmed it. Added as an Alternate Label above so a
-  direct search for "Quality Space / Quale" finds this concept. See `TODO.md`''s corresponding
-  entry and `docs/crosswalks/candidate-concepts.md`''s retagged DOLCE/GFO/YAMATO rows for the
+  direct search for "Quality Space / Quale" finds this concept. See
+  `docs/crosswalks/candidate-concepts.md`''s retagged DOLCE/GFO/YAMATO rows for the
   full trail. This confirmation is revisitable, not permanent, per the runbook''s stated
   revisit condition — if a future source reifies the value-space/quality-space layer as an
   entity independent of a specific quality, reopen this question.'

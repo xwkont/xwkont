@@ -687,9 +687,9 @@ uncertainties:
     scoped.
   impact: Scopes this crosswalk to Time only, consistent with `ADR-0018`'s one-concept-per-pass
     process.
-  follow_up: Create the Spatial Region/Space concept crosswalk next (per `TODO.md`'s `0.2.0`
-    batch), and cross-check whether Time/Space's sibling relationship in several sources should
-    be reflected in XwkOnt's own core.ttl structure.
+  follow_up: ~~Create the Spatial Region/Space concept crosswalk next~~ — **done** (`space.md`
+    reviewed). Residual cross-check whether Time/Space's sibling relationship in several sources
+    should be reflected in XwkOnt's own core.ttl structure remains open.
 - item_id: uncertainty-005
   uncertainty_type: open-question
   resolved: false
@@ -785,7 +785,7 @@ future_work:
 - '~~Resolve `uncertainty-001`~~ — **done 2026-07-05**: advanced `draft` → `reviewed` (`xwkont:review:time:2026-07-05:01`);
   core.ttl placement remains a separately-tracked open question, to be decided jointly with
   `space.md`''s `uncertainty-002` (see that crosswalk).'
-- Create the Spatial Region/Space crosswalk next (per `TODO.md`'s `0.2.0` batch), and check
+- ~~Create the Spatial Region/Space crosswalk next~~ — **done** (`space.md` reviewed). Residual check
   whether Time/Space's sibling relationship in several sources (`uncertainty-004`) should
   inform either crosswalk's final core.ttl placement.
 - Re-check UFO (`uncertainty-002`) and YAMATO (`uncertainty-003`) if their currently-blocked/gated

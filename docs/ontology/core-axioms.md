@@ -1,7 +1,7 @@
 # XwkOnt Core Logical Axiom Notes
 
 > **Local identifier:** `xwkont:ontology:core-axioms`  
-> **Editorial status:** `draft`  
+> **Editorial status:** `reviewed`  
 > **Created:** `2026-07-01`  
 > **Inputs:** `docs/ontology/core-ontology.md`, `docs/ontology/core-glossary.md`, `data/ontology/core.ttl`  
 > **Companion representation:** `data/ontology/core.ttl`

@@ -1,7 +1,7 @@
 # XwkOnt Core Ontology Specification
 
 > **Local identifier:** `xwkont:ontology:core`
-> **Editorial status:** `draft`
+> **Editorial status:** `reviewed`
 > **Created:** `2026-07-01`
 > **Canonical artifact:** this Markdown specification
 > **Companion representation:** `data/ontology/core.ttl`

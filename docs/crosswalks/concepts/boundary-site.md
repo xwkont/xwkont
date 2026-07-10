@@ -111,4 +111,4 @@ No SUMO, UFO, YAMATO, or GUM correspondence is recorded — see Source Definitio
 
 - ~~Confirm or override the `uncertainty-001` two-sub-concept recommendation~~ — **done 2026-07-05**: confirmed (`xwkont:review:boundary-site:2026-07-05:01`); advanced `draft` → `reviewed`. The `core.ttl` addition of both sibling classes remains separately-tracked Turtle-change work.
 - Re-check TUpper's `tupper.clif` file for clarifying axioms on `edge`/`ridge`/`border`/`outer` (`uncertainty-003`).
-- Create the Proposition/Content crosswalk next (per `TODO.md`'s `0.2.0` batch) — the ninth and final concept of this batch.
+- ~~Create the Proposition/Content crosswalk next~~ — **done** (`proposition-content.md` reviewed). Was the ninth and final concept of this batch.
