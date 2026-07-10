@@ -59,13 +59,26 @@
     throw new Error("Could not load explore data: " + urls.join(", "));
   }
 
+  const SVG_NS = "http://www.w3.org/2000/svg";
+  const SVG_TAGS = new Set(["svg", "g", "line", "circle", "text", "title", "path", "rect"]);
+
   function el(tag, attrs = {}, children = []) {
-    const node = document.createElement(tag);
+    const node = SVG_TAGS.has(tag)
+      ? document.createElementNS(SVG_NS, tag)
+      : document.createElement(tag);
     Object.entries(attrs).forEach(([k, v]) => {
-      if (k === "className") node.className = v;
-      else if (k === "text") node.textContent = v;
-      else if (k === "html") node.innerHTML = v;
-      else node.setAttribute(k, v);
+      if (k === "className") {
+        if (SVG_TAGS.has(tag)) node.setAttribute("class", v);
+        else node.className = v;
+      } else if (k === "text") {
+        node.textContent = v;
+      } else if (k === "html") {
+        node.innerHTML = v;
+      } else if (k === "style" && !SVG_TAGS.has(tag)) {
+        node.setAttribute("style", v);
+      } else {
+        node.setAttribute(k, v);
+      }
     });
     children.forEach((c) => node.appendChild(typeof c === "string" ? document.createTextNode(c) : c));
     return node;
@@ -120,9 +133,10 @@
 
     const meta = el("p", { className: "xwk-meta" });
     const svgWrap = el("div", { className: "xwk-svg-wrap" });
-    const tip = el("div", { className: "xwk-tip", hidden: "true" });
+    const tip = el("div", { className: "xwk-tip" });
+    tip.hidden = true;
 
-    root.replaceChildren(controls, meta, svgWrap, tip);
+    root.replaceChildren(controls, meta, svgWrap);
 
     function draw(slug) {
       const concept = payload.concepts.find((c) => c.slug === slug);
@@ -137,15 +151,17 @@
       const width = Math.max(svgWrap.clientWidth || 720, 640);
       const height = 520;
       svgWrap.replaceChildren();
+      tip.hidden = true;
       const svg = el("svg", {
         viewBox: `0 0 ${width} ${height}`,
         width: "100%",
         height: String(height),
-        className: "xwk-network",
+        class: "xwk-network",
         role: "img",
         "aria-label": `Mapping network for ${concept.title}`,
       });
       svgWrap.appendChild(svg);
+      svgWrap.appendChild(tip);
 
       // Build nodes from mapping endpoints + correspondence terms
       const nodes = new Map();
@@ -223,8 +239,8 @@
         });
       });
 
-      const gLinks = el("g", { className: "links" });
-      const gNodes = el("g", { className: "nodes" });
+      const gLinks = el("g", { class: "links" });
+      const gNodes = el("g", { class: "nodes" });
       svg.appendChild(gLinks);
       svg.appendChild(gNodes);
 
@@ -241,7 +257,7 @@
       });
 
       const nodeEls = nodeList.map((n) => {
-        const g = el("g", { className: "node", style: "cursor:grab" });
+        const g = el("g", { class: "node", style: "cursor:grab" });
         const circle = el("circle", {
           r: "10",
           fill: SOURCE_COLORS[n.ontology] || "#475569",
@@ -267,8 +283,9 @@
       function showTip(ev, text) {
         tip.hidden = false;
         tip.textContent = text;
-        tip.style.left = `${ev.offsetX + 12}px`;
-        tip.style.top = `${ev.offsetY + 12}px`;
+        const rect = svgWrap.getBoundingClientRect();
+        tip.style.left = `${ev.clientX - rect.left + 12}px`;
+        tip.style.top = `${ev.clientY - rect.top + 12}px`;
       }
       function hideTip() {
         tip.hidden = true;
