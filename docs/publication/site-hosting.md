@@ -37,9 +37,16 @@ No `gh-pages` branch is used.
 
 ## Relationship to w3id
 
-Current live HTML negotiation for `https://w3id.org/xwkont/core` still targets the GitHub blob view of `docs/ontology/core-ontology.md`. After Pages is verified live, maintainers SHOULD update the external w3id HTML target to the corresponding Pages URL (for example `https://xwkont.github.io/xwkont/ontology/core-ontology/`) while leaving Turtle negotiation pointed at `core.ttl`.
+HTML negotiation for `https://w3id.org/xwkont/` and `https://w3id.org/xwkont/core` is retargeted to this Pages site via `perma-id/w3id.org#6343` (pending merge as of 2026-07-10):
 
-That w3id HTML retarget is a separate `perma-id/w3id.org` change and is **not** performed by this repository's Pages workflow.
+| Request | Target after `#6343` |
+|---|---|
+| `https://w3id.org/xwkont/` | `https://xwkont.github.io/xwkont/` |
+| `https://w3id.org/xwkont/core` (`Accept: text/html` / default) | `https://xwkont.github.io/xwkont/ontology/core-ontology/` |
+| `https://w3id.org/xwkont/core` (`Accept: text/turtle`) | raw `core.ttl` (unchanged) |
+
+See [w3id-redirect-request.md](w3id-redirect-request.md) for the Apache fragment and verification commands. Turtle negotiation remains on `raw.githubusercontent.com`.
+
 
 ## Non-goals
 

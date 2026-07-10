@@ -98,6 +98,14 @@ Expected results:
 - Served Turtle body's class count (`grep -c 'a owl:Class'`) matches `data/ontology/core.ttl`'s local count (30) exactly — the deployed content reflects the current `0.3.0`-era `core.ttl`, not a stale cached copy.
 - `https://w3id.org/xwkont/ontology/core/0.1.0` (the immutable versioned document path) still returns `404`, consistent with "Blockers Before Advertising Dereferenceability" below — versioned IRIs remain correctly un-activated.
 
+**HTML Pages retarget submitted 2026-07-10** as [`perma-id/w3id.org#6343`](https://github.com/perma-id/w3id.org/pull/6343) (pending merge). After merge, expected HTML targets become:
+
+- `https://w3id.org/xwkont/` → `https://xwkont.github.io/xwkont/`
+- `https://w3id.org/xwkont/core` (HTML / default) → `https://xwkont.github.io/xwkont/ontology/core-ontology/`
+- Turtle negotiation unchanged.
+
+Re-run the verification commands above after `#6343` merges and record the new Location headers here.
+
 Full dereferenceability of the current (non-versioned) namespace is live and verified; only immutable versioned document IRIs remain deferred.
 
 The implementation blockers are tracked in `docs/publication/w3id-redirect-request.md`: the canonical repository target must be confirmed by a maintainer, the redirect configuration must be submitted to external w3id infrastructure, and deployed behavior must be verified after deployment.

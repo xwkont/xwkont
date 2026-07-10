@@ -19,6 +19,7 @@ All notable changes to XwkOnt are documented here. Format follows [Keep a Change
 
 - `0.4.0` concept batch **selected** (not drafted): Dependence/Dependent Entity, Material/Immaterial, Set/Class, and History — see [docs/crosswalks/batch-0.4.0-selection.md](docs/crosswalks/batch-0.4.0-selection.md).
 - Public documentation site via **Material for MkDocs** on GitHub Pages ([mkdocs.yml](mkdocs.yml), [.github/workflows/pages.yml](.github/workflows/pages.yml), [docs/publication/site-hosting.md](docs/publication/site-hosting.md)). Target URL: `https://xwkont.github.io/xwkont/`.
+- w3id HTML retarget submitted as [`perma-id/w3id.org#6343`](https://github.com/perma-id/w3id.org/pull/6343): `/xwkont/` and HTML `/core` → Pages; Turtle `/core` unchanged.
 
 ## [0.3.0] - 2026-07-08
 
